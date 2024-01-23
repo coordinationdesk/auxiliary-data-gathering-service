@@ -1,0 +1,46 @@
+2.0.2
+In case of --historical flag set in resource set configuration 
+if the mission is not set in the matadata file structure
+it is set to -1 to identify historical data in inventory
+--------------------------------------------------------------------------------------------
+2.0.1
+Updated checksum key from CheckSum to Checksum.
+------------
+2.0.0
+LTA-24: handling of satellite id and mission introduced. Test updated accordingly.
+------------
+1.4.4
+Added support for zulu times in LTAMetadata object
+------------
+1.4.3
+Fixed bug and improved test coverage
+------------
+1.4.2
+In case of errors while updating validityflag or calling p_lta_successful_inventory the 
+inventory record is not cancelled anymore.
+------------
+1.4.1
+reduced latency while uploading 
+test improved
+------------
+1.4.0
+New conf space introduced
+------------
+1.3.2
+Fixed bug in source products removal. Stored procedure call moved into libLTAFileAction
+------------
+1.3.1
+Implemented call to p_successul_inventory
+------------
+1.3.0
+Introduced flag to disable validity flag update. Fixed bug in checksum json key
+------------
+1.2.0
+Moving from xml metadata to json metadata. Using clob for attributes fields
+-------------
+1.1.0
+Using namespace lta. Fixed wrong header name in makefile
+-------------
+1.0.0
+First release version
+-------------

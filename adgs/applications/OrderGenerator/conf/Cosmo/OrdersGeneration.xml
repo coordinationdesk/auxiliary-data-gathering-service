@@ -1,0 +1,61 @@
+<?xml version="1.0" standalone="yes"?>
+<OrdersGenerationRoot>
+	<OrderGeneration>
+		<!-- the plugins path -->
+		<PluginsPath>/usr/acs/plugins/OrderGenerator</PluginsPath>
+		<!-- the polling interval on the database [s]  -->
+		<DatabasePollingTime>30</DatabasePollingTime>
+		<NRT>
+			<Cryosat>
+				<Level1>
+					<!-- the temporary path to download NRT XML files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<DistributionFormat>cryo_ftp</DistributionFormat>
+				</Level1>
+				<External>
+					<!-- the temporary path to download NRT XML files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<DistributionFormat>cryo_ftp</DistributionFormat>
+				</External>
+			</Cryosat>	
+		</NRT>
+		<RPRO>
+			<Cryosat>
+				<External>
+					<!-- the temporary path to download External RPRO e.g. GTSLTA files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+				</External>
+			</Cryosat>	
+		</RPRO>
+		<Offline>
+			<Cryosat>
+				<Level1>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<MaxL0MergeDistance>0.300</MaxL0MergeDistance>
+				</Level1>
+				<Level2>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<MaxL1MergeDistance>0.300</MaxL1MergeDistance>
+				</Level2>
+				<Level2Anx2Anx>
+					<!-- the maximum amount of time a Level2 anx to anx temporary order waits for  -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+				</Level2Anx2Anx>
+			</Cryosat>
+			<Goce>
+				<Level1Anx2Anx>
+					<!-- the maximum amount of time a Level2 anx to anx temporary order waits for  -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+				</Level1Anx2Anx>
+			</Goce>
+		</Offline>
+	</OrderGeneration>
+</OrdersGenerationRoot>

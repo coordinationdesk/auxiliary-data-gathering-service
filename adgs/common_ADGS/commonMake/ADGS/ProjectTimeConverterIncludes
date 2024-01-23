@@ -1,0 +1,16 @@
+#ifndef _ProjectTimeConverterIncludes_
+#define _ProjectTimeConverterIncludes_
+
+#include <ACSTimeConvSingleton.h>
+//#include <ExplLibWrapSingleton.h>
+
+//#include <OBTConverterFactory.h>
+
+namespace { // unnamed 
+    acs::ACSTimeConvSingleton timeConvSingl;
+    //acs::ExplLibWrapSingleton timeConvSingl;
+    
+    //acs::OBTConverterFactory obtConvFact;
+}
+
+#endif //_ProjectTimeConverterIncludes_

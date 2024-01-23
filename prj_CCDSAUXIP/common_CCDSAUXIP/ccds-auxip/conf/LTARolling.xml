@@ -1,0 +1,13 @@
+<?xml version="1.0" standalone="yes"?>
+<LTARollingRoot>
+	<LTARolling>
+		<!-- the polling interval on the database [s]  -->
+		<DatabasePollingTime>30</DatabasePollingTime>
+		<!-- the application restart interval [s] -->
+		<RestartTime>86400</RestartTime>
+	</LTARolling>
+    <LTAEvictor>
+		<!-- which AIP left empty for all -->
+		<!--Expired_AIP_url></Expired_AIP_url-->
+    </LTAEvictor>
+</LTARollingRoot>

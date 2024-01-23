@@ -1,0 +1,4 @@
+#Caricamento t_tasktables
+name,tasktable,description,type_id
+'defaultReception','%#INSTALL_PATH#/tasktable/defaultReception.xml','PreInventory MetadataExtractor and Inventory','(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')'
+

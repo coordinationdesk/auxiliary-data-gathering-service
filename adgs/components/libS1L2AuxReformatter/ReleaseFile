@@ -1,0 +1,26 @@
+1.17.0
+AUX_TEC and AUX_TRO manifest file now contains the Patform metadata section
+------------------------------
+1.16.0
+CCDS-95: AUX_TEC updated to include the handling of a new naming convention. Tests added.
+Code modified after unit tests implementation: basename input filename usage forced in ecmwfGribDateExtractor and in the handleDataFiles methods, 
+deprecated methods for throwing exception replaced with ACS_THROW/ACS_COND_THROW macros, some useless code removed.
+------------------------------
+1.15.0
+AUX_TEC & AUX_TRO aligend with the new specs
+------------------------------
+1.14.0
+CCDS-43: handling of AUX_TRO and AUX_TEC auxiliary files introduced.
+------------------------------
+1.13.3
+CCDS-36: colons added in case they are missing at the end of SafeProduct.safePrefix configuration parameter.
+------------------------------
+1.13.2
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+1.13.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.13.0
+
+Automatically generate from revision "version "1.13""

@@ -1,0 +1,117 @@
+#if 0
+
+	Copyright 1995-2002, Advanced Computer Systems , Inc.
+	Via Della Bufalotta, 378 - 00139 Roma - Italy
+	http://www.acsys.it
+
+	All Rights Reserved.
+
+	This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems;
+	the contents of this file may not be disclosed to third parties, copied or
+	duplicated in any form, in whole or in part, without the prior written
+	permission of Advanced Computer Systems, Inc.
+
+	$Prod: A.C.S. Listener Library $
+
+	$Name$
+
+	$Id$
+
+	$Author$
+
+	$Log$
+	
+	
+
+#endif
+
+#ifndef _Listener_H_
+#define _Listener_H_
+
+
+#include <DGFBroadcastListener.h>
+#include <rsResourceSet.h>
+#include <Timer.h>
+#include <Thread.h>
+
+#include <vector>
+
+namespace acs {
+
+
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+//
+// Listener
+//
+///////////////////////////////////////////////////
+///////////////////////////////////////////////////
+
+/**
+ *\brief A Class for getting the broadcast message
+ *
+*/
+
+class Listener :
+	public Thread
+{
+public:
+	Listener(rsResourceSet&);
+	~Listener();
+	/**
+	 *\brief It sets the wished bradcast messages to be received
+	 *
+	*/
+	void setMessage(const vector<DbMessage>&);
+	/**
+	 *\brief It returns the broadcast messages filtered. These messages are in a queue. The last item is the younger
+	 *
+	*/
+	void getMessage(vector<DbMessage>&);
+	/**
+	 *\brief It stops the listening of broadcast message
+	*/
+	void stopBroadcastListening();
+	/**
+	 *\brief It starts the listening of broadcast message
+	*/
+	void startBroadcastListening();
+	
+	Thread::runException ;
+	
+protected:
+private:
+	
+	DGFBroadcastListener _dgfBroadcastListener;
+	
+	vector<DbMessage> _wishedMessages;
+	vector<DbMessage> _messagesQueue;
+	Timer::Delay _lastTimeBroadcast;
+	rsResourceSet _rs;
+	
+	ACE_Thread_Mutex _mutex;
+	
+	Timer timer;
+	
+	// It takes the broadcast messages from DGFBroadcastListener class
+	void takeMessageFromDB();
+	
+	//If any broadcast messages comes from db after an wished elapsed time, the method creates
+	// an artificial DbMessage message queue to force the external class to investigate the database table  
+	
+	void createTimeMessage();
+	
+	// implementing the run method for thread
+	virtual void run();
+	
+	Listener(const Listener &) ;
+	Listener &operator=(const Listener &) ;
+  
+  
+	exCLASS_DECLARE_DEBUG_LEVEL
+
+} ;
+
+} // Close namespace acs
+
+#endif // _Listener_H_

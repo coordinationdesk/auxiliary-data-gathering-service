@@ -1,0 +1,47 @@
+<Root>
+	<S6RootTag>
+		<ProductNaming>
+			<List_Of_NamingRules>
+				<NamingRule>
+					<!-- Updated 2013-07-19 - ENRCAR RICFER - Compliant to expected input -->
+					<FilenameRegExp>^(S6[A-Z_])_([A-Z0-9_]{13})_([[:digit:]]{8}T[[:digit:]]{6})_([[:digit:]]{8}T[[:digit:]]{6})_([[:digit:]]{8}T[[:digit:]]{6})_(.{16})_([A-Z0-9_]{4})_([A-Z0-9_]{3})_([A-Z0-9_]{2})_([A-Z0-9_]{3})\.SEN6.*$</FilenameRegExp> 
+					<List_Of_Fields count="8">
+						<Field>
+							<Name>MissionNumber</Name>
+							<Index>1</Index>
+						</Field>
+						<Field>
+							<Name>FileType</Name>
+							<Index>2</Index>
+						</Field>
+									<Field>
+							<Name>StartTime</Name>
+							<Index>3</Index>
+						</Field>
+									<Field>
+							<Name>StopTime</Name>
+							<Index>4</Index>
+						</Field>
+									<Field>
+							<Name>CreationTime</Name>
+							<Index>5</Index>
+						</Field>
+									<Field>
+							<Name>InstanceId</Name>
+							<Index>6</Index>
+						</Field>
+									<Field>
+							<Name>OriginFacility</Name>
+							<Index>7</Index>
+						</Field>
+									<Field>
+							<Name>FileClass</Name>
+							<Index>8</Index>
+						</Field>
+					</List_Of_Fields>
+
+				</NamingRule>
+			</List_Of_NamingRules>
+		</ProductNaming>
+	</S6RootTag>
+</Root>

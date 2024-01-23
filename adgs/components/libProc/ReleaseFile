@@ -1,0 +1,25 @@
+3.0.5
+exostream global mutex re-initialized between fork and exec to avoid 
+getting locked streams between fork and exec in SpawnProc
+--------------------------------------------------------------------
+3.0.4
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+---------------------------------------------------------------------------------------
+3.0.3
+[S3MARINE-449] EC:: Additional I/F to handle the non-mandatory parameter: TAR_BLOCK_MULTIPLICATION_FACTOR. Tests updated.
+---------------------------------------------------------------------------------------
+3.0.2
+Test makefile fixed
+---------------------------------------------------------------------------------------
+3.0.1
+[S3MARINE-100] EC:: && LP:: optional decompress options added to on-the-fly untar .
+---------------------------------------------------------------------------------------
+3.0.0
+[S3MARINE-98] EC:: Added support for on-the-fly tar/untar
+---------------------------------------------------------------------------------------
+2.59.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.59.0
+
+Automatically generate from revision "version "2.59""

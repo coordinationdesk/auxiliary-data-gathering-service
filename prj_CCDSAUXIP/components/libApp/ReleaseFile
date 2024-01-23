@@ -1,0 +1,238 @@
+13.0.4
+https://projectit.exprivia.it/browse/CCDS-72
+Application::stopManagerThread_ become a volatile pointer in order to prevent de-synchronization after phoenix restart.
+The problem is probably caused by getCurrentStopMode that return immediate instead of noStop for a brief moment due to
+caching of stopManagerThread_ as nullptr (initial value).
+Using volatile will prevent caching and force synchronization of stopManagerThread_ value between threads.
+------------------------------------------------------------------------------
+13.0.3
+https://projectit.exprivia.it/browse/PLAT-67
+Deadlock between waitStopOrTimeout and setCurrentStopMode has been fixed
+it was introduced in release 12.1.0
+------------------------------------------------------------------------------
+13.0.2
+Before phoenix close also the FD=3 (the close sequence started from 4 before)
+Using runException with shared ptr while checking StopManagerThread status
+------------------------------------------------------------------------------
+13.0.1
+exception catching robustness improved
+---------------------------------------------------------------------------------------
+13.0.0
+* S2PDGS-590
+* LTA-415
+At the exit of the main, just after the dump in the log of the statistics,
+the shutdown interface on the EventNotifyFactorySingleton is called to allow
+a clean exit of the process and prevent crashes during the global variable d'tors.
+---------------------------------------------------------------------------------------
+12.4.0
+The getCurrentStopMode and hasStopModeChange functions check the availability of
+the ApplicationStopManager thread.
+If possible the StopMode is computed even if the Thread is not running, reporting
+once in a run that the signals are managed in a degraded way.
+In the degraded mode the wait on the stop mode condition will always exit due to timeout
+and the global reactivity to signal reception is impacted
+---------------------------------------------------------------------------------------
+12.3.3
+Management of the ApplicationStopManager thread improved.
+In case the Thread is not runnin a stop mode change is forced to ImmediateStop and 
+any runException will be logged to leave a track.
+No restart attempt is performed to avoid start/crash endless loops
+It is possible to use 12345 and 12346 debug level for the ApplicationStopManager class
+to force a runexception or an exit from the main
+---------------------------------------------------------------------------------------
+12.3.2
+Using __attribute__((deprecated)) instead of ATTRIBUTE_DEPRECATED.
+---------------------------------------------------------------------------------------
+12.3.1
+Removed deprecated inclusion of SignalHandler.h.
+---------------------------------------------------------------------------------------
+12.3.0
+Application::delayOrCondition() deprecated
+---------------------------------------------------------------------------------------
+12.2.0
+Added Application::currentStopModeToString() method and Application::StopModeToString map for logging purpose.
+---------------------------------------------------------------------------------------
+12.1.0
+Added convinient method Application::requestedStop().
+Fixed Application::waitStopOrTimeout() race condition.
+---------------------------------------------------------------------------------------
+12.0.0
+Application::doRestart deprecated
+Now the application will restart automatically (using getCurrentStopMode == PhoenixRestart)
+  if wantToRestart was called and the timeout has been reached
+---------------------------------------------------------------------------------------
+11.1.4
+Test for fork + popen deadlock check added
+---------------------------------------------------------------------------------------
+11.1.3
+Removed the pthread_atfork call used to lock the File::globalMutex mutex
+Investigation have shown that the fork call is safe and does not need any serialization
+Its use togheter with popen/pclose is safe too, if popen/pclose are used with a 
+seralization mutex.
+It seems that popen is not threadsafe by default on all the linux distros
+----------------------------------------------------------------------------------------
+11.1.2
+test compilation fixed
+------------------------------------------------------------
+11.1.1
+Exit responsiveness improved in notification and stop controlling threads using
+timeoutOrCancel instead of sleep
+------------------------------------------------------------
+11.1.0
+Added the PhoenixTimeout feature.
+If configured the application will force the application restart in case the phoenix
+is not completed in the allowed amount of time.
+The default configuration is "no timeout" but it can be set using the configuration spaces.
+There are two possibilities to set the timeout (in seconds) using the keys (in order of priority):
+* "ApplicationName".PhoenixTimeoutSeconds 
+* PhoenixTimeoutSeconds
+------------------------------------------------------------
+11.0.2
+Fixed regression introduced by the change of life with stopElapsed
+Now there is a flag to keep track of the timer start and the running operation
+is no more used
+------------------------------------------------------------
+11.0.1
+LTA-214: compilation warning on Timer fixed (life replaced by stopElapsed)
+------------------------------------------------------------
+11.0.0
+if DISABLE_DAEMONIZE is defined the process will behave like any normal process without 
+calling the ::daemon syscall.
+In order to mantain internal coherence the daemonizeCalled_ flag will be set to true hence 
+regularly reported from daemonizeCalled(), while the isDaemon_ will be never set to true.
+So the isDaemon() will always return false ;
+To avoid having inconsistency calling preDaemonize() and postDaemonize(), whose purpose is to deal 
+with side effects of ::daemon syscal, the above mentioned method will never be called.
+------------------------------------------------------------
+10.0.0
+Added dependency from libMQTT that MUST be placed before libApp in components makefile list
+Now the libApp puts default values for the MQTT topic elemenets
+- organization = "XPR"
+- subsystem as per ctor value
+- subsystemdid = subsystem + "_01"
+- entity as per appname in ctor value
+- entityid = entity + "_01"
+------------------------------------------------------------
+9.2.2
+Fixed bug causing logs to not be rotated when there was no configuration
+specified for rotation policies.
+------------------------------------------------------------
+9.2.1
+ECS-22: unique_ptr used according to C++11 standard.
+------------------------------------------------------------
+9.2.0
+ECS-22: handling of application UUID introduced - The class Application exposes a new method returning the application UUID (getCurrentUuid).
+------------------------------------------------------------
+9.1.0
+Added interface to get stop mode change using a reference time
+bool hasStopModeChanged (const struct timeval& checkTime, struct timeval& lastChangeTime) ;
+in case the stop mode has been updated after the checkTime timstamp it returns true and updates
+lastChangeTime with the actual last status update change time
+------------------------------------------------------------
+9.0.0
+waitOnCondition public method renamed as waitStopOrTimeout for sake of clarity (after M.Favoino advice).
+------------------------------------------------------------
+8.2.2
+Fixed behaviour of the ApplicationStopManager to avoid hiding the timeToRestart flag when the phoenix timer expires
+Internally the SigPhoenix simulation is triggered only once (when the stop mode has still in NoStop value)
+A dedicated unit test has been added to manage this case and verify that the timeToRestart flag is still accessible
+from the derived applications
+------------------------------------------------------------
+8.2.1
+Usage simplified
+------------------------------------------------------------
+8.2.0
+Minor issue due to jira S3MARINE-99
+Condition object added to Application class so that broadcast is performed when StopMode is changed.
+waitOnCondition public method added to Application IF so that is returned when either input timeout expires or condition is broadcasted.
+------------------------------------------------------------
+8.1.0
+The class Application uses now the singleton AppStopController object to keep the global application
+stop controller instance coherent with the current ApplicationStopMode status.
+Any object can undesrtand if a stop has been requested without interacting with the Application::instance singleton
+------------------------------------------------------------
+8.0.0
+The class Application exposes two new functions
+getSigTermTimeoutSeconds ()
+sigTermTimeoutExpired()
+to implement a watchdog on the SIGTERM reactivity.
+After the SIGTERM reception if the application does not exit befor the time reported by getSigTermTimeoutSeconds,
+the custom function sigTermTimeoutExpired is executed.
+By default it causes a ::abort() call after 30 seconds causing the stak trace on the log without any core dump.
+------------------------------------------------------------
+7.1.2
+The signature of Application::getCurrentStopMode moved to a const operation
+It does not change nothing from an external or binary point of view
+------------------------------------------------------------
+7.1.1
+The last use of ModeChange has been removed in favour of ModeUnion in the
+StandAloneResourceSpace::mergeIn operation
+------------------------------------------------------------
+7.1.0
+Uses new MergeUnion from libResources 6.23.0 
+------------------------------------------------------------
+7.0.1
+[S6JCS-122] Bugfix
+The thread managing the signals and the exit status must be properly managed
+in case of daemonize, that clones only the calling thread.
+The thread is stopped before daemonizing and restart just after that.
+------------------------------------------------------------
+7.0.0
+Major release applying the new signal management pattern introduced by libSignal (>= 5.10.0)
+There are no more explicit signal handlers installed by Application.
+Application exposes a function to retrieve the current stop mode getCurrentStopMode.
+The stop mode is computed in background by a dedicated thread (StopModeManager) created at Application CTOR time.
+This thread installs all the signal handlers and takes into account the incoming signals 
+(including the sigPhoenix simulated by wantToRestart timer) includin SIGSUSR1.
+SIGUSR1 reception causes the call of the ApplicationDebug class to read/write the debug file.
+The foreseen StopModes are:
+- NoStop
+- CleanStop (SIGINT)
+- ImmedateStop (SIGERM)
+- PhoenixRestart (timeToRestart returned true)
+The map transition of the stop status can be found in the wiki http://wiki.acs/index.php/PDS_Applications_Signal_Handling
+It is possilbe to re-define customSigIntHandler and customSigTerm handler in derived applications to 
+react with custom code to incoming signals. Those functions are not actually signal handlers but
+are executed by the StopModeManager thread in user space.
+------------------------------
+6.2.3
+Patch issue due to jira S3JCS-92
+EC && LP: loadConfigurationInternal method added to get salt configuration parameters (if occurring).
+------------------------------
+6.2.2
+Using ACS_LOG_PRIVINFO instead of exostream::getDefaultOutLogger for messages in Application::rotateLog
+to avoid missing formatting by the message formatter.
+------------------------------
+6.2.1
+Pid file now contains just the PID (content was "Pid: PID").
+------------------------------
+6.2.0
+Added a virtual interface to the Application Class
+Application::authOperation (const string& operation, string& message) const
+to enable a project based authorization framework.
+Default is to authorize anything.
+------------------------------
+6.1.1
+Typo fixed
+------------------------------
+6.1.0
+AppPluginLoaderNotifier DTOR is now implemented in .C
+it was virtual and inlined before
+------------------------------
+6.0.0
+StandaloneResourceSpace has been modified:
+- update operation no more allowed (will throw an execpetion if used)
+- lock-free management of configuration spaces on disk (are now read only)
+------------------------------
+5.48.3
+Makefiles can work in both smurfer and legacy mode
+------------------------------
+5.48.2
+Makefiles aligned to smurfer and GITPortingTools 7 family
+------------------------------
+5.48.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.48.0
+
+Automatically generate from revision "version "5.48""

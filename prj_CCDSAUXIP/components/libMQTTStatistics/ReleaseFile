@@ -1,0 +1,84 @@
+6.0.0
+* S2PDGS-590
+* LTA-415
+The library now implements the shutdown sequence to avoid crashes at the process exit
+Requires libException >= 13.0.0
+-------------------------------------------------------------------------------------
+5.0.2
+Singleton<StatisticsNotifier> is not using the atexit anymore
+-----------------------------------------------------------------------
+5.0.1
+Removed useless if-else condition when forwarding.
+Fixed backlog full warning issue.
+-----------------------------------------------------------------------
+5.0.0
+[LTA-293]
+Using std::list container for the statistics backlog in order to improve push/pop performances.
+Introduced backlogs swap to efficiently allow concurrency between forward and push operation.
+Removed minEventStock and maxBacklogBurstSize from base logic and configuration. 
+Renamed "WaitOnPublishConditionTimeout" configuration tag to "PollingTime"
+Updated default publisher polling time to 100msec.
+-----------------------------------------------------------------------
+4.0.0
+[LTA-270]
+Removed StatisticsBacklog::operator[] to avoid usage of invalid reference. Introduced
+getStat(size_t idx) as alternative.
+-----------------------------------------------------------------------
+3.0.0
+[LTA-226]
+Resolved strong inefficiency caused by the inappropriate use of the
+locking mechanism by the MQTTStatPublisherThread.
+Simplified publisher thread error management: if the thread exits with 
+exception then, instead of continuously restarting the thread, the notifier
+will completely disable publishing of statistics.
+-----------------------------------------------------------------------
+2.5.2
+Unlock waitinig on conditions in case of stop requests
+-----------------------------------------------------------------------
+2.5.1
+Dereferencing exception in ACS_LOG_NOTIFY_EX
+------------------------------------------------------------------------
+2.5.0
+[CI-57] Introduced ignore statistics configuration that causes all the
+input statistics to be ignored by the framework. Added timout on exit condition
+for MQTTStatPublisherThread to avoid blocking 
+------------------------------------------------------------------------
+2.4.1
+[CI-57] DT: Fixed bug in Warning log.
+------------------------------------------------------------------------
+2.4.0
+[CI-57] Warning log in StatisticNotifier transformed into a debug log.
+------------------------------------------------------------------------
+2.3.0
+[CI-57] Fixed bug that causes backlog full warning to be continuously emitted.
+------------------------------------------------------------------------
+2.2.0
+[CI-57] qac++ analysis
+------------------------------------------------------------------------
+2.1.0
+[CI-57] Added control logic to full backlog warnings. Added thread restart logic
+------------------------------------------------------------------------
+2.0.0
+[CI-57] Introduced publisher thread. Fixed several bugs.
+------------------------------------------------------------------------
+1.1.1
+[CI-57] Improved exception management. Fixed tests
+------------------------------------------------------------------------
+1.1.0
+[CI-57] Increased robustness. General refactoring
+------------------------------------------------------------------------
+1.0.3
+[CI-57] Added configuration space
+------------------------------------------------------------------------
+1.0.2
+[CI-57] Fixed topic. Removed bug in publish text error check.
+Every numeric type is now formatted as a float
+------------------------------------------------------------------------
+1.0.1
+[CI-57] Test aligned to new version of libMQTT
+------------------------------------------------------------------------
+1.0.0
+[CI-57] First stable release
+------------------------------------------------------------------------
+0.0.1
+Empty library

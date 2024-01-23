@@ -1,0 +1,36 @@
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 1,0,7,13
+ PRODUCTVERSION 1,0,7,13
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x29L
+#else
+ FILEFLAGS 0x28L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Luxena Software Company"
+            VALUE "FileDescription", "dbExpress driver for Informix Pro"
+            VALUE "FileVersion", "1.0.7.13"
+            VALUE "LegalCopyright", "(c) 2001-2004 Luxena Software Company"
+            VALUE "LegalTrademarks", "Copyright (c) 2001-2004 Luxena Software Company"
+            VALUE "ProductName", "dbExpress driver for Informix Pro"
+            VALUE "ProductVersion", "1.0.7.13"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END

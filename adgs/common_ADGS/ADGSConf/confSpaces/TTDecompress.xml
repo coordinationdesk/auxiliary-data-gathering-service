@@ -1,0 +1,5 @@
+<Root>
+	<TTDecompress>
+		<Decompress_Path>/usr/local/components/ADGS/bin/Decompress.sh</Decompress_Path>
+	</TTDecompress>
+</Root>

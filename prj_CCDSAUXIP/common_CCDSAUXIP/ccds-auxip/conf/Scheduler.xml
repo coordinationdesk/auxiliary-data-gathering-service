@@ -1,0 +1,23 @@
+<RootTag>
+    <TlScheduler>
+        <Messages>
+            <PoolStarted>starting execution of pool #</PoolStarted>
+            <PoolCompleted>completed execution of pool #</PoolCompleted>
+            <TaskStarted>starting execution of task #</TaskStarted>
+            <TaskCompleted>completed execution of task #</TaskCompleted>
+            <TaskFailed>execution failed on task #</TaskFailed>
+            <StartProcessingTime>processing start time#</StartProcessingTime>
+        </Messages>
+        <Enable_MCF_Notification>false</Enable_MCF_Notification>
+        <MCF_Forward_Everything>false</MCF_Forward_Everything>
+        <!-- Env variable containing the current task name -->
+        <EnvTaskNameVariable>TL_TASKNAME</EnvTaskNameVariable>
+    </TlScheduler>
+    <Scheduler>
+        <!-- Single plugin path will be ignored if list of plugins exists -->
+        <Scheduler_Plugins_Path>#INSTALL_PATH#/plugins/SchedulerPlugins</Scheduler_Plugins_Path>
+        <NotifyOnSyslog>false</NotifyOnSyslog>
+        <TaskSyslogMessageLimit>20</TaskSyslogMessageLimit>
+        <ReservedDiskSpaceQuota unit="MB">0</ReservedDiskSpaceQuota>
+    </Scheduler>
+</RootTag>

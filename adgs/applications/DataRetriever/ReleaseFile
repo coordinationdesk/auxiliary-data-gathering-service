@@ -1,0 +1,63 @@
+1.0.15
+In MPIP discovery, the list of virtual filetype's children is used as a server-side
+filter to fetch new files, or the filetype name itself if is not a virtual filetype
+-------------------------
+1.0.14
+Added support for MPIP HTTP protocol (CCDS-110) using the DataRetrieverPluginMpip.
+Repositories json "attributes" column supports the same authentication parameters
+used by the OData HTTP protocol.
+-------------------------
+1.0.13
+Added handling of the PHP_DATARETRIEVER_CONFIGURATOR_CREATE_LOCAL_PATHS environment variable 
+to disable automatic directories creation in the data-retriever-configurator.php process
+-------------------------
+1.0.12
+Added download scheduling priority by filename, configurable by the Config properties
+$downloadHighPriorityProductNameRegex
+$downloadNormalPriorityProductNameRegex
+$downloadLowPriorityProductNameRegex
+-------------------------
+1.0.11
+Log refactory
+-------------------------
+1.0.10
+Fixed OAuth2 mix-up of access tokens between different repositories
+-------------------------
+1.0.9
+Added support to run as docker stack
+-------------------------
+1.0.8
+Downloaded file timestamp updated to product PublicationDate
+-------------------------
+1.0.7
+removed unused timewindow_sec repository configuration value
+-------------------------
+1.0.6
+Fixed json repo attributes curl options not used in OAuth2 token request
+-------------------------
+1.0.5
+Added json repo attribute to set curl options, for example
+{                                                
+	"curl_options": {                            
+		"CURLOPT_VERBOSE": 1,                    
+		"CURLOPT_PROXY": "proxy.project.int:1234"
+	}                                            
+}                                                
+-------------------------
+1.0.4
+Added handling of db.conf uncrypted password
+Reception rules with null hostname can be skipped setting $skipNullServerGroups = true in Config
+Downloads of metadata files can be avoided setting $downloadMetadataFile = false in Config
+Added omit_format, propagate_headers_redirect, propagate_headers_redirect_download and odata_filter repo attributes
+-------------------------
+1.0.3
+Fixed discovery pagination
+-------------------------
+1.0.2
+Fix table mapping
+-------------------------
+1.0.1
+Fix fake Makefile
+-------------------------
+1.0.0
+First commit of sources

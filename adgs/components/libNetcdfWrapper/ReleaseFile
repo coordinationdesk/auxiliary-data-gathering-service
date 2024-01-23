@@ -1,0 +1,91 @@
+1.30.3
+SM:: exception if number of values from ascii is greater than variable elements
+====================================================================================================================================
+1.30.2
+MP:: compilation warnings cleanup
+====================================================================================================================================
+1.30.1
+RF:: not_filled/empty group methods corrected.
+====================================================================================================================================
+1.30.0
+RF:: not_filled and rm_dimension methods added to Group class.
+====================================================================================================================================
+1.29.2
+RF:: dataValuesHere_ set corrected in Netcdf4xmlHandler::Variable::operator=
+====================================================================================================================================
+1.29.1
+RF:: set/get_dataValues_pointer in Netcdf4xmlHandler. get_dataValues_pointer usage in xml to nc converter.
+====================================================================================================================================
+1.29.0
+It is possible to declare the will to use the .a static version of the NetCDF libraries
+defining the variable USE_NETCDIF_STATIC_LIBS in the project defs.mk makefile
+====================================================================================================================================
+1.28.8
+RF:: remove_group and remove_nestedgroup added.
+====================================================================================================================================
+1.28.7
+RF:: rm_variable method added to Group.
+====================================================================================================================================
+1.28.6
+RF:: update_dataValues corrected.
+====================================================================================================================================
+1.28.5
+RF:: get_vector updated.
+====================================================================================================================================
+1.28.4
+RF:: Added some debug logs.
+====================================================================================================================================
+1.28.3
+RF:: Fixed nc type STRING handling. ascii separator.
+====================================================================================================================================
+1.28.2
+RF:: separator attribute of variable tag is now handled in Netcdf4xmlHandler/Netcdf4xmlConverter.
+====================================================================================================================================
+1.28.1
+RF:: Fixed bug in 3D matrix handling in putStringsInVariable. CATC added.
+====================================================================================================================================
+1.28.0
+RF:: XmlToNetCDF4:Configurable separator for ascii/cvs files;putStringsInVariable fixed and more fast.
+     Netcdf4xmlHandler::Variable: update_dataValues method added. "values" read fixed.
+     test/XmlToNetcdf4: separator handling added.
+====================================================================================================================================
+1.27.3
+RF:: DSOSPECIFICDEPS in Makefile.
+====================================================================================================================================
+1.27.2
+RF:: Copy constructor and operator = defined and public.
+====================================================================================================================================
+1.27.1
+RF:: Missing copy ctrs and operator= defined for Dimension, Attribute and Group.
+     Variable writing now takes in account the filename and fileformat tags.
+====================================================================================================================================
+1.27.0
+RF:: Control on types added. Comments. 
+====================================================================================================================================
+1.26.0
+RF:: Added handling of nc_STRING in NetCDF4toXml::convert_attribute. 
+====================================================================================================================================
+1.25.0
+RF:: Netcdf4xmlConverter::Variable constructor, destructor, copy constructor and equal operator defined to handle pointer dataValues_.
+     Compiler warnings removed. Fixed regressions to continue to compile in C++98.
+====================================================================================================================================
+1.24.6
+RF:: Netcdf4xmlConverter: Added the possibility to set variables by binary, ascii and csv files. Added fill values handling too.    
+====================================================================================================================================
+1.24.5
+RF:: New set/get_group and empty methods. New methods in Group, Attribute and Variable struct.   
+====================================================================================================================================
+1.24.4
+RF:: Fixed missing global attributes when sub-groups are handled by Netcdf4xmlConverter and Netcdf4xmlHandler classes.
+====================================================================================================================================
+1.24.3
+RF:: Added sub-groups handling in Netcdf4xmlConverter and Netcdf4xmlHandler classes.
+====================================================================================================================================
+1.24.2
+EC:: Added new method: isScaleFactorSet
+====================================================================================================================================
+1.24.1
+Patch release automatically generated to instrument version files
+====================================================================================================================================
+1.24.0
+Automatically generate from revision "version "1.24""

@@ -1,0 +1,8 @@
+<Root>
+	<LTAFileInventory>
+		<!-- If true, the successfully uploaded product is removed from the source path. Default is true -->
+		<RemoveUploadedProductFromSource>true</RemoveUploadedProductFromSource>
+		<!-- The upload poll time (sec). Default is 1 sec -->
+		<UploadPollTime>1</UploadPollTime>
+	</LTAFileInventory>
+</Root>

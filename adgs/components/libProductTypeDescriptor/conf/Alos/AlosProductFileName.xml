@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="yes"?>
+<ProductFileNameConf>
+	<ProductFileName>
+		<MissionID>AL</MissionID>
+		<FileNameVersion></FileNameVersion>
+		<FileRootSize></FileRootSize>
+		<FileNameSize>33</FileNameSize>		
+		<List_of_File_Ext count="0">
+		</List_of_File_Ext>
+		<!-- Permitted Product file classes -->
+		<List_of_File_Classes count="0">
+		</List_of_File_Classes>
+		<List_of_Level0_Product_Id count="1">
+        	<Id>ACQREPORT_</Id> 
+		</List_of_Level0_Product_Id>
+		<List_of_Level1_Product_Id count="0">
+		</List_of_Level1_Product_Id>
+		<List_of_Browse_Product_Id count="0">
+		</List_of_Browse_Product_Id>
+	</ProductFileName>
+</ProductFileNameConf>

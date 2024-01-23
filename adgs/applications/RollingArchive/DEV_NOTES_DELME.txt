@@ -1,0 +1,112 @@
+QUESTO FILE CONTIENE APPUNTI RELATIVI ALL'AGGIORNAMENTO MAJOR DA Rolling 3 a Rolling 4.
+LASCIATO QUI PER MEMORIA STORICA.
+ALTRI IMPORTATI DETTAGLI SONO IN http://projectit.acsys.it/browse/S3MARINE-93
+
+### Configurazione ###
+
+# Aggiunte chiavi:
+
+RollingArchive.RestartTime : Agent restart time
+
+RollingArchive.SpecialPoliciesTimerSec : Time interval to execute Special Rolling Policies
+
+RollingArchive.PoliciesRunMax : Max number of policies can be queued to be run
+
+RollingArchive.RollingPolicy.AvailableStots: Num policies running in parallel
+- da non documentare! sul db si va uno alla volta!
+
+CustomPreservedItems.Rule: custom preservation rule (in addition to the default for migration and export).
+
+# Chiavi da eliminare:
+
+RollingArchive.IdlePeriod
+- prima era il tempo fra un loop e l'altro per lo scan delle policy (e conseguente esecuzione)
+  Ora ogni policy ha un trigger time.
+  Ogni 5 sec si controllano i trigger time delle policy (query a basso impatto sul sistema)
+
+RollingArchive.SortActions
+- l'ordine di elimazione e' dettato dalla policy. Di solito su base inventory date.
+  L'ordinamento non ha piu' senso dato che ogni policy (in modo concorrente) elimina la sua parte selezionata.
+  C'e' l'assunzione che le policy non si pestano i piedi, cioe' la configurazione deve essere fatta in modo che un item non venga selezionato da piu' policy.
+  
+  
+### DATABASE ###
+
+Aggiunte le nuove colonne:
+
+ALTER TABLE t_invrollingpolicies
+ADD COLUMN fetchrowslimit integer,
+ADD COLUMN idlenumitems integer,
+ADD COLUMN idlehours double precision,
+ADD COLUMN triggertime timestamp(6) without time zone NOT NULL DEFAULT now(),
+ADD COLUMN status text;
+
+Le colonne nullable fetchrowslimit, idlenumitems, idlehours, se null ==> si prendono da configuration space.
+
+- fetchrowslimit: limit query
+- A policy returns x items. If x <= idlenumitems ==> The policy will be Idle for idlehours Hours.
+- triggertime: time the policy will be triggered
+- status: interesting things the policy needs to annotate for its next execution loop.
+
+Non vengono più usate:
+- removeevendistribution
+- removeevenused
+- priority
+Se eliminate dallo schema, vanno aggiornate le interfacce utente.
+
+---------------------
+Non viene più utilizzata la colonna: 
+t_storagerollingthresholds.action_id
+
+perchè il rolling di tipo storage size ora viene implementato da una normale policy (StorageSize).
+Le treshold degli storage manager vegono lette da t_storagerollingthresholds
+
+Se eliminata dallo schema, vanno aggiornate le interfacce utente.
+
+---------------------
+Non viene più utilizzata la colonna: 
+t_invspecialrollingpolicies.consumable
+
+(v. commento in RollingArchive::updateInvSpecialRollingPolicies per capire perchè è inutile)
+
+---------------------
+
+Aggiungere entry nella t_rollingpoliciesalgo:
+StorageSize (algoritmo per la size degli storage)
+
+---------------------
+
+### SPECIAL ROLLING POLICIES - MANUAL ROLLING
+t_invspecialrollingpolicies.expirationdate is the expiration date of the manual rolling.
+After the expiration date, the manual rolling rule is automatically deleted.
+So, for example, 
+- If you want invalidate item x now:
+-- set a manual rolling on x, invalidate, no expiration date 
+
+- If you want invalidate item x tomorrow:
+-- set a manual rolling on x, invalidate, no expiration date 
+-- set a manual rolling on x, keep, expiration date to tomorrow (keep will win on x up tommorrow)
+
+- If you want keep item x forever:
+-- set a manual rolling on x, keep, no expiration date
+
+
+### RIDURRE LE QUERY
+
+Metti in debug dbQuery e riduci le query "a vuoto" che vengono fatte di tanto in tanto, tipo le special prima
+della loro scadenza.
+- Ok, fatto.
+
+
+### POLICY-ACTIONS E PRODOTTI PADRE-FIGLIO ###
+
+Le policy dove il filetype non è applicabile (quelle di storage size ad esempio) gestiscono il caso di
+prodotti padre-figlio:
+se un figlio è interessato dalla query ==> viene restituito il parent e non il figlio stesso.
+Usare quindi le action opportune per gestire i prodotti padre-figlio.
+
+Todo: Anche la action Clean-storage deve avere una versione "Children" per gestire i figli.
+
+Per rolling basate su filetype il problema non si pone perchè un filetype andrà ad interessare o i padri o i figli,
+dato che padri e figli hanno filetype diversi.
+

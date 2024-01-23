@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 NT (http://www.xmlspy.com) by  () -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2000/10/XMLSchema" elementFormDefault="qualified">
+	<xsd:simpleType name="Ipf_Date">
+		<xsd:annotation>
+			<xsd:documentation>Date format used inside the Job Order</xsd:documentation>
+		</xsd:annotation>
+		<xsd:restriction base="xsd:token">
+			<xsd:pattern value="(20|19)\d{2}\d{2}\d{2}_\d{2}\d{2}\d{2}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:element name="Ipf_Job">
+		<xsd:annotation>
+			<xsd:documentation>Job Order for PDS IPF1 processors</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Ipf_Conf">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Processor_Name" type="xsd:string"/>
+							<xsd:element name="Version" type="xsd:string"/>
+							<xsd:element name="Order_Type">
+								<xsd:simpleType>
+									<xsd:restriction base="xsd:string">
+										<xsd:enumeration value="NRT"/>
+										<xsd:enumeration value="OFFL"/>
+										<xsd:enumeration value="RPRO"/>
+									</xsd:restriction>
+								</xsd:simpleType>
+							</xsd:element>
+							<xsd:element name="Constants" type="xsd:string"/>
+							<xsd:element name="Logging_Level" type="xsd:NMTOKENS"/>
+							<xsd:element name="Test" type="xsd:boolean"/>
+							<xsd:element name="Troubleshooting" type="xsd:boolean"/>
+							<xsd:element name="Processing_Station" type="xsd:string"/>
+							<xsd:element name="Sensing_Time">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="Start" type="Ipf_Date"/>
+										<xsd:element name="Stop" type="Ipf_Date"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="List_of_Ipf_Proc">
+					<xsd:complexType mixed="false">
+						<xsd:sequence>
+							<xsd:element name="Ipf_Proc" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="Task_Name">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:string">
+													<xsd:whiteSpace value="collapse"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="Task_Version" type="xsd:string"/>
+										<xsd:element name="Breakpoint">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Enable" default="OFF">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:NMTOKEN">
+																<xsd:whiteSpace value="collapse"/>
+																<xsd:enumeration value="ON"/>
+																<xsd:enumeration value="OFF"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="List_of_Brk_File">
+														<xsd:complexType>
+															<xsd:sequence>
+																<xsd:element name="Brk_File" minOccurs="0" maxOccurs="unbounded">
+																	<xsd:complexType>
+																		<xsd:sequence>
+																			<xsd:element name="File_Type">
+																				<xsd:simpleType>
+																					<xsd:restriction base="xsd:string">
+																						<xsd:whiteSpace value="collapse"/>
+																					</xsd:restriction>
+																				</xsd:simpleType>
+																			</xsd:element>
+																			<xsd:element name="Filename">
+																				<xsd:simpleType>
+																					<xsd:restriction base="xsd:string">
+																						<xsd:whiteSpace value="collapse"/>
+																					</xsd:restriction>
+																				</xsd:simpleType>
+																			</xsd:element>
+																		</xsd:sequence>
+																	</xsd:complexType>
+																</xsd:element>
+															</xsd:sequence>
+															<xsd:attribute name="count" type="xsd:nonNegativeInteger" use="required"/>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="List_of_Input">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Input" minOccurs="0" maxOccurs="unbounded">
+														<xsd:complexType>
+															<xsd:sequence>
+																<xsd:element name="File_Type" type="xsd:string"/>
+																<xsd:element name="List_of_Filename">
+																	<xsd:complexType>
+																		<xsd:sequence>
+																			<xsd:element name="Filename" type="xsd:string" maxOccurs="unbounded"/>
+																		</xsd:sequence>
+																		<xsd:attribute name="count" type="xsd:positiveInteger" use="required"/>
+																	</xsd:complexType>
+																</xsd:element>
+																<xsd:element name="List_of_Time_Interval">
+																	<xsd:complexType>
+																		<xsd:sequence>
+																			<xsd:element name="Time_Interval" maxOccurs="unbounded">
+																				<xsd:complexType>
+																					<xsd:sequence>
+																						<xsd:element name="Start" type="Ipf_Date"/>
+																						<xsd:element name="Stop" type="Ipf_Date"/>
+																						<xsd:element name="File_Idx" type="xsd:integer"/>
+																					</xsd:sequence>
+																				</xsd:complexType>
+																			</xsd:element>
+																		</xsd:sequence>
+																		<xsd:attribute name="count" type="xsd:positiveInteger" use="optional"/>
+																	</xsd:complexType>
+																</xsd:element>
+															</xsd:sequence>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+												<xsd:attribute name="count" type="xsd:nonNegativeInteger" use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+										<xsd:element name="List_of_Output">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Output" minOccurs="0" maxOccurs="unbounded">
+														<xsd:complexType>
+															<xsd:sequence>
+																<xsd:element name="File_Type" type="xsd:string"/>
+																<xsd:element name="Filename" type="xsd:string"/>
+															</xsd:sequence>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+												<xsd:attribute name="count" type="xsd:nonNegativeInteger" use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="count" type="xsd:positiveInteger" use="required"/>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Processor_Conf">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Filename" type="xsd:string"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

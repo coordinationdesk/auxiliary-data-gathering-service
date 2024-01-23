@@ -1,0 +1,176 @@
+<?xml version="1.0" standalone="yes"?>
+<Sentinel5PL0ProductDescription>
+	<L0ProductDescriptor>
+    	<SatelliteName>SENTINEL5P</SatelliteName>
+    	<SourcePacketHeaderSize>6</SourcePacketHeaderSize>
+    	<AnnotationSize>0</AnnotationSize>
+		<RefDocName>S5P.ICD.ASU.SY.00007</RefDocName>
+		<AcquisitionReportFileType>ACQ_REP___</AcquisitionReportFileType>
+		<AnnotationIsInUTC>true</AnnotationIsInUTC>
+    	<NumberOfProducts>7</NumberOfProducts>
+		<Product1>
+			<Id>ENG_DATA__</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>10</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>329</APID>
+			</List_of_APID>
+			<!--Granule configuration parameters : Length 0 means no granularization -->
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>42</VCID>
+			<SensorName></SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Engineering Data</Description>        
+    	</Product1>
+		<Product2>
+			<Id>ANC_DATA__</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>10</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>334</APID>
+			</List_of_APID>
+			<!--Granule configuration parameters : Length 0 means no granularization -->
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>42</VCID>
+			<SensorName></SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Ancillary Data</Description>        
+    	</Product2>
+		<Product3>
+			<Id>HK_REP____</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>10</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>333</APID>
+			</List_of_APID>
+			<!--Granule configuration parameters : Length 0 means no granularization -->
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>42</VCID>
+			<SensorName></SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>All HK Reports</Description><!--TM(3,25)-->
+    	</Product3>
+		<Product4>
+			<Id>HK_DATA___</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>10</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>330</APID>
+			</List_of_APID>
+			<!--Granule configuration parameters : Length 0 means no granularization -->
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>42</VCID>
+			<SensorName></SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>All TM except HK Reports</Description>
+    	</Product4>
+		<Product5>
+			<Id>TC_DATA___</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>10</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>332</APID>
+			</List_of_APID>
+			<!--Granule configuration parameters : Length 0 means no granularization -->
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>42</VCID>
+			<SensorName></SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Telecommands to accept</Description>
+    	</Product5>
+		<Product6>
+			<Id>TROPO_OBS_</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>10</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="8">
+    				<APID>321</APID><!-- UV Ab band -->
+    				<APID>322</APID><!-- UV Cd band -->
+    				<APID>323</APID><!-- UVIS Ab band -->
+    				<APID>324</APID><!-- UVIS Cd band -->
+    				<APID>325</APID><!-- NIR Ab band -->
+    				<APID>326</APID><!-- NIR Cd band -->
+    				<APID>327</APID><!-- SWIR Ab band -->
+    				<APID>328</APID><!-- SWIT Cd band -->
+			</List_of_APID>
+			<!--Granule configuration parameters : Length 0 means no granularization -->
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>42</VCID>
+			<SensorName></SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Tropomi science observational data</Description>
+    	</Product6>
+		<!-- For internal use only-->
+		<Product7>
+			<Id>IDLE_PACK_</Id>
+			<CCSDSVersion>4</CCSDSVersion>
+			<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>1086</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+        		<List_of_APID count="1">
+					<APID>2047</APID>
+				</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>63</VCID>
+			<SensorName>IDLE</SensorName>
+			<SensorMode>IDLE</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">.03300656830709311000</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Idle Frame</Description>        
+    	</Product7>
+	</L0ProductDescriptor>
+</Sentinel5PL0ProductDescription>

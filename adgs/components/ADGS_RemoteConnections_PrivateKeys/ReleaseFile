@@ -1,0 +1,6 @@
+1.0.0
+First release
+It includes the Default RSA key in a chiphered version (guess the passphrase)
+And also the chiphered version of the dbConnection blowfish secret (used by libDbClient 6+)
+http://wiki.acs/index.php/Encrypted_Modules_Passphrases
+-------------------------------------------------------------------------------

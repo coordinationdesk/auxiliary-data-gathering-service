@@ -1,0 +1,16 @@
+<Root>
+	<PreInventory>
+		<ConfigEOFPreInventory>
+			<HdrSchemaAsTopLevel>true</HdrSchemaAsTopLevel>
+			<UniqueIdMustOccurInParameterFile>false</UniqueIdMustOccurInParameterFile>
+			<TimeLUT>
+				<LUTElement>
+					<OriginalDate>UTC=9999-99-99T99:99:99</OriginalDate>
+					<ConvertedDate>UTC=9999-12-31T23:59:59</ConvertedDate>
+				</LUTElement>
+			</TimeLUT>
+		</ConfigEOFPreInventory>
+		<PluginsRegistrationSettings>
+		</PluginsRegistrationSettings>
+	</PreInventory>
+</Root>

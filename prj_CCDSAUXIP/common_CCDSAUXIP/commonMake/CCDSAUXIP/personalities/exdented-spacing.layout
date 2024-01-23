@@ -1,0 +1,315 @@
+*
+* Statements inside a compound block are indented by this category
+$cmpd-member
+stmt-seq -> /n/i0 label-stmt, /n/i0 switch-label-stmt, /n/i1 stmt
+
+*
+* Statements inside a class body are indented by this category 
+$class-member
+class-member-node -> /n/i0 memb-access-class, /n/i1 tmpl-decl, /n/i1 memb-func-defn, 
+                      /n/i1 decl-stmt, /n/i1 using-decl-stmt, /n/i1 opaque-enum-spec
+
+*
+* Statements inside an enum body are indented by this category  
+$enum-member
+enum-list = /n/i1 enum-def-list [ /s0 ',' | ]
+
+*
+* block declarations (handles constructs with braces in global scope)
+* spacing for these is defined inside each referenced rule
+$block-definition
+  class-definition -> class-def, anonymous-class-def
+  func-definition -> func-defn, delayed-func-defn, defdel-func-defn
+  enum-definition -> enum-spec, opaque-enum-spec
+
+$misc
+  expr-list = expr-list /s0 ',' /s1 expr
+  expr-list -> expr 
+
+  template-arg-list = template-arg-list /s0 ',' /s1 template-arg 
+  template-arg-list -> template-arg
+
+  base-spec-list = base-spec-list /s0 ',' /s1 base-spec 
+  base-spec-list -> base-spec
+
+  catch-list = catch-list /n/i0 catch-stmt
+  catch-list -> catch-stmt
+
+  tmpl-param-list = tmpl-param-list /s0 ',' /s1 tmpl-param
+  tmpl-param-list -> tmpl-param
+  tmpl-param -> tmpl-tmpl-param, type-param
+
+  enum-def-list = [ enum-def-list /s0 ',' /n/i0 def-enum | def-enum ]
+  def-enum = [ 'identifier' (/s1|/s0) '=' (/s1|/s0) expr | 'identifier' ]
+
+  aggr-init-clause = aggr-init-list [ /s0 ',' | ] 
+  aggr-init-list = aggr-init-list ',' expr
+  aggr-init-list -> expr
+
+$class
+  class-def = 'class|struct|etc' /s1 name [ /s1 base-clause | ] 
+                /n/i0 '{' [ dlay-stmt-block /n/i0 '}' | (/s0|/n/i0) '}' ] 
+  anonymous-class-def = 'class' [ /s1 base-clause | ] 
+                /n/i0 '{' [ dlay-stmt-block /n/i0 '}' | (/s0|/n/i0) '}' ] 
+
+* 
+* Rules in class-misc related to classes too, but we don't want to try them 
+* unless we explicitly list them
+$class-misc 
+  memb-access-class = 'public | protected | private' /s0 ':'
+
+  memb-func-defn = func-definition [ (/s0|/s1) ';' | ]
+  memb-func-defn -> func-definition
+
+  * func-defn is a function with a definition, not a function declaration (that's a decl-stmt!)
+  delayed-func-defn = declaration (/n/i0|/n/i1|/s1) dlay-fn-body-block
+  defdel-func-defn = declaration (/s1|/s0) '=' (/s1|/s0) 'default' (/s0|/s1) ';'
+  func-defn = declaration /n/i0 '{' [ dlay-fn-body-block | ] /n/i0 '}'
+  func-defn -> asm-func
+
+  base-clause = ':' /s1 base-spec-list
+  base-spec = [ 'access-spec|virtual' /s1 'virtual' /s1 name 
+                | 'access-spec' /s1 name 
+                | name ] 
+
+  template-arg -> abstract-declaration, object-name, expr 
+
+$stmt
+  break-stmt = 'break' ( /s0 | /s1 ) ';'
+  cmpd-stmt = '{' [ stmt-seq /n/i0 '}' | (/n/i0|/s0) '}' ]
+  continue-stmt = 'continue' ( /s0 | /s1 ) ';'
+  decl-stmt = [ decl (/s0|/s1) ';' | ';' ]
+  opaque-enum-spec = enum-key /s1 name [ (/s1|/s0) enum-base | ] (/s0|/s1) ';'
+  expr-stmt = [ expr (/s0|/s1) ';' | ';' ]
+  goto-stmt = 'goto' [ /s1 name | /s1 'identifier' ] (/s0|/s1) ';'
+  return-stmt = 'return' [ /s1 expr | ] (/s0|/s1) ';'
+  try-catch-stmt = 'try' /n/i0 cmpd-stmt /n/i0 catch-list
+
+  switch-stmt = 'switch' (/s1|/s0) '(' (/s0|/s1) expr (/s0|/s1) ')' 
+            [ /n/i0 cmpd-stmt | /n/i1 stmt ]
+
+  switch-label-stmt = switch-label (/s0|/s1) ':'  
+            [ (/n/i0|/n/i1) cmpd-stmt | /n/i0 label-stmt | /n/i0 switch-label-stmt | /n/i1 stmt ]
+
+  label-stmt = 'label' (/s0|/s1) ':' 
+            [ (/n/i0|/n/i1) cmpd-stmt | /n/i0 label-stmt | /n/i0 switch-label-stmt | /n/i1 stmt ]
+
+  do-stmt = 'do' 
+            [ /n/i0 cmpd-stmt (/n/i0|/s1) 'while' | /n/i1 stmt /n/i0 'while' ] 
+            (/s1|/s0) '(' (/s0|/s1) expr (/s0|/s1) ')' (/s0|/s1) ';' 
+
+  for-stmt = 'for' (/s1|/s0) '(' 
+            [ /s0 expr-stmt  | /s0 decl-stmt ]
+            [ /s1 expr (/s0|/s1) ';' | (/s0|/s1) ';' ]
+            [ /s1 expr /s0 ')' | /s0 ')' ]
+            [ /n/i0 cmpd-stmt | /n/i1 stmt ]
+
+  if-stmt = 'if' /s1 '(' 
+              [ (/s0|/s1) expr | (/s0|/s1) decl (/s1|/s0) '=' (/s1|/s0) expr ] 
+            (/s0|/s1) ')' 
+            [ /n/i0 cmpd-stmt | /n/i1 stmt ] 
+            [ /n/i0 'else' /s1 if-stmt 
+              | /n/i0 'else' /n/i0 cmpd-stmt 
+              | /n/i0 'else' /n/i1 stmt 
+              | ] 
+
+  while-stmt = 'while' /s1 '(' 
+            [ (/s0|/s1) expr | (/s0|/s1) decl (/s1|/s0) '=' (/s1|/s0) expr ] 
+            (/s0|/s1) ')' 
+            [ /n/i0 cmpd-stmt | /n/i1 stmt ]
+
+  using-decl-stmt = 'using' /s1 name (/s0|/s1) ';'
+  using-dirc-stmt = 'using' /s1 'namespace' /s1 name (/s0|/s1) ';'
+
+  asm-stmt = '@'
+
+* 
+* Rules in stmt-misc are related to statement too, but we don't want to try them 
+* unless we explicitly reference them
+$stmt-misc
+  asm-func = '@'
+  catch-stmt = 'catch' (/s1|/s0) '(' [ ( /s0 | /s1 ) decl | /s0 '...' ] ( /s0 | /s1 ) ')' /n/i0 cmpd-stmt
+  switch-label = [ 'case' /s1 expr | 'default' ]
+  block = '@'
+  dlay-stmt-block -> block
+  dlay-expr-block -> block
+  dlay-fn-body-block -> block
+
+*
+* all the expressions go here
+$expr
+  assign-expr = expr (/s1|/s0) '=' (/s1|/s0) expr
+  arith-expr = expr (/s1|/s0) 'arith-oper' (/s1|/s0) expr
+  binary-oper-expr = expr /s1 'binary-oper' /s1 expr
+  cast-expr = 'cast-type' (/s0|/s1) '<' /s0 abstract-declaration /s0 '>' '(' (/s0|/s1) expr (/s0|/s1) ')'
+  c-cast-expr = '(' (/s0|/s1) abstract-declaration (/s0|/s1) ')' [  /s0 paren-expr | (/s1|/s0) expr ]
+  comma-expr = expr /s0 ',' /s1 expr
+  unary-expr = 'arith-oper'  [ (/s0|/s1) expr | (/s0|/s1) name ] 
+  this-expr = '@'
+  sizeof-expr = [ 'sizeof' /s1 expr | 'sizeof' (/s1|/s0) '(' (/s0|/s1) abstract-declaration (/s0|/s1) ')' ] 
+  throw-expr = [ 'throw' /s1 expr | 'throw' ]
+  typeid-expr = 'typeid' (/s1|/s0) '(' [ (/s0|/s1) expr | /s0 abstract-declaration ] (/s0|/s1) ')'
+  id-expr = name
+  literal-expr = '@'
+  paren-expr = '(' (/s0|/s1) expr (/s0|/s1) ')'
+  postinc-expr = expr (/s1|/s0) 'dec-inc-oper' 
+  ptr-memb-expr = expr /s0 '.* .->' /s0 expr
+  array-expr = expr (/s0|/s1) '[' (/s0|/s1) expr (/s0|/s1) ']'
+  fncall-expr = expr (/s0|/s1) '(' [ (/s0|/s1) expr-list | ] (/s0|/s1) ')'
+  rel-expr = expr (/s1|/s0) 'rel-oper' (/s1|/s0) expr
+  shift-expr = expr (/s1|/s0) '<< | >>' (/s1|/s0) expr
+  ternary-expr = expr (/s0|/s1) '?' (/s0|/s1) expr (/s0|/s1) ':' (/s0|/s1) expr
+  truth-expr = expr /s1 '&&||&|^' /s1 expr
+
+  new-expr = [ '::' /s0 'new' | 'new' ] 
+           [ /s1 new-placement-expr | ] 
+           [  abstract-declaration | (/s1|/s0) '(' (/s0|/s1) abstract-declaration (/s0|/s1) ')' ]
+           [ (/s0|/s1) new-init-expr | ]
+
+  delete-expr = [ '::' /s0 'delete' | 'delete' ] 
+              [ /s1 '[' /s0 ']' /s0 expr 
+                | /s1 '[' (/s0|/s1) expr (/s0|/s1) ']' (/s0|/s1) expr 
+                | /s1 expr ]
+
+  simple-init-expr = decl-spec-seq (/s0|/s1) '(' 
+            [ (/s0|/s1) expr-list | ] 
+            (/s0|/s1) ')' 
+
+  aggr-init = '{' [ (/s1|/s0) aggr-init-clause | ] /s1 '}'
+
+*
+* rules closely related to expr but dont belong in expr category
+$expr-misc
+  new-init-expr = '(' [ (/s0|/s1) expr-list | ] (/s0|/s1) ')'
+  new-placement-expr = '(' [ (/s0|/s1) expr-list | ] (/s0|/s1) ')'
+
+*
+* declarations
+$decl
+  declaration-seq = declaration-seq /s0 ',' /s1 declaration
+  declaration-seq -> declaration
+
+  declaration = decl-spec-seq [ /s0 ptr-oper-declarator | /s1 declarator ]
+  declaration -> assgn-init-decl
+  declaration -> aggr-init-decl
+  declaration -> fn-init-decl
+  declaration -> declarator
+
+  abstract-declaration = [ decl-spec-seq (/s0|/s1) abstract-declarator | decl-spec-seq ]
+
+  assgn-init-decl = decl (/s1|/s0) '=' (/s1|/s0) expr 
+  fn-init-decl = decl (/s0|/s1) '(' (/s0|/s1) expr-list (/s0|/s1) ')'
+  aggr-init-decl = decl (/s1|/s0) '=' (/s1|/s0) '{' [ (/s1|/s0) aggr-init-clause | ] (/s1|/s0) '}'
+  tmpl-decl = 'template' (/s1|/s0) '<' [ /s0 tmpl-param-list | ] (/s1|/s0) '>' 
+               [ (/s1|/n/i0) decl-stmt | (/s1|/n/i0) memb-func-defn | (/s1|/n/i0) class ]
+
+  decl-spec-seq = decl-spec-seq /s1 decl-spec
+  decl-spec-seq -> decl-spec
+
+*
+* rules closely related to decl but dont belong in decl category
+$decl-misc
+  decl-spec = 'decl-spec'
+  decl-spec -> enum-spec, friend-spec, elab-type-spec, class-def, anonymous-class-def, user-type-name
+
+  cv-spec-seq = cv-spec-seq /s1 cv-spec
+  cv-spec-seq -> cv-spec
+  cv-spec = '@'
+  friend-spec = '@'
+  enum-spec = enum-key [ /s1 name | ] [ (/s1|/s0) enum-base | ] /n/i0 '{' [ dlay-stmt-block /n/i0 '}' | (/n/i0|/s0) '}' ]  
+  enum-key = 'enum' [ /s1 'class|struct' | ]
+  enum-base = ':' (/s1|/s0) abstract-declaration
+  elab-type-spec = 'struct | enum | whatever' /s1 name 
+
+  type-param = [ 'type-key' | named-type | named-type (/s1|/s0) '=' (/s1|/s0) abstract-declaration ]
+  type-param -> param-decl
+  tmpl-tmpl-param = 'template' (/s1|/s0) '<' [ (/s0|/s1) tmpl-param-list | ] (/s0|/s1) '>' 
+                    (/s1|/s0) 'class' [ /s1 'paramname' | ] 
+                    [ (/s1|/s0) '=' (/s1|/s0) object-name | ]
+  object-name -> full-name, template-name
+
+  throw-spec = 'throw' (/s1|/s0) '(' 
+              [ (/s1|/s0) abstract-decl-id-list | (/s0|/s1) '...' | ] 
+              (/s1|/s0) ')'
+  abstract-decl-id-list = abstract-decl-id-list /s0 ',' /s1 abstract-declaration
+  abstract-decl-id-list -> abstract-declaration 
+
+  param-decl-list = param-decl-list /s0 ',' /s1 param-decl 
+  param-decl-list -> param-decl
+
+  param-decl = param-decl-nodes
+              [   (/s1|/s0) '=' (/s1|/s0) expr
+                | (/s1|/s0) '=' (/s1|/s0) dlay-expr-block
+                | ]
+  param-decl-nodes -> declaration, abstract-declaration
+
+*
+* Declarators
+$declarator
+  paren-declarator = '(' (/s0|/s1) declarator (/s0|/s1) ')'
+  ptr-oper-declarator = ptr-oper [ /s0 ptr-oper-declarator | declarator ] 
+  function-decl = function-decl-nodes [ (/s0|/s1) '=' (/s0|/s1) '0' | ]
+  
+  fn-style-declarator = declarator (/s0|/s1) '(' 
+            [ (/s0|/s1) param-decl-list | (/s0|/s1) expr-list | ]  
+            [ /s0 ',' /s1 '...' | /s1 '...' | ] 
+            (/s0|/s1) ')' 
+            [ /s1 cv-spec-seq | ] [ /s1 throw-spec | ]
+
+  array-declarator = declarator (/s0|/s1) '[' [ (/s0|/s1) expr | ] (/s0|/s1) ']'
+
+  * this is correctly not defined as an equivalent - name is always a child
+  * of declarator-id.  
+  declarator-id = name
+
+$declarator-misc
+  function-decl-nodes -> ptr-oper-declarator, fn-style-declarator
+  ptr-oper = [ '*' cv-spec-seq
+                | '*'
+                | user-type-name '*' cv-spec-seq 
+                | user-type-name '*' ]
+
+*
+* Abstract declarator
+$abstract-declarator
+  ptr-oper-abstract-declarator = ptr-oper [ abstract-declarator | ]
+  paren-abstract-declarator = '(' (/s0|/s1) abstract-declarator (/s0|/s1) ')'
+  fn-style-abstract-declarator = [ abstract-declarator | ] 
+        (/s0|/s1) '(' 
+          [ (/s0|/s1) param-decl-list | (/s0|/s1) expr-list | ] 
+          [ (/s0|/s1) ',' /s1 '...' | /s1 '...' | ] 
+        (/s0|/s1) ')' 
+        [ /s1 cv-spec-seq | ]  [ /s1 throw-spec | ]
+  array-abstract-declarator = [ abstract-declarator | ] (/s0|/s1) '[' [ (/s0|/s1) expr | ] (/s0|/s1) ']'
+
+*
+* names and qualified names
+$name
+  named-type = 'type-key' /s1 'ident'
+  aligned-name = [ name /s1 ':' /s1 expr | ':' /s1 expr ]
+  dtor-name = '~' (/s0|/s1) 'identifier'
+  qualified-name = [ name /s0 '::' | '::' ]
+  member-name = [ member-expr | name ] name
+  member-dtor-name = [ member-name | member-dtor-name | template-name ] '::' dtor-name
+  member-expr = expr [ /s0 '.' | /s0 '->' ] 
+  template-name = name (/s0|/s1) '<' [ (/s0|/s1) template-arg-list | ] (/s0|/s1) '>' 
+  member-template-name = member-expr [ 'template' name | name ]  
+  object-template-name -> object-template-name1, object-template-name2
+  memb-qual-tmpl-name = name idr
+  idr = '@'
+  full-name = [ qualified-name /s0 name | unqualified-name ]
+  user-type-name = user-type-name-nodes [ /s0 '::' | ]
+  conv-operator = 'operator' /s1 abstract-declaration
+  overload-operator = 'operator' 
+                     [     (/s0|/s1) '[' /s0 ']' 
+                        |  /s1 'new-or-delete' /s1 '[' /s0 ']' 
+                        |  (/s0|/s1) 'simple-operator' 
+                     ]
+
+*
+* rules closely related to name but dont belong in expr category
+$name-misc
+  user-type-name-nodes -> template-name, full-name 
+  unqualified-name -> idr, overload-operator, conv-operator, dtor-name
+  object-template-name1 = [ qualified-name /s0  unqualified-name | unqualified-name ]  
+  object-template-name2 = qualified-name /s0 'template' /s1 unqualified-name

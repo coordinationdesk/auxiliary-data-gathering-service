@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StationConf>
+	<Station>
+		<Name>PDMC</Name>
+		<Id>104</Id>
+		<Country>Italy</Country>
+		<CentreID>PDMC</CentreID>
+		<Latitude unit='"deg"'>40.6330</Latitude>
+		<Longitude unit='"deg"'>16.7000</Longitude>
+		<Altitude unit='"m"'>541.0</Altitude>
+		<HorizonElevation unit='"deg"'>5.0</HorizonElevation>
+		<AgencySiteIdentifier>PDMC</AgencySiteIdentifier>
+		<AgencyOrganizationId>ESA</AgencyOrganizationId>
+	</Station>
+</StationConf>

@@ -1,0 +1,129 @@
+7.0.3
+[LTA-542] isOnCache and putOnCache PRIVINFO logs are now DEBUG messages
+------------------------------
+7.0.2
+[LTA-498]
+Added record insertion into t_srv_deleted_inventory when managing missing actions associated to erase operations.
+Using the new StorageManager erase interface that takes in input filename and fileversion instead of LTAInventoryObjectOperatorIF.
+------------------------------
+7.0.1
+[LTA-497]
+Introduced support for missing actions in dbLTAUploadInventoryFile.
+Introduced support for missing actions in dbLTAEraseInventoryFile.
+Removed deprecated runException warnings
+------------------------------
+7.0.0
+Major release due to jira CPS-105
+dbLTADownloadInventoryFile: If file is UNKNOWN to a given SM, link with archive handler (t_srv_inventorysm record) is either removed
+or not depending on the value returned from shallRemoveUnknownLinks method of the current SM IF, if implemented (base class default is true).
+deleteUnknownInventorysm method executed punctually on every UNKNOWN inventory.
+invalidateInventory: DownloadInventoryObject.CanInvalidateFile flag default set to true (it was false) and message for SPLUNK emitted in case of invalidation.
+------------------------------
+6.0.2
+Fixed log messages in dbLTAIsOnCacheInventoryFile and dbLTAPutOnCacheInventoryFile
+------------------------------
+6.0.1
+diagnostic message improved for classes dbLTAIsOnCacheInventoryFile and dbLTAPutOnCacheInventoryFile
+------------------------------
+6.0.0
+LTA-432 implementation
+new classes: 
+dbLTAReleaseCacheInventoryFile (implements dbReleaseCacheFile)
+dbLTAIsOnCacheInventoryFile (implements dbIsOnCacheFile)
+dbLTAPutOnCacheInventoryFile (implements dbPutOnCacheFile)
+the factory dbLTAFileActionFactory has new methods (reimplemented from dbFileActionFactory)
+file manifest update
+------------------------------
+5.0.1
+LTA-409: log messages improved in dbLTADownloadInventoryFile in case of exceptions raised during interactions with the storage managers. Unit tests updated accordingly.
+Unit test TestdbLTAGiveUpInventoryFile added.
+------------------------------
+5.0.0
+dbLTAGiveUpInventoryFile class added and returned from 
+dbLTAFileActionFactory::newGiveUpAction(...)
+all the classes derived from dbFileAction (dbGiveUp..., dbDownload... etc) will set the client name to the SMInterface 
+they use getting it from dbFileActionClass 
+Uses libDbData 11.0.1 and subsequent
+------------------------------
+4.2.3
+Patch release due to jira LTA-327
+dbLTAUploadInventoryFile: MC message set in #ifndef block not to issue in the framework of LTA project.
+------------------------------
+4.2.2
+MP: no more db related deprecated methods/classes
+------------------------------
+4.2.1
+Removed a comma from the query name in "FAUPLSEL t_storagemanager vs prio, cost"
+------------------------------
+4.2.0
+[LTA-168]
+In case of historical product replace the last char of the group name with "H"
+Historical mode is detected via configuration singleton with key SRVInventory.historical set to true
+------------------------------
+4.1.0
+LTA-77: Handling of exceptions in case of offline or near-online files introduced. Tests added accordingly.
+------------------------------
+4.0.8
+[ECS-46]
+Introduced management of remainingSyncSM counter to allow users to know whether or not there are still SM holding the product that should have been removed.
+------------------------------
+4.0.7
+Patch version due to jira ECS-41
+LTAInventoryObjectOperatorIF.h installed for test purposes.
+------------------------------
+4.0.6
+Patch version due to jira S2PDGS-286
+Amazon libs removed by test Makefile.
+------------------------------
+4.0.5
+Patch version due to jira S2PDGS-286
+Amazon lib added in test Makefile if EXPRIVIA_ISM_USE_AWS_S3 compile time flag set.
+------------------------------
+4.0.4
+[S2PDGS-256] Cancelling update of evictiondate field introduced in previous tag
+------------------------------
+4.0.3
+[S2PDGS-256] Introduced update of eviction_date field
+------------------------------
+4.0.2
+Test Makefile fixed to include in custom dependencies the library under test
+------------------------------
+4.0.1
+Procedure call fixed and test aligned to srv tables
+------------------------------
+4.0.0
+t_lta_inventorysm replaced by t_srv_inventorysm
+------------------------------
+3.2.0
+Statistics added
+ECS-17: _invokeSpOnInventorySuccessFlag set to true as default. Tests modified accordingly.
+------------------------------
+3.1.0
+Minor version due to jira ECS-17
+dbLTAUploadInventoryFile: 1) loadConf bug fixed. 2) Check on transaction file directory. 3) Not proper exception launched in case of error in transaction: fixed.
+------------------------------
+3.0.0
+Major version due to jira ECS-17
+Transaction file directory got from configuration and not from public methods. Tests fixed.
+------------------------------
+2.0.0
+Aligned to libDbData 7.0.0 and FileType is got from libPdsDb
+------------------------------
+1.2.0
+Minor issue due to jira ECS-17 
+dbLTAUploadInventoryFile: if ltainventory validity flag updated to true, p_successful_inventory sp called in trasaction if proper class attribute is set.
+Loop to check uploading file rationalized. Synchronous attribute removed from LTASMTmp class.
+------------------------------
+1.1.0
+ECS-16: Introduced new flag to disable validity flag update from the upload thread.
+ECS-17:  LTAInventoryObject no more reference in dbLTAUploadInventoryFile: just passed as copy in CTOR. 
+Bug in test TestLTAFileActionUtilities::getItemFromSelect: fixed.
+------------------------------
+1.0.1
+ECS-17: test improved.
+------------------------------
+1.0.0
+ECS-17: first stable version.
+------------------------------
+0.0.1
+First issue

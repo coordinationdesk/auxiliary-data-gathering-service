@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Library>
+    <!-- Data Consumer configuration-->
+    <DataConsumer>
+        <!-- SFTP port-->
+        <sftpPort>22</sftpPort>
+        <!-- FTP port-->
+        <ftpPort>21</ftpPort>
+        <!-- Error files: these files must not be transferred-->
+        <errorLog>error.log</errorLog>
+        <!-- Source files must be removed?-->
+        <removeSources>false</removeSources>
+        <!-- Target files must be overwritten?-->
+        <overwriteFiles>true</overwriteFiles>
+        <!-- The maximum number of priorty. the priorities belongs to the values: [0, maxPriority)-->
+        <maxPriority>657000</maxPriority>
+        <!-- The maximum number of parallels consumers-->
+        <numberOfParalledConsumers>10</numberOfParalledConsumers>
+        <!-- The maximum number of retries of errored jobs-->
+        <maxNumberOfRetries>3</maxNumberOfRetries>
+        <!-- Elapsed time to retry an errored job-->
+        <elapsedTimeToRetry unit = "sec">5</elapsedTimeToRetry>
+        <!-- Mail warning settings-->
+        <MailWarning>
+            <!-- Mail warning server-->
+            <server>mail.acsys.it</server>
+            <!-- Mail warning port-->
+            <port></port>
+            <!-- Mail warning login-->
+            <login></login>
+            <!-- Mail warning password-->
+            <password></password>
+            <!-- Mail warning sender mail-->
+            <mailSender>noreply@acsys.it</mailSender>
+            <!-- Force the target mail warning address-->
+            <ForceMailWarningAddress>michele.mazzei@acsys.it</ForceMailWarningAddress>
+            <!-- Set the target mail warning address-->
+            <SetForceMailWarningAddress>1</SetForceMailWarningAddress>
+            <!-- Mail warning style-->
+            <MailWarningStyle>XML_SLIP</MailWarningStyle> 
+            <!-- Mail warning XSL-->
+            <MailWarningXSL>BOH_XSL</MailWarningXSL> 
+            <!-- Number of retries.-->
+            <maxNumberOfRetries>3</maxNumberOfRetries>
+            <!-- Elapsed time to retry an errored send mail.-->
+            <elapsedTimeToRetry unit = "sec">5</elapsedTimeToRetry>
+        </MailWarning>
+        <!-- Time to delay during ftp transfers.-->
+        <delayFTPTransfers unit = "milliseconds">10</delayFTPTransfers>
+        <!-- States wether the product shoult be removed before or after transering the new one. true is defaulted-->
+        <RemoveFinalTargetBeforeTransfer>true</RemoveFinalTargetBeforeTransfer>    
+    </DataConsumer>
+</Library>
+

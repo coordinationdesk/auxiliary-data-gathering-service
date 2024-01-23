@@ -1,0 +1,17 @@
+<Task_Table xmlns:a="http://www.acsys.it/schemas/IPF" xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xsi:schemaLocation="http://www.acsys.it/schemas/IPF TaskTable.xsd">
+	<Processor_Name>DefaultDistribFormat</Processor_Name>
+	<Version>1.0</Version>
+	<Test>No</Test>
+	<Min_Disk_Space units="MB">1024</Min_Disk_Space>
+	<Max_Time units="sec">0</Max_Time><!--no time limit for execution-->
+	<Private_Config>
+		<List_of_Cfg_Files count="0">
+		</List_of_Cfg_Files>
+		<Default>0</Default>
+	</Private_Config>
+	<List_of_Config_Spaces count="0">
+	</List_of_Config_Spaces>
+	<List_of_Pools count="0">
+	</List_of_Pools>
+</Task_Table>
+

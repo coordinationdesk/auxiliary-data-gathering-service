@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+    xmlns:tns="http://www.acsys.it/pds/ordering"
+    xmlns:ns1="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.acsys.it/pds/ordering">
+    <types>
+        <schema attributeFormDefault="qualified" elementFormDefault="qualified"
+            targetNamespace="http://schemas.xmlsoap.org/wsdl/"
+            xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/> 
+            <import namespace="http://www.acsys.it/pds/ordering" schemaLocation="./pdsCirculation.xsd"/>
+        </schema>
+    </types>
+
+    <!-- message definitions -->
+    <message name="CirculateDynamicProductRequest">
+        <part name="CirculateDynamicRequestParameter" element="tns:CirculateDynamicRequest"/>
+    </message>
+    <message name="CirculateDynamicProductResponse">
+        <part name="CirculateDynamicResponseParameter" element="tns:CirculateDynamicResponse"/>
+    </message>
+    <message name="CirculateMultiDynamicProductRequest">
+        <part name="CirculateMultiDynamicRequestParameter" element="tns:CirculateMultiDynamicRequest"/>
+    </message>
+    <message name="CirculateMultiDynamicProductResponse">
+        <part name="CirculateMultiDynamicResponseParameter" element="tns:CirculateMultiDynamicResponse"/>
+    </message>
+    <!-- message definitions -->
+    <message name="CirculateExplicitProductRequest">
+        <part name="CirculateExplicitRequestParameter" element="tns:CirculateExplicitRequest"/>
+    </message>
+    <message name="CirculateExplicitProductResponse">
+        <part name="CirculateExplicitResponseParameter" element="tns:CirculateExplicitResponse"/>
+    </message>
+    <message name="IncreaseCirculationProductPriorityRequest">
+        <part name="IncreaseCirculationPriorityRequestParameter" element="tns:IncreaseCirculationPriorityRequest"/>
+    </message>
+    <message name="IncreaseCirculationProductPriorityResponse">
+        <part name="IncreaseCirculationPriorityResponseParameter" element="tns:IncreaseCirculationPriorityResponse"/>
+    </message>
+    <message name="CirculationRecordOccurrenceRequest">
+        <part name="CirculationOccurrenceRequestParameter" element="tns:CirculationOccurrenceRequest"/>
+    </message>
+    <message name="CirculationRecordOccurrenceResponse">
+        <part name="CirculationOccurrenceResponseParameter" element="tns:CirculationOccurrenceResponse"/>
+    </message>
+
+
+    <message name="GetStatusRequest">
+        <part name="GetStatusRequestParameter" element="tns:StatusRequest"/>
+    </message>
+    <message name="GetStatusResponse">
+        <part name="GetStatusResponseParameter" element="tns:StatusResponse"/>
+    </message>
+
+    <message name="GetMultipleStatusRequest">
+        <part name="GetMultipleStatusRequestParameter" element="tns:MultipleStatusRequest"/>
+    </message>
+    <message name="GetMultipleStatusResponse">
+        <part name="GetMultipleStatusResponseParameter" element="tns:MultipleStatusResponse"/>
+    </message>
+
+    <message name="GetMultipleDetailedStatusRequest">
+        <part name="GetMultipleDetailedStatusRequestParameter" element="tns:MultipleDetailedStatusRequest"/>
+    </message>
+    <message name="GetMultipleDetailedStatusResponse">
+        <part name="GetMultipleDetailedStatusResponseParameter" element="tns:MultipleDetailedStatusResponse"/>
+    </message>
+   
+    <message name="ResetCirculationRetryRequest">
+        <part name="ResetCirculationRetryRequestParameter" element="tns:ResetRetryRequest"/>
+    </message>
+    <message name="ResetCirculationRetryResponse">
+        <part name="ResetCirculationRetryResponseParameter" element="tns:ResetRetryResponse"/>
+    </message>
+
+   <message name="ResetStatusRequest">
+        <part name="ResetStatusRequestParameter" element="tns:ResetStatusRequest"/>
+    </message>
+
+   <message name="ResetStatusResponse">
+        <part name="ResetStatusResponseParameter" element="tns:ResetStatusResponse"/>
+    </message>
+
+   <message name="ResetMultipleStatusRequest">
+        <part name="ResetMultipleStatusRequestParameter" element="tns:ResetMultipleStatusRequest"/>
+    </message>
+
+   <message name="ResetMultipleStatusResponse">
+        <part name="ResetMultipleStatusResponseParameter" element="tns:ResetMultipleStatusResponse"/>
+    </message>
+    
+   <message name="ReInsertCirculationRequest">
+        <part name="ReInsertCirculationRequestParameter" element="tns:ReInsertRequest"/>
+    </message>
+
+   <message name="ReInsertCirculationResponse">
+        <part name="ReInsertCirculationResponseParameter" element="tns:ReInsertResponse"/>
+    </message>
+
+
+   
+    <!-- portTypes (operations) definitions -->
+    <portType name="SOAPport">
+        <operation name="CirculateDynamic">
+            <input message="tns:CirculateDynamicProductRequest"/>
+            <output message="tns:CirculateDynamicProductResponse"/>
+        </operation>
+        <operation name="CirculateMultiDynamic">
+            <input message="tns:CirculateMultiDynamicProductRequest"/>
+            <output message="tns:CirculateMultiDynamicProductResponse"/>
+        </operation>
+        <operation name="CirculateExplicit">
+            <input message="tns:CirculateExplicitProductRequest"/>
+            <output message="tns:CirculateExplicitProductResponse"/>
+        </operation>
+        <operation name="GetStatus">
+            <input message="tns:GetStatusRequest"/>
+            <output message="tns:GetStatusResponse"/>
+        </operation>
+		<operation name="IncreaseCirculationPriority">
+            <input message="tns:IncreaseCirculationProductPriorityRequest"/>
+            <output message="tns:IncreaseCirculationProductPriorityResponse"/>
+        </operation>  
+		<operation name="CirculationRecordOccurrence">
+            <input message="tns:CirculationRecordOccurrenceRequest"/>
+            <output message="tns:CirculationRecordOccurrenceResponse"/>
+        </operation>  
+        <operation name="GetMultipleStatus">
+            <input message="tns:GetMultipleStatusRequest"/>
+            <output message="tns:GetMultipleStatusResponse"/>
+        </operation>
+        <operation name="GetMultipleDetailedStatus">
+            <input message="tns:GetMultipleDetailedStatusRequest"/>
+            <output message="tns:GetMultipleDetailedStatusResponse"/>
+        </operation>
+		<operation name="ResetCirculationRetry">
+            <input message="tns:ResetCirculationRetryRequest"/>
+            <output message="tns:ResetCirculationRetryResponse"/>
+        </operation>
+		<operation name="ResetCirculationStatus">
+            <input message="tns:ResetStatusRequest"/>
+            <output message="tns:ResetStatusResponse"/>
+        </operation>
+
+		<operation name="ResetMultipleCirculationStatus">
+            <input message="tns:ResetMultipleStatusRequest"/>
+            <output message="tns:ResetMultipleStatusResponse"/>
+        </operation>
+
+		<operation name="ReInsertCirculation">
+            <input message="tns:ReInsertCirculationRequest"/>
+            <output message="tns:ReInsertCirculationResponse"/>
+        </operation>
+    </portType>
+
+
+    <!-- Placeholder for binding. Define operation style(RCP, Document) and bind port to messages. -->
+
+    <binding name="PDS_OrderingBinding" type="tns:SOAPport">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <operation name="CirculateDynamic">
+            <soap:operation soapAction="CirculateDynamic"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <!--
+            <fault name="ServiceExceptionReport">
+                <soap:fault name="ServiceExceptionReport" use="literal"/>
+            </fault> -->
+        </operation>
+         <operation name="CirculateMultiDynamic">
+            <soap:operation soapAction="CirculateMultiDynamic"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <!--
+            <fault name="ServiceExceptionReport">
+                <soap:fault name="ServiceExceptionReport" use="literal"/>
+            </fault> -->
+        </operation>
+       <operation name="CirculateExplicit">
+            <soap:operation soapAction="CirculateExplicit"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <!--
+            <fault name="ServiceExceptionReport">
+                <soap:fault name="ServiceExceptionReport" use="literal"/>
+            </fault> -->
+        </operation>
+		<operation name="IncreaseCirculationPriority">
+            <soap:operation soapAction="IncreaseCirculationPriority"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <!--
+            <fault name="ServiceExceptionReport">
+                <soap:fault name="ServiceExceptionReport" use="literal"/>
+            </fault> -->
+        </operation>
+		<operation name="CirculationRecordOccurrence">
+            <soap:operation soapAction="CirculationRecordOccurrence"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <!--
+            <fault name="ServiceExceptionReport">
+                <soap:fault name="ServiceExceptionReport" use="literal"/>
+            </fault> -->
+        </operation>
+
+        <operation name="GetStatus">
+            <soap:operation soapAction="GetStatus"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <!--
+            <fault name="ServiceExceptionReport">
+                <soap:fault name="ServiceExceptionReport" use="literal"/>
+            </fault> -->
+        </operation>
+		
+		<operation name="GetMultipleStatus">
+            <soap:operation soapAction="GetMultipleStatus"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <!--
+            <fault name="ServiceExceptionReport">
+                <soap:fault name="ServiceExceptionReport" use="literal"/>
+            </fault> -->
+        </operation>
+		
+		<operation name="GetMultipleDetailedStatus">
+            <soap:operation soapAction="GetMultipleDetailedStatus"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <!--
+            <fault name="ServiceExceptionReport">
+                <soap:fault name="ServiceExceptionReport" use="literal"/>
+            </fault> -->
+        </operation>
+		
+		<operation name="ResetCirculationRetry">
+            <soap:operation soapAction="ResetCirculationRetry"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <!--
+            <fault name="ServiceExceptionReport">
+                <soap:fault name="ServiceExceptionReport" use="literal"/>
+            </fault> -->
+        </operation>
+
+		<operation name="ResetCirculationStatus">
+            <soap:operation soapAction="ResetCirculationStatus"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+
+		<operation name="ResetMultipleCirculationStatus">
+            <soap:operation soapAction="ResetMultipleCirculationStatus"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+
+		<operation name="ReInsertCirculation">
+            <soap:operation soapAction="ReInsertCirculation"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+
+    </binding>
+
+    <!-- Placeholder for service definition-->
+    <service name="PDSService">
+        <port binding="tns:PDS_OrderingBinding" name="PDS_OrderingService">
+            <soap:address location="http://localhost:11111/serviceName"/>
+        </port>
+    </service>
+
+</definitions>

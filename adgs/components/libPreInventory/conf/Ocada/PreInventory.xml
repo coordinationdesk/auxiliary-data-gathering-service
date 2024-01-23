@@ -1,0 +1,14 @@
+<Root>
+	<PreInventory>
+		<!-- Path to search for PreInventory plugins -->
+		<PluginsPath>/usr/acs/plugins/PreInventoryPlugins</PluginsPath>
+		<!-- Selected Plugins by filename -->
+		<PluginsSelectRE>.*so$</PluginsSelectRE>
+		<!-- Option for Scanning dir Mode -->
+		<ScanMode>
+			<!-- Subdir search -->
+			<maxDepth>1</maxDepth> <!-- 0 = Current Dir only -->
+		</ScanMode>
+	</PreInventory>
+</Root>
+

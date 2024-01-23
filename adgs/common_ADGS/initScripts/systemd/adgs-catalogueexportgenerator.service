@@ -1,0 +1,16 @@
+[Unit]
+Description= ADGS Catalog Exporter Generator
+Documentation=https://www.exprivia.com
+Requires=network.target
+After=network.target
+
+[Service]
+Type=oneshot
+
+User=opadgs
+Group=ccds
+
+ExecStart=/usr/local/components/ADGS/bin/adgs_catalogue_export.rb
+
+[Install]
+WantedBy=multi-user.target

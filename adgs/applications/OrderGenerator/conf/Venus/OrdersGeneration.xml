@@ -1,0 +1,178 @@
+<?xml version="1.0" standalone="yes"?>
+<OrdersGenerationRoot>
+	<OrderGeneration>
+		<PluginsPath>/usr/acs/plugins/OrderGeneratorPlugins</PluginsPath>
+		<!-- the polling interval on the database [s]  -->
+		<DatabasePollingTime>30</DatabasePollingTime>
+		<NRT>
+			<Cryosat>
+				<Level1>
+					<!-- the temporary path to download NRT XML files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<DistributionFormat>cryo_ftp</DistributionFormat>
+				</Level1>
+				<External>
+					<!-- the temporary path to download NRT XML files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<DistributionFormat>cryo_ftp</DistributionFormat>
+				</External>
+			</Cryosat>	
+			<Venus>
+				<External>
+					<!-- the temporary path to download NRT XML files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<DistributionFormat>cryo_ftp</DistributionFormat>
+				</External>
+			</Venus>	
+		</NRT>
+		<RPRO>
+			<Cryosat>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) 24000.0 -->
+					<TemporaryOrdersMaxWaitingTime>10.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+				
+				<External>
+					<!-- the temporary path to download External RPRO e.g. GTSLTA files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<TemporaryOrdersMaxWaitingTime>120.0</TemporaryOrdersMaxWaitingTime>
+				</External>
+				<Merge>
+					<!-- the temporary path to download External RPRO e.g. GTSLTA files -->
+					<!--<TemporaryOrdersMaxWaitingTime>600.0</TemporaryOrdersMaxWaitingTime>-->
+					<TemporaryOrdersMaxWaitingTime>120.0</TemporaryOrdersMaxWaitingTime>
+					
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+				</Merge>
+				<Level2>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<MaxL1MergeDistance>0.300</MaxL1MergeDistance>
+				</Level2>
+			</Cryosat>	
+			<Venus>
+				<External>
+					<!-- the temporary path to download NRT XML files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<DistributionFormat>cryo_ftp</DistributionFormat>
+				</External>
+			</Venus>	
+		</RPRO>
+		<Offline>
+			<Cryosat>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) 24000.0 -->
+					<TemporaryOrdersMaxWaitingTime>30.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+				<Level1>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<MaxL0MergeDistance>0.300</MaxL0MergeDistance>
+				</Level1>
+				<Level2>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<MaxL1MergeDistance>0.300</MaxL1MergeDistance>
+				</Level2>
+				<Level2Anx2Anx>
+					<!-- the maximum amount of time a Level2 anx to anx temporary order waits for  -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+				</Level2Anx2Anx>
+			</Cryosat>
+			<Goce>
+				<Level1Anx2Anx>
+					<!-- the maximum amount of time a Level2 anx to anx temporary order waits for  -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+				</Level1Anx2Anx>
+			</Goce>
+			<Venus>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+				<External>
+					<!-- the temporary path to download NRT XML files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<DistributionFormat>cryo_ftp</DistributionFormat>
+				</External>
+				<Level2>
+					<Nominal>
+						<ProcessorName>Stub_VIP_L2_NOMINAL_PROC</ProcessorName>
+						<ProcessorVersion>01.00</ProcessorVersion>
+						<ProcessorConfiguration></ProcessorConfiguration>
+						<PreviousInventoryFType>VSC_L2VALD</PreviousInventoryFType>
+						<PreviousInterval>172800.0</PreviousInterval>
+						<!-- the maximum amount of time a temporary order waits for (before searching for PreviousIntervalExtent)  -->
+						<!-- [s] (floating point) -->
+						<ExtentMaxWaitingTime>60.0</ExtentMaxWaitingTime>
+						<!-- [s] (floating point) -->
+						<PreviousIntervalExtent>86400.0</PreviousIntervalExtent>
+					</Nominal>
+					<Backward>
+						<ProcessorName>Stub_VIP_L2_BACKWARD_PROC</ProcessorName>
+						<ProcessorVersion>01.00</ProcessorVersion>
+						<ProcessorConfiguration></ProcessorConfiguration>
+						<!-- the maximum amount of time a temporary order waits for (before searching only MinNumberOfProducts)  -->
+						<!-- [s] (floating point) -->
+						<BackwardMaxWaitingTime>120.0</BackwardMaxWaitingTime>
+						<BackwardInventoryFType>VSC_L1VALD</BackwardInventoryFType>
+						<!-- search interval for BackwardInventoryFType files  -->
+						<!-- [s] (floating point) -->
+						<BackwardIntervalExtent>86400.0</BackwardIntervalExtent>
+						<NumberOfProducts>10</NumberOfProducts>
+						<MinNumberOfProducts>8</MinNumberOfProducts>
+					</Backward>
+					<Init>
+						<ProcessorName>Stub_VIP_L2_INIT</ProcessorName>
+						<ProcessorVersion>01.00</ProcessorVersion>
+						<ProcessorConfiguration></ProcessorConfiguration>
+						<!-- the maximum amount of time before emitting   -->
+						<!-- [s] (floating point) -->
+						<InitMaxWaitingTime>180.0</InitMaxWaitingTime>
+					</Init>
+				</Level2>
+				<ConsolidatedOnSite>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+					<!-- this is the interference duration [s] (floating point) -->
+					<InterferenceDuration>86400.0</InterferenceDuration>
+					<!-- the T0 origin for all consolidation periods  -->
+					<ConsolidationT0>1965-10-29T04:00:00.000000</ConsolidationT0>
+					<!-- the period [s] (floating point)  -->
+					<ConsolidationPeriod>864000.0</ConsolidationPeriod>
+					<!-- the interval [s] (floating point)  -->
+					<ConsolidationInterval>864000.0</ConsolidationInterval>
+				</ConsolidatedOnSite>
+				<NominalOnSite>
+					<List_of_Unknown_Sites count="1">  
+						<Site>DMY_UKNW</Site>
+					</List_of_Unknown_Sites>
+					<List_of_Datastrip_Sites count="1">  
+						<Site>DMY_DSTR</Site>
+					</List_of_Datastrip_Sites>
+					<List_of_Processable_Site_Types count="1">
+						<Site_Type>S_SCIENTIFIC</Site_Type>
+					</List_of_Processable_Site_Types>
+					<DataStripProcessor>
+						<Name>Stub_VIP_L1SPE_PROC</Name>
+						<Version>01.00</Version>
+						<Configuration></Configuration>
+					</DataStripProcessor>  
+				</NominalOnSite>
+			</Venus>
+		</Offline>
+	</OrderGeneration>
+</OrdersGenerationRoot>

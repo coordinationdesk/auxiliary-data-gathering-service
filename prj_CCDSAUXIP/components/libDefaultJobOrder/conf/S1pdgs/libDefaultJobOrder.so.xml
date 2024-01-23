@@ -1,0 +1,35 @@
+<RootTag>  
+    <DefaultJobOrder>
+        <PluginsRegistrationSettings>
+            <DefaultJobOrderFactory>	
+                <List_Of_Registrations count="4">
+                        <Registration>
+                            <Satellite></Satellite>
+                            <Mission></Mission>
+                            <Processor>PROCESSOR_MSI__L0_GR</Processor>
+                            <Version></Version>
+                        </Registration>             
+                          <Registration>
+                            <Satellite></Satellite>
+                            <Mission></Mission>
+                            <Processor>PROCESSOR_MSI__L0_DS</Processor>
+                            <Version></Version>
+                        </Registration>   
+                           <Registration>
+                            <Satellite></Satellite>
+                            <Mission></Mission>
+                            <Processor>PROCESSOR_DEF</Processor>
+                            <Version></Version>
+                        </Registration>  
+                        <Registration>
+                            <Satellite></Satellite>
+                            <Mission></Mission>
+                            <Processor>REPORT_GENERATION</Processor>
+                            <Version></Version>
+                        </Registration>
+                </List_Of_Registrations>
+            </DefaultJobOrderFactory>
+        </PluginsRegistrationSettings>
+    </DefaultJobOrder>
+</RootTag>
+

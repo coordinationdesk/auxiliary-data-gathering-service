@@ -1,0 +1,295 @@
+#!/bin/bash
+#
+# Copyright 2005-2010, Advanced Computer Systems , Inc.
+# Via Della Bufalotta, 378 - 00139 Roma - Italy
+# http://www.acsys.itA.C.S. - Advanced Computer Systems S.p.A.
+# 
+# This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems, S.p.A.;
+# the contents of this file may not be disclosed to third parties, copied or
+# duplicated in any form, in whole or in part, without the prior written
+# permission of Advanced Computer Systems, S.p.A.
+
+
+
+
+
+
+
+
+############################## FUNCTIONS #############################
+######################################################################
+set_conf() {
+	if test -r "$CONF_FILE"
+	then
+		. $CONF_FILE
+
+		export DBHOSTNAME
+		export DBNAME
+		export PDSUSER
+		export PDSPASSWORD
+		export DBAUSER
+		export TBS_NAME
+		export TBS_PATH
+		
+		if test -n "$1"
+		then
+			export DBNAME="$1"
+		fi
+	else
+		echo "*** Cannot find $CONF_FILE or it is not readable ***" | tee -a $LOG_FILE
+		echo ""
+		exit 1
+	fi
+}
+
+dbImport() {
+	cd $DATAPATH
+	echo "" >> $LOG_FILE
+	pg_restore -h $DBHOSTNAME -U $DBAUSER -d $DBNAME $last_one
+	if [ "$?" != 0 ]
+	then
+		echo "*** ERROR!!! import - dbImport() : cannot restore dump ***" >> $LOG_FILE
+		return 1
+	else
+		echo ">> dump restored" >> $LOG_FILE
+		return 0
+	fi
+}
+
+createDb() {
+	echo "" >> $LOG_FILE
+	
+	if test "$TBS_NAME"
+	then
+		echo "cmd: createdb -h $DBHOSTNAME -U $DBAUSER -D $TBS_NAME $DBNAME" >> $LOG_FILE
+		createdb -h $DBHOSTNAME -U $DBAUSER -D $TBS_NAME $DBNAME
+		result=$?
+	else
+		echo "cmd: createdb -h $DBHOSTNAME -U $DBAUSER $DBNAME" >> $LOG_FILE
+		createdb -h $DBHOSTNAME -U $DBAUSER $DBNAME
+		result=$?
+	fi
+	
+	if [ "$result" != 0 ]
+	then
+		echo "*** ERROR!!! import - createDb() : cannot create database ***" >> $LOG_FILE
+		return 1
+	else
+		echo ">> database created" >> $LOG_FILE
+		return 0
+	fi
+}
+
+tablespaceCheck() {
+	echo "" >> $LOG_FILE
+	
+	if test -z "$TBS_NAME"
+	then
+		echo ""
+		echo -n ">> Specific tablespace not needed." | tee -a $LOG_FILE
+		echo "" >> $LOG_FILE
+		return 0
+	fi
+	
+	if test -n "`psql -h $DBHOSTNAME -U $DBAUSER template1 -c "select * from pg_tablespace ;" | grep $TBS_NAME`"
+	then
+		echo ""
+		echo -n ">> Tablespace $TBS_NAME already exist." | tee -a $LOG_FILE
+		echo "" >> $LOG_FILE
+		return 0
+	fi
+		
+	echo ""
+	echo -n "   Creating tablespace $TBS_NAME ..."
+	psql -h $DBHOSTNAME -U $DBAUSER -v "ON_ERROR_STOP=1" -c "CREATE TABLESPACE $TBS_NAME LOCATION '$TBS_PATH'; " template1 >> $LOG_FILE 2>&1
+	if [ "$?" != 0 ]
+	then
+		echo "*** ERROR!!! import - tablespaceCheck() : cannot create tablespace ***" >> $LOG_FILE
+		return 1
+	else
+		echo ">> tablespace created" >> $LOG_FILE
+		return 0
+	fi
+}
+
+errMess() {
+	echo "-------------------------------------------------------------------"
+	echo "*** Import Procedure Aborted ***" | tee -a $LOG_FILE
+	echo "See log $LOG_FILE"
+	echo ""
+	exit 1
+}
+
+
+
+
+
+
+
+
+################################ MAIN ################################
+######################################################################
+echo ""
+echo "PSQL DBIMPORT PREOCEDURE"
+echo "-------------------------------------------------------------------"
+
+export EXE_DIR=`dirname $0`
+cd $EXE_DIR
+export EXE_DIR=`pwd`
+
+cd ..
+export BASE_DIR=`pwd`
+cd $EXE_DIR
+
+export CONF_DIR=$BASE_DIR/psqlUtilitiesConf
+export COMM_LIBS=$BASE_DIR/psqlUtilitiesLibs
+export DATAPATH=$BASE_DIR/DATA_DBEXPORT
+
+export LOG_FILE=/tmp/psqlImportDatabase.log
+
+ # Source function library.
+. $COMM_LIBS/libMessages
+. /etc/rc.d/init.d/functions 
+
+prj="$1"
+opt_db="$2"
+
+case "$prj" in
+	'-a' | '--about')
+		about "#   Description: Databases Import Script                                                #"
+		;;
+	'adc') 
+		;;
+	'admapf')
+		;;
+	'alsat')
+		;;
+	'circulator') 
+		;;
+	'cryosat2')
+		;;
+	'cryosatipf')
+		;;
+	'clirsen') 
+		;;
+	'dgs') 
+		;;
+	'ecicmf') 
+		;;
+	'ecmc') 
+		;;
+	'emsa') 
+		;;
+	'geocal') 
+		;;
+	'jersodc') 
+		;;
+	'kipp') 
+		;;
+	'mdaps')
+		;;
+	'muster')
+		;;
+	'nrtiv')
+		;;
+	'prisma')
+		;;
+	'rpu')
+		;;
+	's3mpm')
+		;;
+	'sectronic')
+		;;
+	'sentinel1' | 'sentinel2' | 'sentinel3')
+		;;
+	'sigris') 
+		;;
+	'spacenav') 
+		;;
+	'vcat_brim') 
+		;;
+	'vcat_users') 
+		;;
+	'venus') 
+		;;
+	'venus_ism') 
+		;;
+	'wwa') 
+		;;
+	'test') 
+		;;
+	*)
+		usage "import"
+		;;
+esac
+
+export CONF_FILE=$CONF_DIR/$1.conf
+
+if test -n "$opt_db"
+then
+	export dumpName=$prj"-"$opt_db"Export"
+else
+	export dumpName=$prj"Export"
+fi
+
+set_conf $opt_db
+
+initLog "IMPORT" "$DBNAME"
+
+last_one=`ls -1 $DATAPATH | grep $dumpName | tail -1`
+if test -z "$last_one"
+then
+	echo "ERROR!!! Cannot find a valid export" | tee -a $LOG_FILE
+	echo "Expected file: $dumpName""_*" | tee -a $LOG_FILE
+	errMess
+fi
+
+if test -z "$PGPASSWORD"
+then
+	echo -n "Insert $DBAUSER password: "
+	read -s answer
+	export PGPASSWORD=$answer
+fi
+
+echo ""
+echo "-------------------------------------------------------------------"
+
+echo -n "Checking for tablespaces:" | tee -a $LOG_FILE
+sleep 1
+tablespaceCheck
+if [ "$?" != 0 ]
+then 
+	result_message 1
+	errMess
+else
+	result_message 0
+fi
+
+echo -n "Creating database $DBNAME ..." | tee -a $LOG_FILE
+sleep 1
+createDb >> $LOG_FILE 2>&1
+if [ "$?" != 0 ]
+then 
+	result_message 1
+	errMess
+else
+	result_message 0
+fi
+
+echo -n "Running import from $last_one ..." | tee -a $LOG_FILE
+sleep 1
+dbImport $last_one >> $LOG_FILE 2>&1
+if [ "$?" != 0 ]
+then 
+	result_message 1
+	errMess
+else
+	result_message 0
+fi
+
+echo "-------------------------------------------------------------------"
+echo ">> Import Procedure Completed" | tee -a $LOG_FILE
+echo ""
+echo ""
+exit 0
+

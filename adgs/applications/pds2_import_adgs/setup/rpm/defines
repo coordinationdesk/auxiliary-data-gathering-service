@@ -1,0 +1,4 @@
+%define		PROJECT_NAME		ADGS
+%define		PROJECT_PATH		/usr/local/components/%{PROJECT_NAME}/
+%define		APPLICATION_NAME	pds2_import_adgs
+%define		APPLICATION_PATH	/usr/local/components/%{PROJECT_NAME}/%{APPLICATION_NAME}/

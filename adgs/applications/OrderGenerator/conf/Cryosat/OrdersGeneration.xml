@@ -1,0 +1,85 @@
+<?xml version="1.0" standalone="yes"?>
+<OrdersGenerationRoot>
+	<OrderGeneration>
+		<!-- the polling interval on the database [s]  -->
+		<DatabasePollingTime>30</DatabasePollingTime>
+		<NRT>
+			<Cryosat>
+				<Level1>
+					<!-- the temporary path to download NRT XML files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<DistributionFormat>cryo_ftp</DistributionFormat>
+				</Level1>
+				<External>
+					<!-- the temporary path to download NRT XML files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<DistributionFormat>cryo_ftp</DistributionFormat>
+				</External>
+			</Cryosat>	
+		</NRT>
+		<RPRO>
+			<Cryosat>
+				<External>
+					<!-- the temporary path to download External RPRO e.g. GTSLTA files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+				</External>
+				<Anx2Anx>
+					<!-- OrbitMode can be one of {First, Last, Multiple, MultipleButLast } -->
+					<!-- First (default): only the first orbit regardless the validity stop of the triggering file -->
+					<!-- Last: only the last orbit, regardless the validity start of the triggering file -->
+					<!-- Multiple: all orbits included in the triggering file, -->
+					<!-- MultipleButLast: as Multiple, but last orbit excluded, -->
+					<!-- this doesn't apply when the triggering file spans only one orbit -->
+					<!--   -->
+					<!-- the maximum amount of time a Level2 anx to anx temporary order waits for  -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+					<OrbitMode>Multiple</OrbitMode>
+					<L0_FTYPE>
+						<!-- Global parameters override, this is just an example  -->
+						<OrbitMode>Multiple</OrbitMode>
+						<TemporaryOrdersMaxWaitingTime>59.9</TemporaryOrdersMaxWaitingTime>
+					</L0_FTYPE>
+				</Anx2Anx>
+			</Cryosat>	
+		</RPRO>
+		<Offline>
+			<Cryosat>
+				<Level1>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>300.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL0MergeDistance>0.300</MaxL0MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+				</Level1>
+				<Level2>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>900.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL1MergeDistance>0.300</MaxL1MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+				</Level2>
+				<Level2Anx2Anx>
+					<!-- the maximum amount of time a Level2 anx to anx temporary order waits for  -->
+					<TemporaryOrdersMaxWaitingTime>1800.0</TemporaryOrdersMaxWaitingTime>
+				</Level2Anx2Anx>
+			</Cryosat>
+			<Sentinel-2A>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>300.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+			</Sentinel-2A>
+			<Goce>
+				<Level1Anx2Anx>
+					<!-- the maximum amount of time a Level2 anx to anx temporary order waits for  -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+				</Level1Anx2Anx>
+			</Goce>
+		</Offline>
+	</OrderGeneration>
+</OrdersGenerationRoot>

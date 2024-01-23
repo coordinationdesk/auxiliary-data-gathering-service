@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<DistributionGenerationRoot>
+	<DistributionGeneration>
+		<!-- the polling interval on the database [s]  -->
+		<DatabasePollingTime>30</DatabasePollingTime>
+		<Always>
+		</Always>
+		<Qualified>
+			<AgeLimit unit='"days"'>30</AgeLimit>
+		</Qualified>
+		<Redistribution>
+			<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+		</Redistribution>
+        <QCCDistrConditioned>
+			<AgeLimit unit='"days"'>30</AgeLimit>
+			<Report>false</Report>
+            <List_Of_Qualified count="3">
+                <Qualified>QUALIFIED_PRODUCT</Qualified>
+                <Qualified>VALID_PRODUCT</Qualified>
+                <Qualified>NOT_AVAILABLE</Qualified>
+            </List_Of_Qualified>
+            <List_Of_Waiting count="1">
+                <Waiting>UNQUALIFIED_PRODUCT</Waiting>
+            </List_Of_Waiting>
+        </QCCDistrConditioned>
+	</DistributionGeneration>
+</DistributionGenerationRoot>

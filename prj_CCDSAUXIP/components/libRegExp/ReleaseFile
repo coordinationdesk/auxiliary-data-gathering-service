@@ -1,0 +1,20 @@
+5.8.1
+RegExp copy ctor and assignement op are noexcept now
+-------------------------------------------------------
+5.8.0
+Code rationalization and slightly faster
+-------------------------------------------------------
+5.7.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+-------------------------------------------------------
+5.7.2
+Makefile of the test has been fixed and now uses standard recipes
+-------------------------------------------------------
+5.7.1
+ACS_NOEXCEPT adopted
+test Makefile instrumented for librarian 
+test coverage improved
+version file instrumented
+-------------------------------------------------------
+5.7.0
+Automatically generate from revision "version "5.7""

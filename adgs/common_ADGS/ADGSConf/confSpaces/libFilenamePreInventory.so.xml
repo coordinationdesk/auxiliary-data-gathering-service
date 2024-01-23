@@ -1,0 +1,21 @@
+<Root>
+	<PreInventory>
+		<ConfigFilenamePreInventory>
+		</ConfigFilenamePreInventory>
+		<PluginsRegistrationSettings>
+			<S3DimsaxFilenamePreInventoryFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>NOAA_1KM_IMSDLY</Object>
+						<FileClass>OPER</FileClass>
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+				</List_Of_Registrations>
+			</S3DimsaxFilenamePreInventoryFactory>
+		</PluginsRegistrationSettings>
+	</PreInventory>
+</Root>

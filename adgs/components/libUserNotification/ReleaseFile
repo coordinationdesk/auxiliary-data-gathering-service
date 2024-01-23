@@ -1,0 +1,19 @@
+5.13.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+5.13.2
+Relevant Configuration instructions added in the conf file.
+------------------------------
+5.13.1
+Removing deprecated calls and enforcing dbKey
+------------------------------
+5.13.0
+Mail format xsl configurable as absolute path.
+------------------------------
+
+5.12.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.12.0
+
+Automatically generate from revision "version "5.12""

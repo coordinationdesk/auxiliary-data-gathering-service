@@ -1,0 +1,19 @@
+7.1.2
+MP: no more db related deprecated methods/classes
+test compilation fixed
+-------------------------------------------------------------------------
+7.1.1
+MP: compilation warnings cleanup
+-------------------------------------------------------------------------
+7.1.0
+Removed useless dependencies from venus installation paths and boost-serialization shared object
+-------------------------------------------------------------------------
+7.0.0
+MUSTER-48
+Support for Export of Inventory Items stored on Asynch Storage Manager (like LTA)
+-------------------------------------------------------------------------
+6.1.1
+Patch release automatically generated to instrument version files
+-------------------------------------------------------------------------
+6.1.0
+Automatically generate from revision "version "6.1""

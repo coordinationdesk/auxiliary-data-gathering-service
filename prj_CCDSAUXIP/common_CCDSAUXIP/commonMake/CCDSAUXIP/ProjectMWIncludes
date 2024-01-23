@@ -1,0 +1,9 @@
+#ifndef _ProjectMWIncludes_
+#define _ProjectMWIncludes_
+
+#include <disMsgHandler.h>
+
+acs::disMsgHandler msgHandlerObj ;
+
+ 
+#endif // _ProjectMWIncludes_

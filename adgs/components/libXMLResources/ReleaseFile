@@ -1,0 +1,52 @@
+5.74.5
+Compilation warning cleanup completed
+------------------------------
+5.74.4
+Compilation warning cleanup
+------------------------------
+5.74.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+5.74.2
+MP: some warning removed
+------------------------------
+5.74.1
+Error messages improved in case of hpTrimmedString failures
+------------------------------
+5.74.0
+XmlDoc / libxml2 updated.
+refactoring: replaced boost shared pointers with std.
+------------------------------
+5.73.0
+XmlDoc / libxml2 updated:
+- Xml files merging and insert
+- addTag supports namespace.
+- Support to namespace declared on children.
+- Fast Xpath mode added
+- Xpath syntax helper to compose expression querying any namespace (local-name).
+------------------------------
+5.72.1
+Added --stream parameter to xmllint command line, to avoid problems when
+input file size exceeds the tool in-memory boundaries
+------------------------------
+5.72.0
+Modified setResourceRootName to add the root tag attributes to resource if any.
+The attributes are set as subelements of XmlExtractionRootTagName_.
+------------------------------
+5.71.3
+Removed CUSTOM_INCLUDEPATH from Makefile, to allow a custom libxml2 usage.
+Its include path shall be defined in the project variables.
+------------------------------
+5.71.2
+Makefiles prepared to run in both smurfer.py and legacy mode
+------------------------------
+5.71.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.71.0
+S3Geocal request: get list of xml namespaces.
+Method checkNamespaceExists revised, using the list of namespace. 
+-----------------------------------------------------------------
+5.70.0
+
+Automatically generate from revision "version "5.70""

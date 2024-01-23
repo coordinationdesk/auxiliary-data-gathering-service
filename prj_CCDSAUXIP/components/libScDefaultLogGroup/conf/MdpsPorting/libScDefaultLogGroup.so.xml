@@ -1,0 +1,18 @@
+<Root>
+	<Scheduler>
+		<PluginsRegistrationSettings>
+			<ScDefaultLogGroupFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+					</Registration>
+				</List_Of_Registrations>
+			</ScDefaultLogGroupFactory>
+		</PluginsRegistrationSettings>
+	</Scheduler>
+</Root>
+
+

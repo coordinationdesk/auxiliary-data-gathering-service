@@ -1,0 +1,53 @@
+6.5.0
+[ECICMF-48]
+- Introduced new configuration RejectedDir that allows to specify the directory in which products will be moved in case of duplicates.
+- Duplicated product management is now changed as follows:
+    * if noCriticalOnDuplicates=true and RejectedDir is configured, then the product is moved inside the specified directory ignoring the backup directory. No errors are raised in that scenario.
+    * On the other hand, if RejectedDir is not configured, the file is moved inside the backup directory as always and an error is raised.
+- Introduced new M&C message that is emitted when a product is moved into the rejected directory.
+------------------------------
+6.4.1
+[ECICMF-30] DT:: Fixed bug causing compile errors in environment with variable ACS_DBCLIENT_PREVENT_DEFAULTKEY defined
+------------------------------
+6.4.0
+[ECICMF-30] DT:: Introduced t_originator autoinsert (disabled by default). Added new configuration tag InsertOriginatorIfMissing.
+------------------------------
+6.3.0
+[CPS-39] EC:: Added handling of parameter: Next_Equator_X_Time in MTD file. Requires libDbCryosat >= 7.18.0
+------------------------------
+6.2.2
+Test compilation fixed
+------------------------------
+6.2.1
+EC:: CI-91 Mission_Data_Take_ID handled. 
+------------------------------
+6.2.0
+EC:: Integration of change: CI-91. Requires: libDbCryosat >= 7.15.0
+------------------------------
+6.1.2
+Removed useless include file creating a dependency from libProductHeader
+------------------------------
+6.1.1
+no more deprecated db related methods/classes
+------------------------------
+6.1.0
+Metadata::getGlobalFileName convenience method added again
+------------------------------
+6.0.0
+all tree management removed
+------------------------------
+5.57.2
+Patch release due to jira C1-71. t_inventory unique_id not set if metadata field empty and SetDefaultUniqueId set in Inventory conf (default).
+------------------------------
+5.57.1
+Patch release due to jira C1-71. auto_ptr c++14 warning fixed.
+------------------------------
+5.57.0
+Minor version issue due to jira C1-71. md5 optional field added to metadata class and set in dbInventoryObject class if existing.
+------------------------------
+5.56.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.56.0
+
+Automatically generate from revision "version "5.56""

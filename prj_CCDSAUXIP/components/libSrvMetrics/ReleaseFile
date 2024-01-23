@@ -1,0 +1,24 @@
+1.3.0
+[CCDS-26] Added configuration that allows to enable/disable metrics for daily metrics handler.
+----------------------------------
+1.2.3
+[LTA-345] Using ON CONFLICT DO UPDATE statement for upsert.
+----------------------------------
+1.2.2
+[LTA-308] The query used to load inventory total metrics now checks also that the servicealias is null.
+----------------------------------
+1.2.1
+[LTA-257] Inserting value 0 for SubmissionToCompletion metrics in case of empty set returned by the query.
+----------------------------------
+1.2.0
+[LTA-257] Implemented Archived/Retrieved/Download metrics management.
+----------------------------------
+1.1.0
+Implemented DAILY and MONTHLY metrics.
+----------------------------------
+1.0.0
+Implemented class InventoryTotalMetrics in charge of processing inventory records and insert
+the corresponding metrics into t_srv_totalmetrics.
+----------------------------------
+0.0.1
+Created master branch

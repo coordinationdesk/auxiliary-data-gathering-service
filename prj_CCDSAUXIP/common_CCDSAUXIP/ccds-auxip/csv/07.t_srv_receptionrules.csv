@@ -1,0 +1,11 @@
+# The File can contains any number of empty lines and
+# or starting with hash negliged by script
+# The First meaningful line must contain the colum names
+# Fallowing rows are traited as record.
+# Fields must be quoted by single quote if strings or plain in case of Numeric values
+
+filetype_id, repository_id, priority, active, hostname, localpath, connretries, pollingperiod_sec, retryperiod_sec, connfailureaddress, procfailureaddress, reception_tt_id,discoveryplugin_id
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S3_VIRTUAL')','(SELECT id_repository FROM t_srv_repositories where symbolicname = 'PRIP_IN_BASKET')',1, true,'AUXIP', '/data/auxipin/AUX_IN_BASKET', 3, 10, 1, '', '','(SELECT id_tasktable from t_tasktables where name = 'defaultReception')','(SELECT id_discoveryplugin FROM t_discoveryplugins WHERE name = 'DummyPlugin')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1_VIRTUAL')','(SELECT id_repository FROM t_srv_repositories where symbolicname = 'PRIP_IN_BASKET')',1, true,'AUXIP', '/data/auxipin/AUX_IN_BASKET', 3, 10, 1, '', '','(SELECT id_tasktable from t_tasktables where name = 'defaultReception')','(SELECT id_discoveryplugin FROM t_discoveryplugins WHERE name = 'DummyPlugin')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S2_VIRTUAL')','(SELECT id_repository FROM t_srv_repositories where symbolicname = 'PRIP_IN_BASKET')',1, true,'AUXIP', '/data/auxipin/AUX_IN_BASKET', 3, 10, 1, '', '','(SELECT id_tasktable from t_tasktables where name = 'defaultReception')','(SELECT id_discoveryplugin FROM t_discoveryplugins WHERE name = 'DummyPlugin')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S5_VIRTUAL')','(SELECT id_repository FROM t_srv_repositories where symbolicname = 'PRIP_IN_BASKET')',1, true,'AUXIP', '/data/auxipin/AUX_IN_BASKET', 3, 10, 1, '', '','(SELECT id_tasktable from t_tasktables where name = 'defaultReception')','(SELECT id_discoveryplugin FROM t_discoveryplugins WHERE name = 'DummyPlugin')'

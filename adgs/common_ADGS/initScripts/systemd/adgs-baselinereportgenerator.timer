@@ -1,0 +1,13 @@
+[Unit]
+Description=ADGS Catalog Exporter Generator
+Documentation=https://www.exprivia.com
+Requires=network.target
+After=network.target
+
+[Timer]
+OnCalendar=*-*-* 01:00:00
+Unit=adgs-baselinereportgenerator.service
+
+[Install]
+WantedBy=timers.target
+

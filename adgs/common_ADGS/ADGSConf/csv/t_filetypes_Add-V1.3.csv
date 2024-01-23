@@ -1,0 +1,11 @@
+
+'filetype','description','nameregularexpression','headerseparation','"group"','invperiod','mngsngext','sngext','hdrext','dblext'
+
+'DBLTOOBJST_TBZ',  'Aux Files to be zipped and distributed to SrvImport', 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1REP__MCSF_',    'Manoeuvre Scale Factor',  '^S1[ABC_]_.*_REP__MCSF__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$',           'false', 'group0', 0, 'false', 'TGZ',  'NULL', 'NULL'
+'S1REP__SMPR_',    'Summary SatMassProp',     '^S1[ABC_]_.*_REP__SMPR__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$',           'false', 'group0', 0, 'false', 'TGZ',  'NULL', 'NULL'
+'S1REP__MCSF_TMP', 'Manoeuvre Scale Factor',  '^S1[ABC_]_.*_REP__MCSF__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',                    'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+'S1REP__SMPR_TMP', 'Summary SatMassProp',     '^S1[ABC_]_.*_REP__SMPR__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',                    'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+'REP_MP_MP__PDMC', 'REP MP MP',               '^S1[ABC_]_.*_REP_MP_MP__.*_[0-9]{8}T[0-9]{6}_V[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}\.xml',        'false', 'group0', 0, 'false', 'xml', 'NULL', 'NULL'
+'S1APRIP_AUX','Aux Files coming from PRIP','NULL','false','group0',0,'false','NULL','NULL','NULL'
+'S1BPRIP_AUX','Aux Files coming from PRIP','NULL','false','group0',0,'false','NULL','NULL','NULL'

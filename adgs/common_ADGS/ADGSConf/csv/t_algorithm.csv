@@ -1,0 +1,10 @@
+# The File can contains any number of empty lines and
+# or starting with hash negliged by script
+# The First meaningful line must contain the colum names
+# Fallowing rows are traited as record.
+# Fields must be quoted by single quote if strings or plain in case of Numeric values
+
+'algorithm', 'description'
+'NOMERGE', 'Generate a product order for one file type with start and stop'
+'NOMERGENODUP', 'Same NOMERGE algo excluding files marked as DUP in metadata'
+

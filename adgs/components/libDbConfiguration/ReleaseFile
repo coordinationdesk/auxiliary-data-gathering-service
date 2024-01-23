@@ -1,0 +1,41 @@
+7.0.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+-----------------------------
+7.0.2
+MP: no more db related deprecated methods/classes
+-----------------------------
+7.0.1
+MP: compilation warnings clean up
+-----------------------------
+7.0.0
+aligned with libDbData 7.0.0
+-----------------------------
+6.0.0
+Major release due to issue ECS-17.
+dbConfigurationFileActionFactory::getInvSmTableName method from base class declared and implemented returning an empty string. Tests compilation fixed.
+-----------------------------
+5.25.0
+Uses new MergeUnion from libResources 6.23.0 
+-----------------------------
+5.24.4
+Fixed bug in dbConfigurationSpace caused by lexicographycally order of the version.
+The patch is applied only for Postgres installations
+-----------------------------
+5.24.3
+[S3PDGS-49] Fixed bug in dbResourceSpace caused by missing virtual qualifier
+in ResourceSpace::defaultExtension(). Added filepath re-computation
+in dbResourceSpace::mergeIn function. 
+-----------------------------
+5.24.2
+dbSystemMode checks the schema to ensure the t_pdsmodes table
+exists before attempting to do any query on it.
+From the external point of view the same exception is thrown 
+with a different message if the table exists and no mode is found
+and if the table does not exist at all.
+------------------------------
+5.24.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.24.0
+
+Automatically generate from revision "version "5.24""

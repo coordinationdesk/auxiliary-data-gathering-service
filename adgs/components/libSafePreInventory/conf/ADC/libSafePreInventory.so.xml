@@ -1,0 +1,38 @@
+<Root>
+	<PreInventory>
+		<ConfigSafePreInventory>
+			<!-- DO NOT MODIFY Groups of regexp 1 MissionId, 2 FileClass, 3 FileType, 4/5 Validity Period, 6 version, 7 extension-->
+			<!--<SafeFileNameRegExp>(S1[A|B]{1})_([[:alpha:]]{4})_([[:alnum:]_]{10})_([[:digit:]]{8}T[[:digit:]]{6})_([[:digit:]]{8}T[[:digit:]]{6})_([[:digit:]]{4}).([[:alpha:]]{3})</SafeFileNameRegExp>-->
+			<SatMissionsAssociatorKeys>
+				<Pair satelliteCode="S3A" key="PLAIN"/>
+				<Pair satelliteCode="S3B" key="PLAIN"/>
+				<Pair satelliteCode="S3C" key="PLAIN"/>
+				<Pair satelliteCode="S3D" key="PLAIN"/>
+				<Pair satelliteCode="S3_" key="PLAIN"/>
+			</SatMissionsAssociatorKeys>
+			<ManifestFilename>xfdumanifest.xml</ManifestFilename>
+		</ConfigSafePreInventory>
+		<PluginsRegistrationSettings>
+			<SafePreInventoryFactory>
+				<List_Of_Registrations count="2">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>SL_1_ANC_AX</Object>
+						<FiletypeKey>AUX</FiletypeKey>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>SL_1_CLO_AX</Object>
+						<FiletypeKey>AUX</FiletypeKey>
+					</Registration>
+				</List_Of_Registrations>
+			</SafePreInventoryFactory>
+		</PluginsRegistrationSettings>
+	</PreInventory>
+</Root>

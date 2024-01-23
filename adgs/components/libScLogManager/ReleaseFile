@@ -1,0 +1,9 @@
+5.18.2
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+5.18.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.18.0
+
+Automatically generate from revision "version "5.18""

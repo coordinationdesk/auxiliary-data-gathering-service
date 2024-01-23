@@ -1,0 +1,12 @@
+2.13.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+2.13.2
+Patch release to compile with c++11: ostringstream cannot be inserted directly into another stream: str() method used instead.
+------------------------------
+2.13.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.13.0
+
+Automatically generate from revision "version "2.13""

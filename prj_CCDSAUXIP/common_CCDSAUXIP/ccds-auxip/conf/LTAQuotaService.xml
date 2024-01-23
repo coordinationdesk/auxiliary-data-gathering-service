@@ -1,0 +1,16 @@
+<Root>
+	<LTAQuotaService>
+		<!-- The hostname -->
+		<HostName>0.0.0.0</HostName>
+		<!-- The service port number -->
+		<Port>#QSPORT#</Port>
+		<!-- The maximum number or threads to be used to serve requests -->
+		<MaxServerThreads>1</MaxServerThreads>
+		<!-- The maximum size for requests -->
+		<MaxRequestSize>20000</MaxRequestSize>
+		<!-- The maximum size for responses -->
+		<MaxResponseSize>20000</MaxResponseSize>
+		<!-- The validity time of a Token, in seconds -->
+		<TokenValidityTimeout>60</TokenValidityTimeout>
+	</LTAQuotaService>
+</Root>

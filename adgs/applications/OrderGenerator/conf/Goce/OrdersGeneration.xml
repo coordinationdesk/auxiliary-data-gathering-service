@@ -1,0 +1,247 @@
+<?xml version="1.0" standalone="yes"?>
+<OrdersGenerationRoot>
+	<OrderGeneration>
+		<!-- the polling interval on the database [s]  -->
+		<DatabasePollingTime>30</DatabasePollingTime>
+		<NRT>
+			<Cryosat>
+				<Level1>
+					<!-- the temporary path to download NRT XML files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<DistributionFormat>cryo_ftp</DistributionFormat>
+				</Level1>
+				<External>
+					<!-- the temporary path to download NRT XML files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<DistributionFormat>cryo_ftp</DistributionFormat>
+				</External>
+			</Cryosat>	
+		</NRT>
+		<RPRO>
+			<Cryosat>
+				<External>
+					<!-- the temporary path to download External RPRO e.g. GTSLTA files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+				</External>
+			</Cryosat>	
+		</RPRO>
+		<Offline>
+			<Cryosat>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>0.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+				<Level1>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>300.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL0MergeDistance>0.300</MaxL0MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+				</Level1>
+				<Level2>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>900.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL1MergeDistance>0.300</MaxL1MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+				</Level2>
+				<Level2Anx2Anx>
+					<!-- the maximum amount of time a Level2 anx to anx temporary order waits for  -->
+					<TemporaryOrdersMaxWaitingTime>1800.0</TemporaryOrdersMaxWaitingTime>
+				</Level2Anx2Anx>
+			</Cryosat>
+			<Goce>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+				<Merge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>300.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL0MergeDistance>0.300</MaxL0MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+					<!--L0_FTYPE>
+						<TemporaryOrdersMaxWaitingTime>300.0</TemporaryOrdersMaxWaitingTime>
+						<MaxMergeDistance>0.300</MaxMergeDistance>
+					</L0_FTYPE-->
+				</Merge>
+				<Anx2Anx>
+					<!-- OrbitMode can be one of {First, Last, Multiple, MultipleButLast } -->
+					<!-- First (default): only the first orbit regardless the validity stop of the triggering file -->
+					<!-- Last: only the lòast orbit, regardless the validity start of the triggering file -->
+					<!-- Multiple: all orbits included in the triggering file, -->
+					<!-- MultipleButLast: as Multiple, but last orbit excluded, -->
+					<!-- this doesn't apply when the triggering file spans only one orbit -->
+					<!--   -->
+					<!-- the maximum amount of time a Level1 anx to anx temporary order waits for [s]  -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+					<OrbitMode>MultipleButLast</OrbitMode>
+					<!-- Global parameters override, this is just an example  -->
+					<!--L0_FTYPE>
+						<OrbitMode>Multiple</OrbitMode>
+						<TemporaryOrdersMaxWaitingTime>59.9</TemporaryOrdersMaxWaitingTime>
+					</L0_FTYPE-->
+				</Anx2Anx>
+				<!-- a single file type will trigger a temporary order  -->
+				<!-- after the TemporaryOrdersMaxWaitingTime time, all the temporary orders for -->
+				<!-- the same file type and  -->
+				<!-- this algorithm (PreTemporaryCollection)  -->
+				<!-- will concur to the emission of an order  -->
+				<!-- only those having stop time before the very first start time plus TimeWindow  -->
+				<!-- will be used, all the others will stay into the temporary queue  -->
+				<GroupedCollection>
+					<!-- the time to wait before emitting an orders since the first temporary order [s]  -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+					<!-- the time window collecting all temporary orders (start and stop validity of the triggering files). [s] -->
+					<!--TimeWindow>24000.0</TimeWindow-->
+					<TimeWindow>600.0</TimeWindow>
+					<!-- groups can be used to distinguish between different groups of file types, having  -->
+					<!-- potentially many algorithms behaving in the same way  -->
+					<!-- A file type can be into a single group only, but no check is done to enforce this  -->
+					<!-- If the triggering filetype is into no group it is belonging to the group "global".  -->
+					<!-- Each group can have its own  TimeWindow and TemporaryOrdersMaxWaitingTime, if they are not specified, -->
+					<!-- global ones are used -->
+					<groups count="2">
+						<group>
+							<filetypes count="18">
+								<filetype>DFC_A1X_1b</filetype>
+								<filetype>DFC_A1Y_1b</filetype>
+								<filetype>DFC_A1Z_1b</filetype>
+								<filetype>DFC_A2X_1b</filetype>
+								<filetype>DFC_A2Y_1b</filetype>
+								<filetype>DFC_A2Z_1b</filetype>
+								<filetype>DFC_A3X_1b</filetype>
+								<filetype>DFC_A3Y_1b</filetype>
+								<filetype>DFC_A3Z_1b</filetype>
+								<filetype>DFC_A4X_1b</filetype>
+								<filetype>DFC_A4Y_1b</filetype>
+								<filetype>DFC_A4Z_1b</filetype>
+								<filetype>DFC_A5X_1b</filetype>
+								<filetype>DFC_A5Y_1b</filetype>
+								<filetype>DFC_A5Z_1b</filetype>
+								<filetype>DFC_A6X_1b</filetype>
+								<filetype>DFC_A6Y_1b</filetype>
+								<filetype>DFC_A6Z_1b</filetype>
+							</filetypes>
+							<TemporaryOrdersMaxWaitingTime>600.0</TemporaryOrdersMaxWaitingTime>
+							<TimeWindow>86400.0</TimeWindow>
+							<!--TimeWindow>24000.0</TimeWindow-->
+						</group>
+						<group>
+							<filetypes count="1">
+								<filetype>EGG_MON_1b</filetype>
+							</filetypes>
+							<TemporaryOrdersMaxWaitingTime>600.0</TemporaryOrdersMaxWaitingTime>
+							<TimeWindow>86400.0</TimeWindow>
+							<!--TimeWindow>24000.0</TimeWindow-->
+						</group>	
+					</groups>
+				</GroupedCollection>
+			</Goce>
+		</Offline>
+		<CONS>
+			<Goce>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>21600.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+				<Merge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) 6 hours -->
+					<TemporaryOrdersMaxWaitingTime>21600.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL0MergeDistance>0.300</MaxL0MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+					<!-- Global parameters can be overrided based on filetype, this is just an example  -->
+					<!--L0_FTYPE>
+						<TemporaryOrdersMaxWaitingTime>300.0</TemporaryOrdersMaxWaitingTime>
+						<MaxMergeDistance>0.300</MaxMergeDistance>
+					</L0_FTYPE-->
+				</Merge>
+				<Anx2Anx>
+					<!-- OrbitMode can be one of {First, Last, Multiple, MultipleButLast } -->
+					<!-- First (default): only the first orbit regardless the validity stop of the triggering file -->
+					<!-- Last: only the lòast orbit, regardless the validity start of the triggering file -->
+					<!-- Multiple: all orbits included in the triggering file, -->
+					<!-- MultipleButLast: as Multiple, but last orbit excluded, -->
+					<!-- this doesn't apply when the triggering file spans only one orbit -->
+					<!--   -->
+					<!-- the maximum amount of time a Level1 anx to anx temporary order waits for ( 2 days for GOCE 172800.0) -->
+					<TemporaryOrdersMaxWaitingTime>21600.0</TemporaryOrdersMaxWaitingTime>
+					<OrbitMode>MultipleButLast</OrbitMode>
+					<!--L0_FTYPE>
+						<OrbitMode>Multiple</OrbitMode>
+						<TemporaryOrdersMaxWaitingTime>59.9</TemporaryOrdersMaxWaitingTime>
+					</L0_FTYPE-->
+				</Anx2Anx>
+				<!-- a single file type will trigger a temporary order  -->
+				<!-- after the TemporaryOrdersMaxWaitingTime time, all the temporary orders for -->
+				<!-- the same file type and  -->
+				<!-- this algorithm (PreTemporaryCollection)  -->
+				<!-- will concur to the emission of an order  -->
+				<!-- only those having stop time before the very first start time plus TimeWindow  -->
+				<!-- will be used, all the others will stay into the temporary queue  -->
+				<GroupedCollection>
+					<!-- the time to wait before emitting an orders since the first temporary order [s]  -->
+					<TemporaryOrdersMaxWaitingTime>21600.0</TemporaryOrdersMaxWaitingTime>
+					<!-- the time window collecting all temporary orders (start and stop validity of the triggering files). [s] -->
+					<TimeWindow>600.0</TimeWindow>
+					<!--TimeWindow>24000.0</TimeWindow-->
+					
+					<!-- groups can be used to distinguish between different groups of file types, having  -->
+					<!-- potentially many algorithms behaving in the same way  -->
+					<!-- A file type can be into a single group only, but no check is done to enforce this  -->
+					<!-- If the triggering filetype is into no group it is belonging to the group "global".  -->
+					<!-- Each group can have its own  TimeWindow and TemporaryOrdersMaxWaitingTime, if they are not specified, -->
+					<!-- global ones are used -->
+					<groups count="2">
+						<group>
+							<filetypes count="18">
+								<filetype>DFC_A1X_1b</filetype>
+								<filetype>DFC_A1Y_1b</filetype>
+								<filetype>DFC_A1Z_1b</filetype>
+								<filetype>DFC_A2X_1b</filetype>
+								<filetype>DFC_A2Y_1b</filetype>
+								<filetype>DFC_A2Z_1b</filetype>
+								<filetype>DFC_A3X_1b</filetype>
+								<filetype>DFC_A3Y_1b</filetype>
+								<filetype>DFC_A3Z_1b</filetype>
+								<filetype>DFC_A4X_1b</filetype>
+								<filetype>DFC_A4Y_1b</filetype>
+								<filetype>DFC_A4Z_1b</filetype>
+								<filetype>DFC_A5X_1b</filetype>
+								<filetype>DFC_A5Y_1b</filetype>
+								<filetype>DFC_A5Z_1b</filetype>
+								<filetype>DFC_A6X_1b</filetype>
+								<filetype>DFC_A6Y_1b</filetype>
+								<filetype>DFC_A6Z_1b</filetype>
+							</filetypes>
+							<TemporaryOrdersMaxWaitingTime>21600.0</TemporaryOrdersMaxWaitingTime>
+							<TimeWindow>600.0</TimeWindow>
+							<!--TimeWindow>24000.0</TimeWindow-->
+						</group>
+						<group>
+							<filetypes count="1">
+								<filetype>EGG_MON_1b</filetype>
+							</filetypes>
+							<TemporaryOrdersMaxWaitingTime>21600.0</TemporaryOrdersMaxWaitingTime>
+							<TimeWindow>86400.0</TimeWindow>
+							<!--TimeWindow>24000.0</TimeWindow-->
+						</group>	
+					</groups>
+				</GroupedCollection>
+			</Goce>
+		</CONS>
+	</OrderGeneration>
+</OrdersGenerationRoot>

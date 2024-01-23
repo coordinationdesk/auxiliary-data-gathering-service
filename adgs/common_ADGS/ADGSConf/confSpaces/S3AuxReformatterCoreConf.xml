@@ -1,0 +1,65 @@
+<Root>
+	<FileTypeConversionMap>
+		<List_of_Conversions count="7">
+			<Conversion>
+				<InputFileType>NOAA_1KM_IMSDLY</InputFileType>
+				<OutputFileType>SL_2_DIMSAX</OutputFileType>
+				<FileTypeDescription>NSIDC Daily Map File</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>LND</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>OSIICE_RPRO_20N</InputFileType>
+				<OutputFileType>SR_2_SICNAX</OutputFileType>
+				<FileTypeDescription>ICE CONC Northern Repro before 2020</FileTypeDescription>
+				<Timeliness>NT</Timeliness>
+				<GenerationCentre>OSI</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>OSIICE_RPRO_21N</InputFileType>
+				<OutputFileType>SR_2_SICNAX</OutputFileType>
+				<FileTypeDescription>ICE CONC Northern Repro 2021 onwards</FileTypeDescription>
+				<Timeliness>NT</Timeliness>
+				<GenerationCentre>OSI</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>OSIICE_SYSTEM_N</InputFileType>
+				<OutputFileType>SR_2_SIFNAX</OutputFileType>
+				<FileTypeDescription>ICE CONC Northern systematic production</FileTypeDescription>
+				<Timeliness>NS</Timeliness>
+				<GenerationCentre>OSI</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>OSIICE_RPRO_20S</InputFileType>
+				<OutputFileType>SR_2_SICSAX</OutputFileType>
+				<FileTypeDescription>ICE CONC Southern Repro before 2020</FileTypeDescription>
+				<Timeliness>NT</Timeliness>
+				<GenerationCentre>OSI</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>OSIICE_RPRO_21S</InputFileType>
+				<OutputFileType>SR_2_SICSAX</OutputFileType>
+				<FileTypeDescription>ICE CONC Southern Repro 2021 onwards</FileTypeDescription>
+				<Timeliness>NT</Timeliness>
+				<GenerationCentre>OSI</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>OSIICE_SYSTEM_S</InputFileType>
+				<OutputFileType>SR_2_SIFSAX</OutputFileType>
+				<FileTypeDescription>ICE CONC Southern systematic production</FileTypeDescription>
+				<Timeliness>NS</Timeliness>
+				<GenerationCentre>OSI</GenerationCentre>
+			</Conversion>
+		</List_of_Conversions>
+	</FileTypeConversionMap>
+	<Platform>O</Platform>
+	<Timeliness>__</Timeliness>
+	<Baseline>001</Baseline>
+	<FacilityName>LND</FacilityName>
+	<Organization>European Space Agency</Organization>
+	<Site>Rome</Site>
+	<Country>Italy</Country>
+	<HwName>OPE</HwName>
+	<SwName>ADGS</SwName>
+	<SwVersion>1.0</SwVersion>
+</Root>

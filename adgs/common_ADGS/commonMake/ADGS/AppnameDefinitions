@@ -1,0 +1,40 @@
+#ifndef _AppnameDefinitions_
+#define _AppnameDefinitions_
+
+// Thin Layer definitions
+#define TL_SUBSYSTEM "ADGS"
+#define TL_APPNAME "ADGSTLDaemon"
+
+// Importer - ADGS main app in S1
+#define IMPORTER_SUBSYSTEM "ADGS"
+#define IMPORTER_APPNAME "ADGSImporter"
+
+// Exporter
+#define PACKAGEEXPORTER_SUBSYSTEM "ADGS"
+#define PACKAGEEXPORTER_APPNAME "ADGSPackageExporter"
+
+// Order Generator
+#define ORDERGENERATOR_SUBSYSTEM "ADGS"
+#define ORDERGENERATOR_APPNAME "ADGSOrderGenerator"
+
+// Packager Optimiser
+#define PACKAGEROPTIMISER_SUBSYSTEM "ADGS"
+#define PACKAGEROPTIMISER_APPNAME "ADGSPackagerOptimiser"
+
+// Distribution Generator
+#define DISTRIBUTIONGENERATOR_SUBSYSTEM "ADGS"
+#define DISTRIBUTIONGENERATOR_APPNAME "ADGSDistributionGenerator"
+
+// Circulation Agent
+#define CIRCULATIONAGENT_SUBSYSTEM "ADGS"
+#define CIRCULATIONAGENT_APPNAME "ADGSCirculationAgent"
+
+// Circulation Service
+#define CIRCULATIONSERVICE_SUBSYSTEM "ADGS"
+#define CIRCULATIONSERVICE_APPNAME "ADGSCirculationService"
+
+// Rolling Archive
+#define ROLLINGARCHIVE_SUBSYSTEM "ADGS"
+#define ROLLINGARCHIVE_APPNAME "ADGSRollingArchive"
+
+#endif // _AppnameDefinitions_

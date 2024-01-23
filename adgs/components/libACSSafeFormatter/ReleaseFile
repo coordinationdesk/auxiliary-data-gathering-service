@@ -1,0 +1,27 @@
+2.2.0
+CCDS-43: added method to overwrite the configured dataObject id in SafeManifest class
+-----------------------------------------------------------------
+2.1.1
+CCDS-36: colons added in case they are missing at the end of SafeProduct.safePrefix configuration parameter.
+-----------------------------------------------------------------
+2.1.0
+CCDS-36: hardcoded safe namespace prefix removed and corretly read by configuration (safePrefix tag). Default value set to "sentinel-safe:".
+-----------------------------------------------------------------
+2.0.0
+S6JCS-95: bug fixing - handling of nested elements during the reading of the manifest for Processing metadata object fixed. Signature of protected methods for reading changed.
+readXmlStream fixed for OrbitReference metadata object: name of orbitReference changed (it was measurementOrbitReference).
+-----------------------------------------------------------------
+1.26.2
+Makefile update for new environment
+-----------------------------------------------------------------
+1.26.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.26.0
+Added static validation functionality for the manifest in SafeManifest class
+Added setter operations in OrbitReference class
+Added dump operationin the Processing class
+----------------------
+1.25.0
+
+Automatically generate from revision "version "1.25""

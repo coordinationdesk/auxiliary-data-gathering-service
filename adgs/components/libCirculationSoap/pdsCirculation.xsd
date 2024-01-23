@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns="http://www.acsys.it/pds/ordering"
+	targetNamespace="http://www.acsys.it/pds/ordering"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified">
+	<xs:element name="CirculateDynamicRequest" type="CirculateDynamicRequestType"/>
+	<xs:element name="CirculateDynamicResponse" type="CirculateResponseType"/>
+	<xs:element name="CirculateMultiDynamicRequest" type="CirculateMultipleDynamicRequestType"/>
+	<xs:element name="CirculateMultiDynamicResponse" type="CirculateMultipleResponseType"/>
+	<xs:element name="CirculateExplicitRequest" type="CirculateExplicitRequestType"/>
+	<xs:element name="CirculateExplicitResponse" type="CirculateResponseType"/>
+	<xs:element name="StatusRequest" type="StatusRequestType"/>
+	<xs:element name="StatusResponse" type="StatusResponseType"/>
+	<xs:element name="IncreaseCirculationPriorityRequest" type="IncreaseCirculationPriorityRequestType"/>
+	<xs:element name="IncreaseCirculationPriorityResponse" type="IncreaseCirculationPriorityResponseType"/>
+	<xs:element name="CirculationOccurrenceRequest" type="CirculationOccurrenceRequestType"/>
+	<xs:element name="CirculationOccurrenceResponse" type="CirculationOccurrenceResponseType"/>
+	<xs:element name="MultipleStatusRequest" type="MultipleStatusRequestType"/>
+	<xs:element name="MultipleStatusResponse" type="MultipleStatusResponseType"/>
+	<xs:element name="MultipleDetailedStatusRequest" type="MultipleStatusRequestType"/>
+	<xs:element name="MultipleDetailedStatusResponse" type="MultipleDetailedStatusResponseType"/>
+	<xs:element name="ResetRetryRequest" type="ResetRetryRequestType"/>
+	<xs:element name="ResetRetryResponse" type="CirculateResponseType"/>
+	<xs:element name="ResetStatusRequest" type="MultipleStatusRequestType"/>
+	<xs:element name="ResetStatusResponse" type="MultipleStatusResponseType"/>
+	<xs:element name="ResetMultipleStatusRequest" type="MultipleStatusRequestType"/>
+	<xs:element name="ResetMultipleStatusResponse" type="MultipleResponseType"/>
+	<xs:element name="ReInsertRequest" type="StatusRequestType"/>
+	<xs:element name="ReInsertResponse" type="CirculateResponseType"/>
+
+	<xs:complexType name="CirculateResponseType">
+		<xs:sequence>
+ 			<xs:element name="RequestID" type="xs:integer"/>
+ 			<xs:element name="Status" type="StatusEnum"/>
+ 			<xs:element name="ErrorCode" type="ErrorCodeEnum"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="CirculateDynamicRequestType">
+		<xs:sequence>
+ 			<xs:element name="LocalPath" type="xs:string"/>
+			<xs:element name="RemoteUrl" type="xs:string"/>
+			<xs:element name="RemoteUser" type="xs:string"/>
+			<xs:element name="RemoteUserPassword" type="xs:string"/>
+			<xs:element name="Priority" type="xs:integer"
+			minOccurs="0" maxOccurs="1"/>
+			<xs:element name="TempnameMode" type="xs:string" minOccurs="0"/>
+			<xs:element name="TempnameValue" type="xs:string" minOccurs="0"/>
+			<xs:element name="RemoveSource" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ClientID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="LocalTransferMode" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ExternalID" type="xs:integer"	minOccurs="0" maxOccurs="1"/>
+			<xs:element name="CallbackUrl" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="StreamType" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name= "CirculateMultipleDynamicRequestType">
+		<xs:sequence>
+			<xs:element name="CirculateDynamicRequest" type="CirculateDynamicRequestType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+    <xs:complexType name= "CirculateMultipleResponseType">
+		<xs:sequence>
+			<xs:element name="CirculateResponse" type="CirculateResponseType" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="CirculateExplicitRequestType">
+		<xs:sequence>
+ 			<xs:element name="LocalPath" type="xs:string"/>
+			<xs:element name="DataConsumerID" type="xs:string"/>
+			<xs:element name="Priority" type="xs:integer"
+			minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ClientID" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="LocalTransferMode" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="RemoveSource" type="xs:boolean" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="StreamType" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name= "StatusRequestType">
+		<xs:sequence>
+			<xs:element name="RequestID" type="xs:integer"
+			minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name= "StatusResponseType">
+		<xs:sequence>
+			<xs:element name="Status" type="xs:string"/>
+ 			<xs:element name="ErrorCode" type="ErrorCodeEnum"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="IncreaseCirculationPriorityRequestType">
+		<xs:sequence>
+			<xs:element name="RecordID" type="xs:integer" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="RemoteUrl" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="RemoteUser" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="RemoteUserPassword" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="PriorityPlainOrder" type="xs:boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="IncreaseCirculationPriorityResponseType">
+		<xs:sequence>
+ 			<xs:element name="RecordID" type="xs:integer"/>
+  			<xs:element name="RecordStatus" type="xs:string"/>
+  			<xs:element name="Priority" type="xs:integer"/>
+  			<xs:element name="EndDate" type="xs:string"/>
+			<xs:element name="Status" type="StatusEnum"/>
+			<xs:element name="Circulating" type="xs:boolean"/>
+ 			<xs:element name="ErrorCode" type="ErrorCodeEnum"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="CirculationOccurrenceRequestType">
+		<xs:sequence>
+			<xs:element name="UrlKey" type="xs:string"/>
+			<xs:element name="UrlValue" type="xs:string"/>
+			<xs:element name="StatusId" type="xs:integer" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="CirculationOccurrenceResponseType">
+		<xs:sequence>
+ 			<xs:element name="RecordID" type="xs:integer" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="Status" type="StatusEnum"/>
+ 			<xs:element name="ErrorCode" type="ErrorCodeEnum"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name= "MultipleStatusRequestType">
+		<xs:sequence>
+			<xs:element name="RequestIDs" type="xs:integer"
+			minOccurs="1" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name= "RecordInfo">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:integer"/>
+ 			<xs:element name="ModificationDate" type="xs::string"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name= "MultipleStatusResponseType">
+		<xs:sequence>
+			<xs:element name="ErrorIDs" type="RecordInfo" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="CompletedIDs" type="RecordInfo" minOccurs="0" maxOccurs="unbounded"/>
+ 			<xs:element name="ErrorCode" type="ErrorCodeEnum"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name= "Outcome">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:integer"/>
+ 			<xs:element name="ModificationDate" type="xs::string"/>
+ 			<xs:element name="Status" type="ErrorCodeEnum"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name= "MultipleResponseType">
+		<xs:sequence>
+			<xs:element name="List_of_Outcomes" type="Outcome" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name= "DetailedStatusResponseType">
+		<xs:sequence>
+			<xs:element name="Id" type="xs:integer"/>
+ 			<xs:element name="ModificationDate" type="xs::string"/>
+ 			<xs:element name="Status" type="xs::string"/>
+ 			<xs:element name="RecordFound" type="xs::boolean"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name= "MultipleDetailedStatusResponseType">
+		<xs:sequence>
+			<xs:element name="List_of_StatusResponseType" type="DetailedStatusResponseType" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="ErrorCode" type="ErrorCodeEnum"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+    <xs:complexType name= "ResetRetryRequestType">
+		<xs:sequence>
+			<xs:element name="RequestID" type="xs:integer"
+			minOccurs="1" maxOccurs="1"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="StatusEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ACCEPTED"/>
+			<xs:enumeration value="REJECTED"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ErrorCodeEnum">
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="2"/>
+			<xs:enumeration value="3"/>
+			<xs:enumeration value="4"/>
+			<xs:enumeration value="5"/>
+			<xs:enumeration value="6"/>
+			<xs:enumeration value="7"/>
+			<xs:enumeration value="8"/>
+			<xs:enumeration value="9"/>
+			<xs:enumeration value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

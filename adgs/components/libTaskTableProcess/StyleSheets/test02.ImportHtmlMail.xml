@@ -1,0 +1,8 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<MailNotification>
+	<UtcsTime>24-May-2013_20:11:42.455</UtcsTime>
+	<Filename>SAT_UNTF01_TST_20120131T120000</Filename>
+	<Success>false</Success>
+	<EmailDests>nicola.vacca@acsys.it, n.vacca@acsys.it</EmailDests>
+</MailNotification>
+

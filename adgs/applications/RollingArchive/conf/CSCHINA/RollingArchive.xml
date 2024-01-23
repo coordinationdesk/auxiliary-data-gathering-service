@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="yes"?>
+<RollingArchiveRoot>
+	<RollingArchive>
+		<!-- the polling interval on the database [s]  -->
+		<IdlePeriod>21600</IdlePeriod>
+	</RollingArchive>
+</RollingArchiveRoot>

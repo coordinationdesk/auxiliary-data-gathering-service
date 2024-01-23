@@ -1,0 +1,8 @@
+'symbolicname','transferprotocol_id','host_id','username','password','remotepath', 'tempname_id', 'tempname_value'
+
+#FOS Repository
+'S1A FOS EXTRepo', 3, '(select id from t_knownhosts where host_name = 'senxser.esoc.ops.esa.int')', 's1apdgs', '',                     '/home/s1apdgs/fromS1FOS', 1, '.'
+'S1B FOS EXTRepo', 3, '(select id from t_knownhosts where host_name = 'senxser.esoc.ops.esa.int')', 's1bpdgs', '',                     '/home/s1bpdgs/fromS1FOS', 1, '.'
+'S2A FOS EXTRepo', 3, '(select id from t_knownhosts where host_name = 'senxser.esoc.ops.esa.int')', 's2apdgs', '',                     '/home/s2apdgs/fromS2FOS', 1, '.'
+'S2B FOS EXTRepo', 3, '(select id from t_knownhosts where host_name = 'senxser.esoc.ops.esa.int')', 's2bpdgs', '',                     '/home/s2bpdgs/fromS2FOS', 1, '.'
+'S2GIPP ADGSDMZ',  1, '(select id from t_knownhosts where host_name = 'adgs-dns.adgs.int')',        'opadgs',  '##OPADGS_CRYPT_PWD##', '/data/fromS2MCP',         1, '.'

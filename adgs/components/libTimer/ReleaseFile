@@ -1,0 +1,22 @@
+2.19.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+----------------------------------------------------------------------------------
+2.19.2
+new test case added
+----------------------------------------------------------------------------------
+2.19.1
+new test added
+----------------------------------------------------------------------------------
+2.19.0
+Added a new operation stopElapsed that calls stop and returns elapsed
+it is used to check partial times without the need of stop the timer at each check
+----------------------------------------------------------------------------------
+2.18.2
+Timer::life() is now deprecated 
+------------------------------
+2.18.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.18.0
+
+Automatically generate from revision "version "2.18""

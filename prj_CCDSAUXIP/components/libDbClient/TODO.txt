@@ -1,0 +1,16 @@
+# $Id$
+
+
+1 ) dbConv : from string to dbGeoObject and from dbGeoObject to string (dialect-dependent)
+
+2 ) dbGeoObject* should be replaced with a reference, in order to use mainly
+templates in dbColumn; to do this create a wrapper class (GeoObject) managing
+dbGeoObject * 
+
+
+3) dbColumn& dbColumn::column(dbColumn& col)
+and  
+dbColumn::Value * dbColumn::createValue(const string &key, dbSpecificColumnType::Type type)
+should probably delegate switch to Value class ( if on dynamic_cast for the
+first and static allocating function for the second)
+

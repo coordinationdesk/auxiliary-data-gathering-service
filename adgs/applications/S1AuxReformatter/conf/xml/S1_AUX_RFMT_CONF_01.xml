@@ -1,0 +1,147 @@
+<?xml version="1.0" standalone="yes"?>
+<ReformattingConfiguration>
+	<List_of_SAFE_Configurations count="6">
+		<SAFE_Configuration>
+			<InputProduct>^[A-Za-z0-9_]{3}[[:digit:]]{17}.*</InputProduct>
+			<ConfPath>{homeconf}/conf/WND/</ConfPath>
+			<version>esa/safe/sentinel-1.0/sentinel-1/auxiliary/sar/wnd</version>
+		</SAFE_Configuration>
+		<SAFE_Configuration>
+			<!--InputProduct>ice-edge-[n-s]h-[[:digit:]]{8}[[:digit:]]{4}.nc$</InputProduct-->
+			<InputProduct>(ice.conc.[NnSs][Hh].*[[:digit:]]{8}[[:digit:]]{4}.nc|ice.edge.[ns]h.*[[:digit:]]{8}[[:digit:]]{4}.nc)</InputProduct>
+			<ConfPath>{homeconf}/conf/ICE</ConfPath>
+			<version>esa/safe/sentinel-1.0/sentinel-1/auxiliary/sar/ice</version>
+		</SAFE_Configuration>
+		<SAFE_Configuration>
+			<!--InputProduct>IFR_WW3-GLOBAL-30MIN_[[:digit:]]{8}T[[:digit:]]{2}Z.nc</InputProduct-->
+			<InputProduct>(IFR_WW3-GLOBAL-30MIN_.+.nc|ifremer-ww3-glob-30min-.+.nc)</InputProduct>
+			<ConfPath>{homeconf}/conf/WAV</ConfPath>
+			<version>esa/safe/sentinel-1.0/sentinel-1/auxiliary/sar/wav</version>
+		</SAFE_Configuration>
+		<SAFE_Configuration>
+			<!--InputProduct>ECMWF_OPER_ML00_06H_129_GP_N640_20190810T000000</InputProduct-->
+			<InputProduct>([A-Z0-9_]{5}_[A-Z0-9_]{4}_ML00_[0-9]{2}H_[0-9]{3}_GP_[A-Z0-9_]{4}_[[:digit:]]{8}T[[:digit:]]{6})</InputProduct>
+			<ConfPath>{homeconf}/conf/TRO</ConfPath>
+			<version>esa/safe/sentinel-1.0/sentinel-1/auxiliary/sar/tro</version>
+		</SAFE_Configuration>
+		<SAFE_Configuration>
+			<!--InputProduct>codg2220.19i.Z</InputProduct-->
+			<InputProduct>([A-Za-z0-9_]{4}[0-9]{3}[0-9].[0-9]{2}i.Z)</InputProduct>
+			<ConfPath>{homeconf}/conf/TEC</ConfPath>
+			<version>esa/safe/sentinel-1.0/sentinel-1/auxiliary/sar/tec</version>
+		</SAFE_Configuration>
+		<SAFE_Configuration>
+			<!--InputProduct>COD0OPSFIN_20223310000_01D_01H_GIM.INX.gz</InputProduct-->
+			<InputProduct>[A-Za-z0-9_]{10}_([0-9]{4}[0-9]{3})[0-9]{4}_[A-Za-z0-9_]{11}\.[A-Za-z0-9_]{3}.gz$</InputProduct>
+			<ConfPath>{homeconf}/conf/TEC</ConfPath>
+			<version>esa/safe/sentinel-1.0/sentinel-1/auxiliary/sar/tec</version>
+		</SAFE_Configuration>
+	</List_of_SAFE_Configurations>
+	<configurationPath>{homeconf}/conf/</configurationPath>
+	
+	<!-- Rule to compute data filename from the input filename. If no rule matching then output name = input name. -->
+	<InputOutputNamingRules>
+		<!-- Action allowed: tolower, toupper, append, replace-all -->
+		<!-- S1D07231200072400001 to s1d07231200072400001.grb -->
+		<Rule match=".*S1D[[:digit:]]{17}.*">
+			<Actions>
+				<Action name="tolower"/>
+				<Action name="append">
+					<Param>.grb</Param>
+				</Action>
+			</Actions>
+		</Rule>
+		<!-- ice_conc_NH_201107031200.nc to ice-edge-nh-201107031200.nc -->
+		<Rule match=".*ice_conc_[NS]H_.+">
+			<Actions>
+				<Action name="tolower"/>
+				<Action name="replace-all">
+					<Param>_</Param>
+					<Param>-</Param>
+				</Action>
+				<Action name="replace-all">
+					<Param>conc</Param>
+					<Param>edge</Param>
+				</Action>
+			</Actions>
+		</Rule>
+		<!-- IFR_WW3-GLOBAL-30MIN_20040724T03Z_G2017-05-02T14.nc to ifremer-ww3-glob-30min-20040724t03z-g2017-05-02t14-uss.nc -->
+		<Rule match=".*IFR_WW3-GLOBAL-30MIN_.+">
+			<Actions>
+				<Action name="tolower"/>
+				<Action name="replace-all">
+					<Param>_</Param>
+					<Param>-</Param>
+				</Action>
+				<Action name="replace-all">
+					<Param>ifr</Param>
+					<Param>ifremer</Param>
+				</Action>
+				<Action name="replace-all">
+					<Param>global</Param>
+					<Param>glob</Param>
+				</Action>
+				<Action name="replace-all">
+					<Param>.nc</Param>
+					<Param>-uss.nc</Param>
+				</Action>
+			</Actions>
+		</Rule>
+		
+	</InputOutputNamingRules>
+	
+	<GenerateMetdata enabled="true">
+		<MetadataTemplate><![CDATA[<?xml version ="1.0" encoding="UTF-8"?>
+<Inventory_Metadata>
+   <File_Name>__filename__</File_Name>
+   <File_Version>0001</File_Version> <!-- These files planned to be ingested once in the system. No reprocessing. If already existing Inventory exits with error. -->
+   <Unique_Id></Unique_Id>
+   <Logical_Id></Logical_Id>
+   <Parent_Id></Parent_Id>
+   <Group_Id></Group_Id>
+   <System></System>
+   <Source>__source__</Source>
+   <Source_Sw_Version>__sourceSwVersion__</Source_Sw_Version>
+   <Generation_Time>__generationTime__</Generation_Time>
+   <Validity_Start>__validityStart__</Validity_Start>
+   <Validity_Stop>__validityStop__</Validity_Stop>
+   <Start_Orbit_Number></Start_Orbit_Number>
+   <Stop_Orbit_Number></Stop_Orbit_Number>
+   <Geographic_Localization>
+      <Geo_Type></Geo_Type>
+      <Time_Range>
+         <Start_Time></Start_Time>
+         <Stop_Time></Stop_Time>
+      </Time_Range>
+      <List_Of_Geo_Pnt count="0">
+      </List_Of_Geo_Pnt>
+   </Geographic_Localization>
+   <Quality_Info></Quality_Info>
+   <Validity_Flag>true</Validity_Flag>
+   <Validation_Date>__validationDate__</Validation_Date>
+   <Header_Size>0</Header_Size>
+   <Data_Size>__dataSize__</Data_Size>
+   <File_Type>__fileType__</File_Type>
+   <File_Class>OPER</File_Class>
+   <Sensor_Id></Sensor_Id>
+   <Acquisition_Station_Id></Acquisition_Station_Id>
+   <Processing_Station_Id></Processing_Station_Id>
+   <Sensor_Mode></Sensor_Mode>
+   <Phase></Phase>
+   <Satellite_Id>42</Satellite_Id>
+   <Ascending_Flag></Ascending_Flag>
+   <Equator_X_Longitude></Equator_X_Longitude>
+   <Equator_X_Time></Equator_X_Time>
+   <Order_Id></Order_Id>
+   <Mission>1</Mission>
+   <Qualified></Qualified>
+   <Band></Band>
+   <Tdi></Tdi>
+   <CloudPercentage></CloudPercentage>
+   <ProductSpecification></ProductSpecification>
+   <List_Of_Files count="0">
+   </List_Of_Files>
+</Inventory_Metadata>]]></MetadataTemplate>
+	</GenerateMetdata>
+	
+</ReformattingConfiguration>

@@ -1,0 +1,204 @@
+#
+#	Copyright 1995-2002, Advanced Computer Systems , Inc.
+#	Via Della Bufalotta, 378 - 00139 Roma - Italy
+#	http://www.acsys.it
+#
+#	All Rights Reserved.
+#
+#	This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems;
+#	the contents of this file may not be disclosed to third parties, copied or
+#	duplicated in any form, in whole or in part, without the prior written
+#	permission of Advanced Computer Systems, Inc.
+#
+#	$Prod: A.C.S. Makefile for libDbData $
+#
+#	$Id$
+#
+#	$Author$
+#
+#	$Log$
+#	Revision 2.0  2006/02/28 08:47:38  marpas
+#	Exception 2.1 I/F adopted
+#	
+#	Revision 1.1.1.1  2002/11/29 17:19:30  marpas
+#	Import libDbData
+#		
+#
+---------------------------------------------------------------------------------------------------------
+							Database KERNEL
+---------------------------------------------------------------------------------------------------------
+da fare:
+
+di tutte le classi che ho fatto, devo implementare i metodi:
+
+validate()
+
+export()	> per questi dobbiamo scegliere il formato
+import()	> "     "      "    
+---------------------------------------------------------------------------------------------------------
+							GeoShape e' NULL
+---------------------------------------------------------------------------------------------------------
+Se GeoShape e' NULL, l'oggetto dbGeoObject si incazza come un animale.
+
+Per aggirare l'inconveniente aggiungere la clausola NOT NULL dove possibile nel database.
+---------------------------------------------------------------------------------------------------------
+							Tempo nel t_localization
+---------------------------------------------------------------------------------------------------------
+Sembra che si perda i millisecondi quando salva i GeoObjects.........
+bisogna settare GL_DATETIME="%Y-%m-%d %H:%M:%S.%F5"
+---------------------------------------------------------------------------------------------------------
+							responsabilita delle azioni nel database
+---------------------------------------------------------------------------------------------------------
+La responsabilita delle azioni nel database deve essere demandata all'utilizzatore della libreria.
+Ad esempio, uno dei parametri del Save dovrebbe essere se l'inserimento viene fatto con duplicazione 
+oppure no, cioe' come si deve comportare il datatabase nel caso in cui le tracce da inserire gia' 
+esistano. 
+---------------------------------------------------------------------------------------------------------
+							chiamare il metodo 'update'
+---------------------------------------------------------------------------------------------------------
+Non si puo' assolutamente chiamare il metodo 'update' se non e' stato chiamato il metodo 'load'. Quindi 
+serve sicuramente un flag che mi dice se la classe e' stata caricata dal database oppure no?
+Non basterebbe guardare se nel Notifier e' presente il Segment_Common_ID?
+---------------------------------------------------------------------------------------------------------
+							Valori non validi
+---------------------------------------------------------------------------------------------------------
+In molte classi ho messo dei controlli su valori non validi. Ad esempio, nel metodo 'Update' si controlla
+se l'Id e' maggiore di zero, altrimenti si assume che l'Id non sia stato settato e quindi ci si rifiuta 
+di eseguire la funzione. Ma quando il database e' vuoto, il primo record avra' id = 0. In questo caso che
+succede? Forse bisognerebbe dire che i campi Serial debbono partire da 1 (quindi modificare gli script di
+creazione tabelle).
+---------------------------------------------------------------------------------------------------------
+							Enum
+---------------------------------------------------------------------------------------------------------
+In Defence.C ho incastonato 2 (ObjectSupetype = Defence) nella funzione Defence::save. Mettere in un 
+enum.
+Sempre riguardo gli enumerativi, c'e' un problema di fondo. Nel codice sono comodi (ad esempio invece di
+Satellite = 2, e' piu' carino scrivere Satellite = SPOT. Ma come conciliare i valori che sono riportati
+nelle tabelle del database con i vari enum? Forse sarebbe da scrivere un utility che controlli la 
+congruita' dell'ambiente...
+---------------------------------------------------------------------------------------------------------
+							Operatore << e proxy
+---------------------------------------------------------------------------------------------------------
+Mettere a posto l'operatore << delle classi dove c'e' un proxy. Infatti l'operatore << vuole che il 
+vaolore alla sua destra sia const, mentre per sua natura l'implementazione del proxy potrebbe cambiare
+il valore dell'oggetto nel momento in cui si vanno ad ispezionare i membri privati dell'oggetto 
+(caricandolo al momento)....
+---------------------------------------------------------------------------------------------------------
+							Associazioni ID-->Nomi
+---------------------------------------------------------------------------------------------------------
+Costruire tutte le classi (Singleton) che risolvono le associazioni ID-Nomi (satelliti, sensori, 
+stazioni....).
+Queste classi debbono poter generare gli script di creazione delle tabelle e, nel momento del caricamento,
+debbono controllare la congruita' delle tabelle nel database con gli enum (ad esempio che il valore 
+dell'enum di SPOT corrisponda al valore contenuto nelle tabelle di t_satellites).
+---------------------------------------------------------------------------------------------------------
+							Tipi di dati
+---------------------------------------------------------------------------------------------------------
+Esistono dei tipi di dati in dbcType per far corrispondere i tipi dato di informix ai tipi dati in c++
+(ad esempio per poter usare SMALLFLOAT). Questo quanto impatta sugli utilizzatori della libreria? Che
+vantaggi porta?
+---------------------------------------------------------------------------------------------------------
+							dbPersistent
+---------------------------------------------------------------------------------------------------------
+Se un oggetto e' stato caricato con il LOAD, l'unico modo di salvarlo nuovamente nel database deve essere
+con il metodo UPDATE (deve essere vietato il SAVE). Quindi:
+Il metodo LOAD mette il flag 'FromDatabase' a true.
+Il metodo UPDATE deve controllare che il frlag 'FomDatabase' sia True e che gli ID siano tutti settati.
+Il metodo SAVE deve lanciare una exception se il flag 'FromDatabase' e true.
+Bisogna implementare due diverse firme delle funzioni LOAD e SAVE, una LOAD(id, dbcConnection* = 0) da
+invocare quando l'oggetto viene usato 'stand-alone' (quindi se viene chiamata questa funzione ed il 
+puntatore a repository non e' 0 l'oggetto lancia una eccezione), ed una LOAD() che viene chiamata quando
+invece l'oggetto e' incapsulato in un oggetto contenitore (ad esempio quando la classe SegmentCommon e'
+contenuta in Pass). In questo caso la presenza di un puntatore valido ad un oggetto repository deve
+essere controllata ed, in caso contrario, deve essere lanciata un eccezione. Deve anche essere 
+controllato la presenza di un id valido all'interno della classe repository.
+---------------------------------------------------------------------------------------------------------
+							Repository
+---------------------------------------------------------------------------------------------------------
+L'oggetto repository deve essere aggiornato da tutti gli oggetti. Si incarica di essere il repository
+comune di alcune informazioni fra le quali:
+ModifiedFlag 	: 	indica se uno degli oggetti contenuti all'interno di un contenitore e' stato 
+				:	modificato. Tutte le classi possono fare il SetModified ma solo alcune (ad esempio
+				:	tutte le classi contenitore) debbono poter fare il ResetModified.
+LocalizationId	: 	????
+CommonId		: 	SegmentCommonId per la parte stazioni e DefenceCommonId per la parte difesa). Solo
+				:	alcune classi (ad esempio DefenceCommon e SegmentCommon) debbono poter accedere
+				:	ai metodi SetCommonId. Le altre debbono solo leggerlo.
+MediumId		: 	Contiene l'Id del medium associato ad un passaggio od un oggetto difesa
+FromDatabase	: 	Flag che indica se la classe e' stata caricata dal database
+dbcConnection	: 	puntatore connessione unica che viene aperta e chiusa dall'oggetto contenitore ogni 
+				:	volta che viene fatta una query al database
+Per far si' che il repository venga aggiornato una soluzione potrebbe essere ridefinire le funzioni 
+setModified, setId delle classi in modo che aggiornino anche (una volta controllata la presenza di un 
+puntatore valido), anche l'oggetto Repository.
+---------------------------------------------------------------------------------------------------------
+							Ellipsoid Type
+---------------------------------------------------------------------------------------------------------
+La tabella ellipsoid type contiene il nome dell'ellissoide associato al segmento Ers (nel segmento ERS
+c'e' solo l'id relativo al nome). Nella tabella Ers_segment invece ci sono i parametri relativi 
+all'ellissoide. Il dubbio e' che ci sia una dipendenza funzionale tra il tipo di ellissoide ed i suoi
+parametri (se cosi' fosse, questi dovrebbero essere spostati dalla tabella Ers_segment in ellipsoid_type)
+La stessa cosa e' per la tabella Landsat_Jers_Segment.
+Chiedere a Valter ed Antonio.
+---------------------------------------------------------------------------------------------------------
+							Repository user
+---------------------------------------------------------------------------------------------------------
+nella parte difesa viene chiamata da piu classi (Scene TgtRecord Defence) la reset
+della classe forse si potrebbe migliorare l'accesso a questa classe per avere un
+migliore controllo dei dati di Repository
+---------------------------------------------------------------------------------------------------------
+							dbPersistent user
+---------------------------------------------------------------------------------------------------------
+le funzioni di export ed import devono essere cambiate, il parametro deve 
+essere come da commento ostream e istream
+---------------------------------------------------------------------------------------------------------
+							dbGeoBox 
+---------------------------------------------------------------------------------------------------------
+devi controllare l'effettiva posizione dei corner sw e ne
+devi fare gli operatori >> e << 
+---------------------------------------------------------------------------------------------------------
+							segmentCommon 
+---------------------------------------------------------------------------------------------------------
+l'uso della tabella t_seg_storage_pos integrata nel segmentCommon potrebbe creare problemi 
+nell'UPDATE, perche se la prima volta (nel save) non e' stata create l'UPDATE naturalmente fallisce
+---------------------------------------------------------------------------------------------------------
+							DERIVANTI DAL CORSO INFORMIX:
+---------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------
+							Transazioni 
+---------------------------------------------------------------------------------------------------------
+Tutti gli oggetti contenitore debbono eseguire le transazioni all'interno di una transazione. Se una delle
+operazioni va' male, bisogna fare il ROLLBACK.
+Ok, per gli oggetti Defence l'ho fatto.
+---------------------------------------------------------------------------------------------------------
+							Ottimizzazione
+---------------------------------------------------------------------------------------------------------
+Ricordarsi che, per ragioni di performances,  i dati e gli indici debbono andare su dischi diversi
+---------------------------------------------------------------------------------------------------------
+							ON DELETE CASCADE 
+---------------------------------------------------------------------------------------------------------
+Per evitare che un giorno, droppando magari qualche tabella tipo 'Satellite' o 'Sensor', venga cancellato
+tutto il database, potrebbe essere meglio togliere 'ON DELETE CASCADE' negli script di creazione 
+tabelle
+---------------------------------------------------------------------------------------------------------
+							DATABASE LOGGING
+---------------------------------------------------------------------------------------------------------
+Vedere com'e la logica di logging. Probabilmente sarebbe meglio unbuffered
+---------------------------------------------------------------------------------------------------------
+							Db Monitoring 
+---------------------------------------------------------------------------------------------------------
+Sviluppare degli applicativi per monitorare lo stato del database (chunks, logical logs, carico, logfile..)
+---------------------------------------------------------------------------------------------------------
+							!!!!TIMESTAMP!!!!
+---------------------------------------------------------------------------------------------------------
+Se non fosse gia' stato fatto, aggiungere il timestamp di inserimento e modifica degli oggetti principali
+(xxxCommon, localization)
+---------------------------------------------------------------------------------------------------------
+							Sicurezza
+---------------------------------------------------------------------------------------------------------
+Rivedere i meccanismi di sicurezza. NOn e' bello che chiunque, leggendo /usr/acs/conf/xxx.conf, possa
+ottenere la password del DBA.
+---------------------------------------------------------------------------------------------------------
+							DbCockpit
+---------------------------------------------------------------------------------------------------------
+Chiedere a Gino Informix il DbCockpit

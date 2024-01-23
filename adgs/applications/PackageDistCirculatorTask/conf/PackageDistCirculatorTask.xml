@@ -1,0 +1,12 @@
+<Root>
+<PackageDistCirculatorTask>
+	<!-- List of Configuration Space to load -->
+	<ConfigurationSpaceList count="">
+		<ConfigurationSpace>PackageExporter</ConfigurationSpace>
+		<ConfigurationSpace>PackageTask</ConfigurationSpace>
+	</ConfigurationSpaceList>
+
+
+</PackageDistCirculatorTask>
+</Root>
+

@@ -1,0 +1,755 @@
+*****************************************
+* memory allocation
+
+* Object '%1s' used with inconsistent allocation methods in different translation units.
+-o 1530
+
+* There is no corresponding operator delete for this operator new.
+-o 2160
+
+* This object was used as pointer to non-array object earlier.
+-o 3330
+
+* This object was used as pointer to array earlier.
+-o 3331
+
+* This object was used as a pointer to old C-style allocated memory.
+-o 3332
+
+* This object is also used as a pointer to new style allocated memory.
+-o 3334
+
+* The memory referred to by '%1s' has been deallocated.
+-o 4303
+
+
+*****************************************
+* conversions
+
+* This is an implicit conversion from an array of derived to pointer to base.
+-o 3073
+
+* Avoid passing a class object as an ellipsis argument.
+-o 3074
+
+* This is an illegal downcast from virtual base.
+-o 3095
+
+* This is a dangerous downcast from virtual base.
+-o 3096
+
+
+
+*****************************************
+* undefined/unspecified behaviour
+
+* Undefined behaviour: '%1s' declared with internal and external linkage.
+-o 0293
+
+* Builtin object '%1s' is modified and accessed between sequence points.
+-o 3220
+
+* Builtin argument '%1s' is modified and accessed between sequence points.
+-o 3221
+
+* This operand of the built-in equality operator is a pointer to a virtual member function.
+-o 3280
+
+* The right hand side operand of the shift operator is negative.
+-o 3321
+
+* The right hand side operand of the shift operator is too large.
+-o 3322
+
+* This is a jump past initialisation of objects.
+-o 4003
+
+* Uninitialised member used as initialiser.
+-o 4056
+
+* Index is out of bounds.
+-o 4332
+
+
+*****************************************
+* exceptions
+
+* This exception is derived from an exception caught above.
+-o 4030
+
+* Uncaught 'throw' expression in destructor.
+-o 4032
+
+* This catch-all exception handler should be the last.
+-o 4034
+
+* This throws an exception of type '%1s' which is not listed in the exception specification.
+-o 4035
+
+* This rethrow expression is outside a catch block.
+-o 4635
+
+* This throw in main will cause the program to terminate.
+-o 4037
+
+
+*****************************************
+* return statements
+
+* A return expression is required.
+-o 205
+
+* This function has a non-void return type but no return statements.
+-o 4022
+
+* This returns a handle to local data.
+-o 4026
+
+* This returns a handle to a function parameter.
+-o 4027
+
+
+*****************************************
+* linking
+
+* '%1s' has external linkage and has multiple definitions.
+-o 1509
+
+* '%1s' has external linkage and has incompatible declarations.
+-o 1510
+
+
+*****************************************
+* miscellaneous
+
+* The default value is different from the overridden function.
+-o 2018
+
+* POD member object '%1s' is not initialised by constructor.
+-o 4206	
+
+* This unary minus operator is being applied to an unsigned type.
+-o 3002
+
+* The operand of 'sizeof' has side effects that will not be performed at run-time.
+-o 3240
+
+* The operand of this 'sizeof' will lead to a call to a virtual function that will not be performed at run-time.
+-o 3250
+
+* The operand of 'typeid' has side effects that will not be performed at run-time.
+-o 3247
+
+
+*****************************************
+* 101 rules
+
+* Avoid overloading comma operator (,).
+-o 2077
+
+* Avoid overloading operator 'and' (&&).
+-o 2078
+
+* Avoid overloading operator 'or' (||).
+-o 2079
+
+* The virtual function is called in constructor without qualifier.
+-o 4260
+
+* The virtual function is called in destructor without qualifier.
+-o 4261
+
+
+*****************************************
+* dataflow
+
+* This class has declared a copy assignment operator and a destructor but no copy constructor.
+-o 2613
+
+* This class has declared a copy assignment operator but no copy constructor.
+-o 2615
+
+* This class has declared a copy constructor and a destructor but no copy assignment operator.
+-o 2616
+
+* This class has declared a copy constructor but no copy assignment operator.
+-o 2618
+
+* DF_Invariant	This loop controlling expression is a constant expression and its value is 'true'.
+-o 2740
+
+* DF_Invariant	This 'if' controlling expression is a constant expression and its value is 'true'.
+-o 2741
+
+* DF_Invariant	This 'if' controlling expression is a constant expression and its value is 'false'.
+-o 2742
+
+* DF_Invariant	This 'do - while' loop controlling expression is a constant expression and its value is 'false'. The loop will only be executed once.
+-o 2743
+
+* DF_Invariant	This 'while' or 'for' loop controlling expression is a constant expression and and its value is 'false'. The loop will not be entered.
+-o 2744
+
+* DF_Recovery	Internal dataflow problem. Dataflow analysis continues with the next function. Please inform Programming Research.
+-o 2750
+
+* DF_Recovery	This function is too complex. Dataflow analysis continues with the next function.
+-o 2751
+
+* DF_Recovery	This '%1s' results in the function being too complex. Dataflow analysis continues with the next function.
+-o 2752
+
+* DF_Recovery	Analysis time of function '%1s' has exceeded the configured maximum: '%2sms'.  Dataflow analysis continues with the next function.
+-o 2755
+
+* DF_Recovery	Could not expand function call to '%1s' with maximum '-po df::inter' value.
+-o 2756
+
+* DF_Recovery	Could not analyse function '%1s'.
+-o 2757
+
+* DF_Pointers	Definite: These pointers address different objects.
+-o 2771
+
+* DF_Pointers	Apparent: These pointers address different objects.
+-o 2772
+
+* DF_Pointers	Suspicious: These pointers address different objects.
+-o 2773
+
+* DF_Pointers	Definite: Copy between overlapping objects.
+-o 2776
+
+* DF_Pointers	Apparent: Copy between overlapping objects.
+-o 2777
+
+* DF_Pointers	Suspicious: Copy between overlapping objects.
+-o 2778
+
+* DF_Shift	Constant: Right hand operand of shift operator is negative or too large.
+-o 2790
+
+* DF_Shift	Definite: Right hand operand of shift operator is negative or too large.
+-o 2791
+
+* DF_Shift	Apparent: Right hand operand of shift operator is negative or too large.
+-o 2792
+
+* DF_Shift	Suspicious: Right hand operand of shift operator is negative or too large.
+-o 2793
+
+* DF_Overflow	Constant: Overflow in signed arithmetic operation.
+-o 2800
+
+* DF_Overflow	Definite: Overflow in signed arithmetic operation.
+-o 2801
+
+* DF_Overflow	Apparent: Overflow in signed arithmetic operation.
+-o 2802
+
+* DF_Overflow	Suspicious: Overflow in signed arithmetic operation.
+-o 2803
+
+* DF_NULL	Constant: Dereference of NULL pointer.
+-o 2810
+
+* DF_NULL	Definite: Dereference of NULL pointer.
+-o 2811
+
+* DF_NULL	Apparent: Dereference of NULL pointer.
+-o 2812
+
+* DF_NULL	Suspicious: Dereference of NULL pointer.
+-o 2813
+
+* DF_NULL	Constant: Arithmetic operation on NULL pointer.
+-o 2820
+
+* DF_NULL	Definite: Arithmetic operation on NULL pointer.
+-o 2821
+
+* DF_NULL	Apparent: Arithmetic operation on NULL pointer.
+-o 2822
+
+* DF_NULL	Suspicious: Arithmetic operation on NULL pointer.
+-o 2823
+
+* DF_Overflow	Constant: Division by zero.
+-o 2830
+
+* DF_Overflow	Definite: Division by zero.
+-o 2831
+
+* DF_Overflow	Apparent: Division by zero.
+-o 2832
+
+* DF_Overflow	Suspicious: Division by zero.
+-o 2833
+
+* DF_Arrays	Constant: Dereference of an invalid pointer value.
+-o 2840
+
+* DF_Arrays	Definite: Dereference of an invalid pointer value.
+-o 2841
+
+* DF_Arrays	Apparent: Dereference of an invalid pointer value.
+-o 2842
+
+* DF_Arrays	Suspicious: Dereference of an invalid pointer value.
+-o 2843
+
+* DF_Signed	Constant: Implicit conversion to a signed integer type of insufficient size.
+-o 2850
+
+* DF_Signed	Definite: Implicit conversion to a signed integer type of insufficient size.
+-o 2851
+
+* DF_Signed	Apparent: Implicit conversion to a signed integer type of insufficient size.
+-o 2852
+
+* DF_Signed	Suspicious: Implicit conversion to a signed integer type of insufficient size.
+-o 2853
+
+* DF_Signed	Definite: Casting to a signed integer type of insufficient size.
+-o 2856
+
+* DF_Signed	Apparent: Casting to a signed integer type of insufficient size.
+-o 2857
+
+* DF_Signed	Suspicious: Casting to a signed integer type of insufficient size.
+-o 2858
+
+* DF_Shift	Definite: Implementation-defined value resulting from left shift operation on expression of signed type.
+-o 2861
+
+* DF_Shift	Apparent: Implementation-defined value resulting from left shift operation on expression of signed type.
+-o 2862
+
+* DF_Shift	Suspicious: Implementation-defined value resulting from left shift operation on expression of signed type.
+-o 2863
+
+* DF_Control	Infinite loop identified.
+-o 2871
+
+* DF_Control	This loop, if entered, will never terminate.
+-o 2872
+
+* DF_Control	This loop will never be executed more than once.
+-o 2877
+
+* DF_Control	This code is unreachable.
+-o 2880
+
+* DF_Control	The code in this 'default' clause is unreachable.
+-o 2881
+
+* DF_Control	This 'switch' statement will bypass the initialization of local variables.
+-o 2882
+
+* DF_Control	This 'goto' statement will always bypass the initialization of local variables.
+-o 2883
+
+* DF_Control	Function 'main' ends with an implicit 'return' statement.
+-o 2887
+
+* DF_Control	This function has been declared with a non-void 'return' type but ends with an implicit 'return ;' statement.
+-o 2888
+
+* DF_Unsigned	Definite: Negative value implicitly converted to an unsigned type.
+-o 2891
+
+* DF_Unsigned	Apparent: Negative value implicitly converted to an unsigned type.
+-o 2892
+
+* DF_Unsigned	Suspicious: Negative value implicitly converted to an unsigned type.
+-o 2893
+
+* DF_Unsigned	Definite: Negative value cast to an unsigned type.
+-o 2896
+
+* DF_Unsigned	Apparent: Negative value cast to an unsigned type.
+-o 2897
+
+* DF_Unsigned	Suspicious: Negative value cast to an unsigned type.
+-o 2898
+
+* DF_Unsigned	Constant: Positive integer value truncated by implicit conversion to a smaller unsigned type.
+-o 2900
+
+* DF_Unsigned	Definite: Positive integer value truncated by implicit conversion to a smaller unsigned type.
+-o 2901
+
+* DF_Unsigned	Apparent: Positive integer value truncated by implicit conversion to a smaller unsigned type.
+-o 2902
+
+* DF_Unsigned	Suspicious: Positive integer value truncated by implicit conversion to a smaller unsigned type.
+-o 2903
+
+* DF_Unsigned	Constant: Positive integer value truncated by cast to a smaller unsigned type.
+-o 2905
+
+* DF_Unsigned	Definite: Positive integer value truncated by cast to a smaller unsigned type.
+-o 2906
+
+* DF_Unsigned	Apparent: Positive integer value truncated by cast to a smaller unsigned type.
+-o 2907
+
+* DF_Unsigned	Suspicious: Positive integer value truncated by cast to a smaller unsigned type.
+-o 2908
+
+* DF_Shift	Constant: Left shift operation on expression of unsigned type results in loss of high order bits.
+-o 2920
+
+* DF_Shift	Definite: Left shift operation on expression of unsigned type results in loss of high order bits.
+-o 2921
+
+* DF_Shift	Apparent: Left shift operation on expression of unsigned type results in loss of high order bits.
+-o 2922
+
+* DF_Shift	Suspicious: Left shift operation on expression of unsigned type results in loss of high order bits.
+-o 2923
+
+* DF_Arrays	Constant: Computing an invalid pointer value.
+-o 2930
+
+* DF_Arrays	Definite: Computing an invalid pointer value.
+-o 2931
+
+* DF_Arrays	Apparent: Computing an invalid pointer value.
+-o 2932
+
+* DF_Arrays	Suspicious: Computing an invalid pointer value.
+-o 2933
+
+* DF_Signed	Constant: Result of implicit conversion is only representable in a two's complement implementation.
+-o 2940
+
+* DF_Signed	Definite: Result of implicit conversion is only representable in a two's complement implementation.
+-o 2941
+
+* DF_Signed	Apparent: Result of implicit conversion is only representable in a two's complement implementation.
+-o 2942
+
+* DF_Signed	Suspicious: Result of implicit conversion is only representable in a two's complement implementation.
+-o 2943
+
+* DF_Signed	Constant: Result of cast is only representable in a two's complement implementation.
+-o 2945
+
+* DF_Signed	Definite: Result of cast is only representable in a two's complement implementation.
+-o 2946
+
+* DF_Signed	Apparent: Result of cast is only representable in a two's complement implementation.
+-o 2947
+
+* DF_Signed	Suspicious: Result of cast is only representable in a two's complement implementation.
+-o 2948
+
+* DF_Arrays	Constant: Negative value used in array subscript or pointer arithmetic operation.
+-o 2950
+
+* DF_Arrays	Definite: Negative value used in array subscript or pointer arithmetic operation.
+-o 2951
+
+* DF_Arrays	Apparent: Negative value used in array subscript or pointer arithmetic operation.
+-o 2952
+
+* DF_Arrays	Suspicious: Negative value used in array subscript or pointer arithmetic operation.
+-o 2953
+
+* DF_Redundancy	The value of function parameter '%1s' is never used before being modified.
+-o 2980
+
+* DF_Redundancy	This initialization is redundant. The value of '%1s' is never used before being modified.
+-o 2981
+
+* DF_Redundancy	This assignment is redundant. The value of '%1s' is never used before being modified.
+-o 2982
+
+* DF_Redundancy	This assignment is redundant. The value of '%1s' is never subsequently used.
+-o 2983
+
+* DF_Redundancy	This operation is redundant. The value of the result is always '%1s'.
+-o 2984
+
+* DF_Redundancy	This operation is redundant. The value of the result is always that of the left-hand operand.
+-o 2985
+
+* DF_Redundancy	This operation is redundant. The value of the result is always that of the right-hand operand.
+-o 2986
+
+* DF_Invariant	The value of this loop controlling expression is always 'true'.
+-o 2990
+
+* DF_Invariant	The value of this 'if' controlling expression is always 'true'.
+-o 2991
+
+* DF_Invariant	The value of this 'if' controlling expression is always 'false'.
+-o 2992
+
+* DF_Invariant	The value of this 'do - while' loop controlling expression is always 'false'. The loop will only be executed once.
+-o 2993
+
+* DF_Invariant	The value of this 'while' or 'for' loop controlling expression is always 'false'. The loop will not be entered.
+-o 2994
+
+* DF_Invariant	The result of this logical operation is always 'true'.
+-o 2995
+
+* DF_Invariant	The result of this logical operation is always 'false'.
+-o 2996
+
+
+
+*****************************************
+* enable timestamp info message
+-o 999
+
+
+*****************************************
+* enable context messages
+-o 109
+-o 110
+-o 111
+-o 112
+-o 113
+-o 130
+-o 422
+-o 700
+-o 701
+-o 702
+-o 703
+-o 704
+-o 705
+-o 706
+-o 900
+-o 901
+-o 902
+-o 903
+-o 904
+-o 905
+-o 906
+-o 907
+-o 908
+-o 909
+-o 910
+-o 911
+-o 915
+-o 916
+-o 918
+-o 919
+-o 920
+-o 921
+-o 922
+-o 924
+-o 925
+-o 926
+-o 927
+-o 928
+-o 929
+-o 930
+-o 931
+-o 932
+-o 933
+-o 934
+-o 935
+-o 936
+-o 937
+-o 938
+-o 939
+-o 940
+-o 941
+-o 942
+-o 950
+-o 951
+-o 1570
+-o 1571
+-o 1572
+-o 1573
+-o 1574
+-o 1575
+-o 1576
+-o 1577
+-o 1578
+-o 1579
+-o 1580
+-o 1581
+-o 1582
+-o 1583
+-o 1584
+-o 1585
+-o 1586
+-o 1587
+-o 1588
+-o 1589
+-o 1590
+-o 1591
+-o 1592
+-o 1593
+-o 1594
+-o 1595
+-o 1596
+-o 1597
+-o 1598
+-o 1599
+-o 3966
+-o 3967
+-o 3968
+
+
+***********************
+* enable level 9 errors (and associated submsgs)
+-o 10
+-o 11
+-o 14
+-o 15
+-o 16
+-o 19
+-o 20
+-o 21
+-o 22
+-o 25
+-o 28
+-o 31
+-o 32
+-o 34
+-o 35
+-o 36
+-o 39
+-o 43
+-o 45
+-o 46
+-o 50
+-o 52
+-o 53
+-o 54
+-o 56
+-o 58
+-o 59
+-o 61
+-o 63
+-o 83
+-o 97
+-o 98
+-o 99
+-o 101
+-o 103
+-o 133
+-o 155
+-o 156
+-o 158
+-o 163
+-o 164
+-o 165
+-o 170
+-o 173
+-o 174
+-o 177
+-o 178
+-o 200
+-o 201
+-o 207
+-o 208
+-o 224
+-o 231
+-o 248
+-o 251
+-o 253
+-o 255
+-o 257
+-o 271
+-o 282
+-o 284
+-o 285
+-o 286
+-o 287
+-o 400
+-o 401
+-o 403
+-o 404
+-o 405
+-o 415
+-o 424
+-o 429
+-o 439
+-o 440
+-o 441
+-o 445
+-o 448
+-o 450
+-o 453
+-o 454
+-o 455
+-o 456
+-o 457
+-o 458
+-o 459
+-o 469
+-o 481
+-o 482
+-o 483
+-o 600
+-o 601
+-o 602
+-o 606
+-o 607
+-o 608
+-o 611
+-o 612
+-o 616
+-o 617
+-o 619
+-o 620
+-o 621
+-o 622
+-o 800
+-o 801
+-o 802
+-o 996
+-o 1950
+-o 1951
+-o 1962
+-o 1963
+-o 1964
+-o 1965
+-o 1966
+-o 1967
+-o 1968
+-o 1969
+-o 1970
+-o 1971
+-o 1972
+-o 1973
+-o 1974
+-o 1975
+-o 1976
+-o 1977
+-o 1978
+-o 1979
+-o 1980
+-o 1982
+-o 1984
+-o 1985
+-o 1986
+-o 1987
+-o 1989
+-o 1990
+-o 1991
+-o 3104
+-o 4100
+
+***********************
+* enable annotation errors
+-o 4810
+-o 4811
+-o 4812
+-o 4820
+-o 4821
+-o 4822
+-o 4823
+-o 4824
+-o 4825
+-o 4826
+-o 4827
+-o 4828
+

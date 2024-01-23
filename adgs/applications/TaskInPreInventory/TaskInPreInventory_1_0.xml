@@ -1,0 +1,31 @@
+<Root>
+<TaskInPreInventory>
+	<!-- List of Configuration Space to load -->
+	<ConfigurationSpaceList count="">
+		<!-- PreInventory Configuration -->
+		<ConfigurationSpace>PreInventory</ConfigurationSpace>
+		<ConfigurationSpace>StationConf</ConfigurationSpace>
+		<ConfigurationSpace>Inventory</ConfigurationSpace>
+		<!-- Common Factories Configuration -->
+		<ConfigurationSpace>ACSTimeConverter</ConfigurationSpace>
+		<ConfigurationSpace>ExplorerWrapper</ConfigurationSpace>
+	</ConfigurationSpaceList>
+	<PreInventoryListFileName>PreInventory.LIST</PreInventoryListFileName>
+	<!-- Enable/Disable the version handling -->
+	<Versioning isEnabled="true">
+		<!-- setw and setfill to use in version string -->
+		<Format setw="4" setfill="0"/>
+	</Versioning>
+	<!-- Product and Metadata Moving to Inventory working dir -->
+	<MoveToInventoryPath>false</MoveToInventoryPath>
+	<Xpath>
+		<FileType><![CDATA[//Input/File_Type/text()]]></FileType>
+		<!-- path names associated to a specific file type, where ${file_type} is a placeholder for value computed by FileType xpath -->
+		<FileName><![CDATA[//Input//File_Name[../../File_Type/text()='${file_type}']/text()]]></FileName> 
+		<OrderType><![CDATA[//Order_Type/text()]]></OrderType>
+		<Test><![CDATA[//Test/text()]]></Test>
+		<Troubleshooting><![CDATA[//Troubleshooting/text()]]></Troubleshooting>
+		<ParameterFile><![CDATA[//Parameter_File/File_Name/text()]]></ParameterFile>
+	</Xpath>
+</TaskInPreInventory>
+</Root>

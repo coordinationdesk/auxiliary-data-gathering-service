@@ -1,0 +1,7 @@
+#!/bin/bash
+
+absPath="$(dirname $0)"
+
+#Call the real executable with parameters
+"${absPath}"/PackageFmtEOFpackTask $1 --formatFrom fromUsers --headerOnly 0 ${@:2}
+

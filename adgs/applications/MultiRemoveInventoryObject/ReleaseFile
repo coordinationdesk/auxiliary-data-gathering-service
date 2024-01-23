@@ -1,0 +1,17 @@
+2.0.0
+Added support for authentication.
+It is based on info contained in configuration spaces.
+At the present time the loaded spaces are:
+- libGenFileAction
+- libFtpCurl.so
+- "hostname"
+The required keys are:
+MultiRemoveAction: operation name used for authorization
+MultiRemoveInventoryObject.QueryThreshold: thresold for force authorization check when deleting 
+------------------------------
+1.28.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.28.0
+
+Automatically generate from revision "version "1.28""

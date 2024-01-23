@@ -1,0 +1,19 @@
+3.0.0
+Added the feature to delete the working directory even in case of errors if required in the work order
+The logic to delete the WD is:
+- CleanupOnExit is set to true
+  AND
+- Execution Completed Succesfully OR ApplyCleanOnError set to TRUE
+------------------------------------------------------------------
+2.45.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+2.45.2
+MP: compilation warnings fixed
+------------------------------
+2.45.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.45.0
+
+Automatically generate from revision "version "2.45""

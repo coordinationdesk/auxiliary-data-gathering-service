@@ -1,0 +1,90 @@
+6.3.4
+Fixed COV_PATH and unit tests
+-------------------------------------------------
+6.3.3
+Added unitTests directory
+-------------------------------------------------
+6.3.2
+CPPUnit reports made using default XML outputters
+test Makefile improved to remove test results
+-------------------------------------------------
+6.3.1
+[LTA-511] Added support for direct_dl_aip in AipParameters::toJsonString() function
+------------------------------------
+6.3.0
+[LTA-511] Added management of the new optional parameter direct_dl_aip
+------------------------------------
+6.2.0
+[LTA-489] Using unsigned short instead of size_t for pool sizes in AipParameters
+------------------------------------
+6.1.0
+[LTA-489] Introduced AipParameter class that implements a wrapper for aip parameters field in t_srv_aip
+------------------------------------
+6.0.0
+[S2PDGS-396] LTAEvicotr class moved from libLTACommon to libLTAEviction
+LTAEstimationTimeHeuristic class moved from libLTACommon to LTAEstimationTimeService
+------------------------------------
+5.0.2
+[LTA-196] Intorduced t_srv_inventory.modificationdate update after the eviction of the aip content
+------------------------------------
+5.0.1
+Warning emitted by missing configuration tag LTAEvictor.Expired_AIP_url is
+now a debug message
+------------------------------------
+5.0.0
+[LTA-166] Removed duplicated NameIdAssociatorSingleton LTASrvStatuses (use LTAStatus instead).
+------------------------------------
+4.1.0
+[LTA-166] Added enum for Batch Status in LTA Remote and related conversion functions between Status in LTA Remote and Downloader.
+------------------------------------
+4.0.1
+[LTA-104]
+DT:: Added M&C messages to evictor.
+------------------------------------
+4.0.0
+[LTA-85]
+DT:: LTAEvictor modified to implement the removal from S3 Aws. Using StopController instead of StopPredicate.
+DD:: Defined object LTADlAIPSelAlgos .
+------------------------------------
+3.2.0
+[LTA-74] Added definition of LTASrvStatuses as a specialization of NameIdAssociatorSingleton in order to extract the fields of the t_srv_statuses table.
+------------------------------------
+3.1.0
+[LTA-74] Added definition of LTASrvOpTypes as a specialization of NameIdAssociatorSingleton in order to extract the fields of the t_srv_op_types table.
+------------------------------------
+3.0.0
+[ECS-8] Introduced priority in estimations. Fixed bug in order by sql statement 
+------------------------------------
+2.0.1
+Test fixed and using srv tables
+------------------------------------
+2.0.0
+t_lta_xxx replaced by t_srv_xxx
+------------------------------------
+1.4.0
+LTA estimation time heuristic implemented
+------------------------------------
+1.3.4
+Using t_lta_inventory instead of t_inventory
+------------------------------------
+1.3.3
+Fixed compile error
+------------------------------------
+1.3.2
+Added zero pad to bucket name computation.
+------------------------------------
+1.3.1
+Added password decrypt in ftp url
+------------------------------------
+1.3.0
+class LTAEvictor added 
+class LTADBSimulationSingleton added
+------------------------------------
+1.2.0
+lta::stat() function to support statistics
+------------------------------------
+1.1.0
+Added function compose_remote_site that returns a RemoteSite object starting from an url and a bucket
+------------------------------------
+1.0.0
+First release with unit tests

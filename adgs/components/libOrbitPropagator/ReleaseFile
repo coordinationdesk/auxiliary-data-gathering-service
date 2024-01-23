@@ -1,0 +1,39 @@
+3.2.5
+RF:: PolarMotion class: TAI-UTC stroring updated.
+-----------------------------------------------------------------
+3.2.4
+RF:: PolarMotion class: Handled IERS A and B in xml format.
+-----------------------------------------------------------------
+3.2.3
+RF:: PolarMotion class: some logs updated.
+-----------------------------------------------------------------
+3.2.2
+RF:: PolarMotion class: Initialization to the first element when reading IERS bulletin the first time. 
+-----------------------------------------------------------------
+3.2.1
+RF:: PolarMotion class: IERS bulletin file name registered in readIERS* methods. 
+-----------------------------------------------------------------
+3.2.0
+RF:: PolarMotion class: updated list public methods and corrected EOPs interpolation; tests updated. 
+-----------------------------------------------------------------
+3.1.0
+RF:: PolarMotion class: IERS bulletin managment updated, and test added.
+-----------------------------------------------------------------
+3.00.0
+virtual initPropagFromFile (multiple orbit file management) suppressed.
+-----------------------------------------------------------------
+2.30.4
+Added new version of initPropagFromFile (multiple orbit file management).
+-----------------------------------------------------------------
+2.30.3
+PropagFormat enums updated.
+-----------------------------------------------------------------
+2.30.2
+Makefile update for new environment
+-----------------------------------------------------------------
+2.30.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.30.0
+
+Automatically generate from revision "version "2.30""

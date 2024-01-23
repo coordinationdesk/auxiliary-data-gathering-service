@@ -1,0 +1,31 @@
+<?xml version="1.0" standalone="yes" ?> 
+<libGenFileActionRoot>
+	<!--  All storage with storecost greater than MinimumAsyncUploadCost will be managed as asynchronous storage --> 
+	<MinimumAsyncUploadCost>20</MinimumAsyncUploadCost> 
+
+	<DownloadInventoryObject>
+		<!-- Invalidate the files that are unknown to all the available storage managers -->
+		<CanInvalidateFile>true</CanInvalidateFile>
+		
+		<!-- Register on DB the clients requesting an inventory download -->
+		<RegisterClient enabled="true">
+			<!-- Name used for Unknown Clients -->
+			<UnknownClientName>UnknownClient</UnknownClientName>
+		</RegisterClient>
+		
+	</DownloadInventoryObject>
+	<UploadInventoryObject>
+		
+	</UploadInventoryObject>
+	
+	<!-- Needed parameters to configure dbInventoryObjectCacheManager class managing a bidirectional cache layer --> 
+	<!--
+	<CacheParameters>
+  		<path>/tmp/cache</path>
+		<size>104857600</size>
+		<LockTimeout>30</LockTimeout>
+	</CacheParameters>
+	-->
+
+	
+</libGenFileActionRoot>

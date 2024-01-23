@@ -1,0 +1,23 @@
+<?xml version="1.0" standalone="yes"?>
+<DistributionGenerationRoot>
+	<DistributionGeneration>
+ 		<!-- number of completed order processed in a complete loop - limits the db load  -->
+        <CompletedOrdersNum>50</CompletedOrdersNum>
+		<!-- the polling interval on the database [s]  -->
+		<DatabasePollingTime>30</DatabasePollingTime>
+		<Always>
+		</Always>
+		<Qualified>
+			<AgeLimit unit='"days"'>30</AgeLimit>
+		</Qualified>
+		<Redistribution>
+			<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+		</Redistribution>
+		<QualifiedValstopLt>
+			<TimeThreshold unit="days">1.0</TimeThreshold>
+		</QualifiedValstopLt>
+		<QualifiedValstopGt>
+			<TimeThreshold unit="days">1.0</TimeThreshold>
+		</QualifiedValstopGt>
+	</DistributionGeneration>
+</DistributionGenerationRoot>

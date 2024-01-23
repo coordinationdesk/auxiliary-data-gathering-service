@@ -1,0 +1,4 @@
+%dir %attr(0777,root,root) /var/www/html/logs/
+%dir %attr(0777,root,root) /var/www/html/runpid/
+/etc/php.d/000-acsphplib-php7.ini
+/opt/ACSPhpLibLite/pear

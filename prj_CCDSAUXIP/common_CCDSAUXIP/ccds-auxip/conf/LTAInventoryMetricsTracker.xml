@@ -1,0 +1,16 @@
+<Root>
+	<LTAInventoryMetricsTracker>
+		<RestartTime>86400</RestartTime>
+		<RestartEnable>true</RestartEnable>
+		<!-- The application instance. Mandatory -->
+		<Instance>1.0</Instance>
+		<!-- The application working dir. Default is /tmp -->
+		<WorkingDir>#INVMETWD#</WorkingDir>
+		<!-- The number of records to be loaded for each query on inventory. Default is 100. -->
+		<QueryBlockSize>100</QueryBlockSize>
+		<!-- The wait interval (sec) used at each iteration in case the end of the inventory table is not reached. Default is 10 sec. -->
+		<WaitInterval>10</WaitInterval>
+		<!-- The wait interval (sec) used at each iteration in case the end of the inventory table is reached. Default is 120 sec. -->
+		<InventoryTailReachedWaitInterval>120</InventoryTailReachedWaitInterval>
+	</LTAInventoryMetricsTracker>
+</Root>

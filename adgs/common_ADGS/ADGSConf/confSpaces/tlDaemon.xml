@@ -1,0 +1,34 @@
+<!-- edited with XML Spy v3.5 NT (http://www.xmlspy.com) by  () -->
+<TlDaemonRoot>
+	<TlDaemon>
+		<TLD_Max_Parallel_Orders>2</TLD_Max_Parallel_Orders>
+		<TLD_Queue_Polling_Frequency>17</TLD_Queue_Polling_Frequency>
+		<TLD_QueueMgrType>DB</TLD_QueueMgrType>
+		<TLD_Time_Window_Delta_T>0</TLD_Time_Window_Delta_T>
+		<TLD_Clean_Working_Dir>true</TLD_Clean_Working_Dir>
+                <TLD_Wipe_Existing_WD>true</TLD_Wipe_Existing_WD>
+		<!-- TLD_Full_Cycle_Period - hours  -->
+		<TLD_Full_Cycle_Period>12</TLD_Full_Cycle_Period>
+		<!-- TLD_Cfg_Reload_Period - minutes -->
+		<TLD_Cfg_Reload_Period>3</TLD_Cfg_Reload_Period>
+		<!-- Order queue sort by priority criterium -->
+		<TLD_Priority_Sort_Order>Ascending</TLD_Priority_Sort_Order>
+		<TLD_LeftTag>RUNNING</TLD_LeftTag>
+		<TLD_RightTag>MODE</TLD_RightTag>
+		<!-- Max log size in Megabytes -->
+		<TLD_Log_Rotation_Size>2</TLD_Log_Rotation_Size>
+		<!-- Log Aging policy in hours -->
+		<TLD_Log_Rotation_Age>12</TLD_Log_Rotation_Age>
+		<TLD_Ipc_Port>8096</TLD_Ipc_Port>
+		<TLD_File_Extensions>
+			<!-- WARNING!!!: specify extensions WITHOUT the leading dot (.) -->
+	       	 	<header>HDR</header>
+	       	 	<binary>DBL</binary>
+	       	 	<unsplit>EEF</unsplit>
+		</TLD_File_Extensions>
+		<EnableCache>true</EnableCache>
+        <CacheSize>5</CacheSize>
+        <List_Of_Cacheable_Filetypes count="0">
+        </List_Of_Cacheable_Filetypes>
+	</TlDaemon>
+</TlDaemonRoot>

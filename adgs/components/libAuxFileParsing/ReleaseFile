@@ -1,0 +1,21 @@
+2.20.6
+MP: compilation warnings cleanup
+---------------------------------------------------------------------
+2.20.5
+SM::Use l0_line_number from AUX_TC_MM0, rest from AUX_TC_MM1
+---------------------------------------------------------------------
+2.20.4
+SM:: AcrossTrackBias.
+---------------------------------------------------------------------
+2.20.3
+RF:: asISO8601 usage in UTC time formatting.
+-----------------------------------------------------------------
+2.20.2
+Makefile update for new environment
+-----------------------------------------------------------------
+2.20.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.20.0
+
+Automatically generate from revision "version "2.20""

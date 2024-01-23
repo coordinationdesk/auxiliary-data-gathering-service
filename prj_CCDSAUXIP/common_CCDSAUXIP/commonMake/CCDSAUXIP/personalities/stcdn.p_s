@@ -1,0 +1,6 @@
+-rem "EnablePostAnalysis =1"
+-rem "shellFile /opt/prqa/qacpp-3.0R/bin/qacppsa_stcdn"
+-rem "shellParams '%Q %F+ %P+'"
+-o 4700
+-thresh "STCDN>124"
+

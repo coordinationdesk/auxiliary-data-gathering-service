@@ -1,0 +1,14 @@
+1.2.2
+Minor changes in messaging
+--------------------------
+1.2.1
+Minor changes in messaging
+--------------------------
+1.2.0
+Removed cleanage. CleanOnAgingTask renamed into EvictionTask.
+--------------------------
+1.1.0
+PollingTime tag renamed into DatabasePollingTime
+--------------------------
+1.0.0
+First release

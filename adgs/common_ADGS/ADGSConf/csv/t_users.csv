@@ -1,0 +1,10 @@
+# The File can contains any number of empty lines and
+# or starting with hash negliged by script
+# The First meaningful line must contain the colum names
+# Fallowing rows are traited as record.
+# Fields must be quoted by single quote if strings or plain in case of Numeric values 
+
+'usertype','userid','firstname','lastname','title','organization','projectandprocessing','compressionmode','packagemaxsize','progmedianumber','emailaddress','mode','packagerequired'
+'internal','opadgs', 'Operator', 'ADGS', 'Mr.', 'Exprivia', '', '',  0, 0, '', 1, 'false'
+'internal','opadgs-1', 'Operator', 'ADGS', 'Mr.', 'Exprivia', '', '',  0, 0, '', 1, 'false'
+

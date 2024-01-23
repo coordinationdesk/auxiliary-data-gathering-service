@@ -1,0 +1,77 @@
+<?xml version="1.0" standalone="yes"?>
+<OrdersGenerationRoot>
+	<OrderGeneration>
+		<!-- the polling interval on the database [s]  -->
+		<DatabasePollingTime>30</DatabasePollingTime>
+		<Offline>
+			<Cryosat>
+				<Merge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>120.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL0MergeDistance>0.300</MaxL0MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+				</Merge>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>1.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+			</Cryosat>
+			<Eosam>
+				<Merge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>120.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL0MergeDistance>0.300</MaxL0MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+				</Merge>
+				<Fusion>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>120.0</TemporaryOrdersMaxWaitingTime>
+					<!-- orders are "fused" according to their start and stop times with a tolerance -->
+					<!-- that will be used to enlarge the time window, left and right rspectively -->
+					<!-- [s] (floating point) -->
+					<!-- <TimeWindowTolerance>2.0</TimeWindowTolerance> -->
+					<TimeWindowTolerance>2.0</TimeWindowTolerance>
+				</Fusion>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>1.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+			</Eosam>
+			<Eospm>
+				<Merge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>120.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL0MergeDistance>0.300</MaxL0MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+				</Merge>
+				<Fusion>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>120.0</TemporaryOrdersMaxWaitingTime>
+					<!-- orders are "fused" according to their start and stop times with a tolerance -->
+					<!-- that will be used to enlarge the time window, left and right rspectively -->
+					<!-- [s] (floating point) -->
+					<!-- <TimeWindowTolerance>2.0</TimeWindowTolerance> -->
+					<TimeWindowTolerance>2.0</TimeWindowTolerance>
+				</Fusion>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>1.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+			</Eospm>
+		</Offline>
+	</OrderGeneration>
+</OrdersGenerationRoot>

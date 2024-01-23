@@ -1,0 +1,20 @@
+<?xml version="1.0" standalone="yes"?>
+<ProductFileNameConf>
+	<ProductFileName>
+		<MissionID>S5P</MissionID>
+		<FileNameVersion>0001</FileNameVersion>
+		<FileRootSize>14</FileRootSize>
+		<FileNameSize>62</FileNameSize>
+		<!-- Permitted Product file extensions -->
+		<List_of_File_Ext count="0"/>
+		<!-- Permitted Product file classes -->
+		<List_of_File_Classes count="0"/>
+		<List_of_Level0_Product_Id count="1">
+        	<Id>ACQREPORT_</Id>
+		</List_of_Level0_Product_Id>
+		<List_of_Level1_Product_Id count="0">
+		</List_of_Level1_Product_Id>
+		<List_of_Browse_Product_Id count="0">
+		</List_of_Browse_Product_Id>
+	</ProductFileName>
+</ProductFileNameConf>

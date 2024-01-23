@@ -1,0 +1,21 @@
+# Example Name Rule File to demonstrate Name Check options
+# 
+# Macros: must not start with and underscore, 
+# can only consist of uppper case letters and underscores
+rule={'space':'OM', 'pattern':'^[^_][A-Z_]+$'}
+#
+# Functions: First word in lower case, subsequent words start with a capital
+rule={'space':'OF', 'pattern':'^[a-z]+([A-Z][a-z]+)*$'}
+#
+# Typedefs: Start with between 3 and 10 upper case letters 
+# followed by 1 or 2 digits
+rule={'space':'OT', 'pattern':'^[A-Z]{3,10}[0-9]{1,2}$'}
+#
+# Local (block scope) variables:
+# lower case words separated by underscores
+rule={'space':'OV', 'scope':'B', 'linkage':'N', 'pattern':'^[a-z]+(_[a-z]+)*$'}
+#
+# Global (program wide) variables:
+# lower case words separated by underscores
+# prefixed with a 'G_'
+rule={'space':'OV', 'scope':'F', 'linkage':'X', 'pattern':'^G_[a-z]+(_[a-z]*)*$'}

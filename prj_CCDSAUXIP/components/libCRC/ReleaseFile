@@ -1,0 +1,32 @@
+3.0.6
+MP - code rationalization and most of code smells fixed
+-------------------------------------------------------
+3.0.5
+ECS-48 EC:: several versions of libopenssl now handled
+---------------------------
+3.0.4
+EVP_MD_CTX is now an opaque type - using it via convenience functions
+---------------------------
+3.0.3
+EVP_MD_CTX is now an opaque type - must be used only via ptr
+---------------------------
+3.0.2
+updated make file to add -lcrypt dependency lib
+---------------------------
+3.0.1
+Using thread safe version of crypt (::crypt_r) in PasswordHash
+Added test tool to encrypt password
+--------------------------------------------------------------
+3.0.0
+Added support function for password hashing
+Makefiles cleaned up
+------------------------------
+2.28.2
+Can work in both smurfer and legacy mode
+------------------------------
+2.28.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.28.0
+
+Automatically generate from revision "version "2.28""

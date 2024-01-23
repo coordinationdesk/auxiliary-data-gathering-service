@@ -1,0 +1,93 @@
+4.0.1
+typo when compiling with openssl < 1.1.0 
+coverage test improved
+Makefile fixed
+------------------------------
+4.0.0
+OpenSSL 1.1.0 and newer release the need to have callback locking strategy. Should the libACS_SSL
+compiled against a new OpenSSL version, all the useless code is not compiled thanks to OpenSSL 
+version.
+This is confined into CryptoEngineInitializer singleton class, and this generate a major version of 
+the library because the singleton changes its memory footprint.
+Moreover tests compilation warning have been removed
+------------------------------
+3.3.1
+MP: temporary patch to dilate initialization warning period.
+------------------------------
+3.3.0
+MP: crypto reinitialization warning emitted only every period (10s, defined as constant in the header file).
+------------------------------
+
+3.2.9
+RF: Fixed missing variable ret definition in ACS_RSA_genkey when OPENSSL_VERSION_NUMBER >= 0x10100000L.
+------------------------------
+
+3.2.8
+MP: compilation warnings cleanup
+------------------------------
+
+3.2.7
+ECS-48: EC:: test fixed.
+------------------------------
+
+3.2.6
+ECS-48: EC:: Updated to [also] cope w/ the latest version of libopenssl.
+------------------------------
+3.2.5
+MP:: des_key_schedule changet into DES_key_schedule and
+const_ses_cblock into const_DES_cblock 
+------------------------------
+3.2.4
+MP:: instrumented for new qa tool (parse error)
+------------------------------
+
+3.2.3
+RF:: lcrypto and ldl added to DSOSPECIFICDEPS in order to compile also with exernal and/or statically compiled openssl versions.
+------------------------------
+
+3.2.2
+EC:: LP:: Add a compile-time check to verify if the salt defines both occur: this would raise a compiling error.
+------------------------------
+
+3.2.1
+Test improved
+------------------------------
+
+3.2.0
+EC:: LP:: S6CJS-92: Handling of salt: added getters/setters for static variables. Added common methods: ACS_RSA_encode_password and ACS_RSA_decode_password to encode/decode password also taking into account the configured salt.
+------------------------------
+
+3.1.2
+EC:: I/F updated to handle user-provided salt
+------------------------------
+
+3.1.1
+EC:: Removed cross-reference dependence over libFile
+------------------------------
+
+3.1.0
+EC:: Added handling of salt and modification of tests
+------------------------------
+
+3.0.1
+Added include of std numeric C types in ACS_SSL.h
+It is usually included almost all the times, but in some configuration it is needed.
+------------------------------
+3.0.0
+EC:: Method ACS_CRC16_eval made inline to increase performances. 
+------------------------------
+2.42.4
+Added gcrypt as library dependency when -DFTPCURL_USE_GNUTLS is defined
+------------------------------
+2.42.3
+Test Makefile fixed to include also libcrypto, directly used by at least one binary
+------------------------------
+2.42.2
+Makefile prepared to work in both smurfer.py and legacy mode
+------------------------------
+2.42.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.42.0
+
+Automatically generate from revision "version "2.42""

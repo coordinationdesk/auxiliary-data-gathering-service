@@ -1,0 +1,3 @@
+The configuration file for library libACSTimeConverter should be PROJECT-INDEPENDENT, since it merely contains the list of leap-second adjustements, updated to the last available adjustement (see the latest IERS-C bulletin at: http://www.iers.org/IERS/EN/Publications/Bulletins/bulletins.html )
+The file in conf-root directory should be always kept up-to-date. 
+The modifications should be integrated in project-specific conf files accordingly to specific project schedules and issues (default should be: Yes)

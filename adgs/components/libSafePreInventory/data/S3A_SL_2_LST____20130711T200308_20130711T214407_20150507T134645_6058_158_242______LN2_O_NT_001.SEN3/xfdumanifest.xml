@@ -1,0 +1,1204 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+   <xfdu:XFDU xmlns:xfdu="urn:ccsds:schema:xfdu:1" xmlns:sentinel-safe="http://www.esa.int/safe/sentinel/1.1" xmlns:gml="http://www.opengis.net/gml" xmlns:sentinel3="http://www.esa.int/safe/sentinel/sentinel-3/1.0" xmlns:slstr="http://www.esa.int/safe/sentinel/sentinel-3/slstr/1.0" version="esa/safe/sentinel/sentinel-3/slstr/level-2/1.0">
+      <informationPackageMap>
+         <xfdu:contentUnit ID="packageUnit" unitType="Information Package" textInfo="SENTINEL-3 SLSTR Level 2" dmdID="acquisitionPeriod platform generalProductInformation slstrProductInformation" pdiID="processing">
+            <xfdu:contentUnit  ID="LST_ANCILLARY_DS_Unit" unitType="Metadata Unit" textInfo="LST ancillary Data Set">
+               <dataObjectPointer dataObjectID="LST_ANCILLARY_DS_Data"/>
+            </xfdu:contentUnit>
+            <xfdu:contentUnit  ID="LST_IN_Unit" unitType="Measurement Data Unit" textInfo="LST_in Data Set">
+               <dataObjectPointer dataObjectID="LST_IN_Data"/>
+            </xfdu:contentUnit>
+            <xfdu:contentUnit  ID="SLSTR_CARTESIAN_IN_Unit" unitType="Metadata Unit" textInfo="Cartesian Coordinates Annotation Data Set">
+               <dataObjectPointer dataObjectID="SLSTR_CARTESIAN_IN_Data"/>
+            </xfdu:contentUnit>
+            <xfdu:contentUnit  ID="SLSTR_CARTESIAN_TX_Unit" unitType="Metadata Unit" textInfo="Cartesian Coordinates Annotation Data Set">
+               <dataObjectPointer dataObjectID="SLSTR_CARTESIAN_TX_Data"/>
+            </xfdu:contentUnit>
+            <xfdu:contentUnit  ID="SLSTR_GEODETIC_IN_Unit" unitType="Metadata Unit" textInfo="Geodetic Coordinates Annotation Data Set">
+               <dataObjectPointer dataObjectID="SLSTR_GEODETIC_IN_Data"/>
+            </xfdu:contentUnit>
+            <xfdu:contentUnit  ID="SLSTR_GEODETIC_TX_Unit" unitType="Metadata Unit" textInfo="Geodetic Coordinates Annotation Data Set">
+               <dataObjectPointer dataObjectID="SLSTR_GEODETIC_TX_Data"/>
+            </xfdu:contentUnit>
+            <xfdu:contentUnit  ID="SLSTR_INDICES_IN_Unit" unitType="Metadata Unit" textInfo="Indices Annotation Data Set">
+               <dataObjectPointer dataObjectID="SLSTR_INDICES_IN_Data"/>
+            </xfdu:contentUnit>
+            <xfdu:contentUnit  ID="SLSTR_MET_TX_Unit" unitType="Metadata Unit" textInfo="Meteorological Parameters Auxiliary Data Set">
+               <dataObjectPointer dataObjectID="SLSTR_MET_TX_Data"/>
+            </xfdu:contentUnit>
+            <xfdu:contentUnit  ID="SLSTR_TIME_IN_Unit" unitType="Metadata Unit" textInfo="Time Annotation Data Set">
+               <dataObjectPointer dataObjectID="SLSTR_TIME_IN_Data"/>
+            </xfdu:contentUnit>
+         </xfdu:contentUnit>
+      </informationPackageMap>
+      <metadataSection>
+         <metadataObject ID="acquisitionPeriod" classification="DESCRIPTION" category="DMD">
+            <metadataWrap mimeType="text/xml" vocabularyName="SAFE" textInfo="Acquisition Period">
+               <xmlData>
+                  <sentinel-safe:acquisitionPeriod>
+                     <sentinel-safe:startTime>2013-07-11T20:03:08.480188Z</sentinel-safe:startTime>
+                     <sentinel-safe:stopTime>2013-07-11T21:44:07.400967Z</sentinel-safe:stopTime>
+                  </sentinel-safe:acquisitionPeriod>
+               </xmlData>
+            </metadataWrap>
+         </metadataObject>
+         <metadataObject ID="platform" classification="DESCRIPTION" category="DMD">
+            <metadataWrap mimeType="text/xml" vocabularyName="SAFE" textInfo="Platform Description">
+               <xmlData>
+                  <sentinel-safe:platform>
+                     <sentinel-safe:nssdcIdentifier>0000-000A</sentinel-safe:nssdcIdentifier>
+                     <sentinel-safe:familyName>Sentinel-3</sentinel-safe:familyName>
+                     <sentinel-safe:number>A</sentinel-safe:number>
+                     <sentinel-safe:instrument>
+                        <sentinel-safe:familyName abbreviation="SLSTR">Sea and Land Surface Temperature Radiometer</sentinel-safe:familyName>
+                        <sentinel-safe:mode identifier="EO">Earth Observation</sentinel-safe:mode>
+                     </sentinel-safe:instrument>
+                  </sentinel-safe:platform>
+               </xmlData>
+            </metadataWrap>
+         </metadataObject>
+         <metadataObject ID="measurementFrameSet" classification="DESCRIPTION" category="DMD">
+            <metadataWrap mimeType="text/xml" vocabularyName="SAFE" textInfo="Frame Set">
+               <xmlData>
+                  <sentinel-safe:frameSet>
+                     <sentinel-safe:footPrint srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+                        <gml:posList>80.6417 -36.3391 79.9509 -92.7501 70.9327 -126.084 59.911 -137.709 48.4329 -143.841 36.7775 -147.995 25.0309 -151.265 13.2341 -154.105 1.41537 -156.759 -10.4006 -159.393 -22.1898 -162.168 -33.926 -165.299 -45.5745 -169.163 -57.0687 -174.613 -68.2137 175.843 -78.078 151.567 -80.7443 84.196 -72.5354 44.1924 -61.6973 30.9695 -50.3073 24.337 -38.7104 19.9744 -27.0049 16.6051 -15.234 13.7161 0.0843596 10.267 11.904 7.62331 23.7045 4.81378 35.4585 1.60952 47.1271 -2.4091 58.6328 -8.22013 69.7369 -18.8492 79.2002 -47.8474 80.6365 -61.5163 79.0423 -64.0896 77.2195 -48.1245 68.0879 -19.981 57.5448 -9.89833 46.3807 -4.26461 34.8839 -0.306173 23.2174 2.87401 11.4589 5.67346 -0.347997 8.31433 -15.6877 11.7682 -27.5111 14.6702 -39.3219 18.0702 -51.1258 22.5121 -62.921 29.3875 -74.3225 43.2946 -82.7402 84.0683 -80.0415 151.947 -69.7806 177.086 -58.0957 -172.897 -46.291 -167.296 -34.4858 -163.379 -22.6697 -160.227 -10.8427 -157.443 0.982842 -154.806 12.786 -152.156 24.5366 -149.327 36.1889 -146.084 47.6588 -141.997 58.7692 -136.066 69.2221 -125.047 77.9617 -92.5426 79.0471 -38.9035 80.6417 -36.3391</gml:posList>
+                     </sentinel-safe:footPrint>
+                  </sentinel-safe:frameSet>
+               </xmlData>
+            </metadataWrap>
+         </metadataObject>
+         <metadataObject ID="generalProductInformation" classification="DESCRIPTION" category="DMD">
+            <metadataWrap mimeType="text/xml" vocabularyName="SAFE" textInfo="General Product Information">
+               <xmlData>
+                  <sentinel3:generalProductInformation>
+                     <sentinel3:productName>S3A_SL_2_LST____20130711T200308_20130711T214407_20150507T134645_6058_158_242______LN2_O_NT_001.SEN3</sentinel3:productName>
+                     <sentinel3:productType>SL_2_LST___</sentinel3:productType>
+                     <sentinel3:timeliness>NT</sentinel3:timeliness>
+                     <sentinel3:baselineCollection>001</sentinel3:baselineCollection>
+                     <sentinel3:creationTime>20150507T134645</sentinel3:creationTime>
+                     <sentinel3:productSize>5382191337</sentinel3:productSize>
+                     <sentinel3:dumpInformation>
+                        <sentinel3:granuleNumber>1</sentinel3:granuleNumber>
+                        <sentinel3:granulePosition>FIRST</sentinel3:granulePosition>
+                        <sentinel3:dumpStart>2013-07-11T19:37:54.528269Z</sentinel3:dumpStart>
+                        <sentinel3:receivingGroundStation>CGS</sentinel3:receivingGroundStation>
+                        <sentinel3:receivingStartTime>2015-01-31T09:23:39.858199Z</sentinel3:receivingStartTime>
+                        <sentinel3:receivingStopTime>2015-01-31T09:24:03.227976Z</sentinel3:receivingStopTime>
+                     </sentinel3:dumpInformation>
+                     <sentinel3:dispositionMode>Demonstration</sentinel3:dispositionMode>
+                     <sentinel3:productUnit>
+                        <sentinel3:type>STRIPE</sentinel3:type>
+                        <sentinel3:duration>6058</sentinel3:duration>
+                        <sentinel3:alongtrackCoordinate>1514</sentinel3:alongtrackCoordinate>
+                     </sentinel3:productUnit>
+                  </sentinel3:generalProductInformation>
+               </xmlData>
+            </metadataWrap>
+         </metadataObject>
+         <metadataObject ID="slstrProductInformation" classification="DESCRIPTION" category="DMD">
+            <metadataWrap mimeType="text/xml" vocabularyName="SAFE" textInfo="Slstr Product Information">
+               <xmlData>
+                  <slstr:slstrProductInformation>
+                     <slstr:classificationSummary>
+                        <sentinel3:salineWaterPixels percentage="0"/>
+                        <sentinel3:landPixels percentage="0"/>
+                        <sentinel3:coastalPixels percentage="0"/>
+                        <sentinel3:freshInlandWaterPixels percentage="0"/>
+                        <sentinel3:tidalRegionPixels percentage="0"/>
+                        <sentinel3:cloudyPixels percentage="12.3456"/>
+                     </slstr:classificationSummary>
+                     <slstr:resolution>
+                        <slstr:spatialResolution>1000</slstr:spatialResolution>
+                     </slstr:resolution>
+                     <slstr:nadirImageSize>
+                        <sentinel3:rows>0</sentinel3:rows>
+                        <sentinel3:columns>0</sentinel3:columns>
+                     </slstr:nadirImageSize>
+                     <slstr:obliqueImageSize>
+                        <sentinel3:rows>0</sentinel3:rows>
+                        <sentinel3:columns>0</sentinel3:columns>
+                     </slstr:obliqueImageSize>
+                     <slstr:measurementAccuracy>~2% S1-S6, ~0.1K S7-S9, ~1K F1-F2</slstr:measurementAccuracy>
+                     <slstr:accuracyReference>[PDS-SL]</slstr:accuracyReference>
+                     <slstr:pixelQualitySummary>
+                        <slstr:cosmeticPixels value="33" percentage="0"/>
+                        <slstr:duplicatedPixels value="0" percentage="0"/>
+                        <slstr:saturatedPixels value="0" percentage="0"/>
+                        <slstr:outOfRangePixels value="0" percentage="0"/>
+                     </slstr:pixelQualitySummary>
+                     <slstr:ecmwfType timeRelevance="0">FORECAST</slstr:ecmwfType>
+                     <slstr:temperatureSummary>
+                        <slstr:temperature element="S1_Detector">
+                           <slstr:min>270</slstr:min>
+                           <slstr:max>270</slstr:max>
+                        </slstr:temperature>
+                        <slstr:temperature element="S2_Detector">
+                           <slstr:min>270</slstr:min>
+                           <slstr:max>270</slstr:max>
+                        </slstr:temperature>
+                        <slstr:temperature element="S3_Detector">
+                           <slstr:min>270</slstr:min>
+                           <slstr:max>270</slstr:max>
+                        </slstr:temperature>
+                        <slstr:temperature element="S4_Detector">
+                           <slstr:min>270</slstr:min>
+                           <slstr:max>270</slstr:max>
+                        </slstr:temperature>
+                        <slstr:temperature element="S5_Detector">
+                           <slstr:min>270</slstr:min>
+                           <slstr:max>270</slstr:max>
+                        </slstr:temperature>
+                        <slstr:temperature element="S6_Detector">
+                           <slstr:min>270</slstr:min>
+                           <slstr:max>270</slstr:max>
+                        </slstr:temperature>
+                        <slstr:temperature element="S7_Detector">
+                           <slstr:min>270</slstr:min>
+                           <slstr:max>270</slstr:max>
+                        </slstr:temperature>
+                        <slstr:temperature element="S8_Detector">
+                           <slstr:min>270</slstr:min>
+                           <slstr:max>270</slstr:max>
+                        </slstr:temperature>
+                        <slstr:temperature element="S9_Detector">
+                           <slstr:min>270</slstr:min>
+                           <slstr:max>270</slstr:max>
+                        </slstr:temperature>
+                     </slstr:temperatureSummary>
+                  </slstr:slstrProductInformation>
+               </xmlData>
+            </metadataWrap>
+         </metadataObject>
+         <metadataObject ID="measurementOrbitReference" classification="DESCRIPTION" category="DMD">
+            <metadataWrap mimeType="text/xml" vocabularyName="SAFE" textInfo="Orbit Reference">
+               <xmlData>
+                  <sentinel-safe:orbitReference>
+                     <sentinel-safe:orbitNumber type="start" groundTrackDirection="descending">60687</sentinel-safe:orbitNumber>
+                     <sentinel-safe:orbitNumber type="stop" groundTrackDirection="descending">60688</sentinel-safe:orbitNumber>
+                     <sentinel-safe:relativeOrbitNumber type="start" groundTrackDirection="descending">242</sentinel-safe:relativeOrbitNumber>
+                     <sentinel-safe:relativeOrbitNumber type="stop" groundTrackDirection="descending">243</sentinel-safe:relativeOrbitNumber>
+                     <sentinel-safe:passNumber type="start" groundTrackDirection="descending">121373</sentinel-safe:passNumber>
+                     <sentinel-safe:passNumber type="stop" groundTrackDirection="descending">121375</sentinel-safe:passNumber>
+                     <sentinel-safe:relativePassNumber type="start" groundTrackDirection="descending">483</sentinel-safe:relativePassNumber>
+                     <sentinel-safe:relativePassNumber type="stop" groundTrackDirection="descending">485</sentinel-safe:relativePassNumber>
+                     <sentinel-safe:cycleNumber>158</sentinel-safe:cycleNumber>
+                     <sentinel-safe:phaseIdentifier>1</sentinel-safe:phaseIdentifier>
+                     <sentinel-safe:elementSet>
+                        <sentinel-safe:ephemeris>
+                           <sentinel-safe:epoch type="TAI">2013-07-11T19:38:28.480189</sentinel-safe:epoch>
+                           <sentinel-safe:epoch type="UTC">2013-07-11T19:37:53.480189Z</sentinel-safe:epoch>
+                           <sentinel-safe:epoch type="UT1">2013-07-11T19:37:53.538769</sentinel-safe:epoch>
+                           <sentinel-safe:position>
+                              <sentinel-safe:x>5846012.4179999996</sentinel-safe:x>
+                              <sentinel-safe:y>4174920.361</sentinel-safe:y>
+                              <sentinel-safe:z>0.0030000000000000001</sentinel-safe:z>
+                           </sentinel-safe:position>
+                           <sentinel-safe:velocity>
+                              <sentinel-safe:x>946.61226099999999</sentinel-safe:x>
+                              <sentinel-safe:y>-1340.2020849999999</sentinel-safe:y>
+                              <sentinel-safe:z>7366.4027390000001</sentinel-safe:z>
+                           </sentinel-safe:velocity>
+                        </sentinel-safe:ephemeris>
+                        <sentinel-safe:ephemeris>
+                           <sentinel-safe:epoch type="TAI">2013-07-11T21:19:27.700968</sentinel-safe:epoch>
+                           <sentinel-safe:epoch type="UTC">2013-07-11T21:18:52.700968Z</sentinel-safe:epoch>
+                           <sentinel-safe:epoch type="UT1">2013-07-11T21:18:52.759535</sentinel-safe:epoch>
+                           <sentinel-safe:position>
+                              <sentinel-safe:x>7068554.4000000004</sentinel-safe:x>
+                              <sentinel-safe:y>1281086.689</sentinel-safe:y>
+                              <sentinel-safe:z>7363.0320000000002</sentinel-safe:z>
+                           </sentinel-safe:position>
+                           <sentinel-safe:velocity>
+                              <sentinel-safe:x>276.767247</sentinel-safe:x>
+                              <sentinel-safe:y>-1617.3452810000001</sentinel-safe:y>
+                              <sentinel-safe:z>7366.3987630000001</sentinel-safe:z>
+                           </sentinel-safe:velocity>
+                        </sentinel-safe:ephemeris>
+                     </sentinel-safe:elementSet>
+                  </sentinel-safe:orbitReference>
+               </xmlData>
+            </metadataWrap>
+         </metadataObject>
+         <metadataObject ID="measurementQualityInformation" classification="DESCRIPTION" category="DMD">
+            <metadataWrap mimeType="text/xml" vocabularyName="SAFE" textInfo="Quality Information">
+               <xmlData>
+                  <sentinel-safe:qualityInformation>
+                     <sentinel-safe:extension>
+                        <sentinel3:productQuality>
+                           <sentinel3:onlineQualityCheck>PASSED</sentinel3:onlineQualityCheck>
+                           <sentinel3:degradationFlags></sentinel3:degradationFlags>
+                        </sentinel3:productQuality>
+                     </sentinel-safe:extension>
+                  </sentinel-safe:qualityInformation>
+               </xmlData>
+            </metadataWrap>
+         </metadataObject>
+         <metadataObject ID="processing" classification="PROVENANCE" category="PDI">
+            <metadataWrap mimeType="text/xml" vocabularyName="SAFE" textInfo="Processing">
+               <xmlData>
+                  <sentinel-safe:processing name="processing" outputLevel="2" start="2015-05-07T13:47:16.000000" stop="2015-05-07T13:47:24.522020">
+                     <sentinel-safe:facility name="LN2" organisation="European Space Agency" site="Sophia Antipolis" country="France">
+                        <sentinel-safe:hardware name="OPE"/>
+                        <sentinel-safe:software name="PUG" version="03.00"/>
+                     </sentinel-safe:facility>
+                     <sentinel-safe:resource name="Product Data Format Specification - SLSTR Level 1 and Level 2 Instrument Products S3IPF.PDS.005" role="Applicable Document" version="1.7"/>
+                     <sentinel-safe:resource name="Metadata Specification, Excel document S3IPF.PDS.008" role="Applicable Document" version="3.05"/>
+                     <sentinel-safe:resource name="S3A_SL_2_LST____20130711T193755_20130711T211853_20150507T115411_6057_158_242______LN2_O_NT_001.SEN3" role="L2 Product">
+                        <sentinel-safe:processing name="DataProcessing" outputLevel="2" start="2015-05-07T11:54:10.400492" stop="2015-05-07T12:00:43.950244">
+                           <sentinel-safe:facility name="Land SLSTR and SYN Processing and Archiving Centre" organisation="European Space Agency" site="Sophia Antipolis" country="France">
+                              <sentinel-safe:hardware name="OPE"/>
+                              <sentinel-safe:software name="IPF-SL-2" version="05.00"/>
+                           </sentinel-safe:facility>
+                           <sentinel-safe:resource name="S3A_SL_1_RBT____20130711T193755_20130711T211853_20150507T104338_6057_158_242______LN2_O_NT_001.SEN3" role="L1 product" version="05.00">
+                              <sentinel-safe:processing name="DataProcessing" outputLevel="1" start="2015-05-07T10:43:38.179157" stop="2015-05-07T11:38:16.659147">
+                                 <sentinel-safe:facility name="Land SLSTR and SYN Processing and Archiving Centre" organisation="European Space Agency" site="Sophia Antipolis" country="France">
+                                    <sentinel-safe:hardware name="OPE"/>
+                                    <sentinel-safe:software name="IPF-SL-1" version="05.00"/>
+                                 </sentinel-safe:facility>
+                                 <sentinel-safe:resource name="S3__AX___BB2_AX_20130602T000000_20130801T000000_20140805T092740___________________IRS_O_AL_001.SEN3" role="Time Correlation File">
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__AX___BB2_AX_20130602T000000_20130801T000000_20140805T092740___________________IRS_O_AL_001.SEN3" role="IERS Bulletin B">
+                                    <sentinel-safe:processing name="ADC_AUX_REFORMATTER">
+                                       <sentinel-safe:facility name="MAR" organisation="European Organisation for the Exploitation of Meteorological Satellites" site="Darmstadt" country="Germany">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="2.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_AX___CLM_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="Coastline Mask file">
+                                    <sentinel-safe:processing name="">
+                                       <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_AX___DEM_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="Digital Elevation Model GETASSE30V2">
+                                    <sentinel-safe:processing name="">
+                                       <sentinel-safe:facility name="SVL" organisation="European Space Agency" site="Svalbard" country="Germany">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_AX___LWM_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="Land/Water Mask file">
+                                    <sentinel-safe:processing name="">
+                                       <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__AX___MA1_AX_20130711T120000_20130712T000000_20140806T073938___________________ECW_O_SN_001.SEN3" role="ECMWF Meteorological Data (Analysis) AN SFC + PL">
+                                    <sentinel-safe:processing name="ADC_AUX_REFORMATTER">
+                                       <sentinel-safe:facility name="MAR" organisation="European Organisation for the Exploitation of Meteorological Satellites" site="Darmstadt" country="Germany">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="2.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__AX___MA1_AX_20130711T180000_20130712T060000_20140806T073942___________________ECW_O_SN_001.SEN3" role="ECMWF Meteorological Data (Analysis) AN SFC + PL">
+                                    <sentinel-safe:processing name="ADC_AUX_REFORMATTER">
+                                       <sentinel-safe:facility name="MAR" organisation="European Organisation for the Exploitation of Meteorological Satellites" site="Darmstadt" country="Germany">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="2.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__AX___MFA_AX_20130711T180000_20130712T060000_20140806T073857___________________ECW_O_NT_001.SEN3" role="ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter">
+                                    <sentinel-safe:processing name="ADC_AUX_REFORMATTER">
+                                       <sentinel-safe:facility name="MAR" organisation="European Organisation for the Exploitation of Meteorological Satellites" site="Darmstadt" country="Germany">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="2.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_AX___OOM_AX_20000101T000000_20991231T235959_20131003T000000_________________________NN_TST.SEN3" role="Open Ocean Mask file">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="SVL" organisation="European Space Agency" site="Norway" country="Norway">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_AX___OSF_AX_20011115T220001_99991231T235959_20140805T084107___________________EUM_O_AL_001.SEN3" role="Reference Orbit Scenario File">
+                                    <sentinel-safe:processing name="ADC_AUX_REFORMATTER">
+                                       <sentinel-safe:facility name="MAR" organisation="European Organisation for the Exploitation of Meteorological Satellites" site="Darmstadt" country="Germany">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="2.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_AX___TRM_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="Tidal Regions Mask file">
+                                    <sentinel-safe:processing name="">
+                                       <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_SL_0_SLT____20130711T193754_20130711T211852_20150507T103723_6059_158_242______LN2_O_NT_001.SEN3" role="L0 Product">
+                                    <sentinel-safe:processing name="DataProcessing" outputLevel="0" start="2015-05-07T10:37:02.270626" stop="2015-05-07T10:37:45.554008">
+                                       <sentinel-safe:facility name="Land SLSTR and SYN Processing and Archiving Centre [LN2]" organisation="European Space Agency" site="Sophia Antipolis" country="France">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="PUG" version="03.00"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_ANC_AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Ancillary data file">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_CLO_AX_20120101T000000_20500101T000000_20130507T133154___________________DMS_O_AL_TST.SEN3" role="SLSTR Cloud LUT Data File">
+                                    <sentinel-safe:processing name="">
+                                       <sentinel-safe:facility name="SVL" organisation="European Space Agency" site="Svalbard" country="Germany">
+                                          <sentinel-safe:hardware name="DEV"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_GEC_AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Geometric Calibration Data File">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_GEO_AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Geometry Data file">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_NAS4AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 NADIR Stripe A">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_NAS5AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 NADIR Stripe A">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_NAS6AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 NADIR Stripe A">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_NBS4AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 NADIR Stripe B">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_NBS5AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 NADIR Stripe B">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_NBS6AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 NADIR Stripe B">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_F1AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file F1 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_F2AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file F2 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_S1AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S1 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_S2AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S2 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_S3AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S3 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_S7AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file S7 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_S8AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file S8 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_S9AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file S9 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_OAS4AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 OBLIQUE Stripe A">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_OAS5AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 OBLIQUE Stripe A">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_OAS6AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 OBLIQUE Stripe A">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_OBS4AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 OBLIQUE Stripe B">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_OBS5AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 OBLIQUE Stripe B">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_OBS6AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 OBLIQUE Stripe B">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_F1AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file F1 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_F2AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file F2 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_S1AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S1 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_S2AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S2 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_S3AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S3 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_S7AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file S7 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_S8AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file S8 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_S9AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file S9 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_PCP_AX_20120101T000000_20500101T000000_20130507T133154___________________DMS_O_AL_TST.SEN3" role="SLSTR Processing Control Parameter File">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_VIC_AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Vicarious Calibration Data File">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_SL_1_VSC_AX_20130621T100920_20500101T000000_20130620T142528___________________SVL_O_NN____.SEN3" role="SLSTR VISCAL Data file">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="IPF-SL-1" version="02.00"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_TM_0_NAT____20130711T193755_20130711T211854_20150131T092522_6059_158_242______SVL_O_AL_001.SEN3" role="L0 Product">
+                                    <sentinel-safe:processing name="DataProcessing" outputLevel="0" start="2015-01-31T09:25:22.379632" stop="2015-01-31T09:25:22.438837">
+                                       <sentinel-safe:facility name="Svalbard Satellite Core Ground Station" organisation="European Space Agency" site="Svalbard" country="Norway">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="IPF-0" version="05.01"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3IPF-PDS-005-i1r9-ProductDataFormatSpecification-SLSTR" role="Product Data Specification Document - SLSTR Level 1">
+                                 </sentinel-safe:resource>
+                              </sentinel-safe:processing>
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_AX___OSF_AX_20011115T220001_99991231T235959_20140805T084107___________________EUM_O_AL_001.SEN3" role="Orbit File" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3__AX___BB2_AX_20130602T000000_20130801T000000_20140805T092740___________________IRS_O_AL_001.SEN3" role="Time Correlation File" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_N2_CAX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR N2 SST coefficients file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_N3_CAX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR N3 SST coefficients file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_N3RCAX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR N3R SST coefficients file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_D2_CAX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR D2 SST coefficients file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_D3_CAX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR D3 SST coefficients file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_F1N_AX_20000101T000000_20991231T235959_20140122T180312_________________________AL_TST.SEN3" role="SLSTR F1 nadir TIR noise dataset" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_LSTBAX_20000101T000000_20991231T235959_20140305T103252_________________________AL_TST.SEN3" role="SLSTR LST biome data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_LSTCAX_20000101T000000_20991231T235959_20140305T103252_________________________AL_TST.SEN3" role="SLSTR LST coefficients data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_LSTEAX_20000101T000000_20991231T235959_20140305T103252_________________________AL_TST.SEN3" role="SLSTR LST error data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_LSTVAX_20000101T000000_20991231T235959_20140305T103252_________________________AL_TST.SEN3" role="SLSTR LST vegetation fraction data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_LSTWAX_20000101T000000_20991231T235959_20140305T103252_________________________AL_TST.SEN3" role="SLSTR LST water vapour data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_PCP_AX_20000101T000000_20991231T235959_20150127T120000_______________________O_AL_GSV.SEN3" role="SLSTR Processing Control Parameter File" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_S7N_AX_20000101T000000_20991231T235959_20140122T180312_________________________AL_TST.SEN3" role="SLSTR S7 nadir TIR noise dataset" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_S7O_AX_20000101T000000_20991231T235959_20140122T180312_________________________AL_TST.SEN3" role="SLSTR S7 oblique TIR noise dataset" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_S8N_AX_20000101T000000_20991231T235959_20140122T180312_________________________AL_TST.SEN3" role="SLSTR S8 nadir TIR noise dataset" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_S8O_AX_20000101T000000_20991231T235959_20140122T180312_________________________AL_TST.SEN3" role="SLSTR S8 oblique TIR noise dataset" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_S9N_AX_20000101T000000_20991231T235959_20140122T180312_________________________AL_TST.SEN3" role="SLSTR S9 nadir TIR noise dataset" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_S9O_AX_20000101T000000_20991231T235959_20140122T180312_________________________AL_TST.SEN3" role="SLSTR S9 oblique TIR noise dataset" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_SDI2AX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR SDI2 Saharan dust index coefficients aux file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_SDI3AX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR SDI3 Saharan dust index coefficients aux file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_SSESAX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR L2P SSES data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_SST_AX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR L2P SST algorithms data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3__SL_2_SSTAAX_20130708T120000_99991231T235959_20140804T100355___________________MET_O_NN_001.SEN3" role="L4 SST analysis data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3IPF PDS 005 - i1r9 - Product Data Format Specification - SLSTR" role="Product Data Format Specification" version="V1.9">
+                           </sentinel-safe:resource>
+                        </sentinel-safe:processing>
+                     </sentinel-safe:resource>
+                     <sentinel-safe:resource name="S3A_SL_2_LST____20130711T193755_20130711T211853_20150507T115411_6057_158_242______LN2_O_NT_001.SEN3" role="L2 Product">
+                        <sentinel-safe:processing name="DataProcessing" outputLevel="2" start="2015-05-07T13:38:28.016091" stop="2015-05-07T13:45:02.076890">
+                           <sentinel-safe:facility name="Land SLSTR and SYN Processing and Archiving Centre" organisation="European Space Agency" site="Sophia Antipolis" country="France">
+                              <sentinel-safe:hardware name="OPE"/>
+                              <sentinel-safe:software name="IPF-SL-2" version="05.00"/>
+                           </sentinel-safe:facility>
+                           <sentinel-safe:resource name="S3A_SL_1_RBT____20130711T211854_20130711T225952_20150507T122252_6057_158_243______LN2_O_NT_001.SEN3" role="L1 product" version="05.00">
+                              <sentinel-safe:processing name="DataProcessing" outputLevel="1" start="2015-05-07T12:22:51.965545" stop="2015-05-07T13:17:02.458941">
+                                 <sentinel-safe:facility name="Land SLSTR and SYN Processing and Archiving Centre" organisation="European Space Agency" site="Sophia Antipolis" country="France">
+                                    <sentinel-safe:hardware name="OPE"/>
+                                    <sentinel-safe:software name="IPF-SL-1" version="05.00"/>
+                                 </sentinel-safe:facility>
+                                 <sentinel-safe:resource name="S3__AX___BB2_AX_20130602T000000_20130801T000000_20140805T092740___________________IRS_O_AL_001.SEN3" role="Time Correlation File">
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__AX___BB2_AX_20130602T000000_20130801T000000_20140805T092740___________________IRS_O_AL_001.SEN3" role="IERS Bulletin B">
+                                    <sentinel-safe:processing name="ADC_AUX_REFORMATTER">
+                                       <sentinel-safe:facility name="MAR" organisation="European Organisation for the Exploitation of Meteorological Satellites" site="Darmstadt" country="Germany">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="2.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_AX___CLM_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="Coastline Mask file">
+                                    <sentinel-safe:processing name="">
+                                       <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_AX___DEM_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="Digital Elevation Model GETASSE30V2">
+                                    <sentinel-safe:processing name="">
+                                       <sentinel-safe:facility name="SVL" organisation="European Space Agency" site="Svalbard" country="Germany">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_AX___LWM_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="Land/Water Mask file">
+                                    <sentinel-safe:processing name="">
+                                       <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__AX___MA1_AX_20130711T120000_20130712T000000_20140806T073938___________________ECW_O_SN_001.SEN3" role="ECMWF Meteorological Data (Analysis) AN SFC + PL">
+                                    <sentinel-safe:processing name="ADC_AUX_REFORMATTER">
+                                       <sentinel-safe:facility name="MAR" organisation="European Organisation for the Exploitation of Meteorological Satellites" site="Darmstadt" country="Germany">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="2.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__AX___MA1_AX_20130711T180000_20130712T060000_20140806T073942___________________ECW_O_SN_001.SEN3" role="ECMWF Meteorological Data (Analysis) AN SFC + PL">
+                                    <sentinel-safe:processing name="ADC_AUX_REFORMATTER">
+                                       <sentinel-safe:facility name="MAR" organisation="European Organisation for the Exploitation of Meteorological Satellites" site="Darmstadt" country="Germany">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="2.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__AX___MFA_AX_20130711T180000_20130712T060000_20140806T073857___________________ECW_O_NT_001.SEN3" role="ECMWF meteo forecast data in GRIB1 format complementary to analysis data - FC SFC parameter">
+                                    <sentinel-safe:processing name="ADC_AUX_REFORMATTER">
+                                       <sentinel-safe:facility name="MAR" organisation="European Organisation for the Exploitation of Meteorological Satellites" site="Darmstadt" country="Germany">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="2.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_AX___OOM_AX_20000101T000000_20991231T235959_20131003T000000_________________________NN_TST.SEN3" role="Open Ocean Mask file">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="SVL" organisation="European Space Agency" site="Norway" country="Norway">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_AX___OSF_AX_20011115T220001_99991231T235959_20140805T084107___________________EUM_O_AL_001.SEN3" role="Reference Orbit Scenario File">
+                                    <sentinel-safe:processing name="ADC_AUX_REFORMATTER">
+                                       <sentinel-safe:facility name="MAR" organisation="European Organisation for the Exploitation of Meteorological Satellites" site="Darmstadt" country="Germany">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="2.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_AX___TRM_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="Tidal Regions Mask file">
+                                    <sentinel-safe:processing name="">
+                                       <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="ADC" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_SL_0_SLT____20130711T211854_20130711T225951_20150507T121727_6058_158_243______LN2_O_NT_001.SEN3" role="L0 Product">
+                                    <sentinel-safe:processing name="DataProcessing" outputLevel="0" start="2015-05-07T12:17:05.675077" stop="2015-05-07T12:17:48.074310">
+                                       <sentinel-safe:facility name="Land SLSTR and SYN Processing and Archiving Centre [LN2]" organisation="European Space Agency" site="Sophia Antipolis" country="France">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="PUG" version="03.00"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_ANC_AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Ancillary data file">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_CLO_AX_20120101T000000_20500101T000000_20130507T133154___________________DMS_O_AL_TST.SEN3" role="SLSTR Cloud LUT Data File">
+                                    <sentinel-safe:processing name="">
+                                       <sentinel-safe:facility name="SVL" organisation="European Space Agency" site="Svalbard" country="Germany">
+                                          <sentinel-safe:hardware name="DEV"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_GEC_AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Geometric Calibration Data File">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_GEO_AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Geometry Data file">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_NAS4AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 NADIR Stripe A">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_NAS5AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 NADIR Stripe A">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_NAS6AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 NADIR Stripe A">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_NBS4AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 NADIR Stripe B">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_NBS5AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 NADIR Stripe B">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_NBS6AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 NADIR Stripe B">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_F1AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file F1 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_F2AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file F2 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_S1AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S1 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_S2AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S2 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_S3AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S3 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_S7AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file S7 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_S8AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file S8 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_N_S9AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file S9 NADIR">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_OAS4AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 OBLIQUE Stripe A">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_OAS5AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 OBLIQUE Stripe A">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_OAS6AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 OBLIQUE Stripe A">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_OBS4AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S4 OBLIQUE Stripe B">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_OBS5AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S5 OBLIQUE Stripe B">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_OBS6AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S6 OBLIQUE Stripe B">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_F1AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file F1 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_F2AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file F2 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_S1AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S1 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_S2AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S2 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_S3AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Visible and shortwave infrared (Visible-SWIR) characterisation data file S3 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_S7AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file S7 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_S8AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file S8 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_O_S9AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Thermal infrared (TIR) characterisation data file S9 OBLIQUE">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_PCP_AX_20120101T000000_20500101T000000_20130507T133154___________________DMS_O_AL_TST.SEN3" role="SLSTR Processing Control Parameter File">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3__SL_1_VIC_AX_20120101T000000_20500101T000000_20140710T120000___________________DMS_O_AL_TST.SEN3" role="SLSTR Vicarious Calibration Data File">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="S3IPF Manifest_Gen Tool (testing)" organisation="Deimos Space" site="Tres Cantos" country="Spain">
+                                          <sentinel-safe:hardware name="TST"/>
+                                          <sentinel-safe:software name="Manifest_Gen" version="1.0"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_SL_1_VSC_AX_20130621T100920_20500101T000000_20130620T142528___________________SVL_O_NN____.SEN3" role="SLSTR VISCAL Data file">
+                                    <sentinel-safe:processing name="AdfProcessing">
+                                       <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="IPF-SL-1" version="02.00"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3A_TM_0_NAT____20130711T193755_20130711T211854_20150131T092522_6059_158_242______SVL_O_AL_001.SEN3" role="L0 Product">
+                                    <sentinel-safe:processing name="DataProcessing" outputLevel="0" start="2015-01-31T09:25:22.379632" stop="2015-01-31T09:25:22.438837">
+                                       <sentinel-safe:facility name="Svalbard Satellite Core Ground Station" organisation="European Space Agency" site="Svalbard" country="Norway">
+                                          <sentinel-safe:hardware name="OPE"/>
+                                          <sentinel-safe:software name="IPF-0" version="05.01"/>
+                                       </sentinel-safe:facility>
+                                    </sentinel-safe:processing>
+                                 </sentinel-safe:resource>
+                                 <sentinel-safe:resource name="S3IPF-PDS-005-i1r9-ProductDataFormatSpecification-SLSTR" role="Product Data Specification Document - SLSTR Level 1">
+                                 </sentinel-safe:resource>
+                              </sentinel-safe:processing>
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_AX___OSF_AX_20011115T220001_99991231T235959_20140805T084107___________________EUM_O_AL_001.SEN3" role="Orbit File" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3__AX___BB2_AX_20130602T000000_20130801T000000_20140805T092740___________________IRS_O_AL_001.SEN3" role="Time Correlation File" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_N2_CAX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR N2 SST coefficients file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_N3_CAX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR N3 SST coefficients file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_N3RCAX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR N3R SST coefficients file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_D2_CAX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR D2 SST coefficients file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_D3_CAX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR D3 SST coefficients file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_F1N_AX_20000101T000000_20991231T235959_20140122T180312_________________________AL_TST.SEN3" role="SLSTR F1 nadir TIR noise dataset" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_LSTBAX_20000101T000000_20991231T235959_20140305T103252_________________________AL_TST.SEN3" role="SLSTR LST biome data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_LSTCAX_20000101T000000_20991231T235959_20140305T103252_________________________AL_TST.SEN3" role="SLSTR LST coefficients data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_LSTEAX_20000101T000000_20991231T235959_20140305T103252_________________________AL_TST.SEN3" role="SLSTR LST error data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_LSTVAX_20000101T000000_20991231T235959_20140305T103252_________________________AL_TST.SEN3" role="SLSTR LST vegetation fraction data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_LSTWAX_20000101T000000_20991231T235959_20140305T103252_________________________AL_TST.SEN3" role="SLSTR LST water vapour data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_PCP_AX_20000101T000000_20991231T235959_20150127T120000_______________________O_AL_GSV.SEN3" role="SLSTR Processing Control Parameter File" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_S7N_AX_20000101T000000_20991231T235959_20140122T180312_________________________AL_TST.SEN3" role="SLSTR S7 nadir TIR noise dataset" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_S7O_AX_20000101T000000_20991231T235959_20140122T180312_________________________AL_TST.SEN3" role="SLSTR S7 oblique TIR noise dataset" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_S8N_AX_20000101T000000_20991231T235959_20140122T180312_________________________AL_TST.SEN3" role="SLSTR S8 nadir TIR noise dataset" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_S8O_AX_20000101T000000_20991231T235959_20140122T180312_________________________AL_TST.SEN3" role="SLSTR S8 oblique TIR noise dataset" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_S9N_AX_20000101T000000_20991231T235959_20140122T180312_________________________AL_TST.SEN3" role="SLSTR S9 nadir TIR noise dataset" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_S9O_AX_20000101T000000_20991231T235959_20140122T180312_________________________AL_TST.SEN3" role="SLSTR S9 oblique TIR noise dataset" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_SDI2AX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR SDI2 Saharan dust index coefficients aux file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_SDI3AX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR SDI3 Saharan dust index coefficients aux file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_SSESAX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR L2P SSES data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3A_SL_2_SST_AX_20000101T000000_20991231T235959_20131118T161847_________________________AL_TST.SEN3" role="SLSTR L2P SST algorithms data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3__SL_2_SSTAAX_20130708T120000_99991231T235959_20140804T100355___________________MET_O_NN_001.SEN3" role="L4 SST analysis data file" version="05.00">
+                           </sentinel-safe:resource>
+                           <sentinel-safe:resource name="S3IPF PDS 005 - i1r9 - Product Data Format Specification - SLSTR" role="Product Data Format Specification" version="V1.9">
+                           </sentinel-safe:resource>
+                        </sentinel-safe:processing>
+                     </sentinel-safe:resource>
+                  </sentinel-safe:processing>
+               </xmlData>
+            </metadataWrap>
+         </metadataObject>
+      </metadataSection>
+      <dataObjectSection>
+         <dataObject ID="LST_ANCILLARY_DS_Data">
+            <byteStream mimeType="application/x-netcdf" size="472144225">
+               <fileLocation locatorType="URL" textInfo="LST ancillary Data Set" href="./LST_ancillary_ds.nc"/>
+               <checksum checksumName="MD5">0dce2a704f797c9a87c0d0974ecbb87a</checksum>
+            </byteStream>
+         </dataObject>
+         <dataObject ID="LST_IN_Data">
+            <byteStream mimeType="application/x-netcdf" size="404699895">
+               <fileLocation locatorType="URL" textInfo="LST_in Data Set" href="./LST_in.nc"/>
+               <checksum checksumName="MD5">459c4526883af7a945914f686af21c3a</checksum>
+            </byteStream>
+         </dataObject>
+         <dataObject ID="SLSTR_CARTESIAN_IN_Data">
+            <byteStream mimeType="application/x-netcdf" size="539578621">
+               <fileLocation locatorType="URL" textInfo="Cartesian Coordinates Annotation Data Set" href="./cartesian_in.nc"/>
+               <checksum checksumName="MD5">38b34d89f2ddab11ba4e556835b05090</checksum>
+            </byteStream>
+         </dataObject>
+         <dataObject ID="SLSTR_CARTESIAN_TX_Data">
+            <byteStream mimeType="application/x-netcdf" size="83165652">
+               <fileLocation locatorType="URL" textInfo="Cartesian Coordinates Annotation Data Set" href="./cartesian_tx.nc"/>
+               <checksum checksumName="MD5">9c270e91c1a1cb525221c5d51c98179e</checksum>
+            </byteStream>
+         </dataObject>
+         <dataObject ID="SLSTR_GEODETIC_IN_Data">
+            <byteStream mimeType="application/x-netcdf" size="674485365">
+               <fileLocation locatorType="URL" textInfo="Geodetic Coordinates Annotation Data Set" href="./geodetic_in.nc"/>
+               <checksum checksumName="MD5">8ef74a88a743a19b215d211b1488bf82</checksum>
+            </byteStream>
+         </dataObject>
+         <dataObject ID="SLSTR_GEODETIC_TX_Data">
+            <byteStream mimeType="application/x-netcdf" size="83165777">
+               <fileLocation locatorType="URL" textInfo="Geodetic Coordinates Annotation Data Set" href="./geodetic_tx.nc"/>
+               <checksum checksumName="MD5">69b045f33a03ad04d1acbae079190a9f</checksum>
+            </byteStream>
+         </dataObject>
+         <dataObject ID="SLSTR_INDICES_IN_Data">
+            <byteStream mimeType="application/x-netcdf" size="337243089">
+               <fileLocation locatorType="URL" textInfo="Indices Annotation Data Set" href="./indices_in.nc"/>
+               <checksum checksumName="MD5">84a07ceac261986fbaa7e6418b0f727b</checksum>
+            </byteStream>
+         </dataObject>
+         <dataObject ID="SLSTR_MET_TX_Data">
+            <byteStream mimeType="application/x-netcdf" size="2078982783">
+               <fileLocation locatorType="URL" textInfo="Meteorological Parameters Auxiliary Data Set" href="./met_tx.nc"/>
+               <checksum checksumName="MD5">b290917082ca0c0c4f09698448227ff1</checksum>
+            </byteStream>
+         </dataObject>
+         <dataObject ID="SLSTR_TIME_IN_Data">
+            <byteStream mimeType="application/x-netcdf" size="1934555">
+               <fileLocation locatorType="URL" textInfo="Time Annotation Data Set" href="./time_in.nc"/>
+               <checksum checksumName="MD5">b8ece1321395c33d9aea6e7b52eb3a7f</checksum>
+            </byteStream>
+         </dataObject>
+      </dataObjectSection>
+   </xfdu:XFDU>

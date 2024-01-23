@@ -1,0 +1,36 @@
+1.40.2
+LP: patch version due to jira ECICMF-58: 
+FilenamePreInventory::computeMetadata: _ftypeParentTag set to empty string to reset if PreInventory of multiple filetypes is executed (e.g. TLPreInventory).
+------------------------------
+1.40.1
+LP: S3MARINE-486: Test configuration fixed for S6.
+------------------------------
+1.40.0
+LP: minor version due to jira S3MARINE-486
+S3GPDFilenamePreInventory and S6MOG2DFilenamePreInventory PreInventory classes added to manage respectively GNSS derived Path Delay Plus (GPD+) Wet Tropospheric Correction (WTC) products 
+for the Sentinel-3 altimeter missions (GPD4S3) and MOG2D products of Sentinel-6. checkFieldLenWithinFilename protected method added to base class.
+------------------------------
+1.39.2
+MP: compatible with libPreInventoryBase 2.0.0 and backward
+test's makefile fixed
+------------------------------
+1.39.1
+Removed geographic polygon when cover whole world
+------------------------------
+1.39.0
+Added support for S3 SL_2_DIMSAX
+------------------------------
+1.38.1
+MP: compilation warnings cleanup
+$Id$ is no longer valorized from git
+------------------------------
+1.38.0
+Minor version issue due to jira S3MPC-97.
+Cycle in filename managed by S3MPMReportsStdLikePreInventory class. Test added.
+------------------------------
+1.37.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.37.0
+
+Automatically generate from revision "version "1.37""

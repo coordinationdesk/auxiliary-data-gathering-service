@@ -1,0 +1,13 @@
+2.5.3
+Deprecated DefaultSignalHandler removed
+------------------------------
+2.5.2
+Patch release automatically generated to instrument version files
+------------------------------
+2.5.1
+
+Makefile fixed to include also extcomplibs
+----------------
+2.5.0
+
+Automatically generate from revision "version "2.5""

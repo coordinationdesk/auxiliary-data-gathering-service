@@ -1,0 +1,18 @@
+1.9.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+1.9.2
+MP: compilation warnings cleanup 
+------------------------------
+1.9.1
+C++11 compatibility 
+------------------------------
+1.9.0
+Using ACS_THROW instead of std throw
+------------------------------
+1.8.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.8.0
+
+Automatically generate from revision "version "1.8""

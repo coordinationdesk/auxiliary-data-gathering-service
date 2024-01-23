@@ -1,0 +1,4 @@
+'symbolicname','transferprotocol_id','host_id','username','password','remotepath', 'tempname_id', 'tempname_value'
+
+'MP-IP Repository',          7, '(select id from t_knownhosts where host_name = 'api.s12mpip.com')',                    'adgs-user',                '##MPIP_ADGSUSER_PWD##',    '/mpip',                                                 1, '.'
+'MissionPlanning Repo_2',    1, '(select id from t_knownhosts where host_name = 'adgs-imp2.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromMP',                                          1, '.'

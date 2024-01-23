@@ -1,0 +1,434 @@
+<Root>
+	<FileTypeConversionMap>
+		<List_of_Conversions count="59">
+			<Conversion>
+				<InputFileType>MPL_ORBPRE_ESA_A</InputFileType>
+				<OutputFileType>AX___FPO_AX</OutputFileType>
+				<FileTypeDescription>Predicted Orbit File</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>ESC</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>MPL_ORBRES_ESA_A</InputFileType>
+				<OutputFileType>AX___FRO_AX</OutputFileType>
+				<FileTypeDescription>Restituted Orbit File</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>ESC</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>MPL_ORBPRE_EUM_A</InputFileType>
+				<OutputFileType>AX___FPO_AX</OutputFileType>
+				<FileTypeDescription>Predicted Orbit File</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>EUM</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>MPL_ORBRES_EUM_A</InputFileType>
+				<OutputFileType>AX___FRO_AX</OutputFileType>
+				<FileTypeDescription>Restituted Orbit File</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>EUM</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>MPL_ORBPRE_ESA_B</InputFileType>
+				<OutputFileType>AX___FPO_AX</OutputFileType>
+				<FileTypeDescription>Predicted Orbit File</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>ESC</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>MPL_ORBRES_ESA_B</InputFileType>
+				<OutputFileType>AX___FRO_AX</OutputFileType>
+				<FileTypeDescription>Restituted Orbit File</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>ESC</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>MPL_ORBPRE_EUM_B</InputFileType>
+				<OutputFileType>AX___FPO_AX</OutputFileType>
+				<FileTypeDescription>Predicted Orbit File</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>EUM</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>MPL_ORBRES_EUM_B</InputFileType>
+				<OutputFileType>AX___FRO_AX</OutputFileType>
+				<FileTypeDescription>Restituted Orbit File</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>EUM</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>SR___MDO_ORIG</InputFileType> 
+				<OutputFileType>SR___MDO_AX</OutputFileType>
+				<FileTypeDescription>SALP Operational Preliminary Orbit Files STC</FileTypeDescription>
+				<Timeliness>ST</Timeliness>
+				<GenerationCentre>CNE</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>SR___MGN_AX</InputFileType> 
+				<OutputFileType>SR___MGNSAX</OutputFileType>
+				<FileTypeDescription>SALP STC Expertise Preliminary orbit file</FileTypeDescription>
+				<Timeliness>ST</Timeliness>
+				<GenerationCentre>CNE</GenerationCentre>
+			</Conversion>
+<!-- 10 -->
+			<Conversion>
+				<InputFileType>SR___POE_AX</InputFileType> 
+				<OutputFileType>SR___POESAX</OutputFileType>
+				<FileTypeDescription>SALP NTC Precise orbit file</FileTypeDescription>
+				<Timeliness>NT</Timeliness>
+				<GenerationCentre>CNE</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>SR_2_PMP_AX</InputFileType> 
+				<OutputFileType>SR_2_PMPSAX</OutputFileType>
+				<FileTypeDescription>SALP Preliminary Platform Values</FileTypeDescription>
+				<Timeliness>SN</Timeliness>
+				<GenerationCentre>CNE</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>SR_2_PCP_AX</InputFileType> 
+				<OutputFileType>SR_2_PCPSAX</OutputFileType>
+				<FileTypeDescription>SALP Precise Platform Values</FileTypeDescription>
+				<Timeliness>NT</Timeliness>
+				<GenerationCentre>CNE</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>SR_2_PGI_ORIG</InputFileType> 
+				<OutputFileType>SR_2_PGI_AX</OutputFileType>
+				<FileTypeDescription>SALP SRAL ALong-Track ionospheric data for NRT</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>CNE</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>SR_2_RGI_ORIG</InputFileType> 
+				<OutputFileType>SR_2_RGI_AX</OutputFileType>
+				<FileTypeDescription>SALP SRAL ALong-Track ionospheric data for </FileTypeDescription>
+				<Timeliness>SN</Timeliness>
+				<GenerationCentre>CNE</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>SR_1_USO_ORIG</InputFileType> 
+				<OutputFileType>SR_1_USO_AX</OutputFileType>
+				<FileTypeDescription>SALP USO frequency</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>CNE</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>SR_2_POL_ORIG</InputFileType> 
+				<OutputFileType>SR_2_POL_AX</OutputFileType>
+				<FileTypeDescription>SALP Pole Location</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>CNE</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>SR_2_RMO_ORIG</InputFileType> 
+				<OutputFileType>SR_2_RMO_AX</OutputFileType>
+				<FileTypeDescription>SALP Preliminary Ocean barotropic correction</FileTypeDescription>
+				<Timeliness>NT</Timeliness>
+				<GenerationCentre>CNE</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>SR_2_PMO_ORIG</InputFileType> 
+				<OutputFileType>SR_2_PMO_AX</OutputFileType>
+				<FileTypeDescription>SALP Precise Ocean barotropic correction</FileTypeDescription>
+				<Timeliness>ST</Timeliness>
+				<GenerationCentre>CNE</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>AUX_MOEORB</InputFileType>
+				<OutputFileType>SR___MGNPAX</OutputFileType>
+				<FileTypeDescription>POD MOE Restituted Orbit File</FileTypeDescription>
+				<Timeliness>ST</Timeliness>
+				<GenerationCentre>POD</GenerationCentre>
+			</Conversion>
+<!-- 20 -->
+			<Conversion>
+				<InputFileType>AUX_POEORB</InputFileType>
+				<OutputFileType>SR___POEPAX</OutputFileType>
+				<FileTypeDescription>POD POE Restituted Orbit File</FileTypeDescription>
+				<Timeliness>NT</Timeliness>
+				<GenerationCentre>POD</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>AUX_PRLPTF</InputFileType>
+				<OutputFileType>SR_2_PMPPAX</OutputFileType>
+				<FileTypeDescription>Preliminary Platform File</FileTypeDescription>
+				<Timeliness>ST</Timeliness>
+				<GenerationCentre>POD</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>AUX_PRCPTF</InputFileType>
+				<OutputFileType>SR_2_PCPPAX</OutputFileType>
+				<FileTypeDescription>Precise Platform File</FileTypeDescription>
+				<Timeliness>NT</Timeliness>
+				<GenerationCentre>POD</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>GPS_NSA3AX</InputFileType>
+				<OutputFileType>GN_1_NSA3AX</OutputFileType>
+				<FileTypeDescription>LEO NAPEOS Satellite DB Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>POD</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>GPS_NTR3AX</InputFileType>
+				<OutputFileType>GN_1_NTR3AX</OutputFileType>
+				<FileTypeDescription>LEO NAPEOS Transp. DB Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>POD</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>GPS_ATX3AX</InputFileType>
+				<OutputFileType>GN_1_ATX3AX</OutputFileType>
+				<FileTypeDescription>LEO ANTEX Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>POD</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>POD_ICDBAX</InputFileType>
+				<OutputFileType>GN_1_CHD_AX</OutputFileType>
+				<FileTypeDescription>NRT POD ICDB Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>POD</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>GPS_NSA_AX</InputFileType>
+				<OutputFileType>GN_1_NSA_AX</OutputFileType>
+				<FileTypeDescription>GPS NAPEOS Satellite DB Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>POD</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>GPS_NTR_AX</InputFileType>
+				<OutputFileType>GN_1_NTR_AX</OutputFileType>
+				<FileTypeDescription>GPS NAPEOS Constellation Transp Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>POD</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>GPS_NPR_AX</InputFileType>
+				<OutputFileType>GN_1_NPR_AX</OutputFileType>
+				<FileTypeDescription>GPS NAPEOS  Problem DB Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>POD</GenerationCentre>
+			</Conversion>
+<!-- 30 -->
+			<Conversion>
+				<InputFileType>GPS_ATX_AX</InputFileType>
+				<OutputFileType>GN_1_ATX_AX</OutputFileType>
+				<FileTypeDescription>GPS ANTEX Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>POD</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>GPS_GSVMAX</InputFileType>
+				<OutputFileType>GN_1_GSVMAX</OutputFileType>
+				<FileTypeDescription>GPS Orbits and Clocks 15M Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>EGP</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>GPS_GSVHAX</InputFileType>
+				<OutputFileType>GN_1_GSVHAX</OutputFileType>
+				<FileTypeDescription>GPS Orbits 24H Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>EGP</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>GPS_GCLHAX</InputFileType>
+				<OutputFileType>GN_1_GCLHAX</OutputFileType>
+				<FileTypeDescription>GPS Clocks 24H Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>EGP</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>EOP_EOPHAX</InputFileType>
+				<OutputFileType>GN_1_EOPHAX</OutputFileType>
+				<FileTypeDescription>Earth Orientation Parameters 24H Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>EGP</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>GPS_NAV_AX</InputFileType>
+				<OutputFileType>GN_1_NAV_AX</OutputFileType>
+				<FileTypeDescription>Nav. Message Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>EGP</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>NOAA_SACAX</InputFileType>
+				<OutputFileType>GN_1_SAC_AX</OutputFileType>
+				<FileTypeDescription>Solar Flux and Geomagnetic Activity Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>NOA</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>MSSL_SIC</InputFileType> 
+				<OutputFileType>SR_2_SIC_AX</OutputFileType>
+				<FileTypeDescription>MSSL SRAL Sea-ice oncentration</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>MSL</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>ECMWF_MF1</InputFileType>
+				<OutputFileType>AX___MF1_AX</OutputFileType>
+				<FileTypeDescription>ECMWF Forecast Meteo Data L1</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>ECW</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>ECMWF_MF2</InputFileType>
+				<OutputFileType>AX___MF2_AX</OutputFileType>
+				<FileTypeDescription>ECMWF Forecast Meteo Data L2</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>ECW</GenerationCentre>
+			</Conversion>
+<!-- 40 -->
+			<Conversion>
+				<InputFileType>ECMWF_MA1</InputFileType>
+				<OutputFileType>AX___MA1_AX</OutputFileType>
+				<FileTypeDescription>ECMWF Analysis Meteo Data L1</FileTypeDescription>
+				<Timeliness>SN</Timeliness>
+				<GenerationCentre>ECW</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>ECMWF_MA2</InputFileType>
+				<OutputFileType>AX___MA2_AX</OutputFileType>
+				<FileTypeDescription>ECMWF Analysis Meteo Data L2</FileTypeDescription>
+				<Timeliness>SN</Timeliness>
+				<GenerationCentre>ECW</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>ECMWF_MFA</InputFileType>
+				<OutputFileType>AX___MFA_AX</OutputFileType>
+				<FileTypeDescription>ECMWF Forecast and Analysis Meteo Data</FileTypeDescription>
+				<Timeliness>NT</Timeliness>
+				<GenerationCentre>ECW</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>IERS_A</InputFileType>
+				<OutputFileType>AX___BA__AX</OutputFileType>
+				<FileTypeDescription>IERS Bullettin A</FileTypeDescription>
+				<Timeliness>SN</Timeliness>
+				<GenerationCentre>IRS</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>IERS_B</InputFileType>
+				<OutputFileType>AX___BB2_AX</OutputFileType>
+				<FileTypeDescription>IERS Bulletin B</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>IRS</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>EOP_USNOAX</InputFileType>
+				<OutputFileType>GN_1_EOP_AX</OutputFileType>
+				<FileTypeDescription>EOP USNO Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>IRS</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>LEAP_SEC</InputFileType>
+				<OutputFileType>GN_1_LSC_AX</OutputFileType>
+				<FileTypeDescription>Leap Seconds Auxiliary File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>IRS</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>SSTAAX_AUX</InputFileType> 
+				<OutputFileType>SL_2_SSTAAX</OutputFileType>
+				<FileTypeDescription>METOffice SLSTR L4 SST analysis data file</FileTypeDescription>
+				<Timeliness>NN</Timeliness>
+				<GenerationCentre>MET</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>MPL_ORBSCT</InputFileType>
+				<OutputFileType>AX___OSF_AX</OutputFileType>
+				<FileTypeDescription>Reference Orbit Scenario File</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>EUM</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>REPMACP_ESA_A</InputFileType>
+				<OutputFileType>GN_1_MANHAX</OutputFileType>
+				<FileTypeDescription>Manoeuvre Acceleration Profile File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>ESC</GenerationCentre>
+			</Conversion>
+<!-- 40 -->
+			<Conversion>
+				<InputFileType>REPMACP_ESA_B</InputFileType>
+				<OutputFileType>GN_1_MANHAX</OutputFileType>
+				<FileTypeDescription>Manoeuvre Acceleration Profile File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>ESC</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>REPMACP_EUM_A</InputFileType>
+				<OutputFileType>GN_1_MANHAX</OutputFileType>
+				<FileTypeDescription>Manoeuvre Acceleration Profile File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>EUM</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>REPMACP_EUM_B</InputFileType>
+				<OutputFileType>GN_1_MANHAX</OutputFileType>
+				<FileTypeDescription>Manoeuvre Acceleration Profile File</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>EUM</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>REPSMPR_ESA_A</InputFileType>
+				<OutputFileType>GN_1_MASSAX</OutputFileType>
+				<FileTypeDescription>Satellite Mass Properties Report</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>ESC</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>REPSMPR_ESA_B</InputFileType>
+				<OutputFileType>GN_1_MASSAX</OutputFileType>
+				<FileTypeDescription>Satellite Mass Properties Report</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>ESC</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>REPSMPR_EUM_A</InputFileType>
+				<OutputFileType>GN_1_MASSAX</OutputFileType>
+				<FileTypeDescription>Satellite Mass Properties Report</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>EUM</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>REPSMPR_EUM_B</InputFileType>
+				<OutputFileType>GN_1_MASSAX</OutputFileType>
+				<FileTypeDescription>Satellite Mass Properties Report</FileTypeDescription>
+				<Timeliness>NR</Timeliness>
+				<GenerationCentre>EUM</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>MPL_ORBSCT_A</InputFileType>
+				<OutputFileType>AX___OSF_AX</OutputFileType>
+				<FileTypeDescription>Reference Orbit Scenario File</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>EUM</GenerationCentre>
+			</Conversion>
+			<Conversion>
+				<InputFileType>MPL_ORBSCT_B</InputFileType>
+				<OutputFileType>AX___OSF_AX</OutputFileType>
+				<FileTypeDescription>Reference Orbit Scenario File</FileTypeDescription>
+				<Timeliness>AL</Timeliness>
+				<GenerationCentre>EUM</GenerationCentre>
+			</Conversion>
+		</List_of_Conversions>
+	</FileTypeConversionMap>
+	<Platform>O</Platform>
+	<Timeliness>__</Timeliness>
+	<Baseline>001</Baseline>
+	<FacilityName>MAR</FacilityName>
+	<Organization>European Organisation for the Exploitation of Meteorological Satellites</Organization>
+	<Site>Darmstadt</Site>
+	<Country>Germany</Country>
+	<HwName>OPE</HwName>
+	<SwName>ADC</SwName>
+	<SwVersion>2.0</SwVersion>
+</Root>

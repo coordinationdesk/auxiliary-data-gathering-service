@@ -1,0 +1,8 @@
+1.0.2
+Loading configuration from application instead of directly from ConfigurationSingleton
+------------------------
+1.0.1
+Using EvictionTask instead of CleanOnAging task
+------------------------
+1.0.0
+First release

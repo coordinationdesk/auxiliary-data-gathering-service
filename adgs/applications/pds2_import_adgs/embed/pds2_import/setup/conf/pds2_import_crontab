@@ -1,0 +1,4 @@
+#### ACS_PDS2_IMPORT_CRONTAB ####
+# Once per minute
+*/1  * * * * php -q  /var/www/html/pds2_import/engine/pds2_import.php > /dev/null
+#### END_ACS_PDS2_IMPORT_CRONTAB ####

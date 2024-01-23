@@ -1,0 +1,1246 @@
+<?xml version="1.0" standalone="yes"?>
+<SafeFormatter>
+	<SafeProduct>
+		<productType>SL_1_RBT_</productType>
+		<safeNamespace>http://www.esa.int/safe/1.2</safeNamespace>
+		<xfduNamespace>urn:ccsds:schema:xfdu:1</xfduNamespace>
+		<schemaLocation>./xfdu.xsd</schemaLocation>
+		<manifestName>manifest.safe</manifestName>
+		<InformationPackageMap>
+			<unitType>Information Package</unitType>
+			<textInfo>SENTINEL-3 SLSTR Level 1</textInfo>
+			<pdiId>processing</pdiId>
+			<dmdId>acquisitionPeriod platform generalProductInformation specificProductInformation</dmdId>
+			<Id>packageUnit</Id>
+		</InformationPackageMap> 
+		<ListOfObjects count="3">
+			<Object type="Data">
+				<Common>
+					<unitType>Measurement Data Unit</unitType>
+					<checksumName>MD5</checksumName>
+					<locType>URL</locType>
+				</Common>
+				<ListOfObjectConfigs count="34">
+					<ObjectConfig>
+						<Id>S1_radiance_an</Id>
+						<dataObjectId>S1_radiance_an</dataObjectId>
+						<textInfo>S1_radiance_an Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S1_quality_an flags_an indices_an geodetic_an cartesian_an time_an geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S2_radiance_an</Id>
+						<dataObjectId>S2_radiance_an</dataObjectId>
+						<textInfo>S2_radiance_an Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S2_quality_an flags_an indices_an geodetic_an cartesian_an time_an geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S3_radiance_an</Id>
+						<dataObjectId>S3_radiance_an</dataObjectId>
+						<textInfo>S3_radiance_an Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S3_quality_an flags_an indices_an geodetic_an cartesian_an time_an geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S4_radiance_an</Id>
+						<dataObjectId>S4_radiance_an</dataObjectId>
+						<textInfo>S4_radiance_an Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S4_quality_an flags_an indices_an geodetic_an cartesian_an time_an geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S5_radiance_an</Id>
+						<dataObjectId>S5_radiance_an</dataObjectId>
+						<textInfo>S5_radiance_an Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S5_quality_an flags_an indices_an geodetic_an cartesian_an time_an geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S6_radiance_an</Id>
+						<dataObjectId>S6_radiance_an</dataObjectId>
+						<textInfo>S6_radiance_an Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S6_quality_an flags_an indices_an geodetic_an cartesian_an time_an geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S1_radiance_ao</Id>
+						<dataObjectId>S1_radiance_ao</dataObjectId>
+						<textInfo>S1_radiance_ao Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S1_quality_ao flags_ao indices_ao geodetic_tx geodetic_ao cartesian_ao time_ao geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S2_radiance_ao</Id>
+						<dataObjectId>S2_radiance_ao</dataObjectId>
+						<textInfo>S2_radiance_ao Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S2_quality_ao flags_ao indices_ao geodetic_tx geodetic_ao cartesian_ao time_ao geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S3_radiance_ao</Id>
+						<dataObjectId>S3_radiance_ao</dataObjectId>
+						<textInfo>S3_radiance_ao Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S3_quality_ao flags_ao indices_ao geodetic_tx geodetic_ao cartesian_ao time_ao geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S4_radiance_ao</Id>
+						<dataObjectId>S4_radiance_ao</dataObjectId>
+						<textInfo>S4_radiance_ao Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S4_quality_ao flags_ao indices_ao geodetic_tx geodetic_ao cartesian_ao time_ao geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S5_radiance_ao</Id>
+						<dataObjectId>S5_radiance_ao</dataObjectId>
+						<textInfo>S5_radiance_ao Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S5_quality_ao flags_ao indices_ao geodetic_tx geodetic_ao cartesian_ao time_ao geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S6_radiance_ao</Id>
+						<dataObjectId>S6_radiance_ao</dataObjectId>
+						<textInfo>S6_radiance_ao Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S6_quality_ao flags_ao indices_ao geodetic_tx geodetic_ao cartesian_ao time_ao geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S4_radiance_bn</Id>
+						<dataObjectId>S4_radiance_bn</dataObjectId>
+						<textInfo>S4_radiance_bn Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S4_quality_bn flags_bn indices_bn  geodetic_tx geodetic_bn cartesian_bn time_bn geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S5_radiance_bn</Id>
+						<dataObjectId>S5_radiance_bn</dataObjectId>
+						<textInfo>S5_radiance_bn Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S5_quality_bn flags_bn indices_bn  geodetic_tx geodetic_bn cartesian_bn time_bn geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S6_radiance_bn</Id>
+						<dataObjectId>S6_radiance_bn</dataObjectId>
+						<textInfo>S6_radiance_bn Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S6_quality_bn flags_bn indices_bn  geodetic_tx geodetic_bn cartesian_bn time_bn geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S4_radiance_bo</Id>
+						<dataObjectId>S4_radiance_bo</dataObjectId>
+						<textInfo>S4_radiance_bo Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S4_quality_bo flags_bo indices_bo  geodetic_tx geodetic_bo cartesian_bo time_bo geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S5_radiance_bo</Id>
+						<dataObjectId>S5_radiance_bo</dataObjectId>
+						<textInfo>S5_radiance_bo Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S5_quality_bo flags_bo indices_bo  geodetic_tx geodetic_bo cartesian_bo time_bo geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S6_radiance_bo</Id>
+						<dataObjectId>S6_radiance_bo</dataObjectId>
+						<textInfo>S6_radiance_bo Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S6_quality_bo flags_bo indices_bo  geodetic_tx geodetic_bo cartesian_bo time_bo geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S4_radiance_cn</Id>
+						<dataObjectId>S4_radiance_cn</dataObjectId>
+						<textInfo>S4_radiance_cn Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S4_quality_cn flags_cn indices_cn  geodetic_tx geodetic_cn cartesian_cn time_cn geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S5_radiance_cn</Id>
+						<dataObjectId>S5_radiance_cn</dataObjectId>
+						<textInfo>S5_radiance_cn Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S5_quality_cn flags_cn indices_cn  geodetic_tx geodetic_cn cartesian_cn time_cn geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S6_radiance_cn</Id>
+						<dataObjectId>S6_radiance_cn</dataObjectId>
+						<textInfo>S6_radiance_cn Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S6_quality_cn flags_cn indices_cn  geodetic_tx geodetic_cn cartesian_cn time_cn geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S4_radiance_co</Id>
+						<dataObjectId>S4_radiance_co</dataObjectId>
+						<textInfo>S4_radiance_co Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S4_quality_co flags_co indices_co  geodetic_tx geodetic_co cartesian_co time_co geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S5_radiance_co</Id>
+						<dataObjectId>S5_radiance_co</dataObjectId>
+						<textInfo>S5_radiance_co Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S5_quality_co flags_co indices_co  geodetic_tx geodetic_co cartesian_co time_co geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S6_radiance_co</Id>
+						<dataObjectId>S6_radiance_co</dataObjectId>
+						<textInfo>S6_radiance_co Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S6_quality_co flags_co indices_co  geodetic_tx geodetic_co cartesian_co time_co geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S7_BT_in</Id>
+						<dataObjectId>S7_BT_in</dataObjectId>
+						<textInfo>S7_BT_in Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S7_quality_in flags_in indices_in  geodetic_tx geodetic_in cartesian_in time_in geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S8_BT_in</Id>
+						<dataObjectId>S8_BT_in</dataObjectId>
+						<textInfo>S8_BT_in Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S8_quality_in flags_in indices_in  geodetic_tx geodetic_in cartesian_in time_in geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S9_BT_in</Id>
+						<dataObjectId>S9_BT_in</dataObjectId>
+						<textInfo>S9_BT_in Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S9_quality_in flags_in indices_in  geodetic_tx geodetic_in cartesian_in time_in geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S7_BT_io</Id>
+						<dataObjectId>S7_BT_io</dataObjectId>
+						<textInfo>S7_BT_io Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S7_quality_io flags_io indices_io  geodetic_tx geodetic_io cartesian_io time_io geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S8_BT_io</Id>
+						<dataObjectId>S8_BT_io</dataObjectId>
+						<textInfo>S8_BT_io Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S8_quality_io flags_io indices_io  geodetic_tx geodetic_io cartesian_io time_io geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S9_BT_io</Id>
+						<dataObjectId>S9_BT_io</dataObjectId>
+						<textInfo>S9_BT_io Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation S9_quality_io flags_io indices_io  geodetic_tx geodetic_io cartesian_io time_io geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>F1_BT_in</Id>
+						<dataObjectId>F1_BT_in</dataObjectId>
+						<textInfo>F1_BT_in Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation F1_quality_in flags_in indices_in  geodetic_tx geodetic_in cartesian_in geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>F2_BT_in</Id>
+						<dataObjectId>F2_BT_in</dataObjectId>
+						<textInfo>F2_BT_in Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation F2_quality_in flags_in indices_in  geodetic_tx geodetic_in cartesian_in geometry_tn met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>F1_BT_io</Id>
+						<dataObjectId>F1_BT_io</dataObjectId>
+						<textInfo>F1_BT_io Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation F1_quality_io flags_io indices_io  geodetic_tx geodetic_io cartesian_io geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>F2_BT_io</Id>
+						<dataObjectId>F2_BT_io</dataObjectId>
+						<textInfo>F2_BT_io Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation F2_quality_io flags_io indices_io  geodetic_tx geodetic_io cartesian_io geometry_to met_tx</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+				</ListOfObjectConfigs>
+			</Object>
+			<Object type="Metadata">
+				<Common>
+					<metadataClass>MetadataWrap</metadataClass>
+					<mimeType>text/xml</mimeType>
+					<vocabularyName>SAFE</vocabularyName>
+				</Common>
+				<ListOfObjectConfigs count="8">
+					<ObjectConfig>
+						<Id>acquisitionPeriod</Id>
+						<metadataObjectId>acquisitionPeriod</metadataObjectId>
+						<textInfo>Acquisition Period</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>platform</Id>
+						<metadataObjectId>platform</metadataObjectId>
+						<textInfo>Platform Description</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>measurementOrbitReference</Id>
+						<metadataObjectId>measurementOrbitReference</metadataObjectId>
+						<textInfo>Orbit Reference</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>measurementFrameSet</Id>
+						<metadataObjectId>measurementFrameSet</metadataObjectId>
+						<textInfo>Frame Set</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+						<srsName>http:/www.opengis.net/gml/srs/epsg.xml#4326</srsName>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>qualityInformation</Id>
+						<metadataObjectId>qualityInformation</metadataObjectId>
+						<textInfo>Quality Information</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>generalProductInformation</Id>
+						<metadataObjectId>generalProductInformation</metadataObjectId>
+						<textInfo>General Product Information</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>specificInformation</Id>
+						<metadataObjectId>specificInformation</metadataObjectId>
+						<textInfo>Specific Product Information</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>processing</Id>
+						<metadataObjectId>processing</metadataObjectId>
+						<classification>PROVENANCE</classification>
+						<category>PDI</category>
+						<textInfo>Processing Log</textInfo>
+					</ObjectConfig>
+				</ListOfObjectConfigs>
+			</Object>
+			<Object type="Metadata">
+				<Common>
+					<metadataClass>dataObjectPointer</metadataClass>
+					<unitType>Metadata Unit</unitType>
+					<checksumName>MD5</checksumName>
+					<locType>URL</locType>
+					<mimeType>application/x-netcdf</mimeType>
+				</Common>
+				<ListOfObjectConfigs count="79">
+					<ObjectConfig>
+						<Id>S1_quality_an</Id>
+						<dataObjectId>S1_quality_an</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S1_quality_an</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S2_quality_an</Id>
+						<dataObjectId>S2_quality_an</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S2_quality_an</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S3_quality_an</Id>
+						<dataObjectId>S3_quality_an</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S3_quality_an</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S4_quality_an</Id>
+						<dataObjectId>S4_quality_an</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S4_quality_an</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S5_quality_an</Id>
+						<dataObjectId>S5_quality_an</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S5_quality_an</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S6_quality_an</Id>
+						<dataObjectId>S6_quality_an</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S6_quality_an</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S1_quality_ao</Id>
+						<dataObjectId>S1_quality_ao</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S1_quality_ao</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S2_quality_ao</Id>
+						<dataObjectId>S2_quality_ao</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S2_quality_ao</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S3_quality_ao</Id>
+						<dataObjectId>S3_quality_ao</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S3_quality_ao</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S4_quality_ao</Id>
+						<dataObjectId>S4_quality_ao</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S4_quality_ao</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S5_quality_ao</Id>
+						<dataObjectId>S5_quality_ao</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S5_quality_ao</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S6_quality_ao</Id>
+						<dataObjectId>S6_quality_ao</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S6_quality_ao</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S4_quality_bn</Id>
+						<dataObjectId>S4_quality_bn</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S4_quality_bn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S5_quality_bn</Id>
+						<dataObjectId>S5_quality_bn</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S5_quality_bn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S6_quality_bn</Id>
+						<dataObjectId>S6_quality_bn</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S6_quality_bn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S4_quality_bo</Id>
+						<dataObjectId>S4_quality_bo</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S4_quality_bo</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S5_quality_bo</Id>
+						<dataObjectId>S5_quality_bo</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S5_quality_bo</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S6_quality_bo</Id>
+						<dataObjectId>S6_quality_bo</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S6_quality_bo</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S4_quality_cn</Id>
+						<dataObjectId>S4_quality_cn</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S4_quality_cn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S5_quality_cn</Id>
+						<dataObjectId>S5_quality_cn</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S5_quality_cn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S6_quality_cn</Id>
+						<dataObjectId>S6_quality_cn</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S6_quality_cn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S4_quality_co</Id>
+						<dataObjectId>S4_quality_co</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S4_quality_co</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S5_quality_co</Id>
+						<dataObjectId>S5_quality_co</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S5_quality_co</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S6_quality_co</Id>
+						<dataObjectId>S6_quality_co</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S6_quality_co</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S7_quality_in</Id>
+						<dataObjectId>S7_quality_in</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S7_quality_in</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S8_quality_in</Id>
+						<dataObjectId>S8_quality_in</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S8_quality_in</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S9_quality_in</Id>
+						<dataObjectId>S9_quality_in</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S9_quality_in</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S7_quality_io</Id>
+						<dataObjectId>S7_quality_io</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S7_quality_io</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S8_quality_io</Id>
+						<dataObjectId>S8_quality_io</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S8_quality_io</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S9_quality_io</Id>
+						<dataObjectId>S9_quality_io</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S9_quality_io</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>F1_quality_in</Id>
+						<dataObjectId>F1_quality_in</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>F1_quality_in</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>F2_quality_in</Id>
+						<dataObjectId>F2_quality_in</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>F2_quality_in</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>F1_quality_io</Id>
+						<dataObjectId>F1_quality_io</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>F1_quality_io</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>F2_quality_io</Id>
+						<dataObjectId>F2_quality_io</dataObjectId>
+						<textInfo>Quality Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>F2_quality_io</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>flags_an</Id>
+						<dataObjectId>flags_an</dataObjectId>
+						<textInfo>Global Flags Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>flags_an</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>flags_ao</Id>
+						<dataObjectId>flags_ao</dataObjectId>
+						<textInfo>Global Flags Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>flags_ao</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>flags_bn</Id>
+						<dataObjectId>flags_bn</dataObjectId>
+						<textInfo>Global Flags Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>flags_bn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>flags_bo</Id>
+						<dataObjectId>flags_bo</dataObjectId>
+						<textInfo>Global Flags Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>flags_bo</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>flags_cn</Id>
+						<dataObjectId>flags_cn</dataObjectId>
+						<textInfo>Global Flags Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>flags_cn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>flags_co</Id>
+						<dataObjectId>flags_co</dataObjectId>
+						<textInfo>Global Flags Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>flags_co</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>flags_in</Id>
+						<dataObjectId>flags_in</dataObjectId>
+						<textInfo>Global Flags Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>flags_in</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>flags_io</Id>
+						<dataObjectId>flags_io</dataObjectId>
+						<textInfo>Global Flags Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>flags_io</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>indices_an</Id>
+						<dataObjectId>indices_an</dataObjectId>
+						<textInfo>Scan, Pixels and Detectors Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>indices_an</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>indices_ao</Id>
+						<dataObjectId>indices_ao</dataObjectId>
+						<textInfo>Scan, Pixels and Detectors Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>indices_ao</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>indices_bn</Id>
+						<dataObjectId>indices_bn</dataObjectId>
+						<textInfo>Scan, Pixels and Detectors Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>indices_bn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>indices_bo</Id>
+						<dataObjectId>indices_bo</dataObjectId>
+						<textInfo>Scan, Pixels and Detectors Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>indices_bo</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>indices_cn</Id>
+						<dataObjectId>indices_cn</dataObjectId>
+						<textInfo>Scan, Pixels and Detectors Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>indices_cn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>indices_co</Id>
+						<dataObjectId>indices_co</dataObjectId>
+						<textInfo>Scan, Pixels and Detectors Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>indices_co</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>indices_in</Id>
+						<dataObjectId>indices_in</dataObjectId>
+						<textInfo>Scan, Pixels and Detectors Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>indices_in</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>indices_io</Id>
+						<dataObjectId>indices_io</dataObjectId>
+						<textInfo>Scan, Pixels and Detectors Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>indices_io</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>geodetic_an</Id>
+						<dataObjectId>geodetic_an</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>geodetic_an</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>geodetic_ao</Id>
+						<dataObjectId>geodetic_ao</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>geodetic_ao</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>geodetic_bn</Id>
+						<dataObjectId>geodetic_bn</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>geodetic_bn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>geodetic_bo</Id>
+						<dataObjectId>geodetic_bo</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>geodetic_bo</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>geodetic_cn</Id>
+						<dataObjectId>geodetic_cn</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>geodetic_cn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>geodetic_co</Id>
+						<dataObjectId>geodetic_co</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>geodetic_co</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>geodetic_in</Id>
+						<dataObjectId>geodetic_in</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>geodetic_in</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>geodetic_io</Id>
+						<dataObjectId>geodetic_io</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>geodetic_io</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>geodetic_tx</Id>
+						<dataObjectId>geodetic_tx</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>geodetic_tx</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>cartesian_an</Id>
+						<dataObjectId>cartesian_an</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>cartesian_an</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>cartesian_ao</Id>
+						<dataObjectId>cartesian_ao</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>cartesian_ao</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>cartesian_bn</Id>
+						<dataObjectId>cartesian_bn</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>cartesian_bn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>cartesian_bo</Id>
+						<dataObjectId>cartesian_bo</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>cartesian_bo</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>cartesian_cn</Id>
+						<dataObjectId>cartesian_cn</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>cartesian_cn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>cartesian_co</Id>
+						<dataObjectId>cartesian_co</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>cartesian_co</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>cartesian_in</Id>
+						<dataObjectId>cartesian_in</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>cartesian_in</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>cartesian_io</Id>
+						<dataObjectId>cartesian_io</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>cartesian_io</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>cartesian_tx</Id>
+						<dataObjectId>cartesian_tx</dataObjectId>
+						<textInfo>Coordinates Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>cartesian_tx</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>time_an</Id>
+						<dataObjectId>time_an</dataObjectId>
+						<textInfo>Time Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>time_an</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>time_ao</Id>
+						<dataObjectId>time_ao</dataObjectId>
+						<textInfo>Time Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>time_ao</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>time_bn</Id>
+						<dataObjectId>time_bn</dataObjectId>
+						<textInfo>Time Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>time_bn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>time_bo</Id>
+						<dataObjectId>time_bo</dataObjectId>
+						<textInfo>Time Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>time_bo</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>time_cn</Id>
+						<dataObjectId>time_cn</dataObjectId>
+						<textInfo>Time Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>time_cn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>time_co</Id>
+						<dataObjectId>time_co</dataObjectId>
+						<textInfo>Time Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>time_co</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>time_in</Id>
+						<dataObjectId>time_in</dataObjectId>
+						<textInfo>Time Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>time_in</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>time_io</Id>
+						<dataObjectId>time_io</dataObjectId>
+						<textInfo>Time Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>time_io</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>geometry_tn</Id>
+						<dataObjectId>geometry_tn</dataObjectId>
+						<textInfo>Solar and Satellite Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>geometry_tn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>geometry_to</Id>
+						<dataObjectId>geometry_to</dataObjectId>
+						<textInfo>Solar and Satellite Annotation Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>geometry_to</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>met_tx</Id>
+						<dataObjectId>met_tx</dataObjectId>
+						<textInfo>Meteorological Parameters Auxiliary Data Set</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>met_tx</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+				</ListOfObjectConfigs>
+			</Object>
+		</ListOfObjects>
+	</SafeProduct>
+</SafeFormatter>

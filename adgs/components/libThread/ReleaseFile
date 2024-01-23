@@ -1,0 +1,35 @@
+6.0.4
+Fixing test Makefile
+------------------------------
+6.0.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+6.0.2
+Warning message in case of wrong usage of waitExitOrTimeout
+is issued once per procees
+------------------------------
+6.0.1
+Thread::waitExitOrTimeout now protects itself from being called 
+from the insied of the run operation. 
+run will never exit if blocked in the run waiting for itself to exit
+------------------------------
+6.0.0
+StopController class and tests removed from this library and
+relocated to libException 9.0.0
+------------------------------
+5.29.1
+using macro instead of throw() exception specifications
+------------------------------
+5.29.0
+Introduced the interface startFICT to Thread class.
+FICT is a simple italian acronym that, actually, avoids the Thread library
+to initialize ThreadSafe third party library initialization.
+The initialization can be executed only once in the life of a process so 
+this interface is used to not clash the mechanism with an early thread
+than needs to be started.
+------------------------------
+5.28.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.28.0
+Automatically generate from revision "version "5.28""

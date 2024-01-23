@@ -1,0 +1,5 @@
+<?xml version="1.0" standalone="yes"?>
+<libGenFileActionRoot>
+	<!-- All storage with storecost greater than MinimumAsyncUploadCost will be managed as asynchronous storage -->
+	<MinimumAsyncUploadCost>20</MinimumAsyncUploadCost>
+</libGenFileActionRoot>

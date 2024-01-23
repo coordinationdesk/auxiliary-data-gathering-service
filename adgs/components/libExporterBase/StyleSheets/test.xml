@@ -1,0 +1,14 @@
+<MailNotification>
+	<UtcsTime>Thu Feb 14 17:50:48 CET 2013</UtcsTime>
+	<UserId>testUset</UserId>
+	<Email>testUset@test.it</Email>
+	<Repository>host/path/other/</Repository>
+	<Login>testLogin</Login>
+	<Protocol>sftp</Protocol>
+	<PackageId>001</PackageId>
+	<List_of_Files count="2">
+		<File>/dp01/file01.hdr</File>
+		<File>/dp01/file02.bin</File>
+	</List_of_Files>
+</MailNotification>
+

@@ -1,0 +1,175 @@
+<Root>
+	<!-- $Id$ -->
+    <!--************************************************************************************************************************** 
+        Naming Rules are provided in the form of a regular expression and a list of fields that can be extracted from the filename 
+         using the matches with the sub-regexp enclosed in the parentesis. 
+         For each field, the name (which is used as a key) and the index of the sub-regexp the field is related to must be provided.
+         **************************************************************************************************************************
+         IMPORTANT: 
+         Allowed Field.Name values: 
+         - PlatformName
+         - MissionNumber
+         - FileType
+         - FileClass
+         - StartTime
+         - StopTime
+         - OriginFacility
+         - AbsoluteOrbit
+         - Crc
+         - Extension
+	 - Duration
+	 - Cycle
+	 - RelativeOrbit
+	 - InstanceId
+	 - FrameCoord
+	 - Version
+	 - Timeliness
+	 - Baseline
+        ************************************************************************************************************************** -->
+	<ProductNaming>
+		<List_Of_NamingRules count="5">
+			<NamingRule>
+				<FilenameRegExp>^(S3[A-Z_])_([A-Z0-9_]{2}_[A-Z0-9_]{8})_([[:digit:]]{8}T[[:digit:]]{6})_([[:digit:]]{8}T[[:digit:]]{6})_([A-Z0-9_]{4})_([A-Z0-9_]{3})_([A-Z0-9_]{3})_([A-Z0-9_]{4})_([A-Z0-9]{3})_([A-Z0-9_])_([A-Z0-9_]{2})_([A-Z0-9_]{3})_([[:digit:]]{2}).*$</FilenameRegExp> 
+				<List_Of_Fields count="13">
+					<Field>
+						<Name>MissionNumber</Name>
+						<Index>1</Index>
+					</Field>
+					<Field>
+						<Name>FileType</Name>
+						<Index>2</Index>
+					</Field>
+                		    	<Field>
+						<Name>StartTime</Name>
+						<Index>3</Index>
+					</Field>
+                		    	<Field>
+						<Name>StopTime</Name>
+						<Index>4</Index>
+					</Field>
+                		    	<Field>
+						<Name>Duration</Name>
+						<Index>5</Index>
+					</Field>
+                		    	<Field>
+						<Name>Cycle</Name>
+						<Index>6</Index>
+					</Field>
+                		    	<Field>
+						<Name>RelativeOrbit</Name>
+						<Index>7</Index>
+					</Field>
+                		    	<Field>
+						<Name>FrameCoord</Name>
+						<Index>8</Index>
+					</Field>
+                		    	<Field>
+						<Name>OriginFacility</Name>
+						<Index>9</Index>
+					</Field>
+                		    	<Field>
+						<Name>PlatformName</Name>
+						<Index>10</Index>
+					</Field>
+                		    	<Field>
+						<Name>Timeliness</Name>
+						<Index>11</Index>
+					</Field>
+                		    	<Field>
+						<Name>Baseline</Name>
+						<Index>12</Index>
+					</Field>
+	               		    	<Field>
+						<Name>Version</Name>
+						<Index>13</Index>
+					</Field>
+ 				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule>
+				<FilenameRegExp>^(S3[A-Z_])_([A-Z0-9_]{2}_[A-Z0-9_]{8})_([[:digit:]]{8}T[[:digit:]]{6})_([[:digit:]]{8}T[[:digit:]]{6})_([[:digit:]]{8}T[[:digit:]]{6})___[A-Z0-9]{3}_[A-Z0-9_]{8}_([[:digit:]]{2}).*$</FilenameRegExp> 
+				<List_Of_Fields count="6">
+					<Field>
+						<Name>MissionNumber</Name>
+						<Index>1</Index>
+					</Field>
+					<Field>
+						<Name>FileType</Name>
+						<Index>2</Index>
+					</Field>
+                		    	<Field>
+						<Name>StartTime</Name>
+						<Index>3</Index>
+					</Field>
+                		    	<Field>
+						<Name>StopTime</Name>
+						<Index>4</Index>
+					</Field>
+                		    	<Field>
+						<Name>InstanceId</Name>
+						<Index>5</Index>
+					</Field>
+	               		    	<Field>
+						<Name>Version</Name>
+						<Index>6</Index>
+					</Field>
+ 				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule>
+				<FilenameRegExp>^S3[A-Z_]_[A-Z0-9_]{4}_([A-Z0-9_]{10})_[[:digit:]]{8}T[[:digit:]]{6}_[[:digit:]]{8}T[[:digit:]]{6}_[0-9]{4}.*$</FilenameRegExp> 
+				<List_Of_Fields count="1">
+					<Field>
+						<Name>FileType</Name>
+						<Index>1</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule>
+				<FilenameRegExp>^S3[A-Z_]_([A-Z0-9_]{8})_[[:digit:]]{8}T[[:digit:]]{6}_[[:digit:]]{8}T[[:digit:]]{6}.*$</FilenameRegExp> 
+				<List_Of_Fields count="1">
+					<Field>
+						<Name>FileType</Name>
+						<Index>1</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule>
+				<FilenameRegExp>^(S3[A-Z_])_([A-Z0-9_]{11})_([[:digit:]]{8}T[[:digit:]]{6})_([[:digit:]]{8}T[[:digit:]]{6})_([[:digit:]]{8}T[[:digit:]]{6})_(.{17})_([A-Z0-9_]{3})_([A-Z0-9_]{8})\.SEN3$</FilenameRegExp> 
+				<List_Of_Fields count="8">
+					<Field>
+						<Name>MissionNumber</Name>
+						<Index>1</Index>
+					</Field>
+					<Field>
+						<Name>FileType</Name>
+						<Index>2</Index>
+					</Field>
+                		    	<Field>
+						<Name>StartTime</Name>
+						<Index>3</Index>
+					</Field>
+                		    	<Field>
+						<Name>StopTime</Name>
+						<Index>4</Index>
+					</Field>
+                		    	<Field>
+						<Name>CreationTime</Name>
+						<Index>5</Index>
+					</Field>
+                		    	<Field>
+						<Name>InstanceId</Name>
+						<Index>6</Index>
+					</Field>
+                		    	<Field>
+						<Name>OriginFacility</Name>
+						<Index>7</Index>
+					</Field>
+                		    	<Field>
+						<Name>FileClass</Name>
+						<Index>8</Index>
+					</Field>
+ 				</List_Of_Fields>
+
+			</NamingRule>
+		</List_Of_NamingRules>
+	</ProductNaming>
+</Root>

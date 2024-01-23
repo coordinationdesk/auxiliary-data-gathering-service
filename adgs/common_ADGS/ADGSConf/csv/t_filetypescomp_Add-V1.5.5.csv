@@ -1,0 +1,12 @@
+'pfiletype', 'cfiletype'
+
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1FOS_AUX_EOF')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S1L_PREORB_X')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1FOS_AUX_TGZ')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S1L_PREORB_O')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1FOS_ALL')',       '(SELECT id_filetype FROM t_filetypes where filetype = 'S1L_PREORB_X')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1FOS_ALL')',       '(SELECT id_filetype FROM t_filetypes where filetype = 'S1L_PREORB_O')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1FOS_ALL2')',      '(SELECT id_filetype FROM t_filetypes where filetype = 'S1L_PREORB_X')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1FOS_ALL2')',      '(SELECT id_filetype FROM t_filetypes where filetype = 'S1L_PREORB_O')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'FOS_MAIL_TGZ')',    '(SELECT id_filetype FROM t_filetypes where filetype = 'S1L_PREORB_O')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'FOS_MAIL_EOF')',    '(SELECT id_filetype FROM t_filetypes where filetype = 'S1L_PREORB_X')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'AUXTOOBJST_TBZ')',  '(SELECT id_filetype FROM t_filetypes where filetype = 'S1L_PREORB_X')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'AUX_TO_OBJSTORE')', '(SELECT id_filetype FROM t_filetypes where filetype = 'S1L_PREORB_O')'

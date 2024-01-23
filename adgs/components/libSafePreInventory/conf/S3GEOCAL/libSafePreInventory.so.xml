@@ -1,0 +1,37 @@
+<Root>
+	<PreInventory>
+		<ConfigSafePreInventory>
+			<SatMissionsAssociatorKeys>
+				<Pair satelliteCode="S3A" key="STANDARD"/>
+				<Pair satelliteCode="S3B" key="STANDARD"/>
+				<Pair satelliteCode="S3_" key="STANDARD"/>
+			</SatMissionsAssociatorKeys>
+			<ManifestFilename>xfdumanifest.xml</ManifestFilename>
+		</ConfigSafePreInventory>
+		<PluginsRegistrationSettings>
+			<SafePreInventoryFactory>
+				<List_Of_Registrations count="2">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>SL_1_RBT___</Object>
+						<FiletypeKey>PROD</FiletypeKey>
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>OL_1_EFR__P</Object>
+						<FiletypeKey>PROD</FiletypeKey>
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+				</List_Of_Registrations>
+			</SafePreInventoryFactory>
+		</PluginsRegistrationSettings>
+	</PreInventory>
+</Root>
+

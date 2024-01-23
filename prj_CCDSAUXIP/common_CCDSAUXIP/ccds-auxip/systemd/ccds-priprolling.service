@@ -1,0 +1,23 @@
+[Unit]
+Description=LTARolling Service
+Documentation=https://www.exprivia.com
+Requires=network.target
+After=network.target
+PartOf=auxipmanagement.service
+
+[Service]
+Type=simple
+
+User=#LTAUSER#
+Group=#LTAGROUP#
+
+ExecStart=#VINSTALL_PATH#/bin/PRIPRolling
+StandardOutput=null
+StandardError=null
+KillMode=process
+KillSignal=SIGINT
+TimeoutStopSec=1800
+
+
+[Install]
+WantedBy=multi-user.target

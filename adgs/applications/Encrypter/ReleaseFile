@@ -1,0 +1,28 @@
+1.6.6
+MP: make warnings cleanup
+------------------------------
+1.6.5
+Returning 0 when -h|--help given as input arguments
+------------------------------
+1.6.4
+S6JCS-97: Fixed usage string
+------------------------------
+1.6.3
+S6JCS-97: Fixed USE_DBCONNECTION_EXTERNAL_SECRET and DB_CONNECTION_KEY_IN_DEFINITION error.
+------------------------------
+1.6.2
+S6JCS-97: Removed libFtpCurl dependency
+------------------------------
+1.6.1
+S6JCS-97: Removed useless factory definition
+------------------------------
+1.6.0
+S6JCS-97: Added command line parameters to support blowfish encryption and 
+salt definition.
+------------------------------
+1.5.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.5.0
+
+Automatically generate from revision "version "1.5""

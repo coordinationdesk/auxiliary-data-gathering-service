@@ -1,0 +1,28 @@
+1.4.7
+Patch release automatically generated to instrument version files
+------------------------------
+1.4.6
+Returning 0 when -h|--help given as input arguments
+------------------------------------------------------------------------
+1.4.5
+S6JCS-97: Fixed usage string.
+------------------------------------------------------------------------
+1.4.4
+S6JCS-97: Fixed USE_DBCONNECTION_EXTERNAL_SECRET and DB_CONNECTION_KEY_IN_DEFINITION error.
+------------------------------------------------------------------------
+1.4.3
+S6JCS-97: Removed libFtpCurl dependency from Makefile
+------------------------------------------------------------------------
+1.4.2
+S6JCS-97: Removed libFtpCurl dependency
+------------------------------------------------------------------------
+1.4.1
+S6JCS-97: Removed useless factory definition
+------------------------------------------------------------------------
+1.4.0
+S6JCS-97: Added command line parameters to support blowfish decryption and 
+salt definition.
+------------------------------------------------------------------------
+1.3.0
+
+Automatically generate from revision "version "1.3""

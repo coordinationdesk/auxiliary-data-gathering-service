@@ -1,0 +1,3977 @@
+#!/bin/bash
+#---------------------------------------------------------------------
+# ADGS Project
+#
+# Time utilities
+# The following formats are supported
+#
+# CFormat	COMPACT		Compact format:							YYYYMMDDhhmmss				es 20171120130000
+# FFormat	FILENAME	Filename format (used in S3 filename):	YYYYMMDDThhmmss				es 20171120T130000
+# MFormat	MICROSECS	Microsecs Format (similar to TFormat): 	YYYY-MM-DDThh:mm:ss.NNNNNN 	es 2017-11-20T13:00:00.123456
+# OFormat	OUTPUT		Output Format for output and for GANTT: YYYY-MM-DD hh:mm:ss  		es 2017-11-20 13:00:00
+# SFormat	STAMP		Stamp format for touch:					YYYYMMDDhhmm.ss				es 201711201300.00
+# TFormat	TDELIMITED 	T-delimited input (valid for MySQL): 	YYYY-MM-DDThh:mm:ss  		es 2017-11-20T13:00:00
+# UFormat	UTC		UTC format (seconds from 1970):				xxxxxxxxxx					es 1234567890
+# ZFormat	Z-TRAILED	Format for datetime input with Z:		YYYY-MM-DDThh:mm:ss.NNNNNNZ	es 2017-11-20T13:00:00.123456Z
+#---------------------------------------------------------------------
+source $TB_SCRIPTS/sysutils
+
+# costants used for t0 taken as the beginning of the mission
+__t0_Y="2016"
+__t0_M="02"
+__t0_D="01"
+__t0_h="00"
+__t0_m="00"
+__t0_s="00"
+
+is_valid_dateformat_type () {
+	local EC=$S3_TB_OK
+	local dateformat_type
+	case $# in 
+	1 )
+		dateformat_type=${1}
+		case $dateformat_type in 
+		"CFormat" | "FFormat" | "MFormat" | "OFormat" | "SFormat" | "TFormat" | "UFormat" | "ZFormat" )
+			return $EC
+		;;
+		* )
+			LogError "Invalid date format type; allowed values: (CFormat,FFormat,MFormat,OFormat,SFormat,TFormat,UFormat,ZFormat)"
+			EC=$S3_TB_ERROR
+			exit $EC
+		;;
+		esac;
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: is_valid_dateformat_type <DATE FORMAT>"
+		exit $EC		
+	;;
+	esac;
+	return $EC
+}
+
+#---------------------------------------------------------------------
+# S3_DATEFORMAT_C
+#---------------------------------------------------------------------
+S3_DATEFORMAT_C="+%Y%m%d%H%M%S"
+S3_DATEFORMAT_C_PATTERN="YYYYMMDDhhmmss"
+get_dateformat_c () {
+	date -u "${S3_DATEFORMAT_C}"
+}
+now_c () {
+	echo $(get_dateformat_c)
+}
+get_t0_c () {
+	date -u -d "${__t0_Y}-${__t0_M}-${__t0_D} ${__t0_h}:${__t0_m}:${__t0_s}" "${S3_DATEFORMAT_C}"
+}
+is_valid_dateformat_c () {
+	local DATE="$1"
+	if [[ $DATE =~ ^[0-9]{4}(0[0-9]|1[0-2])([0-2][0-9]|3[0-1])([0-1][0-9]|2[0-3])([0-5][0-9])([0-5][0-9])$ ]]
+	then
+		return $S3_TB_TRUE
+	else
+		return $S3_TB_FALSE
+	fi
+}
+is_date_in_dateformat_c () {
+	local EC=$S3_TB_OK
+	local DATE=""
+	local check_res=$S3_TB_TRUE
+	if [ $# -lt 1 ]
+	then
+		LogError "Usage: is_date_in_dateformat_c <Date>"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	DATE="$1"
+	is_valid_dateformat_c "$DATE"
+	check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		return $S3_TB_OK
+	else
+		LogError "Invalid date format; allowed format is ${S3_DATEFORMAT_C_PATTERN}"
+		exit $S3_TB_ERROR
+	fi
+}
+#---------------------------------------------------------------------
+# S3_DATEFORMAT_F
+#---------------------------------------------------------------------
+S3_DATEFORMAT_F="+%Y%m%dT%H%M%S"
+S3_DATEFORMAT_F_PATTERN="YYYYMMDDTHHMMSS"
+get_dateformat_f () {
+	date -u "${S3_DATEFORMAT_F}"
+}
+now_f () {
+	echo $(get_dateformat_f)
+}
+get_t0_f () {
+	date -u -d "${__t0_Y}-${__t0_M}-${__t0_D} ${__t0_h}:${__t0_m}:${__t0_s}" "${S3_DATEFORMAT_F}"
+}
+is_valid_dateformat_f () {
+	local DATE="$1"
+	if [[ $DATE =~ ^[0-9]{4}(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])(T)([0-1][0-9]|2[0-3])([0-5][0-9])([0-5][0-9])$ ]]
+	then
+		return $S3_TB_TRUE
+	else
+		return $S3_TB_FALSE
+	fi
+}
+is_date_in_dateformat_f () {
+	local EC=$S3_TB_OK
+	local DATE=""
+	local check_res=$S3_TB_TRUE
+	if [ $# -lt 1 ]
+	then
+		LogError "Usage: is_date_in_dateformat_f <Date>"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	DATE="$1"
+	is_valid_dateformat_f "$DATE"
+	check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		return $S3_TB_OK	
+	else
+		LogError "Invalid date format; allowed format is ${S3_DATEFORMAT_F_PATTERN}"
+		exit $S3_TB_ERROR
+	fi
+}
+#---------------------------------------------------------------------
+# S3_DATEFORMAT_M
+#---------------------------------------------------------------------
+S3_DATEFORMAT_M="+%Y-%m-%dT%H:%M:%S.%6N"
+S3_DATEFORMAT_M_PATTERN="YYYY-MM-DDTHH:MM:SS.NNNNNN"
+get_dateformat_m () {
+	date -u "${S3_DATEFORMAT_M}"
+}
+now_m () {
+	echo $(get_dateformat_m)
+}
+get_t0_m () {
+	date -u -d "${__t0_Y}-${__t0_M}-${__t0_D} ${__t0_h}:${__t0_m}:${__t0_s}" "${S3_DATEFORMAT_M}"
+}
+is_valid_dateformat_m () {
+	local DATE="$1"
+	if [[ $DATE =~ ^[0-9]{4}(-)(0[0-9]|1[0-2])(-)(0[1-9]|[1-2][0-9]|3[0-1])(T)([0-1][0-9]|2[0-3])(:)([0-5][0-9])(:)([0-5][0-9])(.)[0-9]{6}$ ]]
+	then
+		return $S3_TB_TRUE
+	else
+		return $S3_TB_FALSE
+	fi
+}
+is_date_in_dateformat_m () {
+	local EC=$S3_TB_OK
+	local DATE=""
+	local check_res=$S3_TB_TRUE
+	if [ $# -lt 1 ]
+	then
+		LogError "Usage: is_date_in_dateformat_m <Date>"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	DATE="$1"
+	is_valid_dateformat_m "$DATE"
+	check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ]
+	then
+		return $S3_TB_OK
+	else
+		LogError "Invalid date format; allowed format is ${S3_DATEFORMAT_M_PATTERN}"
+		exit $S3_TB_ERROR
+	fi
+}
+#---------------------------------------------------------------------
+# S3_DATEFORMAT_O
+#---------------------------------------------------------------------
+S3_DATEFORMAT_O="+%Y-%m-%d %H:%M:%S"
+S3_DATEFORMAT_O_PATTERN="YYYY-MM-DD HH:MM:SS"
+get_dateformat_o () {
+	date -u "${S3_DATEFORMAT_O}"
+}
+now_o () {
+	echo $(get_dateformat_o)
+}
+get_t0_o () {
+	date -u -d "${__t0_Y}-${__t0_M}-${__t0_D} ${__t0_h}:${__t0_m}:${__t0_s}" "${S3_DATEFORMAT_O}"
+}
+is_valid_dateformat_o () {
+	local DATE="$1"
+	if [[ $DATE =~ ^[0-9]{4}(-)(0[0-9]|1[0-2])(-)([0-2][0-9]|3[0-1])( )([0-1][0-9]|2[0-3])(:)([0-5][0-9])(:)([0-5][0-9])$ ]]
+	then
+		return $S3_TB_TRUE
+	else
+		return $S3_TB_FALSE
+	fi
+}
+is_date_in_dateformat_o () {
+	local EC=$S3_TB_OK
+	local DATE=""
+	local check_res=$S3_TB_TRUE
+	if [ $# -lt 1 ]
+	then
+		LogError "Usage: is_date_in_dateformat_o <Date>"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	DATE="$1"
+	is_valid_dateformat_o "$DATE"
+	check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		return $S3_TB_OK
+	else
+		LogError "Invalid date format; allowed format is ${S3_DATEFORMAT_O_PATTERN}"
+		exit $S3_TB_ERROR
+	fi
+}
+#---------------------------------------------------------------------
+# S3_DATEFORMAT_S
+#---------------------------------------------------------------------
+S3_DATEFORMAT_S="+%Y%m%d%H%M.%S"
+S3_DATEFORMAT_S_PATTERN="YYYYMMDDHHMM.SS"
+get_dateformat_s () {
+	date -u "${S3_DATEFORMAT_S}"
+}
+now_s () {
+	echo $(get_dateformat_s)
+}
+get_t0_s () {
+	date -u -d "${__t0_Y}-${__t0_M}-${__t0_D} ${__t0_h}:${__t0_m}:${__t0_s}" "${S3_DATEFORMAT_S}"
+}
+is_valid_dateformat_s () {
+	local DATE="$1"
+	if [[ $DATE =~ ^[0-9]{4}(0[0-9]|1[0-2])([0-2][0-9]|3[0-1])([0-1][0-9]|2[0-3])([0-5][0-9])(.)([0-5][0-9])$ ]]
+	then
+		return $S3_TB_TRUE
+	else
+		return $S3_TB_FALSE
+	fi
+}
+is_date_in_dateformat_s () {
+	local EC=$S3_TB_OK
+	local DATE=""
+	local check_res=$S3_TB_TRUE
+	if [ $# -lt 1 ]
+	then
+		LogError "Usage: is_date_in_dateformat_s <Date>"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	DATE="$1"
+	is_valid_dateformat_s "$DATE"
+	check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		return $S3_TB_OK
+	else
+		LogError "Invalid date format; allowed format is ${S3_DATEFORMAT_S_PATTERN}"
+		exit $S3_TB_ERROR
+	fi
+}
+#---------------------------------------------------------------------
+# S3_DATEFORMAT_T
+#---------------------------------------------------------------------
+S3_DATEFORMAT_T="+%Y-%m-%dT%H:%M:%S"
+S3_DATEFORMAT_T_PATTERN="YYYY-MM-DDTHH:MM:SS"
+get_dateformat_t () {
+	date -u "${S3_DATEFORMAT_T}"
+}
+now_t () {
+	echo $(get_dateformat_t)
+}
+get_t0_t () {
+	date -u -d "${__t0_Y}-${__t0_M}-${__t0_D} ${__t0_h}:${__t0_m}:${__t0_s}" "${S3_DATEFORMAT_T}"
+}
+is_valid_dateformat_t () {
+	local DATE="$1"
+	if [[ $DATE =~ ^[0-9]{4}(-)(0[0-9]|1[0-2])(-)(0[1-9]|[1-2][0-9]|3[0-1])(T)([0-1][0-9]|2[0-3])(:)([0-5][0-9])(:)([0-5][0-9])$ ]]
+	then
+		return $S3_TB_TRUE
+	else
+		return $S3_TB_FALSE
+	fi
+}
+is_date_in_dateformat_t () {
+	local EC=$S3_TB_OK
+	local DATE=""
+	local check_res=$S3_TB_TRUE
+	if [ $# -lt 1 ]
+	then
+		LogError "Usage: is_date_in_dateformat_t <Date>"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	DATE="$1"
+	is_valid_dateformat_t "$DATE"
+	check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		return $S3_TB_OK
+	else
+		LogError "Invalid date format; allowed format is ${S3_DATEFORMAT_T_PATTERN}"
+		exit $S3_TB_ERROR
+	fi
+}
+#---------------------------------------------------------------------
+# S3_DATEFORMAT_U
+#---------------------------------------------------------------------
+S3_DATEFORMAT_U="+%s"
+S3_DATEFORMAT_U_PATTERN="xxxxxxxxxx"
+get_dateformat_u () {
+	date -u "${S3_DATEFORMAT_U}"
+}
+now_u () {
+	echo $(get_dateformat_u)
+}
+get_t0_u () {
+	date -u -d "${__t0_Y}-${__t0_M}-${__t0_D} ${__t0_h}:${__t0_m}:${__t0_s}" "${S3_DATEFORMAT_U}"
+}
+is_valid_dateformat_u () {
+	local DATE="$1"
+	if [[ $DATE =~ ^[0-9]{10}$ ]]
+	then
+		return $S3_TB_TRUE
+	else
+		return $S3_TB_FALSE
+	fi
+}
+is_date_in_dateformat_u () {
+	local EC=$S3_TB_OK
+	local DATE=""
+	local check_res=$S3_TB_TRUE
+	if [ $# -lt 1 ]
+	then
+		LogError "Usage: is_date_in_dateformat_u <Date>"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	DATE="$1"
+	is_valid_dateformat_u "$DATE"
+	check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		return $S3_TB_OK
+	else
+		LogError "Invalid date format; allowed format is ${S3_DATEFORMAT_U_PATTERN}"
+		exit $S3_TB_ERROR
+	fi
+}
+#---------------------------------------------------------------------
+# S3_DATEFORMAT_Z
+#---------------------------------------------------------------------
+S3_DATEFORMAT_Z="+%Y-%m-%dT%H:%M:%S.%6NZ"
+S3_DATEFORMAT_Z_PATTERN="YYYY-MM-DDTHH:MM:SS.NNNNNNZ"
+get_dateformat_z () {
+	date -u "${S3_DATEFORMAT_Z}"
+}
+now_z () {
+	echo $(get_dateformat_z)
+}
+get_t0_z () {
+	date -u -d "${__t0_Y}-${__t0_M}-${__t0_D} ${__t0_h}:${__t0_m}:${__t0_s}" "${S3_DATEFORMAT_Z}"
+}
+is_valid_dateformat_z () {
+	local DATE="$1"
+	if [[ $DATE =~ ^[0-9]{4}(-)(0[0-9]|1[0-2])(-)(0[1-9]|[1-2][0-9]|3[0-1])(T)([0-1][0-9]|2[0-3])(:)([0-5][0-9])(:)([0-5][0-9])(.)[0-9]{6}(Z)$ ]]
+	then
+		return $S3_TB_TRUE
+	else
+		return $S3_TB_FALSE
+	fi
+}
+is_date_in_dateformat_z () {
+	local EC=$S3_TB_OK
+	local DATE=""
+	local check_res=$S3_TB_TRUE
+	if [ $# -lt 1 ]
+	then
+		LogError "Usage: is_date_in_dateformat_t <Date>"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	DATE="$1"
+	is_valid_dateformat_z "$DATE"
+	check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ]
+	then
+		return $S3_TB_OK
+	else
+		LogError "Invalid date format; allowed format is ${S3_DATEFORMAT_Z_PATTERN}"
+		exit $S3_TB_ERROR
+	fi
+}
+#---------------------------------------------------------------------
+# These functions separate the date part from the time part
+#---------------------------------------------------------------------
+get_date_part_c () {
+	local inpdate=$1
+	is_date_in_dateformat_c $inpdate
+	local date_part=$(echo "$inpdate" | cut -c1-8)
+	echo $date_part
+}
+get_time_part_c () {
+	local inpdate=$1
+	is_date_in_dateformat_c $inpdate
+	local date_part=$(echo "$inpdate" | cut -c9-)
+	echo $date_part
+}
+get_date_part_f () {
+	local inpdate=$1
+	is_date_in_dateformat_f $inpdate
+	local date_part=$(echo "$inpdate" | cut -d "T" -f1)
+	echo $date_part
+}
+get_time_part_f () {
+	local inpdate=$1
+	is_date_in_dateformat_f $inpdate
+	local date_part=$(echo "$inpdate" | cut -d "T" -f2)
+	echo $date_part
+}
+get_date_part_m () {
+	local inpdate=$1
+	is_date_in_dateformat_m $inpdate
+	local date_part=$(echo "$inpdate" | cut -d "T" -f1)
+	echo $date_part
+}
+get_time_part_m () {
+	local inpdate=$1
+	is_date_in_dateformat_m $inpdate
+	local date_part=$(echo "$inpdate" | cut -d "T" -f2)
+	echo $date_part
+}
+get_microsecs_m () {
+	local inpdate=$1
+	is_date_in_dateformat_m $inpdate
+	local microsec_part=$(echo "$inpdate" | cut -d "T" -f2 | cut -d "." -f2)
+	echo $microsec_part
+}
+set_microsecs_m () {
+	local inpdate=$1
+	local microsecs=$2
+	is_date_in_dateformat_m $inpdate
+	local datepart=$(get_date_part_m $inpdate)
+	local timepart_nomicrosecs=$(get_time_part_m $inpdate | cut -d "." -f1)
+	echo "${datepart}T${timepart_nomicrosecs}.${microsecs}"
+}
+get_date_part_o () {
+	local inpdate="$1"
+	is_date_in_dateformat_o "$inpdate"
+	local date_part=$(echo "$inpdate" | cut -d " " -f1)
+	echo $date_part
+}
+get_time_part_o () {
+	local inpdate="$1"
+	is_date_in_dateformat_o "$inpdate"
+	local date_part=$(echo "$inpdate" | cut -d " " -f2)
+	echo $date_part
+}
+get_date_part_s () {
+	local inpdate=$1
+	is_date_in_dateformat_s $inpdate
+	local date_part=$(echo "$inpdate" | cut -c1-8)
+	echo $date_part
+}
+get_time_part_s () {
+	local inpdate=$1
+	is_date_in_dateformat_s $inpdate
+	local date_part=$(echo "$inpdate" | cut -c9-)
+	echo $date_part
+}
+get_date_part_t () {
+	local inpdate=$1
+	is_date_in_dateformat_t $inpdate
+	local date_part=$(echo "$inpdate" | cut -d "T" -f1)
+	echo $date_part
+}
+get_time_part_t () {
+	local inpdate=$1
+	is_date_in_dateformat_t $inpdate
+	local date_part=$(echo "$inpdate" | cut -d "T" -f2)
+	echo $date_part
+}
+get_date_part_z () {
+	local inpdate=$1
+	is_date_in_dateformat_z $inpdate
+	local date_part=$(echo "$inpdate" | cut -d "T" -f1)
+	echo $date_part
+}
+get_time_part_z () {
+	local inpdate=$1
+	is_date_in_dateformat_z $inpdate
+	local date_part=$(echo "$inpdate" | cut -d "T" -f2)
+	echo $date_part
+}
+get_microsecs_z () {
+	local inpdate=$1
+	is_date_in_dateformat_z $inpdate
+	local microsec_part=$(echo "$inpdate" | cut -d "T" -f2 | cut -d "." -f2)
+	echo $microsec_part
+}
+set_microsecs_z () {
+	local inpdate=$1
+	local microsecs=$2
+	is_date_in_dateformat_z $inpdate
+	local datepart=$(get_date_part_z $inpdate)
+	local timepart_nomicrosecs=$(get_time_part_z $inpdate | cut -d "." -f1)
+	echo "${datepart}T${timepart_nomicrosecs}.${microsecs}"
+}
+#---------------------------------------------------------------------
+# conversion functions for the supported date formats
+#---------------------------------------------------------------------
+#---------------------------------------------------------------------
+# Source: C 
+# Dest: Any
+#---------------------------------------------------------------------
+convert_dateformat_C_2_F () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_c "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c9,10)
+		min=$(echo $inputDate |cut -c11,12)
+		sec=$(echo $inputDate |cut -c13,14)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_F}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_C_2_F  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_C_2_M () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_c "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c9,10)
+		min=$(echo $inputDate |cut -c11,12)
+		sec=$(echo $inputDate |cut -c13,14)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_M}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_C_2_M  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_C_2_O () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_c "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c9,10)
+		min=$(echo $inputDate |cut -c11,12)
+		sec=$(echo $inputDate |cut -c13,14)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_O}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_C_2_O  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_C_2_S () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_c "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c9,10)
+		min=$(echo $inputDate |cut -c11,12)
+		sec=$(echo $inputDate |cut -c13,14)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_S}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_C_2_S  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_C_2_T () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_c "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c9,10)
+		min=$(echo $inputDate |cut -c11,12)
+		sec=$(echo $inputDate |cut -c13,14)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_T}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_C_2_T  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_C_2_U () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_c "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c9,10)
+		min=$(echo $inputDate |cut -c11,12)
+		sec=$(echo $inputDate |cut -c13,14)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_U}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_C_2_U  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_C_2_Z () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_c "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c9,10)
+		min=$(echo $inputDate |cut -c11,12)
+		sec=$(echo $inputDate |cut -c13,14)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_Z}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_C_2_Z  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+#---------------------------------------------------------------------
+# Source: F 
+# Dest: Any
+#---------------------------------------------------------------------
+convert_dateformat_F_2_C () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_f "$inputDate"
+		echo $inputDate | sed -e "s/T//g"
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_F_2_C  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_F_2_M () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_f "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c10,11)
+		min=$(echo $inputDate |cut -c12,13)
+		sec=$(echo $inputDate |cut -c14,15)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_M}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_F_2_M  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_F_2_O () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_f "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c10,11)
+		min=$(echo $inputDate |cut -c12,13)
+		sec=$(echo $inputDate |cut -c14,15)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_O}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_F_2_O  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_F_2_S () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_f "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c10,11)
+		min=$(echo $inputDate |cut -c12,13)
+		sec=$(echo $inputDate |cut -c14,15)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_S}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_F_2_S  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_F_2_T () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_f "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c10,11)
+		min=$(echo $inputDate |cut -c12,13)
+		sec=$(echo $inputDate |cut -c14,15)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_T}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_F_2_T  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_F_2_U () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_f "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c10,11)
+		min=$(echo $inputDate |cut -c12,13)
+		sec=$(echo $inputDate |cut -c14,15)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_U}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_F_2_U  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_F_2_Z () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_f "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c10,11)
+		min=$(echo $inputDate |cut -c12,13)
+		sec=$(echo $inputDate |cut -c14,15)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_Z}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_F_2_Z  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+#---------------------------------------------------------------------
+# Source: M 
+# Dest: Any
+#---------------------------------------------------------------------
+convert_dateformat_M_2_C () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_m "$inputDate"
+		inputDateT=$(convert_dateformat_M_2_T $inputDate)
+		convert_dateformat_T_2_C $inputDateT
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_M_2_C  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_M_2_C_round () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_m "$inputDate"
+		inputDateT=$(convert_dateformat_M_2_T_round $inputDate)
+		convert_dateformat_T_2_C $inputDateT
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_M_2_C_round  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_M_2_F () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_m "$inputDate"
+		inputDateT=$(convert_dateformat_M_2_T $inputDate)
+		convert_dateformat_T_2_F $inputDateT
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_M_2_F  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_M_2_F_round () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_m "$inputDate"
+		inputDateT=$(convert_dateformat_M_2_T_round $inputDate)
+		convert_dateformat_T_2_F $inputDateT
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_M_2_F_round  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_M_2_O () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_m "$inputDate"
+		inputDateT=$(convert_dateformat_M_2_T $inputDate)
+		convert_dateformat_T_2_O $inputDateT
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_M_2_O  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_M_2_O_round () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_m "$inputDate"
+		inputDateT=$(convert_dateformat_M_2_T_round $inputDate)
+		convert_dateformat_T_2_O $inputDateT
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_M_2_O_round  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_M_2_S () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_m "$inputDate"
+		inputDateT=$(convert_dateformat_M_2_T $inputDate)
+		convert_dateformat_T_2_S $inputDateT
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_M_2_O  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_M_2_S_round () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_m "$inputDate"
+		inputDateT=$(convert_dateformat_M_2_T_round $inputDate)
+		convert_dateformat_T_2_S $inputDateT
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_M_2_S_round  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_M_2_T () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_m "$inputDate"
+		echo $inputDate | cut -d"." -f1
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_M_2_T  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_M_2_T_round () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	local roundDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_m "$inputDate"
+		uptosec=$(echo $inputDate | cut -d"." -f1)
+		microsecs=$(echo $inputDate | cut -d"." -f2)
+		if [ $microsecs -gt 500000 ]
+		then
+			roundDateU=$(convert_dateformat_T_2_U $uptosec);
+			# add 1 second
+			let "roundDateU += 1"
+			roundDate=$(convert_dateformat_U_2_T $roundDateU)
+		else
+			roundDate="$uptosec"
+		fi
+		echo $roundDate
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_M_2_T_round  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_M_2_U () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_m "$inputDate"
+		inputDateT=$(convert_dateformat_M_2_T $inputDate)
+		convert_dateformat_T_2_U $inputDateT
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_M_2_U  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_M_2_U_round () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_m "$inputDate"
+		inputDateT=$(convert_dateformat_M_2_T_round $inputDate)
+		convert_dateformat_T_2_U $inputDateT
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_M_2_U_round  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_M_2_Z () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_m "$inputDate"
+		echo "${inputDate}Z"
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_M_2_Z  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+#---------------------------------------------------------------------
+# Source: O 
+# Dest: Any
+#---------------------------------------------------------------------
+convert_dateformat_O_2_C () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_o "$inputDate"
+		echo $(date --date "$inputDate" "${S3_DATEFORMAT_C}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_O_2_C  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_O_2_F () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_o "$inputDate"
+		echo $(date --date "$inputDate" "${S3_DATEFORMAT_F}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_O_2_F  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_O_2_M () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_o "$inputDate"
+		echo $(date --date "$inputDate" "${S3_DATEFORMAT_M}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_O_2_M  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_O_2_S () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_o "$inputDate"
+		echo $(date --date "$inputDate" "${S3_DATEFORMAT_S}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_O_2_S  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_O_2_T () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_o "$inputDate"
+		echo $(date --date "$inputDate" "${S3_DATEFORMAT_T}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_O_2_T  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_O_2_U () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_o "$inputDate"
+		echo $(date --date "$inputDate" "${S3_DATEFORMAT_U}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_O_2_U  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_O_2_Z () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_o "$inputDate"
+		echo $(date --date "$inputDate" "${S3_DATEFORMAT_Z}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_O_2_Z  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+#---------------------------------------------------------------------
+# Source: S 
+# Dest: Any
+#---------------------------------------------------------------------
+convert_dateformat_S_2_C () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_s "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c9,10)
+		min=$(echo $inputDate |cut -c11,12)
+		sec=$(echo $inputDate |cut -c14,15)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_C}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_S_2_C  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_S_2_F () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_s "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c9,10)
+		min=$(echo $inputDate |cut -c11,12)
+		sec=$(echo $inputDate |cut -c14,15)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_F}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_S_2_F  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_S_2_M () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_s "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c9,10)
+		min=$(echo $inputDate |cut -c11,12)
+		sec=$(echo $inputDate |cut -c14,15)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_M}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_S_2_M  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_S_2_O () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_s "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c9,10)
+		min=$(echo $inputDate |cut -c11,12)
+		sec=$(echo $inputDate |cut -c14,15)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_O}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_S_2_O  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_S_2_T () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_s "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c9,10)
+		min=$(echo $inputDate |cut -c11,12)
+		sec=$(echo $inputDate |cut -c14,15)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_T}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_S_2_T  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_S_2_U () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_s "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c9,10)
+		min=$(echo $inputDate |cut -c11,12)
+		sec=$(echo $inputDate |cut -c14,15)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_U}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_S_2_U  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_S_2_Z () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_s "$inputDate"
+		year=$(echo $inputDate |cut -c1-4)
+		month=$(echo $inputDate |cut -c5,6)
+		day=$(echo $inputDate |cut -c7,8)
+		hour=$(echo $inputDate |cut -c9,10)
+		min=$(echo $inputDate |cut -c11,12)
+		sec=$(echo $inputDate |cut -c14,15)
+		echo $(date -d "${year}-${month}-${day} ${hour}:${min}:${sec}" "${S3_DATEFORMAT_Z}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_S_2_Z  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+#---------------------------------------------------------------------
+# Source: T 
+# Dest: Any
+#---------------------------------------------------------------------
+convert_dateformat_T_2_C () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_t "$inputDate"
+		echo $inputDate | sed -e "s/T//g" | sed -e "s/\-//g" | sed -e "s/\://g"
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_T_2_C  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_T_2_F () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_t "$inputDate"
+		echo $inputDate | sed -e "s/\-//g" | sed -e "s/\://g"
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_T_2_F  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_T_2_M () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_t "$inputDate"
+		echo "${inputDate}.000000"
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_T_2_M  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_T_2_O () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_t "$inputDate"
+		echo $inputDate | sed -e "s/T/ /g" 
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_T_2_O  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_T_2_S () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	local inputDateO=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_t "$inputDate"
+		inputDateO="$(convert_dateformat_T_2_O $inputDate)"
+		echo $(date --date "$inputDateO" "${S3_DATEFORMAT_S}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_T_2_S  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_T_2_U () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	local inputDateO=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_t "$inputDate"
+		inputDateO="$(convert_dateformat_T_2_O $inputDate)"
+		echo $(date --date "$inputDateO" "${S3_DATEFORMAT_U}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_T_2_U  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_T_2_Z () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	local inputDateO=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_t "$inputDate"
+		echo "${inputDate}.000000Z"
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_T_2_Z  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+#---------------------------------------------------------------------
+# Source: U 
+# Dest: Any
+#---------------------------------------------------------------------
+convert_dateformat_U_2_C () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_u "$inputDate"
+		echo $(date -d @$inputDate "${S3_DATEFORMAT_C}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_U_2_C  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_U_2_F () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_u "$inputDate"
+		echo $(date -d @$inputDate "${S3_DATEFORMAT_F}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_U_2_F  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_U_2_M () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_u "$inputDate"
+		echo $(date -d @$inputDate "${S3_DATEFORMAT_M}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_U_2_M  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_U_2_O () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_u "$inputDate"
+		echo $(date -d @$inputDate "${S3_DATEFORMAT_O}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_U_2_O  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_U_2_S () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_u "$inputDate"
+		echo $(date -d @$inputDate "${S3_DATEFORMAT_S}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_U_2_S  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_U_2_T () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_u "$inputDate"
+		echo $(date -d @$inputDate "${S3_DATEFORMAT_T}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_U_2_T  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_U_2_Z () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_u "$inputDate"
+		echo $(date -d @$inputDate "${S3_DATEFORMAT_Z}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_U_2_Z  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+#---------------------------------------------------------------------
+# Source: Z 
+# Dest: Any
+#---------------------------------------------------------------------
+convert_dateformat_Z_2_C () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_z "$inputDate"
+		echo $inputDate | cut -d"." -f1 | sed -e "s/T//g" | sed -e "s/\-//g" | sed -e "s/\://g"
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_Z_2_C  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_Z_2_C_round () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	local inputDateM=""
+	local outputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_z "$inputDate"
+		inputDateM=$(convert_dateformat_Z_2_M $inputDate)
+		outputDate=$(convert_dateformat_M_2_C_round $inputDateM)
+		echo $outputDate
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_Z_2_C_round  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_Z_2_F () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_z "$inputDate"
+		echo $inputDate | cut -d"." -f1 | sed -e "s/\-//g" | sed -e "s/\://g"
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_Z_2_F  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_Z_2_F_round () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	local inputDateM=""
+	local outputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_z "$inputDate"
+		inputDateM=$(convert_dateformat_Z_2_M $inputDate)
+		outputDate=$(convert_dateformat_M_2_F_round $inputDateM)
+		echo $outputDate
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_Z_2_F_round  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_Z_2_M () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_z "$inputDate"
+		echo $inputDate | tr -d "Z"
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_Z_2_M  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_Z_2_O () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_z "$inputDate"
+		echo $inputDate | cut -d"." -f1 | sed -e "s/T/ /g" 
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_Z_2_O  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_Z_2_O_round () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	local inputDateM=""
+	local outputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_z "$inputDate"
+		inputDateM=$(convert_dateformat_Z_2_M $inputDate)
+		outputDate=$(convert_dateformat_M_2_O_round $inputDateM)
+		echo $outputDate
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_Z_2_O_round  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_Z_2_S () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	local inputDateO=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_z "$inputDate"
+		inputDateO="$(convert_dateformat_Z_2_O $inputDate)"
+		echo $(date --date "$inputDateO" "${S3_DATEFORMAT_S}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_Z_2_S  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_Z_2_S_round () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	local inputDateM=""
+	local outputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_z "$inputDate"
+		inputDateM=$(convert_dateformat_Z_2_M $inputDate)
+		outputDate=$(convert_dateformat_M_2_S_round $inputDateM)
+		echo $outputDate
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_Z_2_S_round  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_Z_2_T () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_z "$inputDate"
+		echo $inputDate | cut -d"." -f1
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_Z_2_T  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_Z_2_T_round () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	local inputDateM=""
+	local outputDate=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_z "$inputDate"
+		inputDateM=$(convert_dateformat_Z_2_M $inputDate)
+		outputDate=$(convert_dateformat_M_2_T_round $inputDateM)
+		echo $outputDate
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_Z_2_T_round  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_Z_2_U () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	local inputDateO=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_z "$inputDate"
+		inputDateO="$(convert_dateformat_Z_2_O $inputDate)"
+		echo $(date --date "$inputDateO" "${S3_DATEFORMAT_U}")
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_T_2_U  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+convert_dateformat_Z_2_U_round () {
+	local EC=$S3_TB_OK
+	local inputDate=""
+	local inputDateM=""
+	local inputDateO=""
+	case $# in
+	1 )
+		inputDate="$1"; is_date_in_dateformat_z "$inputDate"
+		inputDateM=$(convert_dateformat_Z_2_M $inputDate)
+		outputDate=$(convert_dateformat_M_2_U_round $inputDateM)
+		echo $outputDate
+		EC=$?
+	;;
+	* )
+		LogError "Usage: convert_dateformat_Z_2_U_round  <INPUTDATE>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+}
+#---------------------------------------------------------------------
+# Source: Any 
+# Dest: C
+#---------------------------------------------------------------------
+convert_dateformat_any_2_C () {
+	local EC=$S3_TB_OK
+	local DATE="$1"
+	local converted=""
+	local check_res=$S3_TB_TRUE
+
+# Source: 	C
+# Dest: 	C
+	is_valid_dateformat_c "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted="$DATE"
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	F
+# Dest: 	C
+	is_valid_dateformat_f "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_F_2_C "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	M
+# Dest: 	C
+	is_valid_dateformat_m "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_M_2_C_round "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	O
+# Dest: 	C
+	is_valid_dateformat_o "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_O_2_C "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	S
+# Dest: 	C
+	is_valid_dateformat_s "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_S_2_C "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	T
+# Dest: 	C
+	is_valid_dateformat_t "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_T_2_C "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	U
+# Dest: 	C
+	is_valid_dateformat_u "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_U_2_C "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	Z
+# Dest: 	C
+	is_valid_dateformat_z "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_Z_2_C_round "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+	LogError "$DATE: Invalid date format"
+	return $S3_TB_ERROR
+}
+#---------------------------------------------------------------------
+# Source: Any 
+# Dest: F
+#---------------------------------------------------------------------
+convert_dateformat_any_2_F () {
+	local EC=$S3_TB_OK
+	local DATE="$1"
+	local converted=""
+	local check_res=$S3_TB_TRUE
+
+# Source: 	C
+# Dest: 	F
+	is_valid_dateformat_c "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_C_2_F "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	F
+# Dest: 	F
+	is_valid_dateformat_f "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted="$DATE"
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	M
+# Dest: 	F
+	is_valid_dateformat_m "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_M_2_F_round "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	O
+# Dest: 	F
+	is_valid_dateformat_o "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_O_2_F "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	S
+# Dest: 	F
+	is_valid_dateformat_s "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_S_2_F "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	T
+# Dest: 	F
+	is_valid_dateformat_t "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_T_2_F "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	U
+# Dest: 	F
+	is_valid_dateformat_u "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_U_2_F "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	Z
+# Dest: 	F
+	is_valid_dateformat_z "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_Z_2_F_round "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+	LogError "$DATE: Invalid date format"
+	return $S3_TB_ERROR
+}
+#---------------------------------------------------------------------
+# Source: Any 
+# Dest: M
+#---------------------------------------------------------------------
+convert_dateformat_any_2_M () {
+	local EC=$S3_TB_OK
+	local DATE="$1"
+	local converted=""
+	local check_res=$S3_TB_TRUE
+
+# Source: 	C
+# Dest: 	M
+	is_valid_dateformat_c "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_C_2_M "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	F
+# Dest: 	M
+	is_valid_dateformat_f "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_F_2_M "$DATE" )
+		echo $converted
+		return $EC
+	fi		
+
+# Source: 	M
+# Dest: 	M
+	is_valid_dateformat_m "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted="$DATE"
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	O
+# Dest: 	M
+	is_valid_dateformat_o "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_O_2_M "$DATE" )
+		echo $converted
+		return $EC	
+	fi	
+
+# Source: 	S
+# Dest: 	M
+	is_valid_dateformat_s "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_S_2_M "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	T
+# Dest: 	M
+	is_valid_dateformat_t "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_T_2_M "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	U
+# Dest: 	M
+	is_valid_dateformat_u "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_U_2_M "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	Z
+# Dest: 	M
+	is_valid_dateformat_z "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_Z_2_M_round "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+	LogError "$DATE: Invalid date format"
+	return $S3_TB_ERROR
+}
+#---------------------------------------------------------------------
+# Source: Any 
+# Dest: O
+#---------------------------------------------------------------------
+convert_dateformat_any_2_O () {
+	local EC=$S3_TB_OK
+	local DATE="$1"
+	local converted=""
+	local check_res=$S3_TB_TRUE
+	
+# Source: 	C
+# Dest: 	O
+	is_valid_dateformat_c "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_C_2_O "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	F
+# Dest: 	O
+	is_valid_dateformat_f "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_F_2_O "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	M
+# Dest: 	O
+	is_valid_dateformat_m "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_M_2_O_round "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	O
+# Dest: 	O
+	is_valid_dateformat_o "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted="$DATE"
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	S
+# Dest: 	O
+	is_valid_dateformat_s "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_S_2_O "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	T
+# Dest: 	O
+	is_valid_dateformat_t "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_T_2_O "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	U
+# Dest: 	O
+	is_valid_dateformat_u "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_U_2_O "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	Z
+# Dest: 	O
+	is_valid_dateformat_z "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_Z_2_O_round "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+	LogError "$DATE: Invalid date format"
+	return $S3_TB_ERROR
+}
+#---------------------------------------------------------------------
+# Source: Any 
+# Dest: S
+#---------------------------------------------------------------------
+convert_dateformat_any_2_S () {
+	local EC=$S3_TB_OK
+	local DATE="$1"
+	local converted=""
+	local check_res=$S3_TB_TRUE
+
+# Source: 	C
+# Dest: 	S
+	is_valid_dateformat_c "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_C_2_S "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	F
+# Dest: 	S
+	is_valid_dateformat_f "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_F_2_S "$DATE" )
+		echo $converted
+		return $EC	
+	fi	
+
+# Source: 	M
+# Dest: 	S
+	is_valid_dateformat_m "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_M_2_S_round "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	O
+# Dest: 	S
+	is_valid_dateformat_o "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_O_2_S "$DATE" )
+		echo $converted
+		return $EC
+	fi		
+
+# Source: 	S
+# Dest: 	S
+	is_valid_dateformat_s "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted="$DATE"
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	T
+# Dest: 	S
+	is_valid_dateformat_t "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_T_2_S "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	U
+# Dest: 	S
+	is_valid_dateformat_u "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_U_2_S "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	Z
+# Dest: 	S
+	is_valid_dateformat_z "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_Z_2_S_round "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+	LogError "$DATE: Invalid date format"
+	return $S3_TB_ERROR
+}
+#---------------------------------------------------------------------
+# Source: Any 
+# Dest: T
+#---------------------------------------------------------------------
+convert_dateformat_any_2_T () {
+	local EC=$S3_TB_OK
+	local DATE="$1"
+	local converted=""
+	local check_res=$S3_TB_TRUE
+
+# Source: 	C
+# Dest: 	T
+	is_valid_dateformat_c "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_C_2_T "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	F
+# Dest: 	T
+	is_valid_dateformat_f "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_F_2_T "$DATE" )
+		echo $converted
+		return $EC	
+	fi	
+
+# Source: 	M
+# Dest: 	T
+	is_valid_dateformat_m "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_M_2_T_round "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	O
+# Dest: 	T
+	is_valid_dateformat_o "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_O_2_T "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	S
+# Dest: 	T
+	is_valid_dateformat_s "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_S_2_T "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	T
+# Dest: 	T
+	is_valid_dateformat_t "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted="$DATE"
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	U
+# Dest: 	T
+	is_valid_dateformat_u "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_U_2_T "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	Z
+# Dest: 	T
+	is_valid_dateformat_z "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_Z_2_T_round "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+	
+	LogError "$DATE: Invalid date format"
+	return $S3_TB_ERROR
+}
+#---------------------------------------------------------------------
+# Source: Any 
+# Dest: U
+#---------------------------------------------------------------------
+convert_dateformat_any_2_U () {
+	local EC=$S3_TB_OK
+	local DATE="$1"
+	local converted=""
+	local check_res=$S3_TB_TRUE
+
+# Source: 	C
+# Dest: 	U
+	is_valid_dateformat_c "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_C_2_U "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	F
+# Dest: 	U
+	is_valid_dateformat_f "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_F_2_U "$DATE" )
+		echo $converted
+		return $EC
+	fi		
+
+# Source: 	M
+# Dest: 	U
+	is_valid_dateformat_m "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_M_2_U_round "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	O
+# Dest: 	U
+	is_valid_dateformat_o "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_O_2_U "$DATE" )
+		echo $converted
+		return $EC
+	fi		
+
+# Source: 	S
+# Dest: 	U
+	is_valid_dateformat_s "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_S_2_U "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	T
+# Dest: 	U
+	is_valid_dateformat_t "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_T_2_U "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	U
+# Dest: 	U
+	is_valid_dateformat_u "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted="$DATE"
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	Z
+# Dest: 	U
+	is_valid_dateformat_z "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_Z_2_U_round "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+	LogError "$DATE: Invalid date format"
+	return $S3_TB_ERROR
+}
+#---------------------------------------------------------------------
+# Source: Any 
+# Dest: Z
+#---------------------------------------------------------------------
+convert_dateformat_any_2_Z () {
+	local EC=$S3_TB_OK
+	local DATE="$1"
+	local converted=""
+	local check_res=$S3_TB_TRUE
+
+# Source: 	C
+# Dest: 	Z
+	is_valid_dateformat_c "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_C_2_Z "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	F
+# Dest: 	Z
+	is_valid_dateformat_f "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_F_2_Z "$DATE" )
+		echo $converted
+		return $EC	
+	fi	
+
+# Source: 	M
+# Dest: 	Z
+	is_valid_dateformat_m "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_M_2_Z "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	O
+# Dest: 	Z
+	is_valid_dateformat_o "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_O_2_Z "$DATE" )
+		echo $converted
+		return $EC	
+	fi	
+
+# Source: 	S
+# Dest: 	Z
+	is_valid_dateformat_s "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_S_2_Z "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+	
+# Source: 	T
+# Dest: 	Z
+	is_valid_dateformat_t "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_T_2_Z "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	U
+# Dest: 	Z
+	is_valid_dateformat_u "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted=$(convert_dateformat_U_2_Z "$DATE" )
+		echo $converted
+		return $EC		
+	fi
+
+# Source: 	Z
+# Dest: 	Z
+	is_valid_dateformat_z "$DATE"; check_res=$?
+	if [ $check_res -eq $S3_TB_TRUE ] 
+	then
+		converted="$DATE"
+		echo $converted
+		return $EC		
+	fi
+	
+	LogError "$DATE: Invalid date format"
+	return $S3_TB_ERROR
+}
+#---------------------------------------------------------------------
+# Source: Any 
+# Dest: Specified by format
+#---------------------------------------------------------------------
+convert_dateformat_to_type () {
+	local EC=$S3_TB_OK
+	local DATE="$1"
+	local DATEFORMATTYPE="$2"; is_valid_dateformat_type $DATEFORMATTYPE
+	local converted=""
+
+	case $DATEFORMATTYPE in 
+	"CFormat" )
+		converted=$(convert_dateformat_any_2_C "$DATE")
+	;;
+	"FFormat" )
+		converted=$(convert_dateformat_any_2_F "$DATE")
+	;;
+	"MFormat" )
+		converted=$(convert_dateformat_any_2_M "$DATE")
+	;;
+	"OFormat" )
+		converted="$(convert_dateformat_any_2_O "$DATE")"
+	;;
+	"SFormat" )
+		converted=$(convert_dateformat_any_2_S "$DATE")
+	;;
+	"TFormat" )
+		converted=$(convert_dateformat_any_2_T "$DATE")
+	;;
+	"UFormat" )
+		converted=$(convert_dateformat_any_2_U "$DATE")
+	;;
+	"ZFormat" )
+		converted=$(convert_dateformat_any_2_Z "$DATE")
+	;;
+	esac;
+	
+	echo $converted
+	return $EC
+}
+#---------------------------------------------------------------------
+# compute difference between 2 dates
+#---------------------------------------------------------------------
+#---------------------------------------------------------------------
+# compute_diff_dateformat_c
+#---------------------------------------------------------------------
+compute_diff_dateformat_c () {
+	local EC=$S3_TB_OK
+	local MODE=""
+	local d1=""
+	local d2=""
+	local d1sec=0
+	local d2sec=0
+	local d1nsec=0
+	local d2nsec=0
+	local secdiff=0
+	local nsdiff=0
+	local difference=0
+	local diffvalue=0
+	local usage="Usage: compute_diff_dateformat_c  -mic|-ms|-s|-m|-h|-d <Date1> <Date2> [SIGNED|ABS default ABS]"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	MODE=$1
+	case $MODE in
+	-mic) 
+		shift
+		is_date_in_dateformat_c "$1"; is_date_in_dateformat_c "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_C_2_U "$d1")
+		d2sec=$(convert_dateformat_C_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff*1000000 ))
+	;;
+	-ms) 
+		shift
+		is_date_in_dateformat_c "$1"; is_date_in_dateformat_c "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_C_2_U "$d1")
+		d2sec=$(convert_dateformat_C_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff*1000 ))
+	;;
+	-s) 
+		shift
+		is_date_in_dateformat_c "$1"; is_date_in_dateformat_c "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_C_2_U "$d1")
+		d2sec=$(convert_dateformat_C_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$secdiff
+	;;
+	-m) 
+		shift
+		is_date_in_dateformat_c "$1"; is_date_in_dateformat_c "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_C_2_U "$d1")
+		d2sec=$(convert_dateformat_C_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/60 ))
+	;;
+	-h) 
+		shift
+		is_date_in_dateformat_c "$1"; is_date_in_dateformat_c "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_C_2_U "$d1")
+		d2sec=$(convert_dateformat_C_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/3600 ))
+	;;
+	-d) 
+		shift
+		is_date_in_dateformat_c "$1"; is_date_in_dateformat_c "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_C_2_U "$d1")
+		d2sec=$(convert_dateformat_C_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/86400 ))
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac;
+	if [ -n "$3" ]
+	then
+		if [ "$3" = "SIGNED" ]
+		then
+			diffvalue=${difference}
+		else
+			diffvalue=${difference#-}
+		fi
+	else
+		diffvalue=${difference#-}
+	fi	
+	echo $((diffvalue))
+}
+#---------------------------------------------------------------------
+# compute_diff_dateformat_f
+#---------------------------------------------------------------------
+compute_diff_dateformat_f () {
+	local EC=$S3_TB_OK
+	local MODE=""
+	local d1=""
+	local d2=""
+	local d1sec=0
+	local d2sec=0
+	local d1nsec=0
+	local d2nsec=0
+	local secdiff=0
+	local nsdiff=0
+	local difference=0
+	local diffvalue=0
+	local usage="Usage: compute_diff_dateformat_f  -mic|-ms|-s|-m|-h|-d <Date1> <Date2> [SIGNED|ABS default ABS]"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	MODE=$1
+	case $MODE in
+	-mic) 
+		shift
+		is_date_in_dateformat_f "$1"; is_date_in_dateformat_f "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_F_2_U "$d1")
+		d2sec=$(convert_dateformat_F_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff*1000000 ))
+	;;
+	-ms) 
+		shift
+		is_date_in_dateformat_f "$1"; is_date_in_dateformat_f "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_F_2_U "$d1")
+		d2sec=$(convert_dateformat_F_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff*1000 ))
+	;;
+	-s) 
+		shift
+		is_date_in_dateformat_f "$1"; is_date_in_dateformat_f "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_F_2_U "$d1")
+		d2sec=$(convert_dateformat_F_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$secdiff
+	;;
+	-m) 
+		shift
+		is_date_in_dateformat_f "$1"; is_date_in_dateformat_f "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_F_2_U "$d1")
+		d2sec=$(convert_dateformat_F_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/60 ))
+	;;
+	-h) 
+		shift
+		is_date_in_dateformat_f "$1"; is_date_in_dateformat_f "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_F_2_U "$d1")
+		d2sec=$(convert_dateformat_F_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/3600 ))
+	;;
+	-d) 
+		shift
+		is_date_in_dateformat_f "$1"; is_date_in_dateformat_f "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_F_2_U "$d1")
+		d2sec=$(convert_dateformat_F_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/86400 ))
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac;
+	if [ -n "$3" ]
+	then
+		if [ "$3" = "SIGNED" ]
+		then
+			diffvalue=${difference}
+		else
+			diffvalue=${difference#-}
+		fi
+	else
+		diffvalue=${difference#-}
+	fi	
+	echo $((diffvalue))
+}
+#---------------------------------------------------------------------
+# compute_diff_dateformat_m
+#---------------------------------------------------------------------
+compute_diff_dateformat_m () {
+	local EC=$S3_TB_OK
+	local MODE=""
+	local d1=""
+	local d2=""
+	local d1sec=0
+	local d2sec=0
+	local d1nsec=0
+	local d2nsec=0
+	local secdiff=0
+	local nsdiff=0
+	local difference=0
+	local diffvalue=0
+	local usage="Usage: compute_diff_dateformat_m  -mic|-ms|-s|-m|-h|-d <Date1> <Date2> [SIGNED|ABS default ABS]"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	MODE=$1
+	case $MODE in
+	-mic) 
+		shift
+		is_date_in_dateformat_m "$1"; is_date_in_dateformat_m "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_M_2_U "$d1")
+		d2sec=$(convert_dateformat_M_2_U "$d2")
+		d1nsec=$((10#$(date -d $d1 +%N)))
+		d2nsec=$((10#$(date -d $d2 +%N)))
+		secdiff=$(( $d1sec - $d2sec ))
+		nsdiff=$(( $d1nsec - $d2nsec ))
+		difference=$(( $secdiff*1000000 + $nsdiff/1000 ))
+	;;
+	-ms) 
+		shift
+		is_date_in_dateformat_m "$1"; is_date_in_dateformat_m "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_M_2_U "$d1")
+		d2sec=$(convert_dateformat_M_2_U "$d2")
+		d1nsec=$((10#$(date -d $d1 +%N)))
+		d2nsec=$((10#$(date -d $d2 +%N)))
+		secdiff=$(( $d1sec - $d2sec ))
+		nsdiff=$(( $d1nsec - $d2nsec ))
+		difference=$(( $secdiff*1000 + $nsdiff/1000000 ))
+	;;
+	-s) 
+		shift
+		is_date_in_dateformat_m "$1"; is_date_in_dateformat_m "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_M_2_U "$d1")
+		d2sec=$(convert_dateformat_M_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$secdiff
+	;;
+	-m) 
+		shift
+		is_date_in_dateformat_m "$1"; is_date_in_dateformat_m "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_M_2_U "$d1")
+		d2sec=$(convert_dateformat_M_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/60 ))
+	;;
+	-h) 
+		shift
+		is_date_in_dateformat_m "$1"; is_date_in_dateformat_m "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_M_2_U "$d1")
+		d2sec=$(convert_dateformat_M_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/3600 ))
+	;;
+	-d) 
+		shift
+		is_date_in_dateformat_m "$1"; is_date_in_dateformat_m "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_M_2_U "$d1")
+		d2sec=$(convert_dateformat_M_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/86400 ))
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac;
+	if [ -n "$3" ]
+	then
+		if [ "$3" = "SIGNED" ]
+		then
+			diffvalue=${difference}
+		else
+			diffvalue=${difference#-}
+		fi
+	else
+		diffvalue=${difference#-}
+	fi	
+	echo $((diffvalue))
+}
+#---------------------------------------------------------------------
+# compute_diff_dateformat_o
+#---------------------------------------------------------------------
+compute_diff_dateformat_o () {
+	local EC=$S3_TB_OK
+	local MODE=""
+	local d1=""
+	local d2=""
+	local d1sec=0
+	local d2sec=0
+	local d1nsec=0
+	local d2nsec=0
+	local secdiff=0
+	local nsdiff=0
+	local difference=0
+	local diffvalue=0
+	local usage="Usage: compute_diff_dateformat_o  -mic|-ms|-s|-m|-h|-d <Date1> <Date2> [SIGNED|ABS default ABS]"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	MODE=$1
+	case $MODE in
+	-mic) 
+		shift
+		is_date_in_dateformat_o "$1"; is_date_in_dateformat_o "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_O_2_U "$d1")
+		d2sec=$(convert_dateformat_O_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff*1000000 ))
+	;;
+	-ms) 
+		shift
+		is_date_in_dateformat_o "$1"; is_date_in_dateformat_o "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_O_2_U "$d1")
+		d2sec=$(convert_dateformat_O_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff*1000 ))
+	;;
+	-s) 
+		shift
+		is_date_in_dateformat_o "$1"; is_date_in_dateformat_o "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_O_2_U "$d1")
+		d2sec=$(convert_dateformat_O_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$secdiff
+	;;
+	-m) 
+		shift
+		is_date_in_dateformat_o "$1"; is_date_in_dateformat_o "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_O_2_U "$d1")
+		d2sec=$(convert_dateformat_O_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/60 ))
+	;;
+	-h) 
+		shift
+		is_date_in_dateformat_o "$1"; is_date_in_dateformat_o "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_O_2_U "$d1")
+		d2sec=$(convert_dateformat_O_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/3600 ))
+	;;
+	-d) 
+		shift
+		is_date_in_dateformat_o "$1"; is_date_in_dateformat_o "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_O_2_U "$d1")
+		d2sec=$(convert_dateformat_O_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/86400 ))
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac;
+	if [ -n "$3" ]
+	then
+		if [ "$3" = "SIGNED" ]
+		then
+			diffvalue=${difference}
+		else
+			diffvalue=${difference#-}
+		fi
+	else
+		diffvalue=${difference#-}
+	fi	
+	echo $((diffvalue))
+}
+#---------------------------------------------------------------------
+# compute_diff_dateformat_s
+#---------------------------------------------------------------------
+compute_diff_dateformat_s () {
+	local EC=$S3_TB_OK
+	local MODE=""
+	local d1=""
+	local d2=""
+	local d1sec=0
+	local d2sec=0
+	local d1nsec=0
+	local d2nsec=0
+	local secdiff=0
+	local nsdiff=0
+	local difference=0
+	local diffvalue=0
+	local usage="Usage: compute_diff_dateformat_s  -mic|-ms|-s|-m|-h|-d <Date1> <Date2> [SIGNED|ABS default ABS]"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	MODE=$1
+	case $MODE in
+	-mic) 
+		shift
+		is_date_in_dateformat_s "$1"; is_date_in_dateformat_s "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_S_2_U "$d1")
+		d2sec=$(convert_dateformat_S_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff*1000000 ))
+	;;
+	-ms) 
+		shift
+		is_date_in_dateformat_s "$1"; is_date_in_dateformat_s "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_S_2_U "$d1")
+		d2sec=$(convert_dateformat_S_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff*1000 ))
+	;;
+	-s) 
+		shift
+		is_date_in_dateformat_s "$1"; is_date_in_dateformat_s "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_S_2_U "$d1")
+		d2sec=$(convert_dateformat_S_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$secdiff
+	;;
+	-m) 
+		shift
+		is_date_in_dateformat_s "$1"; is_date_in_dateformat_s "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_S_2_U "$d1")
+		d2sec=$(convert_dateformat_S_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/60 ))
+	;;
+	-h) 
+		shift
+		is_date_in_dateformat_s "$1"; is_date_in_dateformat_s "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_S_2_U "$d1")
+		d2sec=$(convert_dateformat_S_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/3600 ))
+	;;
+	-d) 
+		shift
+		is_date_in_dateformat_s "$1"; is_date_in_dateformat_s "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_S_2_U "$d1")
+		d2sec=$(convert_dateformat_S_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/86400 ))
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac;
+	if [ -n "$3" ]
+	then
+		if [ "$3" = "SIGNED" ]
+		then
+			diffvalue=${difference}
+		else
+			diffvalue=${difference#-}
+		fi
+	else
+		diffvalue=${difference#-}
+	fi	
+	echo $((diffvalue))
+}
+#---------------------------------------------------------------------
+# compute_diff_dateformat_t
+#---------------------------------------------------------------------
+compute_diff_dateformat_t () {
+	local EC=$S3_TB_OK
+	local MODE=""
+	local d1=""
+	local d2=""
+	local d1sec=0
+	local d2sec=0
+	local d1nsec=0
+	local d2nsec=0
+	local secdiff=0
+	local nsdiff=0
+	local difference=0
+	local diffvalue=0
+	local usage="Usage: compute_diff_dateformat_t  -mic|-ms|-s|-m|-h|-d <Date1> <Date2> [SIGNED|ABS default ABS]"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	MODE=$1
+	case $MODE in
+	-mic) 
+		shift
+		is_date_in_dateformat_t "$1"; is_date_in_dateformat_t "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_T_2_U "$d1")
+		d2sec=$(convert_dateformat_T_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff*1000000 ))
+	;;
+	-ms) 
+		shift
+		is_date_in_dateformat_t "$1"; is_date_in_dateformat_t "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_T_2_U "$d1")
+		d2sec=$(convert_dateformat_T_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff*1000 ))
+	;;
+	-s) 
+		shift
+		is_date_in_dateformat_t "$1"; is_date_in_dateformat_t "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_T_2_U "$d1")
+		d2sec=$(convert_dateformat_T_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$secdiff
+	;;
+	-m) 
+		shift
+		is_date_in_dateformat_t "$1"; is_date_in_dateformat_t "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_T_2_U "$d1")
+		d2sec=$(convert_dateformat_T_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/60 ))
+	;;
+	-h) 
+		shift
+		is_date_in_dateformat_t "$1"; is_date_in_dateformat_t "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_T_2_U "$d1")
+		d2sec=$(convert_dateformat_T_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/3600 ))
+	;;
+	-d) 
+		shift
+		is_date_in_dateformat_t "$1"; is_date_in_dateformat_t "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_T_2_U "$d1")
+		d2sec=$(convert_dateformat_T_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/86400 ))
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac;
+	if [ -n "$3" ]
+	then
+		if [ "$3" = "SIGNED" ]
+		then
+			diffvalue=${difference}
+		else
+			diffvalue=${difference#-}
+		fi
+	else
+		diffvalue=${difference#-}
+	fi	
+	echo $((diffvalue))
+}
+#---------------------------------------------------------------------
+# compute_diff_dateformat_u
+#---------------------------------------------------------------------
+compute_diff_dateformat_u () {
+	local EC=$S3_TB_OK
+	local MODE=""
+	local d1=""
+	local d2=""
+	local d1sec=0
+	local d2sec=0
+	local d1nsec=0
+	local d2nsec=0
+	local secdiff=0
+	local nsdiff=0
+	local difference=0
+	local diffvalue=0
+	local usage="Usage: compute_diff_dateformat_u  -mic|-ms|-s|-m|-h|-d <Date1> <Date2> [SIGNED|ABS default ABS]"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	MODE=$1
+	case $MODE in
+	-mic) 
+		shift
+		is_date_in_dateformat_u "$1"; is_date_in_dateformat_u "$2"
+		d1="$1"; d2="$2"
+		d1sec=$d1
+		d2sec=$d2
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff*1000000 ))
+	;;
+	-ms) 
+		shift
+		is_date_in_dateformat_u "$1"; is_date_in_dateformat_u "$2"
+		d1="$1"; d2="$2"
+		d1sec=$d1
+		d2sec=$d2
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff*1000 ))
+	;;
+	-s) 
+		shift
+		is_date_in_dateformat_u "$1"; is_date_in_dateformat_u "$2"
+		d1="$1"; d2="$2"
+		d1sec=$d1
+		d2sec=$d2
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$secdiff
+	;;
+	-m) 
+		shift
+		is_date_in_dateformat_u "$1"; is_date_in_dateformat_u "$2"
+		d1="$1"; d2="$2"
+		d1sec=$d1
+		d2sec=$d2
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/60 ))
+	;;
+	-h) 
+		shift
+		is_date_in_dateformat_u "$1"; is_date_in_dateformat_u "$2"
+		d1="$1"; d2="$2"
+		d1sec=$d1
+		d2sec=$d2
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/3600 ))
+	;;
+	-d) 
+		shift
+		is_date_in_dateformat_u "$1"; is_date_in_dateformat_u "$2"
+		d1="$1"; d2="$2"
+		d1sec=$d1
+		d2sec=$d2
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/86400 ))
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac;
+	if [ -n "$3" ]
+	then
+		if [ "$3" = "SIGNED" ]
+		then
+			diffvalue=${difference}
+		else
+			diffvalue=${difference#-}
+		fi
+	else
+		diffvalue=${difference#-}
+	fi	
+	echo $((diffvalue))
+}
+#---------------------------------------------------------------------
+# compute_diff_dateformat_z
+#---------------------------------------------------------------------
+compute_diff_dateformat_z () {
+	local EC=$S3_TB_OK
+	local MODE=""
+	local d1=""
+	local d2=""
+	local d1sec=0
+	local d2sec=0
+	local d1nsec=0
+	local d2nsec=0
+	local secdiff=0
+	local nsdiff=0
+	local difference=0
+	local diffvalue=0
+	local usage="Usage: compute_diff_dateformat_z  -mic|-ms|-s|-m|-h|-d <Date1> <Date2> [SIGNED|ABS default ABS]"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	MODE=$1
+	case $MODE in
+	-mic) 
+		shift
+		is_date_in_dateformat_z "$1"; is_date_in_dateformat_z "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_Z_2_U "$d1")
+		d2sec=$(convert_dateformat_Z_2_U "$d2")
+		d1nsec=$((10#$(date -d $d1 +%N)))
+		d2nsec=$((10#$(date -d $d2 +%N)))
+		secdiff=$(( $d1sec - $d2sec ))
+		nsdiff=$(( $d1nsec - $d2nsec ))
+		difference=$(( $secdiff*1000000 + $nsdiff/1000 ))
+	;;
+	-ms) 
+		shift
+		is_date_in_dateformat_z "$1"; is_date_in_dateformat_z "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_Z_2_U "$d1")
+		d2sec=$(convert_dateformat_Z_2_U "$d2")
+		d1nsec=$((10#$(date -d $d1 +%N)))
+		d2nsec=$((10#$(date -d $d2 +%N)))
+		secdiff=$(( $d1sec - $d2sec ))
+		nsdiff=$(( $d1nsec - $d2nsec ))
+		difference=$(( $secdiff*1000 + $nsdiff/1000000 ))
+	;;
+	-s) 
+		shift
+		is_date_in_dateformat_z "$1"; is_date_in_dateformat_z "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_Z_2_U "$d1")
+		d2sec=$(convert_dateformat_Z_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$secdiff
+	;;
+	-m) 
+		shift
+		is_date_in_dateformat_z "$1"; is_date_in_dateformat_z "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_Z_2_U "$d1")
+		d2sec=$(convert_dateformat_Z_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/60 ))
+	;;
+	-h) 
+		shift
+		is_date_in_dateformat_z "$1"; is_date_in_dateformat_z "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_Z_2_U "$d1")
+		d2sec=$(convert_dateformat_Z_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/3600 ))
+	;;
+	-d) 
+		shift
+		is_date_in_dateformat_z "$1"; is_date_in_dateformat_z "$2"
+		d1="$1"; d2="$2"
+		d1sec=$(convert_dateformat_Z_2_U "$d1")
+		d2sec=$(convert_dateformat_Z_2_U "$d2")
+		secdiff=$(( $d1sec - $d2sec ))
+		difference=$(( $secdiff/86400 ))
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac;
+	if [ -n "$3" ]
+	then
+		if [ "$3" = "SIGNED" ]
+		then
+			diffvalue=${difference}
+		else
+			diffvalue=${difference#-}
+		fi
+	else
+		diffvalue=${difference#-}
+	fi	
+	echo $((diffvalue))
+}
+#---------------------------------------------------------------------
+# compute_newdate_c
+#---------------------------------------------------------------------
+compute_newdate_c () {
+	local EC=$S3_TB_OK
+	local date_o=""
+	local mode=""
+	local offset=""
+	local newdate_o=""
+	local newdate=""
+	local ago=""
+	local convstring=""
+	local usage="Usage: compute_newdate_c  <Date> -s|-m|-h|-d <Offset>"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	is_date_in_dateformat_c "$1"
+	date_o="$(convert_dateformat_C_2_O $1)"
+	mode=$2
+	offset=$3
+	if [[ ${offset#-} -eq 0 ]]
+	then
+		echo "$1"
+		return
+	fi
+	if [[ $offset -lt 0 ]]
+	then	
+		ago="ago"
+		offset=${offset#-}
+	else
+		offset=${offset#+}
+	fi
+	case $mode in
+	-s)
+		convstring="seconds $ago"
+	;;
+	-m) 
+		convstring="minutes $ago"
+	;;
+	-h) 
+		convstring="hours $ago"
+	;;
+	-d) 
+		convstring="days $ago"
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac; 
+	newdate_o=$(date -d "$date_o $offset $convstring" -u "${S3_DATEFORMAT_O}")
+	newdate=$(convert_dateformat_O_2_C "$newdate_o")
+	echo $newdate	
+}
+#---------------------------------------------------------------------
+# compute_newdate_f
+#---------------------------------------------------------------------
+compute_newdate_f () {
+	local EC=$S3_TB_OK
+	local date_o=""
+	local mode=""
+	local offset=""
+	local newdate_o=""
+	local newdate=""
+	local ago=""
+	local convstring=""
+	local usage="Usage: compute_newdate_f  <Date> -s|-m|-h|-d <Offset>"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	is_date_in_dateformat_f "$1"
+	date_o="$(convert_dateformat_F_2_O $1)"
+	mode=$2
+	offset=$3
+	if [[ ${offset#-} -eq 0 ]]
+	then
+		echo "$1"
+		return
+	fi
+	if [[ $offset -lt 0 ]]
+	then	
+		ago="ago"
+		offset=${offset#-}
+	else
+		offset=${offset#+}
+	fi
+	case $mode in
+	-s)
+		convstring="seconds $ago"
+	;;
+	-m) 
+		convstring="minutes $ago"
+	;;
+	-h) 
+		convstring="hours $ago"
+	;;
+	-d) 
+		convstring="days $ago"
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac; 
+	newdate_o=$(date -d "$date_o $offset $convstring" -u "${S3_DATEFORMAT_O}")
+	newdate=$(convert_dateformat_O_2_F "$newdate_o")
+	echo $newdate	
+}
+#---------------------------------------------------------------------
+# compute_newdate_m
+#---------------------------------------------------------------------
+compute_newdate_m () {
+	local EC=$S3_TB_OK
+	local date_o=""
+	local mode=""
+	local offset=""
+	local newdate_o=""
+	local newdate=""
+	local ago=""
+	local convstring=""
+	local usage="Usage: compute_newdate_m  <Date> -s|-m|-h|-d <Offset>"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	is_date_in_dateformat_m "$1"
+	microsecs=$(get_microsecs_m "$1")
+	date_o="$(convert_dateformat_M_2_O $1)"
+	mode=$2
+	offset=$3
+	if [[ ${offset#-} -eq 0 ]]
+	then
+		echo "$1"
+		return
+	fi
+	if [[ $offset -lt 0 ]]
+	then	
+		ago="ago"
+		offset=${offset#-}
+	else
+		offset=${offset#+}
+	fi
+	case $mode in
+	-s)
+		convstring="seconds $ago"
+	;;
+	-m) 
+		convstring="minutes $ago"
+	;;
+	-h) 
+		convstring="hours $ago"
+	;;
+	-d) 
+		convstring="days $ago"
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac; 
+	newdate_o=$(date -d "$date_o $offset $convstring" -u "${S3_DATEFORMAT_O}")
+	newdate_nomicrosecs=$(convert_dateformat_O_2_M "$newdate_o")
+# now insert again the microseconds part
+	newdate=$(set_microsecs_m "${newdate_nomicrosecs}" ${microsecs})
+	echo $newdate	
+}
+#---------------------------------------------------------------------
+# compute_newdate_o
+#---------------------------------------------------------------------
+compute_newdate_o () {
+	local EC=$S3_TB_OK
+	local date_o=""
+	local mode=""
+	local offset=""
+	local newdate_o=""
+	local newdate=""
+	local ago=""
+	local convstring=""
+	local usage="Usage: compute_newdate_o  <Date> -s|-m|-h|-d <Offset>"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	is_date_in_dateformat_o "$1"
+	date_o="$1"
+	mode=$2
+	offset=$3
+	if [[ ${offset#-} -eq 0 ]]
+	then
+		echo "$1"
+		return
+	fi
+	if [[ $offset -lt 0 ]]
+	then	
+		ago="ago"
+		offset=${offset#-}
+	else
+		offset=${offset#+}
+	fi
+	case $mode in
+	-s)
+		convstring="seconds $ago"
+	;;
+	-m) 
+		convstring="minutes $ago"
+	;;
+	-h) 
+		convstring="hours $ago"
+	;;
+	-d) 
+		convstring="days $ago"
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac; 
+	newdate_o=$(date -d "$date_o $offset $convstring" -u "${S3_DATEFORMAT_O}")
+	echo "$newdate_o"	
+}
+#---------------------------------------------------------------------
+# compute_newdate_s
+#---------------------------------------------------------------------
+compute_newdate_s () {
+	local EC=$S3_TB_OK
+	local date_o=""
+	local mode=""
+	local offset=""
+	local newdate_o=""
+	local newdate=""
+	local ago=""
+	local convstring=""
+	local usage="Usage: compute_newdate_s  <Date> -s|-m|-h|-d <Offset>"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	is_date_in_dateformat_s "$1"
+	date_o="$(convert_dateformat_S_2_O $1)"
+	mode=$2
+	offset=$3
+	if [[ ${offset#-} -eq 0 ]]
+	then
+		echo "$1"
+		return
+	fi
+	if [[ $offset -lt 0 ]]
+	then	
+		ago="ago"
+		offset=${offset#-}
+	else
+		offset=${offset#+}
+	fi
+	case $mode in
+	-s)
+		convstring="seconds $ago"
+	;;
+	-m) 
+		convstring="minutes $ago"
+	;;
+	-h) 
+		convstring="hours $ago"
+	;;
+	-d) 
+		convstring="days $ago"
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac; 
+	newdate_o=$(date -d "$date_o $offset $convstring" -u "${S3_DATEFORMAT_O}")
+	newdate=$(convert_dateformat_O_2_S "$newdate_o")
+	echo $newdate	
+}
+#---------------------------------------------------------------------
+# compute_newdate_t
+#---------------------------------------------------------------------
+compute_newdate_t () {
+	local EC=$S3_TB_OK
+	local date_o=""
+	local mode=""
+	local offset=""
+	local newdate_o=""
+	local newdate=""
+	local ago=""
+	local convstring=""
+	local usage="Usage: compute_newdate_t  <Date> -s|-m|-h|-d <Offset>"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	is_date_in_dateformat_t "$1"
+	date_o="$(convert_dateformat_T_2_O $1)"
+	mode=$2
+	offset=$3
+	if [[ ${offset#-} -eq 0 ]]
+	then
+		echo "$1"
+		return
+	fi
+	if [[ $offset -lt 0 ]]
+	then	
+		ago="ago"
+		offset=${offset#-}
+	else
+		offset=${offset#+}
+	fi
+	case $mode in
+	-s)
+		convstring="seconds $ago"
+	;;
+	-m) 
+		convstring="minutes $ago"
+	;;
+	-h) 
+		convstring="hours $ago"
+	;;
+	-d) 
+		convstring="days $ago"
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac; 
+	newdate_o=$(date -d "$date_o $offset $convstring" -u "${S3_DATEFORMAT_O}")
+	newdate=$(convert_dateformat_O_2_T "$newdate_o")
+	echo $newdate	
+}
+#---------------------------------------------------------------------
+# compute_newdate_u
+#---------------------------------------------------------------------
+compute_newdate_u () {
+	local EC=$S3_TB_OK
+	local date_o=""
+	local mode=""
+	local offset=""
+	local newdate_o=""
+	local newdate=""
+	local ago=""
+	local convstring=""
+	local usage="Usage: compute_newdate_u  <Date> -s|-m|-h|-d <Offset>"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	is_date_in_dateformat_u "$1"
+	date_o="$(convert_dateformat_U_2_O $1)"
+	mode=$2
+	offset=$3
+	if [[ ${offset#-} -eq 0 ]]
+	then
+		echo "$1"
+		return
+	fi
+	if [[ $offset -lt 0 ]]
+	then	
+		ago="ago"
+		offset=${offset#-}
+	else
+		offset=${offset#+}
+	fi
+	case $mode in
+	-s)
+		convstring="seconds $ago"
+	;;
+	-m) 
+		convstring="minutes $ago"
+	;;
+	-h) 
+		convstring="hours $ago"
+	;;
+	-d) 
+		convstring="days $ago"
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac; 
+	newdate_o=$(date -d "$date_o $offset $convstring" -u "${S3_DATEFORMAT_O}")
+	newdate=$(convert_dateformat_O_2_U "$newdate_o")
+	echo $newdate	
+}
+#---------------------------------------------------------------------
+# compute_newdate_z
+#---------------------------------------------------------------------
+compute_newdate_z () {
+	local EC=$S3_TB_OK
+	local date_o=""
+	local mode=""
+	local offset=""
+	local newdate_o=""
+	local newdate=""
+	local ago=""
+	local convstring=""
+	local microsecs=""
+	local usage="Usage: compute_newdate_z  <Date> -s|-m|-h|-d <Offset>"
+	if [ $# -lt 3 ]
+	then
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	is_date_in_dateformat_z "$1"
+	microsecs=$(get_microsecs_z "$1")
+# convert to O format with removing the microsecs
+	date_o="$(convert_dateformat_Z_2_O $1)"
+	mode=$2
+	offset=$3
+	if [[ ${offset#-} -eq 0 ]]
+	then
+		echo "$1"
+		return
+	fi
+	if [[ $offset -lt 0 ]]
+	then	
+		ago="ago"
+		offset=${offset#-}
+	else
+		offset=${offset#+}
+	fi
+	case $mode in
+	-s)
+		convstring="seconds $ago"
+	;;
+	-m) 
+		convstring="minutes $ago"
+	;;
+	-h) 
+		convstring="hours $ago"
+	;;
+	-d) 
+		convstring="days $ago"
+	;;
+	*)
+		LogError "$usage"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	esac; 
+	newdate_o=$(date -d "$date_o $offset $convstring" -u "${S3_DATEFORMAT_O}")
+	newdate_nomicrosecs=$(convert_dateformat_O_2_Z "$newdate_o")
+# now insert again the microseconds part
+	newdate=$(set_microsecs_z "${newdate_nomicrosecs}" ${microsecs})
+	echo $newdate	
+}
+#---------------------------------------------------------------------
+# yesterday
+#---------------------------------------------------------------------
+yesterday_c () {
+	compute_newdate_c $(now_c) -d -1
+}
+yesterday_f () {
+	compute_newdate_f $(now_f) -d -1
+}
+yesterday_m () {
+	compute_newdate_m $(now_m) -d -1
+}
+yesterday_o () {
+	compute_newdate_o "$(now_o)" -d -1
+}
+yesterday_s () {
+	compute_newdate_s $(now_s) -d -1
+}
+yesterday_t () {
+	compute_newdate_t $(now_t) -d -1
+}
+yesterday_u () {
+	compute_newdate_u $(now_u) -d -1
+}
+yesterday_z () {
+	compute_newdate_z $(now_z) -d -1
+}
+#---------------------------------------------------------------------
+# tomorrow
+#---------------------------------------------------------------------
+tomorrow_c () {
+	compute_newdate_c $(now_c) -d 1
+}
+tomorrow_f () {
+	compute_newdate_f $(now_f) -d 1
+}
+tomorrow_m () {
+	compute_newdate_m $(now_m) -d 1
+}
+tomorrow_o () {
+	compute_newdate_o "$(now_o)" -d 1
+}
+tomorrow_s () {
+	compute_newdate_s $(now_s) -d 1
+}
+tomorrow_t () {
+	compute_newdate_t $(now_t) -d 1
+}
+tomorrow_u () {
+	compute_newdate_u $(now_u) -d 1
+}
+tomorrow_z () {
+	compute_newdate_z $(now_z) -d 1
+}
+#---------------------------------------------------------------------
+# These functions compute a new date but with a fixed time passed
+# as input
+#---------------------------------------------------------------------
+compute_newdate_fixedtime_c () {
+	local EC=$S3_TB_OK
+	local date_o=$(convert_dateformat_C_2_O $1)
+	local newdate_o=$(compute_newdate_fixedtime_o "$date_o" $2 $3)
+	local newdate=$(convert_dateformat_O_2_C "$newdate_o")
+	echo $newdate
+}
+compute_newdate_fixedtime_f () {
+	local EC=$S3_TB_OK
+	local date_o=$(convert_dateformat_F_2_O $1)
+	local newdate_o=$(compute_newdate_fixedtime_o "$date_o" $2 $3)
+	local newdate=$(convert_dateformat_O_2_F "$newdate_o")
+	echo $newdate
+}
+compute_newdate_fixedtime_m () {
+	local EC=$S3_TB_OK
+	local date_o=$(convert_dateformat_M_2_O_round $1)
+	local newdate_o=$(compute_newdate_fixedtime_o "$date_o" $2 $3)
+	local newdate=$(convert_dateformat_O_2_M "$newdate_o")
+	echo $newdate
+}
+compute_newdate_fixedtime_o () {
+	local EC=$S3_TB_OK
+	local inpdate=""
+	local datepart=""
+	local offset=""
+	local fixedtime=""
+	local convstring=""
+	local newdate=""
+	
+	is_date_in_dateformat_o "$1"
+	inpdate="$1"
+	datepart=$(get_date_part_o "$inpdate")
+	offset=$2
+	fixedtime="$3"
+	if [[ $offset -lt 0 ]]
+	then	
+		offset=${offset#-}
+		convstring="days $ago"
+	else
+		offset=${offset#+}
+		convstring="days"
+	fi
+	newdate=$(date -d "$datepart_o $fixedtime $offset $convstring " -u "${S3_DATEFORMAT_O}")
+	echo "$newdate"	
+}
+compute_newdate_fixedtime_s () {
+	local EC=$S3_TB_OK
+	local date_o=$(convert_dateformat_S_2_O $1)
+	local newdate_o=$(compute_newdate_fixedtime_o "$date_o" $2 $3)
+	local newdate=$(convert_dateformat_O_2_S "$newdate_o")
+	echo $newdate
+}
+compute_newdate_fixedtime_t () {
+	local EC=$S3_TB_OK
+	local date_o=$(convert_dateformat_T_2_O $1)
+	local newdate_o=$(compute_newdate_fixedtime_o "$date_o" $2 $3)
+	local newdate=$(convert_dateformat_O_2_T "$newdate_o")
+	echo $newdate
+}
+compute_newdate_fixedtime_u () {
+	local EC=$S3_TB_OK
+	local date_o=$(convert_dateformat_U_2_O $1)
+	local newdate_o=$(compute_newdate_fixedtime_o "$date_o" $2 $3)
+	local newdate=$(convert_dateformat_O_2_U "$newdate_o")
+	echo $newdate
+}
+compute_newdate_fixedtime_z () {
+	local EC=$S3_TB_OK
+	local date_o=$(convert_dateformat_Z_2_O_round $1)
+	local newdate_o=$(compute_newdate_fixedtime_o "$date_o" $2 $3)
+	local newdate=$(convert_dateformat_O_2_Z "$newdate_o")
+	echo $newdate
+}
+#---------------------------------------------------------------------
+#
+# This function handles the NWH/EWH and NWD/EWD definitions
+# It returns 1 if today is listed in the holidays file or if today is a saturday/sunday
+# or if today is a working day but we are outside 07:00-15:00 range
+#
+#---------------------------------------------------------------------
+datetimecheck () {
+	local EC=$S3_TB_OK
+	local doit=0
+	local HOLIDAYSFILE=""
+	case $# in 
+	1 )
+		HOLIDAYSFILE=$1; is_valid_file $HOLIDAYSFILE
+		dom=$(date '+%d') 
+		year=$(date '+%Y') 
+		month=$(date '+%m') 
+
+		hhmm=$(date '+%H%M')
+		today="$year-$month-$dom"
+		# day of week: 1-7 with 1=Monday, 7=Sunday
+		dow=$(date -d "$year-$month-$dom" '+%u')   
+		isholiday=$(cat_valid_rows $HOLIDAYSFILE | grep -q "$today" | wc -l)
+		if [ "$dow" -ge 6 ] || [ "$hhmm" \> "1500" ] || [ "$hhmm" \< "0700" ] || [ "$isholiday" -eq 1 ]
+		then
+    			doit=1
+		else
+    			doit=0
+		fi
+		echo $doit
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: datetimecheck <HOLIDAYSFILE>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+	
+}
+

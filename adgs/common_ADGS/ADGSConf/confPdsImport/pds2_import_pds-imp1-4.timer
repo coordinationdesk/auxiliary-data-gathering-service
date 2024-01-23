@@ -1,0 +1,10 @@
+[Unit]
+Description=Run PDS2 Import PDS-IMP1-4 every 1 minute
+
+[Timer]
+OnCalendar=minutely
+Persistent=true
+Unit=pds2_import_pds-imp1-4.service
+
+[Install]
+WantedBy=timers.target

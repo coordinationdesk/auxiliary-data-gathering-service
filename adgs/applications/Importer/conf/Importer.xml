@@ -1,0 +1,58 @@
+<RootTag>
+	<Importer>
+		<!--Optional -->
+		<!-- default /raid0/inventory/backup-->
+		<BackupDir>/raid0/inventory/backup</BackupDir> 
+		<!-- default /raid0/productions-->
+		<ProcessDir>/raid0/productions</ProcessDir> 
+		<!-- default 5 -->
+		<MaxThreads>8</MaxThreads> 
+		<!-- default 86400-->
+		<RestartTime>86400</RestartTime> <!-- seconds -->
+		<!-- default /usr/acs/conf/local/-->
+		<TaskTableDir>/raid0/pdgs/components/libTaskTableProcess/test/tasktable</TaskTableDir>
+		<!-- default true; set false for debug-->
+		<Clean_Working_Dir>true</Clean_Working_Dir>
+		<!-- default false; if no copy, input data are moved inside working dir; set true for debug-->
+		<Copy_Input_Data>true</Copy_Input_Data>
+		<!-- default false -->
+		<LogInDefaultDir>false</LogInDefaultDir>
+		<!-- mandatory -->
+		<Scheduler_Path>/raid0/pdgs/bin/Scheduler</Scheduler_Path>
+		<!-- if true manages the Inventory Anomalies -->
+		<PopulateInvAnomalies>false</PopulateInvAnomalies>
+
+		<!-- Additional extensions to import along the main file 
+		     Tag missing: additional extensions not applied -->
+		<AdditionalExtensions count="">
+			<extension mandatory="false">metadata</extension>
+			<extension mandatory="false">xml</extension>
+		</AdditionalExtensions>
+		
+	</Importer>
+	
+	<!-- Import Email Notification configuration-->
+	<TTProcessEmailNotification>
+		<!-- The root key in the conf space to access mail server, port, ... -->
+		<MailRootKeyConf>EmailUserNotification</MailRootKeyConf>
+		<!-- Enable Import Email notifications -->
+		<enabled>true</enabled>
+	
+		<!-- Subject template. Can use ${filename} -->
+		<SubjectTemplate><![CDATA[[ Importer ] Item [${filename}"] imported.]]></SubjectTemplate>
+		<SubjectErrorTemplate><![CDATA[[ Importer ] Item [${filename}] process failed.]]></SubjectErrorTemplate>
+	
+		<!-- Mail style: key value to MailFormatXSL -->
+		<!-- attachBody: the body is also attached to the mail -->
+		<MailFormat attachBody="false">Imp-HTML</MailFormat> 
+		<!-- XSL to get required format -->
+		<MailFormatXSL>
+			<!-- Relative path to defaultConfPath() - e.g. /data/ADH/conf -->
+			<!-- contentType attribute override the default one in the mail header -->
+			<XML contentType="text/xml; charset=US-ASCII"></XML> <!-- If empty no xsl transformation is performed -->
+			<Imp-HTML contentType="text/html; charset=US-ASCII">xsl/ImportHtmlMail.xsl</Imp-HTML> <!-- Import ok/error. Html -->
+		</MailFormatXSL> 
+	</TTProcessEmailNotification>
+	
+</RootTag>
+

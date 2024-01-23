@@ -1,0 +1,28 @@
+1.50.8
+Bug fixed: thread stop performed in the PackageProcessingManager destructor to avoid class destruction while thread is still running.
+------------------------------
+1.50.7
+Deprecated DSODEPENDLIBS removed
+------------------------------
+1.50.6
+MP: useless includes removed
+------------------------------
+1.50.5
+MP: no more db related deprecated methods/classes
+PackageProcessorCheck::init rewritten to avoid useless queries
+------------------------------
+1.50.4
+MP: compilation warnings cleanup
+------------------------------
+1.50.3
+<unknown>
+------------------------------
+1.50.2
+Makefiles prepared to run in both smurfer.py and legacy mode
+------------------------------
+1.50.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.50.0
+
+Automatically generate from revision "version "1.50""

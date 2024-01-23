@@ -1,0 +1,31 @@
+6.23.4
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+6.23.3
+[LTA-359]: Fixed deleteResource bug when using namespaces.
+------------------------------
+6.23.2
+Test data set added
+------------------------------
+6.23.1
+setArray template functions now invoke deleteArray before pushing another array with the same name in.
+------------------------------
+6.23.0
+MergeMode has a new mode: MergeUnion
+The documentation has been slightly improved to explain how to use correctly the merge feature.
+------------------------------
+6.22.3
+an array is identified by the presence of an entry with the size (e.g arrayName[]: <size>)
+deleteArray is able to remove complex arrays (e.g. arrayName[x].something..) 
+Note the deleteArray complexity is O(n+m*log(m)) where n is the size of the resourceSet and m is the size of the array
+------------------------------
+6.22.2
+test Makefile fixed.
+template specialization for aggregates (in tests) now use setValue instead of findAndReplace (valid only for primitive types)
+------------------------------
+6.22.1
+Patch release automatically generated to instrument version files
+------------------------------
+6.22.0
+
+Automatically generate from revision "version "6.22""

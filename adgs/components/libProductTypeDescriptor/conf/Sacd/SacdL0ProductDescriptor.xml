@@ -1,0 +1,113 @@
+<?xml version="1.0" standalone="yes"?>
+<OceansatL0ProductDescription>
+	<L0ProductDescriptor>
+    	<NumberOfProducts>6</NumberOfProducts>
+		<Product1>
+        	<Id>SD0_RAW_0P</Id>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+			<List_of_APID count="0">
+        		<APID></APID>
+			</List_of_APID>			
+        	<VCID>0</VCID>
+        	<SensorName>SACD</SensorName>
+        	<SensorMode>Image</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Sac-D Level 0 Product</Description>        
+    	</Product1>
+		<Product2>
+        	<Id>SD1_RAW_0P</Id>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+			<List_of_APID count="0">
+        		<APID></APID>
+			</List_of_APID>			
+        	<VCID>1</VCID>
+        	<SensorName>SACD</SensorName>
+        	<SensorMode>Image</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Sac-D Level 0 Product</Description>        
+    	</Product2>
+		<Product3>
+        	<Id>SD2_RAW_0P</Id>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+			<List_of_APID count="0">
+        		<APID></APID>
+			</List_of_APID>			
+        	<VCID>2</VCID>
+        	<SensorName>SACD</SensorName>
+        	<SensorMode>Image</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Sac-D Level 0 Product</Description>        
+    	</Product3>
+		<Product4>
+        	<Id>SD3_RAW_0P</Id>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+			<List_of_APID count="0">
+        		<APID></APID>
+			</List_of_APID>			
+        	<VCID>3</VCID>
+        	<SensorName>SACD</SensorName>
+        	<SensorMode>Image</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Sac-D Level 0 Product</Description>        
+    	</Product4>
+		<Product5>
+        	<Id>SD4_RAW_0P</Id>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+			<List_of_APID count="0">
+        		<APID></APID>
+			</List_of_APID>			
+        	<VCID>4</VCID>
+        	<SensorName>SACD</SensorName>
+        	<SensorMode>Image</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Sac-D Level 0 Product</Description>        
+    	</Product5>
+		<Product6>
+        	<Id>SD5_RAW_0P</Id>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+			<List_of_APID count="0">
+        		<APID></APID>
+			</List_of_APID>			
+        	<VCID>5</VCID>
+        	<SensorName>SACD</SensorName>
+        	<SensorMode>Image</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Sac-D Level 0 Product</Description>        
+    	</Product6>
+    	<SatelliteName>SAC-D</SatelliteName>
+    	<SourcePacketHeaderSize>0</SourcePacketHeaderSize>
+    	<AnnotationSize>0</AnnotationSize>
+		<RefDocName>0830-PMYG-GEBCJ-003-A</RefDocName>
+		<AcquisitionReportFileType>ACQREPORT_</AcquisitionReportFileType>
+	</L0ProductDescriptor>
+</OceansatL0ProductDescription>

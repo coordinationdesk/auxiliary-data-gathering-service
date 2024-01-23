@@ -1,0 +1,20 @@
+[Unit]
+Description=Importer Service
+Documentation=https://www.exprivia.com
+Requires=network.target
+After=network.target postgresql-13.service
+
+[Service]
+Type=simple
+
+User=#LTAUSER#
+Group=#LTAGROUP#
+
+ExecStart=#VINSTALL_PATH#/bin/SRVImporter
+StandardOutput=null
+StandardError=null
+KillMode=mixed
+KillSignal=SIGINT
+
+[Install]
+WantedBy=multi-user.target

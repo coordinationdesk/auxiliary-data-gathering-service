@@ -1,0 +1,9 @@
+filetype_id, repository_id, user_id, usermode_id, priority, active, delete_on_remote, hostname, localpath, connretries, pollingperiod_sec, retryperiod_sec, connfailureaddress, procfailureaddress, reception_tt_id,discoveryplugin_id, php_timeout_sec
+
+'(SELECT id_filetype FROM t_filetypes where filetype = 'MP_AUX_ALL')', '(SELECT id_repository FROM t_repositories where symbolicname = 'MP-IP Repository')',       '(SELECT id_user FROM t_users where userid='opadgs')', 1, 1, true, false, 'ODATA-SERV',  '/data/fromMP', 3, 180,  1, '', '', '(SELECT id_tasktable from t_tasktables where name = 'defaultReception')',  '(SELECT id_discoveryplugin FROM t_discoveryplugins WHERE name = 'DataRetrieverPluginMpip')', 600
+'(SELECT id_filetype FROM t_filetypes where filetype = 'MP_AUX')',     '(SELECT id_repository FROM t_repositories where symbolicname = 'MissionPlanning Repo')',   '(SELECT id_user FROM t_users where userid='opadgs')', 1, 1, true,  true, 'adgs-imp1',   '/data/fromMP', 3, 10,   1, '', '', '(SELECT id_tasktable from t_tasktables where name = 'MissPlanReception')', '(SELECT id_discoveryplugin FROM t_discoveryplugins WHERE name = 'nop_imp')',                 600
+'(SELECT id_filetype FROM t_filetypes where filetype = 'MP_AUX')',     '(SELECT id_repository FROM t_repositories where symbolicname = 'MissionPlanning Repo_2')', '(SELECT id_user FROM t_users where userid='opadgs')', 1, 1, true,  true, 'adgs-imp2',   '/data/fromMP', 3, 10,   1, '', '', '(SELECT id_tasktable from t_tasktables where name = 'MissPlanReception')', '(SELECT id_discoveryplugin FROM t_discoveryplugins WHERE name = 'nop_imp')',                 600
+
+
+
+

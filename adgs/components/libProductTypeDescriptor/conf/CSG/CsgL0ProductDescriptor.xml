@@ -1,0 +1,104 @@
+<?xml version="1.0" standalone="yes"?>
+<CsgL0ProductDescription>
+	<L0ProductDescriptor>
+    	<NumberOfProducts>5</NumberOfProducts>    
+		<Product1>
+        	<Id>CDF_A</Id>
+			<Channel>0</Channel>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>90</DataFieldHeaderLength>
+        	<ApplicationDataLength>0</ApplicationDataLength>
+        	<PacketErrorControlLength>0</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>0</APID>
+			</List_of_APID>	
+        	<VCID>0</VCID>
+        	<SensorName>SAR</SensorName>
+        	<SensorMode></SensorMode>
+        	<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+        	<GapThresold unit="ms">0</GapThresold>
+			<Description></Description>        
+    	</Product1>
+    	<Product2>
+        	<Id>CDF_B</Id>
+			<Channel>0</Channel>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>90</DataFieldHeaderLength>
+        	<ApplicationDataLength>0</ApplicationDataLength>
+        	<PacketErrorControlLength>0</PacketErrorControlLength>
+        	<List_of_APID count="1">
+				<APID>0</APID>
+			</List_of_APID>	
+        	<VCID>29</VCID>
+        	<SensorName>SAR</SensorName>
+        	<SensorMode></SensorMode>
+        	<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description></Description>        
+    	</Product2>
+		<Product3>
+        	<Id>CDF_C</Id>
+			<Channel>0</Channel>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>10</DataFieldHeaderLength>
+        	<ApplicationDataLength>0</ApplicationDataLength>
+        	<PacketErrorControlLength>0</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>0</APID>
+			</List_of_APID>	
+        	<VCID>11</VCID>
+        	<SensorName>GOF</SensorName>
+        	<SensorMode></SensorMode>
+        	<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+        	<GapThresold unit="ms">0</GapThresold>
+			<Description></Description>        
+    	</Product3>
+    	<Product4>
+        	<Id>CDF_D</Id>
+			<Channel>0</Channel>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>10</DataFieldHeaderLength>
+        	<ApplicationDataLength>0</ApplicationDataLength>
+        	<PacketErrorControlLength>0</PacketErrorControlLength>
+        	<List_of_APID count="1">
+				<APID>0</APID>
+			</List_of_APID>	
+        	<VCID>39</VCID>
+        	<SensorName>GOF</SensorName>
+        	<SensorMode></SensorMode>
+        	<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description></Description>        
+    	</Product4>
+        <Product5>
+                <Id>CDF_F</Id>
+				<Channel>0</Channel>
+                <CCSDSVersion>1</CCSDSVersion>
+                <DataFieldHeaderLength>0</DataFieldHeaderLength>
+                <ApplicationDataLength>0</ApplicationDataLength>
+                <PacketErrorControlLength>0</PacketErrorControlLength>
+                <List_of_APID count="1">
+                	<APID>0</APID>
+                </List_of_APID>
+                <VCID>63</VCID>                                                                                                       
+                <SensorName>IDLE</SensorName>                                                                                         
+                <SensorMode>IDLE</SensorMode>                                                                                         
+                <SegmentedPacketsFlag>false</SegmentedPacketsFlag>                                                                    
+                <DeltaNominalTime unit="ms">0</DeltaNominalTime>                                                                      
+                <GapThresold unit="ms">0</GapThresold>                                                                        
+                <Description></Description>                                                                                   
+        </Product5>                                                                                                                   
+    	<SatelliteName>Csg</SatelliteName>
+    	<SourcePacketHeaderSize>6</SourcePacketHeaderSize>
+    	<!-- Annotation size in bytes - 0 means ISP NOT annotated -->
+		<AnnotationSize>40</AnnotationSize>
+		<!-- Sensing Time in ISP annotation is UTC (true) or TAI (false) -->
+		<AnnotationIsInUTC>true</AnnotationIsInUTC>
+		<RefDocName>ID-CSG-0006-TASI/VOL4/ISSUE3</RefDocName>
+		<AcquisitionReportFileType>REP_ACQ___</AcquisitionReportFileType>
+	</L0ProductDescriptor>
+</CsgL0ProductDescription>

@@ -1,0 +1,139 @@
+2.10.2
+CCDS-112: Merge configuration files for S1 and S2 with Common Module
+S5 configuration file updated to relax reg exp on metadata EOF files
+---------------------------------------------------------------------------
+2.10.1
+CCDS-112: configuration files updated for S1/S2 satellites in order to add new auxiliary filetypes handling
+S5 configuration file updated to relax reg exp on metadata EOF files
+---------------------------------------------------------------------------
+2.10.0
+LTA-667: handling of AUX and L0 S5P products introduced.
+---------------------------------------------------------------------------
+2.9.6
+CCDS-86: S5P configuration loading introduced. Handling of REP__SUP__ filetype in S3/S5P configuration file added.
+---------------------------------------------------------------------------
+2.9.5
+CCDS-78: handling of REP_MP_MP_ filetype in S1 configuration file introduced
+---------------------------------------------------------------------------
+2.9.4
+CCDS-66: missed parameters fixed in S3 configuration file
+---------------------------------------------------------------------------
+2.9.4
+CCDS-66: typo fixed in S3 configuration file
+---------------------------------------------------------------------------
+2.9.3
+CCDS-66: S3 configuration updated in order to handle new  filetypes
+---------------------------------------------------------------------------
+2.9.2
+CCDS-60: S1 configuration updated in order to handle AUX_OBMEMC  filetype
+---------------------------------------------------------------------------
+2.9.1
+CCDS-52: S1 configuration updated in order to handle AUX_TEC and AUX_TRO filetypes (platform dependent parameters are now optional)
+Note that they are still mandatory for LTA auxiliary files having filetype AUX_[A-Z0-9]{3} and they can be easily identified in the S1 conf space searching for string LTA
+---------------------------------------------------------------------------
+2.9.0
+CCDS-47: handling of new auxiliary filetypes introduced for S1 and S2.
+For the attributes extracted by filename a bash script can be configured in order to manipulate the extracted field 
+---------------------------------------------------------------------------
+2.8.9
+LTA-411: symbolic date 2100-01-01T00:00:00.000Z correctly formatted
+---------------------------------------------------------------------------
+2.8.8
+LTA-408: S2 Configuration updated to handle AUX_CAMSFO aux files
+---------------------------------------------------------------------------
+2.8.7
+CCDS-22: Configuration updated to handle S3 MPL_DNPPF and MPL__NPPF aux files
+---------------------------------------------------------------------------
+2.8.6
+LTA-368: symbolic date 9999-99-99T99:99:99 handled as 2100-01-01T00:00:00
+---------------------------------------------------------------------------
+2.8.5
+LTA-303: S3 configuration updated to include new AUX filetypes
+---------------------------------------------------------------------------
+2.8.4
+LTA-188: configuration updated to be aligned with document specification 1.5:
+- S1: platformSerialIdentifier read in filename for AUX files, to take into account multimission case.
+- S2: platformSerialIdentifier modified for AUX_BAND files, to take into account multimission case.
+- S3: lastRelativeOrbitNumber min cardinality updated for L0Prod files (it can be an optional attribute)
+---------------------------------------------------------------------------
+2.8.3
+- Bool changed in Boolean - code updated
+---------------------------------------------------------------------------
+2.8.2
+Configuration updated:
+- S1: Bool are now Boolean
+- S2: AUX SAD data instrumentShortName updated
+- S3: lastRelativeOrbitNumber is now mandatory
+---------------------------------------------------------------------------
+2.8.1
+LTA-157: S1 AUX SAFE configuration aligned to attribute mapping document V1.5
+---------------------------------------------------------------------------
+2.8.0
+LTA-113: code and configuration aligned to the new ICD and attribute mapping documents (V1.4) for L0 products and Auxiliary files
+- Bool type introduced
+- Check and alignment to the foreseen format performed for DateTimeOffset attributes
+- platformSerialIdentifier condition updated to handle product files used in multiple missions
+- orbitDirection and lastOrbitDirection reformatted in upper cases (S3 L0 products)
+- S2 coordinates aligned to new specification format (LAT, LON)
+- processingDate added for S3 AUX files
+---------------------------------------------------------------------------
+2.7.0
+ECS-43: fail-safe mode implemented to avoid processing failure in case of bad-formed input products. The mode can be activated enabling a configuration flag.
+---------------------------------------------------------------------------
+2.6.3
+Configuration file for S2 updated in order to handle correctly the L2A DS and TL products.
+---------------------------------------------------------------------------
+2.6.2
+Removed PRIP ifdef from code and makefile
+---------------------------------------------------------------------------
+2.6.1
+Fixed in Makefile scope added before the libNetcdf classes where used.
+---------------------------------------------------------------------------
+2.6.0
+ECS-42: code and S2/S3 configuration files aligned to the specification documents V1.2.
+Scope added before the libNetcdf classes where used.
+---------------------------------------------------------------------------
+2.5.2
+Added libnetcdf_c++4 dependency on makefile in case PRIP is not defined
+---------------------------------------------------------------------------
+2.5.1
+Added PRIP ifdef for netcdf file
+---------------------------------------------------------------------------
+2.5.0
+Configurations and code updated to handle orbital information at stop according to clarification 14.
+---------------------------------------------------------------------------
+2.4.0
+New configuration file added containing common fields and the list of configuration spaces to be loaded (specific fields for Satellite).
+Configuration for S1 updated to handle polarisationChannels attribute according to clarification 12.
+---------------------------------------------------------------------------
+2.3.2
+Configuration for S1/S2 updated according to clarification 12.
+ExtractionStrategy for AUX_UT1UTC file updated in configuration.
+---------------------------------------------------------------------------
+2.3.1
+Configuration for S1/S2/S3 fixed.
+Bug fixing: handling of empty tags fixed.
+Unit test and related data set updated.
+---------------------------------------------------------------------------
+2.3.0
+ECS-20: Code and configuration spaces updated according to the new ICD 1.2 (Sentinel 2 case completed).
+Handling of empty tags fixed: empty input tags correspond to void json attributes.
+Handling of coordinates for S2 implemented.
+Configuration for S1 files fixed. 
+---------------------------------------------------------------------------
+2.2.0
+ECS-20: Code, configuration spaces and tests updated according to the new ICD 1.2 (Sentinel 2 case - partial).
+Configuration for S1/S3 files fixed. DateTimeOffset are now in the expected zulu format.
+---------------------------------------------------------------------------
+2.1.0
+ECS-20: Code, configuration spaces and tests updated according to the new ICD 1.2 (Sentinel 1 case).
+Configuration for S3 AUX files fixed.
+---------------------------------------------------------------------------
+2.0.0
+ECS-20: Code updated according to the new ICD 1.2 (only Sentinel 3 case)
+---------------------------------------------------------------------------
+1.0.0
+First release.
+---------------------------------------------------------------------------
+0.0.1
+Creation of the module on GIT

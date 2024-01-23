@@ -1,0 +1,63 @@
+<Root>
+	<TlDaemon>
+
+	<!-- usually on hostname conf space -->
+	<TLD_Orders_Root_Path>/raid0/opCRYOSAT/production/</TLD_Orders_Root_Path>
+	<TLD_WS_Config_Path>/usr/acs/conf/local/WSConfig.xml</TLD_WS_Config_Path>
+	<TLD_FileOrderMgr>
+		<Path></Path>
+	</TLD_FileOrderMgr>
+	<TLD_InteractiveOrderMgr>
+		<Path>/usr/acs/tmp/orders/</Path>
+	</TLD_InteractiveOrderMgr>
+	<TLD_Scheduler_Path>/usr/acs/bin/Scheduler</TLD_Scheduler_Path>
+
+	<!-- Plugins will be loaded respecting the path ordering to allow dependencies -->
+	<!-- Plugins in Path2 will be loaded after all the plugins in Path2 -->
+	<TLD_List_of_Plugins_Path>
+		<TLD_Plugins_Path>Path1</TLD_Plugins_Path>
+		<TLD_Plugins_Path>Path2</TLD_Plugins_Path>
+	</TLD_List_of_Plugins_Path>
+
+	<!-- usually on tlDaemon conf space -->
+	<TLD_Max_Parallel_Orders>2</TLD_Max_Parallel_Orders>
+	<TLD_Queue_Polling_Frequency>17</TLD_Queue_Polling_Frequency>
+	<TLD_QueueMgrType>DB</TLD_QueueMgrType>
+	<TLD_Time_Window_Delta_T>0</TLD_Time_Window_Delta_T>
+	<TLD_Clean_Working_Dir>true</TLD_Clean_Working_Dir>
+	<TLD_Wipe_Existing_WD>true</TLD_Wipe_Existing_WD>
+	<TLD_Copy_PConf>true</TLD_Copy_PConf>
+	<!-- TLD_Full_Cycle_Period - hours  -->
+	<TLD_Full_Cycle_Period>12</TLD_Full_Cycle_Period>
+	<!-- TLD_Cfg_Reload_Period - minutes -->
+	<TLD_Cfg_Reload_Period>3</TLD_Cfg_Reload_Period>
+	<!-- Order queue sort by priority criterium -->
+	<TLD_Priority_Sort_Order>Ascending</TLD_Priority_Sort_Order>
+	<TLD_LeftTag>RUNNING</TLD_LeftTag>
+	<TLD_RightTag>MODE</TLD_RightTag>
+	<!-- Max log size in Megabytes -->
+	<TLD_Log_Rotation_Size>2</TLD_Log_Rotation_Size>
+	<!-- Log Aging policy in hours -->
+	<TLD_Log_Rotation_Age>12</TLD_Log_Rotation_Age>
+	<TLD_Ipc_Port>8096</TLD_Ipc_Port>
+
+	<!-- Record the Inputs used for an Order --> 
+	<TLD_Record_Order_Input>true</TLD_Record_Order_Input> <!-- default/missing tag: false --> 
+	<!-- Record the Inputs used for an Order: failing recording is critical (order will fail) --> 
+	<TLD_Record_Order_Input_IsCritical>false</TLD_Record_Order_Input_IsCritical> <!-- default/missing tag: false --> 
+
+	<TLD_Do_TaskTable_Validation>false</TLD_Do_TaskTable_Validation>
+
+	<!-- Cache Area Configuration -->
+	<EnableCache>true</EnableCache>
+	<CacheSize>2.75</CacheSize>
+	<UseHardLinksFromCache>true</UseHardLinksFromCache>
+	<List_Of_Cacheable_Filetypes count="3">
+		<Cacheable_Filetype>AUX_ALTGRD</Cacheable_Filetype>
+		<Cacheable_Filetype>AUX_PINZAZ</Cacheable_Filetype>
+		<Cacheable_Filetype>SIR1_SAR0_</Cacheable_Filetype>
+	</List_Of_Cacheable_Filetypes>
+
+	</TlDaemon>
+</Root>
+

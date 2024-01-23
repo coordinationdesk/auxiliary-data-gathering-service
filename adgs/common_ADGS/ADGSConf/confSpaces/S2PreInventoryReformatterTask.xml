@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="yes"?>
+<Root>
+	<S2PreInventoryReformatterTask>
+		<!-- <WorkingDir>.</WorkingDir> -->
+		<FileTypes>
+			<FileType>AUX_ECMWFD</FileType>
+			<FileType>AUX_UT1UTC</FileType>
+		</FileTypes>
+		<!-- <TarExecutionTimeout unit="s">600</TarExecutionTimeout> -->
+	</S2PreInventoryReformatterTask>
+</Root>

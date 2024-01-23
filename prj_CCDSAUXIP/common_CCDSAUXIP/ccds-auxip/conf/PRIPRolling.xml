@@ -1,0 +1,13 @@
+<Root>
+	<PRIPRolling>
+		<!-- The time (sec) after which the daemon will restart. Default is 86400 -->
+		<RestartTime>86400</RestartTime>
+		<!-- The database polling time (msec). It represents the frequencies of database queries. Default is 5000  -->
+		<DatabasePollingTime>30000</DatabasePollingTime>
+		<!-- The maximum number of items that can be loaded at each query. Default is 50 -->
+		<MaxItems>10</MaxItems>
+                <!-- If false, the record is not actually removed from database, only the validity flag will be set to false. Default is TRUE -->
+		<RemoveRecord>true</RemoveRecord>
+	</PRIPRolling>
+</Root>
+

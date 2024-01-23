@@ -1,0 +1,44 @@
+8.1.1
+LP: Patch version due to jira LTA-381.
+IsmSoapClient::FileToDeleteOnMigratingMediumExc managed when erasing file to log an esplicative message: medium migration in progress, retry later.
+------------------------------
+8.1.0
+LP: Minor version due to jira LTA-395.
+ISMStorageManager::download: if Client name parameter set, passed to IsmSoapClient obj with the proper method.
+ISMStorageManager::doAction private method implemented to be called by both erase and giveup methods. Giveup method implemented according to libStorageManager 8.0.0 
+------------------------------
+8.0.1
+Patch version due to jira S3MARINE-448.
+ISMStorageManager::run: File::size on product to upload computed twice. Fixed.
+------------------------------
+8.0.0
+Major version due to jira S3MARINE-371.
+LP: SignatureAlgo::setManageDirectories called to set manageDirectories attribute to compute md5sum on directories GIT style.
+------------------------------
+7.1.1
+MP: no longer db deprecated methods/classes
+compilation warning fixed
+------------------------------
+7.1.0
+LTA-77: handling of exceptions in case of near-online or offline files introduced.
+------------------------------
+7.0.2
+Patch release due to jira ECS-41.
+Some attributes of ISMStorageManager now public if ACS_TEST define is set.
+------------------------------
+7.0.1
+Patch release due to jira S2PDGS-286.
+ISMStorageManager::run: IsmSoapClient::fileDefinition original name valorized with inventory name. String to be saved into t_acsisminventory got now from IsmSoapClient 
+upload method returned values. Test fixed.
+------------------------------
+7.0.0
+Major release due to jira ECS-17.
+_path attribute added to ISMStorageManager class along with get method. t_inventorysm string replaced by getInvSmTableName() base class method. insertInvSM and deleteInvSM base class
+methods new IF used.
+------------------------------
+6.31.1
+Patch release automatically generated to instrument version files
+------------------------------
+6.31.0
+
+Automatically generate from revision "version "6.31""

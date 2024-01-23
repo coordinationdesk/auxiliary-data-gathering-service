@@ -1,0 +1,1 @@
+../../common_CCDSAUXIP/applicationsMake/CCDSAUXIP.list.mk

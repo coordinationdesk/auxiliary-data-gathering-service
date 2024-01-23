@@ -1,0 +1,199 @@
+#!/bin/bash
+#
+# Copyright 2005-2010, Advanced Computer Systems , Inc.
+# Via Della Bufalotta, 378 - 00139 Roma - Italy
+# http://www.acsys.itA.C.S. - Advanced Computer Systems S.p.A.
+# 
+# This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems, S.p.A.;
+# the contents of this file may not be disclosed to third parties, copied or
+# duplicated in any form, in whole or in part, without the prior written
+# permission of Advanced Computer Systems, S.p.A.
+
+
+
+
+
+
+
+
+############################## FUNCTIONS #############################
+######################################################################
+set_conf() {
+	if test -r "$CONF_FILE"
+	then
+		. $CONF_FILE
+
+		export DBHOSTNAME
+		export DBNAME
+		export PDSUSER
+		export PDSPASSWORD
+		export DBAUSER
+		
+		if test -n "$1"
+		then
+			export DBNAME="$1"
+		fi
+	else
+		echo "*** Cannot find $CONF_FILE or it is not readable ***" | tee -a $LOG_FILE
+		echo ""
+		exit 1
+	fi
+}
+
+dbExport() {
+	cd $DATAPATH
+	
+	pg_dump -o -h $DBHOSTNAME -U $DBAUSER --format=c $DBNAME > $dumpName
+	if [ "$?" != 0 ]
+	then
+		return 1
+	else
+		chmod 660 $dumpName
+		return 0
+	fi
+}
+
+
+
+
+
+
+
+################################ MAIN ################################
+######################################################################
+echo ""
+echo "PSQL DBEXPORT PREOCEDURE"
+echo "-------------------------------------------------------------------"
+
+export EXE_DIR=`dirname $0`
+cd $EXE_DIR
+export EXE_DIR=`pwd`
+
+cd ..
+export BASE_DIR=`pwd`
+cd $EXE_DIR
+
+export CONF_DIR=$BASE_DIR/psqlUtilitiesConf
+export COMM_LIBS=$BASE_DIR/psqlUtilitiesLibs
+export DATAPATH=$BASE_DIR/DATA_DBEXPORT
+
+export LOG_FILE=/tmp/psqlExportDatabase.log
+
+ # Source function library.
+. $COMM_LIBS/libMessages
+. /etc/rc.d/init.d/functions 
+
+prj="$1"
+opt_db="$2"
+
+case "$prj" in
+	'-a' | '--about')
+		about "#   Description: Databases Export Script                                                #"
+		;;
+	'adc')
+		;;
+	'admapf')
+		;;
+	'alsat')
+		;;
+	'circulator') 
+		;;
+	'clirsen')
+		;;
+	'cryosat2')
+		;;
+	'cryosatipf')
+		;;
+	'dgs') 
+		;;
+	'ecicmf')
+		;;
+	'ecmc') 
+		;;
+	'emsa')
+		;;
+	'geocal') 
+		;;
+	'jersodc') 
+		;;
+	'kipp') 
+		;;
+	'mdaps')
+		;;
+	'muster')
+		;;
+	'nrtiv')
+		;;
+	'prisma')
+		;;
+	'rpu')
+		;;
+	's3mpm')
+		;;
+	'sectronic')
+		;;
+	'sentinel1' | 'sentinel2' | 'sentinel3')
+		;;
+	'sigris')
+		;;
+	'spacenav') 
+		;;
+	'vcat_brim')
+		;;
+	'vcat_users')
+		;;
+	'venus')
+		;;
+	'venus_ism')
+		;;
+	'wwa') 
+		;;
+	'test')
+		;;
+	*)
+		usage "export"
+		;;
+esac
+
+export CONF_FILE=$CONF_DIR/$1.conf
+
+if test -n "$opt_db"
+then
+	export dumpName=$prj"-"$opt_db"Export_`date -I`.dump"
+else
+	export dumpName=$prj"Export_`date -I`.dump"
+fi
+
+set_conf $opt_db
+
+initLog "EXPORT" "$DBNAME"
+
+if test -z "$PGPASSWORD"
+then
+	echo -n "Insert $DBAUSER password: "
+	read -s answer
+	export PGPASSWORD=$answer
+fi
+
+echo ""
+echo -n "Running export of $DBNAME ..." | tee -a $LOG_FILE
+sleep 1
+dbExport >> $LOG_FILE 2>&1
+result=$?
+result_message $result
+echo "-------------------------------------------------------------------"
+
+if [ "$result" != 0 ]
+then
+	echo "*** Export Procedure Aborted ***" | tee -a $LOG_FILE
+	echo "See log $LOG_FILE"
+	echo ""
+	exit 1
+fi
+
+echo ">> Export Procedure Completed" | tee -a $LOG_FILE
+echo "DUMP PATH: $DATAPATH"
+echo "DUMP NAME: $dumpName"
+echo ""
+exit 0
+

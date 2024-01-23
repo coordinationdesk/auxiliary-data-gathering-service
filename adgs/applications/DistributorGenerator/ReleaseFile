@@ -1,0 +1,18 @@
+3.0.1
+CCDS-21: Db broadcast listening stop invoked before exiting from the application main loop.
+------------------------------
+3.0.0
+CCDS-21: Db broadcast listener modified in order to use messages sent via MQTT.
+------------------------------
+2.0.0
+Deprecated SignalHandler and doRestart() removed.
+------------------------------
+1.50.2
+MP: compilation warning cleanup
+------------------------------
+1.50.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.50.0
+
+Automatically generate from revision "version "1.50""

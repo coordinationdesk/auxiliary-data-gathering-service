@@ -1,0 +1,33 @@
+0.1.1
+Update for S1 and S2 new filtypes CCDS-112
+------------------------------------------------------------------------------
+0.1.0
+Update Auxiliary files and configuration by (M. Airoldi)
+------------------------------------------------------------------------------
+0.0.9
+Update SRVNotificationDispatcher 
+------------------------------------------------------------------------------
+0.0.8
+Update Reverted to libFtpCurl 14.0.6 
+------------------------------------------------------------------------------
+0.0.7
+Update SRVNotificationDispatcher 
+------------------------------------------------------------------------------
+0.0.6
+Update to manage unavailability report for S3 and S5P
+------------------------------------------------------------------------------
+0.0.5
+Update to add 4 S3 filetypes:
+S3_SR_2_SICNAX,S3_SR_2_SICSAX,S3_SR_2_SIFNAX,S3_SR_2_SIFSAX
+------------------------------------------------------------------------------
+0.0.4
+Update to use latest libRestBase
+------------------------------------------------------------------------------
+0.0.3
+Update to use latest  libDbClient and S1 Report file
+------------------------------------------------------------------------------
+0.0.2
+Update to take advantage of new Pistache lib
+------------------------------------------------------------------------------
+0.0.1
+First issue of the ReleaseFile (not tagged yet)

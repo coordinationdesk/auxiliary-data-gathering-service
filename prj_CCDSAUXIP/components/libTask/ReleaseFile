@@ -1,0 +1,14 @@
+2.38.0
+JIRA CI-92: Added management of AlternativeActivationTime not mandatory parameter.
+Updated management of InputAlternative ref attribute according to GenICD 1.8 (the input section is expected to be empty).
+Added management of tag name Type as alternative to File_Type in OutputDescriptor.
+-------------------------------------------------------------------------------------------------------------------------
+2.37.2
+MP: compilation warnings fixed
+------------------------------
+2.37.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.37.0
+
+Automatically generate from revision "version "2.37""

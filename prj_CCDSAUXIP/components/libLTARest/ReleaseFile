@@ -1,0 +1,236 @@
+12.4.1
+Typo fixed.
+------------------------------------------
+12.4.0
+LTA-496: Added LTADirectDLResolver wrappers and tests.
+------------------------------------------
+12.3.1
+LTA-492: Test Fixed.
+------------------------------------------
+12.3.0
+LTA-492: Added LTAAipSelector wrappers and tests.
+------------------------------------------
+12.2.0
+CCDS-67: Introduced QuotaServicePayloadsExceptions::RequestPayloadException exception as extra layer for QuotasService
+         Request payload exceptions.
+------------------------------------------
+12.1.0
+S2PDGS-604: Typo fixed
+------------------------------------------
+12.0.0
+S2PDGS-604: Added the wrapper for the new allow_orders_creation field of t_ltadl_remote_lta on LTADLRemoteLTA.
+    
+    ATTENTION: the parameter of LTARestClient constructor with fixed data change from:
+
+    LTARestClient(const std::string& baseURL, const GenericAuthHandler& auth, dbPersistent::IdType ltaID = 0,
+                  const std::string& ltaName = "CustomLTA", const StopController& stopController = AppStopController());
+
+    to:
+
+    LTARestClient(const std::string& baseURL, const GenericAuthHandler& auth, dbPersistent::IdType ltaID = 0,
+                  const std::string& ltaName = "CustomLTA", const bool allowOrderCreation = true,
+                  const StopController& stopController = AppStopController());
+------------------------------------------
+11.1.3
+LTA-410: All log message on LTARestClient are now debug messages.
+------------------------------------------
+11.1.2
+LTA-410: RETRIEVESERVICE_LTA_SELECTION_ERROR error added to RetrieveServiceResponseErrorCode enum.
+------------------------------------------
+11.1.1
+S2PDGS-577: OrderSize field in ProductOrderResponsePayload is optional if status is different from completed.
+------------------------------------------
+11.1.0
+[LTA-346]: Now LTARestClient allow to set the connection timeout for regular (non circulation) requests
+------------------------------------------
+11.0.0
+Improved the use of DB connections in LTARestClient.
+------------------------------------------
+10.2.1
+S2PDGS-530: cancel subscription method fixed.
+------------------------------------------
+10.2.0
+S2PDGS-530: cancel subscription interface added.
+------------------------------------------
+10.1.1
+Useless include removed in ProductOrderResponsePayload.C
+------------------------------------------
+10.1.0
+LTA-301: Added RetrieveServiceGetBatchDetailsRequestPayload and RetrieveServiceGetBatchDetailsResponsePayload wrappers and tests.
+Added lta_name field to RetrieveServiceGetFileStatusResponsePayload wrapper.
+------------------------------------------
+10.0.0
+LTA-302: interfaces modified in LTARestClient public methods performing data circulation in order to enable destination removal before transfer.
+------------------------------------------
+9.0.1
+[LTA-272]: OAuth2ClientCredentialsTokenProvider namespace changed.
+------------------------------------------
+9.0.0
+[LTA-272]: Introduced OAuth2 authentication for LTARestClient.
+Fixed exception notification and rethrow.
+------------------------------------------
+8.6.0
+[LTA-247]: Error code added to all the RetrieveService Responses. Http code added to RetrieveServiceGetProductResponsePayload.
+Typo fixed.
+------------------------------------------
+8.5.1
+LTA-249: Url used to request product downloading changed to use product uuid (instead of order uuid)
+------------------------------------------
+8.5.0
+[LTA-240]: Added QuotaServiceNotifyDownloadStatusRequestPayload wrapper and tests.
+------------------------------------------
+8.4.2
+S2PDGS-437: log messages classification in LTARestClient reviewed.
+------------------------------------------
+8.4.1
+LTA-249: log messages in LTARestClient related to response code in circulation request sending classified as debug messages.
+------------------------------------------
+8.4.0
+LTA-249: log messages in LTARestClient improved to include info about requests sent.
+S2PDGS-437: Mandatory SubscriptionEvent parameter added in ODataSubscriptionRequestPayload
+Warning message on "@odata.context" content transformed in debug messages for all response payload wrappers.
+------------------------------------------
+8.3.0
+[LTA-244]: extract_metadata field added to RetrieveServiceGetProductRequestPayload and RetrieveServiceMakeBulkRequestPayload wrappers.
+------------------------------------------
+8.2.1
+Now password decrypt parameter apply also on BaseAuthHandler::setCirculationAuthParam. Tests fixed.
+------------------------------------------
+8.2.0
+Introduced password decrypt (active by default) to BaseAuthHandler.
+------------------------------------------
+8.1.1
+The content-type of each post request will always be set to avoid the usage
+of the default content x-www-form-urlencoded by the underlying curl.
+------------------------------------------
+8.1.0
+[LTA-221]: Added LTARestClient.
+LTADLRemoteLTA (and its tests) moved from libPdsDb.
+Added ODataSubscriptions wrappers.
+Minor bug fix.
+------------------------------------------
+8.0.4
+[LTA-136]: "@odata.context" check removed (only warning, not exception).
+Removed pistache dependecy ("DSOSPECIFICDEPS =  -lpistache" on make file).
+------------------------------------------
+8.0.3
+[LTA-137]: log message fixed in ProductOrderResponsePayload
+------------------------------------------
+8.0.2
+[LTA-137]: ODataNotificationServicePayload::operator= compilation warning fixed
+------------------------------------------
+8.0.1
+[LTA-175] EC:: Added tags: AWS_S3_Upload_Pool_Size AWS_S3_Upload_Buffer_Size
+------------------------------------------
+8.0.0
+[LTA-136]: ODataBatchOrderResponsePayload and ODataOrderResponsePayload now use common status enum from LTACommon.
+------------------------------------------
+7.0.0
+[LTA-136]: All list in OData Payloads now have getList()/setList() instead of getValue()/setValue() methods.
+All getters in QuotaService Payloads, RetrieveService Payloads and OData Payloads are now const member functions.
+"destination_url" can not be empty in RetrieveServiceGetProductRequestPayload and in RetrieveServiceMakeBulkRequestPayload.
+------------------------------------------
+6.4.0
+LTA-137: NotificationServiceRequestPayload class updated in order to add NotificationDate and make requestId optional (by flag).
+ODataNotificationServicePayload wrapper added.
+Product Order Response wrapper added.
+------------------------------------------
+6.3.2
+[LTA-136]: Tests updated.
+------------------------------------------
+6.3.1
+[LTA-136]: "destination_url" can be empty in RetrieveServiceGetProductRequestPayload and in RetrieveServiceMakeBulkRequestPayload.
+------------------------------------------
+6.3.0
+[LTA-136]: Implemented service request and response wrappers for LTARetrieveService.
+------------------------------------------
+6.2.2
+[LTA-86]: EC:: Added new label in S3AwsUploaderRequestPayload JSON: "hostname".
+------------------------------------------
+6.2.1
+[LTA-86]: EC:: Added new label in S3AwsUploaderRequestPayload JSON: "priority".
+------------------------------------------
+6.2.0
+[LTA-86]: EC:: Updated in order to get rid of the the enumerative in the UploadStatus.
+------------------------------------------
+6.1.1
+[LTA-86]: EC:: Module S3AwsUploaderRequestPayload (and relative test) only. Added parameters LastErrorMsg and the AWS S3 configuration.
+------------------------------------------
+6.1.0
+[LTA-74]: Added tests in order to have 100% test coverage on LTAQuotaService payloads. Minor bug fixes.
+------------------------------------------
+6.0.1
+[LTA-86]: EC:: Module S3AwsUploaderRequestPayload (and relative test) only. Parameter: Occupation added to json
+------------------------------------------
+6.0.0
+[LTA-74]: UserID added to QuotaServiceUseDownloadTokenRequestPayload.
+------------------------------------------
+5.0.0
+[LTA-74]: TokenUUID added to QuotaServiceResponsePayload. Spelling error: QuotaServiceReleaseDownladTokenRequestPayload instead of QuotaServiceReleaseDownloadTokenRequestPayload. Minor bug fixes.
+------------------------------------------
+4.0.2
+[LTA-86]: EC:: Module S3AwsUploaderRequestPayload (and relative test) only. Timestamp saved in JSON as more human-readable ISO string instead of more obscure time_t integer.
+------------------------------------------
+4.0.1
+[LTA-86]: EC:: Added module S3AwsUploaderRequestPayload and relative test
+------------------------------------------
+4.0.0
+[LTA-86]: EC:: LTARestServer component decoupled. See also library: libRestBase
+[LTA-74]: Implemented service request and response wrappers for LTAQuotaService. Minor bug fixes.
+------------------------------------------
+3.5.0
+[ECS-8]: Added priority to EstimationService payload. Improved dump for LTARestServer. Removed unused variable. Fixed bug causing unwanted exception throw
+------------------------------------------
+3.4.0
+[ECS-8]: Implemented classes to encapsulate estimation service request/response payloads
+------------------------------------------
+3.3.0
+[ECS-8]: Fixed bug in NotificationServicePayload lists causing internal jsons to not be processed. Implemented requests and responses for EstimationTimeService
+------------------------------------------
+3.2.0
+[ECS-8]: LTARestServer object introduced that implements common REST server and REST service functionalities
+------------------------------------------
+3.1.0
+Added check for null json values. Added debug messages. Tests updated
+------------------------------------------
+3.0.0
+Implemented requests and response payloads. Using nlohmann instead of rapidjson.
+Removed unused code (LTAServer and queries)
+------------------------------------------
+2.2.1
+Where condition updated to avoid time approximation errors.
+------------------------------------------
+2.2.0
+Added feature to configure the query limit (the same) for both inventory and orders queries
+------------------------------------------
+2.1.0
+Regexp query filter pattern improved to avoid false detection
+------------------------------------------
+2.0.1
+Removed cout debug message in euristic function for delivery estimation
+------------------------------------------
+2.0.0
+Added euristic for delivery estimation
+Configuration tags moved in a dedicated namespace
+------------------------------------------
+1.4.0
+Added support for query with regexp 
+$filter=matchesPattern(Name, 'pattern')
+------------------------------------------
+1.3.0
+Added Orders query and download REST interface
+Orders cannot be filtered by status
+------------------------------------------
+1.2.0
+Added statistics 
+Messaging improved with results and request elapsed times
+------------------------------------------
+1.1.0
+Added configuration capabilities
+Managed REST worker in a controllable thread
+------------------------------------------
+1.0.0
+First issue
+------------------------------------------
+0.0.1
+Empty module

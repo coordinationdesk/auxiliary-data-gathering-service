@@ -1,0 +1,54 @@
+<RootTag>
+    <Importer>
+	<!--Optional -->
+        <!-- default /raid0/inventory/backup-->
+  	<BackupDir>/data/ADGS/Inventory/backup</BackupDir> 
+        <!-- default /raid0/productions-->
+  	<ProcessDir>/data/ADGS/productions</ProcessDir> 
+        <!-- default 5 -->
+  	<MaxThreads>8</MaxThreads> 
+	<PopulateInvAnomalies>false</PopulateInvAnomalies>
+	<RestartTime>86400</RestartTime>
+	<!-- default false -->
+	<LogInDefaultDir>true</LogInDefaultDir>
+	<PathScanPollingMultiplier>0</PathScanPollingMultiplier>
+	<MinimumScanPeriod>172800</MinimumScanPeriod>
+        <!-- overwrite existing production dir if any - default false-->
+        <Wipe_Existing_WD>true</Wipe_Existing_WD>
+        <!-- default true; set false for debug-->
+        <Clean_Working_Dir>true</Clean_Working_Dir>
+        <!-- default false; if no copy, input data are moved inside working dir; set true for debug-->
+        <Copy_Input_Data>false</Copy_Input_Data>
+        <!-- default 600-->
+  	<ReloadConfigurationTime>600</ReloadConfigurationTime> <!-- seconds -->
+        <!-- default /usr/acs/conf/tasktables/-->
+	<TaskTableDir>/data/ADGS/conf/tasktables</TaskTableDir>
+	<!-- mandatory -->
+        <Scheduler_Path>/usr/local/components/ADGS/bin/Scheduler</Scheduler_Path>
+        <Plugins_Path>/usr/local/components/ADGS/plugins/PreInventoryPlugins</Plugins_Path>
+         
+    </Importer>
+        <!-- Import Email Notification configuration-->
+        <TTProcessEmailNotification>
+                <!-- The root key in the conf space to access mail server, port, ... -->
+                <MailRootKeyConf>EmailUserNotification</MailRootKeyConf>
+                <!-- Enable Import Email notifications -->
+                <enabled>false</enabled>
+
+                <!-- Subject template. Can use ${filename} -->
+                <SubjectTemplate><![CDATA[[ Importer ] Item [${filename}"] imported.]]></SubjectTemplate>
+                <SubjectErrorTemplate><![CDATA[[ Importer ] Item [${filename}] process failed.]]></SubjectErrorTemplate>
+
+                <!-- Mail style: key value to MailFormatXSL -->
+                <!-- attachBody: the body is also attached to the mail -->
+                <MailFormat attachBody="false">Imp-HTML</MailFormat>
+                <!-- XSL to get required format -->
+                <MailFormatXSL>
+                        <!-- Relative path to defaultConfPath() - e.g. /data/ADH/conf -->
+                        <!-- contentType attribute override the default one in the mail header -->
+                        <XML contentType="text/xml; charset=US-ASCII"></XML> <!-- If empty no xsl transformation is performed -->
+                        <Imp-HTML contentType="text/html; charset=US-ASCII">xsl/ImportHtmlMail.xsl</Imp-HTML> <!-- Import ok/error. Html -->
+                </MailFormatXSL>
+        </TTProcessEmailNotification>
+</RootTag>
+

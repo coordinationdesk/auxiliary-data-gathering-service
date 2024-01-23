@@ -1,0 +1,24 @@
+5.19.0
+Uses singleton definition (no release trait) from libException 12.x 
+test's Makefile fixed
+------------------------------
+5.18.2
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+5.18.1
+Patch due to issue S2PDGS-299
+using NoReleaseAtExitTraits pattern for ConfigurationSingleton.
+------------------------------
+5.18.0
+Uses new MergeUnion from libResources 6.23.0 
+------------------------------
+5.17.2
+[S3PDGS-49] Fixed bug in ResourceSpace caused by missing virtual qualifier
+in ResourceSpace::defaultExtension() 
+------------------------------
+5.17.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.17.0
+
+Automatically generate from revision "version "5.17""

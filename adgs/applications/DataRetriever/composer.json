@@ -1,0 +1,30 @@
+{
+	"name" : "acs/lta-php-import",
+	"version" : "1.0.0",
+	"type" : "application",
+	"authors" : [{
+			"name" : "acs",
+			"email" : "serena.avolio@exprivia.com"
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"Acs\\PHPImport\\": "classes/",
+			"Acs\\PHPImport\\Config\\" : "config/"
+		}
+	},
+	"repositories" : [{
+			"type" : "composer",
+			"url" : "http://rpmlab2.acs:8001/"
+		}
+	],
+	"config" : {
+		"preferred-install" : "dist",
+		"disable-tls" : true,
+		"secure-http" : false
+	},
+	"require" : {
+		"acs/acs-php-tools" : "1.0.2",
+		"monolog/monolog" : "*"
+	}
+}

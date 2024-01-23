@@ -1,0 +1,37 @@
+<Task_Table xmlns:a="http://www.acsys.it/schemas/IPF" xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xsi:schemaLocation="http://www.acsys.it/schemas/IPF TaskTable.xsd">
+	<Processor_Name>KMLZIP_DISTRIB_FORMAT</Processor_Name>
+	<Version>1.0</Version>
+	<Test>No</Test>
+	<Min_Disk_Space units="MB">1024</Min_Disk_Space>
+	<Max_Time units="sec">0<!--no time limit for execution-->
+	</Max_Time>
+	<Private_Config>
+		<List_of_Cfg_Files count="0">
+		</List_of_Cfg_Files>
+		<Default>0</Default>
+	</Private_Config>
+	<List_of_Config_Spaces count="0">
+	</List_of_Config_Spaces>
+	<List_of_Pools count="1">
+		<Pool>
+			<Detached>false</Detached>
+			<Killing_Signal>15</Killing_Signal>
+			<List_of_Tasks count="1">
+				<Task>
+					<Name>ZipOutputTask</Name>
+					<Version>01.00</Version>
+					<Critical>true</Critical>
+					<Criticality_Level>1</Criticality_Level>
+					<File_Name>/usr/local/components/ADGS/bin/PackageFmtEOFpackTask-KMLzip</File_Name>
+					<List_of_Parameters count="0">
+					</List_of_Parameters>
+					<List_of_Inputs count="0">
+					</List_of_Inputs>
+					<List_of_Outputs count="0"/>
+					<List_of_Breakpoints count="0"/>
+				</Task>
+			</List_of_Tasks>
+		</Pool>
+	</List_of_Pools>
+</Task_Table>
+

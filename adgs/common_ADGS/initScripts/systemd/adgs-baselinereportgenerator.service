@@ -1,0 +1,16 @@
+[Unit]
+Description= ADGS Baseline Report Generator
+Documentation=https://www.exprivia.com
+Requires=network.target
+After=network.target
+
+[Service]
+Type=oneshot
+
+User=opadgs
+Group=ccds
+
+ExecStart=/usr/local/components/ADGS/bin/adgs_baseline_report_generator.rb
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,297 @@
+<?xml version="1.0" standalone="yes"?>
+<ExplorerWrapperConf>
+	<ExplorerWrapper>
+		<List_of_Satellites count="5">
+			<Satellite>
+				<!-- TC_SAT_CRYOSAT -->
+				<Id>41</Id>
+				<Name>Cryosat</Name>
+				<Mission>1</Mission>
+				<!-- List of ASSOCIATIONS TimeModel-FileType -->
+				<List_of_Models count="7">
+					<TimeModel>
+						<!-- TC_TIMEMOD_IERS_B_PREDICTED -->
+						<Model>1</Model>
+						<FileType></FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_IERS_B_RESTITUTED -->
+						<Model>2</Model>
+						<FileType></FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_FOS_PREDICTED -->
+						<Model>3</Model>
+						<FileType>MPL_ORBPRE</FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_FOS_RESTITUTED -->
+						<Model>4</Model>
+						<FileType></FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_DORIS_PRELIMINARY -->
+						<Model>5</Model>
+						<FileType>AUX_ORBDOP</FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_DORIS_PRECISE -->
+						<Model>6</Model>
+						<FileType>AUX_ORBDOR</FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_DORIS_NAVIGATOR -->
+						<Model>7</Model>
+						<FileType>DOR_NAV_0_</FileType>
+					</TimeModel>
+				</List_of_Models>
+				<TimeConversionFile>
+					<FileType></FileType>
+					<OnBoardTimeGadsSize></OnBoardTimeGadsSize>
+					<OnBoardTimeGadsTimeSize></OnBoardTimeGadsTimeSize>
+					<OnBoardTimeGadsSBTSize></OnBoardTimeGadsSBTSize>
+					<OnBoardTimeGadsClockStepSize></OnBoardTimeGadsClockStepSize>
+				</TimeConversionFile>
+				<OrbitScenarioFile>
+					<FileType>MPL_ORBREF</FileType>
+				</OrbitScenarioFile>
+			</Satellite>
+			<Satellite>
+				<!-- TC_SAT_ENVISAT -->
+				<Id>21</Id>
+				<Name>Envisat</Name>
+				<Mission>1</Mission>
+				<!-- List of ASSOCIATIONS TimeModel-FileType -->
+				<List_of_Models count="7">
+					<TimeModel>
+						<!-- TC_TIMEMOD_IERS_B_PREDICTED -->
+						<Model>1</Model>
+						<FileType></FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_IERS_B_RESTITUTED -->
+						<Model>2</Model>
+						<FileType></FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_FOS_PREDICTED -->
+						<Model>3</Model>
+						<FileType>AUX_FPO_AX</FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_FOS_RESTITUTED -->
+						<Model>4</Model>
+						<FileType></FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_DORIS_PRELIMINARY -->
+						<Model>5</Model>
+						<FileType>AUX_ORBDOP</FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_DORIS_PRECISE -->
+						<Model>6</Model>
+						<FileType>AUX_ORBDOR</FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_DORIS_NAVIGATOR -->
+						<Model>7</Model>
+						<FileType>DOR_NAV_0_</FileType>
+					</TimeModel>
+				</List_of_Models>
+				<TimeConversionFile>
+					<FileType>AUX_TIM_AX</FileType>
+					<!-- Not included the newline -->
+					<OnBoardTimeGadsSize>51</OnBoardTimeGadsSize>
+					<OnBoardTimeGadsTimeSize>27</OnBoardTimeGadsTimeSize>
+					<OnBoardTimeGadsSBTSize>11</OnBoardTimeGadsSBTSize>
+					<OnBoardTimeGadsClockStepSize>11</OnBoardTimeGadsClockStepSize>
+				</TimeConversionFile>
+				<OrbitScenarioFile>
+					<FileType>MPL_ORB_SC</FileType>
+				</OrbitScenarioFile>
+			</Satellite>
+			<Satellite>
+				<!-- TC_SAT_GOCE -->
+				<Id>61</Id>
+				<Name>Goce</Name>
+				<Mission>1</Mission>
+				<!-- List of ASSOCIATIONS TimeModel-FileType -->
+				<List_of_Models count="7">
+					<TimeModel>
+						<!-- TC_TIMEMOD_IERS_B_PREDICTED -->
+						<Model>1</Model>
+						<FileType></FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_IERS_B_RESTITUTED -->
+						<Model>2</Model>
+						<FileType></FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_FOS_PREDICTED -->
+						<Model>3</Model>
+						<FileType>MPL_ORBPRE</FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_FOS_RESTITUTED -->
+						<Model>4</Model>
+						<FileType></FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_DORIS_PRELIMINARY -->
+						<Model>5</Model>
+						<FileType>AUX_ORBDOP</FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_DORIS_PRECISE -->
+						<Model>6</Model>
+						<FileType>AUX_ORBDOR</FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_DORIS_NAVIGATOR -->
+						<Model>7</Model>
+						<FileType>DOR_NAV_0_</FileType>
+					</TimeModel>
+				</List_of_Models>
+				<TimeConversionFile>
+					<FileType>AUX_OUTC__</FileType>
+					<!-- New Tags to be used in GOCE -->
+					<FirstValidLineIndex>16</FirstValidLineIndex>
+					<ValidLineElements>11</ValidLineElements>
+					<!-- VALIDITY FLAG value -->
+					<ValidityField>1</ValidityField>
+					<!-- The following tags will be removed after new OBTConversion handling introduction for GOCE -->
+					<OnBoardTimeGadsSize>51</OnBoardTimeGadsSize>
+					<OnBoardTimeGadsTimeSize>27</OnBoardTimeGadsTimeSize>
+					<OnBoardTimeGadsSBTSize>11</OnBoardTimeGadsSBTSize>
+					<OnBoardTimeGadsClockStepSize>11</OnBoardTimeGadsClockStepSize>
+				</TimeConversionFile>
+				<OrbitScenarioFile>
+					<FileType>MPL_ORBSCT</FileType>
+				</OrbitScenarioFile>
+			</Satellite>
+			<Satellite>
+				<!-- TC_SAT_SENTINEL_1A -->
+				<Id>110</Id>
+				<Name>S1A</Name>
+				<Mission>1</Mission>
+				<!-- List of ASSOCIATIONS TimeModel-FileType -->
+				<List_of_Models count="7">
+					<TimeModel>
+						<!-- TC_TIMEMOD_IERS_B_PREDICTED -->
+						<Model>1</Model>
+						<FileType></FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_IERS_B_RESTITUTED -->
+						<Model>2</Model>
+						<FileType></FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_FOS_PREDICTED -->
+						<Model>3</Model>
+						<FileType>MPL_ORBPRE</FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_FOS_RESTITUTED -->
+						<Model>4</Model>
+						<FileType></FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_DORIS_PRELIMINARY -->
+						<Model>5</Model>
+						<FileType>AUX_ORBDOP</FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_DORIS_PRECISE -->
+						<Model>6</Model>
+						<FileType>AUX_ORBDOR</FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_DORIS_NAVIGATOR -->
+						<Model>7</Model>
+						<FileType>DOR_NAV_0_</FileType>
+					</TimeModel>
+				</List_of_Models>
+				<TimeConversionFile>
+					<FileType>AUX_OUTC__</FileType>
+					<!-- New Tags to be used in GOCE -->
+					<FirstValidLineIndex>16</FirstValidLineIndex>
+					<ValidLineElements>11</ValidLineElements>
+					<!-- VALIDITY FLAG value -->
+					<ValidityField>1</ValidityField>
+					<!-- The following tags will be removed after new OBTConversion handling introduction for GOCE -->
+					<OnBoardTimeGadsSize>51</OnBoardTimeGadsSize>
+					<OnBoardTimeGadsTimeSize>27</OnBoardTimeGadsTimeSize>
+					<OnBoardTimeGadsSBTSize>11</OnBoardTimeGadsSBTSize>
+					<OnBoardTimeGadsClockStepSize>11</OnBoardTimeGadsClockStepSize>
+				</TimeConversionFile>
+				<OrbitScenarioFile>
+					<FileType>MPL_ORBSCT</FileType>
+				</OrbitScenarioFile>
+			</Satellite>
+			<Satellite>
+				<!-- TC_SAT_SENTINEL_1B -->
+				<Id>111</Id>
+				<Name>S1B</Name>
+				<Mission>1</Mission>
+				<!-- List of ASSOCIATIONS TimeModel-FileType -->
+				<List_of_Models count="7">
+					<TimeModel>
+						<!-- TC_TIMEMOD_IERS_B_PREDICTED -->
+						<Model>1</Model>
+						<FileType></FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_IERS_B_RESTITUTED -->
+						<Model>2</Model>
+						<FileType></FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_FOS_PREDICTED -->
+						<Model>3</Model>
+						<FileType>MPL_ORBPRE</FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_FOS_RESTITUTED -->
+						<Model>4</Model>
+						<FileType></FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_DORIS_PRELIMINARY -->
+						<Model>5</Model>
+						<FileType>AUX_ORBDOP</FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_DORIS_PRECISE -->
+						<Model>6</Model>
+						<FileType>AUX_ORBDOR</FileType>
+					</TimeModel>
+					<TimeModel>
+						<!-- TC_TIMEMOD_DORIS_NAVIGATOR -->
+						<Model>7</Model>
+						<FileType>DOR_NAV_0_</FileType>
+					</TimeModel>
+				</List_of_Models>
+				<TimeConversionFile>
+					<FileType>AUX_OUTC__</FileType>
+					<!-- New Tags to be used in GOCE -->
+					<FirstValidLineIndex>16</FirstValidLineIndex>
+					<ValidLineElements>11</ValidLineElements>
+					<!-- VALIDITY FLAG value -->
+					<ValidityField>1</ValidityField>
+					<!-- The following tags will be removed after new OBTConversion handling introduction for GOCE -->
+					<OnBoardTimeGadsSize>51</OnBoardTimeGadsSize>
+					<OnBoardTimeGadsTimeSize>27</OnBoardTimeGadsTimeSize>
+					<OnBoardTimeGadsSBTSize>11</OnBoardTimeGadsSBTSize>
+					<OnBoardTimeGadsClockStepSize>11</OnBoardTimeGadsClockStepSize>
+				</TimeConversionFile>
+				<OrbitScenarioFile>
+					<FileType>MPL_ORBSCT</FileType>
+				</OrbitScenarioFile>
+			</Satellite>
+
+		</List_of_Satellites>
+	</ExplorerWrapper>
+</ExplorerWrapperConf>

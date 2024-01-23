@@ -1,0 +1,27 @@
+2.56.8
+Added support to Sentinels missions C and D in Factory
+------------------------------------------------------------------
+2.56.7
+Sentinel6 configuration updated for L0 PFS v4A
+------------------------------------------------------------------
+2.56.6
+Sentinel6 configuration updated for packets rate.
+------------------------------------------------------------------
+2.56.5
+Added test utility ISPTypeExtractor
+------------------------------------------------------------------
+2.56.4
+Makefile update for new environment
+------------------------------------------------------------------
+2.56.3
+S1PDGS-32026: Sentinel1 configuration updated.
+------------------------------------------------------------------
+2.56.2
+Patch release automatically generated to instrument version files
+------------------------------------------------------------------
+2.56.1
+Configuration for Sentinel-6 updated.
+------------------------------------------------------------------
+2.56.0
+
+Automatically generate from revision "version "2.56""

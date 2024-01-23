@@ -1,0 +1,19 @@
+2.39.5
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+2.39.4
+MP: no more db related deprecated methods/classes 
+------------------------------
+2.39.3
+MP: compilation warnings cleanup
+test compilation fixed
+------------------------------
+2.39.2
+Fixing correct use of libException macros (due to libException 7.0.0)
+------------------------------
+2.39.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.39.0
+
+Automatically generate from revision "version "2.39""

@@ -1,0 +1,11 @@
+#Load  t_discoveryplugins
+,,,,,,,,,,
+,,,,,,,,,,
+'name'
+'ftp_imp_pl_adgs'
+'nop_imp'
+'ftp_imp_pl_adgs_date'
+'ftp_imp_pl_cams'
+'DataRetrieverPluginOData'
+'ftp_imp_pl_adgs_newer'
+'DataRetrieverPluginMpip'

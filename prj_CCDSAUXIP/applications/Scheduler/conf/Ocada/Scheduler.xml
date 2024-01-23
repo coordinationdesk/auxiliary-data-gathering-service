@@ -1,0 +1,12 @@
+<Root>
+	<TlScheduler>
+		<Messages>
+			<PoolStarted>starting execution of pool #</PoolStarted>
+			<PoolCompleted>completed execution of pool #</PoolCompleted>
+			<TaskStarted>starting execution of task #</TaskStarted>
+			<TaskCompleted>completed execution of task #</TaskCompleted>
+			<TaskFailed>execution failed on task #</TaskFailed>
+			<StartProcessingTime>processing start time#</StartProcessingTime>
+		</Messages>
+	</TlScheduler>
+</Root>

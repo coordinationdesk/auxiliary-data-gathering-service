@@ -1,0 +1,24 @@
+[Unit]
+Description=ADGS Importer
+Documentation=https://www.exprivia.com
+Requires=network.target
+After=network.target
+PartOf=adgs-client.service
+# Start this unit after the app.service start
+After=adgs-client.service
+
+[Service]
+Type=simple
+
+User=opadgs
+Group=ccds
+UMask=0002
+ExecStart=/usr/local/components/ADGS/bin/Importer
+StandardOutput=null
+StandardError=null
+KillMode=process
+KillSignal=SIGINT
+
+[Install]
+# This unit should start when adgs-client.service is starting
+WantedBy=adgs-client.service

@@ -1,0 +1,6 @@
+coverage/
+test/CAMSWorkDir/20210422230000/
+test/CAMSWorkDir/20210430000000/
+test/SourceBasket/NonExistingFile/JobOrder.xml
+test/SourceBasket/NotToTakeFile/JobOrder.xml
+test/SourceBasket/ValidJobOrder/JobOrder.xml

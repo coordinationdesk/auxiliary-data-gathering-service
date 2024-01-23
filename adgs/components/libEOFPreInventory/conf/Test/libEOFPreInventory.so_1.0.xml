@@ -1,0 +1,109 @@
+<Root>
+<!--
+Valorize RedirectPath with path where xsd files occur!.
+-->
+	<XML_DTDConfiguration>		
+		<EnableDTDRedirect>true</EnableDTDRedirect>
+		<RedirectPath>/home/lucpul/s2_schema/trunk/</RedirectPath>
+		<List_Of_LocalProtocols>
+			<LocalProtocol>schema</LocalProtocol>
+		</List_Of_LocalProtocols>	
+	</XML_DTDConfiguration>
+
+	<PreInventory>
+		<ConfigEOFPreInventory>
+			<!-- DO NOT MODIFY Groups of regexp 1 MissionId, 2 FileClass, 3 FileType, 4/5 Validity Period, 6 version, 7 extension-->
+			<!--<EOFFileNameRegExp>(S1[A|B]{1})_([[:alpha:]]{4})_([[:alnum:]_]{10})_([[:digit:]]{8}T[[:digit:]]{6})_([[:digit:]]{8}T[[:digit:]]{6})_([[:digit:]]{4}).([[:alpha:]]{3})</EOFFileNameRegExp>-->
+			<Missions>
+			        <!-- la mission sara' sempre 1 per tutti ????-->
+                                <Pair missionInventory="1" missionId="S1A"/>
+                                <Pair missionInventory="1" missionId="S1B"/>
+                                <Pair missionInventory="1" missionId="S2A"/>
+                                <Pair missionInventory="1" missionId="S2B"/>
+                                <Pair missionInventory="1" missionId="S2_"/>
+                                <!--<Pair missionInventory="1" missionId="S3A"/>-->
+                                <!--<Pair missionInventory="1" missionId="S3B"/>-->
+                        </Missions>
+			<ExternalSchemaValidation>true</ExternalSchemaValidation>
+			<TimeLUT>
+				<LUTElement>
+					<OriginalDate>UTC=9999-99-99T99:99:99</OriginalDate>
+					<ConvertedDate>UTC=9999-12-31T23:59:59</ConvertedDate>
+				</LUTElement>
+			</TimeLUT>
+		</ConfigEOFPreInventory>
+<!--
+Add hereafter managed file type setting DoVersioning=false so far.
+-->
+		<PluginsRegistrationSettings>
+			<EOFPreInventoryFactory>
+				<List_Of_Registrations count="8">    
+				<Registration>
+				    <Satellite></Satellite>
+				    <Mission></Mission>
+				    <Processor></Processor>
+				    <Version></Version>
+				    <Object>CNF_OPAI__</Object>
+				    <DoVersioning>false</DoVersioning>
+				</Registration>
+				<Registration>
+				    <Satellite></Satellite>
+				    <Mission></Mission>
+				    <Processor></Processor>
+				    <Version></Version>
+				    <Object>MPL_TLEPRE</Object>
+				    <DoVersioning>false</DoVersioning>
+				</Registration>
+				<Registration>
+				<Satellite></Satellite>
+					<Mission></Mission>
+					<Processor></Processor>
+					<Version></Version>
+					<Object>MPL_ORBPRE</Object>
+					<DoVersioning>false</DoVersioning>
+				</Registration>
+				<Registration>
+					<Satellite></Satellite>
+					<Mission></Mission>
+					<Processor></Processor>
+					<Version></Version>
+					<Object>MPL_ORBRES</Object>
+					<DoVersioning>false</DoVersioning>
+					</Registration>
+				  <Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>REP_PASS_4</Object>
+						<DoVersioning>false</DoVersioning>
+					</Registration>
+				  <Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>MPL_EDRPOI</Object>
+						<DoVersioning>false</DoVersioning>
+					</Registration>
+					<Registration>
+				    	<Satellite></Satellite>
+				    	<Mission></Mission>
+				    	<Processor></Processor>
+				    	<Version></Version>
+				    	<Object>REP_ADCA__</Object>
+				    	<DoVersioning>false</DoVersioning>
+					</Registration>
+					<Registration>
+				    	<Satellite></Satellite>
+				    	<Mission></Mission>
+				    	<Processor></Processor>
+				    	<Version></Version>
+				    	<Object>REP_STNACQ</Object>
+				    	<DoVersioning>false</DoVersioning>
+					</Registration>
+				</List_Of_Registrations>
+			</EOFPreInventoryFactory>
+		</PluginsRegistrationSettings>
+	</PreInventory>
+</Root>

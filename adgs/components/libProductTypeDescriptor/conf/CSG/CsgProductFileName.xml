@@ -1,0 +1,29 @@
+<?xml version="1.0" standalone="yes"?>
+<ProductFileNameConf>
+	<CosmoProductFileName>
+		<MissionID>CSGS</MissionID>
+		<FileNameVersion>0001</FileNameVersion>
+		<FileRootSize>15</FileRootSize>
+		<FileNameSize>65</FileNameSize>
+		<!-- Permitted Product file extensions -->
+		<!-- WARNING: Methods returning only 1 filename use first extension of this list -->
+		<List_of_File_Ext count="0">
+		</List_of_File_Ext>
+		<!-- Permitted Product file classes -->
+		<List_of_File_Classes count="2">
+			<File_Class>TEST</File_Class>
+			<File_Class>OPER</File_Class>
+		</List_of_File_Classes>
+		<List_of_Level0_Product_Id count="5">
+			<Id>CDF_A</Id>
+            <Id>CDF_B</Id>
+			<Id>CDF_C</Id>
+            <Id>CDF_D</Id>
+            <Id>CDF_F</Id>
+		</List_of_Level0_Product_Id>
+		<List_of_Level1_Product_Id count="0">
+		</List_of_Level1_Product_Id>
+		<List_of_Level2_Product_Id count="0">
+		</List_of_Level2_Product_Id>
+	</CosmoProductFileName>
+</ProductFileNameConf>

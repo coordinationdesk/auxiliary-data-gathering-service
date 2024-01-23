@@ -1,0 +1,18 @@
+[Unit]
+Description=Run DGS dgs-garbagecleaner.service every 10 minutes
+Documentation=https://www.eumetsat.it
+Requires=network.target
+After=network.target
+PartOf=ccds-auxipmanagement.service
+PartOf=ccds-auxipingestion.service
+PartOf=ccds-auxipfrontend.service
+
+[Timer]
+OnCalendar=*:0/10
+Persistent=true
+Unit=ccds-garbagecleaner.service
+
+[Install]
+WantedBy=ccds-auxipmanagement.service
+WantedBy=ccds-auxipingestion.service
+WantedBy=ccds-auxipfrontend.service

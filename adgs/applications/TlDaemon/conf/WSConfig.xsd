@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 NT (http://www.xmlspy.com) by  () -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2000/10/XMLSchema" elementFormDefault="qualified">
+	<xsd:element name="Proc_Table">
+		<xsd:annotation>
+			<xsd:documentation>Comment describing your root element</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="List_of_Processors">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Processor" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="Processor_Name">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:token">
+													<xsd:whiteSpace value="collapse"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="Version">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:token">
+													<xsd:whiteSpace value="collapse"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="Log_Level">
+											<xsd:simpleType>
+												<xsd:restriction base="xsd:token">
+													<xsd:whiteSpace value="collapse"/>
+													<xsd:enumeration value="ERROR"/>
+													<xsd:enumeration value="WARNING"/>
+													<xsd:enumeration value="INFO"/>
+													<xsd:enumeration value="DEBUG"/>
+												</xsd:restriction>
+											</xsd:simpleType>
+										</xsd:element>
+										<xsd:element name="Task_Table" type="xsd:string"/>
+										<xsd:element name="Orders">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Systematic" default="enabled">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:token">
+																<xsd:whiteSpace value="collapse"/>
+																<xsd:enumeration value="enabled"/>
+																<xsd:enumeration value="disabled"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="NRT" default="enabled">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:token">
+																<xsd:whiteSpace value="collapse"/>
+																<xsd:enumeration value="enabled"/>
+																<xsd:enumeration value="disabled"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="Reprocess" default="enabled">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:token">
+																<xsd:whiteSpace value="collapse"/>
+																<xsd:enumeration value="enabled"/>
+																<xsd:enumeration value="disabled"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="Trblshoot" default="enabled">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:token">
+																<xsd:whiteSpace value="collapse"/>
+																<xsd:enumeration value="enabled"/>
+																<xsd:enumeration value="disabled"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+													<xsd:element name="SUBS" default="enabled">
+														<xsd:simpleType>
+															<xsd:restriction base="xsd:token">
+																<xsd:whiteSpace value="collapse"/>
+																<xsd:enumeration value="enabled"/>
+																<xsd:enumeration value="disabled"/>
+															</xsd:restriction>
+														</xsd:simpleType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="count" type="xsd:positiveInteger" use="required"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

@@ -1,0 +1,17 @@
+localuser	remote cvs server
+------------------------------
+clanas	 	:pserver:clanas@cvsserver.acs:/mnt/cvs/cvsroot/space 
+kenn		:pserver:giapas@cvsserver.acs:/mnt/cvs/cvsroot/space
+achillino	:pserver:achnat@cvsserver.acs:/mnt/cvs/cvsroot/space
+marpas 		:pserver:marpas@cvsserver.acs:/mnt/cvs/cvsroot/space 
+chicas		:pserver:chicas@cvsserver.acs:/mnt/cvs/cvsroot/space
+micmaz		:pserver:micmaz@cvsserver.acs:/mnt/cvs/cvsroot/space
+marfav 		:pserver:marfav@cvsserver.acs:/mnt/cvs/cvsroot/space
+nicvac		:pserver:nicvac@cvsserver.acs:/mnt/cvs/cvsroot/space
+danalt		:pserver:danalt@cvsserver.acs:/mnt/cvs/cvsroot/space
+fracar		:pserver:fracar@cvsserver.acs:/mnt/cvs/cvsroot/space
+enrcar		:pserver:enrcar@cvsserver.acs:/mnt/cvs/cvsroot/space
+giufor		:pserver:giufor@cvsserver.acs:/mnt/cvs/cvsroot/space
+seravo		:pserver:seravo@cvsserver.acs:/mnt/cvs/cvsroot/space
+opadc		:pserver:seravo@cvsserver.acs:/mnt/cvs/cvsroot/space
+matteo		:pserver:matteo.airoldi@cvsserver.acs:/mnt/cvs/cvsroot/space

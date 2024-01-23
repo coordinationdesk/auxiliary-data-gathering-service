@@ -1,0 +1,11 @@
+[Unit]
+Description=Run adf_handler.sh echa 5 minutes
+Requires=adgs-adfHandler.service
+
+[Timer]
+OnBootSec=15min
+OnUnitActiveSec=5min
+Unit=adgs-adfHandler.service
+
+[Install]
+WantedBy=timers.target

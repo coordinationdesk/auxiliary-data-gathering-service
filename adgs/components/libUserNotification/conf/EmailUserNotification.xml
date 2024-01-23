@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Library>
+	<!-- PackageEmailNotifier configuration-->
+	
+	<!-- IMPORTANT NOTE:
+	The libSendMail used to send actual mail, does not support secure login or certificates.
+	So:
+	- install the smtp service Postfix on localhost
+	- configure Postfix relay (using the actual smtp service like gmail, office365, etc...)
+	- set server=localhost (do not use the hostname! localhost is needed by postfix service!)
+	This way the process use the unsecure smtp on localhost and Postfix will use the secured one by configured relay.
+	 -->
+	
+	<EmailUserNotification>
+		<!-- Mail server-->
+		<server>localhost</server>
+		<!-- Mail port-->
+		<port></port>
+		<!-- Mail login-->
+		<login></login>
+		<!-- Mail password-->
+		<password></password>
+		<!-- Mail sender mail-->
+		<mailSender>noreply@acsys.it</mailSender>
+		<!-- Force the target mail address-->
+		<ForceMailDestinationAddress>name@acsys.it</ForceMailDestinationAddress>
+		<!-- Set the target mail address-->
+		<SetForceMailAddress>0</SetForceMailAddress>
+		<!-- Number of retries.-->
+		<maxNumberOfRetries>3</maxNumberOfRetries>
+		<!-- Elapsed time to retry an errored send mail.-->
+		<elapsedTimeToRetry unit = "sec">5</elapsedTimeToRetry>
+	</EmailUserNotification>
+</Library>
+

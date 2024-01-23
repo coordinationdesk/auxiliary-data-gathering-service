@@ -1,0 +1,27 @@
+<root>
+	<SRVJsonProductAttributes>
+		<OutputExt>ATTRIBUTES</OutputExt>
+		<CleanTempDir>false</CleanTempDir>
+		<OptionalAttributes>false</OptionalAttributes>
+		<List_of_FilenameRegExp>
+			<FilenameRegExp>(S1)._[A-Z]{4}_(AM[HV]_ERRMAT)_[A-Z0-9_]+\.EOF\.?([A-Za-z0-9]{2,})?</FilenameRegExp><!-- S1 aux types -->
+			<FilenameRegExp>(S1)._[A-Z]{4}_(AUX_[A-Z0-9_]{6})_[A-Z0-9_]+\.EOF\.?([A-Za-z0-9]{2,})?</FilenameRegExp><!-- S1 aux types -->
+			<FilenameRegExp>(S1)._(AUX_[A-Z0-9]{3,})_.\.EOF\.?([A-Za-z0-9]{2,})</FilenameRegExp><!-- S1 aux types -->
+			<FilenameRegExp>(S1)._[A-Z]{4}_([A-Z0-9_]{12})_.*\.([A-Za-z0-9]{2,})</FilenameRegExp>
+			<FilenameRegExp>(S1)._[A-Z]{4}_([A-Z0-9_]{10}).*\.([A-Za-z0-9]{2,})</FilenameRegExp> <!-- S1 product types -->
+			<FilenameRegExp>(S1)._(MP_.*)_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}.*([A-Za-z0-9]{2,})</FilenameRegExp>
+			<FilenameRegExp>(S1)._([A-Z0-9_]{10}).*\.([A-Za-z0-9]{2,})</FilenameRegExp> <!-- S1 product types -->
+			<FilenameRegExp>(S2)[AB_]_[A-Z]{4}_([A-Z0-9_]{10})_.*\.([A-Za-z0-9]{2,})</FilenameRegExp>
+			<FilenameRegExp>(S2)[AB_]_[A-Z]{4}_([A-Z0-9_]{12})_.*\.([A-Za-z0-9]{2,})</FilenameRegExp>
+			<FilenameRegExp>(S3)._([A-Z0-9_]{11})_.*\.([A-Za-z0-9]{2,})</FilenameRegExp>
+			<FilenameRegExp>(S3)._[A-Z]{4}_([A-Z0-9_]{10})_.*\.([A-Za-z0-9]{2,})</FilenameRegExp>
+			<FilenameRegExp>(S5P)_[A-Z]{4}_([A-Z0-9_]{10})_.*\.([A-Za-z0-9]{2,})</FilenameRegExp>
+		</List_of_FilenameRegExp>
+		<List_Of_Conf_Spaces>
+			<Conf_Space>S1LTAJsonProductAttributes</Conf_Space>
+			<Conf_Space>S2LTAJsonProductAttributes</Conf_Space>
+			<Conf_Space>S3LTAJsonProductAttributes</Conf_Space>
+		    <Conf_Space>S5LTAJsonProductAttributes</Conf_Space>
+		</List_Of_Conf_Spaces>
+	</SRVJsonProductAttributes>
+</root>

@@ -1,0 +1,43 @@
+6.0.0
+Db broadcast via MQTT introduced.
+In case of critical errors during PackageExporter main immediate stop is forced (instead of restarting)
+-------------------------------------------------------------------------------------------------------
+5.0.0
+Deprecated doRestart() removed.
+-------------------------------------------------------------------------------------------------------
+4.0.0
+SignalHandler dependency removed.
+Signal and exit management code has been refactoried to use libApp::getCurrentStopMode
+Auto restart in case of startup failures has been deleted, so no more -DPE_RECOVER_STARTUP can be used
+-------------------------------------------------------------------------------------------------------
+3.0.4
+no more broadfcast from DB.
+To have the same low latency substitute with MQTT messages
+------------------------------
+3.0.3
+Log file opened earlier to report errors occurred during startup phase.
+
+Startup auto recovery has been disabled.
+  This because if the process is always up, trying to start over and over, it is difficult to detect the anomaly through the monitoring and control system.
+  While, if the process is down, the anomaly can be detected easily.
+  If you still prefer the agent trying to go up automatically over and over, you can alternatively:
+  - setup systemctl accordingly
+  - compile this module with option -DPE_RECOVER_STARTUP
+    Note: cannot be handled by a configuration parameter because configuration itself is loaded at start-up phase.
+------------------------------
+3.0.2
+MP: no more db related deprecated methods/classes
+------------------------------
+3.0.1
+MP: compilation warnings cleanup
+------------------------------
+3.0.0
+MUSTER-48
+Support for Export of Inventory Items stored on Asynch Storage Manager (like LTA)
+------------------------------
+2.2.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.2.0
+
+Automatically generate from revision "version "2.2""

@@ -1,0 +1,172 @@
+#if 0
+
+	Copyright 1995-2002, Advanced Computer Systems , Inc.
+	Via Della Bufalotta, 378 - 00139 Roma - Italy
+	http://www.acsys.it
+
+	All Rights Reserved.
+
+	This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems;
+	the contents of this file may not be disclosed to third parties, copied or
+	duplicated in any form, in whole or in part, without the prior written
+	permission of Advanced Computer Systems, Inc.
+
+	$Prod: A.C.S. Listener Library $
+
+	$Name$
+
+	$Id$
+
+	$Author$
+
+	$Log$
+	
+
+	
+
+#endif
+ 
+#include <Listener.h>
+#include <exException.h>
+#include <iostream.h>
+#include <DgfListenerV.h>
+
+using namespace acs ;
+
+exCLASS_DEFINE_DEBUG_LEVEL(Listener);
+
+
+static DgfListenerV version ;
+
+Listener::Listener(rsResourceSet& rs): 
+	_dgfBroadcastListener(rs),
+	_lastTimeBroadcast(0),
+	_rs(rs)
+{
+	maskSignals(true); // To prevent signal catching in listening thread
+
+	exCLASS_INIT_DEBUG(Listener_DEBUG);
+	
+	// start the timer
+	timer.start();
+}
+
+
+Listener::~Listener()
+{
+	timer.stop();
+	stopBroadcastListening();
+}
+
+//
+// implement the run method
+//
+void Listener::run()
+{
+	// get the polling time
+	int pollingTime = 0;
+	_rs.getValue("ListenerPollingTime", pollingTime);
+	
+	timeval timeSelect ;
+	timeSelect.tv_sec = pollingTime;
+	timeSelect.tv_usec = 0;
+	while(true)
+	{
+		if(requestedCancel()) //cancel was requested
+		return;
+		
+		// the select destroys the time variable
+		timeval timer2=timeSelect;
+		select(0,0,0,0,&timer2);
+		// get messages from db
+		takeMessageFromDB();
+		// check if a artifial message must be prepared
+		createTimeMessage();
+	
+	}
+	
+}
+//
+// stop listening
+//
+
+void Listener::stopBroadcastListening()
+{
+	if(running())
+		stop();
+}
+//
+// start listening
+//
+void Listener::startBroadcastListening()
+{
+	start();
+}
+
+//
+// set the wished messages to be received. If it is not called all the DBmessages return
+//
+void Listener::setMessage(const vector<DbMessage>& messages)
+{
+	_wishedMessages = messages;
+	_dgfBroadcastListener.setMessageToReceive(_wishedMessages);
+}
+//
+// get the wished messages coming from the db
+//
+void Listener::getMessage(vector<DbMessage>& messages)
+{
+	ACE_Guard<ACE_Thread_Mutex> guard(_mutex); //automaticaly acquire the lock
+	
+	messages = _messagesQueue;
+	// empting the _messagesQueue
+	_messagesQueue.clear();
+}
+
+//
+// get the message from the db periodically
+//
+void Listener::takeMessageFromDB()
+{
+	ACE_Guard<ACE_Thread_Mutex> guard(_mutex); //automaticaly acquire the lock
+	
+	// get the messages coming from the db
+	vector <DbMessage> list;
+	_dgfBroadcastListener.getReceivedMessages(list);
+
+	if (list.size())
+	{
+		excerr << "Listener::" << __LINE__ << " Listener::got num of db Messages from db " << list.size() << endl;
+		for(u_int i = 0; i < list.size(); i++)
+		{
+			// assigning the Broadcast message to internal queue
+			excerr << "Listener::" << __LINE__ << " Got n." << i+1 << " " << list[i].table() << " " << list[i].action() << endl;
+			_messagesQueue.push_back(list[i]);
+		}					
+		_lastTimeBroadcast = 0;
+	}
+}
+//
+// if the eplapsed time is passed, an artificil db message is  generate to force the inspection in the db
+//
+void Listener::createTimeMessage()
+{
+	// elapsed tme is millsecs
+	_lastTimeBroadcast += timer.elapsed();
+	u_int createTimeMessage = 0;
+	// get from rset the time in sec showing the time range to build the artificial message 
+	_rs.getValue("WishedElapsedTime", createTimeMessage);
+	if (_lastTimeBroadcast >= createTimeMessage* 1000)
+	{
+		excerr << "Listener::" << __LINE__ << " Create a artificial wished messages after " <<_lastTimeBroadcast <<" msec" << endl;	
+		
+		// define the criteria with the timer class
+		if (_wishedMessages.size())
+			_messagesQueue = _wishedMessages;
+			
+		_lastTimeBroadcast = 0;
+	}
+	// restart the timer
+	timer.start();
+}
+

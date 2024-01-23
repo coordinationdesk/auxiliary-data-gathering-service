@@ -1,0 +1,9 @@
+# The File can contains any number of empty lines and
+# or starting with hash negliged by script
+# The First meaningful line must contain the colum names
+# Fallowing rows are traited as record.
+# Fields must be quoted by single quote if strings or plain in case of Numeric values
+ip_cidr,level,securityzone
+'172.30.39.0/24',  1, 'INT TEST Security Zone'
+'10.10.50.0/24',   1, 'INT OPER Security Zone'
+

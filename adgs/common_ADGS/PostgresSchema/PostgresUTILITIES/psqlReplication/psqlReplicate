@@ -1,0 +1,657 @@
+#!/bin/sh
+#
+# Copyright 2010-2020, Advanced Computer Systems , Inc.
+# Via Della Bufalotta, 378 - 00139 Roma - Italy
+# http://www.acsys.itA.C.S. - Advanced Computer Systems S.p.A.
+# 
+# This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems, S.p.A.;
+# the contents of this file may not be disclosed to third parties, copied or
+# duplicated in any form, in whole or in part, without the prior written
+# permission of Advanced Computer Systems, S.p.A.
+#	
+#
+#   $Prod: A.C.S. Postgres Replication script $
+#
+#	$Id$
+#
+#	$Author$
+#
+#	$Log$
+#	Revision 1.6  2015/12/01 14:41:00  achnat
+#	Implemented changes to allow only ip address
+#	
+#	Revision 1.5  2015/07/03 15:05:59  achnat
+#	Changed output command redirection
+#	
+#	Revision 1.4  2015/07/02 10:42:54  achnat
+#	Fixed and tested
+#	
+#	Revision 1.3  2015/06/30 15:21:14  achnat
+#	New developments
+#	
+#	Revision 1.2  2015/06/19 14:12:00  achnat
+#	Added and tested new steps
+#	
+#	Revision 1.1.1.1  2015/05/29 14:58:34  achnat
+#	Import psqlReplication
+#	
+
+
+
+
+
+
+
+
+usage() {
+	echo "usage: $(basename $0) [[parameter]... [parameter][options]]"
+	echo $dashLine
+	echo "parameters:"
+	echo "   -C <path>           Path of postgres conf files on master"
+	echo "   -c <path>           Path of postgres conf files on slave"
+	echo "   -P <password>       Password of user on master server"
+	echo "   -p <password>       Password of user on slave server"
+	echo "   -S <master_server>  ip address of master server"
+	echo "   -s <slave_server>   ip address of slave server"
+	echo "   -U <user>           Name of user on master server"
+	echo "   -u <user>           Name of user on slave server"
+	echo "options:"
+	echo "   -f   Force replication on postgres having different version"
+	echo "   -h   Show this help and exit"
+	echo "-----"
+	echo "NOTE:"
+	echo "If you don't specify the path of postgres configuration file will be"
+	echo "used the default one."
+	echo "The users used to execute remote commands must have root permissions."
+	echo "The postres user \"acsdba\" must exist in both machines"
+	echo $dashLine
+	echo ""
+	exit 1
+}
+
+
+res_msg() {
+	case "$1" in
+		'0')
+			echo_success
+			echo ">> done" >> $LOG_FILE
+			echo ""
+			;;
+		'1')
+			echo_failure
+			echo ">> FAILED" >> $LOG_FILE
+			echo ""
+			;;
+		'2')
+			echo_warning
+			echo ">> WARNING" >> $LOG_FILE
+			echo ""
+			;;
+		+ )
+			;;
+	esac
+}
+
+
+clean() {
+	if test -e $TMP_FILE; then rm -f $TMP_FILE; fi
+	if test -e $TMP_M_CNF; then rm -f $TMP_M_CNF; fi
+	if test -e $TMP_S_CNF; then rm -f $TMP_S_CNF; fi
+	if test -e $ASKP_M_SCRIPT; then rm -f $ASKP_M_SCRIPT; fi
+	if test -e $ASKP_S_SCRIPT; then rm -f $ASKP_S_SCRIPT; fi
+	if test -e /tmp/tmp_rec_file; then rm -f /tmp/tmp_rec_file; fi
+	if test -d /tmp/PG_TMP_BCK; then rm -fr /tmp/PG_TMP_BCK; fi
+}
+
+
+init_file() {
+	if ! test -e $2
+	then
+		touch $2
+		if [ "$?" != 0 ]
+		then
+			echo "*** ERROR!!! init_file() - Cannot create $1 file ***"
+			echo "trying to write: $2"
+			echo ""
+			exit 1
+		fi
+		chmod a+w $2
+	else
+		echo "" >> $2
+		if [ "$?" != 0 ]
+		then
+			echo "*** ERROR!!! init_file() - Cannot write into $1 file ***"
+			echo "trying to write: $2"
+			echo ""
+			exit 1
+		fi
+	fi
+	
+	case $1 in
+		'log')
+			echo "" >> $2
+			echo "" >> $2
+			echo "############################################################" >> $2
+			echo "# $(date)" >> $2
+			echo "############################################################" >> $2
+			;;
+		* )
+			;;
+	esac
+}
+
+
+check_bin() {
+	if ! test -x "$1"
+	then
+		echo "*** ERROR!!! check_bin(): Cannot find \"$(basename $1)\" ***" | tee -a $LOG_FILE
+		echo "This exe is needed to run this script" | tee -a $LOG_FILE
+		echo "" | tee -a $LOG_FILE
+		exit 1
+	fi
+}
+
+
+cicla() {
+	toAnalize="$2"
+	
+	if [ "$1" = "ip" ]
+	then
+		while test -z "$toAnalize" || ! [[ "$toAnalize" =~ ^([0-9]{1,3})[.]([0-9]{1,3})[.]([0-9]{1,3})[.]([0-9]{1,3})$ ]]
+		do
+			echo -n "$qMsg"
+			read toAnalize
+		done
+	else
+		while test -z "$toAnalize"
+		do
+			echo -n "$qMsg"
+			read toAnalize
+		done
+	fi
+	
+	export validated="$toAnalize"
+}
+
+
+check_input() {	
+	case $2 in
+		'srv') 
+			if [ "$1" = "master" ]
+			then
+				export qMsg="Insert master server (only ip): "
+				cicla ip "$3"
+				export m_srv="$validated" 
+			else
+				export qMsg="Insert slave server (only ip): "
+				cicla ip "$3"
+				export s_srv="$validated"
+			fi
+			;;
+		'usr') 
+			if [ "$1" = "master" ]
+			then
+				export qMsg="Insert master user name: "
+				cicla str "$3"
+				export m_usr="$validated" 
+			else
+				export qMsg="Insert slave user name: "
+				cicla str "$3"
+				export s_usr="$validated"
+			fi
+			;;
+		'psw') 
+			if [ "$1" = "master" ]
+			then
+				export qMsg="Insert master user password: "
+				cicla str "$3"
+				export m_pwd="$validated" 
+			else
+				export qMsg="Insert slave user password: "
+				cicla str "$3"
+				export s_pwd="$validated"
+			fi 
+			;;
+		* ) 
+			;;
+	esac
+}
+
+
+print_conn_params() {
+	echo "MASTER INFO"
+	echo "   host:   $m_srv"
+	echo "   user:   $m_usr"
+	echo "   passwd: $m_pwd"
+	echo "SLAVE INFO"
+	echo "   host:   $s_srv"
+	echo "   user:   $s_usr"
+	echo "   passwd: $s_pwd"
+}
+
+
+ping_srv() {
+	ping -q -c 2 $1 >> $LOG_FILE 2>&1
+	if [ "$?" != 0 ]
+	then
+		res_msg 1
+		echo $dashLine | tee -a $LOG_FILE
+		echo "*** ERROR!!! ping_srv(): Cannot ping server $1 ***" | tee -a $LOG_FILE
+		echo "" | tee -a $LOG_FILE
+		clean
+		exit 1
+	fi
+	
+	res_msg 0
+}
+
+
+exe_qry() {
+	echo "query is:" >> $LOG_FILE
+	cat $SQL_CMD >> $LOG_FILE
+	
+	psql -h $1 -U $DBUSR postgres -c "\i $SQL_CMD" 2>> $LOG_FILE 1> /dev/null
+	if [ "$?" != 0 ]
+	then
+		res_msg 1
+		echo $dashLine | tee -a $LOG_FILE
+		echo "*** ERROR: Error during query execution on $1 ***" | tee -a $LOG_FILE
+		echo "" | tee -a $LOG_FILE
+		clean
+		exit 1
+	fi
+}
+
+
+create_askpass() {
+	case $1 in
+		'master')
+			PASS=${m_pwd}
+			SCRIPT=${ASKP_M_SCRIPT}
+			;;
+		'slave')
+			PASS=${s_pwd}
+			SCRIPT=${ASKP_S_SCRIPT}
+			;;
+		* )
+			;;
+	esac
+	
+	echo "#!/bin/bash" > ${SCRIPT}
+	echo "echo \"${PASS}\"" >> ${SCRIPT}
+	
+	chmod u+x ${SCRIPT}
+}
+
+
+set_conn_params() {
+	case $1 in
+		'master')
+			export SRV=${m_srv}
+			export USR=${m_usr}
+			export PWD=${m_pwd}
+			export ASKP=${ASKP_M_SCRIPT}
+			;;
+		'slave')
+			export SRV=${s_srv}
+			export USR=${s_usr}
+			export PWD=${s_pwd}
+			export ASKP=${ASKP_S_SCRIPT}
+			;;
+		* )
+			;;
+	esac
+}
+
+
+exe_cmd() {
+	case $1 in
+		'cpf')
+			echo "copying $2 to $3" >> $LOG_FILE
+			/usr/bin/expect -c "spawn scp -r ${USR}@${SRV}:$2 $3 ; expect assword; send ${PWD}\n; interact" 2>>$LOG_FILE 1> $TMP_FILE
+			res="$?"
+			;;
+		'cpt')
+			/usr/bin/expect -c "spawn scp -r $2 ${USR}@${SRV}:$3; expect assword; send ${PWD}\n; interact" 2>>$LOG_FILE 1> $TMP_FILE
+			res="$?"
+			;;
+		'exp')
+			echo "command is: ${CMD}" >> $LOG_FILE
+			/usr/bin/expect -c "spawn ssh ${USR}@${SRV} ${CMD}; expect assword; send ${PWD}\n; interact" 2>>$LOG_FILE 1> $TMP_FILE
+			res="$?"
+			;;
+		'ssi')
+			echo "command is: ${CMD}" >> $LOG_FILE
+			SSH_ASKPASS=${ASKP}
+			/usr/bin/setsid ssh ${SSH_OPTIONS} ${USR}@${SRV} "${CMD}" 2>>$LOG_FILE 1> $TMP_FILE
+			res="$?"
+			;;
+		'syn')
+			echo "command is: ${CMD}" >> $LOG_FILE
+			/usr/bin/expect -c "spawn ${CMD}; expect assword; send ${PWD}\n; interact" 2>>$LOG_FILE 1> $TMP_FILE
+			res="$?"
+			;;
+		* )
+			;;
+	esac
+	
+	if [ "$res" != 0 ]
+	then
+		res_msg 1
+		echo $dashLine | tee -a $LOG_FILE
+		echo "*** ERROR!!! exe_cmd(): Error during command execution on server $SRV ***" | tee -a $LOG_FILE
+		echo "see $LOG_FILE for more information"
+		echo "" | tee -a $LOG_FILE
+		clean
+		exit 1
+	fi
+}
+
+
+set_path() {
+	if [ "$2" ]
+	then 
+		var="$2"/
+	else
+		var=/var/lib/pgsql/"$1"/data/
+	fi
+	echo "$var"
+}
+
+
+show_msg() {
+	echo -n "   $1"
+	echo -e "\n""$(date +"%H:%M:%S") - ""$1" >> $LOG_FILE
+}
+
+
+change_line() {
+	sed -i "s/#$1/$1/g" $3
+	if [ "$?" != 0 ] ; then exit 1 ; fi
+	sed -i "s|^\($1\s*=\s*\).*$|\1$2|" $3
+	if [ "$?" != 0 ] ; then exit 1 ; fi
+}
+
+
+
+
+
+################################   MAIN   ################################
+##########################################################################
+
+export dashLine="-------------------------------------------------------------------"
+echo ""
+echo "POSTGRES REPLICATION"
+echo $dashLine
+
+while getopts ":c:C:p:P:u:U:S:s:fh" opt 
+do 
+	case "${opt}" in 
+		S) export m_srv=${OPTARG};;
+		U) export m_usr=${OPTARG};;
+		P) export m_pwd=${OPTARG};;
+		C) export m_pth=${OPTARG};;
+		s) export s_srv=${OPTARG};;
+		u) export s_usr=${OPTARG};;
+		p) export s_pwd=${OPTARG};;
+		c) export s_pth=${OPTARG};;
+		f) export FORCE=Y;;
+		h) usage ;;
+		*) usage ;;
+	esac 
+done
+
+# Source function library
+. /etc/rc.d/init.d/functions 
+
+export DBUSR="acsdba"
+export PGPASSWORD="estestest"
+
+export EXE_DIR=`dirname $0`
+cd $EXE_DIR
+export EXE_DIR=`pwd`
+
+export SQL_DIR=$EXE_DIR/sql
+export SQL_CRTUSR=$SQL_DIR/create_rep_user.sql
+
+export TMP_FILE=/tmp/$(basename $0)_temp.tmp
+export LOG_FILE=/tmp/$(basename $0).log
+export SQL_CMD=/tmp/$(basename $0)_tempSqlCmd.sql
+
+init_file tmp $TMP_FILE
+init_file log $LOG_FILE
+init_file sql $SQL_CMD
+
+export TMP_M_CNF=/tmp/$(basename $0)_temp-master-conf.txt
+export TMP_S_CNF=/tmp/$(basename $0)_temp-slave-conf.txt
+
+### If you wanto to use setsid
+export ASKP_M_SCRIPT=/tmp/$(basename $0)_ssh-askpass-script_master
+export ASKP_S_SCRIPT=/tmp/$(basename $0)_ssh-askpass-script_slave
+export SSH_OPTIONS="-oLogLevel=error -oStrictHostKeyChecking=no -oUserKnownHostsFile=/dev/null"
+create_askpass master
+create_askpass slave
+###
+
+check_bin /usr/bin/expect
+check_bin /usr/bin/setsid
+check_bin /usr/bin/psql
+
+check_input master srv $m_srv
+check_input slave srv $s_srv
+check_input master usr $m_usr
+check_input slave usr $s_usr
+check_input master psw $m_pwd
+check_input slave psw $s_pwd
+
+print_conn_params >> $LOG_FILE
+
+
+echo "CONECTION TEST:" | tee -a $LOG_FILE
+show_msg "Trying to ping master machine ($m_srv) ..."
+ping_srv $m_srv
+show_msg "Trying to ping slave machine ($s_srv) ..."
+ping_srv $s_srv
+
+# Check postgres connection
+echo "" > $SQL_CMD
+show_msg "Checking postgres connection on master server ..."
+exe_qry $m_srv
+res_msg 0
+show_msg "Checking postgres connection on slave server ..."
+exe_qry $s_srv
+res_msg 0
+
+
+echo "INFORMATION RETRIEVE:" | tee -a $LOG_FILE
+# Get postgres version
+show_msg "Retrieving psql version from master ..."
+export CMD="psql --version"
+set_conn_params master
+exe_cmd ssi
+export m_psqlVrs=$(cat $TMP_FILE | grep -i psql | awk '{print $3}' | awk -F "." '{print $1"."$2}')
+res_msg 0
+show_msg "Retrieving psql version from slave ..."
+set_conn_params slave
+exe_cmd ssi
+export s_psqlVrs=$(cat $TMP_FILE | grep -i psql | awk '{print $3}' | awk -F "." '{print $1"."$2}')
+res_msg 0
+
+show_msg "Comparing Postgres version ..."
+echo -e "--> psql version on master: $m_psqlVrs \n--> psql version on slave: $s_psqlVrs" >> $LOG_FILE
+if [ "$m_psqlVrs" != "$s_psqlVrs" ]
+then
+	if [ "$FORCE" != "Y" ]
+	then
+		res_msg 1
+		echo $dashLine | tee -a $LOG_FILE
+		echo "*** ERROR!!! different postgres version ***" | tee -a $LOG_FILE
+		echo "If you want to replicate anyhow use the \"-f\" option."
+		echo "" | tee -a $LOG_FILE
+		exit 1
+	else
+		echo ">> Forcing option enabled: the replication script will go on" >> $LOG_FILE
+	fi
+fi
+res_msg 0
+
+# Set posgres path
+echo -e "\nSet posgres path ..." >> $LOG_FILE
+export m_pth=$(set_path "$m_psqlVrs" "$m_pth")
+export s_pth=$(set_path "$s_psqlVrs" "$s_pth")
+echo "--> path on master: $m_pth" >> $LOG_FILE
+echo "--> path on slave:  $s_pth" >> $LOG_FILE
+
+# Get postgres conf file
+show_msg "Retrieving psql conf file from master ..."
+export CMD="cat $m_pth/postgresql.conf"
+set_conn_params master
+exe_cmd ssi
+cat $TMP_FILE > $TMP_M_CNF
+res_msg 0
+show_msg "Retrieving psql conf file from slave ..."
+export CMD="cat $s_pth/postgresql.conf"
+set_conn_params slave
+exe_cmd ssi
+cat $TMP_FILE > $TMP_S_CNF
+res_msg 0
+
+
+echo "MASTER INSTALLATION:" | tee -a $LOG_FILE
+set_conn_params master
+
+# Create replication user
+cat $SQL_CRTUSR > $SQL_CMD
+show_msg "Creating replication user ..."
+exe_qry $m_srv
+res_msg 0
+
+# Trust replication user
+show_msg "Trusting replication user ..."
+#export CMD="if grep -q rep_usr $m_pth/pg_hba.conf ; then echo \"host 	replication 	rep_usr 	$s_srv/32 	trust\" >> $m_pth/pg_hba.conf ; fi"
+export CMD="echo \"host 	replication 	rep_usr 	$s_srv/32 	trust\" >> $m_pth/pg_hba.conf"
+exe_cmd ssi
+res_msg 0
+
+# Create replication direcotry
+show_msg "Creating replication directory ..."
+m_w_dir=$(dirname $m_pth)
+export CMD="if ! test -d $m_w_dir/WAL ; then mkdir $m_w_dir/WAL ; fi"
+exe_cmd ssi
+export CMD="chown postgres.postgres $m_w_dir/WAL"
+exe_cmd ssi
+export CMD="chmod 700 $m_w_dir/WAL"
+exe_cmd ssi
+res_msg 0
+
+# Configure and substitute conf file
+show_msg "Changing postgres conf file ..."
+change_line listen_addresses "\'*\'" $TMP_M_CNF
+change_line wal_level hot_standby $TMP_M_CNF
+change_line max_wal_senders 5 $TMP_M_CNF
+change_line wal_keep_segments 32 $TMP_M_CNF
+change_line archive_mode on $TMP_M_CNF
+change_line archive_command "\'test \! \-f $m_w_dir/WAL/\%f \&\& cp \%p $m_w_dir/WAL/\%f"\' $TMP_M_CNF
+change_line hot_standby on $TMP_M_CNF
+export CMD="cp $m_pth/postgresql.conf $m_pth/postgresql.conf.original"
+exe_cmd ssi
+exe_cmd cpt $TMP_M_CNF $m_pth/postgresql.conf
+export CMD="chown postgres.postgres $m_pth/postgresql.conf"
+exe_cmd ssi
+res_msg 0
+
+# Restarting server
+show_msg "Restarting postgres server ..."
+export CMD="/etc/init.d/postgresql-$m_psqlVrs restart"
+exe_cmd ssi
+res_msg 0
+
+
+echo "DATA TRANSFER:" | tee -a $LOG_FILE
+set_conn_params master
+show_msg "Backing up master database ..."
+echo "SELECT pg_start_backup('backup', true);" > $SQL_CMD
+exe_qry $m_srv
+res_msg 0
+show_msg "Copying master database ..."
+if ! test -d /tmp/PG_TMP_BCK ; then mkdir /tmp/PG_TMP_BCK ; fi
+exe_cmd cpf $(dirname $m_pth)/data /tmp/PG_TMP_BCK
+res_msg 0
+show_msg "Stopping master database backup ..."
+echo "SELECT pg_stop_backup();" > $SQL_CMD
+exe_qry $m_srv
+res_msg 0
+show_msg "Synchronizing slave database ..."
+set_conn_params slave
+export CMD="rsync -a -v --delete /tmp/PG_TMP_BCK/data $s_usr@$s_srv:$(dirname $s_pth)/ --exclude postmaster.pid"
+exe_cmd syn
+export CMD="chown -R postgres.postgres $(dirname $s_pth)"
+exe_cmd ssi
+rm -fr /tmp/PG_TMP_BCK
+res_msg 0
+
+
+echo "SLAVE INSTALLATION:" | tee -a $LOG_FILE
+set_conn_params slave
+
+# Create replication user
+cat $SQL_CRTUSR > $SQL_CMD
+show_msg "Creating replication user ..."
+exe_qry $s_srv
+res_msg 0
+
+# Trust replication user
+show_msg "Trusting replication user ..."
+export CMD="echo \"host 	replication 	rep_usr 	$m_srv/32 	trust\" >> $s_pth/pg_hba.conf"
+exe_cmd ssi
+res_msg 0
+
+# Create replication direcotry
+show_msg "Creating replication directory ..."
+s_w_dir=$(dirname $s_pth)
+export CMD="if ! test -d $s_w_dir/WAL ; then mkdir $s_w_dir/WAL ; fi"
+exe_cmd ssi
+export CMD="chown postgres.postgres $s_w_dir/WAL"
+exe_cmd ssi
+export CMD="chmod 700 $s_w_dir/WAL"
+exe_cmd ssi
+res_msg 0
+
+# Configure and substitute conf file
+show_msg "Changing postgres conf file ..."
+change_line hot_standby on $TMP_S_CNF
+export CMD="cp $s_pth/postgresql.conf $s_pth/postgresql.conf.original"
+exe_cmd ssi
+exe_cmd cpt $TMP_S_CNF $s_pth/postgresql.conf
+export CMD="chown postgres.postgres $s_pth/postgresql.conf"
+exe_cmd ssi
+res_msg 0
+
+# Creating recovery file
+show_msg "Creating recovery file ..."
+echo "standby_mode = on" > /tmp/tmp_rec_file
+echo "primary_conninfo = 'host=$m_srv port=5432 user=rep_usr password=12qwas'" >> /tmp/tmp_rec_file
+echo "trigger_file = '/tmp/psql_replication_trigger'" >> /tmp/tmp_rec_file
+echo "restore_command = 'cp $s_w_dir/WAL/%f \"%p\"'" >> /tmp/tmp_rec_file
+export CMD="if ! test -e $s_pth/recovery.conf ; then rm -f $s_pth/recovery.conf ; fi"
+exe_cmd ssi
+exe_cmd cpt /tmp/tmp_rec_file $s_pth/recovery.conf
+export CMD="chown postgres.postgres $s_pth/recovery.conf"
+exe_cmd ssi
+export CMD="chmod 600 $s_pth/recovery.conf"
+exe_cmd ssi
+res_msg 0
+
+# Restarting server
+show_msg "Restarting postgres server ..."
+export CMD="/etc/init.d/postgresql-$s_psqlVrs restart"
+exe_cmd ssi
+res_msg 0
+
+echo $dashLine | tee -a $LOG_FILE
+echo ">> REPLICATION SUCCESSFULLY CONFIGURED" | tee -a $LOG_FILE
+echo "" | tee -a $LOG_FILE
+clean
+exit 0
+
+

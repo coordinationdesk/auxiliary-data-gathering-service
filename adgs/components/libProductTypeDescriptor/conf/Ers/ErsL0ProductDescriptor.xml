@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="yes"?>
+<ErsL0ProductDescription>
+	<L0ProductDescriptor>
+    		<NumberOfProducts>1</NumberOfProducts>    
+    		<!-- Level 0 ERS -->
+			<Product1>
+        		<!--Id>ERS_TM</Id-->
+				<Id>SAR_IM__0P</Id>
+        		<CCSDSVersion>0</CCSDSVersion>
+        		<DataFieldHeaderLength>0</DataFieldHeaderLength>
+        		<!-- ApplicationDataLength VARIABLE : set to 0 -->
+        		<ApplicationDataLength>0</ApplicationDataLength>
+        		<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="0">
+        			<APID></APID>
+				</List_of_APID>	
+        		<VCID>0</VCID>
+				<Channel>0</Channel>
+        		<SensorName>SAR</SensorName>
+        		<SensorMode>Imaging</SensorMode>
+        		<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        		<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+        		<GapThresold unit="ms">0</GapThresold>
+				<Description>Ers Telemetry</Description>        
+    		</Product1>
+    		<SatelliteName>Ers</SatelliteName>
+    		<SourcePacketHeaderSize>0</SourcePacketHeaderSize>
+    		<!-- Annotation size in bytes - 0 means ISP NOT annotated -->
+		<AnnotationSize>0</AnnotationSize>
+		<!-- Sensing Time in ISP annotation is UTC (true) or TAI (false) -->
+		<AnnotationIsInUTC></AnnotationIsInUTC>
+		<RefDocName>CS-ID-ACS-GS-0119</RefDocName>
+		<AcquisitionReportFileType>REP_ACQ___</AcquisitionReportFileType>
+	</L0ProductDescriptor>
+</ErsL0ProductDescription>

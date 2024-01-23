@@ -1,0 +1,466 @@
+#!/bin/sh
+#
+# Copyright 2010-2020, Advanced Computer Systems , Inc.
+# Via Della Bufalotta, 378 - 00139 Roma - Italy
+# http://www.acsys.it A.C.S. - Advanced Computer Systems S.p.A.
+# 
+# This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems, S.p.A.;
+# the contents of this file may not be disclosed to third parties, copied or
+# duplicated in any form, in whole or in part, without the prior written
+# permission of Advanced Computer Systems, S.p.A.
+
+
+
+
+
+
+
+
+usage() {
+	echo "usage: $(basename $0)  <conn_param> <table> [[options]..]"
+	echo $dashLine
+	echo "connection parameters:"
+	echo "   -p <project>   Use connection parameters of a specific project"
+	echo "   -z             No project. Insert connection parameters manually"
+	echo "                  when requested"
+	echo "tables:"
+	echo "   -t <table>     t_circulationsqueue" 
+	echo "                  t_circulationsqueuedwh"
+	echo "                  t_datastoragequeue"
+	echo "                  t_distributionqueue"
+#	echo "                  t_inventorysm"
+	echo "                  t_ordersqueue"
+	echo "                  t_smactions"
+	echo "                  t_smqueue"
+	echo "options:"
+	echo "   -d <days>      Days from which the cleaning will starts. Default 180"
+	echo "                  (eg. 30: will be removed items older than one month)"
+	echo "   -f             Starts cleaning after search without prompt"
+	echo "   -s <file>      Save the search query output into a file"
+	echo "   -w <seconds>   Wait for defined seconds before next delete query"
+	echo "   -h             Show this help and exit"
+	echo $dashLine
+	echo ""
+	exit 1
+}
+
+
+res_msg() {
+	case "$1" in
+		'0')
+			echo_success
+			echo ""
+			;;
+		'1')
+			echo_failure
+			echo ""
+			;;
+		'2')
+			echo_warning
+			echo ""
+			;;
+		+ )
+			;;
+	esac
+}
+
+
+clean() {
+	if test -e $SQL_FILE; then rm -f $SQL_FILE; fi
+	if test -e $RES_FILE; then rm -f $RES_FILE; fi
+}
+
+
+exit_error() {
+	echo "" >> $LOG_FILE
+	echo $dashLine | tee -a $LOG_FILE
+	echo "*** REMOTION ABORTED ***" | tee -a $LOG_FILE
+	echo "See log file $LOG_FILE"
+	echo "" | tee -a $LOG_FILE
+	clean
+	exit 1
+}
+
+
+logger() {
+	case $1 in
+		'-B')
+			echo -n "$2"
+			echo "$(date +'%Y-%m-%d %H:%M:%S.%N') $2" >> $LOG_FILE
+			;;
+		'-L')
+			echo "$(date +'%Y-%m-%d %H:%M:%S.%N') $2" >> $LOG_FILE
+			;;
+		* )
+			;;
+	esac
+}
+
+
+init_file() {
+	if ! test -e $2
+	then
+		touch $2
+		if [ "$?" != 0 ]
+		then
+			echo "*** ERROR!!! init_file() - Cannot create $1 file ***"
+			echo "trying to write: $2"
+			echo ""
+			exit 1
+		fi
+		chmod a+w $2
+	fi
+	
+	case $1 in
+		'log')
+			echo "" >> $2
+			echo "" >> $2
+			echo "###################################################################" >> $2
+			echo "# $(date)" >> $2
+			echo "###################################################################" >> $2
+			;;
+		* )
+			echo "" > $2
+			;;
+	esac
+}
+
+
+set_conf() {
+	if test -r "$CONF_FILE"
+	then
+		. $CONF_FILE
+
+		export DBHOSTNAME
+		export DBNAME
+		export PDSUSER
+		export PDSPASSWORD
+		
+		export PGPASSWORD=$PDSPASSWORD
+	else
+		echo "*** Cannot find CONF file or it is not readable ***" | tee -a $LOG_FILE
+		echo "expected file: $CONF_FILE"
+		exit_error
+	fi
+}
+
+
+check_insert() {
+	toAnalize="$2"
+	
+	while test -z "$toAnalize"
+	do
+		echo -n "Insert $1 name: "
+		read toAnalize
+	done
+	
+	export validated="$toAnalize"
+}
+
+
+insert_param() {
+	case $1 in
+		'srv' )
+			echo -n "Insert host name: "
+			read val
+			check_insert host $val
+			export DBHOSTNAME="$validated"
+			;;
+		'usr' )
+			echo -n "Insert user name: "
+			read val
+			check_insert user $val
+			export PDSUSER="$validated"
+			;;
+		'psw' )
+			echo -n "Insert user password: "
+			read val
+			check_insert password $val
+			export PGPASSWORD="$validated"
+			;;
+		'db' )
+			echo -n "Insert database name: "
+			read val
+			check_insert database $val
+			export DBNAME="$validated"
+			;;
+		* ) 
+			;;
+	esac
+}
+
+
+check_conn() {
+	logger -B "Checking connection on $DBNAME ..."
+	
+	psql -h $DBHOSTNAME -U $PDSUSER $DBNAME -c "\l" 2>> $LOG_FILE 1> /dev/null
+	if [ "$?" != 0 ]
+	then
+		res_msg 1
+		echo "*** ERROR!!! Cannot connect to $DBNAME ***" | tee -a $LOG_FILE
+		exit_error
+	fi
+	
+	logger -L ">> connection done" >> $LOG_FILE
+	res_msg 0
+}
+
+
+create_qry() {
+	logger -B "  creating $1 query $2..."
+	sql_tmpl=$SQL_DIR/$1_template.sql
+	
+	if ! test -r "$sql_tmpl"
+	then
+		res_msg 1
+		echo -e "\n*** ERROR!!! Cannot find SQL file or it is not readable ***" | tee -a $LOG_FILE
+		echo "expected file: $sql_tmpl" | tee -a $LOG_FILE
+		exit_error
+	fi
+
+	cat $sql_tmpl > $SQL_FILE
+	sed -i "s|<TBL_NAME>|${tbl_name}|g" $SQL_FILE
+	sed -i "s|<FLD_NAME>|${fld_name}|g" $SQL_FILE
+	sed -i "s|<DAY_NUM>|${day_num}|g" $SQL_FILE
+	sed -i "s|<IN_DATE>|${in_date}|g" $SQL_FILE
+	
+	if [ ${tbl_name} = "t_smqueue" ]
+	then
+		if [ $1 = "delete" ] 
+		then
+			sed -i "s/;/AND status = 'COMPLETED';/g" $SQL_FILE 
+		else 
+			sed -i "s/GROUP BY/AND status = 'COMPLETED' GROUP BY/g" $SQL_FILE 
+		fi
+	fi
+	
+	logger -L "  >> query created in $SQL_FILE"
+	res_msg 0
+}
+
+
+exe_qry() {
+	logger -B "  executing $1 query $2..."
+	
+	if [ $1 = "select" ]
+	then
+		psql -h $DBHOSTNAME -U $PDSUSER $DBNAME -v "ON_ERROR_STOP=1" -t -c "\i $SQL_FILE" 2>> $LOG_FILE 1> $RES_FILE
+		res="$?"
+	else
+		psql -h $DBHOSTNAME -U $PDSUSER $DBNAME -v "ON_ERROR_STOP=1" -t -c "\i $SQL_FILE" 2>> $LOG_FILE 1> /dev/null
+		res="$?"
+	fi
+	
+	if [ "$res" != 0 ]
+	then
+		res_msg 1
+		echo "*** ERROR!!! Error during query execution ***" | tee -a $LOG_FILE
+		echo -e "query is: \n$(cat $SQL_FILE)" >> $LOG_FILE
+		exit_error
+	fi
+	
+	logger -L "  >> query executed successfully"
+	res_msg 0
+}
+
+
+
+
+
+################################   MAIN   ################################
+##########################################################################
+
+# Source function library
+. /etc/rc.d/init.d/functions
+
+export dashLine="-------------------------------------------------------------------"
+echo ""
+echo "POSTGRES REMOVE ITEMS OLDER THAN"
+echo $dashLine
+
+export EXE_DIR=`dirname $0`
+cd $EXE_DIR
+export EXE_DIR=`pwd`
+
+cd ..
+export BASE_DIR=`pwd`
+cd $EXE_DIR
+
+export SQL_DIR=$EXE_DIR/sql
+export CONF_DIR=$BASE_DIR/psqlUtilitiesConf
+export LOG_FILE=/tmp/$(basename $0).log
+
+export d_flag="F"
+export f_flag="F"
+export p_flag="F"
+export s_flag="F"
+export t_flag="F"
+export w_flag="F"
+export z_flag="F"
+
+while getopts ":d:s:p:t:w:fhz" opt 
+do 
+	case "${opt}" in 
+		d) 
+			export d_flag="T"
+			export day_num=${OPTARG}
+			;;
+		f) 
+			export f_flag="T"
+			;;
+		p) 
+			export p_flag="T"
+			export prj=${OPTARG}
+			;;
+		s) 
+			export s_flag="T"
+			export save_file=${OPTARG}
+			;;
+		t) 
+			export t_flag="T"
+			export tbl_name=${OPTARG}
+			;;
+		w) 
+			export w_flag="T"
+			export wait_sec=${OPTARG}
+			;;
+		z) 
+			export z_flag="T"
+			;;
+		*) 
+			usage 
+			;;
+	esac 
+done
+
+if [ "$t_flag" = "F" ]; then usage; fi
+if [ "$p_flag" = "F" ] && [ "$z_flag" = "F" ]; then usage; fi
+if [ "$p_flag" = "T" ] && [ "$z_flag" = "T" ]; then usage; fi
+if [ "$d_flag" = "F" ]; then export day_num=180 ; fi
+if [ "$d_flag" = "T" ] && ! [[ "$day_num" =~ ^[0-9]+$ ]]
+then
+	echo "*** ERROR!!! Invalid input value ***"
+	echo "When you use the \"-d\" option the values admitted are only integers"
+	echo ""
+	exit 1
+fi
+if [ "$w_flag" = "T" ] && ! [[ "$wait_sec" =~ ^[0-9]+$ ]]
+then
+	echo "*** ERROR!!! Invalid input value ***"
+	echo "When you use the \"-w\" option the values admitted are only integers"
+	echo ""
+	exit 1
+fi
+
+case "$tbl_name" in
+	't_circulationsqueue' ) export fld_name=creationdate ;;
+	't_circulationsqueuedwh' ) export fld_name=creationdate ;;
+	't_datastoragequeue' ) export fld_name=check_date ;;
+	't_distributionqueue' ) export fld_name=creationdate ;;
+	't_inventorysm' ) export fld_name=creationdate ;;
+	't_ordersqueue' ) export fld_name=creationdate ;;
+	't_smactions' ) export fld_name=creationdate ;;
+	't_smqueue' ) export fld_name=creationdate ;;
+	*) usage ;;
+esac
+
+export SQL_FILE="/tmp/$(basename $0)_""$tbl_name""_tempCmd_"$(date +'%Y%m%d%H%M%S%N')".sql"
+export RES_FILE="/tmp/$(basename $0)_""$tbl_name""_tempResult_"$(date +'%Y%m%d%H%M%S%N')".res"
+
+clean
+
+init_file log $LOG_FILE
+init_file sql $SQL_FILE
+init_file res $RES_FILE
+
+if [ "$p_flag" = "T" ]
+then
+	export CONF_FILE=$CONF_DIR/$prj.conf
+	set_conf
+else
+	insert_param srv
+	insert_param db
+	insert_param usr
+	insert_param psw
+fi
+
+if test -z "$PGPASSWORD"
+then
+	echo -n "Insert $PDSUSER password: "
+	read -s answer
+	export PGPASSWORD=$answer
+	echo ""
+fi
+
+check_conn
+
+
+### SEARCHING OPERATIONS
+echo "Searching for items older than $day_num days in $tbl_name" | tee -a $LOG_FILE
+create_qry "select"
+exe_qry "select"
+if [ "$s_flag" = "T" ]
+then
+	echo "$tbl_name" > "$save_file"
+	echo "------------------------------" >> "$save_file"
+	cat $RES_FILE >> "$save_file"
+fi
+
+
+### CHECKING OPERATIONS
+ite_founds=`expr $(wc -l < $RES_FILE) - 1`
+if [ "$ite_founds" = "0" ]
+then
+	echo $dashLine | tee -a $LOG_FILE
+	echo ">> No items to remove found" | tee -a $LOG_FILE
+	echo "" | tee -a $LOG_FILE
+	clean
+	exit 0
+fi
+echo ">> Found $ite_founds dates" | tee -a $LOG_FILE
+if [ "$f_flag" = "F" ]
+then
+	choose=bho
+	while [ $choose != "n" ] && [ $choose != "y" ]
+	do
+		echo -n "Do you wanto to continue with items remotion? (y/n): "
+		read choose
+	done
+	if [ "$choose" = "n" ]
+	then
+		echo $dashLine | tee -a $LOG_FILE
+		echo ">> Remotion aborted by user" | tee -a $LOG_FILE
+		echo "" | tee -a $LOG_FILE
+		clean
+		exit 0
+	fi
+fi
+
+
+### CLEANING OPERATIONS
+while read line
+do
+	if [ "$line" != "" ]
+	then
+		line_value=$(echo $line | awk -F '|' '{print $1}')
+		in_date=${line_value%?} #Remove last white space
+		echo "Removing items for $(echo $in_date | cut -d ' ' -f 1)" | tee -a $LOG_FILE
+		create_qry "delete"
+		exe_qry "delete"
+		if [ "$w_flag" = "T" ]
+		then
+			sleep $wait_sec
+		fi
+	fi
+done < $RES_FILE
+
+
+echo $dashLine | tee -a $LOG_FILE
+echo ">> REMOTION COMPLETED" | tee -a $LOG_FILE
+echo "" | tee -a $LOG_FILE
+clean
+exit 0
+
+
+
+

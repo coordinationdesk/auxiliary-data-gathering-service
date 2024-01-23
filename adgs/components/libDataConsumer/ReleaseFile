@@ -1,0 +1,43 @@
+5.43.1
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+--------------------------------------------------------------------
+5.43.0
+[S3MARINE-471] http://projectit.acsys.it/browse/S3MARINE-471
+The check on the currently handled items is accessible from outside the register.
+New items will not be added to the internal queue if already under processing.
+Some exit code has been reviewed to increase exit responsiveness.
+-------------------------------------------------------------------- 
+5.42.0
+[S6JCS-212] http://projectit.acsys.it/browse/S6JCS-212
+There was a deadlock introduced in 5.40.0 preventing the release
+of items from the active processing queue in case of failures.
+Unreleased items caused the process to ignore new circulation itmes because
+all the available slots looked busy but were waiting for a mutex in deadlock.
+The deadlock was interruptible by exit signals.
+-------------------------------------------------------------------- 
+5.41.2
+[S3MARINE-101]
+Added checkPreTransfer flag management in verifyAndRemove.
+If enabled the library first checks and eventually remove temporary
+target and final target before the actual transfer, otherwise the removal
+will be directly performed by curl through pre and post commands.
+-------------------------------------------------------------------
+5.41.1
+Typo fixed. 5.40.0 does not compile
+-------------------------------------------------------------------
+5.40.0
+http://projectit.acsys.it/browse/S6JCS-198
+SyncContainer added the interface to check if an item can be found in the container
+ConsumingRegister manages atomically the transition of items between the 
+the list of items to consume and the list of items actually under processing
+In addition it checks both the SyncContainers to check for item duplication befor inserting any 
+new item in the live processing queue.
+In case of double-insertion a PRIVATE_INFO is issued in the log to monitor the frequency of the event,
+anyhow the message can be removed in the following releases if annoying
+-------------------------------------------------------------------
+5.39.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.39.0
+
+Automatically generate from revision "version "5.39""

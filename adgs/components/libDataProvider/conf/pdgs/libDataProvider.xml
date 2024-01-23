@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Library>
+        <DataProvider>
+                <!-- Max Donwload Threads created to download products -->
+                <maxDownloadThreads>3</maxDownloadThreads>
+                <!-- Local Folder path where to load products -->
+                <ProductPath>/raid0/opcryosat/ProductsPath</ProductPath>
+                <!-- Script used to compress files -->
+                <CompressScriptName>CompressExporter.sh</CompressScriptName>
+                <!-- Delivery Slip settings (used by delivery emails) -->
+                <DeliverySlip>
+                        <Source>PDS</Source>
+                        <Instrument>SIRAL</Instrument>
+                        <PrintingDelivery>no</PrintingDelivery>
+                        <DeliverySlipFixedFilename>README</DeliverySlipFixedFilename>
+                        <DeliverySlipLtaFixedFilename>EXPORT-TD</DeliverySlipLtaFixedFilename>
+                        <!-- Delivery slip style sheet  -->
+                        <DeliveryStyleSheet>/usr/acs/data/deliverySlip.xsl</DeliveryStyleSheet>
+                        <ByMailExtension>.xml.slip</ByMailExtension>
+                </DeliverySlip>
+                <!-- List of report formats used. -->
+                <List_of_ReportFormats count="1">
+                        <ReportFormat>
+                                <Format>rep_ftp</Format>
+                                <List_of_Filetypes count="1">
+                                        <Filetype>
+                                                <Type>AUX_REP_QC</Type>
+                                        </Filetype>
+                                </List_of_Filetypes>
+                        </ReportFormat>
+                </List_of_ReportFormats>
+                <!-- Download configuration. -->
+                <Download>
+                        <!-- Local folder where to download packages. -->
+                        <DownloadPath>/raid0/opcryosat/downloadspace</DownloadPath>
+                        <!-- Cache size used in mega bytes. -->
+                        <SpaceSize unit="mega bytes">1</SpaceSize>
+                </Download>
+        </DataProvider>
+</Library>

@@ -1,0 +1,21 @@
+
+'filetype','description','nameregularexpression','headerseparation','"group"','invperiod','mngsngext','sngext','hdrext','dblext'
+
+'ECMWF_TRO_OR',  'AUX_TRO files from ECMWF',          'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUXTRO129_OR', 'Tropospheric model Aux Data 129', '^[tT]1[dDsS][0-9]{20}1$',                             'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUXTRO130_OR', 'Tropospheric model Aux Data 130', '^[tT]2[dDsS][0-9]{20}1$',                             'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUXTRO133_OR', 'Tropospheric model Aux Data 133', '^[tT]3[dDsS][0-9]{20}1$',                             'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUXTRO134_OR', 'Tropospheric model Aux Data 134', '^[tT]4[dDsS][0-9]{20}1$',                             'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUXTRO151_OR', 'Tropospheric model Aux Data 151', '^[tT]5[dDsS][0-9]{20}1$',                             'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+'S3OSIRPRO_AUX', 'S3 OSIICE Repro Auxiliaryfiles',    'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'OSIICE_RPRO_20N', 'OSI ICE North Repro before 2020',  '^ice_conc_nh_ease2-250_cdr-v3p0_[0-9]{8}1200\.nc$',  'false', 'group0', 0, 'false', 'nc', 'NULL', 'NULL'
+'OSIICE_RPRO_21N', 'OSI ICE North Repro 2021 onwards', '^ice_conc_nh_ease2-250_icdr-v3p0_[0-9]{8}1200\.nc$', 'false', 'group0', 0, 'false', 'nc', 'NULL', 'NULL'
+'OSIICE_SYSTEM_N', 'OSI ICE North Systematic prod',    '^ice_conc_nh_ease2-250_icdrft-v3p0_[0-9]{8}1200\.nc$', 'false', 'group0', 0, 'false', 'nc', 'NULL', 'NULL'
+'OSIICE_RPRO_20S', 'OSI ICE South Repro before 2020',  '^ice_conc_sh_ease2-250_cdr-v3p0_[0-9]{8}1200\.nc$',  'false', 'group0', 0, 'false', 'nc', 'NULL', 'NULL'
+'OSIICE_RPRO_21S', 'OSI ICE South Repro 2021 onwards', '^ice_conc_sh_ease2-250_icdr-v3p0_[0-9]{8}1200\.nc$', 'false', 'group0', 0, 'false', 'nc', 'NULL', 'NULL'
+'OSIICE_SYSTEM_S', 'OSI ICE South Systematic prod',    '^ice_conc_sh_ease2-250_icdrft-v3p0_[0-9]{8}1200\.nc$', 'false', 'group0', 0, 'false', 'nc', 'NULL', 'NULL'
+'SR_2_SICNAX',    'SR_2_SICNAX auxiliary file', '^S3[ABC_]_SR_2_SICNAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_2_SICSAX',    'SR_2_SICSAX auxiliary file', '^S3[ABC_]_SR_2_SICSAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_2_SIFNAX',    'SR_2_SIFNAX auxiliary file', '^S3[ABC_]_SR_2_SIFNAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_2_SIFSAX',    'SR_2_SIFSAX auxiliary file', '^S3[ABC_]_SR_2_SIFSAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'

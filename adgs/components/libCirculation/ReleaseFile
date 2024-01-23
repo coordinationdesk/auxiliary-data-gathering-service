@@ -1,0 +1,126 @@
+12.1.1
+CPS-82: improved log message related to the default implicit circulation configuration.
+--------------------------------------------------------------------------------------------
+12.1.0
+[S3MARINE-516]
+Removed configuration tag EnableMoveOnLocalUnlinkFail that enables the unlink failure management.
+Introduced new configurations for unlink failures actions.
+Introduced new management of unlink failures.
+--------------------------------------------------------------------------------------------
+12.0.1
+S3MARINE-499: comment added to prevent changes in the error log message without achieving an agreement on the format (it is currently defined in EUM ICD)
+--------------------------------------------------------------------------------------------
+12.0.0
+S3MARINE-465: AsyncCallbackNotifier aligned to the new callback interface (hostname and circulation id added).
+CirculationInfo updated to pass circulation id and hostname to the callback receivers.
+--------------------------------------------------------------------------------------------
+11.7.0
+[S3MARINE-492]
+DT: Introduced the following new configuration tags: EnableMoveOnLocalUnlinkFail and LocalUnlinkFailuresTrashPath.
+CirculationRemoveService class, if properly configured with the above tags, is now capable of moving a local source
+that couldn't be unlinked into the specified trash path.
+--------------------------------------------------------------------------------------------
+11.6.1
+compilation warnings cleanup
+--------------------------------------------------------------------------------------------
+11.6.0
+[S3MARINE-471] http://projectit.acsys.it/browse/S3MARINE-471
+Checking ongoing operation before putting new items in PROCESSING
+Updating the status and the retrytime in a single transaction when updating to ERROR or RECOVERABLEERROR
+Exit code reviewed to increase exit responsiveness 
+--------------------------------------------------------------------------------------------
+11.5.0
+[S6JCS-254]
+DT: Using dedicated error macros for M&C messages with metric DC_FAIL
+-------------------
+11.4.0
+[S2PDGS-436]
+DT: Introduced new version of function CirculationRemoveService::removeUrl taking an additional
+boolean as input parameters to enable exception rethrow in case of errors.
+-------------------
+11.3.1
+MP: no more db related deprecated methods/classes
+-------------------------------------------------------------------------------------------
+11.3.0
+[LTA-205] Requires libFtpCurl 10.2.0 or greater. 
+Uses predicates defined in RemoteSite to avoid useless operations when the protocols does not need 
+to verify for resource.
+Moreover removes some compilation warning on deprecated calls
+-------------------------------------------------------------------------------------------
+11.2.2
+MP: compilation warning cleanup
+-------------------------------------------------------------------------------------------
+11.2.1
+Change in the evaluation of local or remote repositories using ImplicitCirculationService::retrieveSourceFiles
+In case of files having the same modification date (at the best with minute resolution in case of FTP repos)
+the retrieve list is ordered using the embedded string lexicographical comparison function
+-------------------------------------------------------------------------------------------
+11.2.0
+S2PDGS-424: ConsumableCirculation::verifyAndRemove updated in order to managed reosurce not found errors
+in the source site as recoverable errors.
+------------------------------
+11.1.0
+S6JCS-214: recoverable errors logged as info, in case of conf parameter filterRecoverableError enabled.
+Messages for recoverable errors with metric DC_FAIL are not forwarded to SPLUNK.
+------------------------------
+11.0.0
+[S3MARINE-295]
+If the removal of products exit on failure, the corresponding url is now inserted
+into table t_circulation_failed_remove_queue.
+Introduced management of host_id field in t_circulation_remove_queue.
+------------------------------
+10.1.2
+CirculationRemoveService::remove 
+in case of local files deletion, performs a path normalization before attempting the unlink.
+This is due to the fact that some local paths can be expressed as "/my/personal/folder/."
+in the frame of the "src_tar" streaming management (to avoid including "folder" as root dir of the package)
+------------------------------
+10.1.1
+if defined USE_LIBPDSDB the file type recognition class is got from libPdsDb else it will be gro libDbCryosat.
+Note that there is an internal typedef to adapt different class name and namespace. 
+------------------------------
+10.1.0
+[S3MARINE-101]
+Added support for streamerId in Circulation and ConsumableCirculation objects. 
+------------------------------
+10.0.0
+FileType class is got from libPdsDb
+------------------------------
+9.0.1
+Patch release due to issue S2PDGS-189: improved query to select the number of active slots for the current circulation node having a given destination id.
+------------------------------
+9.0.0
+[S6JCS-101]
+The function used to identify duplicated in the circulationsqueue has been modified to take into account also the host_id field
+when comparing circulations orders.
+In case of FS to FS circulations the same filename can be circulated (at the same time) between the same two local paths (from A to B).
+Without the check on the host_id in the queue, the two records can appear as duplicated even if they actually belong to differen hosts.
+------------------------------
+8.2.0
+Minor release due to issue J6PDAP-90. Class test revisited and added. Minor update of some classes (useless method remove / simple get methods addition).
+------------------------------
+8.1.0
+Minor release due to issue S2PDGS-68. Configurable delta time introduced to be subtracted to the last scan time of local repositories to select items to be circulated.
+A set of the last processed items is stored in memory to be skipped in next run.
+------------------------------
+8.0.0
+Major release due to issue J6PDAP-84 to manage gsoap version >= 2.8.0.
+AsyncCallbackNotifier class updated to use the new libCirculationCallback interfaces.
+------------------------------
+7.28.3
+Patch release automatically generated to instrument version files
+------------------------------
+7.28.2
+Patch release issue due to re-opening of Jira S2PDGS-2059
+CirculationRemoveService: to manage thread concurrency in remote source url, circulation_remove_queue records are deleted first and then, if rows affected, url path is removed too.
+CirculationRemoveService::deleteByUrl private method added.
+------------------------------------------
+7.28.1
+Patch release issue due to Jira S2PDGS-2059 and S3PDGS-3237.
+S2PDGS-2059: CirculationRemoveService: if exception thrown by File::unlink, check on file existance if localhost. If check is negative, no exception stack is issued in log.
+S3PDGS-3237: Before moving t_circulationsqueue record in BLOCKING status to t_blockedcirculationsqueue table, check if a corresponding item already exists. In this case 
+just remove t_circulationsqueue record and issue an explicative message on log.
+------------------------------------------
+7.28.0
+
+Automatically generate from revision "version "7.28""

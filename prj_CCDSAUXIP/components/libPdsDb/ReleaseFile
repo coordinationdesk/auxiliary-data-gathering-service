@@ -1,0 +1,73 @@
+5.2.0
+[LTA-491] Added set/get/unset for retention_time_secs
+------------------------------------------
+5.1.0
+[LTA-489] Added set/get/unset of the new field parameters in LTAAip
+------------------------------------------
+5.0.1
+no more deprecated db related methods/classes
+------------------------------------------
+5.0.0
+[LTA-221]: LTADLRemoteLTA (and its tests) moved to libLTARest.
+------------------------------------------
+4.1.1
+LTA-137: Useless SRV_Status class (and its test) removed.
+------------------------------------------
+4.1.0
+[LTA-136]: Added LTADLRemoteLTA for t_ltadl_remote_lta table. Test updated accordingly.
+------------------------------------------
+4.0.0
+[LTA-84] Fields circulation_status_id, remote_dc_url and circulation_id renamed
+into upload_status_id, remote_aws_uploader_url and remote_aws_uploader_jobid
+------------------------------------------
+3.1.1
+Using links_count instead of link_count in LTAOrder 
+------------------------------------------
+3.1.0
+LTA-24: added satellite_id and mission to LTAInventoryObject. Test updated accordingly.
+------------------------------------------
+3.0.0
+[ECS-38] Introduced lin_count to LTAOrder object. Implemented the new function
+LTAAipContent::loadAipContentByAipIdAndProductUUID that allows to load an AipContent using aip_id and product_uuid as key.
+------------------------------------------
+2.1.0
+[S2PDGS-256] Added evictiondate field to LTAInventoryObject
+------------------------------------------
+2.0.0
+t_lta replaced by t_srv in database schema
+------------------------------------------
+1.6.1
+Get functions throws exception if set flag is not provided and the requested field is null
+-------------
+1.6.0
+Added default move constructors to and move operator to support stl containers.
+Implemented LTAOrder class.
+-------------
+1.5.1
+Added missing header in release file
+-------------
+1.5.0
+Added removeByName and removeByUUID functions
+Added removeByFiletype functionality to FileType object.
+Implemented LTAAip object to encapsulate t_lta_aip record
+Implemented LTAAipContent object to encapsulate t_lta_aip_content record.
+Tests added
+-------------
+1.4.0
+Introduced FileType::loadByFileType, LTAInventoryObject::loadByName and LTAInventoryObject::loadByUUID
+-------------
+1.3.1
+Added tests for copy constructors
+-------------
+1.3.0
+Implemented static function LTAInventoryObject::table() that returns the statically defined inventory object table.
+-------------
+1.2.0
+Implemented static function FileType::table() that returns the statically defined filetype table.
+-------------
+1.1.0
+Added support for attributes clob
+-------------
+1.0.0
+First release
+-------------

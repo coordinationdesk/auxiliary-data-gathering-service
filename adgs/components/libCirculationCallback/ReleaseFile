@@ -1,0 +1,56 @@
+3.0.0
+Added circulation id and hostname parameters to CallbackRequestType.
+------------------------------
+2.2.4
+gsoap compilation warning removed
+------------------------------
+2.2.3
+deceptive message when cleaning removed
+------------------------------
+2.2.2
+enforcing no deprecated
+test compilation fixed
+------------------------------
+2.2.1
+MP: warning cleanup
+added pragma warning ignore as guard to inclusion of auto generated soap headers
+useless variable removed
+------------------------------
+2.2.0
+Added support for alternative address binding got from configuration space
+------------------------------
+2.1.1
+Fixed compile error
+------------------------------
+2.1.0
+Introduced function waitAddressBinding that, using Conditions, implements a waiting policy (with timeout) to wait until the server address binding is completed.
+Introduced function getCirculationCallbackServiceUrl that waits (with timeout) that the server address binding is completed and then returns the address.
+------------------------------
+2.0.3
+Makefile fixed to force automatically generated code before starting the depend target
+------------------------------
+2.0.2
+Patch release due to issue J6PDAP-90: unitary automatic tests developed using cppunit. 
+Coverage verified with gcov.
+------------------------------
+2.0.1
+Auto-generated files in CirculationCallbackSoap.C are now included using
+angle brackets.
+------------------------------
+2.0.0
+Major release due to issue J6PDAP-84 to manage gsoap version >= 2.8.0. -i option added to soapcpp2 command. server and proxy class names changed along with methods names. 
+-z2 option added to wsdl2h executable line.
+CirculationCallbackSoapService class derived by PDS_USCOREDCBindingService implemented to separate management of request service and of listening thread. 
+PDS_USCOREDCBindingService server class method implemented in CirculationCallbackSoap.C file returning error.
+CirculationCallbackSoap class renamed as CircCallbackSoapServiceThread and made no more singleton since now useless.
+Interface that exposes the manageCallbackRequest pure virtual method has been moved in the new CirculationCallbackInterface class.
+------------------------------
+1.6.2
+Makefile changed to allow use of gsoap > 2.8.0 in compatiblity mode
+------------------------------
+1.6.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.6.0
+
+Automatically generate from revision "version "1.6""

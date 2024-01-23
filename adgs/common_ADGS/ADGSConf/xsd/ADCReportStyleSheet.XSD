@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsl:stylesheet version="1.0" 
+		xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+		xmlns:xalan="http://xml.apache.org/xalan">
+	
+	<!-- Set Output File Format -->
+	<xsl:output method="xml" 
+			encoding="UTF-8"
+			indent="yes" 
+			xalan:indent-amount="4"/>	
+	
+	
+	
+	<!-- ******************************************************* -->
+	<!-- ******                 ROOT BLOCK                ****** -->
+	<!-- ******************************************************* -->
+	<!-- If is an Earth Explorer File -->
+	<xsl:template match="Earth_Explorer_File">
+	
+		<!-- Create root tag -->
+		<xsl:element name="Earth_Explorer_File">
+		
+			<!-- Call Header Template -->
+			<xsl:call-template name="CreateHeader"/>
+		
+			<!-- Create Data Block tag -->
+			<xsl:element name="Data_Block">
+				<!-- Call DataBlock Template -->
+				<xsl:call-template name="CreateDataBlock"/>
+			</xsl:element>
+		
+		</xsl:element>
+		
+	</xsl:template>
+	
+	<!-- If is not an Earth Explorer File -->
+	<xsl:template match="QueryResult">
+	
+		<!-- Create root tag -->
+		<xsl:element name="CoverageReport">
+		
+			<!-- Call DataBlock Template -->
+			<xsl:call-template name="CreateDataBlock"/>
+			
+		</xsl:element>
+		
+	</xsl:template>
+	
+	
+		
+	<!-- *********************************** -->
+	<!-- ****** HEADER BLOCK Template ****** -->
+	<!-- *********************************** -->
+	<xsl:template name="CreateHeader">
+	
+		<!-- Create and fill Earth Explorer Header tag -->
+		<xsl:element name="Earth_Explorer_Header">
+		
+			<!-- Copy All Fixed Header Structure -->
+			<xsl:copy-of select="Earth_Explorer_Header/Fixed_Header"/>
+		
+			<!-- Create Variable Header tag -->
+			<xsl:element name="Variable_Header">
+			</xsl:element>
+		
+		</xsl:element>
+		
+	</xsl:template>
+	
+		
+	
+	<!-- ********************************* -->				
+	<!-- ****** DATA BLOCK Template ****** -->
+	<!-- ********************************* -->
+	
+	<!-- This key will be used to count the number of distinct fyletypes -->
+	<xsl:key name="entry" match="List_of_records/record" use="FileType" />
+	
+	<xsl:template name="CreateDataBlock">
+		
+		<!-- Searching for queries tags -->
+		<xsl:for-each select="//QueryResult/List_of_queries/query">	
+
+			<!-- If is Coverage Report -->
+			<xsl:if test="Subtitle = 'Warning Periods'">
+
+				<!-- Create List_of_FileTpes tag -->
+				<xsl:element name="List_of_FileTpes">
+					<xsl:attribute name="count">
+						<xsl:value-of select="count(List_of_records/record [ generate-id() = generate-id(key('entry', FileType))])"/>
+					</xsl:attribute>
+
+					<!-- Create and fill base structure calling template-->
+					<xsl:call-template name="FileTypeStructure"/>
+				</xsl:element>
+			</xsl:if>
+
+		</xsl:for-each>
+		
+	</xsl:template>
+	
+	
+	
+	<!-- ***************************************************** -->
+	<!-- ******       FILETYPE STRUCTURE Template       ****** -->
+	<!-- ***************************************************** -->
+	<xsl:template name="FileTypeStructure">
+		
+		<!-- For Every new FileType -->
+		<xsl:for-each select="List_of_records/record">
+			<xsl:variable name = "currentPosition" ><xsl:value-of select="position()"/></xsl:variable>
+			<xsl:if test="./FileType !=../record[$currentPosition - 1]/FileType or $currentPosition = 1">
+
+			<xsl:element name="FileType">
+				<xsl:element name="FileTypeName">
+					<xsl:value-of select="FileType"/>
+				</xsl:element>
+
+				<xsl:element name="List_of_Rules">
+					<!-- Create and fill rules structure calling template-->
+					<xsl:call-template name="ListOfRules"/>
+				</xsl:element>
+
+			</xsl:element>
+
+			</xsl:if>	
+		</xsl:for-each>
+		
+	</xsl:template>
+	
+		
+	
+	<!-- ****************************************************** -->
+	<!-- ******         RULES STRUCTURE Template         ****** -->
+	<!-- ****************************************************** -->
+	<xsl:template name="ListOfRules">
+		<!-- For Every new RuleId -->
+		<xsl:for-each select=".">
+			<xsl:variable name = "currentPosition" ><xsl:value-of select="position()"/></xsl:variable>
+			<xsl:if test="./RuleId !=../record[$currentPosition - 1]/RuleId or $currentPosition = 1">
+				
+				<xsl:variable name = "currentRuleId" >
+					<xsl:value-of select="RuleId"/>
+				</xsl:variable>
+		
+				<xsl:variable name = "recordsCount" >
+					<xsl:value-of select="count(../record[RuleId = $currentRuleId])"/>
+				</xsl:variable>
+				
+				<xsl:element name="Rule">
+					<xsl:element name="RuleType">
+						<xsl:value-of select="RuleType"/>
+					</xsl:element>
+					<xsl:element name="RuleId">
+						<xsl:value-of select="RuleId"/>
+					</xsl:element>
+					<xsl:element name="List_of_Warning_Periods">
+					<xsl:attribute name="count">
+						<xsl:value-of select="$recordsCount" />
+					</xsl:attribute>
+						<xsl:for-each select="../record[RuleId = $currentRuleId]">
+							<xsl:call-template name="ListOfWarningPerPeriods" />
+						</xsl:for-each>
+					
+					</xsl:element>
+				</xsl:element>
+			</xsl:if>	
+		</xsl:for-each>
+	</xsl:template>
+	
+		
+	
+	<!-- ****************************************************** -->
+	<!-- ******   LIST OF WARNING PER PERIODS Template   ****** -->
+	<!-- ****************************************************** -->
+	<xsl:template name="ListOfWarningPerPeriods">
+			
+		<xsl:for-each select=".">
+			<xsl:element name="Period">
+				<xsl:element name="PeriodBegin">
+					<xsl:value-of select="PeriodBegin"/>
+				</xsl:element>
+				<xsl:element name="PeriodEnd">
+					<xsl:value-of select="PeriodEnd"/>
+				</xsl:element>
+				
+				<xsl:element name="Warnings">
+					<xsl:if test="./WarningMissing != 'good'">
+						<xsl:element name="WarningMissing">
+							<xsl:value-of select="WarningMissing"/>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="(./WarningToomany != 'good') and (./WarningToomany != 'not_needed')">
+						<xsl:element name="WarningToomany">
+							<xsl:value-of select="WarningToomany"/>
+						</xsl:element>
+					</xsl:if>
+					<xsl:if test="(./WarningCoverage != 'good') and (./WarningCoverage != 'not_needed')">
+						<xsl:element name="WarningCoverage">
+							<xsl:value-of select="WarningCoverage"/>
+						</xsl:element>
+					</xsl:if>
+				</xsl:element>
+				
+			</xsl:element>
+		</xsl:for-each>
+					
+	</xsl:template>
+	
+	
+	
+	
+	<!-- **********  DEFAULT TEMPLATE : PRINTS NOTHING  ********** -->
+	<xsl:template match="*">
+	</xsl:template>
+
+	
+	
+</xsl:stylesheet>

@@ -1,0 +1,9 @@
+# The File can contains any number of empty lines and
+# or starting with hash negliged by script
+# The First meaningful line must contain the colum names
+# Fallowing rows are traited as record.
+# Fields must be quoted by single quote if strings or plain in case of Numeric values 
+
+'satelliteid','mission','sensorid'
+'(SELECT satelliteid FROM t_satellites WHERE satellitename = 'Sentinel-2B')', 2, '(SELECT sensorid FROM t_sensors WHERE sensorname = 'MSI')'
+

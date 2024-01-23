@@ -1,0 +1,141 @@
+#
+# (C) 2005, ACS
+#
+#
+# $Author$
+#
+# $Id$
+#
+
+
+
+
+
+DATA FLOW FOR LDATA:
+==========================
+
+
+
+From "Human"/XML Data to BLOB
+==========================
+
+
+    +--------------+
+       (XML LData)
+    +--------------+
+          ||
+          \/
+ +-------------------+
+   struct LDataParam
+ +-------------------+
+          ||
+          \/
+    +-------------+
+         STEP1 (createLData)
+    +-------------+      
+          ||
+          \/
+    +-------------+
+         STEP2 (packLData)
+    +-------------+      
+          ||
+          \/
+    +-------------+
+         BLOB 
+    +-------------+      
+
+
+
+From BLOB to struct LDataParam (or simple LData validation)
+============================================================
+
+
+    +-------------+
+         BLOB      ===========================================
+    +-------------+                                         ||
+          ||                                                || 
+          \/                                                \/
+    +-------------+                                   +-------------+
+         STEP3 (unpackLData)                             DATACHECK
+    +-------------+                                   +-------------+  
+          ||                                                ||
+          \/                                                \/
+    +-------------+                                   +-------------+
+         STEP4 (readLData)                                boolean
+    +-------------+                                   +-------------+     
+          ||
+          \/
+ +-------------------+
+   struct LDataParam
+ +-------------------+
+ 
+
+  
+ 
+  
+
+
+-----------------------------------------------------------------------
+
+DESC: STEP1
+INPUT: struct LDataParam, keyword_Name
+(ALSO: cipherRSA flag, privateKey if needed)
+FUNCTION:
+    unsigned char* createLData(unsigned int* outdatalen, char const* name, \
+                RSA* privKey, bool cipherRSA, struct LDataParam const*) ;
+OUTPUT: RSA-ciphered binary data
+COMMENT: INPUT struct can be created parsing an XML file (Application/LDataGenerator)
+
+-----------------------------------------------------------------------
+
+
+DESC: STEP2
+INPUT: RSA-ciphered binary data
+(ALSO: ab generator, scrambleWithMAC flag, cipherRSA flag to be stored into header)
+FUNCTION:  
+    unsigned char* packLData( unsigned int* outlen, \
+                unsigned char* ldata, unsigned short ab, bool scrambleWithMAC, 
+                bool cipherRSA, unsigned int l) ;
+OUTPUT: scrambled binary-data, with data-header. (i.e. valid BLOB).
+COMMENT: BLOB can be stored into a file or into DB
+
+
+-----------------------------------------------------------------------
+=======================================================================
+-----------------------------------------------------------------------
+
+DESC: STEP3
+INPUT: scrambled binary-data, with data-header. (i.e. valid BLOB).
+(ALSO: ab generator)
+FUNCTION: 
+    unsigned char* unpackLData(unsigned int* outlen, \
+                bool* cipheredRSA, unsigned char* blobdata, unsigned int bloblen, unsigned short ab);
+		
+   
+OUTPUT: RSA-ciphered binary data
+(ALSO: cipheredRSA flag)
+COMMENT: 
+
+-----------------------------------------------------------------------
+
+DESC: STEP4
+INPUT: RSA-ciphered binary data
+(ALSO: cipherRSA flag, publicKey if needed)
+FUNCTION:  
+    void readLData(struct LDataParam*, unsigned char const*, \
+                RSA* pubKey, bool cipherRSA, unsigned int ldatasize);
+OUTPUT: struct LDataParam
+COMMENT: Obtained struct can be checked seeking the fields
+
+-----------------------------------------------------------------------
+=======================================================================
+-----------------------------------------------------------------------
+
+DESC: DATACHECK
+INPUT: scrambled binary-data, with data-header. (i.e. valid BLOB).
+(ALSO: keyword_Name)
+FUNCTION:  
+    bool checkLData(unsigned char *, size_t, const std::string& keyword, bool debug=false) ;
+
+OUTPUT: bool with LData-status (true==GOOD)
+COMMENT:

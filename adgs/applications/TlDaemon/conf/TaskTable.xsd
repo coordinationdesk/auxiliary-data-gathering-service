@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 NT (http://www.xmlspy.com) by  () -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2000/10/XMLSchema" elementFormDefault="qualified">
+	<xsd:element name="Task_Table">
+		<xsd:annotation>
+			<xsd:documentation>Processor Task Table</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Processor_Name" type="xsd:string"/>
+				<xsd:element name="Version" type="xsd:string"/>
+				<xsd:element name="Test">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="Yes"/>
+							<xsd:enumeration value="No"/>
+						</xsd:restriction>
+					</xsd:simpleType>
+				</xsd:element>
+				<xsd:element name="Min_Disk_Space">
+					<xsd:complexType>
+						<xsd:simpleContent>
+							<xsd:extension base="xsd:positiveInteger">
+								<xsd:attribute name="units" use="required" value="MB">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:enumeration value="MB"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:attribute>
+							</xsd:extension>
+						</xsd:simpleContent>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Max_Time">
+					<xsd:complexType>
+						<xsd:simpleContent>
+							<xsd:extension base="xsd:positiveInteger">
+								<xsd:attribute name="units" use="required" value="sec">
+									<xsd:simpleType>
+										<xsd:restriction base="xsd:string">
+											<xsd:enumeration value="sec"/>
+										</xsd:restriction>
+									</xsd:simpleType>
+								</xsd:attribute>
+							</xsd:extension>
+						</xsd:simpleContent>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Private_Config">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="List_of_Cfg_Files">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="Cfg_File" maxOccurs="unbounded">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Version" type="xsd:string"/>
+													<xsd:element name="File_Name" type="xsd:string"/>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+									<xsd:attribute name="count" type="xsd:positiveInteger" use="required"/>
+								</xsd:complexType>
+							</xsd:element>
+							<xsd:element name="Default" type="xsd:nonNegativeInteger" default="0"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="List_of_Config_Spaces">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Config_Space" type="xsd:token" maxOccurs="unbounded"/>
+						</xsd:sequence>
+						<xsd:attribute name="count" type="xsd:positiveInteger" use="required"/>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="List_of_Pools">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Pool" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="Detached" type="xsd:boolean"/>
+										<xsd:element name="Killing_Signal" type="xsd:int"/>
+										<xsd:element name="List_of_Tasks">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Task" maxOccurs="unbounded">
+														<xsd:complexType>
+															<xsd:sequence>
+																<xsd:element name="Name" type="xsd:string"/>
+																<xsd:element name="Version" type="xsd:string"/>
+																<xsd:element name="Critical" type="xsd:boolean"/>
+																<xsd:element name="Criticality_Level" default="1" nullable="true">
+																	<xsd:simpleType>
+																		<xsd:restriction base="xsd:unsignedShort">
+																			<xsd:minExclusive value="0"/>
+																		</xsd:restriction>
+																	</xsd:simpleType>
+																</xsd:element>
+																<xsd:element name="File_Name" type="xsd:string"/>
+																<xsd:element name="List_of_Inputs">
+																	<xsd:complexType>
+																		<xsd:sequence>
+																			<xsd:element name="Input" minOccurs="0" maxOccurs="unbounded">
+																				<xsd:complexType>
+																					<xsd:sequence>
+																						<xsd:element name="Mode">
+																							<xsd:simpleType>
+																								<xsd:restriction base="xsd:string">
+																									<xsd:enumeration value="SISTEMATIC"/>
+																									<xsd:enumeration value="NRT"/>
+																									<xsd:enumeration value="REPROCESSING"/>
+																									<xsd:enumeration value="ALWAYS"/>
+																								</xsd:restriction>
+																							</xsd:simpleType>
+																						</xsd:element>
+																						<xsd:element name="Mandatory" default="Yes">
+																							<xsd:simpleType>
+																								<xsd:restriction base="xsd:string">
+																									<xsd:enumeration value="No"/>
+																									<xsd:enumeration value="Yes"/>
+																								</xsd:restriction>
+																							</xsd:simpleType>
+																						</xsd:element>
+																						<xsd:element name="List_of_Alternatives">
+																							<xsd:complexType>
+																								<xsd:sequence>
+																									<xsd:element name="Alternative" maxOccurs="unbounded">
+																										<xsd:complexType>
+																											<xsd:sequence>
+																												<xsd:element name="Order" type="xsd:nonNegativeInteger"/>
+																												<xsd:element name="Origin" default="Yes">
+																													<xsd:simpleType>
+																														<xsd:restriction base="xsd:string">
+																															<xsd:enumeration value="DB"/>
+																															<xsd:enumeration value="PROC"/>
+																															<xsd:enumeration value="LOG"/>
+																														</xsd:restriction>
+																													</xsd:simpleType>
+																												</xsd:element>
+																												<xsd:element name="Retrieval_Mode" default="exact">
+																													<xsd:simpleType>
+																														<xsd:restriction base="xsd:token">
+																															<xsd:whiteSpace value="collapse"/>
+																															<xsd:enumeration value="ValCover"/>
+																															<xsd:enumeration value="LatestValCover"/>
+																															<xsd:enumeration value="ValIntersect"/>
+																															<xsd:enumeration value="LatestValIntersect"/>
+																															<xsd:enumeration value="LatestValidityClosest"/>
+																														</xsd:restriction>
+																													</xsd:simpleType>
+																												</xsd:element>
+																												<xsd:element name="T0" default="0">
+																													<xsd:simpleType>
+																														<xsd:restriction base="xsd:int">
+																															<xsd:whiteSpace value="collapse"/>
+																														</xsd:restriction>
+																													</xsd:simpleType>
+																												</xsd:element>
+																												<xsd:element name="T1" default="0">
+																													<xsd:simpleType>
+																														<xsd:restriction base="xsd:int">
+																															<xsd:whiteSpace value="collapse"/>
+																														</xsd:restriction>
+																													</xsd:simpleType>
+																												</xsd:element>
+																												<xsd:element name="File_Type" type="xsd:string"/>
+																												<xs:element name="File_Class" type="xsd:string" minOccurs="0"/>
+																												<xsd:element name="File_Name_Type">
+																													<xsd:simpleType>
+																														<xsd:restriction base="xsd:string">
+																															<xsd:enumeration value="Physical"/>
+																															<xsd:enumeration value="Logical"/>
+																															<xsd:enumeration value="Stem"/>
+																														</xsd:restriction>
+																													</xsd:simpleType>
+																												</xsd:element>
+																												<xs:element name="Stream" type="xs:boolean" minOccurs="0"/>
+																												<xs:element name="FilterBySatellite" type="xs:boolean" minOccurs="0"/>
+																												<xs:element name="FilterByMission" type="xs:boolean" minOccurs="0"/>
+																											</xsd:sequence>
+																										</xsd:complexType>
+																									</xsd:element>
+																								</xsd:sequence>
+																								<xsd:attribute name="count" type="xsd:positiveInteger" use="required"/>
+																							</xsd:complexType>
+																						</xsd:element>
+																					</xsd:sequence>
+																				</xsd:complexType>
+																			</xsd:element>
+																		</xsd:sequence>
+																		<xsd:attribute name="count" type="xsd:positiveInteger" use="required"/>
+																	</xsd:complexType>
+																</xsd:element>
+																<xsd:element name="List_of_Outputs">
+																	<xsd:complexType>
+																		<xsd:sequence>
+																			<xsd:element name="Output" minOccurs="0" maxOccurs="unbounded">
+																				<xsd:complexType>
+																					<xsd:sequence>
+																						<xsd:element name="Destination" default="Yes">
+																							<xsd:simpleType>
+																								<xsd:restriction base="xsd:string">
+																									<xsd:enumeration value="DB"/>
+																									<xsd:enumeration value="PROC"/>
+																								</xsd:restriction>
+																							</xsd:simpleType>
+																						</xsd:element>
+																						<xsd:element name="Mandatory" default="Yes">
+																							<xsd:simpleType>
+																								<xsd:restriction base="xsd:string">
+																									<xsd:enumeration value="No"/>
+																									<xsd:enumeration value="Yes"/>
+																								</xsd:restriction>
+																							</xsd:simpleType>
+																						</xsd:element>
+																						<xsd:element name="File_Type" type="xsd:string"/>
+																						<xsd:element name="File_Name_Type">
+																							<xsd:simpleType>
+																								<xsd:restriction base="xsd:string">
+																									<xsd:enumeration value="Physical"/>
+																									<xsd:enumeration value="Logical"/>
+																									<xsd:enumeration value="Stem"/>
+																								</xsd:restriction>
+																							</xsd:simpleType>
+																						</xsd:element>
+																					</xsd:sequence>
+																				</xsd:complexType>
+																			</xsd:element>
+																		</xsd:sequence>
+																		<xsd:attribute name="count" type="xsd:positiveInteger" use="required"/>
+																	</xsd:complexType>
+																</xsd:element>
+																<xsd:element name="List_of_Breakpoints">
+																	<xsd:complexType>
+																		<xsd:sequence>
+																			<xsd:element name="Breakpoint" minOccurs="0" maxOccurs="unbounded">
+																				<xsd:simpleType>
+																					<xsd:restriction base="xsd:token">
+																						<xsd:whiteSpace value="collapse"/>
+																					</xsd:restriction>
+																				</xsd:simpleType>
+																			</xsd:element>
+																		</xsd:sequence>
+																		<xsd:attribute name="count" type="xsd:positiveInteger" use="required"/>
+																	</xsd:complexType>
+																</xsd:element>
+															</xsd:sequence>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+												<xsd:attribute name="count" type="xsd:positiveInteger" use="required"/>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="count" type="xsd:positiveInteger" use="required"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

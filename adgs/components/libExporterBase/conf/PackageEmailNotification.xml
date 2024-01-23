@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Library>
+	<!-- PackageEmailNotifier configuration-->
+	<PackageEmailNotification>
+		<!-- The root key in the conf space to access mail server, port, ... -->
+		<MailRootKeyConf>EmailUserNotification</MailRootKeyConf>
+		<!-- Enable Package Email notifications -->
+		<enabled>true</enabled>
+		
+		<!-- Mail style: key value to MailFormatXSL -->
+		<!-- attachBody: the body is also attached to the mail -->
+		<MailFormat attachBody="true">HTML</MailFormat> 
+		<!-- XSL to get required format -->
+		<MailFormatXSL>
+			<!-- Relative path to defaultConfPath() - e.g. /data/ADH/conf -->
+			<!-- contentType attribute override the default one in the mail header -->
+			<XML contentType="text/xml; charset=US-ASCII"></XML> <!-- If empty no xsl transformation is performed -->
+			<HTML contentType="text/html; charset=US-ASCII">xsl/PackageExporterHtmlMail.xsl</HTML> <!-- Html format -->
+			<RSET>xsl/PackageExporterRsetMail.xsl</RSET>  <!-- Resource set like format -->
+			<PLAIN>xsl/PackageExporterPlainMail.xsl</PLAIN> <!-- Plain text format -->
+		</MailFormatXSL> 
+	</PackageEmailNotification>
+</Library>
+

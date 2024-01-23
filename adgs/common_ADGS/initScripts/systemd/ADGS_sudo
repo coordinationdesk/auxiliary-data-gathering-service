@@ -1,0 +1,4 @@
+Defaults:opadgs !requiretty
+opadgs ALL = (root) NOPASSWD: /usr/local/components/ADGS/initScripts/ADGS-Server-control
+opadgs ALL = (root) NOPASSWD: /usr/local/components/ADGS/initScripts/ADGS-Client-control
+opadgs ALL = (root) NOPASSWD: /usr/local/components/ADGS/initScripts/ADGS-ImpDmz-control

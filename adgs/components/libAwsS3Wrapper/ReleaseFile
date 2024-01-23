@@ -1,0 +1,67 @@
+1.7.0
+EC:: 2 Modifications. (1) Provider OVH. URL/EP should always be lowercase, despite the case of the region (which is part of EP). Fixed. (2) Added new provider: OVH_PERF (the only difference is the EP).
+------------------------------
+1.6.0
+EC:: LP:: Minor release due to jira LTA-396
+AwsS3WrapperConfiguration class added.
+------------------------------
+1.5.2
+Compilation warning cleanup
+------------------------------
+1.5.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.5.0
+EC:: Added support for provider: OVH. Added support to parallel downloads.
+-------------------------------------------------------------
+1.4.2
+EC:: The special PooledThreadExecutor will be used only if UploadPoolSize is greater than 1. Otherwise, the standard, not-pooled DefaultExecutor will be used intead (MINIO seems to be not compatible with the former).
+-------------------------------------------------------------
+1.4.1
+LTA-175: Typo fixed.
+-------------------------------------------------------------
+1.4.0
+LTA-175: Updated to handle two non-mandatory parameters during upload: UploadPoolSize and UploadBufferSize
+-------------------------------------------------------------
+1.3.0
+EC:: StopController made mandatory in c'tor
+-------------------------------------------------------------
+1.2.2
+S2PDGS-335: EC && LP: uploadObject: setContentDisposition enforced for both cases single objects and multiple objects.
+-------------------------------------------------------------
+1.2.1
+EC:: Exception released in case of cancelled download from bucket
+-------------------------------------------------------------
+1.2.0
+EC:: introduced aws::MakeShared. StopController handled.
+-------------------------------------------------------------
+1.1.3
+Removed useless dependency declaration form the test makefile
+GITPortingTools 9.9.0 removed the need of MODULELIBS variable
+-------------------------------------------------------------
+1.1.2
+List of Amazon libs in SPECIFICLIBS flag added to test Makefile again, otherwise a linking error occurs
+-------------------------------------------------------------
+1.1.1
+MP: using GITPortingTools 9.8.0 to use MODULELIBS for current shared object undefined symbols resolution
+-------------------------------------------------------------
+1.1.0
+EC:: MP: removed boost dependency and removed dependency from aws core moving method from inline to compilation unit.
+string management improved: both Aws and std strings should use length and not size
+-------------------------------------------------------------
+1.0.3
+EC:: LP: Improve handling of external region and endpoint. Makefile simplified.
+-------------------------------------------------------------
+1.0.2
+LP: Amazon libs added to library Makefile in order to simplify test Makefile.
+-------------------------------------------------------------
+1.0.1
+EC:: LP:: library renamed to: libAwsS3Wrapper.so
+-------------------------------------------------------------
+
+1.0.0
+EC::First official release 
+
+0.0.1
+First version
+

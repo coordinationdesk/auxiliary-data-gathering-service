@@ -1,0 +1,354 @@
+#!/bin/sh
+#
+# Copyright 2010-2020, Advanced Computer Systems , Inc.
+# Via Della Bufalotta, 378 - 00139 Roma - Italy
+# http://www.acsys.itA.C.S. - Advanced Computer Systems S.p.A.
+# 
+# This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems, S.p.A.;
+# the contents of this file may not be disclosed to third parties, copied or
+# duplicated in any form, in whole or in part, without the prior written
+# permission of Advanced Computer Systems, S.p.A.
+#	
+#
+#   $Prod: A.C.S. Create new table t_acshsminvrelation or t_acsisminvrelation $
+#
+#	$Id$
+#
+#	$Author$
+#
+#	$Log$
+#	Revision 1.1.1.1  2015/09/10 13:04:58  achnat
+#	Import psqlCreateNewAcsSmInvRelation
+#	
+
+
+
+
+
+usage() {
+	echo "usage: $(basename $0) <sm_type> <conn_param>"
+	echo $dashLine
+	echo "sm_types:"
+	echo "   -S <hsm|ism>  Insert a new record into the table" 
+	echo "conn_params:"
+	echo "   -p <project>  Use connection parameters of a specific project"
+	echo "   -z            No project. Insert connection parameters manually"
+	echo "                 when requested"
+	echo $dashLine
+	echo ""
+	exit 1
+}
+
+
+res_msg() {
+	case "$1" in
+		'0')
+			echo_success
+			echo ""
+			;;
+		'1')
+			echo_failure
+			echo ""
+			;;
+		'2')
+			echo_warning
+			echo ""
+			;;
+		+ )
+			;;
+	esac
+}
+
+clean() {
+	if test -e $SQL_FILE; then rm -f $SQL_FILE; fi
+	if test -e $RES_FILE; then rm -f $RES_FILE; fi
+}
+
+
+exit_error() {
+	echo "" >> $LOG_FILE
+	echo $dashLine | tee -a $LOG_FILE
+	echo "*** CREATION ABORTED ***" | tee -a $LOG_FILE
+	echo "See log file $LOG_FILE"
+	echo "" | tee -a $LOG_FILE
+	clean
+	exit 1
+}
+
+
+check_file() {
+	if ! test -r "$1"
+	then
+		echo "*** Cannot find $(basename $1) file or it is not readable ***" | tee -a $LOG_FILE
+		echo "expected file: $1"
+		exit_error
+	fi
+}
+
+
+init_file() {
+	if ! test -e $2
+	then
+		touch $2
+		if [ "$?" != 0 ]
+		then
+			echo "*** ERROR!!! init_file() - Cannot create $1 file ***"
+			echo "trying to write: $2"
+			echo ""
+			exit 1
+		fi
+		chmod a+w $2
+	fi
+	
+	case $1 in
+		'log')
+			echo "" >> $2
+			echo "" >> $2
+			echo "###################################################################" >> $2
+			echo "# $(date)" >> $2
+			echo "###################################################################" >> $2
+			;;
+		* )
+			echo "" > $2
+			;;
+	esac
+}
+
+
+set_conf() {
+	if test -r "$CONF_FILE"
+	then
+		. $CONF_FILE
+
+		export DBHOSTNAME
+		export DBNAME
+		export DBAUSER
+		export PDSUSER
+	else
+		echo "*** Cannot find CONF file or it is not readable ***" | tee -a $LOG_FILE
+		echo "expected file: $CONF_FILE"
+		exit_error
+	fi
+}
+
+
+check_conn() {
+	echo -n "Checking connection on $DBNAME ..." | tee -a $LOG_FILE
+	psql -h $DBHOSTNAME -U $DBAUSER $DBNAME -v "ON_ERROR_STOP=1" -c "\l" 2>> $LOG_FILE 1> /dev/null
+	if [ "$?" != 0 ]
+	then
+		res_msg 1
+		echo "*** ERROR!!! check_conn(): Cannot connect to $DBNAME ***" | tee -a $LOG_FILE
+		exit_error
+	fi
+	
+	res_msg 0
+	echo "  OK" >> $LOG_FILE
+}
+
+
+check_insert() {
+	toAnalize="$2"
+	
+	while test -z "$toAnalize"
+	do
+		echo -n "Insert postgres $1 name: "
+		read toAnalize
+	done
+	
+	export validated="$toAnalize"
+}
+
+
+insert_param() {
+	case $1 in
+		'srv' )
+			echo -n "Insert postgres host name: "
+			read val
+			check_insert host $val
+			export DBHOSTNAME="$validated"
+			;;
+		'db' )
+			echo -n "Insert postgres database name: "
+			read val
+			check_insert database $val
+			export DBNAME="$validated"
+			;;
+		'dbausr' )
+			echo -n "Insert postgres DBA user name: "
+			read val
+			check_insert user $val
+			export DBAUSER="$validated"
+			;;
+		'pdsusr' )
+			echo -n "Insert postgres PDS user name: "
+			read val
+			check_insert user $val
+			export PDSUSER="$validated"
+			;;
+		* ) 
+			;;
+	esac
+}
+
+
+exe_qry() {
+	echo -e "\nrunning query ..." >> $LOG_FILE
+	#echo -e "\nquery is:" >> $LOG_FILE
+	#cat $SQL_FILE >> $LOG_FILE
+	
+	if [ "$1" = "res" ]
+	then
+		psql -h $DBHOSTNAME -U $DBAUSER $DBNAME -v "ON_ERROR_STOP=1" -tqA -c "\i $SQL_FILE" 2>> $LOG_FILE 1> $RES_FILE
+		res="$?"
+		res_cmd="res_msg 0"
+	else
+		psql -h $DBHOSTNAME -U $DBAUSER $DBNAME -v "ON_ERROR_STOP=1" -c "\i $SQL_FILE" >> $LOG_FILE 2>&1
+		res="$?"
+		res_cmd="res_msg 0"
+	fi
+	
+	if [ "$res" != 0 ]
+	then
+		res_msg 1
+		echo "*** ERROR: Error during query execution ***" | tee -a $LOG_FILE
+		exit_error
+	fi
+	
+	$res_cmd
+	echo ">> query executed successfully." >> $LOG_FILE
+}
+
+
+
+
+
+
+################################   MAIN   ################################
+##########################################################################
+
+# Source function library
+. /etc/rc.d/init.d/functions
+
+export dashLine="-------------------------------------------------------------------"
+echo ""
+echo "POSTGRES SM RELATION TABLE CREATOR"
+echo $dashLine
+
+export EXE_DIR=`dirname $0`
+cd $EXE_DIR
+export EXE_DIR=`pwd`
+
+cd ..
+export BASE_DIR=`pwd`
+cd $EXE_DIR
+
+export SQL_DIR=$EXE_DIR/sql
+export CONF_DIR=$BASE_DIR/psqlUtilitiesConf
+
+export HSM_SQL=$SQL_DIR/t_acshsminvrelation.sql
+export ISM_SQL=$SQL_DIR/t_acsisminvrelation.sql
+export LOG_FILE=/tmp/$(basename $0).log
+export SQL_FILE=/tmp/$(basename $0)_tempCmd.sql
+export RES_FILE=/tmp/$(basename $0)_tempResult.res
+
+export p_flag="F"
+export s_flag="F"
+export z_flag="F"
+
+while getopts ":p:S:z" opt 
+do 
+	case "${opt}" in 
+		p) 
+			export p_flag="T"
+			export prj=${OPTARG}
+			;;
+		S) 
+			export s_flag="T"
+			export smt=${OPTARG}
+			;;
+		z) 
+			export z_flag="T"
+			;;
+		*) 
+			usage 
+			;;
+	esac 
+done
+
+if [ "$p_flag" = "F" ] && [ "$z_flag" = "F" ]; then usage; fi
+if [ "$p_flag" = "T" ] && [ "$z_flag" = "T" ]; then usage; fi
+
+case $smt in
+	'hsm' ) 
+		export tb_name=t_acshsminvrelation 
+		export IN_SQL=$HSM_SQL
+		;;
+	'ism' ) 
+		export tb_name=t_acsisminvrelation 
+		export IN_SQL=$ISM_SQL
+		;;
+	* ) 
+		usage 
+		;;
+esac
+
+clean
+
+init_file log $LOG_FILE
+init_file sql $SQL_FILE
+init_file res $RES_FILE
+
+check_file $HSM_SQL
+check_file $ISM_SQL
+
+if [ "$p_flag" = "T" ]
+then
+	export CONF_FILE=$CONF_DIR/$prj.conf
+	set_conf
+else
+	insert_param srv
+	insert_param db
+	insert_param dbausr
+	insert_param pdsusr
+fi
+
+if test -z "$PGPASSWORD"
+then
+	echo -n "Insert $DBAUSER password: "
+	read -s answer
+	export PGPASSWORD=$answer
+	echo ""
+fi
+
+check_conn
+
+echo -n "Searching for existing tables ..." | tee -a $LOG_FILE
+echo "SELECT count(*) FROM pg_tables WHERE tablename LIKE '$tb_name%'" > $SQL_FILE
+exe_qry res
+export tb_num=$(cat $RES_FILE)
+echo "$tb_name tableas found: $tb_num" >> $LOG_FILE
+
+if [ $tb_num = '0' ]
+then 
+	export new_tb_name=$tb_name
+else
+	export new_tb_name=$tb_name$(expr $tb_num + 1)
+fi
+echo "New table name: $new_tb_name" >> $LOG_FILE
+
+echo -n "Creating new table ..." | tee -a $LOG_FILE
+sed "s/#TABLE_NAME#/$new_tb_name/g" $IN_SQL > $SQL_FILE
+exe_qry
+
+echo -n "Assigning grant to new table ..." | tee -a $LOG_FILE
+echo "GRANT SELECT, UPDATE, INSERT, DELETE ON TABLE $new_tb_name TO $PDSUSER ;" > $SQL_FILE
+exe_qry
+
+echo $dashLine | tee -a $LOG_FILE
+echo ">> CREATION COMPLETED" | tee -a $LOG_FILE
+echo "" | tee -a $LOG_FILE
+clean
+exit 0
+
+

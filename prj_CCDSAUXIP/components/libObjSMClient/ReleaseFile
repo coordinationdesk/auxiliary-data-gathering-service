@@ -1,0 +1,68 @@
+3.5.1
+LP:: Test fixed.
+------------------------------
+3.5.0
+LP:: Minor release due to jira LTA-516.
+ObjStorageManager now derived directly from SMInterface base class. Pure virtual methods declared and implemented.
+In upload method, base class normalUpload is called. Simulate class added to IF to simulate operations.
+giveup, isOnCache, putOnCache, releaseCache methods removed since no need to be implemented occurs ( using the SMInterface base class ones ).
+------------------------------
+3.4.1
+[LTA-498]
+Added new test config file for LTA environment
+3.4.0
+[LTA-498]
+- Defined new interface for erase operations which takes in input filename and fileversion instead of dbPersistentOperatorIF
+- Deprecated old interface erase(dbPersistent::IdType sminvid, const dbPersistentOperatorIF&, std::string* p=0)
+- Tests updated
+------------------------------
+3.3.0
+Minor release due to jira LTA-514.
+LP:: ObjStorageManager giveup, isOnCache, putOnCache, releaseCache methods implemented returning the SMInterface base class ones.
+------------------------------
+3.2.1
+Patch release due to jira CPS-114.
+LP:: throughput [Kb/s] metric added to statistics for both upload and download. Added size [Kb] metric to download.
+Test: added option to print statistics.
+------------------------------
+3.2.0
+Minor release due to jira LTA-510.
+LP:: ObjDdlSMInterfaceFactoryMethod class added to return ObjStorageManager ptr setting CTOR ddl new flag to true.
+_ddl attribute added to ObjStorageManager IF so that, if valorized, p_inventory_inc_ddl_count and p_inventory_dec_ddl_count db sp are executed
+respectively in upload and erase. Test added.
+_theMethod static objects moved from both ObjSMInterfaceFactoryMethod and ObjDdlSMInterfaceFactoryMethod classes to an empty namespace  persistent Init class.
+------------------------------
+3.1.0
+Minor release due to jira CPS-105.
+LP:: ObjStorageManager::shallRemoveUnknownLinks() base class method implemented to return configured flag .
+Test fixed for libDbCryosat case (not LTA)
+------------------------------
+3.0.0
+Major release due to jira CPS-14.
+LP:: invrelation table path column renamed as http_path and s3_path column added to be properly filled in uploading.
+s3_path effectively used as sm key for both downloading and erasing files since path disassemble is easier than http_path.
+ Download_Pool_Size, Download_Buffer_Size, Upload_Pool_Size, Upload_Buffer_Size optional tags occurring in CLOB parameters of t_storagemanager managed.
+------------------------------
+2.0.0
+Major release due to jira CPS-10.
+LP:: SM configuration now taken from parameters field of the proper t_storagemanager record instead of configuration space.
+------------------------------
+1.0.4
+DD:: dbRow ctor need a dbKey.
+------------------------------
+1.0.3
+EC:: LP:: modified in order to handle the latest version of libAwsS3Wrapper.
+------------------------------
+1.0.2
+Bug fixed in spawn calling for hash algo. Exception not always thrown in case of error.
+------------------------------
+1.0.1
+Patch release due to jira ECS-41.
+Timeout in hash computation now configurable.
+------------------------------
+1.0.0
+Major release due to jira ECS-41.
+Library development and unit tests are over.
+------------------------------
+0.1.0
+Jira ECS-41: The first version

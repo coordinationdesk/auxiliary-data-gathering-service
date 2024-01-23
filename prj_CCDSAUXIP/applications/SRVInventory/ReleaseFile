@@ -1,0 +1,63 @@
+3.2.0
+using new libJobOrder 4.0.0 I/F
+------------------------------------------------
+3.1.1
+Using Application::loadConfiguration instead of ConfigurationSingleton::loadConfiguration
+------------------------------------------------
+3.1.0
+LTA-168
+Added command line parameter --historical to replace last char
+of file group with "H" in case of historical data inventory
+------------------------------------------------
+3.0.0
+Path modified to PRIP
+------------------------------------------------
+2.0.7
+Uncommented addSpace call
+------------------------------------------------
+2.0.6
+Simulation in wrapper removed
+------------------------------------------------
+2.0.5
+Amazon libs removed by Makefile.
+------------------------------------------------
+2.0.4
+Patch version due to jira S2PDGS-286
+Amazon lib added if EXPRIVIA_ISM_USE_AWS_S3 compile time flag set.
+------------------------------------------------
+2.0.3
+Added sh wrapper to simulate
+-----------------------
+2.0.2
+Using DefaultJobOrder instead of LTAJobOrder
+-----------------------
+2.0.1
+Fixed log filename
+-----------------------
+2.0.0
+Name change from LTAInventory to SRVInventory 
+-----------------------
+1.2.5
+[ECS-16] Using Application::executableName() for log filename
+-----------------------
+1.2.4
+[ECS-16] Added tool to inventory test products from lists
+-----------------------
+1.2.3
+[ECS-16] Config space moved into library libLTAFileInventory 
+-----------------------
+1.2.2
+[ECS-16] Using generic INPUT_TASK as taskname instead of LTAINVENTORY 
+-----------------------
+1.2.1
+[ECS-16] Updated test
+-----------------------
+1.2.0
+[ECS-16] Added no update validity flag option from commandline
+-----------------------
+1.1.0
+[ECS-16] Application aligned to updates of libLTAFileInventory
+-----------------------
+1.0.0
+Created ReleaseFile
+-----------------------

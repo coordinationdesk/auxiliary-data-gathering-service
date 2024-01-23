@@ -1,0 +1,8 @@
+#ifndef _ProjectAppIncludes_
+#define _ProjectAppIncludes_
+
+#include <SRVApp.h>
+
+#define PROJECT_APP SRVApp
+
+#endif // _ProjectAppIncludes_ 

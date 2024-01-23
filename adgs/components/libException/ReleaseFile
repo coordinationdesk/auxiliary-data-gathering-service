@@ -1,0 +1,256 @@
+13.0.0
+* S2PDGS-590
+* LTA-415
+EventNotifyFactory exposes a new interface called shutdown().
+The shutdown function disables any registered notifier and prevents
+the emission of new statistics in the future.
+It is used by libApp to avoid the emission of statistics during the 
+process termination causing random crashes and segmentation faults.
+Any EventNotifier shall implement its own shutdown sequence and a function
+to report when the shutdown is complete ( bool safeToExit() ).
+-------------------------------------------------------------------
+12.0.1
+Singleton trait named ReleaseAtExit does no longer release
+------------------------------------------------------------------------
+12.0.0
+Singleton template has its default trait modified in NoReleaseAtExit.
+The previous ReleaseAtExit trait has been deprecated, this to avoid potential races deleting 
+singleton acquired resources when they are no loger available because their .so have been
+discharged
+------------------------------------------------------------------------
+11.5.1
+(typo over 11.5.0)
+S2PDGS-592 - fixing timespec normalization.
+Note: Condition::normalize static methods added to perform neormalization correctly.
+------------------------------------------------------------------------
+11.5.0
+S2PDGS-592 - fixing timespec normalization.
+Note: Condition::normalize static methods added to perform neormalization correctly.
+------------------------------------------------------------------------
+11.4.0
+LP: minor version due to jira CPS-76
+Metric_CHECK added to MCMetricType.
+------------------------------------------------------------------------
+11.3.1
+Doxygen conf file updated
+------------------------------------------------------------------------
+11.3.0
+LP: minor version due to jira LTA-391
+Metric_DROPREQ added to MCMetricType.
+------------------------------------------------------------------------
+11.2.0
+Added observer pattern implementation.
+Debug environment variables of templated class now does not contain '&' or '*'.
+Some typo fixed.
+------------------------------------------------------------------------
+11.1.1
+Removed empty ctor definition in exDECLARE_EXCEPTION macro for resolve ambiguity
+------------------------------------------------------------------------
+11.1.0
+exException::operator<<() template variable name changed
+------------------------------------------------------------------------
+11.0.0
+exException now have operator<<()
+------------------------------------------------------------------------
+10.5.3
+ErrorLegacy.h warning removed
+------------------------------------------------------------------------
+10.5.2
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------------------------------------------------
+10.5.1
+Fixed bug in concat_sp causing double pipe at the end of the string in case of empty
+text.
+------------------------------------------------------------------------
+10.5.0
+[LTA-297] Added new Metric_DOWNLOAD.
+------------------------------------------------------------------------
+10.4.3
+Changes in ThreadSafe.[Ch]
+Fixed the errno management when dealing with ::clock_gettime system-call failures
+Using the system :: scope when addressing pthread related functions and types
+------------------------------------------------------------------------
+10.4.2
+A slightly more efficient ParamConstructibleSingletonMap
+------------------------------------------------------------------------
+10.4.1
+Patch version due to jira LTA-219.
+Metric_REQUEST added to MCMetricType
+------------------------------------------------------------------------
+10.4.0
+ThreadSafe::Lock has now another ctor: Lock(<mutex or cond>, bool lock_now).
+if the lock_now is true it behaves as for ordinary old ctor.
+if the lock_now is false, the lock is not acquired.
+
+Moreover, other two methods has been added to lock and unlock explicitly the mutex or condition.
+Those methods will return a boolean true if they achieved their purpose.
+lock() will return true if the mutex's lock was not owned before calling lock() 
+unlock() will return true if the mutex's lock was not owned before calling unlock() 
+
+The dtor will behave correctly, if the mutex has been locked, it will be correctly unlocked.
+
+There are 3 const methods to check if the lock has been acquired or not.
+They are all equivalent each other:
+a void * cast that allows to check the object in an expression while(lock) 
+an operator() that allows to check the object in an expression if(lock()) 
+and the more traditional locked() that returns true or false.
+
+Doxygen doc updated and fixed 
+------------------------------------------------------------------------
+10.3.1
+MappletonTest file added to repository.
+------------------------------------------------------------------------
+10.3.0
+LTA Project
+Added Mappleton class to implement a global key value store (string, string)
+available to any library or application
+------------------------------------------------------------------------
+10.2.0
+ECS-22: default persistence path and permissions defined, in order to handle Application UUID files
+------------------------------------------------------------------------
+10.1.0
+StopController::timeOutOrCancel signature is now with a single parameter
+and its implementation is based on conditions instead of nanosleeps
+Nobody used other parameters but the first in its usage, so it can be a minor release
+------------------------------------------------------------------------
+10.0.1
+Some QA suppressions
+------------------------------------------------------------------------
+10.0.0
+The class exException has now a move ctor.
+Consistency has been applied to exDECLARE_EXCEPTION macro that will implement a move ctor as well
+Test uniformed for those that were already on cppunit
+------------------------------------------------------------------------
+9.0.0
+The class StopController has been moved from libThread to libException
+The global StopController named AppStopController has been created and is a singleton
+that can be accessed via a dedicated convenience function
+------------------------------------------------------------------------
+8.0.0
+move ctor and move assignment deleted explicitly from exceptions
+------------------------------------------------------------------------
+7.3.1
+ACS_THROW macro has been optimized in case of PRQA to avoid warning on unreachable code
+------------------------------------------------------------------------
+7.3.0
+Some improvements on StatNode I/F
+Some QA suppressions
+=======
+7.2.0
+Some improvements over class declarations and doc
+Some QA suppressions - still tuning tool vs code
+=======
+7.1.0
+new macros to declare template debug variable added
+ACS_TEMPLATE_DECLARE_DEBUG_LEVEL
+ACS_TEMPLATE_DECLARE_DEBUG_LEVEL2
+ACS_TEMPLATE_DECLARE_DEBUG_LEVEL3
+they are needed to allow the qa tool to parse those construct that before were using __typeof__
+in addition the test/lock.C was fixed
+=======
+7.0.3
+Some QA suppressions - still tuning tool vs code
+=======
+7.0.2
+Missing include for old GCC version and #pragma diagnostic moved outside functions
+=======
+7.0.1
+More QA suggestion applied
+=======
+7.0.0
+Applying QA suggestion - some i/f changed in macros - correct usage of them will not be affected,
+but wrong usage, that was tolerated before, could incur in a compilation error - easy to fix though.
+=======
+6.4.2
+useless include in Filterables.C and wrong PRQA annotation removed from exMacros.h
+=======
+6.4.1
+stream inserter of explain structure does not throw exceptions - see explain( exception &x)
+=======
+6.4.0
+Introduced new macro ACS_SMARTPTR that is translated into auto_ptr or unique_ptr
+depending on c++ version used at compile time.
+=======
+6.3.0
+Minor release due to issue CI-57: Introduced labels and node path in class StatNode.
+EventNotifyFactorySingleton, EventNotifyFactory and EventNotifier implemented
+for statistics notification.
+=======
+6.2.1
+Fixed doc comment for ACS_CLASS_DEFINE_LINKDEBUG_LEVEL.
+=======
+6.2.0
+Improved LINKDEBUG facility. Now classes that have an indirect link with
+a reference class will also be affected by the reference class debug variable.
+=======
+6.1.2
+new test case added
+=======
+6.1.1
+Makefiles prepared to work in both smurfer.py and legacy mode
+=======
+6.1.0
+
+fixing new qa warnings
+>>>>>>> 6.1.0
+-------------------------------------------------------
+6.0.2
+
+version file instrumented
+-------------------------------------------------------
+6.0.1
+
+qa warning silenced
+-------------------------------------------------------
+6.0.0
+
+ThreadSafe::Lock ctors can throw.
+ThreadSafe mutexes are recursive, they will never deadlock, but 
+there can be other problems on the mutex e.g. invalid or too many mutexes ...
+
+RWMutex::ReadLock and RWMutex::WriteLock will catch and silent deadlocks, but 
+they will still throw for any other invalid mutex condition
+
+exFBinary class removed
+
+static <any_filterable>::notify( const std::string &msg, exostream & ...  ) methods removed
+
+exException assignment operator removed and made private
+
+explain functions (see exMacros.h> declared not throwing as any _ExplainEx class method
+
+exFilterable copy ctor and assignemt operator declared private
+
+other robustness improvement
+-------------------------------------------------------
+
+5.111.0
+
+MCParameters::getMetricTypes() method added - to test also the setMetricTypes one
+
+As for RAIIGuard dtor in 5.110.2 version, ScopeGuard dtor can throw in the same circumstances. 
+The behaviour was already present in previous versions but was temporarily suspended to remove compiler warnings 
+
+template <int (*Release_)(int) > struct FDTraits::releaseResource can throw
+
+exostream::LockPropagation inner class removed
+
+ThreadSafe::trylock() added and removed default from ThreadSafe::trylock(unsigned long msectimeout)
+Documentation improved
+
+ParamConstructibleSingletonMap now has the NoReleaseAtExitTraits template parameter added
+-------------------------------------------------------
+5.110.2
+RAIIGuard dtor can throw again exception (coming from the user release function)
+This is only allowed if the RAIIGuard dtor is called outside any stack unwinding due to 
+other exceptions handling.
+In the latter case the dtor just tries to log the exception btu will not throw
+The above behaviour was already present in recent library versions, but it was temporarily
+removed to silence compiler warnings.
+-------------------------------------------------------
+5.110.1
+Minor changes - most are qa silencing comments
+-------------------------------------------------------
+5.110.0
+
+Automatically generate from revision "version "5.110""

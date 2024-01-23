@@ -1,0 +1,29 @@
+<Root>
+	<PreInventory>
+		<ConfigFilenamePreInventory>
+			<SatMissionsAssociatorKeys>
+			</SatMissionsAssociatorKeys>
+		</ConfigFilenamePreInventory>
+		<PluginsRegistrationSettings>
+			<SpaceNavPreInventoryFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>NMEA_CONS_</Object>
+						<FileTypePos>5</FileTypePos>
+						<FileTypeLen>10</FileTypeLen>
+						<StartDatePos>16</StartDatePos>
+						<StartDateLen>14</StartDateLen>
+						<StopDatePos>31</StopDatePos>
+						<StopDateLen>14</StopDateLen>
+						<FileClass>OPER</FileClass>
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+				</List_Of_Registrations>
+			</SpaceNavPreInventoryFactory>
+		</PluginsRegistrationSettings>
+	</PreInventory>
+</Root>

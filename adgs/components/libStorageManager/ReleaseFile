@@ -1,0 +1,32 @@
+8.0.1
+Test compilation fixed
+------------------------------
+8.0.0
+SMInterface has new non abstract virtual method giveup notify the SM the client is not longer
+interested to a file.
+SMInterface::isGiveupSynchronous is non-virtual and always true.
+SMInterface has now a clientName set and get 
+
+doxygen and documentation improved.
+Test is now compilable even though useless.
+------------------------------
+7.1.1
+MP: compilation warnings cleanup
+no exception from getInvSmTableName
+------------------------------
+7.1.0
+SMInterface::getInvSmTableName will always search for get inventorysm table.
+the value is no longer computed by the ctor as the latter can be used even if there is 
+no further need for the crossref table 
+------------------------------
+7.0.0
+Major release due to jira ECS-17.
+SMInterface insertInvSM and deleteInvSM methods no more static to be used directly by derived classes: dbPersistent attribute is needed to get inventorysm table.
+SMInterface getReportFromPkg, getClobFromPkg, getPackageFromInv, deleteClobFromPkg static methods removed: moved to rolling, LTA and specific SMs.
+------------------------------
+6.17.1
+Patch release automatically generated to instrument version files
+------------------------------
+6.17.0
+
+Automatically generate from revision "version "6.17""

@@ -1,0 +1,145 @@
+#!/bin/sh
+#
+# Copyright 2005-2010, Advanced Computer Systems , Inc.
+# Via Della Bufalotta, 378 - 00139 Roma - Italy
+# http://www.acsys.itA.C.S. - Advanced Computer Systems S.p.A.
+# 
+# This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems, S.p.A.;
+# the contents of this file may not be disclosed to third parties, copied or
+# duplicated in any form, in whole or in part, without the prior written
+# permission of Advanced Computer Systems, S.p.A.
+#	
+#
+#   $Prod: A.C.S. Events DataBlade Registration Procedure $
+#
+#	$Id$
+#
+#	$Author$
+#
+#	$Log$
+#	Revision 1.5  2014/11/06 16:14:33  achnat
+#	Added schema version check for datablade registration.
+#	
+#	Revision 1.4  2013/02/21 15:30:02  achnat
+#	Implemented configuration for EventsDataBlade.
+#	
+#	Revision 1.3  2011/11/10 14:36:40  achnat
+#	Changed EventDBlade install dir.
+#	
+#	Revision 1.2  2009/06/30 13:28:49  achnat
+#	Implemented new security constraints.
+#	
+#	Revision 1.1.1.1  2009/02/05 10:38:46  achnat
+#	Import psqlCreateDatabase
+#	
+
+
+
+
+
+
+
+
+usage() {
+	echo "usage: registerEventDbl <par1> <par2> <par3> <par4> <par5> [event_file_path]"
+	echo "----------------------------------------------------------------------------"
+	echo "parameters:"
+	echo "par1:  host name"
+	echo "par2:  dba user"
+	echo "par3:  database name"
+	echo "par4:  schema version"
+	echo "par5:  datablade path"
+	echo ""
+	exit 1
+}
+
+load_sql() {
+	echo "Loading $1 ..."
+	sleep 1
+	psql  -h $H_NM -U $USR_NM $DB_NM -v "ON_ERROR_STOP=1" -c "\i $1"
+	if [ "$?" != 0 ]
+	then
+		echo "----------------------------------------------------------------------------"
+		echo "*** Error in libEventsPG load ***"
+		echo ""
+		exit 1
+	fi
+}
+
+
+
+
+
+echo ""
+echo "PSQL Events DataBlade Registration"
+echo "----------------------------------------------------------------------------"
+
+export EXE_DIR=`dirname $0`
+cd $EXE_DIR
+export EXE_DIR=`pwd`
+
+if test "$1" = "-h" || test "$1" = "--help"
+then
+	usage
+fi
+
+if test -z "$5"
+then
+	usage
+fi
+
+export H_NM="$1"
+export USR_NM="$2"
+export DB_NM="$3"
+export SCH_VRS="$4"
+export EVNT_DIR="$5/EventsDBlade"
+export evnt_file_path="$6"
+
+if ! test -d "$EVNT_DIR"
+then
+	echo ""
+	echo "*** Events Datablade is not installed ***"
+	echo ""
+	exit 1
+fi
+
+if test -z "$evnt_file_path"
+then
+	evnt_file_path=/usr/acs/tmp
+fi
+
+if test -z "$PGPASSWORD"
+then
+	echo -n "Insert $USR_NM password: "
+	read -s answer
+	export PGPASSWORD=$answer
+	echo ""
+fi
+
+cd $EVNT_DIR
+
+if [[ ${SCH_VRS//[![:digit:]]} -ge 1000 ]]
+then 
+	load_sql "libEventsPG_GETv10.sql"
+	
+	echo "Configuring t_dbparameters ..."
+	sleep 1
+	psql  -h $H_NM -U $USR_NM $DB_NM -v "ON_ERROR_STOP=1" -c "INSERT INTO t_dbparameters (parameter, parametertype_id, value_str) VALUES ('broadcast_events_path', 2, '$evnt_file_path') ;"
+	if [ "$?" != 0 ]
+	then
+		echo "----------------------------------------------------------------------------"
+		echo "*** Error in t_dbparameters configuration ***"
+		echo ""
+		exit 1
+	fi
+else
+	load_sql "libEventsPG_LTv10.sql"
+fi
+
+echo "----------------------------------------------------------------------------"
+echo "Events DataBlade registration completed."
+echo ""
+exit 0
+
+
+

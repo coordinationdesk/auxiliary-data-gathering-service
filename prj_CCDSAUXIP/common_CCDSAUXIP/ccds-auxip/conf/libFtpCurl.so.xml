@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Library>
+    <!--The FtpCurl library configuration -->
+    <FtpCurl>
+        <!--The maximum number of files to transfer for each connection-->
+        <maxFilesToTransfer>500</maxFilesToTransfer>
+        <!--The connection response time out-->
+        <connectionResponseTimeout unit="millisec">3000</connectionResponseTimeout>
+        <!--The entire connection time out (should be a large number in order to permit large files transfers)-->
+        <connectionTimeout unit="millisec">10000000</connectionTimeout>
+        <!--The timeout used to probe a connection (should be small)-->
+        <probeConnectionTimeout unit="millisec">2000</probeConnectionTimeout>
+		<!--The timeout used to list the content of a repository (it should be small)-->
+        <lsConnectionTimeout unit="millisec">15000</lsConnectionTimeout>
+        <!--The remote temp path used to store the unfinished transferred files-->
+        <remoteTempPath>_TEMP_DIR</remoteTempPath>
+        <!--True if the directories should be transferred in wrapped mode, false if a directory should transferred without the root folder -->
+        <putDirWrapped>true</putDirWrapped>
+        <tempNameStrategy>prefix_dot</tempNameStrategy>
+        <!--Delay on ftp/sftp/ftps transfers-->
+        <delayFTPTransfers>0</delayFTPTransfers>
+        <!--the delay period (in number of callbacks called).-->
+        <delayPeriod>500</delayPeriod>
+        <!--Using ftps connection , CCC Modality: NONE, PASSIVE or ACTIVE (PASSIVE is the default) -->
+        <ftpsCCC>PASSIVE</ftpsCCC>
+        <!--Using ftps PROTect for data: false by default -->
+        <ftpsProtData>false</ftpsProtData>
+        <!--Enable collecting statistics in table: T_CIRCULATIONSTATS-->
+        <enableStatistics>true</enableStatistics>
+        <!--ssh public key absolute path and filename-->
+        <sshPublicKey>$HOME/.ssh/id_rsa.pub</sshPublicKey>
+        <!--ssh private key absolute path and filename-->
+        <sshPrivateKey>$HOME/.ssh/id_rsa</sshPrivateKey>
+        <!--It contains the transfer speed in bytes per second that the transfer should be below during CURLOPT_LOW_SPEED_TIME seconds for the library to consider it too slow and abort.-->
+        <lowSpeedLimit>0</lowSpeedLimit>        
+        <!--It contains the time in seconds that the transfer should be below the CURLOPT_LOW_SPEED_LIMIT for the library to consider it too slow and abort.-->
+        <lowSpeedTime>0</lowSpeedTime>     
+        <!--Change permissions and owner to local file transferred by the circulator. This policy is used only when the target 
+        protocol is "FileSystem".-->
+        <ChangeLocalPermissions>
+	        <ChangeOwn>
+    	        <Activate>false</Activate>
+		        <User>dsd_daemon</User>
+		        <Group>dc_data_group</Group>
+	        </ChangeOwn>
+	        <ChangeMod>
+	            <Activate>false</Activate>
+		        <Mode>2770</Mode>
+	        </ChangeMod>
+        </ChangeLocalPermissions>
+    </FtpCurl>
+</Library>

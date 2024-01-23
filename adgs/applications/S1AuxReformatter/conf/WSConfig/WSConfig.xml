@@ -1,0 +1,74 @@
+<Proc_Table>
+	<List_of_Processors count="5">
+		<Processor>
+			<Processor_Name>S1_AUX_ICE_RFMT</Processor_Name>
+			<Version>01.00</Version>
+			<Log_Level>INFO</Log_Level>
+			<Stdout_Log_Level>INFO</Stdout_Log_Level>
+			<Stderr_Log_Level>INFO</Stderr_Log_Level>
+			<Task_Table>{homeconf}/conf/tasktables/TaskTable.S1_AUX_ICE_RFMT.xml</Task_Table>
+			<List_of_Orders count="1">
+				<Order>
+					<Order_Type>OFFL</Order_Type>
+					<Status>enabled</Status>
+				</Order>
+			</List_of_Orders>
+		</Processor>
+		<Processor>
+			<Processor_Name>S1_AUX_WAV_RFMT</Processor_Name>
+			<Version>01.00</Version>
+			<Log_Level>INFO</Log_Level>
+			<Stdout_Log_Level>INFO</Stdout_Log_Level>
+			<Stderr_Log_Level>INFO</Stderr_Log_Level>
+			<Task_Table>{homeconf}/conf/tasktables/TaskTable.S1_AUX_WAV_RFMT.xml</Task_Table>
+			<List_of_Orders count="1">
+				<Order>
+					<Order_Type>OFFL</Order_Type>
+					<Status>enabled</Status>
+				</Order>
+			</List_of_Orders>
+		</Processor>
+		<Processor>
+			<Processor_Name>S1_AUX_WND_RFMT</Processor_Name>
+			<Version>01.00</Version>
+			<Log_Level>INFO</Log_Level>
+			<Stdout_Log_Level>INFO</Stdout_Log_Level>
+			<Stderr_Log_Level>INFO</Stderr_Log_Level>
+			<Task_Table>{homeconf}/conf/tasktables/TaskTable.S1_AUX_WND_RFMT.xml</Task_Table>
+			<List_of_Orders count="1">
+				<Order>
+					<Order_Type>OFFL</Order_Type>
+					<Status>enabled</Status>
+				</Order>
+			</List_of_Orders>
+		</Processor>
+		<Processor>
+			<Processor_Name>S1_AUX_TEC_RFMT</Processor_Name>
+			<Version>01.00</Version>
+			<Log_Level>INFO</Log_Level>
+			<Stdout_Log_Level>INFO</Stdout_Log_Level>
+			<Stderr_Log_Level>INFO</Stderr_Log_Level>
+			<Task_Table>{homeconf}/conf/tasktables/TaskTable.S1_AUX_TEC_RFMT.xml</Task_Table>
+			<List_of_Orders count="1">
+				<Order>
+					<Order_Type>OFFL</Order_Type>
+					<Status>enabled</Status>
+				</Order>
+			</List_of_Orders>
+		</Processor>
+		<Processor>
+			<Processor_Name>S1_AUX_TRO_RFMT</Processor_Name>
+			<Version>01.00</Version>
+			<Log_Level>INFO</Log_Level>
+			<Stdout_Log_Level>INFO</Stdout_Log_Level>
+			<Stderr_Log_Level>INFO</Stderr_Log_Level>
+			<Task_Table>{homeconf}/conf/tasktables/TaskTable.S1_AUX_TRO_RFMT.xml</Task_Table>
+			<List_of_Orders count="1">
+				<Order>
+					<Order_Type>OFFL</Order_Type>
+					<Status>enabled</Status>
+				</Order>
+			</List_of_Orders>
+		</Processor>
+	</List_of_Processors>
+</Proc_Table>

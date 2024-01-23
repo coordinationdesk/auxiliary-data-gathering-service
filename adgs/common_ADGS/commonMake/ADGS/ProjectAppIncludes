@@ -1,0 +1,8 @@
+#ifndef _ProjectAppIncludes_
+#define _ProjectAppIncludes_
+
+#include <ADGSApp.h>
+
+#define PROJECT_APP ADGSApp
+
+#endif  // _ProjectAppIncludes_

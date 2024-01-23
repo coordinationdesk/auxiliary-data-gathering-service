@@ -1,0 +1,6 @@
+1.0.1
+Patch to jira S2PDGS-337.
+File_Name in HDR with no extension and Creator_Version set to 1.0
+1.0.0
+First issue due to jira S2PDGS-337.
+Application to run after preInventory application devoted to pack data file as DBL into TGZ along with an with EOF format HDR properly built.

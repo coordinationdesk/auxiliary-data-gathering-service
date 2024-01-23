@@ -1,0 +1,10 @@
+general:
+  PreservationOlderThan:  5
+  PreservationTimeSpan:   1
+  PreservationDataPercentageCheck: 1
+  WorkingDir: /workspace/prip/PRESERVATION_WD
+  DBSchema: ltadb
+  DBHost: localhost
+  DBUser: ltauser
+  DBUserPasswd: 12qwas
+  ProductDownloader: /opt/facilities/prip/bin/DownloadInventoryFile

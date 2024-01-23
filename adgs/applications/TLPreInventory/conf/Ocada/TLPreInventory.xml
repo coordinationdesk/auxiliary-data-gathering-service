@@ -1,0 +1,27 @@
+<Root>
+<TLPreInventory>
+	<!-- List of Configuration Space to load -->
+	<ConfigurationSpaceList count="">
+		<!-- PreInventory Configuration -->
+		<ConfigurationSpace>PreInventory</ConfigurationSpace>
+		<ConfigurationSpace>StationConf</ConfigurationSpace>
+		<ConfigurationSpace>Inventory</ConfigurationSpace>
+		<!-- Common Factories Configuration -->
+		<ConfigurationSpace>ACSTimeConverter</ConfigurationSpace>
+	</ConfigurationSpaceList>
+	<PreInventoryListFileName>TLPreInventory.LIST</PreInventoryListFileName>
+	<Plugins>
+		<!-- JobOrder Plugins -->
+		<Path>/usr/acs/plugins/TlDaemonPlugins</Path>
+		<SelectRE>.*OcadaJobOrder.*so$</SelectRE>
+	</Plugins>
+	<!-- Enable/Disable the version handling -->
+	<Versioning isEnabled="false">
+		<!-- setw and setfill to use in version string -->
+		<Format setw="4" setfill="0"/>
+	</Versioning>
+	<!-- Product and Metadata Moving to Inventory working dir -->
+	<MoveToInventoryPath>false</MoveToInventoryPath>
+</TLPreInventory>
+</Root>
+

@@ -1,0 +1,98 @@
+<?xml version="1.0" standalone="yes"?>
+<SafeFormatter>
+	<SafeProduct>
+		<productType>AUX_TEC</productType>
+		<dispositionMode>Demonstration</dispositionMode> <!-- Allowed: Demonstration, Pre-Operational, Operational -->
+		<safeNamespace>http://www.esa.int/safe/sentinel-1.0</safeNamespace>
+		<safePrefix>safe:</safePrefix>
+		<xfduNamespace>urn:ccsds:schema:xfdu:1</xfduNamespace>
+		<rootTagOtherAttributes><![CDATA[xmlns:s1auxsar="http://www.esa.int/safe/sentinel-1.0/sentinel-1/auxiliary/sar" ]]></rootTagOtherAttributes>
+		<schemaLocation>./xfdu.xsd</schemaLocation>
+		<manifestName>manifest.safe</manifestName>
+		<InformationPackageMap>
+			<unitType>SAFE Archive Information Package</unitType>
+			<textInfo>Auxiliary TEC Product</textInfo>
+			<pdiId>processing</pdiId>
+			<dmdId>generalProductInformation</dmdId>
+			<Id>packageUnit</Id>
+		</InformationPackageMap> 
+		<ListOfObjects count="3">
+			<Object type="Data">
+				<Common>
+					<unitType>Measurement Data Unit</unitType>
+					<checksumName>MD5</checksumName>
+					<locType>URL</locType>
+				</Common>
+				<ListOfObjectConfigs count="1">
+					<ObjectConfig>
+						<Id>auxData</Id>
+						<dataObjectId>auxData</dataObjectId>
+						<textInfo>Auxiliary Data</textInfo>
+						<mimeType>application/octetstream</mimeType>
+						<dmdId/>
+						<!--repId/-->
+						<repId>auxSchema</repId>
+					</ObjectConfig>	
+				</ListOfObjectConfigs>
+			</Object>
+			<Object type="Metadata">
+				<Common>
+					<metadataClass>MetadataWrap</metadataClass>
+					<mimeType>text/xml</mimeType>
+					<vocabularyName>SAFE</vocabularyName>
+				</Common>
+				<ListOfObjectConfigs count="3">
+                                        <ObjectConfig>
+                                                <Id>platform</Id>
+                                                <metadataObjectId>platform</metadataObjectId>
+                                                <textInfo>Platform Description</textInfo>
+                                                <classification>DESCRIPTION</classification>
+                                                <category>DMD</category>
+                                        </ObjectConfig>
+					<ObjectConfig>
+						<Id>generalProductInformation</Id>
+						<metadataObjectId>generalProductInformation</metadataObjectId>
+						<textInfo>General Product Information</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+						<namespace>http://www.esa.int/safe/sentinel-1.0</namespace>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>processing</Id>
+						<metadataObjectId>processing</metadataObjectId>
+						<classification>PROVENANCE</classification>
+						<category>PDI</category>
+						<textInfo>Processing</textInfo>
+					</ObjectConfig>
+				</ListOfObjectConfigs>
+			</Object>
+			<!-- According to [TDB-20] S1.RS.MDA.52.7443_02_08-Draft, Schema section is optional. And indeed a xsd for this product has not been provided.
+			     But according to S1PDGS-30085: decided to include anyway a dummy schema -->
+			<Object type="Schema">
+				<Common>
+					<locatorType>URL</locatorType>
+					<vocabularyName>SDF</vocabularyName>
+					<mimeType>text/xml</mimeType>
+				</Common>
+				<ListOfObjectConfigs count="1">
+					<ObjectConfig>
+						<Id>auxSchema</Id>
+						<metadataObjectId>auxSchema</metadataObjectId>
+						<classification>SYNTAX</classification>
+						<category>REP</category>
+						<filename>./support/s1-aux-tec.xsd</filename>
+						<content><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+   <xsd:element name="AUX_TEC">
+      <xsd:annotation>
+         <xsd:documentation>None</xsd:documentation>
+      </xsd:annotation>
+   </xsd:element>
+</xsd:schema>
+]]></content>
+					</ObjectConfig>
+				</ListOfObjectConfigs>
+			</Object>
+		</ListOfObjects>
+	</SafeProduct>
+</SafeFormatter>

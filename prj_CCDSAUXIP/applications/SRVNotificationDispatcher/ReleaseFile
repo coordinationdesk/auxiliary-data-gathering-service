@@ -1,0 +1,80 @@
+3.1.3
+CCDS-93: notification of subscription event can be disabled by configuration (DisableNotificationInfo conf parameter set to true). SubscriptionId field in notification is restored as mandatory (it cannot be disabled).
+--------------------------------------
+3.1.2
+Removed use of deprecated function void RestServerBase::registerService(RestService* service) in 
+favour of the new RestServerBase::registerService(const std::shared_ptr<RestService>& service)
+--------------------------------------
+3.1.1
+[CCDS-69]
+Fixed bug causing server to not be stopped on application exit.
+Fixed bug causing the SRVNotifier thread to not exit when thread stop is invoked.
+Added call to Thread::stop() in SRVNotifier destructor to avoid possible segfaults on application exit.
+--------------------------------------
+3.1.0
+CCDS-18: notification of subscription uuid, order id and batch order id can be disabled by configuration (DisableNotificationInfo conf parameter added).
+lastquerydate value in t_srv_subscriptions updated in case of successfully notification.
+Test updated accordingly.
+--------------------------------------
+3.0.4
+Deprecated doRestart() removed.
+--------------------------------------
+3.0.3
+SRVNotifier: Setting of CurlHttpOpt fixed. Setting of maxRetry performed for each pending notification row.
+Log messages improved.
+--------------------------------------
+3.0.2
+Endpoint password is saved encrypted into t_srv_pending_notifications. Log improved.
+--------------------------------------
+3.0.1
+Format for notification payload fixed (contained escape characters)
+--------------------------------------
+3.0.0
+LTA-268: in notification payload, subscription event format fixed sending notification as ODataNotificationServicePayload
+SRVNotifierConfigurer replaced by RestServerConfigurer.
+--------------------------------------
+2.3.6
+waitExitOrTimeout replaced by timeoutOrCancel in the run of the SRVNotifier thread.
+--------------------------------------
+2.3.5
+MP: test compilation fixed
+--------------------------------------
+2.3.4
+MP: no more db related deprecated methods/classes
+--------------------------------------
+2.3.3
+Updated after the release of libFtpCurl 10.0.0
+--------------------------------------
+2.3.2
+All not null t_srv_pending_notifications value are loaded and used to set the notification payload.
+--------------------------------------
+2.3.1
+Root tag in conf space introduced. Code modified accordingly.
+--------------------------------------
+2.3.0
+Application updated since LTARestServer has been moved from libLTARest to 
+libRestBase and renamed into RestServerBase. 
+--------------------------------------
+2.2.0
+Classes refactoring to integrate the LTARestService.
+Configuration file updated to add MaxNumThreads conf value.
+--------------------------------------
+2.1.0
+Classes renamed for LTA* to SRV*.
+Endpoint password and user made optional. NotificationDate set in zulu format.
+--------------------------------------
+2.0.1
+Application name changed from LTA to SRV Notification Dispatcher
+--------------------------------------
+2.0.0
+t_lta_ replaced by t_srv_ in database tables name 
+--------------------------------------
+1.1.0
+In case of password decryption failure, the corresponding row in the t_lta_pending_notifications is deleted.
+Handling of maximum dimension for the http request payload introduced and set by configuration.
+--------------------------------------
+1.0.1
+Bug fixing: endpoint in the notification request payload contains protocol. Code and tests aligned. Useless protocol in configuration space removed.
+--------------------------------------
+1.0.0
+First issue of the application

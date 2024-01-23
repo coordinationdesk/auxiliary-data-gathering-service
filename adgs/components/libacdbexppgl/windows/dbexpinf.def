@@ -1,0 +1,13 @@
+;
+;  dbexpinf.def - declares the module parameters.
+;
+;    Copyright (c) 2001-2004, Luxena Software Company. All rights reserved.
+;
+;  Purpose:
+;
+;
+
+LIBRARY      "lxdbexpinfpro.dll"
+
+EXPORTS
+	getInformixDriver     @1 PRIVATE

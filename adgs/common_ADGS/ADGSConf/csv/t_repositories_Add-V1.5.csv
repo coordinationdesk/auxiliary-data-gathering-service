@@ -1,0 +1,16 @@
+'symbolicname','transferprotocol_id','host_id','username','password','remotepath', 'tempname_id', 'tempname_value'
+
+# Common Repository
+'ExtRepo Internal',          1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromExt/',                                        1, '.'
+
+# S3 Repository
+'EUM Repo Internal',         1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromEUM/',                                        1, '.'
+
+# S1 Repository
+'ECMWF TRO Internal',        1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/S2TRO',                                           1, '.'
+
+# CAMS Repository
+'ECMWF CAMSFO Int00',        1, '(select id from t_knownhosts where host_name = 'adgs-imp2.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/ADGS/CAMSFC-00',                                  1, '.'
+'ECMWF CAMSFO Int12',        1, '(select id from t_knownhosts where host_name = 'adgs-imp2.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/ADGS/CAMSFC-12',                                  1, '.'
+
+'ECMWF EXT IntRepo',         1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/ADGS/ECMWFD',                                     1, '.'

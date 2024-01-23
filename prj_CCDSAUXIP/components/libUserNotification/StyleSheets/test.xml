@@ -1,0 +1,16 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<MailNotification>
+	<UtcsTime>24-May-2013_20:11:42.455</UtcsTime>
+	<Filename>SAT_UNTF01_TST_20120131T120000</Filename>
+	<Filetype>UNTF01_TST</Filetype>
+	<GroupId>14</GroupId>
+	<GroupName>UsrNotifGroup01</GroupName>
+	<GroupDescription>User Notification Group 01</GroupDescription>
+	<GroupEmailDests>nicola.vacca@acsys.it, n.vacca@acsys.it</GroupEmailDests>
+	<List_of_Filetypes count="3">
+		<Filetype>UNTF01_TST</Filetype>
+		<Filetype>UNTF02_TST</Filetype>
+		<Filetype>UNTF03_TST</Filetype>
+	</List_of_Filetypes>
+</MailNotification>
+

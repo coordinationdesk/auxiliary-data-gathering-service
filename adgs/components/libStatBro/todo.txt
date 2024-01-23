@@ -1,0 +1,2 @@
+EXECUTEIGNORE - se fallisce prosegue
+VARIABILE ENUMERATIVA !!!

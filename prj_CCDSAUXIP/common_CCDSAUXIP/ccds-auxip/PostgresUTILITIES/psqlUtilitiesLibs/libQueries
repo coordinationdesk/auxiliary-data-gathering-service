@@ -1,0 +1,153 @@
+#!/bin/sh
+#
+# Copyright 1995-2005, Advanced Computer Systems , Inc.
+# Via Della Bufalotta, 378 - 00139 Roma - Italy
+# http://www.acsys.itA.C.S. - Advanced Computer Systems S.p.A.
+# 
+# This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer 
+# Systems, S.p.A.; the contents of this file may not be disclosed 
+# to third parties, copied or duplicated in any form, in whole or 
+# in part, without the prior written permission of Advanced Computer 
+# Systems, S.p.A.
+#
+#
+#   $Prod: A.C.S. Queries functions script file $
+#
+#   $Id$
+#
+#   $Author$
+#
+#   $Log$
+#   Revision 1.1  2009/02/12 17:14:55  achnat
+#   Added libQueries file.
+#
+
+
+
+
+
+
+
+
+############################### PRIVATE ##############################
+######################################################################
+
+# CHECK FUNCTIONS INPUTS -------------------------
+# Check basic inputs for db connection in functions.
+# $1 = function name
+# $2 = user
+# $3 = database
+# $4 = hostname
+# ------------------------------------------------
+checkFunctionsInput() {
+	if test -z "$2"
+	then
+		echo "*** ERROR!!! libQueries:$1() - value user needed. ***"
+		return 1
+	fi
+	
+	if test -z "$3"
+	then
+		echo "*** ERROR!!! libQueries:$1() - value database needed. ***"
+		return 1
+	fi
+	
+	if test -z "$4"
+	then
+		echo "*** ERROR!!! libQueries:$1() - value hostname needed. ***"
+		return 1
+	fi
+}
+
+
+
+
+
+############################### PUBLIC ###############################
+######################################################################
+
+# CHECK CONN -------------------------------------
+# Check database connection.
+# $1 = user
+# $2 = database
+# $3 = hostname
+# ------------------------------------------------
+checkConn() {
+	checkFunctionsInput checkConn "$1" "$2" "$3"
+	if [ "$?" != 0 ] ; then return 1 ; fi 
+	
+	echo "Checking connection on $2 ..."
+	psql -h $3 -U $1 $2 -c "\l" > /dev/null
+	if [ "$?" != 0 ]
+	then
+		echo "*** ERROR!!! libQueries:checkConn() - cannot connect to $2 ***"
+		return 1
+	fi
+	
+	echo ">> Connection done."
+	return 0
+}
+
+
+# DUMP LIST --------------------------------------
+# Dump on file list of database objects
+# $1 = user
+# $2 = database
+# $3 = hostname
+# $4 = object [tables|sequences|views]
+# $5 = dump file (optional)
+# ------------------------------------------------
+dumpList() {
+	checkFunctionsInput dumpList "$1" "$2" "$3"
+	if [ "$?" != 0 ] ; then return 1 ; fi
+	
+	case "$4" in
+		's'|'sequences')
+			export obj=sequences
+			export cmm="\ds"
+			;;
+		't'|'tables')
+			export obj=tables
+			export cmm="\dt"
+			;;
+		'v'|'views')
+			export obj="views"
+			export cmm="\dv"
+			;;
+		*)
+			echo "*** ERROR!!! libQueries:dumpList() - wrong object value. ***"
+			return 1
+			;;
+	esac
+	
+	if test -z "$5"
+	then
+		export dumpFile=/tmp/psqlDumpListFile.txt
+	else
+		export dumpFile=$5
+	fi
+	
+	touch $dumpFile
+	if [ "$?" != 0 ]
+	then
+		echo "*** ERROR!!! libQueries:dumpList() - cannot create log file $dumpFile ***"
+		return 1
+	fi
+	
+	touch /tmp/tempDumpFile
+	
+	echo "Extracting $obj list from $2 ..."
+	
+	psql -h $3 -U $1 $2 -v "ON_ERROR_STOP=1" -c "$cmm" > /tmp/tempDumpFile
+	if [ "$?" != 0 ]
+	then
+		echo "*** ERROR!!! libQueries:dumpList() - cannot extract $obj list from $2 ***"
+		return 1
+	fi
+	
+	cat /tmp/tempDumpFile | grep public | awk '{ print $3 }' > $dumpFile
+	
+	rm -f /tmp/tempDumpFile
+	echo ">> List extracted."
+	return 0
+}

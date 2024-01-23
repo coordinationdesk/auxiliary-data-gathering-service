@@ -1,0 +1,36 @@
+<Root>
+	<PreInventory>
+		<ConfigFilenamePreInventory>
+			<TimeLUT>
+				<LUTElement>
+					<OriginalDate>99999999T999999</OriginalDate>
+					<ConvertedDate>99991231T235959</ConvertedDate>
+				</LUTElement>
+			</TimeLUT>
+		</ConfigFilenamePreInventory>
+		<PluginsRegistrationSettings>
+			<AlsatFilenamePreInventoryFactory>
+				<List_Of_Registrations count="2">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>SNM_AUX</Object>
+						<DoVersioning>true</DoVersioning>
+						<FileClass>TEST</FileClass>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>BORVAR_</Object>
+						<DoVersioning>true</DoVersioning>
+						<FileClass>TEST</FileClass>
+					</Registration>
+				</List_Of_Registrations>
+			</AlsatFilenamePreInventoryFactory>
+		</PluginsRegistrationSettings>
+	</PreInventory>
+</Root>

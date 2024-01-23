@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PackagerOptimiserConfigurationRoot>
+
+	<PackagerOptimiser>
+
+
+		<!-- Used for a new optimization cycle. Tables are reloaded -->
+		<OptimiseRescanTime unit="s">300</OptimiseRescanTime>
+
+
+		<!-- Used for reloading configuration -->
+		<ReloadConfigurationTime unit="s">3600</ReloadConfigurationTime>
+
+
+		<!-- Time for table checking. Should be STABLE during this time -->
+		<ChangeTableTime unit="s">30</ChangeTableTime>
+
+		<!-- Restart Time for Phoenix. Unit is [s] -->
+		<OptimiseRestartTime unit="s">14400</OptimiseRestartTime>
+		
+		<MaxLogSize>1000000000</MaxLogSize>
+		<!--  WARNING, CD SIZE CHANGED  -->
+
+		<!-- NOTE, ConfidencePercentage should be less than 15 -->
+
+		<MediaTypes>
+			<CD>
+			    <!--disk percentage -->
+			    <ConfidencePercentage>0</ConfidencePercentage> 
+			    <!--in KB  -->
+			    <MinimumTreshold>600000</MinimumTreshold> 
+			    <!--in seconds (default 1 day (e.g. 86400)) - 64800 for FAT V2-->
+			    <DueDateDelay unit="s">64800</DueDateDelay> 
+			    <StabilityTimeDelay unit="s">7200</StabilityTimeDelay>
+			</CD>	
+			<DVD>
+			    <!--disk percentage -->
+			    <ConfidencePercentage>0</ConfidencePercentage> 
+			    <!--in KB  -->
+			    <MinimumTreshold>3000000</MinimumTreshold> 
+			    <!--in seconds (default 1 day (e.g. 86400))-->
+			    <DueDateDelay unit="s">64800</DueDateDelay>
+			    <StabilityTimeDelay unit="s">7200</StabilityTimeDelay>
+			</DVD>
+			<FTP>
+			    <ConfidencePercentage>0</ConfidencePercentage> 
+			    <MinimumTreshold>0</MinimumTreshold> 
+			    <DueDateDelay unit="s">0</DueDateDelay> 
+			    <StabilityTimeDelay unit="s">0</StabilityTimeDelay>
+			</FTP>
+			<LTO>
+			    <ConfidencePercentage>10</ConfidencePercentage> 
+			    <!--in KB  -->
+			    <MinimumTreshold>10000000</MinimumTreshold> 
+			    <DueDateDelay unit="s">0</DueDateDelay> 
+			    <StabilityTimeDelay unit="s">7200</StabilityTimeDelay>
+			</LTO>
+			<CM>
+			    <ConfidencePercentage>0</ConfidencePercentage> 
+			    <MinimumTreshold>0</MinimumTreshold> 
+			    <DueDateDelay unit="s">0</DueDateDelay> 
+                	    <StabilityTimeDelay unit="s">0</StabilityTimeDelay>
+			</CM>
+		</MediaTypes>
+
+	</PackagerOptimiser>
+</PackagerOptimiserConfigurationRoot>

@@ -1,0 +1,15 @@
+2.50.4
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+2.50.3
+MP: no more db related deprecated methods/classes
+------------------------------
+2.50.2
+MP: compilation warnings fixed
+------------------------------
+2.50.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.50.0
+
+Automatically generate from revision "version "2.50""

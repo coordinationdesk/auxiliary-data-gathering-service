@@ -1,0 +1,12 @@
+        <TlDaemon>
+                <TLD_Orders_Root_Path>/workspace/workingDirs/TL/TLDaemon/</TLD_Orders_Root_Path>
+                <TLD_WS_Config_Path>/usr/acs/conf/local/WSConfig.xml</TLD_WS_Config_Path>
+                <TLD_FileOrderMgr>
+                        <Path></Path>
+                </TLD_FileOrderMgr>
+                <TLD_InteractiveOrderMgr>
+                    <Path>/usr/acs/tmp/orders/</Path>
+                </TLD_InteractiveOrderMgr>
+                <TLD_Scheduler_Path>/usr/acs/bin/Scheduler</TLD_Scheduler_Path>
+                <TLD_Plugins_Path>/usr/acs/plugins/TlDaemonPlugins</TLD_Plugins_Path>
+        </TlDaemon>

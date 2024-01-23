@@ -1,0 +1,9 @@
+<?xml version="1.0" standalone="yes" ?> 
+<Root>
+	<!--  Redefinition of PDS group to be mapped into ISM file classes. --> 
+	<PDSGroupsRedefinition>
+		<Groups>
+			<Pair Ism="ACS_ISM" group="NO_MEDIA"/>
+		</Groups>			
+	</PDSGroupsRedefinition>
+</Root>

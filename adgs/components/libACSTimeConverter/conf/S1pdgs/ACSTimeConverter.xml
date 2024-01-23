@@ -1,0 +1,253 @@
+<?xml version="1.0" standalone="yes"?>
+<ACSTimeConverterFile>
+	<ACSTimeConverter>
+		<List_of_References count="2">  
+			<Reference>
+				<Name>TAI</Name>	
+				<List_of_Leap_Seconds count="26">  
+					<Leap_Seconds>
+						<Start_Time>19720101_000000</Start_Time>
+						<Value>10</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19720701_000000</Start_Time>
+						<Value>11</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19730101_000000</Start_Time>
+						<Value>12</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19740101_000000</Start_Time>
+						<Value>13</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19750101_000000</Start_Time>
+						<Value>14</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19760101_000000</Start_Time>
+						<Value>15</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19770101_000000</Start_Time>
+						<Value>16</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19780101_000000</Start_Time>
+						<Value>17</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19790101_000000</Start_Time>
+						<Value>18</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19800101_000000</Start_Time>
+						<Value>19</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19810701_000000</Start_Time>
+						<Value>20</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19820701_000000</Start_Time>
+						<Value>21</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19830701_000000</Start_Time>
+						<Value>22</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19850701_000000</Start_Time>
+						<Value>23</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19880101_000000</Start_Time>
+						<Value>24</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19900101_000000</Start_Time>
+						<Value>25</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19910101_000000</Start_Time>
+						<Value>26</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19920701_000000</Start_Time>
+						<Value>27</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19930701_000000</Start_Time>
+						<Value>28</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19940701_000000</Start_Time>
+						<Value>29</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19960101_000000</Start_Time>
+						<Value>30</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19970701_000000</Start_Time>
+						<Value>31</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19990101_000000</Start_Time>
+						<Value>32</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>20060101_000000</Start_Time>
+						<Value>33</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>20090101_000000</Start_Time>
+						<Value>34</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>20120701_000000</Start_Time>
+						<Value>35</Value>	<!--> TAI - UTC	<-->
+					</Leap_Seconds>		
+				</List_of_Leap_Seconds>  			
+			</Reference>
+			<Reference>
+				<Name>UT1</Name>
+				<List_of_Leap_Seconds count="33">  
+					<Leap_Seconds>
+						<Start_Time>19960101_000000</Start_Time>
+						<Value>0.5</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19960222_000000</Start_Time>
+						<Value>0.4</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19960411_000000</Start_Time>
+						<Value>0.3</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19960516_000000</Start_Time>
+						<Value>0.2</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19960808_000000</Start_Time>
+						<Value>0.1</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19961003_000000</Start_Time>
+						<Value>0.0</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19961205_000000</Start_Time>
+						<Value>-0.1</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19970206_000000</Start_Time>
+						<Value>-0.2</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19970320_000000</Start_Time>
+						<Value>-0.3</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19970508_000000</Start_Time>
+						<Value>-0.4</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19970626_000000</Start_Time>
+						<Value>-0.5</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19970701_000000</Start_Time>
+						<Value>0.5</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19970918_000000</Start_Time>
+						<Value>0.4</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19971030_000000</Start_Time>
+						<Value>0.3</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19971218_000000</Start_Time>
+						<Value>0.2</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19980219_000000</Start_Time>
+						<Value>0.1</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19980326_000000</Start_Time>
+						<Value>0.0</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19980507_000000</Start_Time>
+						<Value>-0.1</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19980813_000000</Start_Time>
+						<Value>-0.2</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19981126_000000</Start_Time>
+						<Value>-0.3</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19990101_000000</Start_Time>
+						<Value>0.7</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19990304_000000</Start_Time>
+						<Value>0.6</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19990527_000000</Start_Time>
+						<Value>0.5</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>19991014_000000</Start_Time>
+						<Value>0.4</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>20000106_000000</Start_Time>
+						<Value>0.3</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>20000413_000000</Start_Time>
+						<Value>0.2</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>20001019_000000</Start_Time>
+						<Value>0.1</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>20010301_000000</Start_Time>
+						<Value>0.0</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>20011004_000000</Start_Time>
+						<Value>-0.1</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>20020214_000000</Start_Time>
+						<Value>-0.2</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>20021024_000000</Start_Time>
+						<Value>-0.3</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>20030403_000000</Start_Time>
+						<Value>-0.4</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+					<Leap_Seconds>
+						<Start_Time>20040429_000000</Start_Time>
+						<Value>-0.5</Value>		<!--> UT1 - UTC	<-->
+					</Leap_Seconds>		
+				</List_of_Leap_Seconds>  			
+			</Reference>
+		</List_of_References>  
+</ACSTimeConverter>
+</ACSTimeConverterFile>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Library>
+    <ImplicitCirculator>  
+        <!--Default priority -->
+        <!-- <priority>10</priority> -->    
+        <!--Polling period to find files to circulate -->
+        <pollingPeriodInSeconds>10</pollingPeriodInSeconds>
+        <!--Number of parallel threads  used to check enabled policies-->
+        <numberOfThreads>7</numberOfThreads>
+        <!--Default 5 -->
+		<!-- <numberOfLocalThreads>7</numberOfLocalThreads> -->
+        <numberOfRemoteThreads>3</numberOfRemoteThreads> 
+        <!--Seconds elapsed to reprocess policies -->
+        <secondsToReprocessPolicies>10</secondsToReprocessPolicies>
+        <!--Signer for media: MD5 is the only supported up to now. -->
+        <mediaSignerType>MD5</mediaSignerType>
+        <!--Report file name for media: use ${DIR_NAME} (i.e. folder/file directory path) and/or ${FILE_NAME}
+        (i.e. file/folder name) in order to decide the absolute name of the file.
+        If the directory does not exist, it will be created. -->
+        <mediaReport>${DIR_NAME}/${FILE_NAME}_MANIFEST.MF</mediaReport>
+        <!--Media stand by status: it is the status used to specify when the media has been
+        transferred completely with success. After this, the receiver circulator must verify
+        the data and put its status to COMPLETED. -->
+        <mediaStandByStatus>STANDBY</mediaStandByStatus>
+        <!--the wait in second to enhance priority with file aging -->
+        <creationTimeWeight>3600</creationTimeWeight>	
+        <!--badwidth used by circulator assuming infinite disk IO capability-->
+        <linkSpeed>5000</linkSpeed>
+        <!--Default true -->
+		<useInotify>true</useInotify>
+		<!-- period in seconds to log occurrence of items to be circulated via media -->
+		<!-- <MediaCirculationInfoPeriod>60</MediaCirculationInfoPeriod> -->
+		<logErrorsVerbose>false</logErrorsVerbose>
+		<filterRecoverableError>false</filterRecoverableError>
+    </ImplicitCirculator>
+    <RetriesConfigurationPolicies>
+     	<Default>
+			<RetryAlgo>STEPPED</RetryAlgo>
+			<Step1Timeout>600</Step1Timeout>
+			<Step2Timeout>1200</Step2Timeout>
+			<Step1Threshold>3</Step1Threshold>
+	 		<MaxRetries>8</MaxRetries>
+ 	    </Default>
+     </RetriesConfigurationPolicies>
+</Library>
+

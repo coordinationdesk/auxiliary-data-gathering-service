@@ -1,0 +1,10 @@
+[Unit]
+Description=Run purgeBaselineReports.sh every day at 00:00
+Requires=adgs-purgebaselinereport.service
+
+[Timer]
+OnCalendar=daily
+Unit=adgs-purgebaselinereport.service
+
+[Install]
+WantedBy=timers.target

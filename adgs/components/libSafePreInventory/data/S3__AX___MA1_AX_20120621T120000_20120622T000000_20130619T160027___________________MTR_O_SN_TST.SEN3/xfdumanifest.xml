@@ -1,0 +1,60 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<xfdu:XFDU xmlns:xfdu="urn:ccsds:schema:xfdu:1" xmlns:sentinel-safe="http://www.esa.int/safe/sentinel/1.1" xmlns:sentinel-3="http://www.esa.int/safe/sentinel/1.1/sentinel-3" xmlns:sentinel3aux="http://www.esa.int/safe/sentinel/1.1/sentinel-3/adf" version="esa/safe/sentinel/1.1/sentinel-3/adf">
+	<informationPackageMap>
+		<xfdu:contentUnit unitType="SAFE Archive Information Package" textInfo="AX___MA1_AX" dmdID="_dmdID">
+			<xfdu:contentUnit unitType="ECMWF Analysis Meteo Data L1" repID="_repID" dmdID="_dmdID">
+				<dataObjectPointer ID="ADFPointer"/>
+			</xfdu:contentUnit>
+		</xfdu:contentUnit>
+	</informationPackageMap>
+	<metadataSection>
+		<metadataObject ID="generalProductInformation" classification="DESCRIPTION" category="DMD">
+			<metadataWrap mimeType="text/xml" vocabularyName="Sentinel-SAFE" textInfo="General Product Information">
+				<xmlData>
+					<sentinel3aux:generalProductInformation>
+						<sentinel3aux:fileName>S3__AX___MA1_AX_20120621T120000_20120622T000000_20130619T160027___________________MTR_O_SN_TST.SEN3</sentinel3aux:fileName>
+						<sentinel3aux:fileType>AX___MA1_AX</sentinel3aux:fileType>
+						<sentinel3aux:timeliness>SN</sentinel3aux:timeliness>
+						<sentinel3aux:baselineCollection>TST</sentinel3aux:baselineCollection>
+						<sentinel3aux:familyName>Sentinel-3</sentinel3aux:familyName>
+						<sentinel3aux:number></sentinel3aux:number>
+						<sentinel3aux:productSize>27</sentinel3aux:productSize>
+						<sentinel3aux:creationTime>2013-06-19T16:00:27.814297</sentinel3aux:creationTime>
+						<sentinel3aux:validityStartTime>2012-06-21T12:00:00.000000</sentinel3aux:validityStartTime>
+						<sentinel3aux:validityStopTime>2012-06-22T00:00:00.000000</sentinel3aux:validityStopTime>
+					</sentinel3aux:generalProductInformation>
+				</xmlData>
+			</metadataWrap>
+		</metadataObject>
+		<metadataObject ID="processing" classification="PROVENANCE" category="PDI">
+			<metadataWrap mimeType="text/xml" vocabularyName="Sentinel-SAFE" textInfo="Processing">
+				<xmlData>
+					<sentinel-safe:processing xmlns="http://www.esa.int/safe/1.3">
+						<sentinel-safe:facility name="ACS" organization="organization" site="Matera" country="Italy">
+							<sentinel-safe:hardware name="DEV"/>
+							<sentinel-safe:software name="S3_AUX_REFORMATTER" version="01.00"/>
+						</sentinel-safe:facility>
+						<sentinel-safe:resource name="T1D06211200062112001" role="Raw Data" version=""/>
+					</sentinel-safe:processing>
+				</xmlData>
+			</metadataWrap>
+		</metadataObject>
+		<metadataObject ID="qualityInformation">
+			<metadataWrap mimeType="text/xml" vocabularyName="Sentinel-SAFE" textInfo="Quality Information">
+				<xmlData>
+					<sentinel3aux:qualityInformation>
+						<sentinel3aux:adfQualityCheck>PASSED</sentinel3aux:adfQualityCheck>
+					</sentinel3aux:qualityInformation>
+				</xmlData>
+			</metadataWrap>
+		</metadataObject>
+	</metadataSection>
+	<dataObjectSection>
+		<dataObject ID="ADFPointer" repID="_repID">
+			<byteStream mimeType="application/octetstream">
+				<fileLocation locationType="URL" textInfo="ECMWF_MA1" href="./T1D06211200062112001"/>
+				<checksum checksumName="MD5">2398600f47e4475f4db3249d53c35fe7</checksum>
+			</byteStream>
+		</dataObject>
+	</dataObjectSection>
+</xfdu:XFDU>

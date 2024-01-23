@@ -1,0 +1,51 @@
+Improvement to do:
+------------------
+
+//*/ ADC-83: Issue Jira per nuovo schema: format non esiste piu'. Le TT direttamente nella tupla. La parte di deliverycheck si puo' anche non fare subito.
+
+//*/ Vedi con Marco perche' alcune volte PackageProcessor esce con eccezione, sveglia il PackageProcessingManager, ma il PackageProcessingManager non rileva l'eccezione con runException.
+
+//*/ Far rendere i campi ref a task table nullable in t_distributionrules: quando e' null lo step viene saltato, senza invocare lo scheduler
+
+//*/ Eliminare dipendenza verso la libDataConsumer (usata per mandare mail dc::DataConsumer in PackageExporter.C e per costruire Distribution con dc::database::DatabaseManager in ExporterServiceResolver).
+//*/ L'oggetto Distribution puo' essere costruito diversamente, senza dipendere dipendere da dc::database::DatabaseManager (usato per ottenere Distribution). Calcolare con una query il tuo DistributionPackage cosi' da non dipendere da libDataConsumer.
+//*/ Basta linkare libDataConsumer che instanzia un loader che scarica una conf per il consumer - a me non serve.
+//*/ Eliminata! Rimuovere da ADC la libDataConsumer (in realta' puo' servire ai task in task table - es. simulando il vecchio Exporter senza usare il circolatore)
+
+//*/ Prevedere nella TT una query specifica per l'exporter (vedi con Marco)
+
+//*/ Il JobOrder dev'essere senza I/O, i task si passano input noti nella wd. Chiedi a marco perche'
+
+//*/ DownloadPackData::generateDeliverySlip() dev'essere tolto dal DataProvider e spostato in un task della task table fmt.
+
+//*/ Tutto cio' che mando al circolatore lo posso considerare asincrono? Anche se il trasferimento e' ftp e non media? Secondo me si'. Poi si usa la TT delcheck per aggiornare lo stato.
+
+//*/ Aggiornare il modello in base all'implementazione di ADC-83. (Controlla tutti i sequence - es. aggiornamenti importanti in PackageProcessor e PackageDistCirculatorTask)
+
+//*/
+Now a compromise has been implemented:
+- DataProvider is used by Exporter and PackageExporter and passed to runExport (will became an attribute)
+- DataConsumer is not used here, but methods (handleFailedPackages, ) are called on Exporter and PackageExporter. These methods wrap the actual Consumer used and will be removed.
+
+Revise so that:
+- ExporterBase uses two new interfaces: DataProviderIF and DataConsumerIF
+- Exporter uses the DataProvider (that specializes the new DataProviderIF) and dc::DataConsumer (that specializes the new DataConsumerIF)
+- PackageExporter uses the DataProvider (that specializes the new DataProviderIF) and PackageProcessingManager (that specializes the new DataConsumerIF)
+//*/
+
+
+//*/
+To keep old interface, addPackage, getPackages... uses vector<DataPackage>. Revisit using shared pointer (as used internally in PackageProcessingManager)
+//*/
+
+
+//*/ DataPackageSerializable e DistributionSerializable spostarli rispettivamente nelle lib di DataPackage e Distribution. O in alternativa renderli direttamente serializzabili. Questo risparmierebbe le copie di oggetti prima e dopo la serializzazione.
+Rivedere questo concetto: DataPackageSerializable e DistributionSerializable sono due interfacce verso il processing. Megli tenerle separate e valutare se distaccarle dagli oggetti DataPackage e Distribution.
+
+//*/ PackageExporter e' stato scritto sulla base del vecchio Exporter. Rivedre il main (es. try catch e runException su PackageProcessingManager)
+
+//*/ Per la look-up table delle task table (anche se temporanea) fare un ordinamento da codice: ordina per chiavi per score (score= match(step)+match(format)+match(mediatype), con step, format, mediatype settati a stringhe improbabili)
+
+//*/ PackageProcessor.C e ThreadedScheduler posso sincronizzarsi via Condition (previo modifica a ThreadedScheduler)
+
+

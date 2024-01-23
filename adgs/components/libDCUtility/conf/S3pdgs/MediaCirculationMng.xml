@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<root>
+	<MediaCirculationMng>
+		<SatelliteId>S3_</SatelliteId>
+		<!-- Temporary path -->
+		<!-- <TempPath>/tmp</TempPath> -->
+		<Sender>
+			<ReportFiletype>REP_DC_SHP</ReportFiletype>
+			<!-- Limit of queue records for query -->
+			<!-- <CircQueueRecordsLimit>1000</CircQueueRecordsLimit> -->
+			
+			<!-- order by on priority in query depending on convention on priority scale (default the highest -> the most priority) -->
+			<!-- <QueueRecordsDescendingPriorityOrder>true</QueueRecordsDescendingPriorityOrder> -->
+			
+			<!-- timeout in seconds to lock a task instance with the same destination host of another one already running -->
+			<!-- <DestinationHostLockTimeout>10</DestinationHostLockTimeout> -->
+		</Sender>
+		<Receiver>
+			<ReportFiletype>REP_DC_ACK</ReportFiletype>
+			<!-- Root directory for copy according to media layout if not given by input -->
+			<MediaLayoutCopyRootDir>/tmp/mediaCirculationMng</MediaLayoutCopyRootDir>
+		</Receiver>
+	</MediaCirculationMng>
+</root>

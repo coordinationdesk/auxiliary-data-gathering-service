@@ -1,0 +1,12 @@
+2.16.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+2.16.2
+MP: compilation warnigns fixed
+------------------------------
+2.16.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.16.0
+
+Automatically generate from revision "version "2.16""

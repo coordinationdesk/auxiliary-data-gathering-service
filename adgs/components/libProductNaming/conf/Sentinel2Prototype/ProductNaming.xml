@@ -1,0 +1,320 @@
+<Root>
+	<!-- $Id$ -->
+    <!--************************************************************************************************************************** 
+        Naming Rules are provided in the form of a regular expression and a list of fields that can be extracted from the filename 
+         using the matches with the sub-regexp enclosed in the parentesis. 
+         For each field, the name (which is used as a key) and the index of the sub-regexp the field is related to must be provided.
+         **************************************************************************************************************************
+         IMPORTANT: 
+         Allowed Field.Name values: 
+         - PlatformName
+         - MissionNumber
+         - FileType
+         - FileClass
+         - StartTime
+         - StopTime
+         - OriginFacility
+         - AbsoluteOrbit
+         - Crc
+         - Extension
+	 - Duration
+	 - Cycle
+	 - RelativeOrbit
+	 - InstanceId
+	 - FrameCoord
+	 - Version
+	 - Timeliness
+	 - Baseline
+	 - CreationTime
+	 - BandNumber
+	 - TileDescriptor
+	 - Validity
+	 - ImageType
+	 - Resolution
+        ************************************************************************************************************************** -->
+	<ProductNaming>
+		<List_Of_NamingRules count="13">
+			<NamingRule><!--L1c filename and L1c internal content: metadata file -->
+				<FilenameRegExp>^(S2[A-Z_])_([A-Z0-9_]{4})_([A-Z0-9_]{10})_([A-Z0-9_]{3})_([[:digit:]]{14})_([[:digit:]]{14})_([[:digit:]]{4})$</FilenameRegExp> 
+				<List_Of_Fields count="7">
+					<Field>
+						<Name>MissionNumber</Name>
+						<Index>1</Index>
+					</Field>
+					<Field>
+						<Name>FileClass</Name>
+						<Index>2</Index>
+					</Field>
+					<Field>
+						<Name>FileType</Name>
+						<Index>3</Index>
+					</Field>
+ 					<Field>
+						<Name>AbsoluteOrbit</Name>
+						<Index>4</Index>
+					</Field>
+               		    		<Field>
+						<Name>StartTime</Name>
+						<Index>5</Index>
+					</Field>
+                		    	<Field>
+						<Name>StopTime</Name>
+						<Index>6</Index>
+					</Field>
+	               		    	<Field>
+						<Name>Version</Name>
+						<Index>7</Index>
+					</Field>
+ 				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule><!--L1c child filename and L1c internal content: thumbnail files -->
+				<FilenameRegExp>^(S2[A-Z_])_([A-Z0-9_]{4})_([A-Z0-9_]{10})_([A-Z0-9_]{3})_([[:digit:]]{14})_([[:digit:]]{14})_([A-Z0-9_]{12})_([[:digit:]]{4}).*$</FilenameRegExp> 
+				<List_Of_Fields count="8">
+					<Field>
+						<Name>MissionNumber</Name>
+						<Index>1</Index>
+					</Field>
+					<Field>
+						<Name>FileClass</Name>
+						<Index>2</Index>
+					</Field>
+					<Field>
+						<Name>FileType</Name>
+						<Index>3</Index>
+					</Field>
+ 					<Field>
+						<Name>AbsoluteOrbit</Name>
+						<Index>4</Index>
+					</Field>
+               		    		<Field>
+						<Name>StartTime</Name>
+						<Index>5</Index>
+					</Field>
+                		    	<Field>
+						<Name>StopTime</Name>
+						<Index>6</Index>
+					</Field>
+	               		    	<Field>
+						<Name>TileDescriptor</Name>
+						<Index>7</Index>
+					</Field>
+	               		    	<Field>
+						<Name>Version</Name>
+						<Index>8</Index>
+					</Field>
+ 				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule><!--L1c internal content: image files -->
+				<FilenameRegExp>^(S2[A-Z_])_([A-Z0-9_]{4})_([A-Z0-9_]{10})_([A-Z0-9_]{3})_([[:digit:]]{14})_([[:digit:]]{14})_[[:digit:]]{2}_([A-Z0-9_]{12})_([[:digit:]]{4}).*$</FilenameRegExp> 
+				<List_Of_Fields count="8">
+					<Field>
+						<Name>MissionNumber</Name>
+						<Index>1</Index>
+					</Field>
+					<Field>
+						<Name>FileClass</Name>
+						<Index>2</Index>
+					</Field>
+					<Field>
+						<Name>FileType</Name>
+						<Index>3</Index>
+					</Field>
+ 					<Field>
+						<Name>AbsoluteOrbit</Name>
+						<Index>4</Index>
+					</Field>
+               		    		<Field>
+						<Name>StartTime</Name>
+						<Index>5</Index>
+					</Field>
+                		    	<Field>
+						<Name>StopTime</Name>
+						<Index>6</Index>
+					</Field>
+	               		    	<Field>
+						<Name>TileDescriptor</Name>
+						<Index>7</Index>
+					</Field>
+	               		    	<Field>
+						<Name>Version</Name>
+						<Index>8</Index>
+					</Field>
+ 				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule><!--L1c mask folder -->
+				<FilenameRegExp>^(S2[A-Z_])_([A-Z0-9_]{4})_([A-Z0-9_]{10})_[A-Z0-9_]{3}_[[:digit:]]{14}_[[:digit:]]{14}.*$</FilenameRegExp> 
+				<List_Of_Fields count="3">
+					<Field>
+						<Name>MissionNumber</Name>
+						<Index>1</Index>
+					</Field>
+					<Field>
+						<Name>FileClass</Name>
+						<Index>2</Index>
+					</Field>
+					<Field>
+						<Name>FileType</Name>
+						<Index>3</Index>
+					</Field>
+ 				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule><!--L1c Mask file -->
+				<FilenameRegExp>^S2[A-Z_]_[A-Z0-9_]{4}_([A-Z0-9_]{10})_[A-Z0-9_]{6}_[A-Z0-9_]{3}_[[:digit:]]{14}_[[:digit:]]{14}_[A-Z0-9_]{2}_([A-Z0-9_]{12})_[[:digit:]]{4}.*$</FilenameRegExp> 
+				<List_Of_Fields count="2">
+					<Field>
+						<Name>FileType</Name>
+						<Index>1</Index>
+					</Field>
+	               		    	<Field>
+						<Name>TileDescriptor</Name>
+						<Index>2</Index>
+					</Field>
+ 				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule><!--L1c Mask file (band indipendent) -->
+				<FilenameRegExp>^S2[A-Z_]_[A-Z0-9_]{4}_([A-Z0-9_]{10})_[A-Z0-9_]{6}_[A-Z0-9_]{3}_[[:digit:]]{14}_[[:digit:]]{14}_([A-Z0-9_]{12})_[[:digit:]]{4}.*$</FilenameRegExp> 
+				<List_Of_Fields count="2">
+					<Field>
+						<Name>FileType</Name>
+						<Index>1</Index>
+					</Field>
+	               		    	<Field>
+						<Name>TileDescriptor</Name>
+						<Index>2</Index>
+					</Field>
+ 				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule><!--GIPP files -->
+				<FilenameRegExp>^S2[A-Z_]_[A-Z0-9_]{4}_([A-Z0-9_]{10})_([[:digit:]]{14})_([[:digit:]]{14})_[A-Z0-9_]{2}_[[:digit:]]{4}.*$</FilenameRegExp> 
+				<List_Of_Fields count="3">
+					<Field>
+						<Name>FileType</Name>
+						<Index>1</Index>
+					</Field>
+               		    		<Field>
+						<Name>StartTime</Name>
+						<Index>2</Index>
+					</Field>
+                		    	<Field>
+						<Name>StopTime</Name>
+						<Index>3</Index>
+					</Field>
+ 				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule><!--EXO METDTA S2N_TEST_EXO_METDTA_20090101T000000_20111231T230000.DBL -->
+				<FilenameRegExp>^S2[A-Z_]_[A-Z0-9_]{4}_([A-Z0-9_]{10})_([[:digit:]]{8}T[[:digit:]]{6})_([[:digit:]]{8}T[[:digit:]]{6}).*$</FilenameRegExp> 
+				<List_Of_Fields count="3">
+					<Field>
+						<Name>FileType</Name>
+						<Index>1</Index>
+					</Field>
+               		    		<Field>
+						<Name>StartTime</Name>
+						<Index>2</Index>
+					</Field>
+                		    	<Field>
+						<Name>StopTime</Name>
+						<Index>3</Index>
+					</Field>
+ 				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule><!--L2A Maccs TIF Product: S2A_TEST_SSC_PDTANX_L2VALD_15SVD____20091211_ATB_R1.DBL.TIF -->
+				<FilenameRegExp>^S2[A-Z_]_[A-Z0-9_]{4}_([A-Z0-9_]{10})_([A-Z0-9_]{6})_([A-Z0-9_]{5})____[[:digit:]]{8}_([A-Z0-9_]{3})_([A-Z0-9_]{2}).*$</FilenameRegExp> 
+				<List_Of_Fields count="5">
+					<Field>
+						<Name>FileType</Name>
+						<Index>1</Index>
+					</Field>
+	               		    	<Field>
+						<Name>Validity</Name>
+						<Index>2</Index>
+					</Field>
+ 	               		    	<Field>
+						<Name>TileDescriptor</Name>
+						<Index>3</Index>
+					</Field>
+ 	               		    	<Field>
+						<Name>ImageType</Name>
+						<Index>4</Index>
+					</Field>
+ 	               		    	<Field>
+						<Name>Resolution</Name>
+						<Index>5</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule><!--L2A QuickLook Maccs Product: S2A_TEST_SSC_PDTANX_L2VALD_15SVD____20091211.DBL.JPG -->
+				<FilenameRegExp>^S2[A-Z_]_[A-Z0-9_]{4}_([A-Z0-9_]{10})_([A-Z0-9_]{6})_([A-Z0-9_]{5})____[[:digit:]]{8}.*$</FilenameRegExp> 
+				<List_Of_Fields count="3">
+					<Field>
+						<Name>FileType</Name>
+						<Index>1</Index>
+					</Field>
+	               		    	<Field>
+						<Name>Validity</Name>
+						<Index>2</Index>
+					</Field>
+ 	               		    	<Field>
+						<Name>TileDescriptor</Name>
+						<Index>3</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule><!--L2A Maccs Product: S2A_TEST_SSC_L2VALD_15SVD____20091216.DBL.DIR -->
+				<FilenameRegExp>^S2[A-Z_]_[A-Z0-9_]{4}_([A-Z0-9_]{10})_([A-Z0-9_]{5})____([[:digit:]]{8}).*$</FilenameRegExp> 
+				<List_Of_Fields count="3">
+					<Field>
+						<Name>FileType</Name>
+						<Index>1</Index>
+					</Field>
+ 	               		    	<Field>
+						<Name>TileDescriptor</Name>
+						<Index>2</Index>
+					</Field>
+ 	               		    	<Field>
+						<Name>StartTime</Name>
+						<Index>3</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule><!--L2A Product: S2A_TEST_PRD_L2A_MA_20091221165851_000000_15SVD_0001-->
+				<FilenameRegExp>^S2[A-Z_]_[A-Z0-9_]{4}_([A-Z0-9_]{10})_([[:digit:]]{14})_([A-Z0-9_]{12})_[A-Z0-9_]{4}.*$</FilenameRegExp> 
+				<List_Of_Fields count="4">
+					<Field>
+						<Name>FileType</Name>
+						<Index>1</Index>
+					</Field>
+               		    		<Field>
+						<Name>StartTime</Name>
+						<Index>2</Index>
+					</Field>
+                		    	<Field>
+						<Name>StopTime</Name>
+						<Index>2</Index>
+					</Field>
+ 	               		    	<Field>
+						<Name>TileDescriptor</Name>
+						<Index>3</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule><!--L2B auxiliary: S2__TEST_L2B_ANNCCC_00000000000000_99999999999999_0001.xml-->
+				<FilenameRegExp>^S2[A-Z_]_[A-Z0-9_]{4}_([A-Z0-9_]{10})_([[:digit:]]{14})_([A-Z0-9_]{14})_[A-Z0-9_]{4}.*$</FilenameRegExp> 
+				<List_Of_Fields count="3">
+					<Field>
+						<Name>FileType</Name>
+						<Index>1</Index>
+					</Field>
+               		    		<Field>
+						<Name>StartTime</Name>
+						<Index>2</Index>
+					</Field>
+                		    	<Field>
+						<Name>StopTime</Name>
+						<Index>3</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+		</List_Of_NamingRules>
+	</ProductNaming>
+</Root>

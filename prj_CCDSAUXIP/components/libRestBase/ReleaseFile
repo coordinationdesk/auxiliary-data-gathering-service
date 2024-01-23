@@ -1,0 +1,64 @@
+3.0.3
+Using pistache option flag CloseOnExec to allow the socket file descriptor closure and 
+to avoid address already in use error when a phoenix occurs.
+------------------------------------------------------------------------------------
+3.0.2
+Makefile uses the variable GPPNUMERICALVERSION to automatically link
+the static library libstdc++fs only if the g++ version is less tan 9.1.0
+------------------------------------------------------------------------------------
+3.0.1
+RestServerBase::RestService::getQueryParam adapted to new std::optional.  
+------------------------------------------------------------------------------------
+3.0.0
+Using new release of pistache (released on github @20220425)
+It now forces the use of c++17 standard and, until the gcc version 9.1, requires to 
+statically link the library libstdc++fs.a 
+The static link dependency has been reported in this library Makefile
+------------------------------------------------------------------------------------
+2.0.0
+Removed deprecated function void RestServerBase::registerService(RestService* service)
+------------------------------------------
+1.6.0
+[LTA-492]
+- getQueryParam now raise exception when the parameter is missing or if the conversion is not possible.
+------------------------------------------
+1.5.1
+[LTA-492]
+- Improved bool version of getQueryParam functions in RestService.
+------------------------------------------
+1.5.0
+[LTA-492]
+- Implemented generic getQueryParam functions in RestService.
+------------------------------------------
+1.4.0
+[LTA-492]
+- Implemented generic dumpRequest function in RestService.
+------------------------------------------
+1.3.0
+- Deprecated function void RestServerBase::registerService(RestService* service) in 
+  favour of RestServerBase::registerService(const std::shared_ptr<RestService>& service)
+- Test aligned
+------------------------------------------
+1.2.0
+[LTA-421]
+- The function stopServer now invokes the Pistache::Http::Endpoint destructor in order to join with the listening pistache thread,
+  hence avoiding possible segfault issues when services are deregistered and destroyed by the user.
+- Pistache::Http::Endpoint initialization moved from RestServerBase constructor into initServerEndpoint function. 
+  It allows to reinitialize the server after a call to stopServer.
+- std::shared_ptr transformed into std::unique_ptr.
+------------------------------------------
+1.1.2
+TCP FastOpen option in RestServerBase removed because experimental and not supported by all SO distributions
+------------------------------------------
+1.1.1
+S2PDGS-437: copy constructor and operator= implemented. Move constructor/assignment operator added.
+------------------------------------------
+1.1.0
+S2PDGS-437: class mapping the configuration needed by a REST server added. Unit Tests added.
+------------------------------------------
+1.0.1
+Fixed minor bugs
+------------------------------------------
+1.0.0
+First issue
+------------------------------------------

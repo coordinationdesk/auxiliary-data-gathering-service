@@ -1,0 +1,1309 @@
+<?xml version="1.0" standalone="yes"?>
+<SafeFormatter>
+	<SafeProduct>
+		<productType>SY_1_SYN_</productType>
+		<safeNamespace>http://www.esa.int/safe/1.2</safeNamespace>
+		<xfduNamespace>urn:ccsds:schema:xfdu:1</xfduNamespace>
+		<schemaLocation>./xfdu.xsd</schemaLocation>
+		<manifestName>manifest.safe</manifestName>
+		<InformationPackageMap>
+			<unitType>Information Package</unitType>
+			<textInfo>SENTINEL-3 Synergy Level 1</textInfo>
+			<pdiId>processing</pdiId>
+			<dmdId>acquisitionPeriod platform generalProductInformation specificProductInformation</dmdId>
+			<Id>packageUnit</Id>
+		</InformationPackageMap> 
+		<ListOfObjects count="3">
+			<Object type="Data">
+				<Common>
+					<unitType>Measurement Data Unit</unitType>
+					<checksumName>MD5</checksumName>
+					<locType>URL</locType>
+				</Common>
+				<ListOfObjectConfigs count="43">
+					<ObjectConfig>
+						<Id>Oa01_radiance</Id>
+						<dataObjectId>Oa01_radiance</dataObjectId>
+						<textInfo>Oa01_radiance Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa01 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa02_radiance</Id>
+						<dataObjectId>Oa02_radiance</dataObjectId>
+						<textInfo>Oa02_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa02 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa03_radiance</Id>
+						<dataObjectId>Oa03_radiance</dataObjectId>
+						<textInfo>Oa03_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa03 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa04_radiance</Id>
+						<dataObjectId>Oa04_radiance</dataObjectId>
+						<textInfo>Oa04_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa04 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa05_radiance</Id>
+						<dataObjectId>Oa05_radiance</dataObjectId>
+						<textInfo>Oa05_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa05 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa06_radiance</Id>
+						<dataObjectId>Oa06_radiance</dataObjectId>
+						<textInfo>Oa06_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa06 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa07_radiance</Id>
+						<dataObjectId>Oa07_radiance</dataObjectId>
+						<textInfo>Oa07_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa07 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa08_radiance</Id>
+						<dataObjectId>Oa08_radiance</dataObjectId>
+						<textInfo>Oa08_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa08 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa09_radiance</Id>
+						<dataObjectId>Oa09_radiance</dataObjectId>
+						<textInfo>Oa09_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa09 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa10_radiance</Id>
+						<dataObjectId>Oa10_radiance</dataObjectId>
+						<textInfo>Oa10_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa10 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa11_radiance</Id>
+						<dataObjectId>Oa11_radiance</dataObjectId>
+						<textInfo>Oa11_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa11 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa12_radiance</Id>
+						<dataObjectId>Oa12_radiance</dataObjectId>
+						<textInfo>Oa12_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa12 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa13_radiance</Id>
+						<dataObjectId>Oa13_radiance</dataObjectId>
+						<textInfo>Oa13_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa13 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa14_radiance</Id>
+						<dataObjectId>Oa14_radiance</dataObjectId>
+						<textInfo>Oa14_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa14 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa15_radiance</Id>
+						<dataObjectId>Oa15_radiance</dataObjectId>
+						<textInfo>Oa15_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa15 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa16_radiance</Id>
+						<dataObjectId>Oa16_radiance</dataObjectId>
+						<textInfo>Oa16_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa16 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa17_radiance</Id>
+						<dataObjectId>Oa17_radiance</dataObjectId>
+						<textInfo>Oa17_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa17 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa18_radiance</Id>
+						<dataObjectId>Oa18_radiance</dataObjectId>
+						<textInfo>Oa18_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa18 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa19_radiance</Id>
+						<dataObjectId>Oa19_radiance</dataObjectId>
+						<textInfo>Oa19_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa19 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa20_radiance</Id>
+						<dataObjectId>Oa20_radiance</dataObjectId>
+						<textInfo>Oa20_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa20 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>Oa21_radiance</Id>
+						<dataObjectId>Oa21_radiance</dataObjectId>
+						<textInfo>Oa21_radiance Data Set</textInfo>
+						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_OLC flags_OLC tie_geoCoordinates_OLC tie_geometry_OLC meteo_OLC OLC_InstrumentData misregist_Oref_Oa21 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S1_radiance_n</Id>
+						<dataObjectId>S1_radiance_n</dataObjectId>
+						<textInfo>S1_radiance_n Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_n flags_SLST_an flags_SLST_cn tie_geoCoordinates_SLST_n tie_geometry_SLST_n S1_InstrumentData_n misregist_Oref_S1 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S2_radiance_n</Id>
+						<dataObjectId>S2_radiance_n</dataObjectId>
+						<textInfo>S2_radiance_n Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_n flags_SLST_an flags_SLST_cn tie_geoCoordinates_SLST_n tie_geometry_SLST_n S2_InstrumentData_n misregist_Oref_S2 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S3_radiance_n</Id>
+						<dataObjectId>S3_radiance_n</dataObjectId>
+						<textInfo>S3_radiance_n Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_n flags_SLST_an flags_SLST_cn tie_geoCoordinates_SLST_n tie_geometry_SLST_n S3_InstrumentData_n misregist_Oref_S3 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S4_radiance_n</Id>
+						<dataObjectId>S4_radiance_n</dataObjectId>
+						<textInfo>S4_radiance_n Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_n flags_SLST_an flags_SLST_cn tie_geoCoordinates_SLST_n tie_geometry_SLST_n S4_InstrumentData_n misregist_Oref_S4 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S5_radiance_n</Id>
+						<dataObjectId>S5_radiance_n</dataObjectId>
+						<textInfo>S5_radiance_n Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_n flags_SLST_an flags_SLST_cn tie_geoCoordinates_SLST_n tie_geometry_SLST_n S5_InstrumentData_n misregist_Oref_S5 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S6_radiance_n</Id>
+						<dataObjectId>S6_radiance_n</dataObjectId>
+						<textInfo>S6_radiance_n Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_n flags_SLST_an flags_SLST_cn tie_geoCoordinates_SLST_n tie_geometry_SLST_n S6_InstrumentData_n misregist_Oref_S6 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S1_radiance_o</Id>
+						<dataObjectId>S1_radiance_o</dataObjectId>
+						<textInfo>S1_radiance_o Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_o flags_SLST_ao flags_SLST_co tie_geoCoordinates_SLST_o tie_geometry_SLST_o S1_InstrumentData_o misregist_Oref_S1 misregist_Oref_ao misregist_Oref_bo misregist_Oref_co qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S2_radiance_o</Id>
+						<dataObjectId>S2_radiance_o</dataObjectId>
+						<textInfo>S2_radiance_o Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_o flags_SLST_ao flags_SLST_co tie_geoCoordinates_SLST_o tie_geometry_SLST_o S2_InstrumentData_o misregist_Oref_S2 misregist_Oref_ao misregist_Oref_bo misregist_Oref_co qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S3_radiance_o</Id>
+						<dataObjectId>S3_radiance_o</dataObjectId>
+						<textInfo>S3_radiance_o Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_o flags_SLST_ao flags_SLST_co tie_geoCoordinates_SLST_o tie_geometry_SLST_o S3_InstrumentData_o misregist_Oref_S3 misregist_Oref_ao misregist_Oref_bo misregist_Oref_co qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S4_radiance_o</Id>
+						<dataObjectId>S4_radiance_o</dataObjectId>
+						<textInfo>S4_radiance_o Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_o flags_SLST_ao flags_SLST_co tie_geoCoordinates_SLST_o tie_geometry_SLST_o S4_InstrumentData_o misregist_Oref_S4 misregist_Oref_ao misregist_Oref_bo misregist_Oref_co qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S5_radiance_o</Id>
+						<dataObjectId>S5_radiance_o</dataObjectId>
+						<textInfo>S5_radiance_o Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_o flags_SLST_ao flags_SLST_co tie_geoCoordinates_SLST_o tie_geometry_SLST_o S5_InstrumentData_o misregist_Oref_S5 misregist_Oref_ao misregist_Oref_bo misregist_Oref_co qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S6_radiance_o</Id>
+						<dataObjectId>S6_radiance_o</dataObjectId>
+						<textInfo>S6_radiance_o Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_o flags_SLST_ao flags_SLST_co tie_geoCoordinates_SLST_o tie_geometry_SLST_o S6_InstrumentData_o misregist_Oref_S6 misregist_Oref_ao misregist_Oref_bo misregist_Oref_co qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S7_BT_n</Id>
+						<dataObjectId>S7_BT_n</dataObjectId>
+						<textInfo>S7_BT_n Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_n flags_SLST_an flags_SLST_cn tie_geoCoordinates_SLST_n tie_geometry_SLST_n S7_InstrumentData_n misregist_Oref_S7 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S8_BT_n</Id>
+						<dataObjectId>S8_BT_n</dataObjectId>
+						<textInfo>S8_BT_n Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_n flags_SLST_an flags_SLST_cn tie_geoCoordinates_SLST_n tie_geometry_SLST_n S8_InstrumentData_n misregist_Oref_S8 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S9_BT_n</Id>
+						<dataObjectId>S9_BT_n</dataObjectId>
+						<textInfo>S9_BT_n Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_n flags_SLST_an flags_SLST_cn tie_geoCoordinates_SLST_n tie_geometry_SLST_n S9_InstrumentData_n misregist_Oref_S9 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S7_BT_o</Id>
+						<dataObjectId>S7_BT_o</dataObjectId>
+						<textInfo>S7_BT_o Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_o flags_SLST_ao flags_SLST_co tie_geoCoordinates_SLST_o tie_geometry_SLST_o S7_InstrumentData_o misregist_Oref_S7 misregist_Oref_ao misregist_Oref_bo misregist_Oref_co qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S8_BT_o</Id>
+						<dataObjectId>S8_BT_o</dataObjectId>
+						<textInfo>S8_BT_o Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_o flags_SLST_ao flags_SLST_co tie_geoCoordinates_SLST_o tie_geometry_SLST_o S8_InstrumentData_o misregist_Oref_S8 misregist_Oref_ao misregist_Oref_bo misregist_Oref_co qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>S9_BT_o</Id>
+						<dataObjectId>S9_BT_o</dataObjectId>
+						<textInfo>S9_BT_o Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_o flags_SLST_ao flags_SLST_co tie_geoCoordinates_SLST_o tie_geometry_SLST_o S9_InstrumentData_o misregist_Oref_S9 misregist_Oref_ao misregist_Oref_bo misregist_Oref_co qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>F1_BT_n</Id>
+						<dataObjectId>F1_BT_n</dataObjectId>
+						<textInfo>F1_BT_n Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_n flags_SLST_an flags_SLST_cn tie_geoCoordinates_SLST_n tie_geometry_SLST_n S1_InstrumentData_n misregist_Oref_S1 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>F2_BT_n</Id>
+						<dataObjectId>F2_BT_n</dataObjectId>
+						<textInfo>F2_BT_n Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_n flags_SLST_an flags_SLST_cn tie_geoCoordinates_SLST_n tie_geometry_SLST_n S2_InstrumentData_n misregist_Oref_S2 qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>F1_BT_o</Id>
+						<dataObjectId>F1_BT_o</dataObjectId>
+						<textInfo>F1_BT_o Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_o flags_SLST_ao flags_SLST_co tie_geoCoordinates_SLST_o tie_geometry_SLST_o S1_InstrumentData_o misregist_Oref_S1 misregist_Oref_ao misregist_Oref_bo misregist_Oref_co qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>F2_BT_o</Id>
+						<dataObjectId>F2_BT_o</dataObjectId>
+						<textInfo>F2_BT_o Data Set</textInfo>
+ 						<dmdId>measurementOrbitReference frameSet qualityInformation geolocation_ref time_SLST_o flags_SLST_ao flags_SLST_co tie_geoCoordinates_SLST_o tie_geometry_SLST_o S2_InstrumentData_o misregist_Oref_S2 misregist_Oref_ao misregist_Oref_bo misregist_Oref_co qualityFlags</dmdId>
+						<mimeType>application/x-netcdf</mimeType>
+						<repId></repId>
+					</ObjectConfig>	
+			</ListOfObjectConfigs>
+			</Object>
+			<Object type="Metadata">
+				<Common>
+					<metadataClass>MetadataWrap</metadataClass>
+					<mimeType>text/xml</mimeType>
+					<vocabularyName>SAFE</vocabularyName>
+				</Common>
+				<ListOfObjectConfigs count="8">
+					<ObjectConfig>
+						<Id>acquisitionPeriod</Id>
+						<metadataObjectId>acquisitionPeriod</metadataObjectId>
+						<textInfo>Acquisition Period</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>platform</Id>
+						<metadataObjectId>platform</metadataObjectId>
+						<textInfo>Platform Description</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>measurementOrbitReference</Id>
+						<metadataObjectId>measurementOrbitReference</metadataObjectId>
+						<textInfo>Orbit Reference</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>measurementFrameSet</Id>
+						<metadataObjectId>measurementFrameSet</metadataObjectId>
+						<textInfo>Frame Set</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+						<srsName>http:/www.opengis.net/gml/srs/epsg.xml#4326</srsName>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>qualityInformation</Id>
+						<metadataObjectId>qualityInformation</metadataObjectId>
+						<textInfo>Quality Information</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>generalProductInformation</Id>
+						<metadataObjectId>generalProductInformation</metadataObjectId>
+						<textInfo>General Product Information</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>specificInformation</Id>
+						<metadataObjectId>specificInformation</metadataObjectId>
+						<textInfo>Specific Product Information</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>processing</Id>
+						<metadataObjectId>processing</metadataObjectId>
+						<classification>PROVENANCE</classification>
+						<category>PDI</category>
+						<textInfo>Processing Log</textInfo>
+					</ObjectConfig>
+				</ListOfObjectConfigs>
+			</Object>
+			<Object type="Metadata">
+				<Common>
+					<metadataClass>dataObjectPointer</metadataClass>
+					<unitType>Metadata Unit</unitType>
+					<checksumName>MD5</checksumName>
+					<locType>URL</locType>
+					<mimeType>application/x-netcdf</mimeType>
+				</Common>
+				<ListOfObjectConfigs count="75">
+					<ObjectConfig>
+						<Id>geolocation_ref</Id>
+						<dataObjectId>geolocation_ref</dataObjectId>
+						<textInfo>Geolocation Information</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>geolocation_ref</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>time_OLC</Id>
+						<dataObjectId>time_OLC</dataObjectId>
+						<textInfo>OLCI time stamps</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>time_OLC</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>time_SLST_n</Id>
+						<dataObjectId>time_SLST_n</dataObjectId>
+						<textInfo>SLSTR time stamps, nadir view</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>time_SLST_n</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>time_SLST_o</Id>
+						<dataObjectId>time_SLST_o</dataObjectId>
+						<textInfo>SLSTR time stamps, oblique view</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>time_SLST_o</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>flags_OLC</Id>
+						<dataObjectId>flags_OLC</dataObjectId>
+						<textInfo>OLCI Quality and classification flags</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>flags_OLC</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>flags_SLST_an</Id>
+						<dataObjectId>flags_SLST_an</dataObjectId>
+						<textInfo>SLSTR Quality and classification flags</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>flags_SLST_an</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>flags_SLST_cn</Id>
+						<dataObjectId>flags_SLST_cn</dataObjectId>
+						<textInfo>SLSTR Quality and classification flags</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>flags_SLST_cn</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>flags_SLST_ao</Id>
+						<dataObjectId>flags_SLST_ao</dataObjectId>
+						<textInfo>SLSTR Quality and classification flags</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>flags_SLST_ao</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>flags_SLST_co</Id>
+						<dataObjectId>flags_SLST_co</dataObjectId>
+						<textInfo>SLSTR Quality and classification flags</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>flags_SLST_co</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>qualityFlags</Id>
+						<dataObjectId>qualityFlags</dataObjectId>
+						<textInfo>Quality flags</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>qualityFlags</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>tie_geoCoordinates_OLC</Id>
+						<dataObjectId>tie_geoCoordinates_OLC</dataObjectId>
+						<textInfo>Geolocation information on OLCI Tie point grid</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>tie_geoCoordinates_OLC</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>tie_geometry_OLC</Id>
+						<dataObjectId>tie_geometry_OLC</dataObjectId>
+						<textInfo>Sun and Viewing geometry data on OLCI tie point grid</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>tie_geometry_OLC</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>meteo_OLC</Id>
+						<dataObjectId>meteo_OLC</dataObjectId>
+						<textInfo>Environment data on OLCI tie point grid</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>meteo_OLC</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>tie_geoCoordinates_SLST_n</Id>
+						<dataObjectId>tie_geoCoordinates_SLST_n</dataObjectId>
+						<textInfo>Geolocation information on SLSTR Tie point grid</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>tie_geoCoordinates_SLST_n</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>tie_geoCoordinates_SLST_o</Id>
+						<dataObjectId>tie_geoCoordinates_SLST_o</dataObjectId>
+						<textInfo>Geolocation information on SLSTR Tie point grid</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>tie_geoCoordinates_SLST_o</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>tie_geometry_SLST_n</Id>
+						<dataObjectId>tie_geometry_SLST_n</dataObjectId>
+						<textInfo>Sun and Viewing geometry data on SLSTR tie points grid</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>tie_geometry_SLST_n</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>tie_geometry_SLST_o</Id>
+						<dataObjectId>tie_geometry_SLST_o</dataObjectId>
+						<textInfo>Sun and Viewing geometry data on SLSTR tie points grid</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>tie_geometry_SLST_o</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>OLC_instrumentData</Id>
+						<dataObjectId>OLC_instrumentData</dataObjectId>
+						<textInfo>OLCI General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>OLC_instrumentData</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S1_instrumentData_n</Id>
+						<dataObjectId>S1_instrumentData_n</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S1_instrumentData_n</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S2_instrumentData_n</Id>
+						<dataObjectId>S2_instrumentData_n</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S2_instrumentData_n</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S3_instrumentData_n</Id>
+						<dataObjectId>S3_instrumentData_n</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S3_instrumentData_n</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S4_instrumentData_n</Id>
+						<dataObjectId>S4_instrumentData_n</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S4_instrumentData_n</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S5_instrumentData_n</Id>
+						<dataObjectId>S5_instrumentData_n</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S5_instrumentData_n</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S6_instrumentData_n</Id>
+						<dataObjectId>S6_instrumentData_n</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S6_instrumentData_n</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S7_instrumentData_n</Id>
+						<dataObjectId>S7_instrumentData_n</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S7_instrumentData_n</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S8_instrumentData_n</Id>
+						<dataObjectId>S8_instrumentData_n</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S8_instrumentData_n</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S9_instrumentData_n</Id>
+						<dataObjectId>S9_instrumentData_n</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S9_instrumentData_n</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S1_instrumentData_o</Id>
+						<dataObjectId>S1_instrumentData_o</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S1_instrumentData_o</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S2_instrumentData_o</Id>
+						<dataObjectId>S2_instrumentData_o</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S2_instrumentData_o</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S3_instrumentData_o</Id>
+						<dataObjectId>S3_instrumentData_o</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S3_instrumentData_o</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S4_instrumentData_o</Id>
+						<dataObjectId>S4_instrumentData_o</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S4_instrumentData_o</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S5_instrumentData_o</Id>
+						<dataObjectId>S5_instrumentData_o</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S5_instrumentData_o</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S6_instrumentData_o</Id>
+						<dataObjectId>S6_instrumentData_o</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S6_instrumentData_o</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S7_instrumentData_o</Id>
+						<dataObjectId>S7_instrumentData_o</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S7_instrumentData_o</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S8_instrumentData_o</Id>
+						<dataObjectId>S8_instrumentData_o</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S8_instrumentData_o</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>S9_instrumentData_o</Id>
+						<dataObjectId>S9_instrumentData_o</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>S9_instrumentData_o</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>F1_instrumentData_n</Id>
+						<dataObjectId>F1_instrumentData_n</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>F1_instrumentData_n</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>F2_instrumentData_n</Id>
+						<dataObjectId>F2_instrumentData_n</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>F2_instrumentData_n</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>F1_instrumentData_o</Id>
+						<dataObjectId>F1_instrumentData_o</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>F1_instrumentData_o</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>F2_instrumentData_o</Id>
+						<dataObjectId>F2_instrumentData_o</dataObjectId>
+						<textInfo>SLSTR General Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>F2_instrumentData_o</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa01</Id>
+						<dataObjectId>misregist_Oref_Oa01</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa01</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa02</Id>
+						<dataObjectId>misregist_Oref_Oa02</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa02</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa03</Id>
+						<dataObjectId>misregist_Oref_Oa03</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa03</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa04</Id>
+						<dataObjectId>misregist_Oref_Oa04</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa04</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa05</Id>
+						<dataObjectId>misregist_Oref_Oa05</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa05</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa06</Id>
+						<dataObjectId>misregist_Oref_Oa06</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa06</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa07</Id>
+						<dataObjectId>misregist_Oref_Oa07</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa07</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa08</Id>
+						<dataObjectId>misregist_Oref_Oa08</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa08</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa09</Id>
+						<dataObjectId>misregist_Oref_Oa09</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa09</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa10</Id>
+						<dataObjectId>misregist_Oref_Oa10</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa10</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa11</Id>
+						<dataObjectId>misregist_Oref_Oa11</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa11</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa12</Id>
+						<dataObjectId>misregist_Oref_Oa12</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa12</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa13</Id>
+						<dataObjectId>misregist_Oref_Oa13</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa13</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa14</Id>
+						<dataObjectId>misregist_Oref_Oa14</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa14</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa15</Id>
+						<dataObjectId>misregist_Oref_Oa15</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa15</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa16</Id>
+						<dataObjectId>misregist_Oref_Oa16</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa16</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa17</Id>
+						<dataObjectId>misregist_Oref_Oa17</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa17</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa18</Id>
+						<dataObjectId>misregist_Oref_Oa18</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa18</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa19</Id>
+						<dataObjectId>misregist_Oref_Oa19</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa19</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa20</Id>
+						<dataObjectId>misregist_Oref_Oa20</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa20</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_Oa21</Id>
+						<dataObjectId>misregist_Oref_Oa21</dataObjectId>
+						<textInfo>OLCI misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_Oa21</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_S1</Id>
+						<dataObjectId>misregist_Oref_S1</dataObjectId>
+						<textInfo>SLSTR misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_S1</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_S2</Id>
+						<dataObjectId>misregist_Oref_S2</dataObjectId>
+						<textInfo>SLSTR misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_S2</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_S3</Id>
+						<dataObjectId>misregist_Oref_S3</dataObjectId>
+						<textInfo>SLSTR misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_S3</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_S4</Id>
+						<dataObjectId>misregist_Oref_S4</dataObjectId>
+						<textInfo>SLSTR misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_S4</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_S5</Id>
+						<dataObjectId>misregist_Oref_S5</dataObjectId>
+						<textInfo>SLSTR misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_S5</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_S6</Id>
+						<dataObjectId>misregist_Oref_S6</dataObjectId>
+						<textInfo>SLSTR misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_S6</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_S7</Id>
+						<dataObjectId>misregist_Oref_S7</dataObjectId>
+						<textInfo>SLSTR misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_S7</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_S8</Id>
+						<dataObjectId>misregist_Oref_S8</dataObjectId>
+						<textInfo>SLSTR misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_S8</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_S9</Id>
+						<dataObjectId>misregist_Oref_S9</dataObjectId>
+						<textInfo>SLSTR misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_S9</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_F1</Id>
+						<dataObjectId>misregist_Oref_F1</dataObjectId>
+						<textInfo>SLSTR misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_F1</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_F2</Id>
+						<dataObjectId>misregist_Oref_F2</dataObjectId>
+						<textInfo>SLSTR misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_F2</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_ao</Id>
+						<dataObjectId>misregist_Oref_ao</dataObjectId>
+						<textInfo>SLSTR misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_ao</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_bo</Id>
+						<dataObjectId>misregist_Oref_bo</dataObjectId>
+						<textInfo>SLSTR misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_bo</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>misregist_Oref_co</Id>
+						<dataObjectId>misregist_Oref_co</dataObjectId>
+						<textInfo>SLSTR misregistration Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>misregist_Oref_co</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>qualityFlags</Id>
+						<dataObjectId>qualityFlags</dataObjectId>
+						<textInfo>Quality Information Data</textInfo>
+						<dmdId/>
+						<repId></repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>qualityFlags</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+				</ListOfObjectConfigs>
+			</Object>
+			<!--Object type="Schema">
+				<Common>
+					<metadataClass>MetadataReference</metadataClass>
+					<mimeType>text/xml</mimeType>
+					<locatorType>URL</locatorType>
+					<vocabularyName>SDF</vocabularyName>
+				</Common>
+				<ListOfObjectConfigs count="2">
+					<ObjectConfig>
+						<Id>ISPDataSchema</Id>
+						<metadataObjectId>ISPDataSchema</metadataObjectId>
+						<filename>support/s3-level-0-measurement.xsd</filename>
+						<classification>SYNTAX</classification>
+						<category>REP</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>ISPAnnotationSchema</Id>
+						<metadataObjectId>ISPAnnotationSchema</metadataObjectId>
+						<filename>support/s3-level-0-product.xsd</filename>
+						<classification>SYNTAX</classification>
+						<category>REP</category>
+					</ObjectConfig>
+				</ListOfObjectConfigs>
+			</Object-->
+		</ListOfObjects>
+	</SafeProduct>
+</SafeFormatter>

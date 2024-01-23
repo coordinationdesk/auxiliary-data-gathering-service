@@ -1,0 +1,4 @@
+general:
+  log_path:  /workspace/prip/log
+  product_dowload_basket:  /workspace/ScihubDownload/cltas-tools/PRODUCT/
+  importer_in_basket:      /workspace/prip/LTA_IN_BASKET/

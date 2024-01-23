@@ -1,0 +1,138 @@
+#!/bin/sh
+#
+# Copyright 2010-2020, Advanced Computer Systems , Inc.
+# Via Della Bufalotta, 378 - 00139 Roma - Italy
+# http://www.acsys.itA.C.S. - Advanced Computer Systems S.p.A.
+# 
+# This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems, S.p.A.;
+# the contents of this file may not be disclosed to third parties, copied or
+# duplicated in any form, in whole or in part, without the prior written
+# permission of Advanced Computer Systems, S.p.A.
+#	
+#
+#   $Prod: A.C.S. Common Functions for Tools scripts $
+#
+#	$Id$
+#
+#	$Author$
+#
+#	$Log$
+#	Revision 1.1  2013/09/26 14:50:08  achnat
+#	Added commonFunctions
+#	
+
+
+
+
+
+clean() {
+	if test -e "$1"
+	then
+		rm -f "$1"
+	fi
+}
+
+
+result_message() {
+	if [ "$1" != 0 ] 
+	then 
+		echo_failure
+	else
+		echo_success
+	fi
+	
+	echo ""
+}
+
+
+init_log() {
+	if ! test -e $1
+	then
+		touch $1
+		if [ "$?" != 0 ]
+		then
+			echo "*** ERROR: Cannot create log file. ***"
+			echo ""
+			clean
+			exit 1
+		fi
+		chmod a+w $1
+	fi
+	
+	echo "" > $1
+	echo "" >> $1
+	echo "********************************************************************************" >> $1
+	echo "*   $2 TABLES                                                             *" >> $1
+	echo "*   `date +'%Y-%m-%d %H:%M:%S'`                                                        *" >> $1
+	echo "********************************************************************************" >> $1
+	echo "" >> $1
+}
+
+
+check_conn() {
+	echo "Checking connection on $DBNAME ..." >> $LOG_FILE
+	echo -n "Checking connection on $DBNAME ..."
+	sleep 1
+	
+	if [ "$DBAUSR" != 'postgres' ]
+	then
+		psql -h $HNAME -U $DBAUSR $DBNAME -c "\l" 2>> $LOG_FILE 1> /dev/null
+		res="$?"
+	else
+		psql $DBNAME -c "\l" 2>> $LOG_FILE 1> /dev/null
+		res="$?"
+	fi
+	
+	if [ "$res" != 0 ]
+	then
+		result_message 1
+		echo "*** ERROR: Cannot connect to $DBNAME ***" | tee -a $LOG_FILE
+		clean $LIST_FILE
+		exit_error
+	fi
+	
+	result_message 0
+	echo ">> connection done." >> $LOG_FILE
+	echo "" >> $LOG_FILE
+}
+
+
+dump_list() {
+	echo "Retrying table list ..." >> $LOG_FILE
+	echo -n "Retrying table list ..."
+	sleep 1
+	if test -z $1
+	then
+		if [ "$DBAUSR" != 'postgres' ]
+		then
+			psql -h $HNAME -U $DBAUSR $DBNAME -v "ON_ERROR_STOP=1" -c "\dt" | grep public | awk '{ print $3 }' > $LIST_FILE
+			res="$?"
+		else
+			psql $DBNAME -v "ON_ERROR_STOP=1" -c "\dt" | grep public | awk '{ print $3 }' > $LIST_FILE
+			res="$?"
+		fi
+	else
+		if [ "$DBAUSR" != 'postgres' ]
+		then
+			psql -h $HNAME -U $DBAUSR $DBNAME -v "ON_ERROR_STOP=1" -c "\dt" | grep $1 | awk '{ print $3 }' > $LIST_FILE
+			res="$?"
+		else
+			psql $DBNAME -v "ON_ERROR_STOP=1" -c "\dt" | grep $1 | awk '{ print $3 }' > $LIST_FILE
+			res="$?"
+		fi
+	fi
+	
+	if [ "$res" != 0 ]
+	then
+		result_message 1
+		echo "*** ERROR: Cannot dump table list ***" | tee -a $LOG_FILE
+		clean $LIST_FILE
+		exit_error
+	fi
+	
+	result_message 0
+	echo ">> table list retrived." >> $LOG_FILE
+	echo "" >> $LOG_FILE
+}
+
+

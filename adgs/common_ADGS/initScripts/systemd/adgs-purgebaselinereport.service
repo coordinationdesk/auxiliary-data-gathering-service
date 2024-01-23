@@ -1,0 +1,17 @@
+[Unit]
+Description=ADGS Purge Baseline Reports
+Documentation=https://www.exprivia.com
+Requires=network.target
+Wants=adgs-purgebaselinereport.timer
+After=network.target
+
+[Service]
+Type=oneshot
+
+User=opadgs
+Group=ccds
+
+ExecStart=/usr/local/components/ADGS/scripts/purgeBaselineReports.sh
+
+[Install]
+WantedBy=multi-user.target

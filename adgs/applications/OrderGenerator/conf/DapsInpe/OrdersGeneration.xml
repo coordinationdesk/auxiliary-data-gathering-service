@@ -1,0 +1,65 @@
+<?xml version="1.0" standalone="yes"?>
+<OrdersGenerationRoot>
+	<OrderGeneration>
+		<!-- the polling interval on the database [s]  -->
+		<DatabasePollingTime>30</DatabasePollingTime>
+		<NRT>
+			<Envisat>
+				<External>
+					<!-- the temporary path to download NRT XML files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<DistributionFormat>cryo_ftp</DistributionFormat>
+				</External>
+			</Envisat>	
+			<Ers>
+				<External>
+					<!-- the temporary path to download NRT XML files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<DistributionFormat>cryo_ftp</DistributionFormat>
+				</External>
+			</Ers>	
+		</NRT>
+		<RPRO>
+			<Cryosat>
+				<External>
+					<!-- the temporary path to download External RPRO e.g. GTSLTA files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+				</External>
+			</Cryosat>
+		</RPRO>
+		<Offline>
+			<Envisat>
+				<Merge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>120.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL0MergeDistance>0.300</MaxL0MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+				</Merge>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>1.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+			</Envisat>
+			<Ers>
+				<Merge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>120.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL0MergeDistance>0.300</MaxL0MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+				</Merge>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>1.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+			</Ers>
+		</Offline>
+	</OrderGeneration>
+</OrdersGenerationRoot>

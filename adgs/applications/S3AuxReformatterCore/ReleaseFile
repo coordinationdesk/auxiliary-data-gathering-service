@@ -1,0 +1,17 @@
+1.35.4
+
+ProjectStandaloneAppInclude name fixed
+-----------------------------------------------------
+1.35.3
+
+auto_ptr fixed
+-----------------------------------------------------
+1.35.2
+
+Added management of S3C and S3D
+-----------------------------------------------------
+1.35.1
+Versioning file fixed
+-----------------------------------------------------
+1.35.0
+Automatically generate from revision "version "1.35""

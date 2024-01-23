@@ -1,0 +1,40 @@
+<?xml version="1.0" standalone="yes"?>
+<ProductFileNameConf>
+	<ProductFileName>
+		<MissionID>E2</MissionID>
+		<FileNameVersion>0001</FileNameVersion>
+		<FileRootSize>14</FileRootSize>
+		<!-- ESA Standard Naming Convention: -->
+		<FileNameSize>62</FileNameSize>		
+		<!-- Permitted Product file extensions -->
+		<List_of_File_Ext count="2">
+			<File_Ext>E1</File_Ext>			
+			<File_Ext>E2</File_Ext>
+		</List_of_File_Ext>
+		<!-- Permitted Product file classes -->
+		<List_of_File_Classes count="10">
+			<File_Class>T</File_Class>
+			<File_Class>S</File_Class>
+			<File_Class>N</File_Class>
+			<File_Class>O</File_Class>
+			<File_Class>P</File_Class>
+			<File_Class>Q</File_Class>
+			<File_Class>R</File_Class>
+			<File_Class>U</File_Class>
+			<File_Class>V</File_Class>
+			<File_Class>X</File_Class>
+		</List_of_File_Classes>
+		<List_of_Level0_Product_Id count="2">
+        	<Id>SAR_IM__0P</Id>
+        	<Id>ACQREPORT_</Id> 
+		</List_of_Level0_Product_Id>
+		<List_of_Level1_Product_Id count="4">
+			<Id>SAR_IMG_1P</Id> 
+			<Id>SAR_IMP_1P</Id> 
+			<Id>SAR_IMS_1P</Id> 
+			<Id>SAR_IMT_1P</Id> 
+		</List_of_Level1_Product_Id>
+		<List_of_Browse_Product_Id count="0">
+		</List_of_Browse_Product_Id>
+	</ProductFileName>
+</ProductFileNameConf>

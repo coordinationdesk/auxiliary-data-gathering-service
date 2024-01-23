@@ -1,0 +1,17 @@
+2.50.4
+2022-03-01
+At dtor time stop also the TaskTableElementExecutor if running
+-----------------------------------------------------------------
+2.50.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+-----------------------------------------------------------------
+2.50.2
+Removed old useless and dead code
+Using a nice 42 (instead of 71) somewhere in the code J
+-----------------------------------------------------------------
+2.50.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.50.0
+
+Automatically generate from revision "version "2.50""

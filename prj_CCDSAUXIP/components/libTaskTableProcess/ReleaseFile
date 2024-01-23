@@ -1,0 +1,34 @@
+6.2.0
+LP: minor version due to jira S2PDGS-556.
+_wdsInErrorBasket string member added to IF (along with set and get methods) representing the basket dir where processed directories in error must be moved.
+getLogDirInError public member added to IF to get directory where processed directories in error have been moved: either _wdsInErrorBasket
+(if valorized) or the working directory itself.
+------------------------------
+6.1.0
+MP: using new libJobOrder 4.0.0 I/F
+------------------------------
+6.0.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+6.0.2
+Patch release due to jira LTA-327
+MC message set in #ifndef block not to issue in the framework of LTA project.
+------------------------------
+6.0.1
+MP: no more db related deprecated methods/classes
+------------------------------
+6.0.0
+ECS-25
+Interface changed: Task Table Processor's parameters are provided by a new API (instead of ConfigurationSingleton).
+------------------------------
+5.40.0
+
+Minor release due to S3PDGS-83 issue.
+Stop method in TaskTableProcess thread reimplemented to kill all the running Scheduler processes before exit.
+------------------------------
+5.39.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.39.0
+
+Automatically generate from revision "version "5.39""

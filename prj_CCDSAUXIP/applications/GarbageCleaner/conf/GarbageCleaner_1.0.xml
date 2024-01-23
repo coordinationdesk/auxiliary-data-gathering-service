@@ -1,0 +1,50 @@
+<!-- edited with vim -->
+<!-- test configuration file -->
+<!-- Insert in the machine configuration file -->
+<RemoveRoot>
+    <GarbageCleaner count="8">
+        <Section Remark="invalid dir TEST">
+            <LogAct>true</LogAct>
+            <Dir>TEST</Dir>
+            <MaxSize>5</MaxSize>
+        </Section>
+        <Section Remark="all files in dir_1">
+            <!-- LogAct writes into application log which files have been removed-->
+            <LogAct>true</LogAct>
+            <Dir>dir_1</Dir>
+        </Section>
+        <Section Remark="last 3 days files in dir_2">
+            <LogAct>true</LogAct>
+            <Dir>dir_2</Dir>
+            <Time>-3 days</Time> <!-- see date(1) -->
+            <!-- no RegExp, all files match -->
+        </Section>
+        <Section Remark="last 10 minutes .BCK files in dir_3">
+            <LogAct>true</LogAct>
+            <Dir>dir_3</Dir>
+            <Time>-10 minutes</Time>
+            <RegExp>\.BCK$</RegExp>
+        </Section>
+        <Section Remark=".old files in dir_4">
+            <LogAct>true</LogAct>
+            <Dir>dir_4</Dir>
+            <RegExp>\.old$</RegExp>
+        </Section>
+        <Section Remark=".size file in dir_5">
+            <LogAct>true</LogAct>
+            <Dir>dir_5</Dir>
+            <MaxSize>5</MaxSize>
+        </Section>
+        <Section Remark="all files in dir_6, log direcotory remove">
+            <LogAct>true</LogAct>
+            <Dir>dir_6</Dir>
+            <LogDir>true</LogDir>
+        </Section>
+        <Section Remark="all files except non-empty dir in dir_7">
+            <LogAct>true</LogAct>
+            <Dir>dir_7</Dir>
+            <LogDir>true</LogDir>
+            <DeleteNonEmptyDir>false</DeleteNonEmptyDir>
+        </Section>
+    </GarbageCleaner>
+</RemoveRoot>

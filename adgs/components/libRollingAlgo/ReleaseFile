@@ -1,0 +1,30 @@
+4.0.1
+MP: no more db related deprecated methods/classes
+------------------------------
+4.0.0
+Major version release of RollingArchive:
+- Each rolling policy has its trigger time, and it is executed independently from the others.
+- New rolling policy options: fetch limit, idle limit, idle time.
+- Configurable Items preservation.
+- Queued actions executed as a FIFO for each policy. Round Robin among all the policies.
+- Blacklist action handling for each policy.
+- New rolling policy for cleaning storage
+- Rolling Algorithms and Actions refactoring.
+- Special/Manual policy expiration date handling
+- KEEP actions re-engineering.
+- Last libApp framework
+- Required updated DB schema.
+For detailed features refer to jira S3MARINE-93.
+
+------------------------------
+3.35.0
+S2PDGS-163: fixed policy AsynchSmRestoredSize to take into account the select limit on the current main loop.
+
+------------------------------
+3.34.1
+Patch release automatically generated to instrument version files
+
+------------------------------
+3.34.0
+
+Automatically generate from revision "version "3.34""

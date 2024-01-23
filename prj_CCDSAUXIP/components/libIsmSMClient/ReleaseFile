@@ -1,0 +1,91 @@
+10.4.0
+LP: Minor version due to jira LTA-576.
+ISMStorageManager::shallRemoveUnknownLinks base class method reimplemented. Default return value is true, unless RemoveUnknownLinks tag is defined
+in blob contained in param column of the proper t_storagemanager record.
+------------------------------
+10.3.0
+LP: Minor version due to jira LTA-516.
+ISMStorageManager: assignOper and getParameters methods removed: the base class ones used instead.
+In upload method, base class normalUpload method is called.
+_path and _oper attribute removed: used the ones of base class by the proper get methods.
+------------------------------
+10.2.1
+[LTA-498] Fixed message of deprectated instruction.
+------------------------------
+10.2.0
+[LTA-498]
+- Defined new interface for erase operations which takes in input filename and fileversion instead of dbPersistentOperatorIF
+- Deprecated old interface erase(dbPersistent::IdType sminvid, const dbPersistentOperatorIF&, std::string* p=0)
+- Tests updated
+------------------------------
+10.1.1
+LP: Patch version due to jira CPS-114.
+throughput [Kb/s] metric added to statistics for both upload and download. Added size [Kb] metric to download.
+runException invocation fixed: shared_ptr used.
+Test: added option to print statistics.
+------------------------------
+10.1.0
+LP::  _theMethod static object moved from ISMInterfaceFactoryMethod classe to an empty namespace persistent Init class
+------------------------------
+10.0.1
+LP: Patch version due to jira LTA-452.
+ISMStorageManager::run: loop added to change remote path to upload if IsmSoapClient::SoapReceiveTimeOutException is caught. 
+If total timeout exceeded (by IsmSoapClient::getSoapRecvTotalTimeout() ), exception thrown and upload fails.
+------------------------------
+10.0.0
+LP: Major version due to jira LTA-439.
+releaseCache new If of SMInterface base class implemented. doAction private method used (RELEASE_CACHE added to Action enum).
+------------------------------
+9.0.1
+LP: Patch version due to jira LTA-433.
+BUSY event for M&C removed for erase (no IDLE event occurring), putOnCache, isOnCache and giveup Ifs.
+------------------------------
+9.0.0
+LP: Major version due to jira LTA-433.
+isOnCache and putOnCache new Ifs of SMInterface base class implemented.
+doAction private method now returns int so that it is used by isOnCache and putOnCache too (corresponding elements added to Action enum)
+------------------------------
+8.1.1
+LP: Patch version due to jira LTA-381.
+IsmSoapClient::FileToDeleteOnMigratingMediumExc managed when erasing file to log an esplicative message: medium migration in progress, retry later.
+------------------------------
+8.1.0
+LP: Minor version due to jira LTA-395.
+ISMStorageManager::download: if Client name parameter set, passed to IsmSoapClient obj with the proper method.
+ISMStorageManager::doAction private method implemented to be called by both erase and giveup methods. Giveup method implemented according to libStorageManager 8.0.0 
+------------------------------
+8.0.1
+Patch version due to jira S3MARINE-448.
+ISMStorageManager::run: File::size on product to upload computed twice. Fixed.
+------------------------------
+8.0.0
+Major version due to jira S3MARINE-371.
+LP: SignatureAlgo::setManageDirectories called to set manageDirectories attribute to compute md5sum on directories GIT style.
+------------------------------
+7.1.1
+MP: no longer db deprecated methods/classes
+compilation warning fixed
+------------------------------
+7.1.0
+LTA-77: handling of exceptions in case of near-online or offline files introduced.
+------------------------------
+7.0.2
+Patch release due to jira ECS-41.
+Some attributes of ISMStorageManager now public if ACS_TEST define is set.
+------------------------------
+7.0.1
+Patch release due to jira S2PDGS-286.
+ISMStorageManager::run: IsmSoapClient::fileDefinition original name valorized with inventory name. String to be saved into t_acsisminventory got now from IsmSoapClient 
+upload method returned values. Test fixed.
+------------------------------
+7.0.0
+Major release due to jira ECS-17.
+_path attribute added to ISMStorageManager class along with get method. t_inventorysm string replaced by getInvSmTableName() base class method. insertInvSM and deleteInvSM base class
+methods new IF used.
+------------------------------
+6.31.1
+Patch release automatically generated to instrument version files
+------------------------------
+6.31.0
+
+Automatically generate from revision "version "6.31""

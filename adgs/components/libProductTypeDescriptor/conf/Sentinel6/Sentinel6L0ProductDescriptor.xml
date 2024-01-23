@@ -1,0 +1,619 @@
+<?xml version="1.0" standalone="yes"?>
+<Sentinel6L0ProductDescription>
+	<L0ProductDescriptor>
+    	<SatelliteName>Sentinel6</SatelliteName>
+    	<SourcePacketHeaderSize>6</SourcePacketHeaderSize>
+    	<AnnotationSize>16</AnnotationSize>
+		<RefDocName>EUM/LEO-JASCS/SPE/17/898270</RefDocName>
+		<AcquisitionReportFileType>L0P_REP____</AcquisitionReportFileType>
+		<AnnotationIsInUTC>true</AnnotationIsInUTC>
+    	<NumberOfProducts>13</NumberOfProducts>
+		<Product1>
+			<Id>TM_0__NAT____</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>2</VCID>
+			<SensorName>NAVATT</SensorName>
+			<SensorMode>NAVATT</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>Navigation Attitude Data</Description>
+    	</Product1>
+		<Product2>
+			<Id>TM_0__HKM____</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="91">
+				<APID>160</APID>
+				<APID>161</APID>
+				<APID>163</APID>
+				<APID>164</APID>
+				<APID>167</APID>
+				<APID>168</APID>
+				<APID>169</APID>
+				<APID>177</APID>
+				<APID>179</APID>
+				<APID>180</APID>
+				<APID>183</APID>
+				<APID>184</APID>
+				<APID>193</APID>
+				<APID>195</APID>
+				<APID>196</APID>
+				<APID>199</APID>
+				<APID>200</APID>
+				<APID>209</APID>
+				<APID>211</APID>
+				<APID>212</APID>
+				<APID>215</APID>
+				<APID>216</APID>
+				<APID>225</APID>
+				<APID>227</APID>
+				<APID>228</APID>
+				<APID>231</APID>
+				<APID>232</APID>
+				<APID>513</APID>
+				<APID>515</APID>
+				<APID>516</APID>
+				<APID>519</APID>
+				<APID>521</APID>
+				<APID>529</APID>
+				<APID>531</APID>
+				<APID>532</APID>
+				<APID>535</APID>
+				<APID>537</APID>
+				<APID>593</APID>
+				<APID>594</APID>
+				<APID>595</APID>
+				<APID>596</APID>
+				<APID>599</APID>
+				<APID>601</APID>
+				<APID>609</APID>
+				<APID>610</APID>
+				<APID>611</APID>
+				<APID>612</APID>
+				<APID>615</APID>
+				<APID>617</APID>
+				<APID>625</APID>
+				<APID>626</APID>
+				<APID>627</APID>
+				<APID>628</APID>
+				<APID>631</APID>
+				<APID>633</APID>
+				<APID>657</APID>
+				<APID>658</APID>
+				<APID>659</APID>
+				<APID>660</APID>
+				<APID>663</APID>
+				<APID>665</APID>
+				<APID>676</APID>
+				<APID>769</APID>
+				<APID>771</APID>
+				<APID>772</APID>
+				<APID>775</APID>
+				<APID>777</APID>
+				<APID>785</APID>
+				<APID>787</APID>
+				<APID>788</APID>
+				<APID>791</APID>
+				<APID>793</APID>
+				<APID>801</APID>
+				<APID>803</APID>
+				<APID>804</APID>
+				<APID>807</APID>
+				<APID>809</APID>
+				<APID>844</APID> <!-- P4_ACQ TM_ST NOMINAL -->
+				<APID>1041</APID>
+				<APID>1043</APID>
+				<APID>1044</APID>
+				<APID>1047</APID>
+				<APID>1049</APID>
+				<APID>1084</APID><!-- P4_ACQ TM_ST REDUNDANT -->
+				<APID>1281</APID>
+				<APID>1282</APID>
+				<APID>1441</APID>
+				<APID>1442</APID>
+				<APID>1537</APID>
+				<APID>1539</APID>
+				<APID>1542</APID>
+			</List_of_APID>
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>2</VCID>
+			<SensorName>HKTM</SensorName>
+			<SensorMode>HKTM</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">500</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>Housekeeping Telemetry</Description>
+    	</Product2>
+		<Product3>
+			<Id>GN_0__GNS____</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="8">
+    			<APID>774</APID><!-- GNSS Science Data POD NOMINAL -->
+    			<APID>790</APID><!-- GNSS Science Data POD REDUNDANT -->
+				<APID>779</APID><!-- GNSS NOMINAL -->
+				<APID>795</APID><!-- GNSS REDUNDANT -->
+    			<APID>780</APID><!-- GNSS Science Data support of SP NOMINAL -->
+    			<APID>796</APID><!-- GNSS Science Data support of SP REDUNDANT -->
+    			<APID>781</APID><!-- GNSS Science Data events NOMINAL -->
+    			<APID>797</APID><!-- GNSS Science Data events REDUNDANT -->
+			</List_of_APID>
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>4</VCID>
+			<SensorName>GNSS</SensorName>
+			<SensorMode>GNSS</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>GNSS Science Data POD, support of SP and events</Description>
+    	</Product3>
+		<Product4>
+			<Id>DO_0__NAV____</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="6">
+    				<APID>1286</APID><!-- TM(201,46) ITRF Navigation NOMINAL -->
+    				<APID>1446</APID><!-- TM(201,46) ITRF Navigation REDUNDANT -->
+    				<APID>1293</APID><!-- TM(201,46) J2000 Nav NOMINAL -->
+    				<APID>1453</APID><!-- TM(201,46) J2000 Nav REDUNDANT -->
+    				<APID>1294</APID><!-- TM(201,46) Geo Nav NOMINAL -->
+    				<APID>1454</APID><!-- TM(201,46) Geo Nav REDUNDANT -->
+			</List_of_APID>
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>4</VCID>
+			<SensorName>DORIS</SensorName>
+			<SensorMode>DORIS</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">10000</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>DORIS</Description>
+    	</Product4>
+		<Product5>
+			<Id>DO_0__DOP____</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="12">
+    				<APID>1289</APID><!-- TM(201,46) Datation NOMINAL -->
+    				<APID>1449</APID><!-- TM(201,46) Datation REDUNDANT -->
+    				<APID>1291</APID><!-- TM(201,46) Doppler NOMINAL -->
+    				<APID>1451</APID><!-- TM(201,46) Doppler REDUNDANT -->
+    				<APID>1292</APID><!-- TM(201,46) Attitude NOMINAL -->
+    				<APID>1452</APID><!-- TM(201,46) Attitude REDUNDANT -->
+    				<APID>1290</APID><!-- TM(220,1) Test Jamming NOMINAL -->
+    				<APID>1450</APID><!-- TM(220,1) Test Jamming REDUNDANT -->
+    				<APID>1287</APID><!-- TM(220,2) Test dump NOMINAL -->
+    				<APID>1447</APID><!-- TM(220,2) Test dump REDUNDANT -->
+    				<APID>1288</APID><!-- TM(220,3) Test others NOMINAL -->
+    				<APID>1448</APID><!-- TM(220,3) Test others REDUNDANT -->
+			</List_of_APID>
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>4</VCID>
+			<SensorName>DORIS</SensorName>
+			<SensorMode>DORIS</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">10000</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>DORIS</Description>
+    	</Product5>
+		<Product6>
+			<Id>ST_0__STR____</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="4">
+    				<APID>598</APID>
+    				<APID>614</APID>
+    				<APID>630</APID>
+    				<APID>662</APID>
+			</List_of_APID>
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<!--Channel : 0 N/A to S3-->
+			<Channel>1</Channel>
+			<VCID>4</VCID>
+			<SensorName>STR</SensorName>
+			<SensorMode>STR</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>Star Tracker Data</Description>
+    	</Product6>
+		<Product7>
+			<Id>MW_0__AMR____</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="3">
+    				<APID>1468</APID><!--TM(161,1) Nominal-->
+    				<APID>1484</APID><!--TM(161,1) Redundant -->
+    				<APID>1500</APID><!--TM(166,1) -->
+ 			</List_of_APID>
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>8</VCID>
+			<SensorName>AMR</SensorName>
+			<SensorMode>AMR</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">153.0221882</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>Radiometer Data</Description>
+    	</Product7>
+		<Product8>
+			<Id>RO_0__GNSSO__</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1516</APID>
+			</List_of_APID>
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>10</VCID>
+			<SensorName>ROGNSS</SensorName>
+			<SensorMode>ROGNSS</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">50.94</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>Radio Occultation Science Data</Description>
+    	</Product8>
+		<Product9>
+			<Id>P4_0__ACQ____</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="2">
+    				<APID>828</APID> <!-- TM_ACQ NOMINAL -->
+    				<APID>1068</APID><!-- TM_ACQ REDUNDANT -->
+			</List_of_APID>
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>6</VCID>
+			<SensorName>P4</SensorName>
+			<SensorMode>P4</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">7.142857143</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>Radar Altimeter Low Rate ACQ Data</Description>
+    	</Product9>
+		<Product10>
+			<Id>P4_0__LR_____</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="2">
+    				<APID>940</APID><!-- TM_ECHO_LRM Nominal -->
+    				<APID>1180</APID><!-- TM_ECHO_LRM Redundat -->
+			</List_of_APID>
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>6</VCID>
+			<SensorName>P4</SensorName>
+			<SensorMode>P4</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">50</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>Radar Altimeter Low Rate Data</Description>
+    	</Product10>
+		<Product11>
+			<Id>P4_0__CAL____</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="12">
+    				<APID>860</APID>  <!-- TM_CAL1_INSTR Nominal -->
+					<APID>1100</APID> <!-- TM_CAL1_INSTR Redundant -->
+					<APID>876</APID>  <!-- TM_CAL1_LRM Nominal -->
+					<APID>1116</APID> <!-- TM_CAL1_LRM Redundant -->
+					<APID>892</APID>  <!-- TM_CAL1_SAR Nominal -->
+    				<APID>1132</APID> <!-- TM_CAL1_SAR Redundant -->
+					<APID>908</APID>  <!-- TM_CAL1_RMC Nominal -->
+					<APID>1148</APID> <!-- TM_CAL1_RMC Redundant -->
+					<APID>924</APID>  <!-- TM_CAL2 Nominal -->
+					<APID>1164</APID> <!-- TM_CAL2 Redundant -->
+					<APID>988</APID>  <!-- TM_ECHO_CAL Nominal -->
+					<APID>1228</APID> <!-- TM_ECHO_CAL Redundant -->
+ 			</List_of_APID>
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>6</VCID>
+			<SensorName>P4</SensorName>
+			<SensorMode>P4</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>Radar Altimeter Low Rate Calibration Data</Description>
+    	</Product11>
+		<Product12>
+			<Id>P4_0__HR_____</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="4">
+				<APID>956</APID>  <!-- TM_ECHO_SAR Nominal -->
+				<APID>1196</APID> <!-- TM_ECHO_SAR Redundant -->
+				<APID>972</APID>  <!-- TM_ECHO_RMC Nominal -->
+				<APID>1212</APID> <!-- TM_ECHO_RMC Redundant -->
+			</List_of_APID>
+			<Slice>
+				<Length>0</Length>
+				<Overlap>0</Overlap>
+			</Slice>
+			<Channel>1</Channel>
+			<VCID>12</VCID>
+			<SensorName>P4</SensorName>
+			<SensorMode>P4</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">7.142857143</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>Radar Altimeter High Rate Data</Description>
+    	</Product12>
+		<!-- For internal use only-->
+		<Product13>
+			<Id>IDLE_PACK_</Id>
+			<CCSDSVersion>4</CCSDSVersion>
+			<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>1902</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+        		<List_of_APID count="1">
+					<APID>2047</APID>
+				</List_of_APID>
+			<Channel>1</Channel>
+			<VCID>63</VCID>
+			<SensorName>IDLE</SensorName>
+			<SensorMode>IDLE</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">.12022843402</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>Idle Frame</Description>
+    	</Product13>
+	</L0ProductDescriptor>
+	<DeltaTimesList> <!-- DeltaTimesList.DeltaTime[] to read the number of elements -->
+	<!-- value 0 means on event -->
+		<!-- TM_0__NAT____ -->
+		<DeltaTime apid="182" units="msec">1000</DeltaTime>
+
+		<!-- TM_0__HKM____ -->
+		<DeltaTime apid="160" units="msec">0</DeltaTime>
+		<DeltaTime apid="161" units="msec">0</DeltaTime>
+		<DeltaTime apid="163" units="msec">0</DeltaTime>
+		<DeltaTime apid="164" units="msec">0</DeltaTime>
+		<DeltaTime apid="167" units="msec">0</DeltaTime>
+		<DeltaTime apid="168" units="msec">0</DeltaTime>
+		<DeltaTime apid="169" units="msec">0</DeltaTime>
+		<DeltaTime apid="177" units="msec">0</DeltaTime>
+		<DeltaTime apid="179" units="msec">0</DeltaTime>
+		<DeltaTime apid="180" units="msec">0</DeltaTime>
+		<DeltaTime apid="183" units="msec">0</DeltaTime>
+		<DeltaTime apid="184" units="msec">0</DeltaTime>
+		<DeltaTime apid="193" units="msec">0</DeltaTime>
+		<DeltaTime apid="195" units="msec">0</DeltaTime>
+		<DeltaTime apid="196" units="msec">0</DeltaTime>
+		<DeltaTime apid="199" units="msec">0</DeltaTime>
+		<DeltaTime apid="200" units="msec">0</DeltaTime>
+		<DeltaTime apid="209" units="msec">0</DeltaTime>
+		<DeltaTime apid="211" units="msec">0</DeltaTime>
+		<DeltaTime apid="212" units="msec">0</DeltaTime>
+		<DeltaTime apid="215" units="msec">0</DeltaTime>
+		<DeltaTime apid="216" units="msec">0</DeltaTime>
+		<DeltaTime apid="225" units="msec">0</DeltaTime>
+		<DeltaTime apid="227" units="msec">0</DeltaTime>
+		<DeltaTime apid="228" units="msec">0</DeltaTime>
+		<DeltaTime apid="231" units="msec">0</DeltaTime>
+		<DeltaTime apid="232" units="msec">0</DeltaTime>
+		<DeltaTime apid="513" units="msec">0</DeltaTime>
+		<DeltaTime apid="515" units="msec">0</DeltaTime>
+		<DeltaTime apid="516" units="msec">0</DeltaTime>
+		<DeltaTime apid="519" units="msec">0</DeltaTime>
+		<DeltaTime apid="521" units="msec">0</DeltaTime>
+		<DeltaTime apid="529" units="msec">0</DeltaTime>
+		<DeltaTime apid="531" units="msec">0</DeltaTime>
+		<DeltaTime apid="532" units="msec">0</DeltaTime>
+		<DeltaTime apid="535" units="msec">0</DeltaTime>
+		<DeltaTime apid="537" units="msec">0</DeltaTime>
+		<DeltaTime apid="593" units="msec">0</DeltaTime>
+		<DeltaTime apid="594" units="msec">0</DeltaTime>
+		<DeltaTime apid="595" units="msec">0</DeltaTime>
+		<DeltaTime apid="596" units="msec">0</DeltaTime>
+		<DeltaTime apid="599" units="msec">0</DeltaTime>
+		<DeltaTime apid="601" units="msec">0</DeltaTime>
+		<DeltaTime apid="609" units="msec">0</DeltaTime>
+		<DeltaTime apid="610" units="msec">0</DeltaTime>
+		<DeltaTime apid="611" units="msec">0</DeltaTime>
+		<DeltaTime apid="612" units="msec">0</DeltaTime>
+		<DeltaTime apid="615" units="msec">0</DeltaTime>
+		<DeltaTime apid="617" units="msec">0</DeltaTime>
+		<DeltaTime apid="625" units="msec">0</DeltaTime>
+		<DeltaTime apid="626" units="msec">0</DeltaTime>
+		<DeltaTime apid="627" units="msec">0</DeltaTime>
+		<DeltaTime apid="628" units="msec">0</DeltaTime>
+		<DeltaTime apid="631" units="msec">0</DeltaTime>
+		<DeltaTime apid="633" units="msec">0</DeltaTime>
+		<DeltaTime apid="657" units="msec">0</DeltaTime>
+		<DeltaTime apid="658" units="msec">0</DeltaTime>
+		<DeltaTime apid="659" units="msec">0</DeltaTime>
+		<DeltaTime apid="660" units="msec">0</DeltaTime>
+		<DeltaTime apid="663" units="msec">0</DeltaTime>
+		<DeltaTime apid="665" units="msec">0</DeltaTime>
+		<DeltaTime apid="676" units="msec">0</DeltaTime>
+		<DeltaTime apid="769" units="msec">0</DeltaTime>
+		<DeltaTime apid="771" units="msec">0</DeltaTime>
+		<DeltaTime apid="772" units="msec">0</DeltaTime>
+		<DeltaTime apid="775" units="msec">0</DeltaTime>
+		<DeltaTime apid="777" units="msec">0</DeltaTime>
+		<DeltaTime apid="785" units="msec">0</DeltaTime>
+		<DeltaTime apid="787" units="msec">0</DeltaTime>
+		<DeltaTime apid="788" units="msec">0</DeltaTime>
+		<DeltaTime apid="791" units="msec">0</DeltaTime>
+		<DeltaTime apid="793" units="msec">0</DeltaTime>
+		<DeltaTime apid="801" units="msec">0</DeltaTime>
+		<DeltaTime apid="803" units="msec">0</DeltaTime>
+		<DeltaTime apid="804" units="msec">0</DeltaTime>
+		<DeltaTime apid="807" units="msec">0</DeltaTime>
+		<DeltaTime apid="809" units="msec">0</DeltaTime>
+		<DeltaTime apid="844" units="msec">0</DeltaTime>
+		<DeltaTime apid="1041" units="msec">0</DeltaTime>
+		<DeltaTime apid="1043" units="msec">0</DeltaTime>
+		<DeltaTime apid="1044" units="msec">0</DeltaTime>
+		<DeltaTime apid="1047" units="msec">0</DeltaTime>
+		<DeltaTime apid="1049" units="msec">0</DeltaTime>
+		<DeltaTime apid="1084" units="msec">0</DeltaTime>
+		<DeltaTime apid="1281" units="msec">0</DeltaTime>
+		<DeltaTime apid="1282" units="msec">0</DeltaTime>
+		<DeltaTime apid="1441" units="msec">0</DeltaTime>
+		<DeltaTime apid="1442" units="msec">0</DeltaTime>
+		<DeltaTime apid="1537" units="msec">0</DeltaTime>
+		<DeltaTime apid="1539" units="msec">0</DeltaTime>
+		<DeltaTime apid="1542" units="msec">0</DeltaTime>
+
+		<!-- GN_0__GNS____ -->
+		<DeltaTime apid="774" units="msec">1000</DeltaTime>
+		<DeltaTime apid="790" units="msec">1000</DeltaTime>
+		<DeltaTime apid="779" units="msec">1000</DeltaTime>
+		<DeltaTime apid="795" units="msec">1000</DeltaTime>
+		<DeltaTime apid="780" units="msec">10000</DeltaTime>
+		<DeltaTime apid="796" units="msec">10000</DeltaTime>
+		<DeltaTime apid="781" units="msec">100</DeltaTime>
+		<DeltaTime apid="797" units="msec">100</DeltaTime>
+		<!-- DO_0__NAV____ -->
+		<DeltaTime apid="1286" units="msec">10000</DeltaTime>
+		<DeltaTime apid="1446" units="msec">10000</DeltaTime>
+		<DeltaTime apid="1293" units="msec">10000</DeltaTime>
+		<DeltaTime apid="1453" units="msec">10000</DeltaTime>
+		<DeltaTime apid="1294" units="msec">10000</DeltaTime>
+		<DeltaTime apid="1454" units="msec">10000</DeltaTime>
+		<!-- DO_0__DOP____ -->
+		<DeltaTime apid="1289" units="msec">1000</DeltaTime>
+		<DeltaTime apid="1449" units="msec">1000</DeltaTime>
+		<DeltaTime apid="1291" units="msec">10000</DeltaTime>
+		<DeltaTime apid="1451" units="msec">10000</DeltaTime>
+		<DeltaTime apid="1292" units="msec">1000</DeltaTime>
+		<DeltaTime apid="1452" units="msec">1000</DeltaTime>
+		<DeltaTime apid="1290" units="msec">10000</DeltaTime>
+		<DeltaTime apid="1450" units="msec">10000</DeltaTime>
+		<DeltaTime apid="1287" units="msec">10000</DeltaTime>
+		<DeltaTime apid="1447" units="msec">10000</DeltaTime>
+		<DeltaTime apid="1288" units="msec">10000</DeltaTime>
+		<DeltaTime apid="1448" units="msec">10000</DeltaTime>
+		<!-- ST_0__STR____ -->
+		<DeltaTime apid="598" units="msec">100</DeltaTime>
+		<DeltaTime apid="614" units="msec">100</DeltaTime>
+		<DeltaTime apid="630" units="msec">100</DeltaTime>
+		<DeltaTime apid="662" units="msec">100</DeltaTime>
+		<!-- MW_0__AMR____ -->
+		<DeltaTime apid="1468" units="msec">1000</DeltaTime>
+		<DeltaTime apid="1484" units="msec">1000</DeltaTime>
+		<DeltaTime apid="1500" units="msec">1000</DeltaTime>
+		<!-- RO_0__GNSSO__ -->
+		<DeltaTime apid="1516" units="msec">250</DeltaTime>
+		<!-- P4_0__ACQ____ -->
+		<DeltaTime apid="828" units="msec">7.142857143</DeltaTime>
+		<DeltaTime apid="1644" units="msec">7.142857143</DeltaTime>
+		<!-- P4_0__LR_____ -->
+		<DeltaTime apid="940" units="msec">50.9355</DeltaTime>
+		<DeltaTime apid="1180" units="msec">50.9355</DeltaTime>
+		<!-- P4_0__CAL____ -->
+		<DeltaTime apid="860" units="msec">49.5751</DeltaTime>
+		<DeltaTime apid="1100" units="msec">49.5751</DeltaTime>
+		<DeltaTime apid="876" units="msec">49.5751</DeltaTime>
+		<DeltaTime apid="1116" units="msec">49.5751</DeltaTime>
+		<DeltaTime apid="892" units="msec">49.5751</DeltaTime>
+		<DeltaTime apid="1132" units="msec">49.5751</DeltaTime>
+		<DeltaTime apid="908" units="msec">49.5751</DeltaTime>
+		<DeltaTime apid="1148" units="msec">49.5751</DeltaTime>
+		<DeltaTime apid="924" units="msec">49.5751</DeltaTime>
+		<DeltaTime apid="1164" units="msec">49.5751</DeltaTime>
+		<DeltaTime apid="988" units="msec">1000</DeltaTime>
+		<DeltaTime apid="1228" units="msec">1000</DeltaTime>
+		<!-- P4__0_HR_____ -->
+		<DeltaTime apid="956" units="msec">50.3404</DeltaTime>
+		<DeltaTime apid="1196" units="msec">50.3404</DeltaTime>
+		<DeltaTime apid="972" units="msec">50.3404</DeltaTime>
+		<DeltaTime apid="1212" units="msec">50.3404</DeltaTime>
+	</DeltaTimesList>
+	<DorisApidList>
+		<DorisApid>1286</DorisApid>
+		<DorisApid>1446</DorisApid>
+		<DorisApid>1293</DorisApid>
+		<DorisApid>1453</DorisApid>
+		<DorisApid>1294</DorisApid>
+		<DorisApid>1454</DorisApid>
+		<DorisApid>1289</DorisApid>
+		<DorisApid>1449</DorisApid>
+		<DorisApid>1291</DorisApid>
+		<DorisApid>1451</DorisApid>
+		<DorisApid>1292</DorisApid>
+		<DorisApid>1452</DorisApid>
+		<DorisApid>1290</DorisApid>
+		<DorisApid>1450</DorisApid>
+		<DorisApid>1287</DorisApid>
+		<DorisApid>1447</DorisApid>
+		<DorisApid>1288</DorisApid>
+		<DorisApid>1448</DorisApid>
+		<DorisApid>1281</DorisApid>
+		<DorisApid>1282</DorisApid>
+		<DorisApid>1441</DorisApid>
+		<DorisApid>1442</DorisApid>
+		<!-- HK packet but DORIS same format -->
+		<DorisApid>1537</DorisApid>
+	</DorisApidList>
+</Sentinel6L0ProductDescription>

@@ -1,0 +1,82 @@
+9.0.0
+Deprecated doRestart() removed.
+-------------------------------------------------------
+8.6.1
+LP: Minor issue: SignalHandler.h include removed.
+-------------------------------------------------------
+8.6.0
+LP: Minor issue due to jira S2PDGS-556
+Merge of Importer 7.0.0.1.0.0 (S2PDGS-236). _basketForWdsInError string attribute added to Importer IF that is the
+directory where wdir is to be moved in case of error.
+TaskTableProcess object properly set by invoking setBasketForWdsInError IF.
+Importer::addAllFiles method removed since never invoked.
+Dependence from SignalHandler class removed.
+-------------------------------------------------------
+8.5.2
+Warning message "Queue discarded a file because do not exists anymore" is now a debug message
+-------------------------------------------------------
+8.5.1
+MP: no more db related deprecated methods/classes
+-------------------------------------------------------
+8.5.0
+SelectRulesWithMyHost removed. ClusterName in configuration space added.
+-------------------------------------------------------
+8.4.0
+Added optional conf parameter SelectRulesWithMyHost: Select the Import rules where hostname is Null or is set to the host where Importer agent is running
+-------------------------------------------------------
+8.3.5
+Fix the case a file is not found anymore in the local Inbasket.
+This event can happens for:
+- a manual remove of the file from Inbasket (just after the inode notification) 
+- unexpected multiple inode notifications on the same file (because the way the feeder handles the local Inbasket).
+-------------------------------------------------------
+8.3.4
+if LTA is defined ApplicationLock can have up to 6 instances
+-------------------------------------------------------
+8.3.3
+ApplicationLock file name uses PROJECT env var to compute the final name.
+-------------------------------------------------------
+8.3.2
+Patch due to jira LTA-149
+_clusterName private attribute added to be valorized  with ClusterName conf tag value if occurring (default is Application::hostname()). 
+To be used in t_receptionrules query.
+-------------------------------------------------------
+8.3.1
+if defined USE_LIBPDSDB the file type recognition class is got from libPdsDb else it will be gro libDbCryosat.
+Note that there is an internal typedef to adapt different class name and namespace. 
+-------------------------------------------------------
+8.3.0
+SRVImporter.xml template modified  
+-------------------------------------------------------
+8.2.0
+Used the new API provided by libTaskTableProcess (6.0.0)
+Fixed Phoenix (auto restart) by using the new Application framework.
+-------------------------------------------------------
+8.1.1
+getting rid of dbReceptionRule class (from dbCryosat)
+-------------------------------------------------------
+8.1.0
+candidate files are filtered with the additional extensions (if configured)
+Thus to avoid that a regexp matching 'aaa' would match also "aaa.<addExt>"
+when 'aaa' is discovered, then the additional extensions are used to search for "aaa.<addExt>"
+Moreover, this version, do not perform the join between the reception rules table and the users one 
+if it is not needed (users.mode was used to have more than one rec rule, but only one acting)
+-------------------------------------------------------
+8.0.3
+conf space tags fixed: either "LTAInventory" or "Inventory"
+-------------------------------------------------------
+8.0.2
+conf space added in the directory
+-------------------------------------------------------
+8.0.1
+conf space is LTAImporter if LTA is defined
+else it will search for Importer and EmailUserNotification
+Getting rid of IMListener 
+other cleaning in progress
+-------------------------------------------------------
+8.0.0
+ECS-25
+A LTA specialization of the Importer needs to be created.
+So the Import module has been migrated to libImporterBase and the specializations
+LTAImport and Import inherit class provided by this module.
+

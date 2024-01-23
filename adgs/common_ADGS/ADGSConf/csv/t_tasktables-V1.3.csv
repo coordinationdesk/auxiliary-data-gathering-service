@@ -1,0 +1,3 @@
+name,tasktable,type_id,description
+
+'dblzipDistribFormat',            '%/usr/local/conf/ADGS/DbConfiguration/tasktables/dblzipDistribFormat.xml',            '(SELECT id_operationtype FROM t_operationtypes where type = 'EXPORT')', 'DBLZIP Distribute Format'

@@ -1,0 +1,36 @@
+3.1.2
+Compilation warning cleanup
+------------------------------------------------
+3.1.1
+[ECS-46] Using getRemainingSyncSM to know whether or not the inventory record can be removed from database.
+------------------------------------------------
+3.1.0
+loadConfiguration called.
+------------------------------------------------
+3.0.2
+Amazon libs removed by Makefile.
+------------------------------------------------
+3.0.1
+Patch version due to jira S2PDGS-286
+Amazon lib added if EXPRIVIA_ISM_USE_AWS_S3 compile time flag set.
+------------------------------------------------
+3.0.0
+t_lta_inventory moved to t_srv_inventory
+------------------------------------------------
+2.0.0
+Name changed from LTARemoveInventory to SRVRemoveInventory
+------------------------------------------------
+1.0.2
+Useless code removed
+------------------------------------------------
+1.0.1
+Using dbSmartPersistent::loadByUniqueKey to gain a query for each deleted object
+------------------------------------------------
+1.0.0
+First official release - documented in wiki
+------------------------------------------------
+0.1.1
+Introduced delete of inventory object record
+------------------------------------------------
+0.1.0
+First version

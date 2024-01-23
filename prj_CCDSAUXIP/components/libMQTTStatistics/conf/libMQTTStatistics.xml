@@ -1,0 +1,28 @@
+<Root>
+	<MQTTStatistics>
+		<!-- Default QOS level is QOS_0.  -->
+		<MaxBacklogSize>100000</MaxBacklogSize>
+		<!-- Timeout for waiting on the publish condition (msec) -->
+		<PollingTime>100</PollingTime>
+		<BrokerConnection>
+		<!-- Timeout for the connection (msec) -->
+			<ConnectionTimeout>5000</ConnectionTimeout>
+			<!-- Connection retries -->
+			<ConnectionRetries>1</ConnectionRetries>
+			<!-- The mosquitto clientId. If not specified a random clientId will be generated, but cleanSessionFlag will be forced to true -->
+			<ClientID>davtir</ClientID>
+			<!-- Set to true to instruct the broker to clean all messages and subscriptions on disconnect, false to instruct it to keep them. Default -->
+			<CleanSessionFlag>true</CleanSessionFlag>
+			<!-- The broker address/hostname -->
+			<Hostname>localhost</Hostname>
+			<!-- The broker listening port number -->
+			<Port>1884</Port>
+			<!-- The number of seconds after which the broker should send a PING message to the client if no other messages have been exchanged in that time -->
+			<KeepAliveInterval>60</KeepAliveInterval>
+			<!--Username for the mosquitto instance -->
+			<Username>davtir</Username>
+			<!--Password for the mosquitto instance -->
+			<Password>12qwas</Password>
+		</BrokerConnection>
+	</MQTTStatistics>
+</Root>

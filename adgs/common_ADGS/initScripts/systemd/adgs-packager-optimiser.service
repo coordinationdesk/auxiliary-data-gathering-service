@@ -1,0 +1,23 @@
+[Unit]
+Description=ADGS Packager Optimiser
+Documentation=https://www.exprivia.com
+Requires=network.target
+After=network.target 
+PartOf=adgs-server.service
+After=adgs-server.service
+
+[Service]
+Type=simple
+
+User=opadgs
+Group=ccds
+UMask=0002
+ExecStart=/usr/local/components/ADGS/bin/PackagerOptimiser
+StandardOutput=null
+StandardError=null
+KillMode=process
+KillSignal=SIGINT
+
+[Install]
+# This unit should start when spt-server.service is starting
+WantedBy=adgs-server.service

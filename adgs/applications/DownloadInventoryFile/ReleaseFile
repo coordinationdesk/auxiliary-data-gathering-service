@@ -1,0 +1,13 @@
+2.25.3
+compilation warning fixed
+------------------------------
+2.25.2
+CI-71: Patch release 
+ostringstream obj cannot be passed to stream from C++11  on.
+------------------------------
+2.25.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.25.0
+
+Automatically generate from revision "version "2.25""

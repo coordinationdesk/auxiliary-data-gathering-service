@@ -1,0 +1,13 @@
+3.0.1
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+3.0.0
+LTA-268: derivation from vector class removed in WSconfig and WSConfigMessage classes.
+Makefile updated according to wiki recommandations.
+------------------------------
+2.16.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.16.0
+
+Automatically generate from revision "version "2.16""

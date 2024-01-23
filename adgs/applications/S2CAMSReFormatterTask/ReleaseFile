@@ -1,0 +1,22 @@
+2.2.0
+Fixed two concurrency problem.
+Test fixed and updated.
+------------------------------
+2.1.1
+[S2PDGS-569] DateTime error fixed when stop_date have a month jump (ie: '20210929000000' => '20211001000000')
+------------------------------
+2.1.0
+[S2PDGS-554] The dates in the HDR file are in UTC style. The DBL no longer includes the base folder.
+------------------------------
+2.0.0
+Module renamed from S2CAMSPreInventoryReFormatterTask to S2CAMSReFormatterTask.
+------------------------------
+1.1.0
+[S2PDGS-484]: Changed CAMSFC with CAMSFO and PDMC with ADG_.
+The default system is ADG_ and the system value is now used for EOFFS file name.
+------------------------------
+1.0.1
+[S2PDGS-484]: Minor fix and typos
+------------------------------
+1.0.0
+[S2PDGS-484]: First release

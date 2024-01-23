@@ -1,0 +1,25 @@
+6.0.5
+CPS-143: flag SOCK_CLOEXEC added when TcpIpIpcServer creates the socket
+----------------------------------------------------------------------------
+6.0.4
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+----------------------------------------------------------------------------
+6.0.3
+Select on descriptor timeout lowered to 100msec to decrease latency at exit
+----------------------------------------------------------------------------
+6.0.2
+Loop constants fixed to take into account the correct unit values
+nanosleeps takes nanoseconds
+select takes microseconds
+------------------------------
+6.0.1
+Patch release automatically generated to instrument version files
+------------------------------
+6.0.0
+
+Using Network::getIPAddress instead of thread-unsafe gethostbyname
+in template function TcpIpIpcClient::setServerByHostName
+------------------------
+5.17.0
+
+Automatically generate from revision "version "5.17""

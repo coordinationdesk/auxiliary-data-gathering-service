@@ -1,0 +1,30 @@
+3.0.3
+gsoap compilation warnings removed
+------------------------------
+3.0.2
+stdsoap2.h now included using angle brackets. Makefile CUSTOM_INCLUDEPATH = replaced with CUSTOM_INCLUDEPATH +=.
+------------------------------
+3.0.1
+Makefile fixed to allow make depend
+The depend targets will depend by the soap auto generated code
+------------------------------
+3.0.0
+Major release due to issue J6PDAP-84. -i option added to soapcpp2 command. Including WSSE into base code. Modified env. mecevp.cpp file added if existing. Exporting base soap includes. Added userflags.
+------------------------------
+2.0.1
+The use of stdsoap2.cpp file is enabled upon detection of the file in
+the foreseen installation path
+/usr/share/gsoap/custom_acs/stdsoap2.cpp
+and not by the gsoap installed version
+------------------------------
+2.0.0
+Requires shared objects from gsoap starting from gsoap version 2.8.0
+In that case does not need anymore the file stdsoap2.cpp in the build tree
+It links libgsoapssl++ and libssl as direct dependencies
+------------------------------
+1.13.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.13.0
+
+Automatically generate from revision "version "1.13""

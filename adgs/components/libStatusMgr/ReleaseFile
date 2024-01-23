@@ -1,0 +1,15 @@
+3.0.1
+File encoding fixed
+------------------------------
+3.0.0
+Compilation warning cleanup
+------------------------------
+2.13.2
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+2.13.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.13.0
+
+Automatically generate from revision "version "2.13""

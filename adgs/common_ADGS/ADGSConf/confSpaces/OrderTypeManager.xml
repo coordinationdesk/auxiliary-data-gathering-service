@@ -1,0 +1,28 @@
+<OrderTypeManagerRoot>
+	<OrderTypeManager>
+		<List_of_TT_Conversions count="0">
+<!--		
+			<TT_Conversion>
+				<Db_Type>OFFL</Db_Type>
+				<TT_Type>SISTEMATIC</TT_Type>
+			</TT_Conversion>
+			<TT_Conversion>
+				<Db_Type>RPRO</Db_Type>
+				<TT_Type>REPROCESSING</TT_Type>
+			</TT_Conversion>
+-->		
+		</List_of_TT_Conversions>
+		<List_of_WSC_Conversions count="0">
+<!--
+			<WSC_Conversion>
+				<Db_Type>OFFL</Db_Type>
+				<WSC_Type>Systematic</WSC_Type>
+			</WSC_Conversion>
+			<WSC_Conversion>
+				<Db_Type>RPRO</Db_Type>
+				<WSC_Type>Reprocess</WSC_Type>
+			</WSC_Conversion>
+-->			
+		</List_of_WSC_Conversions>
+	</OrderTypeManager>
+</OrderTypeManagerRoot>

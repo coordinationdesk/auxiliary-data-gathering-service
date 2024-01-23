@@ -1,0 +1,4 @@
+-SD __cplusplus=199711
+-SD __STDC__
+-SI "$QACPPPATH/include/iso"
+-Q  "$QACPPPATH/include/iso"

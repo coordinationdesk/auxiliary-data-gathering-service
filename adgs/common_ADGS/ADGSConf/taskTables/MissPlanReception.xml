@@ -1,0 +1,86 @@
+<Task_Table xmlns:a="http://www.acsys.it/schemas/IPF" xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xsi:schemaLocation="http://www.acsys.it/schemas/IPF TaskTable.xsd">
+	<Processor_Name>MISSIONPLANNING_RECEPTION</Processor_Name>
+	<Version>1.0</Version>
+	<Test>No</Test>
+	<Min_Disk_Space units="MB">1024</Min_Disk_Space>
+	<Max_Time units="sec">0<!--no time limit for execution-->
+	</Max_Time>
+	<Private_Config>
+		<List_of_Cfg_Files count="0">
+		</List_of_Cfg_Files>
+		<Default>0</Default>
+	</Private_Config>
+	<List_of_Config_Spaces count="0">
+	</List_of_Config_Spaces>
+	<List_of_Pools count="3">
+		<Pool>
+			<Detached>false</Detached>
+			<Killing_Signal>15</Killing_Signal>
+			<List_of_Tasks count="1">
+				<Task>
+					<Name>MISSPLANPREINVENTORY</Name>
+					<Version>01.00</Version>
+					<Critical>true</Critical>
+					<Criticality_Level>1</Criticality_Level>
+					<File_Name>/usr/local/components/ADGS/bin/mp_pre_inventory.rb</File_Name>
+					<List_of_Parameters count="1">
+                        <Parameter mandatory="true">
+                            <Name>--conf</Name>
+                            <Value>/data/ADGS/conf/misson_planning_pre_inventory.conf</Value>
+                        </Parameter>
+                    </List_of_Parameters>
+					<List_of_Inputs count="0">
+					</List_of_Inputs>
+					<List_of_Outputs count="0"/>
+					<List_of_Breakpoints count="0"/>
+				</Task>
+			</List_of_Tasks>
+		</Pool>
+		<Pool>
+			<Detached>false</Detached>
+			<Killing_Signal>15</Killing_Signal>
+			<List_of_Tasks count="1">
+				<Task>
+					<Name>GETORIGINADATE</Name>
+					<Version>01.00</Version>
+					<Critical>true</Critical>
+					<Criticality_Level>1</Criticality_Level>
+					<File_Name>/usr/local/components/ADGS/bin/GetOriginDate.sh</File_Name>
+					<List_of_Inputs count="0">
+					</List_of_Inputs>
+					<List_of_Outputs count="0"/>
+					<List_of_Breakpoints count="0"/>
+				</Task>
+			</List_of_Tasks>
+		</Pool>
+		<Pool>
+			<Detached>false</Detached>
+			<Killing_Signal>15</Killing_Signal>
+			<List_of_Tasks count="1">
+				<Task>
+					<Name>INVENTORY</Name>
+					<Version>02.00</Version>
+					<Critical>true</Critical>
+					<Criticality_Level>1</Criticality_Level>
+					<File_Name>/usr/local/components/ADGS/bin/Inventory</File_Name>
+					<List_of_Parameters count="2">
+						<Parameter mandatory="true">
+							<Name>--logdir</Name>
+							<Value>.</Value>
+						</Parameter>
+						<Parameter mandatory="true">
+							<Name>--relaxFnCheck</Name>
+							<Value></Value>
+						</Parameter>
+					</List_of_Parameters>
+					<List_of_Inputs count="0">
+					</List_of_Inputs>
+					<List_of_Outputs count="0">
+					</List_of_Outputs>
+					<List_of_Breakpoints count="0"/>
+				</Task>
+			</List_of_Tasks>
+		</Pool>
+	</List_of_Pools>
+</Task_Table>
+

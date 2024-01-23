@@ -1,0 +1,48 @@
+<Root>
+	<PreInventory>
+		<ConfigNETCDFPreInventory>
+			<!-- DeltaValidity in hours-->
+			<ICEDeltaValidity>24</ICEDeltaValidity>
+			<WAVEDeltaValidity>144</WAVEDeltaValidity>
+			
+			<!-- DO NOT MODIFY Groups of regexp 1 hemisphere, 2 Validity start-->
+			<ICEFileNameRegExp>ice_conc_([n|s]h)_([[:digit:]]{12}).nc</ICEFileNameRegExp>
+
+			<!-- DO NOT MODIFY Groups of regexp 1 Validity start-->
+				<WAVEFileNameRegExp>IFR_WW3-GLOB.*([[:digit:]]{8}t[[:digit:]]{2}).*.nc</WAVEFileNameRegExp>
+		</ConfigNETCDFPreInventory>
+<!--
+OSI SAF ICE COVERAGE (North)file      	ICE_EDGENH      
+OSI SAF ICE COVERAGE (South)file      	ICE_EDGESH      
+WAVEWATCH III STOKES DRIFT file      	IFR_WW3___ 
+-->
+		<PluginsRegistrationSettings>
+			<NETCDFPreInventoryFactory>
+				<List_Of_Registrations count="3">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>ICE_EDGENH</Object>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>ICE_EDGESH</Object>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>IFR_WW3___</Object>
+					</Registration>
+					
+				</List_Of_Registrations>
+			</NETCDFPreInventoryFactory>
+		</PluginsRegistrationSettings>
+	</PreInventory>
+</Root>

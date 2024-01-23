@@ -1,0 +1,92 @@
+8.1.0
+[CPS-133] EC:: Added support for ON CONFLICT in INSERT queries. 
+----------------------------------------------------------------------------------------------------
+8.0.3
+putenv string is obtained through strdup. This will result in a leak (for each db driver) but save
+ environment when exiting
+----------------------------------------------------------------------------------------------------
+8.0.2
+Deprecated macro throwException fixed
+----------------------------------------------------------------------------------------------------
+8.0.1
+adjustGisOperatorMap() in case of multiple threads requiring the adjustement (very first time) caused a map corruption - fixed with a global mutexi in the unnamed namepsace.
+----------------------------------------------------------------------------------------------------
+8.0.0
+Implements gisVersionQuery method and the adjustGisOperatorMap to deal with PostGIS 3
+Requires libDbClient 12.0.0 to use those features
+----------------------------------------------------------------------------------------------------
+7.0.7
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+----------------------------------------------------------------------------------------------------
+7.0.6
+MP: Unnamed query fixed
+----------------------------------------------------------------------------------------------------
+7.0.5
+MP: metadata query still returned multiple rows when the primary key is used 
+in weird way in combined unique constraints.
+The solution adopted is that a primary key or unique field shall be primary key (even if combined) 
+or declared unique but not in combined unique constraints.
+This is achieved by the following join
+    LEFT JOIN 	pg_constraint conp 	ON	
+	( 		
+		att.attrelid = conp.conrelid 	-- same relation with attributes	
+		AND ( 
+            ( (conp.contype = 'p') -- is primary 
+            AND att.attnum = ANY (conp.conkey) ) -- anywhere, even in combined primary keys 
+        OR 
+            ( (conp.contype = 'u') -- is unique 
+            AND att.attnum = conp.conkey[1] AND array_length(conp.conkey, 1) = 1) ) -- in a combination of one and only one
+	) 		
+
+The schema.sql files contains the actual query completed with column names that could help in 
+future debugging.
+----------------------------------------------------------------------------------------------------
+7.0.4
+Fixed bug in Postgres8SQLDialect::intervalToSecond(const std::string &intv) causing the computation of
+the difference between and interval/timestamp type with 0 as integer, which is not allowed. 
+Value 0 casted to an interval type.
+----------------------------------------------------------------------------------------------------
+7.0.3
+MP: metadata query returned multiple rows for the same attribute - fixed.
+The effect was something similar to "Record n 2 seems to correspond to field in position 1" 
+raised from acs::dbSchemaMetaDataProvider::checkTable
+----------------------------------------------------------------------------------------------------
+7.0.1
+ECS-15 ECS-16 EC:: Strings in JSON misformatted. Fixed.
+----------------------------------------------------------------------------------------------------
+7.0.0
+Aligned to libDbClient 7.0.0
+----------------------------------------------------------------------------------------------------
+6.2.0
+Extraction of self uniqueness for metadata provider. Added a column (#15) if true the column is unique by its own
+----------------------------------------------------------------------------------------------------
+6.1.0
+ECS-15 ECS-16 EC:: Added method to check if a column is a JSONB based on the proprietary Type
+----------------------------------------------------------------------------------------------------
+6.0.2
+EC:: handling of JSONB added to the metadataQuery: a conventional non-zero size is returned, in order to allow direct SQL queries (not allowed for BLOB/CLOB)
+------------------------------
+6.0.1
+EC:: ECS-15 Round-parenthesis () added to cast. Otherwise it would note cope w/ complex expressions, like (A->B->>C)::INT4, typical of JSON queries.
+------------------------------
+6.0.0
+EC:: Added handling of Database Listener/Broadcast
+------------------------------
+5.21.0
+Coordinated release of the following libraries due to [J6PDAP-88]
+libInformix9Dialect 1.79.0
+libOracle11Dialect 1.31.0
+libPostgres8Dialect 5.21.0
+libDbClient 5.85.0
+It is now possible to query the schema to detect all the indexes
+of a given table and verify if a given index exists or not
+------------------------------
+5.20.2
+Makefiles prepared to run in both smurfer.py and legacy mode
+------------------------------
+5.20.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.20.0
+
+Automatically generate from revision "version "5.20""

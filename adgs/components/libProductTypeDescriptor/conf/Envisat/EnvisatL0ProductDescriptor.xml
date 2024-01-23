@@ -1,0 +1,190 @@
+<?xml version="1.0" standalone="yes"?>
+<EnvisatL0ProductDescription>
+	<L0ProductDescriptor>
+    		<NumberOfProducts>8</NumberOfProducts>  
+    		<!-- ASAR Level 0 IMAGE MODE -->
+			<Product1>
+				<Id>ASA_IM__0P</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>30</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>1556</APID>
+				</List_of_APID>
+				<Channel>0</Channel>
+				<VCID>48</VCID>
+				<SensorName>ASAR</SensorName>
+				<SensorMode>Image</SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.535</DeltaNominalTime>
+				<GapThresold unit="ms">15000</GapThresold>        
+				<Description>ASAR Level 0 Image Mode</Description>        
+    		</Product1>
+
+    		<!-- ASAR Level 0 WIDE SWATH -->
+			<Product2>
+				<Id>ASA_WS__0P</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>30</DataFieldHeaderLength>
+				<!-- ApplicationDataLength VARIABLE : set to 0 -->
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<!-- PacketErrorControlLength N/A : set to 0 -->
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+					<APID>1563</APID>
+				</List_of_APID>
+				<VCID>48</VCID>
+				<Channel>0</Channel>
+				<SensorName>ASAR</SensorName>
+				<SensorMode>WideSwath</SensorMode>
+				<!-- SegmentedPacketsFlag N/A : set to false -->
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.535</DeltaNominalTime>
+				<GapThresold unit="ms">15000</GapThresold>        
+				<Description>ASAR Level 0 Wide Swath</Description>        
+    		</Product2>
+    		
+			<!-- ASAR Level 0 Alternating Polarization Cross-polar H -->
+			<Product3>
+				<Id>ASA_APH_0P</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>30</DataFieldHeaderLength>
+				<!-- ApplicationDataLength VARIABLE : set to 0 -->
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<!-- PacketErrorControlLength N/A : set to 0 -->
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+					<APID>1544</APID>
+				</List_of_APID>
+				<VCID>48</VCID>
+				<Channel>0</Channel>
+				<SensorName>ASAR</SensorName>
+				<SensorMode>AltPolH</SensorMode>
+				<!-- SegmentedPacketsFlag N/A : set to false -->
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.535</DeltaNominalTime>
+				<GapThresold unit="ms">15000</GapThresold>        
+				<Description>ASAR Level 0 Alternating Polarization(XPolar H)</Description>        
+    		</Product3>
+    		
+			<!-- ASAR Level 0 Alternating Polarization Cross-polar V -->
+			<Product4>
+				<Id>ASA_APV_0P</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>30</DataFieldHeaderLength>
+				<!-- ApplicationDataLength VARIABLE : set to 0 -->
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<!-- PacketErrorControlLength N/A : set to 0 -->
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+					<APID>1549</APID>
+				</List_of_APID>
+				<VCID>48</VCID>
+				<Channel>0</Channel>
+				<SensorName>ASAR</SensorName>
+				<SensorMode>AltPolV</SensorMode>
+				<!-- SegmentedPacketsFlag N/A : set to false -->
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.535</DeltaNominalTime>
+				<GapThresold unit="ms">15000</GapThresold>        
+				<Description>ASAR Level 0 Alternating Polarization(XPolar V)</Description>        
+    		</Product4>
+			
+			<!-- ASAR Level 0 Alternating Polarization Copolar -->
+    		<Product5>
+        		<Id>ASA_APC_0P</Id>
+        		<CCSDSVersion>1</CCSDSVersion>
+        		<DataFieldHeaderLength>30</DataFieldHeaderLength>
+        		<!-- ApplicationDataLength VARIABLE : set to 0 -->
+				<ApplicationDataLength>0</ApplicationDataLength>
+        		<!-- PacketErrorControlLength N/A : set to 0 -->
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+        		<List_of_APID count="1">
+					<APID>1543</APID>
+				</List_of_APID>
+        		<VCID>48</VCID>
+				<Channel>0</Channel>
+        		<SensorName>ASAR</SensorName>
+        		<SensorMode>AltPolC</SensorMode>
+				<!-- SegmentedPacketsFlag N/A : set to false -->
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        		<DeltaNominalTime unit="ms">0.535</DeltaNominalTime>
+        		<GapThresold unit="ms">15000</GapThresold>        
+				<Description>ASAR Level 0 Alternating Polarization(Copolar)</Description>
+			</Product5>
+    		
+			<!-- ASAR Level 0 External Characterisation -->
+			<Product6>
+        		<Id>ASA_EC__0P</Id>
+        		<CCSDSVersion>1</CCSDSVersion>
+        		<DataFieldHeaderLength>30</DataFieldHeaderLength>
+        		<!-- ApplicationDataLength VARIABLE : set to 0 -->
+				<ApplicationDataLength>0</ApplicationDataLength>
+        		<!-- PacketErrorControlLength N/A : set to 0 -->
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+        		<List_of_APID count="1">
+					<APID>1538</APID>
+				</List_of_APID>
+        		<VCID>48</VCID>
+				<Channel>0</Channel>
+        		<SensorName>ASAR</SensorName>
+        		<SensorMode>ExtChar</SensorMode>
+				<!-- SegmentedPacketsFlag N/A : set to false -->
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        		<DeltaNominalTime unit="ms">0.535</DeltaNominalTime>
+				<GapThresold unit="ms">15000</GapThresold>        
+				<Description>ASAR Level 0 External Characterisation</Description> 
+    		</Product6>
+    		
+			<!-- MERIS Level 0 FR -->
+			<Product7>
+        		<Id>MER_FR__0P</Id>
+        		<CCSDSVersion>1</CCSDSVersion>
+        		<DataFieldHeaderLength>286</DataFieldHeaderLength>
+        		<!-- ApplicationDataLength -->
+			<ApplicationDataLength>7400</ApplicationDataLength>
+        		<!-- PacketErrorControlLength is not present BUT USED TO CONSIDER 16 inter-packets bits -->
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+        		<List_of_APID count="2">
+				<APID>164</APID>
+				<APID>160</APID>
+			</List_of_APID>
+        		<VCID>5</VCID>
+			<Channel>1</Channel>
+        		<SensorName>MERIS</SensorName>
+        		<SensorMode>FrFpNSM</SensorMode>
+			<!-- SegmentedPacketsFlag N/A : set to false -->
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        		<DeltaNominalTime unit="ms">44.0</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        					
+			<Description>MERIS Level 0 Full Spatial</Description> 
+    		</Product7>
+		
+			<!-- IDLE Product -->
+			<Product8>
+        		<Id>IDLE_PACK_</Id>
+        		<CCSDSVersion>1</CCSDSVersion>
+        		<DataFieldHeaderLength>0</DataFieldHeaderLength>
+        		<ApplicationDataLength>0</ApplicationDataLength>
+        		<PacketErrorControlLength>0</PacketErrorControlLength>
+        		<List_of_APID count="1">
+					<APID>0</APID>
+				</List_of_APID>
+        		<VCID>63</VCID>
+        		<Channel>0</Channel>
+				<SensorName>IDLE</SensorName>
+        		<SensorMode>IDLE</SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        		<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+        		<GapThresold unit="ms">0</GapThresold>        
+				<Description></Description>        
+    		</Product8>
+    		<SatelliteName>ENVISAT</SatelliteName>
+    		<SourcePacketHeaderSize>6</SourcePacketHeaderSize>
+    		<AnnotationSize>32</AnnotationSize>
+			<RefDocName>PO-RS-MDA-GS-2009</RefDocName>
+			<AcquisitionReportFileType>ACQREPORT_</AcquisitionReportFileType>
+			<AnnotationIsInUTC>true</AnnotationIsInUTC>
+	</L0ProductDescriptor>
+</EnvisatL0ProductDescription>

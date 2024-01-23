@@ -1,0 +1,152 @@
+<Root>
+	<PreInventory>
+		<ConfigSafePreInventory>
+			<SatMissionsAssociatorKeys>
+				<Pair satelliteCode="S3A" key="PLAIN"/>
+				<Pair satelliteCode="S3B" key="PLAIN"/>
+				<Pair satelliteCode="S3_" key="PLAIN"/>
+			</SatMissionsAssociatorKeys>
+			<ManifestFilename>xfdumanifest.xml</ManifestFilename>
+			<TimeLUT>
+				<LUTElement>
+					<OriginalDate>UTC=9999-99-99T00:00:00.000000</OriginalDate>
+					<ConvertedDate>UTC=9999-12-31T23:59:59</ConvertedDate>
+				</LUTElement>
+			</TimeLUT>
+		</ConfigSafePreInventory>
+		<ConfigLTAS1SafePreInventory>
+			<!-- <FileClass>TEST</FileClass> -->
+			<!-- <QualityFlag>NOT_AVAILABLE</QualityFlag> -->
+			<ManifestFilename>manifest.safe</ManifestFilename>
+			<UniqueIdMustOccurInParameterFile>false</UniqueIdMustOccurInParameterFile>
+		</ConfigLTAS1SafePreInventory>
+		<PluginsRegistrationSettings>
+			<SafePreInventoryFactory>
+				<List_Of_Registrations count="6">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>AX___MA1_AX</Object>
+						<FiletypeKey>AUX</FiletypeKey>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>OL_1_EFR__</Object>
+						<FiletypeKey>PROD</FiletypeKey>
+						<ManifestFieldsXPaths>
+							<xPath name="CloudPercentage">
+								/xfdu:XFDU/metadataSection/metadataObject/metadataWrap/xmlData/olci:olciProductInformation/olci:classificationSummary/sentinel3:brightPixels/@percentage
+							</xPath>
+						</ManifestFieldsXPaths>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>SL_2_LST___</Object>
+						<FiletypeKey>PROD</FiletypeKey>
+						<ManifestFieldsXPaths>
+							<xPath name="CloudPercentage">
+								/xfdu:XFDU/metadataSection/metadataObject/metadataWrap/xmlData/slstr:slstrProductInformation/slstr:classificationSummary/sentinel3:cloudyPixels/@percentage
+							</xPath>
+						</ManifestFieldsXPaths>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>SL_1_RBT___</Object>
+						<FiletypeKey>PROD</FiletypeKey>
+						<DoVersioning>true</DoVersioning>
+						<ManifestFieldsXPaths>
+							<xPath name="CloudPercentage">
+								/xfdu:XFDU/metadataSection/metadataObject/metadataWrap/xmlData/slstr:slstrProductInformation/slstr:classificationSummary[@grid='0.5 km stripe A']/sentinel3:cloudyPixels/@percentage
+							</xPath>
+						</ManifestFieldsXPaths>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>OL_2_WFR___</Object>
+						<FiletypeKey>PROD</FiletypeKey>
+						<DoVersioning>true</DoVersioning>
+						<ManifestFieldsXPaths>
+							<xPath name="CloudPercentage">
+								/xfdu:XFDU/metadataSection/metadataObject/metadataWrap/xmlData/olci:olciProductInformation/olci:classificationSummary/sentinel3:cloudyPixels/@percentage
+							</xPath>
+						</ManifestFieldsXPaths>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>SY_1_MISR__</Object>
+						<FiletypeKey>PROD</FiletypeKey>
+						<DoVersioning>true</DoVersioning>
+						<ManifestFieldsXPaths>
+							<xPath name="CloudPercentage">
+								/xfdu:XFDU/metadataSection/metadataObject/metadataWrap/xmlData/syn:synProductInformation/syn:classificationSummary/sentinel3:cloudyPixels/@percentage
+							</xPath>
+						</ManifestFieldsXPaths>
+					</Registration>
+
+				</List_Of_Registrations>
+			</SafePreInventoryFactory>
+			<LTAS1SafePreInventoryFactory>
+				<List_Of_Registrations count="5">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>EW_GRDM_1S</Object>
+						<FiletypeKey>PROD</FiletypeKey>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>IW_OCN__2S</Object>
+						<FiletypeKey>PROD</FiletypeKey>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>IW_SLC__1S</Object>
+						<FiletypeKey>PROD</FiletypeKey>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>WV_OCN__2S</Object>
+						<FiletypeKey>PROD</FiletypeKey>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>IW_RAW__0S</Object>
+						<FiletypeKey>PROD</FiletypeKey>
+					</Registration>
+				</List_Of_Registrations>
+			</LTAS1SafePreInventoryFactory>
+		</PluginsRegistrationSettings>
+	</PreInventory>
+</Root>
+

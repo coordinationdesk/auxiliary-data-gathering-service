@@ -1,0 +1,14 @@
+<Root>
+<PackageDistFilesystemTask>
+	<!-- List of Configuration Space to load -->
+	<ConfigurationSpaceList count="">
+		<ConfigurationSpace>PackageExporter</ConfigurationSpace>
+		<ConfigurationSpace>PackageTask</ConfigurationSpace>
+	</ConfigurationSpaceList>
+
+	<!-- Allowed protocols for filesystem -->
+	<protocolRe>^([Ff][Ii][Ll][Ee]|[Ff][Ss])$</protocolRe>
+
+</PackageDistFilesystemTask>
+</Root>
+

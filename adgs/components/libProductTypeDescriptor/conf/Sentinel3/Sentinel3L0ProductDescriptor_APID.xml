@@ -1,0 +1,897 @@
+<?xml version="1.0" standalone="yes"?>
+<Sentinel3L0ProductDescription>
+	<L0ProductDescriptor>
+    		<SatelliteName>SENTINEL3</SatelliteName>
+    		<SourcePacketHeaderSize>6</SourcePacketHeaderSize>
+    		<AnnotationSize>0</AnnotationSize>
+		<RefDocName>S3-IS-TAF-SC-00471</RefDocName>
+		<AcquisitionReportFileType>L0PP_REP___</AcquisitionReportFileType>
+		<AnnotationIsInUTC>true</AnnotationIsInUTC>
+    		<NumberOfProducts>45</NumberOfProducts>
+		<Product1>
+			<Id>OL_0_E1056</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>33562</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1056</APID>
+ 			</List_of_APID>
+			<!--Granule configuration parameters-->
+			<Slice>
+				<!-- Granule total length (in milliseconds) -->
+				<Length>60000</Length>
+				<!-- Overlap between adjacent granules (in milliseconds) -->
+				<Overlap>5000</Overlap>
+			</Slice>
+			<Channel>0</Channel>
+			<VCID>1</VCID>
+			<SensorName>OLCI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">43.835529</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>OLCI Observation Cameras</Description>        
+    		</Product1>
+		<Product2>
+			<Id>OL_0_E1072</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>33562</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1072</APID>
+			</List_of_APID>
+			<!--Granule configuration parameters-->
+			<Slice>
+				<!-- Granule total length (in milliseconds) -->
+				<Length>60000</Length>
+				<!-- Overlap between adjacent granules (in milliseconds) -->
+				<Overlap>5000</Overlap>
+			</Slice>
+			<Channel>0</Channel>
+			<VCID>1</VCID>
+			<SensorName>OLCI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">43.835529</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>OLCI Observation Cameras</Description>        
+    		</Product2>
+		<Product3>
+			<Id>OL_0_E1088</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>33562</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1088</APID>
+			</List_of_APID>
+			<!--Granule configuration parameters-->
+			<Slice>
+				<!-- Granule total length (in milliseconds) -->
+				<Length>60000</Length>
+				<!-- Overlap between adjacent granules (in milliseconds) -->
+				<Overlap>5000</Overlap>
+			</Slice>
+			<Channel>0</Channel>
+			<VCID>1</VCID>
+			<SensorName>OLCI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">43.835529</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>OLCI Observation Cameras</Description>        
+    		</Product3>
+		<Product4>
+			<Id>OL_0_E1104</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>33562</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1104</APID>
+ 			</List_of_APID>
+			<!--Granule configuration parameters-->
+			<Slice>
+				<!-- Granule total length (in milliseconds) -->
+				<Length>60000</Length>
+				<!-- Overlap between adjacent granules (in milliseconds) -->
+				<Overlap>5000</Overlap>
+			</Slice>
+			<Channel>0</Channel>
+			<VCID>1</VCID>
+			<SensorName>OLCI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">43.835529</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>OLCI Observation Cameras</Description>        
+    		</Product4>
+		<Product5>
+			<Id>OL_0_E1120</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>33562</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1120</APID>
+			</List_of_APID>
+			<!--Granule configuration parameters-->
+			<Slice>
+				<!-- Granule total length (in milliseconds) -->
+				<Length>60000</Length>
+				<!-- Overlap between adjacent granules (in milliseconds) -->
+				<Overlap>5000</Overlap>
+			</Slice>
+			<Channel>0</Channel>
+			<VCID>1</VCID>
+			<SensorName>OLCI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">43.835529</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>OLCI Observation Cameras</Description>        
+    		</Product5>
+		<Product6>
+			<Id>OL_0_C1057</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>33562</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1057</APID>
+ 			</List_of_APID>
+			<!--Granule configuration parameters-->
+			<Slice>
+				<!-- Granule total length (in milliseconds) -->
+				<Length>60000</Length>
+				<!-- Overlap between adjacent granules (in milliseconds) -->
+				<Overlap>5000</Overlap>
+			</Slice>
+			<Channel>0</Channel>
+			<VCID>2</VCID>
+			<SensorName>OLCI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">43.835529</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>OLCI Observation Calibration Cameras</Description>        
+    		</Product6>
+		<Product7>
+			<Id>OL_0_C1073</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>33562</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1073</APID>
+			</List_of_APID>
+			<!--Granule configuration parameters-->
+			<Slice>
+				<!-- Granule total length (in milliseconds) -->
+				<Length>60000</Length>
+				<!-- Overlap between adjacent granules (in milliseconds) -->
+				<Overlap>5000</Overlap>
+			</Slice>
+			<Channel>0</Channel>
+			<VCID>2</VCID>
+			<SensorName>OLCI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">43.835529</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>OLCI Observation Calibration Cameras</Description>        
+    		</Product7>
+		<Product8>
+			<Id>OL_0_C1089</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>33562</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1089</APID>
+			</List_of_APID>
+			<!--Granule configuration parameters-->
+			<Slice>
+				<!-- Granule total length (in milliseconds) -->
+				<Length>60000</Length>
+				<!-- Overlap between adjacent granules (in milliseconds) -->
+				<Overlap>5000</Overlap>
+			</Slice>
+			<Channel>0</Channel>
+			<VCID>2</VCID>
+			<SensorName>OLCI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">43.835529</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>OLCI Observation Calibration Cameras</Description>        
+    		</Product8>
+		<Product9>
+			<Id>OL_0_C1105</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>33562</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1105</APID>
+ 			</List_of_APID>
+			<!--Granule configuration parameters-->
+			<Slice>
+				<!-- Granule total length (in milliseconds) -->
+				<Length>60000</Length>
+				<!-- Overlap between adjacent granules (in milliseconds) -->
+				<Overlap>5000</Overlap>
+			</Slice>
+			<Channel>0</Channel>
+			<VCID>2</VCID>
+			<SensorName>OLCI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">43.835529</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>OLCI Observation Calibration Cameras</Description>        
+    		</Product9>
+		<Product10>
+			<Id>OL_0_C1121</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>33562</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1121</APID>
+			</List_of_APID>
+			<!--Granule configuration parameters-->
+			<Slice>
+				<!-- Granule total length (in milliseconds) -->
+				<Length>60000</Length>
+				<!-- Overlap between adjacent granules (in milliseconds) -->
+				<Overlap>5000</Overlap>
+			</Slice>
+			<Channel>0</Channel>
+			<VCID>2</VCID>
+			<SensorName>OLCI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">43.835529</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>OLCI Observation Calibration Cameras</Description>        
+    		</Product10>
+		<Product11>
+			<Id>SL_0__1184</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>4230</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1184</APID>
+ 			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>3</VCID>
+			<SensorName>SLSTR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">300</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SLSTR</Description>        
+    		</Product11>
+		<Product12>
+			<Id>SL_0__1185</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>4230</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1185</APID>
+ 			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>3</VCID>
+			<SensorName>SLSTR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">300</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SLSTR</Description>        
+    		</Product12>
+		<Product13>
+			<Id>SL_0__1186</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>4230</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1186</APID>
+ 			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>3</VCID>
+			<SensorName>SLSTR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">300</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SLSTR</Description>        
+    		</Product13>
+		<Product14>
+			<Id>SL_0__1187</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>4230</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1187</APID>
+ 			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>3</VCID>
+			<SensorName>SLSTR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">300</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SLSTR</Description>        
+    		</Product14>
+		<Product15>
+			<Id>SL_0__1188</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>4230</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1188</APID>
+ 			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>3</VCID>
+			<SensorName>SLSTR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">300</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SLSTR</Description>        
+    		</Product15>
+		<Product16>
+			<Id>SL_0__1189</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>4230</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1189</APID>
+ 			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>3</VCID>
+			<SensorName>SLSTR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">300</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SLSTR</Description>        
+    		</Product16>
+		<Product17>
+			<Id>SL_0__1190</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>4230</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1190</APID>
+ 			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>3</VCID>
+			<SensorName>SLSTR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">300</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SLSTR</Description>        
+    		</Product17>
+		<Product18>
+			<Id>SL_0__1191</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>4230</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1191</APID>
+ 			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>3</VCID>
+			<SensorName>SLSTR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">300</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SLSTR</Description>        
+    		</Product18>
+		<Product19>
+			<Id>SL_0__1192</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>4230</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1192</APID>
+ 			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>3</VCID>
+			<SensorName>SLSTR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">300</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SLSTR</Description>        
+    		</Product19>
+		<Product20>
+			<Id>SL_0__1193</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>4230</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1193</APID>
+ 			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>3</VCID>
+			<SensorName>SLSTR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">300</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SLSTR</Description>        
+    		</Product20>
+		<Product21>
+			<Id>SL_0__1194</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>4230</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1194</APID>
+ 			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>3</VCID>
+			<SensorName>SLSTR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">300</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SLSTR</Description>        
+    		</Product21>
+		<Product22>
+			<Id>SL_0__1195</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>4230</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1195</APID>
+ 			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>3</VCID>
+			<SensorName>SLSTR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">300</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SLSTR</Description>        
+    		</Product22>
+		<Product23>
+			<Id>SR_0_RALRM</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>568</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1446</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>4</VCID>
+			<SensorName>SRAL Low Resolution Mode Echo</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">51.130435</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SRAL Low Resolution Mode Echo</Description>        
+    		</Product23>
+		<Product24>
+			<Id>SR_0_RASAR</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>17464</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1447</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>5</VCID>
+			<SensorName>SRAL</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">12.735318</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SRAL Echo</Description>        
+    		</Product24>
+		<Product25>
+			<Id>SR_0_RAACQ</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>12780</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1440</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>6</VCID>
+			<SensorName>SRAL</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">24.320151</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SRAL Calibration</Description>        
+    		</Product25>
+		<Product26>
+			<Id>SR_0_RATST</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>12780</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1441</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>6</VCID>
+			<SensorName>SRAL</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">24.320151</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SRAL Calibration</Description>        
+    		</Product26>
+		<Product27>
+			<Id>SR_0_CALI2</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>12780</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1442</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>6</VCID>
+			<SensorName>SRAL</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">24.320151</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SRAL Calibration</Description>        
+    		</Product27>
+		<Product28>
+			<Id>SR_0_CALIQ</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>12780</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1443</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>6</VCID>
+			<SensorName>SRAL</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">24.320151</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SRAL Calibration</Description>        
+    		</Product28>
+		<Product29>
+			<Id>SR_0_CAL1S</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>12780</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1444</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>6</VCID>
+			<SensorName>SRAL</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">24.320151</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SRAL Calibration</Description>        
+    		</Product29>
+		<Product30>
+			<Id>SR_0_CAL2S</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>12780</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1445</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>6</VCID>
+			<SensorName>SRAL</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">24.320151</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>SRAL Calibration</Description>        
+    		</Product30>
+		<Product31>
+			<Id>MW_0_MWR__</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>38</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1323</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>7</VCID>
+			<SensorName>MWR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">152.883</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>MWR</Description>        
+    		</Product31>
+		<Product32>
+			<Id>GN_0_G0774</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>774</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>8</VCID>
+			<SensorName>GNSS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">51.2</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>GNSS</Description>        
+    		</Product32>
+		<Product33>
+			<Id>DO_0_DAT__</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>16</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="2">
+    				<APID>1689</APID>
+    				<APID>1705</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>9</VCID>
+			<SensorName>DORIS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">192</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>DORIS</Description>        
+    		</Product33>
+		<Product34>
+			<Id>DO_0_NAV_J2000</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>44</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="2">
+    				<APID>1693</APID>
+    				<APID>1709</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>9</VCID>
+			<SensorName>DORIS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">192</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>DORIS</Description>        
+    		</Product34>
+		<Product35>
+			<Id>DO_0_NAV_GEODE</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>44</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="2">
+    				<APID>1694</APID>
+    				<APID>1710</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>9</VCID>
+			<SensorName>DORIS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">192</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>DORIS</Description>        
+    		</Product35>
+		<Product36>
+			<Id>DO_0_NAV_ITRF_</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>44</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="2">
+    				<APID>1686</APID>
+    				<APID>1702</APID>
+ 			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>9</VCID>
+			<SensorName>DORIS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">192</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>DORIS</Description>        
+    		</Product36>
+		<Product37>
+			<Id>DO_0_DOPPLER</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>236</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="2">
+    				<APID>1691</APID>
+    				<APID>1707</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>9</VCID>
+			<SensorName>DORIS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">192</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>DORIS</Description>        
+    		</Product37>
+		<Product38>
+			<Id>PF_HKTM</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>236</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>4</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>10</VCID>
+			<SensorName>PF_HKTM</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">102.4</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>Platform Housekeeping Telemetry</Description>        
+    		</Product38>
+		<Product39>
+			<Id>PL_HKTM_OLCI_</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>72</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1028</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>10</VCID>
+			<SensorName>PL_HKTM</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">184</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>Payload Housekeeping Telemetry</Description>        
+    		</Product39>
+		<Product40>
+			<Id>PL_HKTM_SLSTR</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>429</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1196</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>10</VCID>
+			<SensorName>PL_HKTM</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">184</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>Payload Housekeeping Telemetry</Description>        
+    		</Product40>
+		<Product41>
+			<Id>PL_HKTM_SRAL_</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>72</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1412</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>10</VCID>
+			<SensorName>PL_HKTM</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">184</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>Payload Housekeeping Telemetry</Description>        
+    		</Product41>
+		<Product42>
+			<Id>PL_HKTM_MWR__</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>40</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>1284</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>10</VCID>
+			<SensorName>PL_HKTM</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">184</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>Payload Housekeeping Telemetry</Description>        
+    		</Product42>
+		<Product43>
+			<Id>PL_HKTM_GNSSR</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>429</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>772</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>10</VCID>
+			<SensorName>PL_HKTM</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">184</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>Payload Housekeeping Telemetry</Description>        
+    		</Product43>
+		<Product44>
+			<Id>TM_0_NAT</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>101</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>361</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>11</VCID>
+			<SensorName>NAVATT</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">48.4</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>Navigation/Attitude Data</Description>        
+    		</Product44>
+		<Product45>
+			<Id>IDLE_PACK_</Id>
+			<CCSDSVersion>4</CCSDSVersion>
+			<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>1902</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+        		<List_of_APID count="1">
+				<APID>2047</APID>
+			</List_of_APID>
+			<Channel>0</Channel>
+			<VCID>63</VCID>
+			<SensorName>IDLE</SensorName>
+			<SensorMode>IDLE</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">.12022843402</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Idle Frame</Description>        
+    		</Product45>
+	</L0ProductDescriptor>
+</Sentinel3L0ProductDescription>

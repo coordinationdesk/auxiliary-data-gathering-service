@@ -1,0 +1,15 @@
+{
+	"name" : "acs/acs-php-tools",
+	"version": "1.0.2",
+	"type" : "library",
+	"authors" : [{
+			"name" : "acs",
+			"email" : "andrea.emanuelli-consultant@exprivia.com"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+		"Acs\\PhpTools\\": "classes/"
+		}
+	}
+}

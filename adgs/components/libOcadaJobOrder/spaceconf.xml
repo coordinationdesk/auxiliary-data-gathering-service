@@ -1,0 +1,17 @@
+<Root>
+	<TlDaemon>
+		<PluginsRegistrationSettings>
+			<OcadaJobOrderFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite>ENVISAT</Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+					</Registration>
+				</List_Of_Registrations>
+			</OcadaJobOrderFactory>
+		</PluginsRegistrationSettings>
+	</TlDaemon>
+</Root>
+

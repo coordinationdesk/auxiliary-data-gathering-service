@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xfdu:XFDU xmlns:xfdu="urn:ccsds:schema:xfdu:1" xmlns:sentinel-safe="http://www.esa.int/safe/sentinel/1.1" xmlns:gml="http://www.opengis.net/gml" xmlns:sentinel3="http://www.esa.int/safe/sentinel/sentinel-3/1.0" xmlns:olci="http://www.esa.int/safe/sentinel/sentinel-3/olci/1.0" version="esa/safe/sentinel/sentinel-3/olci/level-1/1.0">
+  <informationPackageMap>
+    <xfdu:contentUnit ID="packageUnit" unitType="Information Package" textInfo="SENTINEL-3 OLCI Level 1 Earth Observation Full Resolution Product" pdiID="processing" dmdID="acquisitionPeriod platform measurementOrbitReference measurementQualityInformation measurementFrameSet generalProductInformation olciProductInformation">
+      <xfdu:contentUnit ID="Oa01_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa01" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa01_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa02_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa02" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa02_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa03_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa03" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa03_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa04_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa04" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa04_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa05_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa05" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa05_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa06_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa06" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa06_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa07_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa07" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa07_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa08_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa08" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa08_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa09_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa09" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa09_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa10_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa10" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa10_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa11_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa11" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa11_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa12_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa12" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa12_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa13_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa13" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa13_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa14_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa14" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa14_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa15_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa15" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa15_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa16_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa16" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa16_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa17_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa17" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa17_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa18_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa18" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa18_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa19_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa19" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa19_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa20_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa20" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa20_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="Oa21_radianceUnit" unitType="Measurement Data Unit" textInfo="TOA radiance for OLCI acquisition band Oa21" dmdID="qualityFlagsAnnotation timeCoordinatesAnnotation geoCoordinatesAnnotation tieGeoCoordinatesAnnotation tieGeometriesAnnotation tieMeteoAnnotation instrumentDataAnnotation">
+        <dataObjectPointer dataObjectID="Oa21_radianceData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="removedPixelsUnit" unitType="Measurement Data Unit" textInfo="Removed Pixels information used for SYN L1c reconstruction">
+        <dataObjectPointer dataObjectID="removedPixelsData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="qualityFlagsUnit" unitType="Annotation Data Unit" textInfo="Quality flags">
+        <dataObjectPointer dataObjectID="qualityFlagsData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="timeCoordinatesUnit" unitType="Annotation Data Unit" textInfo="Time Coordinates Annotations">
+        <dataObjectPointer dataObjectID="timeCoordinatesData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="geoCoordinatesUnit" unitType="Annotation Data Unit" textInfo="Geo Coordinates Annotations">
+        <dataObjectPointer dataObjectID="geoCoordinatesData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="tieGeoCoordinatesUnit" unitType="Annotation Data Unit" textInfo="Tie-Point Geo Coordinate Annotations">
+        <dataObjectPointer dataObjectID="tieGeoCoordinatesData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="tieGeometriesUnit" unitType="Annotation Data Unit" textInfo="Tie-Point Geometries Annotations">
+        <dataObjectPointer dataObjectID="tieGeometriesData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="tieMeteoUnit" unitType="Annotation Data Unit" textInfo="Tie-Point Meteo Annotations">
+        <dataObjectPointer dataObjectID="tieMeteoData"/>
+      </xfdu:contentUnit>
+      <xfdu:contentUnit ID="instrumentDataUnit" unitType="Annotation Data Unit" textInfo="Instrument Annotations">
+        <dataObjectPointer dataObjectID="instrumentDataData"/>
+      </xfdu:contentUnit>
+    </xfdu:contentUnit>
+  </informationPackageMap>
+  <metadataSection>
+    <metadataObject ID="processing" classification="PROVENANCE" category="PDI">
+      <metadataWrap mimeType="text/xml" vocabularyName="Sentinel-SAFE" textInfo="Processing">
+        <xmlData>
+          <sentinel-safe:processing name="DataProcessing" outputLevel="1" start="2014-06-13T17:03:51.863427Z" stop="2014-06-13T18:12:36.874525Z">
+            <sentinel-safe:facility name="Land SLSTR and SYN Processing and Archiving Centre" organisation="European Space Agency" site="Sophia Antipolis" country="France">
+              <sentinel-safe:hardware name="DEV"/>
+              <sentinel-safe:software name="IPF-OL-1-EO" version="04.00"/>
+            </sentinel-safe:facility>
+            <sentinel-safe:resource name="S3A_TM_0_NAT____20130621T100919_20130621T101419_20131014T140412_0300_001_002______MAR_D_NR_TST.SEN3" role="input_product,orbit_init">
+              <sentinel-safe:processing name="DataProcessing" outputLevel="0" start="2013-10-14T14:04:12.956098Z" stop="2013-10-14T14:04:12.999652Z">
+                <sentinel-safe:facility name="Marine Processing and Archiving Centre" organisation="European Organisation for the Exploitation of Meteorological Satellites" site="Darmstadt" country="Germany">
+                  <sentinel-safe:hardware name="DEV"/>
+                  <sentinel-safe:software name="IPF-0" version="03.00"/>
+                </sentinel-safe:facility>
+                <sentinel-safe:resource name="S3A_TEST_MPL_ORBPRE_20130620T083552_20130622T110529_0011.EOF" role="Orbit File"/>
+                <sentinel-safe:resource name="S3A_TEST_MPL_ORBPRE_20130620T083552_20130622T110529_0011.EOF" role="FOS Orbit File (Predicted )"/>
+                <sentinel-safe:resource name="S3__MPL_ORBSCT_20130415T222620_99999999T999999_0001.EEF" role="Reference Orbit Scenario File"/>
+                <sentinel-safe:resource name="S3A_TM_0_NAT__G_20130621T100934_20130621T101434_0300______________DMS_D_NR_TST_00.ISIP" role="L0PP Granule"/>
+                <sentinel-safe:resource name="S3IPF-PDS-001-ProductDataSpecification-Level0" role="Product Data Specification Document - Level 0"/>
+              </sentinel-safe:processing>
+            </sentinel-safe:resource>
+            <sentinel-safe:resource name="S3A_OL_0_EFR____20130621T100921_20130621T101417_20131014T140446_0295_001_002______MAR_D_NR_TST.SEN3" role="input_product">
+              <sentinel-safe:processing name="DataProcessing" outputLevel="0" start="2013-10-14T14:04:13.396770Z" stop="2013-10-14T14:04:54.614281Z">
+                <sentinel-safe:facility name="Marine Processing and Archiving Centre" organisation="European Organisation for the Exploitation of Meteorological Satellites" site="Darmstadt" country="Germany">
+                  <sentinel-safe:hardware name="DEV"/>
+                  <sentinel-safe:software name="IPF-0" version="03.00"/>
+                </sentinel-safe:facility>
+                <sentinel-safe:resource name="S3__MPL_ORBSCT_20130415T222620_99999999T999999_0001.EEF" role="Orbit File"/>
+                <sentinel-safe:resource name="S3__MPL_ORBSCT_20130415T222620_99999999T999999_0001.EEF" role="Reference Orbit Scenario File"/>
+                <sentinel-safe:resource name="S3A_OL_0_EFR__G_20130621T100936_20130621T101432_0296______________DMS_D_NR_TST_00.ISIP" role="L0PP Granule"/>
+                <sentinel-safe:resource name="S3IPF-PDS-001-ProductDataSpecification-Level0" role="Product Data Specification Document - Level 0"/>
+              </sentinel-safe:processing>
+            </sentinel-safe:resource>
+            <sentinel-safe:resource name="S3A_OL_1_EO__AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="adf">
+              <sentinel-safe:processing name="">
+                <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                  <sentinel-safe:hardware name="OPE"/>
+                  <sentinel-safe:software name="ADC" version="1.0"/>
+                </sentinel-safe:facility>
+                <sentinel-safe:resource name="S3IPF.PDS.007 - i1r4 - Auxiliary Data Format Specification" role="Product Data Specification Document - ADFs" version="1.4"/>
+              </sentinel-safe:processing>
+            </sentinel-safe:resource>
+            <sentinel-safe:resource name="S3A_AX___MA1_AX_20130620T210000_20130621T090000_20131007T000000___________________ECW___SN_TST.SEN3" role="adf">
+              <sentinel-safe:processing name="">
+                <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                  <sentinel-safe:hardware name="OPE"/>
+                  <sentinel-safe:software name="ADC" version="1.0"/>
+                </sentinel-safe:facility>
+                <sentinel-safe:resource name="S3IPF.PDS.007 - i1r4 - Auxiliary Data Format Specification" role="Product Data Specification Document - ADFs" version="1.4"/>
+              </sentinel-safe:processing>
+            </sentinel-safe:resource>
+            <sentinel-safe:resource name="S3A_AX___MA1_AX_20130621T090000_20130621T210000_20131007T000000___________________ECW___SN_TST.SEN3" role="adf">
+              <sentinel-safe:processing name="">
+                <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                  <sentinel-safe:hardware name="OPE"/>
+                  <sentinel-safe:software name="ADC" version="1.0"/>
+                </sentinel-safe:facility>
+                <sentinel-safe:resource name="S3IPF.PDS.007 - i1r4 - Auxiliary Data Format Specification" role="Product Data Specification Document - ADFs" version="1.4"/>
+              </sentinel-safe:processing>
+            </sentinel-safe:resource>
+            <sentinel-safe:resource name="S3A_AX___DEM_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="adf">
+              <sentinel-safe:processing name="">
+                <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                  <sentinel-safe:hardware name="OPE"/>
+                  <sentinel-safe:software name="ADC" version="1.0"/>
+                </sentinel-safe:facility>
+                <sentinel-safe:resource name="S3IPF.PDS.007 - i1r4 - Auxiliary Data Format Specification" role="Product Data Specification Document - ADFs" version="1.4"/>
+              </sentinel-safe:processing>
+            </sentinel-safe:resource>
+            <sentinel-safe:resource name="S3A_OL_1_CLUTAX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="adf">
+              <sentinel-safe:processing name="">
+                <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                  <sentinel-safe:hardware name="OPE"/>
+                  <sentinel-safe:software name="ADC" version="1.0"/>
+                </sentinel-safe:facility>
+                <sentinel-safe:resource name="S3IPF.PDS.007 - i1r4 - Auxiliary Data Format Specification" role="Product Data Specification Document - ADFs" version="1.4"/>
+              </sentinel-safe:processing>
+            </sentinel-safe:resource>
+            <sentinel-safe:resource name="S3A_OL_1_INS_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="adf">
+              <sentinel-safe:processing name="">
+                <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                  <sentinel-safe:hardware name="OPE"/>
+                  <sentinel-safe:software name="ADC" version="1.0"/>
+                </sentinel-safe:facility>
+                <sentinel-safe:resource name="S3IPF.PDS.007 - i1r4 - Auxiliary Data Format Specification" role="Product Data Specification Document - ADFs" version="1.4"/>
+              </sentinel-safe:processing>
+            </sentinel-safe:resource>
+            <sentinel-safe:resource name="S3A_OL_1_CAL_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="adf">
+              <sentinel-safe:processing name="">
+                <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                  <sentinel-safe:hardware name="OPE"/>
+                  <sentinel-safe:software name="ADC" version="1.0"/>
+                </sentinel-safe:facility>
+                <sentinel-safe:resource name="S3IPF.PDS.007 - i1r4 - Auxiliary Data Format Specification" role="Product Data Specification Document - ADFs" version="1.4"/>
+              </sentinel-safe:processing>
+            </sentinel-safe:resource>
+            <sentinel-safe:resource name="S3A_OL_1_PRG_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="adf">
+              <sentinel-safe:processing name="">
+                <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                  <sentinel-safe:hardware name="OPE"/>
+                  <sentinel-safe:software name="ADC" version="1.0"/>
+                </sentinel-safe:facility>
+                <sentinel-safe:resource name="S3IPF.PDS.007 - i1r4 - Auxiliary Data Format Specification" role="Product Data Specification Document - ADFs" version="1.4"/>
+              </sentinel-safe:processing>
+            </sentinel-safe:resource>
+            <sentinel-safe:resource name="S3A_AX___LWM_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="adf">
+              <sentinel-safe:processing name="">
+                <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                  <sentinel-safe:hardware name="OPE"/>
+                  <sentinel-safe:software name="ADC" version="1.0"/>
+                </sentinel-safe:facility>
+                <sentinel-safe:resource name="S3IPF.PDS.007 - i1r4 - Auxiliary Data Format Specification" role="Product Data Specification Document - ADFs" version="1.4"/>
+              </sentinel-safe:processing>
+            </sentinel-safe:resource>
+            <sentinel-safe:resource name="S3A_AX___OOM_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="adf">
+              <sentinel-safe:processing name="">
+                <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                  <sentinel-safe:hardware name="OPE"/>
+                  <sentinel-safe:software name="ADC" version="1.0"/>
+                </sentinel-safe:facility>
+                <sentinel-safe:resource name="S3IPF.PDS.007 - i1r4 - Auxiliary Data Format Specification" role="Product Data Specification Document - ADFs" version="1.4"/>
+              </sentinel-safe:processing>
+            </sentinel-safe:resource>
+            <sentinel-safe:resource name="S3A_AX___CLM_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="adf">
+              <sentinel-safe:processing name="">
+                <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                  <sentinel-safe:hardware name="OPE"/>
+                  <sentinel-safe:software name="ADC" version="1.0"/>
+                </sentinel-safe:facility>
+                <sentinel-safe:resource name="S3IPF.PDS.007 - i1r4 - Auxiliary Data Format Specification" role="Product Data Specification Document - ADFs" version="1.4"/>
+              </sentinel-safe:processing>
+            </sentinel-safe:resource>
+            <sentinel-safe:resource name="S3A_AX___TRM_AX_20000101T000000_20991231T235959_20131003T000000_________________________AL_TST.SEN3" role="adf">
+              <sentinel-safe:processing name="">
+                <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                  <sentinel-safe:hardware name="OPE"/>
+                  <sentinel-safe:software name="ADC" version="1.0"/>
+                </sentinel-safe:facility>
+                <sentinel-safe:resource name="S3IPF.PDS.007 - i1r4 - Auxiliary Data Format Specification" role="Product Data Specification Document - ADFs" version="1.4"/>
+              </sentinel-safe:processing>
+            </sentinel-safe:resource>
+            <sentinel-safe:resource name="S3A_AX___OSF_AX_20130415T222620_99999999T999999_20131003T000000_________________________AL_TST.SEN3" role="adf,time_init">
+              <sentinel-safe:processing name="">
+                <sentinel-safe:facility name="European Space Agency" organisation="Svalbard" site="Norway" country="Svalbard Satellite Core Ground Station (SVL)">
+                  <sentinel-safe:hardware name="OPE"/>
+                  <sentinel-safe:software name="ADC" version="1.0"/>
+                </sentinel-safe:facility>
+                <sentinel-safe:resource name="S3IPF.PDS.007 - i1r4 - Auxiliary Data Format Specification" role="Product Data Specification Document - ADFs" version="1.4"/>
+              </sentinel-safe:processing>
+            </sentinel-safe:resource>
+            <sentinel-safe:resource name="S3IPF PDS 004 - i1r3 - Product Data Format Specification - OLCI" role="Product Data Format Specification" version="1.3"/>
+          </sentinel-safe:processing>
+        </xmlData>
+      </metadataWrap>
+    </metadataObject>
+    <metadataObject ID="acquisitionPeriod" classification="DESCRIPTION" category="DMD">
+      <metadataWrap mimeType="text/xml" vocabularyName="Sentinel-SAFE" textInfo="Acquisition Period">
+        <xmlData>
+          <sentinel-safe:acquisitionPeriod>
+            <sentinel-safe:startTime>2013-06-21T10:09:20.633099Z</sentinel-safe:startTime>
+            <sentinel-safe:stopTime>2013-06-21T10:14:16.621099Z</sentinel-safe:stopTime>
+          </sentinel-safe:acquisitionPeriod>
+        </xmlData>
+      </metadataWrap>
+    </metadataObject>
+    <metadataObject ID="platform" classification="DESCRIPTION" category="DMD">
+      <metadataWrap mimeType="text/xml" vocabularyName="Sentinel-SAFE" textInfo="Platform Description">
+        <xmlData>
+          <sentinel-safe:platform>
+            <sentinel-safe:nssdcIdentifier>0000-000A</sentinel-safe:nssdcIdentifier>
+            <sentinel-safe:familyName>Sentinel-3</sentinel-safe:familyName>
+            <sentinel-safe:number>A</sentinel-safe:number>
+            <sentinel-safe:instrument>
+              <sentinel-safe:familyName abbreviation="OLCI">Ocean Land Colour Instrument</sentinel-safe:familyName>
+              <sentinel-safe:mode identifier="EO">Earth Observation</sentinel-safe:mode>
+            </sentinel-safe:instrument>
+          </sentinel-safe:platform>
+        </xmlData>
+      </metadataWrap>
+    </metadataObject>
+    <metadataObject ID="generalProductInformation" classification="DESCRIPTION" category="DMD">
+      <metadataWrap mimeType="text/xml" vocabularyName="Sentinel-SAFE" textInfo="General Product Information">
+        <xmlData>
+          <sentinel3:generalProductInformation>
+            <sentinel3:productName>S3A_OL_1_EFR____20130621T100921_20130621T101417_20140613T170503_0295_001_002______LN2_D_NR____.SEN3</sentinel3:productName>
+            <sentinel3:productType>OL_1_EFR___</sentinel3:productType>
+            <sentinel3:timeliness>NR</sentinel3:timeliness>
+            <sentinel3:baselineCollection>___</sentinel3:baselineCollection>
+            <sentinel3:creationTime>20140613T170503</sentinel3:creationTime>
+            <sentinel3:productSize>796028572</sentinel3:productSize>
+            <sentinel3:dumpInformation>
+              <sentinel3:granuleNumber>0</sentinel3:granuleNumber>
+              <sentinel3:granulePosition>NONE</sentinel3:granulePosition>
+              <sentinel3:dumpStart>2013-06-21T10:14:27.000000Z</sentinel3:dumpStart>
+              <sentinel3:receivingGroundStation>KIRUNA</sentinel3:receivingGroundStation>
+              <sentinel3:receivingStartTime>2013-06-21T12:00:00.000000Z</sentinel3:receivingStartTime>
+              <sentinel3:receivingStopTime>2013-06-21T12:00:10.000000Z</sentinel3:receivingStopTime>
+            </sentinel3:dumpInformation>
+          </sentinel3:generalProductInformation>
+        </xmlData>
+      </metadataWrap>
+    </metadataObject>
+    <metadataObject ID="measurementOrbitReference" classification="DESCRIPTION" category="DMD">
+      <metadataWrap mimeType="text/xml" vocabularyName="Sentinel-SAFE" textInfo="Orbit Reference">
+        <xmlData>
+          <sentinel-safe:orbitReference>
+            <sentinel-safe:orbitNumber groundTrackDirection="ascending">0</sentinel-safe:orbitNumber>
+            <sentinel-safe:relativeOrbitNumber groundTrackDirection="ascending">0</sentinel-safe:relativeOrbitNumber>
+            <sentinel-safe:passNumber groundTrackDirection="ascending">0</sentinel-safe:passNumber>
+            <sentinel-safe:relativePassNumber groundTrackDirection="ascending">0</sentinel-safe:relativePassNumber>
+            <sentinel-safe:cycleNumber>0</sentinel-safe:cycleNumber>
+            <sentinel-safe:phaseIdentifier>0</sentinel-safe:phaseIdentifier>
+            <sentinel-safe:elementSet>
+              <sentinel-safe:ephemeris>
+                <sentinel-safe:epoch type="UTC">2013-06-21T09:36:01.573178Z</sentinel-safe:epoch>
+                <sentinel-safe:epoch type="UT1">2013-06-21T09:36:01.273178</sentinel-safe:epoch>
+                <sentinel-safe:epoch type="TAI">2013-06-21T09:36:35.573178</sentinel-safe:epoch>
+                <sentinel-safe:position>
+                  <sentinel-safe:x>-7144366.054</sentinel-safe:x>
+                  <sentinel-safe:y>-0750902.721</sentinel-safe:y>
+                  <sentinel-safe:z>+0000000.003</sentinel-safe:z>
+                </sentinel-safe:position>
+                <sentinel-safe:velocity>
+                  <sentinel-safe:x>-0163.017043</sentinel-safe:x>
+                  <sentinel-safe:y>+1632.679345</sentinel-safe:y>
+                  <sentinel-safe:z>+7366.402739</sentinel-safe:z>
+                </sentinel-safe:velocity>
+              </sentinel-safe:ephemeris>
+              <sentinel-safe:ephemeris>
+                <sentinel-safe:epoch type="UTC">2013-06-21T11:17:00.793957Z</sentinel-safe:epoch>
+                <sentinel-safe:epoch type="UT1">2013-06-21T11:17:00.493957</sentinel-safe:epoch>
+                <sentinel-safe:epoch type="TAI">2013-06-21T11:17:34.793957</sentinel-safe:epoch>
+                <sentinel-safe:position>
+                  <sentinel-safe:x>-6782204.464</sentinel-safe:x>
+                  <sentinel-safe:y>+2368021.075</sentinel-safe:y>
+                  <sentinel-safe:z>+0000000.001</sentinel-safe:z>
+                </sentinel-safe:position>
+                <sentinel-safe:velocity>
+                  <sentinel-safe:x>+0548.920746</sentinel-safe:x>
+                  <sentinel-safe:y>+1546.254317</sentinel-safe:y>
+                  <sentinel-safe:z>+7366.402739</sentinel-safe:z>
+                </sentinel-safe:velocity>
+              </sentinel-safe:ephemeris>
+            </sentinel-safe:elementSet>
+          </sentinel-safe:orbitReference>
+        </xmlData>
+      </metadataWrap>
+    </metadataObject>
+    <metadataObject ID="measurementQualityInformation" classification="DESCRIPTION" category="DMD">
+      <metadataWrap mimeType="text/xml" vocabularyName="Sentinel-SAFE" textInfo="Quality Information">
+        <xmlData>
+          <sentinel-safe:qualityInformation>
+            <sentinel-safe:extension>
+              <sentinel3:productQuality>
+                <sentinel3:onlineQualityCheck>PASSED</sentinel3:onlineQualityCheck>
+                <sentinel3:degradationFlags>INPUT_GAPS ADF_GAPS</sentinel3:degradationFlags>
+              </sentinel3:productQuality>
+            </sentinel-safe:extension>
+          </sentinel-safe:qualityInformation>
+        </xmlData>
+      </metadataWrap>
+    </metadataObject>
+    <metadataObject ID="measurementFrameSet" classification="DESCRIPTION" category="DMD">
+      <metadataWrap mimeType="text/xml" vocabularyName="Sentinel-SAFE" textInfo="Frame Set">
+        <xmlData>
+          <sentinel-safe:frameSet>
+            <sentinel-safe:footPrint srsName="http://www.opengis.net/def/crs/EPSG/0/4326">
+              <gml:posList>61.8174 -4.84621 61.3064 -4.91843 60.7954 -4.9909 60.2843 -5.06372 59.7732 -5.1368 59.262 -5.21014 58.7507 -5.28374 58.2394 -5.35772 57.7281 -5.4319 57.2167 -5.50638 56.7052 -5.58112 56.1937 -5.65608 55.6821 -5.73125 55.1704 -5.80668 54.6587 -5.88232 54.147 -5.95824 53.6351 -6.03439 53.1233 -6.11081 52.6114 -6.18742 52.0994 -6.26429 51.5873 -6.34132 51.0752 -6.41866 50.563 -6.4962 50.0508 -6.574 49.5385 -6.65197 49.0262 -6.73016 48.5138 -6.80858 48.0013 -6.8872 47.4888 -6.96609 46.9762 -7.04523 46.4635 -7.1246 45.9509 -7.20416 45.4381 -7.28397 44.9253 -7.36402 44.5996 -7.41493 44.3622 -4.82951 44.0668 -2.2674 43.7146 0.266931 43.3069 2.76946 42.8452 5.2366 42.3311 7.66522 42.1484 8.46574 42.656 8.68025 43.1634 8.89806 43.6703 9.11919 44.1768 9.34381 44.683 9.57204 45.1886 9.80398 45.6939 10.0397 46.1987 10.2794 46.7031 10.5232 47.2069 10.7712 47.7102 11.0237 48.213 11.2807 48.7153 11.5425 49.217 11.8091 49.7182 12.0807 50.2187 12.3577 50.7186 12.6401 51.2179 12.9282 51.7165 13.2222 52.2145 13.5222 52.7117 13.8286 53.2082 14.1416 53.7039 14.4614 54.1988 14.7884 54.6929 15.1228 55.186 15.465 55.6783 15.8152 56.1697 16.1737 56.66 16.541 57.1494 16.9174 57.6377 17.3034 58.1249 17.6992 58.6109 18.1055 58.9189 18.369 59.6358 15.012 60.2631 11.518 60.7951 7.89842 61.2264 4.16854 61.5525 0.348012 61.7697 -3.5398 61.8174 -4.84621</gml:posList>
+            </sentinel-safe:footPrint>
+          </sentinel-safe:frameSet>
+        </xmlData>
+      </metadataWrap>
+    </metadataObject>
+    <metadataObject ID="olciProductInformation" classification="DESCRIPTION" category="DMD">
+      <metadataWrap mimeType="text/xml" vocabularyName="Sentinel-SAFE" textInfo="">
+        <xmlData>
+          <olci:olciProductInformation>
+            <olci:pixelQualitySummary>
+              <olci:invalidPixels value="1" percentage="0.000003"/>
+              <olci:cosmeticPixels value="0" percentage="0.000000"/>
+              <olci:duplicatedPixels value="1" percentage="0.000003"/>
+              <olci:saturatedPixels value="0" percentage="0.000000"/>
+              <olci:dubiousSamples value="0" percentage="0.000000"/>
+            </olci:pixelQualitySummary>
+            <olci:classificationSummary>
+              <sentinel3:brightPixels percentage="0.000003"/>
+              <sentinel3:salineWaterPixels percentage="99.000000"/>
+              <sentinel3:coastalPixels percentage="0.000003"/>
+              <sentinel3:freshInlandWaterPixels percentage="0.000003"/>
+              <sentinel3:landPixels percentage="0.000003"/>
+              <sentinel3:tidalRegionPixels percentage="0.000003"/>
+            </olci:classificationSummary>
+            <olci:measurementAccuracy>2.000000</olci:measurementAccuracy>
+            <olci:accuracyReference>0</olci:accuracyReference>
+            <olci:imageSize>
+              <sentinel3:rows>6728</sentinel3:rows>
+              <sentinel3:columns>4865</sentinel3:columns>
+            </olci:imageSize>
+            <olci:ecmwfType timeRelevance="2">ANALYSIS</olci:ecmwfType>
+            <olci:earthSunDistance>152026162126</olci:earthSunDistance>
+            <olci:oclStatus>true</olci:oclStatus>
+            <olci:samplingParameters>
+              <olci:alTimeSampling>44000.000000</olci:alTimeSampling>
+              <olci:alSpatialSampling>294.000000</olci:alSpatialSampling>
+              <olci:acSpatialSampling>270.000000</olci:acSpatialSampling>
+              <olci:rowsPerTiePoint>1</olci:rowsPerTiePoint>
+              <olci:columnsPerTiePoint>64</olci:columnsPerTiePoint>
+            </olci:samplingParameters>
+            <olci:bandDescriptions bands="21">
+              <sentinel3:band name="Oa01">
+                <sentinel3:centralWavelength>400.000000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>15.000000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa02">
+                <sentinel3:centralWavelength>412.500000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>10.000000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa03">
+                <sentinel3:centralWavelength>442.500000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>10.000000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa04">
+                <sentinel3:centralWavelength>490.000000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>10.000000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa05">
+                <sentinel3:centralWavelength>510.000000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>10.000000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa06">
+                <sentinel3:centralWavelength>560.000000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>10.000000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa07">
+                <sentinel3:centralWavelength>620.000000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>10.000000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa08">
+                <sentinel3:centralWavelength>665.000000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>10.000000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa09">
+                <sentinel3:centralWavelength>673.750000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>7.500000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa10">
+                <sentinel3:centralWavelength>681.250000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>7.500000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa11">
+                <sentinel3:centralWavelength>708.750000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>10.000000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa12">
+                <sentinel3:centralWavelength>753.750000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>7.500000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa13">
+                <sentinel3:centralWavelength>761.250000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>2.500000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa14">
+                <sentinel3:centralWavelength>764.375000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>3.750000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa15">
+                <sentinel3:centralWavelength>767.500000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>2.500000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa16">
+                <sentinel3:centralWavelength>778.750000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>15.000000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa17">
+                <sentinel3:centralWavelength>865.000000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>20.000000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa18">
+                <sentinel3:centralWavelength>885.000000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>10.000000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa19">
+                <sentinel3:centralWavelength>900.000000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>10.000000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa20">
+                <sentinel3:centralWavelength>940.000000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>20.000000</sentinel3:bandwidth>
+              </sentinel3:band>
+              <sentinel3:band name="Oa21">
+                <sentinel3:centralWavelength>1020.000000</sentinel3:centralWavelength>
+                <sentinel3:bandwidth>40.000000</sentinel3:bandwidth>
+              </sentinel3:band>
+            </olci:bandDescriptions>
+            <olci:missingElements threshold="75.000000" value="3" over="6728" percentage="0.044590">
+              <olci:elementMissing startTime="2013-06-21T10:09:20.611099Z" stopTime="2013-06-21T10:09:20.699099Z" percentage="0.044590"/>
+            </olci:missingElements>
+          </olci:olciProductInformation>
+        </xmlData>
+      </metadataWrap>
+    </metadataObject>
+    <metadataObject ID="timeCoordinatesAnnotation" classification="DESCRIPTION" category="DMD">
+      <dataObjectPointer dataObjectID="timeCoordinatesData"/>
+    </metadataObject>
+    <metadataObject ID="geoCoordinatesAnnotation" classification="DESCRIPTION" category="DMD">
+      <dataObjectPointer dataObjectID="geoCoordinatesData"/>
+    </metadataObject>
+    <metadataObject ID="qualityFlagsAnnotation" classification="DESCRIPTION" category="DMD">
+      <dataObjectPointer dataObjectID="qualityFlagsData"/>
+    </metadataObject>
+    <metadataObject ID="tieGeoCoordinatesAnnotation" classification="DESCRIPTION" category="DMD">
+      <dataObjectPointer dataObjectID="tieGeoCoordinatesData"/>
+    </metadataObject>
+    <metadataObject ID="instrumentDataAnnotation" classification="DESCRIPTION" category="DMD">
+      <dataObjectPointer dataObjectID="instrumentDataData"/>
+    </metadataObject>
+    <metadataObject ID="tieMeteoAnnotation" classification="DESCRIPTION" category="DMD">
+      <dataObjectPointer dataObjectID="tieMeteoData"/>
+    </metadataObject>
+    <metadataObject ID="tieGeometriesAnnotation" classification="DESCRIPTION" category="DMD">
+      <dataObjectPointer dataObjectID="tieGeometriesData"/>
+    </metadataObject>
+  </metadataSection>
+  <dataObjectSection>
+    <dataObject ID="Oa01_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="28999642">
+        <fileLocation locatorType="URL" href="Oa01_radiance.nc"/>
+        <checksum checksumName="MD5">a350cb802b7583045e97af404d66d699</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa02_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="30624092">
+        <fileLocation locatorType="URL" href="Oa02_radiance.nc"/>
+        <checksum checksumName="MD5">c51c6223eed1232f7b8fb730f0d888a2</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa03_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="27050671">
+        <fileLocation locatorType="URL" href="Oa03_radiance.nc"/>
+        <checksum checksumName="MD5">631356e2a0239ee02e5407b47c68f4f6</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa04_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="26659725">
+        <fileLocation locatorType="URL" href="Oa04_radiance.nc"/>
+        <checksum checksumName="MD5">8b3c8e73f3d2ca71545fe90423998e33</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa05_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="29522715">
+        <fileLocation locatorType="URL" href="Oa05_radiance.nc"/>
+        <checksum checksumName="MD5">bce2abd0ec96f0107767e8af2d2ebae7</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa06_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="25641811">
+        <fileLocation locatorType="URL" href="Oa06_radiance.nc"/>
+        <checksum checksumName="MD5">1aa7301f7ffaec3c6444d23aeaa07318</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa07_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="26747851">
+        <fileLocation locatorType="URL" href="Oa07_radiance.nc"/>
+        <checksum checksumName="MD5">4f056b639690c2415e5eb319a12483e3</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa08_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="27741337">
+        <fileLocation locatorType="URL" href="Oa08_radiance.nc"/>
+        <checksum checksumName="MD5">ee03de6b4efa93ff452cf5a970a22218</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa09_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="25959911">
+        <fileLocation locatorType="URL" href="Oa09_radiance.nc"/>
+        <checksum checksumName="MD5">c92f6df4ad2a196183ea9550a2f4fee1</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa10_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="26703467">
+        <fileLocation locatorType="URL" href="Oa10_radiance.nc"/>
+        <checksum checksumName="MD5">0beae2508d784ac703e475e2f671f4a5</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa11_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="28917825">
+        <fileLocation locatorType="URL" href="Oa11_radiance.nc"/>
+        <checksum checksumName="MD5">4d7d011adc185d9cc5f8d17319dbbfb9</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa12_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="30612487">
+        <fileLocation locatorType="URL" href="Oa12_radiance.nc"/>
+        <checksum checksumName="MD5">1d06639f1c8e33bd933b3c937b07e630</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa13_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="33565447">
+        <fileLocation locatorType="URL" href="Oa13_radiance.nc"/>
+        <checksum checksumName="MD5">00aff853161fbdda79bce437d8b0e8de</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa14_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="32248626">
+        <fileLocation locatorType="URL" href="Oa14_radiance.nc"/>
+        <checksum checksumName="MD5">8fa4ef714d9eda438275351d697a5672</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa15_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="37309333">
+        <fileLocation locatorType="URL" href="Oa15_radiance.nc"/>
+        <checksum checksumName="MD5">5bdd2a9dec2a51e6a9948c4f5ee10a55</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa16_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="32076675">
+        <fileLocation locatorType="URL" href="Oa16_radiance.nc"/>
+        <checksum checksumName="MD5">6c0243926f1756df5b7479387122bf9f</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa17_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="33560736">
+        <fileLocation locatorType="URL" href="Oa17_radiance.nc"/>
+        <checksum checksumName="MD5">933bad9fd148ab6294a5f6c95982bb83</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa18_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="31398576">
+        <fileLocation locatorType="URL" href="Oa18_radiance.nc"/>
+        <checksum checksumName="MD5">ed6b06c83f2698f2002f0e9d4e01154a</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa19_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="32356826">
+        <fileLocation locatorType="URL" href="Oa19_radiance.nc"/>
+        <checksum checksumName="MD5">28c1e444a3ae0c912e884c16a789adc8</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa20_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="30935354">
+        <fileLocation locatorType="URL" href="Oa20_radiance.nc"/>
+        <checksum checksumName="MD5">2682b4a659e05e597a1114000e5bf8dd</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="Oa21_radianceData">
+      <byteStream mimeType="application/x-netcdf" size="37606661">
+        <fileLocation locatorType="URL" href="Oa21_radiance.nc"/>
+        <checksum checksumName="MD5">30841f96c954e14e9e89c2123c1ba5bd</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="removedPixelsData">
+      <byteStream mimeType="application/x-netcdf" size="21027031">
+        <fileLocation locatorType="URL" href="removed_pixels.nc"/>
+        <checksum checksumName="MD5">b381991d50f69813932c5875398e2d35</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="qualityFlagsData">
+      <byteStream mimeType="application/x-netcdf" size="1619056">
+        <fileLocation locatorType="URL" href="qualityFlags.nc"/>
+        <checksum checksumName="MD5">c3aeda6529084ec33d0933ba9d7bd517</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="timeCoordinatesData">
+      <byteStream mimeType="application/x-netcdf" size="12621">
+        <fileLocation locatorType="URL" href="time_coordinates.nc"/>
+        <checksum checksumName="MD5">69b770e57c4f8c89449a4e244699ba5f</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="geoCoordinatesData">
+      <byteStream mimeType="application/x-netcdf" size="98508672">
+        <fileLocation locatorType="URL" href="geo_coordinates.nc"/>
+        <checksum checksumName="MD5">0e5dccff53373e078724944dd4166347</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="tieGeoCoordinatesData">
+      <byteStream mimeType="application/x-netcdf" size="2006082">
+        <fileLocation locatorType="URL" href="tie_geo_coordinates.nc"/>
+        <checksum checksumName="MD5">469c161ef3e4bb61abb4f35f878f20da</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="tieGeometriesData">
+      <byteStream mimeType="application/x-netcdf" size="3585769">
+        <fileLocation locatorType="URL" href="tie_geometries.nc"/>
+        <checksum checksumName="MD5">b9fa34d3375b3612ed3e527f0a3728d1</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="tieMeteoData">
+      <byteStream mimeType="application/x-netcdf" size="32364992">
+        <fileLocation locatorType="URL" href="tie_meteo.nc"/>
+        <checksum checksumName="MD5">1aedefc871e34855519c0c52b18c0644</checksum>
+      </byteStream>
+    </dataObject>
+    <dataObject ID="instrumentDataData">
+      <byteStream mimeType="application/x-netcdf" size="664581">
+        <fileLocation locatorType="URL" href="instrument_data.nc"/>
+        <checksum checksumName="MD5">7ac4bf166aa691a937431f465570c544</checksum>
+      </byteStream>
+    </dataObject>
+  </dataObjectSection>
+</xfdu:XFDU>

@@ -1,0 +1,178 @@
+#
+#	Copyright 1995-2004, Advanced Computer Systems , Inc.
+#	Via Della Bufalotta, 378 - 00139 Roma - Italy
+#	http://www.acsys.it
+#
+#	All Rights Reserved.
+#
+#	This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems;
+#	the contents of this file may not be disclosed to third parties, copied or
+#	duplicated in any form, in whole or in part, without the prior written
+#	permission of Advanced Computer Systems, Inc.
+#
+#	$Author$
+#
+#	$Prod: $
+#	$Id$
+#
+#   $Log$
+#   Revision 5.0  2013/06/18 14:40:01  marpas
+#   adoption of libException 5.x standards
+#
+#   Revision 2.0  2006/02/28 09:11:13  marpas
+#   Exception 2.1 I/F adopted
+#
+#   Revision 1.1.1.1  2005/05/18 07:57:07  marpas
+#   Importing libStorageManager
+#
+#   Revision 1.2  2005/02/24 15:57:37  ivafam
+#   Bug Fixed
+#
+#   Revision 1.1.1.1  2005/02/23 11:33:52  ivafam
+#   Import DownloadInventoryFile 
+#
+#
+
+include ../../common/commondefs.mk
+
+EXTCOMPLIBS = \
+        -lxerces-c \
+        $(INFORMIXLIBSMTHREAD)
+
+
+# COSMO Specific libraries
+ifeq ($(PROJECT), Cosmo)
+
+PROJECTFLAG     = -DCOSMO
+PROJECTEXTCOMP  = -lCMAPI_2.0.0
+PROJECTDBLIB    = -lDbCosmoExtended\
+		  -lDbCosmo
+PROJECTAPP      = \
+                -lCosmoApp \
+                -lCosmoLog \
+                -lOSMHandler \
+                -lCMWrapper 
+
+endif
+
+
+# COMPACT STATION Specific libraries
+ifeq ($(PROJECT), Envisat)
+
+PROJECTFLAG     = -DGENERIC_STATION_APP
+PROJECTEXTCOMP  =
+PROJECTDBLIB    = -lDbCryosat
+PROJECTAPP      = -lStationApp
+
+endif
+
+
+
+# CRYOSAT Specific libraries
+ifeq ($(PROJECT), Cryosat)
+
+PROJECTFLAG     =
+PROJECTEXTCOMP  = $(MCFSUBLIBS)
+PROJECTDBLIB    = -lDbCryosat
+PROJECTAPP      = -lCryosatApp \
+                  $(MCFLIB)
+endif
+
+# GOCE Specific libraries
+ifeq ($(PROJECT), Goce)
+
+PROJECTFLAG     =
+PROJECTEXTCOMP  = $(MCFSUBLIBS)
+PROJECTDBLIB    = -lDbCryosat
+PROJECTAPP      = -lCryosatApp \
+                  $(MCFLIB)
+
+endif
+
+  USERFLAG = $(PROJECTFLAG)
+
+  LIBRARYNAME = DownloadInventoryFile
+
+  VERSIONFILE = 
+
+
+
+   C++SOURCES = \
+   			smV.C \
+			SMInterface.C \
+			SMInterfaceFactoryMethod.C \
+			ARFInterfaceFactoryMethod.C \
+			ARFStorageManager.C \
+			dbDownloadInventoryFile.C \
+			DownloadInventoryFile.C 
+				
+
+
+
+LIBS =\
+		$(PROJECTAPP) \
+		-lDbConfiguration\
+		-lExplWrapper \
+		-lExplOrbWrapper \
+		$(PROJECTDBLIB) \
+		-lDbSpace \
+		-lResultManager \
+		-lQueryPref \
+		-lDbData\
+		-lDbBroadcast \
+		-lBroadcast\
+		-lConfiguration\
+		-lThread\
+		-lSignal \
+		-lDbClient \
+		-lGraphicAttributes \
+		-lDbGeo \
+		-lDateTime \
+		-lOrbitPropagator \
+		-lTimeConverter \
+		-lDbBasic \
+		-lApp \
+		-lXMLResources\
+		-lMessage \
+		-lFeatures \
+		-lResources \
+		-lQtException \
+		-lFile \
+		-lHtml \
+		-lTimer \
+		-lRegExp \
+		-lException \
+		-lARFClient \
+		-lHSM_FileClient \
+		-lHSM_Common\
+		-lexplorer_orbit \
+		-lexplorer_lib \
+		-lexplorer_file_handling \
+		-lxml2 \
+		$(EXTCOMPLIBS) \
+		$(PROJECTEXTCOMP) \
+		-lm \
+		-ldl \
+		-lcrypt \
+		-lpthread
+
+EXES =  \
+	DownloadInventoryFile\
+	
+
+#prevent remotion of objects, target and versioning
+      VERSIONRULE =
+      ALLRULE = alltest
+      TARGETFILES=$(EXES)
+      CLEANTESTRULE=
+
+
+$(TARGETFILES):  $(OBJECTS) $(LIB_INTEGRATION_PATH)/lib/*.a
+	$(CXX) $(LDOPTS) $(CXXFLAGS) $(LIBRARYPATH) -o $@  $(OBJECTS)  $(LIBS) 
+
+cleanspecific:
+
+helpspecific:
+
+include ../../common/commonrules.mk
+

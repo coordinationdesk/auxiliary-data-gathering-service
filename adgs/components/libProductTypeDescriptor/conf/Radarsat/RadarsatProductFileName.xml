@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<ProductFileNameConf>
+	<EosProductFileName>
+		<MissionID>RS</MissionID>
+		<FileNameVersion>0001</FileNameVersion>
+		<FileRootSize>18</FileRootSize>
+		<FileNameSize>55</FileNameSize>
+		<!-- Permitted Product file extensions -->
+		<!-- WARNING: Methods returning only 1 filename use first extension of this list -->
+		<List_of_File_Ext count="2">
+			<File_Ext>DBL</File_Ext>
+			<File_Ext>EEF</File_Ext>
+		</List_of_File_Ext>
+		<!-- Permitted Product file classes -->
+		<List_of_File_Classes count="6">
+			<File_Class>TEST</File_Class>
+			<File_Class>OPER</File_Class>
+			<File_Class>SUBS</File_Class>
+			<File_Class>OFFL</File_Class>
+			<File_Class>NRT_</File_Class>
+			<File_Class>RPRO</File_Class>		
+		</List_of_File_Classes>
+		<List_of_Level0_Product_Id count="0"></List_of_Level0_Product_Id>
+		<List_of_Level1_Product_Id count="0"></List_of_Level1_Product_Id>
+		<List_of_Level2_Product_Id count="7"></List_of_Level2_Product_Id>
+	</EosProductFileName>
+</ProductFileNameConf>

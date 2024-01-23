@@ -1,0 +1,167 @@
+<?xml version="1.0" standalone="yes"?>
+<RollingArchiveRoot>
+	<RollingArchive>
+	
+		<!-- Agent restart time -->
+		<RestartTime>86400</RestartTime>
+	
+		<!-- time between two Configuration Reloading [s]  
+		     Missing tag: set to default (cf. log/code) -->
+		<ReloadConfPeriod>60</ReloadConfPeriod>
+
+		<!-- Time interval to execute Special Rolling Policies [s] 
+		     Note: Special Rolling Policies are anyway triggered when a new nominal policy starts. 
+		     Missing tag: set to default (cf. log/code) -->
+		<SpecialPoliciesTimerSec>3600</SpecialPoliciesTimerSec>
+		
+		<!-- Max number of policies can be queued to be run
+		     Missing tag: set to default (cf. log/code)-->
+		<PoliciesRunMax>10</PoliciesRunMax>
+
+		<!-- Configured threshold to fetch (for each working loop) only N items from each rolling policy.
+		     This is useful when a large number of inventoried items are stored. Service is more reactive.
+		     Missing tag or set to 0: fetch all
+		     This configuration can be overridden by the specific policy setting -->
+		<FetchRowsLimit>100</FetchRowsLimit>
+
+		<!-- Policies Idle definition.
+		     A policy returns x items. If x < NumItems ==> The policy will be Idle for y Hours. 
+		     This configuration can be overridden by the specific policy setting -->
+		<PolicyIdle>
+			<!-- Missing tag or set to 0: set to the same value of FetchRowsLimit 
+			     Value must be <= FetchRowsLimit (misconfiguration is fixed at runtime) -->
+			<NumItems>100</NumItems>
+			<!-- Missing tag or set to 0: set to default (cf. log/code) -->
+			<IdleTime unit="hours">6.0</IdleTime>
+		</PolicyIdle>
+
+		<!-- Expert Configuration Settings -->
+		<ExpertSection>
+			<!-- By default Items involved by on-going operations are preserved. In particular:
+			     - items going to be exported
+			     - itmes going to be migrated to asynch storages
+			     In this section can be configured additional custom rules to preserve items.
+			     Missing tag: no custom preserving rules applied
+			     Notes: 
+			     - A set of specific items must be preserved by setting the manual rolling with the Keep action.
+			       This configuration aims at preserving items matching a generic condition.
+			     - Agent Restart is requested to take in charge this configuration section.
+			     - Custom rule must return a table with a single column named id_inv, containing set of inventory ids to be preserved.
+			     - Complex query may affect the performances
+			-->
+			<CustomPreservedItems count="">
+				<!--Rule><![CDATA[select inv.id_inv as id_inv from t_inventory inv where inv.startorbitnumber >= 1200]]></Rule-->
+				<!--Rule><![CDATA[select inv.id_inv as id_inv from t_inventory inv where inv.cloud_pctg <= 2.0]]></Rule-->
+			</CustomPreservedItems>
+		</ExpertSection>
+
+		<!-- Rolling Warning settings.
+		     Missing tag or enabled=false: do not warning -->
+		<Warnings enabled="false" count="">
+			<warning event="migration_error" enabled="false" /> <!-- rolled an item that failed a migration to asynch storage -->
+			<warning event="export_error"    enabled="false" /> <!-- rolled an item that failed an export -->
+		</Warnings>
+
+		<!-- Rolling Reports settings
+			Missing tag Report or enabled=false: do not generate report -->
+		<Report enabled="true">
+			<!-- Name of the Rolling Report 
+				centreId: CentreId, from StationConf
+				now-compact: now as YYYYMMDDTHHMMSS
+				rollingTime-compact: rolling event time. as YYYYMMDDTHHMMSS
+                                E.g.:  S2__OPER_REP_UPD____CGS1_20140213T120102_V20140213T120100_20140213T120100.EOF -->
+			<FileName>S2__OPER_REP_UPD____${centreId}_${now-compact}_V${rollingTime-compact}_${rollingTime-compact}.EOF</FileName>
+
+			<!-- The Absolute path where the report has to be written -->
+			<OutBasket>/tmp/roll/reports/</OutBasket>
+			
+			<!-- The Absolute path for temporary internal files needed for report generation -->
+			<PrivateWorkingDir>/tmp/roll/reports/_privateWorkingDir_/</PrivateWorkingDir>
+
+			<!-- Filter Rolled items to be included in the rolling report -->
+			<ItemFilter>
+				<!-- Regular expression matching the rolled items to be included in the report 
+					Empty value: do not apply inclusive filter -->
+				<IncludeRe></IncludeRe> 
+				<!-- Regular expression matching the rolled items to be excluded from the report 
+					Empty value: do not apply exclusive filter -->
+				<ExcludeRe></ExcludeRe> 
+			</ItemFilter>
+			
+			<!-- Maximum number of rolled items that a single report file can contain 
+				Missing tag: default value (cf. code) -->
+			<MaxItemsPerReport>35000</MaxItemsPerReport>
+
+			<!-- Report parameters -->
+			<Params>
+				<Mission>Sentinel-2</Mission>
+				<File_Class>OPER</File_Class>
+				<File_Type>REP_UPD___</File_Type>
+				<Creator>DPC_</Creator><!-- shuold be AI, but xsd need to be updated to allow it -->
+				<CreatorVer>0001</CreatorVer>
+				<!-- Define how the pdi id is formatted in report. You can use the inventory fields: ${uniqueid}, ${filename}, ${fileversion}.
+					Missing tag or empty value: use ${uniqueid}
+					Some Examples:
+					 - "${uniqueid}"
+					 - "<File_Name>${filename}</File_Name><File_version>${fileversion}</File_version>"
+					 - "${filename}" -->
+				<PdiIdTemplate>${filename}</PdiIdTemplate>
+			</Params>
+
+			<!-- Report validation -->
+			<Validation enabled="false">
+				<Schema>/tmp/roll/schema/DATA_STRUCTURE/AI_PDISetUpdateReport.xsd</Schema>
+			</Validation>
+			
+			<!-- Content Check on Rolling report. Boolean Xpath expression on report. 
+				Expression false => report is not delivered (removed) -->
+			<ContentCheck enabled="false"><![CDATA[count( //*[local-name() = 'ItemMetadataUpdate'] ) > 0]]></ContentCheck>
+
+			<!-- Optionally format conversions can be done specifying a set of xsl file 
+				removeOriginal: remove original report after the conversion -->
+			<XsltFormatConverter enabled="true" removeOriginal="true">
+				<Conversions>
+					<Conversion>
+						<!-- Filename conversion -->
+						<FileRename from="REP_UPD__" to="REP_UPD_A"/>
+						<!-- Content conversion -->
+						<xslFile>/tmp/roll/xsl/rollingReportExcludeMsi.xsl</xslFile>
+						<!-- The Absolute path where the converted report has to be written.
+							Empty means: use the original report's one -->
+						<OutBasket/>
+						<!-- Converted Report validation.
+							Empty means: use the original report's one -->
+						<Validation enabled="false"/>
+						<!-- Converted Report content check.
+							Empty means: use the original report's one -->
+						<ContentCheck enabled="true"/>
+					</Conversion>
+					<Conversion>
+						<FileRename from="" to=""/>
+						<xslFile>/tmp/roll/xsl/rollingReportIncludeMsi.xsl</xslFile>
+						<OutBasket/>
+						<Validation enabled="false"/>
+						<ContentCheck enabled="true"/>
+					</Conversion>
+				</Conversions>
+			</XsltFormatConverter>
+
+		</Report>
+
+		<!-- ### -->
+		<!-- # THIS SECTION HOSTS ADDITIONAL CONFIGURATIONS NEEDED BY SOME ROLLING POLICIES. -->
+		
+		<!-- Rolling policy S2ParametersBased / TimeThreshold event="Downloaded"
+		     Tag can be removed if this policy is not used. -->
+		<S2ParametersBasedSelector>
+			<DownloadedTimeEvent>
+				<!-- Client names to be considered (or inclusive) in the 'downloaded' elapsed time event -->
+				<List_Of_Client count="">
+					<Client>UnknownClient</Client>
+				</List_Of_Client>
+			</DownloadedTimeEvent>
+		</S2ParametersBasedSelector>
+		
+	</RollingArchive>
+</RollingArchiveRoot>
+

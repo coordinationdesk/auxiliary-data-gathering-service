@@ -1,0 +1,21 @@
+4.1.0
+CCDS-21: Db broadcast listener renamed and moved in the module
+------------------------------
+4.0.0
+CCDS-21: Db broadcast messages are received via MQTT now: application class modified accordingly
+------------------------------
+3.0.0
+Deprecated SignalHandler and doRestart() removed.
+------------------------------
+2.48.3
+MP: no more db related deprecated methods/classes
+------------------------------
+2.48.2
+MP: compilation warnings cleanup
+------------------------------
+2.48.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.48.0
+
+Automatically generate from revision "version "2.48""

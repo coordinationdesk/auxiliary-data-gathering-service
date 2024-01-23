@@ -1,0 +1,37 @@
+<?xml version="1.0" standalone="yes"?>
+<BaseMachineConf>   
+
+<TlDaemon>
+	<TLD_Orders_Root_Path>/data/ADGS/tld_productions/</TLD_Orders_Root_Path>
+	<TLD_WS_Config_Path>/usr/local/conf/ADGS/TlDaemon/WSConfig.xml</TLD_WS_Config_Path>
+	<TLD_FileOrderMgr>
+		<Path></Path>
+	</TLD_FileOrderMgr>
+	<TLD_InteractiveOrderMgr>
+		<Path>/data/ADGS/tmp/orders/</Path>
+	</TLD_InteractiveOrderMgr>
+	<TLD_Scheduler_Path>/usr/local/components/ADGS/bin/Scheduler</TLD_Scheduler_Path>
+	<TLD_Plugins_Path>/usr/local/components/ADGS/plugins/TlDaemonPlugins</TLD_Plugins_Path>
+</TlDaemon>
+
+
+<Scheduler>
+	<ReservedDiskSpaceQuota unit="MB">0</ReservedDiskSpaceQuota>
+	<Scheduler_Plugins_Path>/usr/local/components/ADGS/plugins/SchedulerPlugins</Scheduler_Plugins_Path>
+</Scheduler>
+
+<XML_DTDConfiguration>
+	<EnableDTDRedirect>true</EnableDTDRedirect>
+	<RedirectPath>/usr/local/conf/ADGS/dtd/</RedirectPath>
+	<ValidatorToolOutMaxLength>5242880</ValidatorToolOutMaxLength>
+</XML_DTDConfiguration>
+
+<DaemonLogRotationPolicy>
+	<Mode>SIZE</Mode>
+	<AgingThreshold>86400</AgingThreshold>
+	<SizeThreshold>262144000</SizeThreshold>
+	<OldLogsToKeep>5</OldLogsToKeep>
+	<CompressOldLogs>TRUE</CompressOldLogs>
+</DaemonLogRotationPolicy>
+
+</BaseMachineConf>

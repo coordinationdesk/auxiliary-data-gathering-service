@@ -1,0 +1,243 @@
+#!/bin/sh
+#
+# Copyright 2017 Advanced Computer Systems , Inc.
+# Via Della Bufalotta, 378 - 00139 Roma - Italy
+# http://www.acsys.itA.C.S. - Advanced Computer Systems S.p.A.
+# 
+# This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems, S.p.A.;
+# the contents of this file may not be disclosed to third parties, copied or
+# duplicated in any form, in whole or in part, without the prior written
+# permission of Advanced Computer Systems, S.p.A.
+#	
+#
+#   $Prod: A.C.S. Databases creation and initialization script $
+#
+#	$Id$
+#
+#	$Author$
+#
+#	$Log$
+
+
+# Source function library
+. /etc/rc.d/init.d/functions
+
+
+export EXE_DIR=`dirname $0`
+cd $EXE_DIR
+export EXE_DIR=`pwd`
+
+
+export DBNAME=$1
+export SMNAME=$2
+export INVRELTABLE=$3
+export PARFILE=$4
+export PRJDIR=$5
+export ADC="true"
+export LOG_FILE=/tmp/$(basename $0).log
+export SQL_FILE=/tmp/$(basename $0)_tempCmd.sql
+export RES_FILE=/tmp/$(basename $0)_tempResult.res
+
+shift 5
+for arg in $@
+do
+	case $arg in
+		'-adcfalse') ADC="false"; shift 1;;
+	esac
+done
+
+
+
+usage() {
+	echo "usage: $(basename $0) <dbname> <SM name> <SM invrelationtable> <SM parameter file> <Project dir> [-adcfalse, SM allow default cost is false (default true)]"
+	echo ""
+	exit 1
+}
+
+
+clean() {
+	if test -e $SQL_FILE; then rm -f $SQL_FILE; fi
+	if test -e $RES_FILE; then rm -f $RES_FILE; fi
+}
+
+res_msg() {
+	case "$1" in
+		'0')
+			echo_success
+			echo ""
+			;;
+		'1')
+			echo_failure
+			echo ""
+			;;
+		'2')
+			echo_warning
+			echo ""
+			;;
+		+ )
+			;;
+	esac
+}
+
+
+exit_error() {
+	echo "" >> $LOG_FILE
+	echo $dashLine | tee -a $LOG_FILE
+	echo "*** CLEANING ABORTED ***" | tee -a $LOG_FILE
+	echo "See log file $LOG_FILE"
+	echo "" | tee -a $LOG_FILE
+	exit 1
+}
+
+
+logger() {
+	case $1 in
+		'-B')
+			echo -ne "$2"
+			echo -e "$(date +'%Y-%m-%d %H:%M:%S.%N') $2" >> $LOG_FILE
+			;;
+		'-L')
+			echo "$(date +'%Y-%m-%d %H:%M:%S.%N') $2" >> $LOG_FILE
+			;;
+		* )
+			;;
+	esac
+}
+
+
+init_file() {
+	if ! test -e $2
+	then
+		touch $2
+		if [ "$?" != 0 ]
+		then
+			echo "*** ERROR!!! init_file() - Cannot create $1 file ***"
+			echo "trying to write: $2"
+			echo ""
+			exit 1
+		fi
+		chmod a+w $2
+	fi
+	
+	case $1 in
+		'log')
+			echo "" >> $2
+			echo "" >> $2
+			echo "###################################################################" >> $2
+			echo "# $(date)" >> $2
+			echo "###################################################################" >> $2
+			;;
+		* )
+			echo "" > $2
+			;;
+	esac
+}
+
+
+check_conn() {
+	logger -B "Checking connection on $DBNAME ..."
+	
+	`psql -h localhost -U $DBUSER $DBNAME -c "\l" 1>$RES_FILE 2>>$LOG_FILE`
+	if [ "$?" != 0 ]
+	then
+		res_msg 1
+		echo "*** ERROR!!! Cannot connect to $DBNAME ***" | tee -a $LOG_FILE
+		exit_error
+	fi
+	
+	logger -L ">> connection done" >> $LOG_FILE
+	res_msg 0
+}
+
+
+
+
+exe_cmd() {
+	logger -B "  executing command ..."
+	
+	`psql -h localhost -U $DBUSER $DBNAME -v 'ON_ERROR_STOP=on' -f $SQL_FILE 1>$RES_FILE 2>>$LOG_FILE`
+	if [ "$?" != 0 ]
+	then
+		res_msg 1
+		echo "*** ERROR!!! Error during command execution ***" | tee -a $LOG_FILE
+		echo -e "query is: \n$(cat $SQL_FILE)" >> $LOG_FILE
+		exit_error
+	fi
+	
+	logger -L "  >> query executed successfully"
+	res_msg 0
+}
+
+
+
+
+
+################################   MAIN   ################################
+##########################################################################
+
+# Source function library
+. /etc/rc.d/init.d/functions
+
+export dashLine="-------------------------------------------------------------------"
+echo ""
+echo "Populate t_storagemanager table"
+echo $dashLine
+
+
+if [ -z "$DBNAME" -o -z "$SMNAME" -o -z "$INVRELTABLE" -o -z "$PARFILE" -o -z "$PRJDIR" ]
+then
+	usage
+fi
+
+if [ "$(whoami)" != "postgres" ]
+then
+	echo -e "*** ERROR!!! You must be postgres to run this script ***\n"
+	exit 1
+fi
+
+
+logger -B " Db name: $DBNAME;" 
+logger -B " SM name: $SMNAME;" 
+logger -B " invrelation table: $INVRELTABLE;"
+logger -B " Parameter file: $PARFILE;" 
+logger -B " Project directory $PRJDIR;"
+logger -B " ADC $ADC\n"
+echo $dashLine
+
+export DBUSER="acsdba"	
+export PGPASSWORD='estestest'
+
+clean
+
+init_file log $LOG_FILE
+init_file sql $SQL_FILE
+init_file res $RES_FILE
+
+
+PARFILEPATH=$EXE_DIR/$PRJDIR/$PARFILE
+logger -L "Parameter file path $PARFILEPATH"
+
+# check the conf file exists
+if [ ! -f $PARFILEPATH ]
+then
+	echo "*** ERROR!!! $PARFILEPATH file not found ***"
+	exit -1
+fi
+
+PARAMETERS=`cat $PARFILEPATH`
+logger -L "Parameter value: $PARAMETERS"
+check_conn
+
+echo "" > $SQL_FILE
+echo -e "\tINSERT INTO t_storagemanager (type,name,description,invrelationtable,parameters, allowdefaultcost)" >> $SQL_FILE
+echo -e "\tVALUES ( 'ACSISM','$SMNAME','Standard ISM','$INVRELTABLE', '$PARAMETERS', '$ADC');"  >> $SQL_FILE
+
+
+exe_cmd
+
+echo $dashLine | tee -a $LOG_FILE
+echo ">> INSERT COMPLETED" | tee -a $LOG_FILE
+echo "" | tee -a $LOG_FILE
+clean
+exit 0
+

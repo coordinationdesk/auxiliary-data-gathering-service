@@ -1,0 +1,8 @@
+#ifndef _ProjectStandaloneAppInclude_
+#define _ProjectStandaloneAppInclude_
+
+#include <ADGSStandaloneApp.h>
+
+#define PROJECT_STANDALONE_APP ADGSStandaloneApp
+
+#endif //_ProjectStandaloneAppInclude_

@@ -1,0 +1,163 @@
+0.0.56
+Updated for S1 and S2 new file type CCDS-112
+--------------------------------------------------
+0.0.55
+Updated configuration and filetypes (by M Airoldi)
+--------------------------------------------------
+0.0.54
+Updated SRVNotificationDispatcher configuration
+--------------------------------------------------
+0.0.52
+Updated to fix s5p  configuration
+--------------------------------------------------
+0.0.51
+Updated to manage Unavailability reports for S3 and S5P'
+--------------------------------------------------
+0.0.50
+Update to add 4 S3 filetypes:
+S3_SR_2_SICNAX,S3_SR_2_SICSAX,S3_SR_2_SIFNAX,S3_SR_2_SIFSAX
+--------------------------------------------------
+0.0.49
+Update to fix  new libDB and last S1 report file
+--------------------------------------------------
+0.0.48
+Update to take advantage of new Pistache lib
+--------------------------------------------------
+0.0.47
+Update to get project with submodules
+--------------------------------------------------
+0.0.46
+Fix Filetype managed by preinventory
+--------------------------------------------------
+0.0.45
+Fix Filetype managed and Preinventory
+--------------------------------------------------
+0.0.44
+Fix AUXIP Preinventory to proper manage S2 FOS auxiliary
+--------------------------------------------------
+0.0.43
+Fix conf Attribute Extractor
+--------------------------------------------------
+0.0.42
+Fix Attribute Extractor
+--------------------------------------------------
+0.0.41
+Fix Preinventory to manage input product with different name
+--------------------------------------------------
+0.0.40
+Fix configuration file
+--------------------------------------------------
+0.0.39
+Add LTAInventoryMetricsTracker on management package
+--------------------------------------------------
+0.0.38
+Update S1 Attribute conf and fixed filtype
+--------------------------------------------------
+0.0.37
+Update filtypecomp
+--------------------------------------------------
+0.0.36
+Update filtype list and Preinventiory
+--------------------------------------------------
+0.0.35
+Update Satellite acronym  and SRVAttributeExtractor configuration
+--------------------------------------------------
+0.0.34
+Update Spec to avoid preventive table delete
+--------------------------------------------------
+0.0.33
+Update Schema PostgreSQL Scripts
+--------------------------------------------------
+0.0.32
+Updated Managed filetypes
+--------------------------------------------------
+0.0.31
+Typo on application
+---------------------------------------------------
+0.0.30
+Created frontend package and introduced quota service
+---------------------------------------------------
+0.0.29
+Fix management spec
+---------------------------------------------------
+0.0.28
+Clean S3 file type
+---------------------------------------------------
+0.0.27
+typo
+---------------------------------------------------
+0.0.26
+Rename filtypecomp
+---------------------------------------------------
+0.0.25
+Rename filtype and completed preinventory
+---------------------------------------------------
+0.0.24
+Moving working path to data and first preinventory
+---------------------------------------------------
+0.0.23
+Broken path
+---------------------------------------------------
+0.0.22
+Broken path  and missing executable
+---------------------------------------------------
+0.0.21
+fix service and executable permission
+---------------------------------------------------
+0.0.20
+update to have service prefix ccds and added nw mng package
+---------------------------------------------------
+0.0.19
+wrong sequence on spec
+---------------------------------------------------
+0.0.18
+typo on spec name2
+---------------------------------------------------
+0.0.17
+typo on spec name
+---------------------------------------------------
+0.0.16
+6th Attempt configure SRVDB schema
+---------------------------------------------------
+0.0.15
+5th Attempt configure SRVDB schema
+---------------------------------------------------
+0.0.14
+4th Attempt configure SRVDB schema
+---------------------------------------------------
+0.0.12
+3th Attempt configure SRVDB schema
+---------------------------------------------------
+0.0.11
+2nd Attempt configure SRVDB schema
+---------------------------------------------------
+0.0.10
+2nd Attempt configure SRVDB schema
+---------------------------------------------------
+0.0.9
+Attempt configure SRVDB schema
+---------------------------------------------------
+0.0.8
+Attempt to build project with jenkins
+---------------------------------------------------
+0.0.7
+Attempt to build project with jenkins
+---------------------------------------------------
+0.0.6
+Attempt to build project with jenkins
+---------------------------------------------------
+0.0.5
+Attempt to build project with jenkins
+---------------------------------------------------
+0.0.4
+Attempt to build project with jenkins
+---------------------------------------------------
+0.0.3
+Attempt to build project with jenkins
+---------------------------------------------------
+0.0.2
+Second release of the module
+---------------------------------------------------
+0.0.1
+First release of the module
+---------------------------------------------------

@@ -1,0 +1,30 @@
+1.21.3
+prepareMetadata updated: when longitude diff is higher that 120 degrees, polygon is used in place of the box. CCDS-44 task
+------------------------------
+1.21.2
+test's Makefile improved
+------------------------------
+1.21.1
+MP: compatible with libPreInventoryBase 2.0.0 and backward
+test compilation fixed
+------------------------------
+1.21.0
+Minor version release due to jira S3MARINE-392.
+SENTINEL-3C and SENTINEL-3D entries added to map returned by GRIBPreInventory::createSatellitesIdMap method.
+------------------------------
+1.20.1
+The name of the lib grib can be overriden in the project definition file
+Makefile updated
+------------------------------
+1.20.0
+Fixing Makefile for using DSOSPECIFICDEPS
+------------------------------
+1.19.2
+Fixing correct use of libException macros (due to libException 7.0.0)
+------------------------------
+1.19.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.19.0
+
+Automatically generate from revision "version "1.19""

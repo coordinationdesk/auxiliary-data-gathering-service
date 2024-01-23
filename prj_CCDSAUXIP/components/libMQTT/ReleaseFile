@@ -1,0 +1,138 @@
+6.1.1
+[CPS-101] EC:: Added a debug message.
+--------------------------------------------------------------------------------
+6.1.0
+[PLAT-73] EC:: Return values for isConnected and isSubscribed (if DISABLE_MQTT is set) can be defined by the caller.
+--------------------------------------------------------------------------------
+6.0.3
+[PLAT-73] EC:: DD:: In case of DISABLE_MQTT set, method MQTTSubscriber::isSubscribed() always returns true.
+--------------------------------------------------------------------------------
+6.0.2
+The connect timeout was not properly forwarder during the activate subscription
+Some verbose messages have been moved from INFO to DEBUG
+DEBUG WRITE macro used instead of BEGIN and END debug
+Connect sleep strategy improved
+--------------------------------------------------------------------------------
+6.0.1
+[CPS-101] EC:: Added INFO message
+------------------------------------------------------------------------------------
+6.0.0
+[CPS-101] EC:: Merged to master. Code rationalization. Added class MQTTMultiSubscriber. Got rid of "free" topics.
+------------------------------------------------------------------------------------
+5.3.0
+Adding MQTTSubIdHelper.h to be filled by libDbClient or manually 
+code rationalization everywhere
+------------------------------------------------------------------------------------
+5.2.2
+LTA-420: check on stop controller re-introduced in MQTTSubscriber::activateSubscription to enable the possibility to force the interruption of waiting during subscription activation.
+Test updated
+------------------------------------------------------------------------------------
+5.2.1
+In case MQTT is disabled, the check on topic in the MQTTSubscriber returns true to avoid complaints.
+------------------------------------------------------------------------------------
+5.2.0
+Added the shutDownMQTTLayer() protected function in MQTTWorker.
+Any class that inherits from MQTTWorker SHALL invoke shutDownMQTTLayer() in its DTOR
+to avoid potential call on the callback virtual functions after the class has been
+destroyed.
+http://wiki.acs/index.php/PDS_Library:_libMQTT#WARNING:_on_subclassing_and_destructors
+------------------------------------------------------------------------------------
+5.1.3
+[LTA-182] EC:: Flag DISABLE_MQTT not completely handled -- fixed.
+------------------------------------------------------------------------------------
+5.1.2
+[LTA-182] EC:: Unit tests added: testMQTTHeartBeatClient testMQTTHeartBeatServer
+------------------------------------------------------------------------------------
+5.1.1
+[LTA-182] EC:: HeartBeat topic generation not depending on DbConnection anymore
+------------------------------------------------------------------------------------
+5.1.0
+[LTA-182] EC:: Added class to handle HeartBeats
+------------------------------------------------------------------------------------
+5.0.4
+[LTA-334] EC:: LP:: Added aimed exception: ConnectionLookupError, generated in case of DNS Lookup errors
+------------------------------------------------------------------------------------
+5.0.3
+EC:: Flag DISABLE_MQTT not totally handled -- fixed.
+------------------------------------------------------------------------------------
+5.0.2
+EC:: Unit test added: testMQTTPubSubThreads
+------------------------------------------------------------------------------------
+5.0.1
+Some useless comments removed
+------------------------------------------------------------------------------------
+5.0.0
+The event loop is now started before attempting to establish a new connection in async way
+This will avoid the exception thrown in case the broker host is reachable but
+the MQTT server is not running.
+At each re-connect attempt the mosquitto mqtt client is deleted and re-created from scratch
+to cope with interferences that can occurr in case of a new async connect is performed using
+the same client that has been already used and disconnected.
+------------------------------------------------------------------------------------
+4.0.3
+LTA-57: EC:: LP:: added force flag to stopEventLoop in disconnect method. mosquitto_reconnect_delay_set invoked just before
+calling mosquitto_loop_stop. Test added.
+----------------------------------------------------------------
+4.0.2
+use -DDISABLE_MQTT in OTHERFLAGS in <PROJECT>.defs.mk to remove any dependency from 
+libmosquitto and its symbols as in
+OTHERFLAGS = ... -DDISABLE_MQTT ...
+NOTE: do not redefine OTHERFLAGS, but update the nique definition in the above mentioned file.
+----------------------------------------------------------------
+4.0.1
+Using a global appllication stop controller as default stop controller.
+----------------------------------------------------------------
+Added MQTTHelper class exposing static function to set and get default
+values for the agreed topic composing convention
+organization/subsystem/subsystemid/entity/entityid/<specific part>
+The default values are saved in the global Mappleton key value store (from lib exception)
+----------------------------------------------------------------
+3.1.2
+EC:: Interface Updated by removing a default parameter
+----------------------------------------------------------------
+3.1.1
+Patch release for issue [LTA-80]: EC:: LP:: StopController should be checked only in MQTTWorker::connect method.
+----------------------------------------------------------------
+3.1.0
+Minor release for issue [LTA-80]: StopController attribute added.
+----------------------------------------------------------------
+3.0.1
+Patch release for issue [CI-57]: publishText api does not include the char
+terminator string. 
+----------------------------------------------------------------
+3.0.0
+Major release for issue [CI-57]: MQTTCommon removed. MQTT_QOS moved into MQTTWorker
+----------------------------------------------------------------
+2.0.0
+Major release for issue [CI-57]: Introduced MQTTCommon::MQTTQoS instead of using plain integers.
+Added topic into MQTTSubscriber constructor. Function setTopic made protected.
+Added checkTopic and checkTopicWithError functionalities for both publishers and subscribers.
+Introduced new publish functionalities that takes the topic as an input parameter. 
+Removed checkPublishPrecondition. Introduced new functionalities to query and reset the internal topic.
+----------------------------------------------------------------
+1.2.0
+Added support for username and password credential in the configuration object
+----------------------------------------------------------------
+1.1.2
+Memory leak corrected in test files
+----------------------------------------------------------------
+1.1.1
+Test files fixed to correctly link libmosquitto
+----------------------------------------------------------------
+1.1.0
+Added interface to clean retained messages in the base publisher.
+----------------------------------------------------------------
+1.0.0
+First issue of the library.
+It implements a wrapper over libmosquitto https://mosquitto.org/man/libmosquitto-3.html
+
+Detailied documentation is available at
+http://wiki.acs/index.php/PDS_Library:_libMQTT
+
+It lacks, at the moment, the support for
+- client authentication
+- TLS layer
+- client Wills
+----------------------------------------------------------------
+0.0.1
+First release of an empy library

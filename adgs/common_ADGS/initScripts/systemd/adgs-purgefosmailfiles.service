@@ -1,0 +1,17 @@
+[Unit]
+Description=ADGS Purge FOS Files
+Documentation=https://www.exprivia.com
+Requires=network.target
+Wants=adgs-purgefosmailfiles.timer
+After=network.target
+
+[Service]
+Type=oneshot
+
+User=opadgs
+Group=ccds
+
+ExecStart=/usr/local/components/ADGS/scripts/purgeFOSMailFiles.sh
+
+[Install]
+WantedBy=multi-user.target

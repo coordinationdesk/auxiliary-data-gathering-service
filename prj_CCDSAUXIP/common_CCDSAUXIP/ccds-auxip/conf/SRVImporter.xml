@@ -1,0 +1,39 @@
+<Root>
+ <TTProcessEmailNotification>
+   <MailRootKeyConf>FAKE</MailRootKeyConf>
+ </TTProcessEmailNotification>
+ <SRVImporter>
+     <ClusterName>#WORKING_GROUP#</ClusterName>
+    <BackupDir>/data/#WORKING_PATH#/inventory/backup</BackupDir>
+    <ProcessDir>/data/#WORKING_PATH#/inventory/production</ProcessDir>
+    <MaxThreads>8</MaxThreads>
+    <ReloadConfigurationTime>600</ReloadConfigurationTime> <!-- seconds -->
+    <TaskTableDir>/data/#WORKING_PATH#/inventory/conf/tasktables</TaskTableDir>
+    <Wipe_Existing_WD>true</Wipe_Existing_WD>
+    <Clean_Working_Dir>true</Clean_Working_Dir>
+    <Copy_Input_Data>false</Copy_Input_Data>
+    <Scheduler_Path>/opt/exprivia/#WORKING_PATH#/bin/Scheduler</Scheduler_Path>
+    <PopulateInvAnomalies>false</PopulateInvAnomalies>
+    <RestartTime>86400</RestartTime>
+    <PathScanPollingMultiplier>2</PathScanPollingMultiplier>
+    <MinimumScanPeriod>1800</MinimumScanPeriod>
+    <!--AdditionalExtensions enabled="true" count="">
+       <extension mandatory="true">METADATA</extension>
+    </AdditionalExtensions-->
+  </SRVImporter>
+  <Importer>
+    <BackupDir>/data/#WORKING_PATH#/inventory/backup</BackupDir>
+    <ProcessDir>/data/#WORKING_PATH#/inventory/production</ProcessDir>
+    <MaxThreads>8</MaxThreads>
+    <ReloadConfigurationTime>600</ReloadConfigurationTime> <!-- seconds -->
+    <TaskTableDir>/data/#WORKING_PATH#/inventory/conf/tasktables</TaskTableDir>
+    <Wipe_Existing_WD>true</Wipe_Existing_WD>
+    <Clean_Working_Dir>true</Clean_Working_Dir>
+    <Copy_Input_Data>false</Copy_Input_Data>
+    <Scheduler_Path>/opt/exprivia/#WORKING_PATH#/bin/Scheduler</Scheduler_Path>
+    <PopulateInvAnomalies>false</PopulateInvAnomalies>
+    <RestartTime>86400</RestartTime>
+    <PathScanPollingMultiplier>2</PathScanPollingMultiplier>
+    <MinimumScanPeriod>1800</MinimumScanPeriod>
+  </Importer>
+</Root>

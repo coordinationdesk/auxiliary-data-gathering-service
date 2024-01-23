@@ -1,0 +1,65 @@
+<Root>
+    <!--************************************************************************************************************************** 
+        Naming Rules are provided in the form of a regular expression and a list of fields that can be extracted from the filename 
+         using the matches with the sub-regexp enclosed in the parentesis. 
+         For each field, the name (which is used as a key) and the index of the sub-regexp the field is related to must be provided.
+         **************************************************************************************************************************
+         IMPORTANT: 
+         Allowed Field.Name values: 
+         - PlatformName
+         - MissionNumber
+         - FileType
+         - FileClass
+         - StartTime
+         - StopTime
+         - OriginFacility
+         - AbsoluteOrbit
+         - Crc
+         - Extension
+	 - Duration
+	 - Cycle
+	 - RelativeOrbit
+	 - InstanceId
+	 - Version
+        ************************************************************************************************************************** -->
+	<ProductNaming>
+		<List_Of_NamingRules count="4">
+			<NamingRule>
+				<FilenameRegExp>^S1[A-Za-z][[:digit:]]{8}([[:digit:]]{8})[1-2].grb$</FilenameRegExp> 
+				<List_Of_Fields count="1">
+					<Field>
+						<Name>StartTime</Name>
+						<Index>1</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule>
+				<FilenameRegExp>ice_edge_[n-s]h_([[:digit:]]{8}[[:digit:]]{4}).nc$</FilenameRegExp> 
+				<List_Of_Fields count="1">
+					<Field>
+						<Name>StartTime</Name>
+						<Index>1</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule>
+				<FilenameRegExp>IFR_WW3-GLOBAL-30MIN_([[:digit:]]{8}T[[:digit:]]{2})Z.nc$</FilenameRegExp> 
+				<List_Of_Fields count="1">
+					<Field>
+						<Name>StartTime</Name>
+						<Index>1</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule>
+				<FilenameRegExp>^[A-Z0-9_]{3}_([A-Z0-9_]{7})_V([[:digit:]]{8}T[[:digit:]]{6})_G([[:digit:]]{8}T[[:digit:]]{6}).SAFE$</FilenameRegExp> 
+				<List_Of_Fields count="1">
+					<Field>
+						<Name>FileType</Name>
+						<Index>1</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+		</List_Of_NamingRules>
+	</ProductNaming>
+</Root>

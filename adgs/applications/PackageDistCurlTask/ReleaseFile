@@ -1,0 +1,18 @@
+2.0.1
+Command line read using parsedArgs
+----------------------------------
+2.0.0
+SignalHandler dependency removed
+Makefile and ReleaseFile fixed
+---------------------------------------------------------------------------------------------------
+1.12.3
+Automatic load of configuration spaces (implemented by libraries like libFtpCurl) is now performed.
+---------------------------------------------------------------------------------------------------
+1.12.2
+Restored Makefile and ReleaseFile (corrupted by previous commit).
+---------------------------------------------------------------------------------------------------
+1.12.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.12.0
+Automatically generate from revision "version "1.12""

@@ -1,0 +1,39 @@
+10.0.1
+typo and minor changes
+------------------------------
+10.0.0
+dbGiveUpInventoryFile class added and returned from 
+dbGenFileActionFactory::newGiveUpAction(...)
+all the classes derived from dbFileAction (dbGiveUp..., dbDownload... etc) will set the client name to the SMInterface 
+they use getting it from dbFileActionClass 
+------------------------------
+9.0.4
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+9.0.3
+deprecated dbQuery ctors removed
+dbRow ctor fixed
+------------------------------
+9.0.2
+Removed a comma from the query name in "FAUPLSEL t_storagemanager vs prio, cost"
+------------------------------
+9.0.1
+MP: compilation warnings clean-up
+------------------------------
+9.0.0
+Major issue due to libDbData 7.0.0
+no more inventory tree (as with the old S2GPP)
+------------------------------
+8.0.0
+Major issue due to jira ECS-17.
+ dbGenFileActionFactory::getInvSmTableName method from base class declared and implemented. t_inventorysm replaced by string returned by dbFileActionFactoryChain::getInvSmTableName() method.
+------------------------------
+7.35.0
+S2PDGS-237: dbDownloadInventoryFile::FileNotDownloadableException added to be launched if dbInventoryObjectOperatorIF::NotMigrableException is caught.
+------------------------------
+7.34.1
+Patch release automatically generated to instrument version files
+------------------------------
+7.34.0
+
+Automatically generate from revision "version "7.34""

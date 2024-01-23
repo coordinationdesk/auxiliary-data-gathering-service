@@ -1,0 +1,5 @@
+#Caricamento t_storagemanager
+,,,,,,,,,,
+,,,,,,,,,,
+'type','name','description','invrelationtable','parameters'
+'OBJSM','OBJ_SM','Minio Object Storage','t_objsminvrelation','%/usr/local/conf/ADGS/DbConfiguration/csv/StorageManager.xml'

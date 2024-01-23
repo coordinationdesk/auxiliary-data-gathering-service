@@ -1,0 +1,48 @@
+4.4.0
+Added support to make tag at project level 
+To be used in project with submodules
+------------------------------------------
+4.3.0
+The MASTER_GIT check on common module has been moved from Error to Warning
+It is not anymore expected to deal with project coming from CVS and not "ported" to GIT
+The warning message should be removed in the next revision of the Makefile
+QA and PRQA targets removed. The QA tools have been replaced by SonarQube.
+--------------------------------------------------------------------------
+4.2.1
+Added .commands_cache to ignore list.
+----------------
+4.2.0
+PRQA analysis added for project makefile
+needs GITPortingTools >= 9.5.2
+----------------
+4.1.1
+Removed disclaimer of the FORCEPRJTAG when issuing make prjTag
+it was useless and confusing
+----------------
+4.1.0
+make md5 restored
+----------------
+4.0.0
+
+Useless targets removed
+Help pages algined
+----------------
+3.0.0
+Targets 
+- statustag
+- uptostable
+- safeupdate
+rearranged to use GIT tool
+----------------
+2.0.0
+branches referring to CVS have been removed
+----------------
+1.1.1
+Syntax error fixed
+----------------
+1.1.0
+Added project_extrpm and project_inst_scripts to the list of
+good status check and project tag targets
+----------------
+1.0.0
+First release file of the project Makefile

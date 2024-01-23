@@ -1,0 +1,27 @@
+3.0.3
+MP: make warnings cleanup
+------------------------------------------------
+3.0.2
+Amazon libs removed by Makefile.
+------------------------------------------------
+3.0.1
+Patch version due to jira S2PDGS-286
+Amazon lib added if EXPRIVIA_ISM_USE_AWS_S3 compile time flag set.
+------------------------------------------------
+3.0.0
+table for reception changed from t_lta_receptionrules to t_srv_receptionrules
+---------------------------------------------
+2.0.0
+Name change from LTAImporter to SRVImporter
+---------------------------------------------
+1.1.0
+Implements a new virtual method to provide the list of configuration spaces and the configuration main root tag. 
+---------------------------------------------
+1.0.1
+Minor changes (appname, component)
+---------------------------------------------
+1.0.0
+ECS-25
+A LTA specialization of the Importer needs to be created.
+So the Import module has been migrated to libImporterBase and the specializations
+LTAImport and Import hinerit class provided by this module.

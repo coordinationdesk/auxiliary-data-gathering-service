@@ -1,0 +1,5 @@
+<?xml version="1.0" standalone="yes"?>
+	<Scheduler>
+		<ReservedDiskSpaceQuota unit="MB">0</ReservedDiskSpaceQuota>
+		<Scheduler_Plugins_Path>/usr/acs/plugins/SchedulerPlugins</Scheduler_Plugins_Path>
+	</Scheduler>

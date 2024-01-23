@@ -1,0 +1,123 @@
+6.4.0
+[S3MARINE-522]: added convenience 'empty' function to Dir.
+Tests fixed.
+------------------------------------------------------------------------
+6.3.11
+MP: fileOperation01 and corresponding factory is no longer compiled and installed
+------------------------------------------------------------------------
+6.3.10
+MP: getting rid of old warnings.
+After 9 years, if nobody complained the code shall be considered a silent consent.
+------------------------------------------------------------------------
+6.3.9
+MP: some pragma improved and copyright notice fixed
+------------------------------------------------------------------------
+6.3.8
+MP: deprecated function removed in tests
+MP: readdir_r has been deprecated - there is no threadsafe alternative so 
+I'll keep this as long as possible - just removed warning from compiler about obsolescence
+When it should no longer compile an alternative shall be provided or the standard readdir guarded by a global mutex can be used.
+------------------------------------------------------------------------
+6.3.7
+Patch version due to jira S3MARINE-458.
+EC:: && LP:: DigestTree_base::getTreeID symlink resolved only when computing digest and not when computing the directory map (files names in directory)
+------------------------------------------------------------------------
+6.3.6
+Patch version due to jira S3MARINE-458.
+EC:: && LP:: DigestTree_base::getTreeID bug fixed removing File::chdir method. Absolute paths are always used.
+------------------------------------------------------------------------
+6.3.5
+Patch version due to jira S3MARINE-371.
+LP: File::computeMd5Sum improved in error management. FileMD5Th catch(...) properly replaced.
+------------------------------------------------------------------------
+6.3.4
+MP: compilation warnings clean up
+------------------------------------------------------------------------
+6.3.3
+S6JCS-243 DT:: Skipping broken symlinks in File::depthLimitedHardlink
+------------------------------------------------------------------------
+6.3.2
+S6JCS-243 EC:: errno was processed without checking the status of a system call. Therefore, a misleading value might be returned.
+------------------------------------------------------------------------
+6.3.1
+Handling of errno fixed.
+------------------------------------------------------------------------
+6.3.0
+ECS-22: wrapper of the libuuid added with the relative unit test.
+Makefile updated to remove useless DSODEPENDLIBS
+------------------------------------------------------------------------
+6.2.2
+RF:: WHICH_FORCE_NO_SKIP_ALIAS macro (fix failure in Ubuntu os). 
+------------------------------------------------------------------------
+6.2.1
+File::getFileName now normalizes the path using StringUtils
+before trying to extract the filename from the given string
+------------------------------------------------------------------------
+6.2.0
+[S3MARINE-98]
+EC:: Added support for tar as Compressor/Archiver
+------------------------------------------------------------------------
+6.1.3
+[S6JCS-122]
+Wrong erasure of iterators also in Notify::remove_from_inot_arch_events_by_date
+------------------------------------------------------------------------
+6.1.2
+[S6JCS-122]
+Notify deregistration (unregister_userkey) was erasing an iterator used inside a for loop.
+A safe copy of the iterator has been adoped to loop in the structure.
+------------------------------------------------------------------------
+6.1.1
+[S6JCS-50] Removed useless commented code. Renamed comparators in DirTree
+------------------------------------------------------------------------
+6.1.0
+[S6JCS-50] The DirTree object now keeps track of the entries depth. 
+Function depth(size_t) has been implemented that, given the file index, 
+returns the depth associated to the file. 
+tDirTree test has been added.
+depthLimitedHardlink function implemented. Tests added.
+------------------------------------------------------------------------
+6.0.2
+test Makefile fixed.
+------------------------------------------------------------------------
+6.0.1
+EC:: Method getAbsolutePath (and relative test) improved to also take into account of ".." entries (previously not resolved)
+
+------------------------------------------------------------------------
+6.0.0
+
+Semantic of File::hardlink changed.
+The fallback copy, if requested, is now performed even if the source and destination 
+are on the same filesystem and the hardlink failed. Previous behaviour was to throw execption in that case.
+Last evolution of permissions grants applyed by the kernel and SeLunix made it possible.
+A warning is now emitted (once per process) to notify this not common case.
+See "man 5 proc" section "/proc/sys/fs/protected_hardlinks" to get some examples
+------------------------------------------------------------------------
+5.89.0
+
+S1PDGS-32131: EC:: 1. A list of all the files removed by the cache (both automatically and as-per-user request) is handled, if the cache is requested to do it (default: legacy, no list).
+2. The default behavior of the cache is to start the automatic clean-up when is full (no free space available). Optionally, a parameters to set up a minimum threshold can be passed: in this case the automatic clean-up will be triggered when the free space is below that threshold. Default: legacy value (0 bytes)
+------------------------------------------------------------------------
+5.88.5
+
+EC:: A specific FSUID (64bit maxint) is returned in case of failure. This prevents automatic checks (e.g. checkFileSystemsMatching) to successfully match f.s. when at least one FSUID is maxint.
+------------------------------------------------------------------------
+5.88.4
+
+getFSUID test added
+------------------------------------------------------------------------
+5.88.3
+
+test compilation fixed
+------------------------------------------------------------------------
+5.88.2
+
+versionfile now uses auto_version_file to have updated version strings
+------------------------------------------------------------------------
+5.88.1
+
+Implemented tempdir functionality to create unique temporary dirs.
+Fixed tests errors.
+------------------------------------------------------------------------
+5.88.0
+
+Automatically generate from revision "version "5.88""

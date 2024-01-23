@@ -1,0 +1,9 @@
+In dbParam e' presente l'enum Operation che e' stato ora copiato dentro SQLDialect
+Ora sono presenti dei cast very unsafe tra i due enum: uno andrebbe eliminato.
+
+
+
+
+Aggiungere a SQLString il supporto per join paracule.
+I nuovi metodi di join dovrebbero permettere di inserire contestualmente la 
+condizione di where associata.

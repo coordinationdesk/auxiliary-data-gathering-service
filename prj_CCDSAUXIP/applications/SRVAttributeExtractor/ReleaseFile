@@ -1,0 +1,53 @@
+2.3.0
+CCDS-86: empty json file is now created only if both attributes and attributes from filename are missing in configuration.
+---------------------------------------------------------------------------
+2.2.5
+adding empty test/Makefile to avoid compilation warnings
+---------------------------------------------------------------------------
+2.2.4
+using new libJobOrder 4.0.0 I/F
+---------------------------------------------------------------------------
+2.2.3
+MP: compilation warning cleanup
+---------------------------------------------------------------------------
+2.2.2
+Messages in PRIVINFO
+---------------------------------------------------------------------------
+2.2.1
+Handling of the temporary directory used during the processing improved.
+---------------------------------------------------------------------------
+2.2.0
+ECS-43: Added handling of a configuration flag to enable the fail-safe mode: in case of metadata file or mandatory attributes missing, the processing goes on and generates an output with the only available attributes (or worst empty)
+---------------------------------------------------------------------------
+2.1.2
+Removed PRIP section from Makefile.
+The used library dependencies shall be declared by the libraries themselves
+---------------------------------------------------------------------------
+2.1.1
+Added PRIP ifdef for netcdf lib
+---------------------------------------------------------------------------
+2.1.0
+Handling of a new conf space introduced (SRVJsonProductAttributes.xml) containing the list of conf spaces specific for each satellite and a common section.
+---------------------------------------------------------------------------
+2.0.1
+Classes renamed from LTA* to SRV*
+---------------------------------------------------------------------------
+2.0.0
+Application name changed from LTA to SRV Attribute Extractor
+---------------------------------------------------------------------------
+1.2.2
+Temporary working dir cleaned by configuration.
+---------------------------------------------------------------------------
+1.2.1
+Handling of EOF fixed: soft link to the input product created into the temporary directory.
+---------------------------------------------------------------------------
+1.2.0
+Code aligned to the new libLTAJsonProductAttributes issue (2.2.0).
+Empty json attribute file created in case errors in the attribute retrieval from configuration are found.
+---------------------------------------------------------------------------
+1.1.0
+Code aligned to the new libLTAJsonProductAttributes issue (2.1.0).
+Minor changes introduced (log location and checks on input arguments).
+---------------------------------------------------------------------------
+1.0.0
+First issue of the application

@@ -1,0 +1,221 @@
+#!/bin/sh
+# description: Launch FTP Import
+# chkconfig: 2345 99 00
+
+#
+# Copyright 1995-2002, Advanced Computer Systems , Inc.
+# Via Della Bufalotta, 378 - 00139 Roma - Italy
+# http://www.acsys.it
+#
+# All Rights Reserved.
+#
+# This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems;
+# the contents of this file may not be disclosed to third parties, copied or
+# duplicated in any form, in whole or in part, without the prior written
+# permission of Advanced Computer Systems, Inc.
+#
+# Written by enrcar
+#
+# $Prod: A.C.S. Import.sh bash-script $
+#
+# $Id$
+# 
+# $Author$
+#
+
+
+
+# Source function library.
+. /etc/rc.d/init.d/functions  
+
+#
+# Name of the daemon to be launched/stoppped/aborted
+#
+appName="TlDaemon"
+
+path="/usr/acs/bin"
+
+#
+# Signal used to STOP $appName
+# 
+stopSignal=2
+
+#
+# Signal used to ABORT $appName
+# 
+abortSignal=15
+
+
+# set params here : ie -nopatrol -nodaemon ecc ecc
+# params="-nopatrol -nodaemon"
+params=
+
+#
+# User who launch $appName 
+#
+user="opCRYOSAT"
+
+#
+# time to wait before checking that $appName is running
+#
+sleeptime=2
+
+#
+# time to wait before checking that $appName is died
+#
+looptime=1
+
+case "$1" in
+	
+'start')
+	status $appName >/dev/null 
+	RETVALSTATUS=$?
+	if [ $RETVALSTATUS -eq 0 ]; then
+# is $appName  already running ?
+		echo_failure
+		status $appName
+		exit 0
+	else 
+# ok, $appName is not running ..
+        	echo -ne "$appName start requested" 
+
+#		If you don't want to use "daemon" functions (see /etc/init.d/functions )
+# 		to launch a daemon, try something like this :
+# 
+#		su - $user -c "exec $path/$appName >/dev/null 2>&1"
+#		
+# 		N.B.
+#		The "&" is needed for the launch script to be used by Patrol 
+#
+
+		daemon --user $user $appName $params
+
+		echo "daemon --user $user $appName $params"
+
+		sleep $sleeptime
+
+# is $appName  running now  ?
+
+		status $appName >/dev/null 
+		RETVALSTATUS=$?
+
+		if [ $RETVALSTATUS -eq 0 ]; then
+			# wow !!
+			echo_success
+			echo
+		else
+			echo_failure
+			echo
+		fi
+		echo
+		fi
+	;;
+
+'status')
+	status $appName
+	;;
+
+'stop')
+	status $appName >/dev/null
+	RETVALSTATUS=$?
+# is $appName running ?
+	if [ $RETVALSTATUS -eq 3 ]; then
+# yes, so don't bother .. 
+		echo_failure
+		status $appName 
+		exit 0;
+	else
+		echo -ne "$appName stop requested"
+		killproc $appName -$stopSignal
+
+# waiting now for $appName to die		
+		echo -ne "\nwaiting for $appName to die"
+		status $appName >/dev/null
+		RETVALSTATUS=$?
+
+		while [ $RETVALSTATUS -ne 3 ]
+		do
+		echo -n .
+		sleep $looptime;
+		
+		status $appName >/dev/null
+		RETVALSTATUS=$?
+		done
+		echo -ne "Done.\n"
+	fi
+	;;
+
+'abort')
+	status $appName >/dev/null 
+	RETVALSTATUS=$?
+# is $appName running ? 
+	if [ $RETVALSTATUS -eq 3 ]; then
+# yes, so don't bother .. 
+		echo_failure
+		status $appName
+		exit 0;
+	else
+		echo -ne "$appName abort requested"
+		killproc $appName -$abortSignal
+		
+# waiting now for $appName to die		
+		echo -ne "\nwaiting for $appName to die"
+		status $appName >/dev/null
+		RETVALSTATUS=$?
+
+		while [ $RETVALSTATUS -ne 3 ]
+		do
+		echo -n .
+		sleep $looptime;
+		
+		status $appName >/dev/null
+		RETVALSTATUS=$?
+		done
+		echo -ne "Done.\n"
+	fi
+	;;
+
+'restart')
+	$0 stop
+	sleep $sleeptime
+	$0 start
+	;; 
+
+################ this shouldn't be used ################ 
+
+'kill')
+	status $appName
+	RETVALSTATUS=$?
+# is $appName running ? 
+	if [ $RETVALSTATUS -eq 3 ]; then
+# yes, so don't bother .. 
+		echo_failure
+		exit 0;
+	else
+		echo -ne "Stabbering $appName "
+		killproc $appName 9
+
+# waiting now for $appName to die		
+		echo -ne "\nwaiting for $appName to die"
+		status $appName >/dev/null
+		RETVALSTATUS=$?
+
+		while [ $RETVALSTATUS -ne 3 ]
+		do
+		echo -n .
+		sleep $looptime;
+		
+		status $appName >/dev/null
+		RETVALSTATUS=$?
+		done
+		echo -ne "Done.\n"
+	fi
+	;;
+
+########################################################
+
+*)
+	echo -ne "Usage: $appName {start|stop|abort|restart|status}"
+	;;
+esac
+exit 0

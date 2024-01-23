@@ -1,0 +1,103 @@
+<?xml version="1.0" standalone="yes"?>
+<SafeFormatter>
+	<SafeProduct>
+		<productType>SR_1_SRA_</productType>
+		<safeNamespace>http://www.esa.int/safe/1.2</safeNamespace>
+		<xfduNamespace>urn:ccsds:schema:xfdu:1</xfduNamespace>
+		<schemaLocation>./xfdu.xsd</schemaLocation>
+		<manifestName>xfdumanifest.xml</manifestName>
+		<InformationPackageMap>
+			<unitType>SAFE Archive Information Package</unitType>
+			<textInfo>SENTINEL-3 SRAL Level 1</textInfo>
+			<pdiId>processing</pdiId>
+			<dmdId>acquisitionPeriod platform generalProductInformation measurementOrbitReference qualityInformation</dmdId>
+			<Id>packageUnit</Id>
+		</InformationPackageMap> 
+		<ListOfObjects count="2">
+			<Object type="Data">
+				<Common>
+					<unitType>Measurement Data Unit</unitType>
+					<checksumName>MD5</checksumName>
+					<locType>URL</locType>
+				</Common>
+				<ListOfObjectConfigs count="2">
+					<ObjectConfig>
+						<Id>MeasurementData</Id>
+						<dataObjectId>MeasurementData</dataObjectId>
+						<textInfo>Measurement Data Object file</textInfo>
+						<mimeType>application/x-netcdf</mimeType>
+						<dmdId/>
+						<repId/>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>OLQCReport</Id>
+						<dataObjectId>OLQCReport</dataObjectId>
+						<textInfo>Online Quality Control Report</textInfo>
+						<mimeType>text/xml</mimeType>
+						<dmdId/>
+						<repId/>
+					</ObjectConfig>	
+				</ListOfObjectConfigs>
+			</Object>
+			<Object type="Metadata">
+				<Common>
+					<metadataClass>MetadataWrap</metadataClass>
+					<mimeType>text/xml</mimeType>
+					<vocabularyName>SAFE</vocabularyName>
+				</Common>
+				<ListOfObjectConfigs count="7">
+					<ObjectConfig>
+						<Id>acquisitionPeriod</Id>
+						<metadataObjectId>acquisitionPeriod</metadataObjectId>
+						<textInfo>Acquisition Period</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>platform</Id>
+						<metadataObjectId>platform</metadataObjectId>
+						<textInfo>Platform Description</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>generalProductInformation</Id>
+						<metadataObjectId>generalProductInformation</metadataObjectId>
+						<textInfo>General Product Information</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>measurementOrbitReference</Id>
+						<metadataObjectId>measurementOrbitReference</metadataObjectId>
+						<textInfo>Orbit Reference</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>measurementFrameSet</Id>
+						<metadataObjectId>measurementFrameSet</metadataObjectId>
+						<textInfo>Frame Set</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+						<srsName>http:/www.opengis.net/gml/srs/epsg.xml#4326</srsName>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>qualityInformation</Id>
+						<metadataObjectId>qualityInformation</metadataObjectId>
+						<textInfo>Quality Information</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>processing</Id>
+						<metadataObjectId>processing</metadataObjectId>
+						<classification>PROVENANCE</classification>
+						<category>PDI</category>
+						<textInfo>Processing Log</textInfo>
+					</ObjectConfig>
+				</ListOfObjectConfigs>
+			</Object>
+		</ListOfObjects>
+	</SafeProduct>
+</SafeFormatter>

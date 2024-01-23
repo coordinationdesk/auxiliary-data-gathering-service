@@ -1,0 +1,18 @@
+[Unit]
+Description=PDS2 Import ADGS-DNS
+Documentation=https://www.exprivia.com
+Requires=network.target
+After=network.target
+
+[Service]
+Type=oneshot
+
+User=opadgs
+Group=ccds
+
+ExecStart=/usr/bin/php56 -q /usr/local/components/ADGS/pds2_import_adgs/engine/pds2_import_adgs.php import_adgs-dns.ini
+
+RuntimeDirectory=pds2_import
+
+[Install]
+WantedBy=multi-user.target

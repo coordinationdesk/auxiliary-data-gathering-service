@@ -1,0 +1,15 @@
+5.8.2
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+5.8.1
+MP: compilation warnings cleanup
+------------------------------
+5.8.0
+Using ACS_THROW instead of std throw
+------------------------------
+5.7.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.7.0
+
+Automatically generate from revision "version "5.7""

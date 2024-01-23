@@ -1,0 +1,16 @@
+1.12.4
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+1.12.3
+MP: compatible with libPreInventoryBase 2.0.0 and backward
+test compilation fixed - no guarantee for its correctness
+------------------------------
+1.12.2
+Makefiles prepared to run in both smurfer.py and legacy mode
+------------------------------
+1.12.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.12.0
+
+Automatically generate from revision "version "1.12""

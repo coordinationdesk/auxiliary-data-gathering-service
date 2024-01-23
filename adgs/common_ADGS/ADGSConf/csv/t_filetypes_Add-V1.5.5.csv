@@ -1,0 +1,5 @@
+'filetype','description','nameregularexpression','headerseparation','"group"','invperiod','mngsngext','sngext','hdrext','dblext'
+
+'S1L_PREORB_X',    'LongTerm Orb Prediction', '^S1[ABC_]_.*_L_PREORB_X_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.EOF$',                    'false', 'group0', 0, 'false', 'EOF', 'NULL', 'NULL'
+'S1L_PREORB_O',    'LongTerm Orb Prediction', '^S1[ABC_]_.*_L_PREORB_O_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$',           'false', 'group0', 0, 'false', 'TGZ',  'NULL', 'NULL'
+'S1L_PREORB_OTMP', 'LongTerm Orb Prediction', '^S1[ABC_]_.*_L_PREORB_O_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',                    'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'

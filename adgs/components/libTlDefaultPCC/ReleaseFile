@@ -1,0 +1,31 @@
+3.4.0
+CPS-64: configuration parameter loading moved in the class constructor of DbAlternative_PCC.
+----------------------------------------------------------------------
+3.3.0
+CPS-64: query filter on file class can be disabled by configuration.
+----------------------------------------------------------------------
+3.2.0
+CI-92: code aligned to the new PCC_Base methods interfaces (libTlPreconditionChecker 2.0.0)
+Compilation problems fixed on tests
+----------------------------------------------------------------------
+3.1.1
+The dbLastGeneratedOverlapStrategy is performed using the actual times
+reported by the special query by means of startTime and endTime operations
+----------------------------------------------------------------------
+3.1.0
+[CRYO2-PDS-130]
+Setting additional parameters to the symbol table to keep track
+of actual start and stop times used by special queries
+Requires libTlPreconditionCheck >= 1.28.0
+----------------------------------------------------------------------
+3.0.0
+Removed SUBS fileclass exclusion filter in case of no fileclass
+has been sepcified in the task table input alternative.
+auto_ptr replaced with unique_ptr
+----------------------------------------------------------------------
+2.15.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.15.0
+
+Automatically generate from revision "version "2.15""

@@ -1,0 +1,45 @@
+<?xml version="1.0" standalone="yes"?>
+<OceansatL0ProductDescription>
+	<L0ProductDescriptor>
+    	<NumberOfProducts>2</NumberOfProducts>
+		<Product1>
+        	<Id>OC2_IO__0P</Id>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+			<List_of_APID count="0">
+        		<APID></APID>
+			</List_of_APID>			
+        	<VCID>0</VCID>
+        	<SensorName>OCM</SensorName>
+        	<SensorMode>Image</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>OceanSat Level 0 Product for I channel</Description>        
+    	</Product1>
+		<Product2>
+        	<Id>OC2_QS__0P</Id>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+			<List_of_APID count="0">
+        		<APID></APID>
+			</List_of_APID>			
+        	<VCID>1</VCID>
+        	<SensorName>SCAT_ROSA</SensorName>
+        	<SensorMode>Image</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>OceanSat Level 0 Product for Q channel</Description>        
+    	</Product2>
+    	<SatelliteName>OCEANSAT</SatelliteName>
+    	<SourcePacketHeaderSize>0</SourcePacketHeaderSize>
+    	<AnnotationSize>0</AnnotationSize>
+		<RefDocName>PO-RS-MDA-GS-2009</RefDocName>
+		<AcquisitionReportFileType>ACQREPORT_</AcquisitionReportFileType>
+	</L0ProductDescriptor>
+</OceansatL0ProductDescription>

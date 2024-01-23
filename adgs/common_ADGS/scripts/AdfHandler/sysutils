@@ -1,0 +1,1526 @@
+#!/bin/bash
+#---------------------------------------------------------------------
+# ADGS Project
+#---------------------------------------------------------------------
+# Description
+#
+# Common utilities used by other scripts
+#---------------------------------------------------------------------
+###########################################################################################
+## Macro
+###########################################################################################
+S3_TB_ID="ADGS"
+S3_TB_DEBUG_STRING="DEBUG__"
+S3_TB_ERROR_STRING="ERROR__"
+S3_TB_SUCCESS_STRING="SUCCESS"
+S3_TB_BEGIN_STRING="BEGIN__"
+S3_TB_END_STRING="END____"
+S3_TB_OK=0
+S3_TB_ERROR=1
+S3_TB_TRUE=0
+S3_TB_FALSE=1
+
+S3_TB_STATUS_RUNNING="RUNNING"
+S3_TB_STATUS_STOPPED="STOPPED"
+S3_TB_STATUS_UNKNOWN="UNKNOWN"
+
+# Text attributes
+S3_TB_NONE='\e[00m'
+S3_TB_BOLD='\e[1m'
+S3_TB_UNDERLINE='\e[4m'
+
+# Foreground colors
+S3_TB_RED='\e[01;31m'
+S3_TB_GREEN='\e[01;32m'
+S3_TB_YELLOW='\e[01;33m'
+S3_TB_BLUE='\e[01;34m'
+S3_TB_MAGENTA='\e[01;35m'
+S3_TB_CYAN='\e[00;36m'
+S3_TB_WHITE='\e[01;37m'
+
+# Other macros
+S3_PROD_EXT="SEN3"
+S3_ISIP_EXT="ISIP"
+S3_HKRAW_EXT="TGZ"
+S3_REPORT_EXT="EEF"
+S3_MANIFEST="xfdumanifest.xml"
+S3_TMPDIR=/tmp/PDGSREP
+###########################################################################################
+## Description:
+##
+## These functions handle the font colors
+##
+###########################################################################################
+TEXT_RESET () {
+	echo -en "${S3_TB_NONE}"
+}
+TEXT_BOLD () {
+	echo -en "${S3_TB_BOLD}"
+}
+TEXT_SUCCESS () {
+	echo -en "${S3_TB_GREEN}"
+}
+TEXT_WARNING () {
+	echo -en "${S3_TB_YELLOW}"
+}
+TEXT_ERROR () {
+	echo -en "${S3_TB_RED}"
+}
+TEXT_LOOP () {
+	echo -en "${S3_TB_CYAN}"
+}
+A_CAPO () {
+	echo -en "\n"
+}
+###########################################################################################
+## Description:
+##
+## These functions handle the logging
+##
+###########################################################################################
+Print2File () {
+	if [ ! -z $CURRENT_TESTLOGFILE ]
+	then
+		echo $* >> $CURRENT_TESTLOGFILE
+	fi
+}
+TraceCall2File () {
+	MSG="[$S3_TB_ID][$(date -u "+%Y%m%d%H%M%S")][TRACE_CALL][$*]"
+	Print2File $MSG
+}
+PrintMsg () {
+	MSG="[$S3_TB_ID][$(date -u "+%Y%m%d%H%M%S")]$*"
+	echo -en "$MSG"
+	Print2File $MSG
+}
+PrintSuccess () {
+	TEXT_SUCCESS; PrintMsg $*; TEXT_RESET
+}
+PrintBold () {
+	TEXT_BOLD; PrintMsg $*; TEXT_RESET
+}
+PrintError () {
+	TEXT_ERROR; PrintMsg $*; TEXT_RESET
+}
+PrintLoop () {
+	TEXT_LOOP; PrintMsg $*; TEXT_RESET
+}
+LogMsg() {
+	PrintMsg "[$S3_TB_DEBUG_STRING][$CURRSCRIPT][$1]"; A_CAPO
+}
+LogError() {
+	PrintError "[$S3_TB_ERROR_STRING][$CURRSCRIPT][$1]"; A_CAPO 
+}
+LogSuccess(){
+	PrintSuccess "[$S3_TB_SUCCESS_STRING][$CURRSCRIPT][$1]"; A_CAPO 
+}
+LogLoop () {
+	PrintLoop "[$S3_TB_DEBUG_STRING][$CURRSCRIPT][$1]"; A_CAPO 
+}
+LogBegin(){
+	scriptname=$(basename $1)
+	export CURRSCRIPT=$scriptname
+	export LOOPINDENT=0
+    PrintBold "[$S3_TB_BEGIN_STRING][$CURRSCRIPT]"; A_CAPO 
+}
+LogEnd() {
+	PrintBold "[$S3_TB_END_STRING][$CURRSCRIPT]"; A_CAPO 
+}
+LoopBegin() {
+	loopspec="$1"
+	loophowmany=$2
+	let "LOOPINDENT += 1"
+	LogLoop "Begin loop on $loophowmany ${loopspec}"
+}
+LoopEnd() {
+	loopspec="$1"
+	let "LOOPINDENT -= 1"
+	LogLoop "End loop on ${loopspec}"
+}
+LoopIndentString() {
+	local idx=0
+	echo -en "|"
+	while [ $idx -lt $LOOPINDENT ]
+	do
+			echo -en "--"
+			let "idx += 1"
+	done
+	echo -en ">"
+}
+LoopProgressString() {
+	local idx=$1
+	local totalnum=$2
+	local looppercent=0
+	local looppercentstring=""
+	local numdigits=0
+	
+	percent=$(bc <<< "scale=0; 100*${idx}/${totalnum}")
+	numdigits=$(echo "${#totalnum}")
+	progressstring=$(printf "%0${numdigits}d/%0${numdigits}d %03d%s" $idx $totalnum $percent "%")
+	echo $progressstring
+}
+LoopMsg() {
+	loopspec="$1"
+	loophowmany=$2
+	loopcounter=$3
+	local loopindentstring=""
+	
+	loopindentstring=$(LoopIndentString)
+	loopprogressstring=$(LoopProgressString $loopcounter $loophowmany)
+	if [ ! -z "$4" ]
+	then
+		detailedinfo="$4"
+		LogLoop "$loopindentstring Loop on $loopspec ${loopprogressstring} ($detailedinfo)..."
+	else
+		LogLoop "$loopindentstring Loop on $loopspec ${loopprogressstring} ..."
+	fi
+}
+###########################################################################################
+## Description:
+##
+## These functions handle hosts
+##
+###########################################################################################
+is_host_defined () {
+# check if hostname can be resolved to IP
+	local EC=$S3_TB_OK
+	local HOST=""
+	case $# in 
+	1 )
+		HOST="$1"
+		# check if host is already defined in numeric format XX.XX.XX.XX
+		if [[ $HOST =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]
+		then 
+			return $EC
+		fi
+		# check if host is defined in DNS
+		if [ $(host $HOST | grep address | grep -v IPv6 | wc -l) -eq 1 ]
+		then
+			return $EC
+		fi
+		# check if host is defined locally in /etc/hosts file
+		if [ $(grep $HOST /etc/hosts | grep -v grep | wc -l) -eq 1 ]
+		then
+			return $EC
+		fi
+		LogError "Host $HOST not defined"
+		EC=$S3_TB_ERROR
+		exit $EC
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: is_host_defined <fully qualified hostname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC
+}
+is_host_alive () {
+# check if host is alive and can be reached via ping command
+	local EC=$S3_TB_OK
+	local pingres=0
+	local HOST=""
+	case $# in 
+	1 )
+		HOST="$1"
+		ping $HOST -c1 1>/dev/null 2>/dev/null
+		pingres=$?
+		if [ "$pingres" = 0 ]
+		then
+			return $S3_TB_TRUE
+		else
+			return $S3_TB_FALSE
+		fi
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: is_host_alive <host>"
+		exit $EC		
+	;;
+	esac;
+	return $EC
+}
+is_host_in_group () {
+	local EC=$S3_TB_OK
+	local HOST=""
+	local GROUP=""
+	case $# in 
+	2 )
+		HOST="$1"
+		GROUP="$2"
+		if [ $(echo "$GROUP" | grep -o $HOST | wc -l) -eq 0 ]
+		then
+			LogError "Host $HOST not part of group ($GROUP)"
+			EC=$S3_TB_ERROR
+			exit $EC
+		fi
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: is_host_in_group <host> <group> "
+		exit $EC		
+	;;
+	esac;
+	return $EC
+}
+get_host_IP () {
+# takes hostname and returns IP
+	local EC=$S3_TB_OK
+	local HOST=""
+	case $# in 
+	1 )
+		HOST="$1"
+		if [[ $HOST =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]
+		then 
+			echo $HOST
+		else
+			is_host_defined $HOST
+			echo $(host $HOST | grep address | grep -v IPv6 | awk '{print $4}')
+		fi
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_host_IP <hostname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC
+}
+get_host_name () {
+# takes fully qualified hostname and returns hostname without domain name
+	local EC=$S3_TB_OK
+	local HOST=""
+	case $# in 
+	1 )
+		HOST="$1"
+		if [[ $HOST =~ ^[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}$ ]]
+		then 
+			LogError "Usage: get_host_name <fully qualified hostname>"
+			exit $EC		
+		else
+			echo $HOST | awk -F "." '{print $1}'
+		fi
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_host_name <fully qualified hostname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+is_valid_file () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		filetocheck=$1
+		if [ ! -e "$filetocheck" ]
+		then
+			LogError "File $filetocheck does not exist"
+			EC=$S3_TB_ERROR
+			exit $EC
+		fi
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: is_valid_file <FILE>"
+		exit $EC		
+	;;
+	esac;
+	return $EC
+}
+is_valid_dir () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		dirtocheck=${1}
+		if [ ! -e "$dirtocheck" ]
+		then
+			LogError "File $dirtocheck does not exist"
+			EC=$S3_TB_ERROR
+			exit $EC
+		fi
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: is_valid_dir <DIR>"
+		exit $EC		
+	;;
+	esac;
+	return $EC
+}
+is_valid_folder () {
+	local EC=$S3_TB_OK
+	is_valid_dir ${1}
+	return $EC
+}
+is_valid_prod () {
+	local EC=$S3_TB_OK
+	is_valid_dir ${1}
+	is_valid_file ${1}/${S3_MANIFEST}
+	return $EC
+}
+is_valid_isip () {
+	local EC=$S3_TB_OK
+	is_valid_dir ${1}
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## These functions are range validator functions
+##
+###########################################################################################
+is_valid_sat () {
+	local EC=$S3_TB_OK
+	local satnametocheck
+	case $# in 
+	1 )
+		satnametocheck=${1}
+		case $satnametocheck in 
+		"S3A" | "S3B" )
+			return $EC
+		;;
+		* )
+			LogError "Invalid satellite name; allowed values: (S3A,S3B)"
+			EC=$S3_TB_ERROR
+			exit $EC
+		;;
+		esac;
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: is_valid_sat <SATELLITE NAME>"
+		exit $EC		
+	;;
+	esac;
+	return $EC
+}
+is_valid_sat_char () {
+	local EC=$S3_TB_OK
+	local satchartocheck
+	case $# in 
+	1 )
+		satchartocheck=${1}
+		case $satchartocheck in 
+		"A" | "B" )
+			return $EC
+		;;
+		* )
+			LogError "Invalid satellite char; allowed values: (A,B)"
+			EC=$S3_TB_ERROR
+			exit $EC
+		;;
+		esac;
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: is_valid_sat_char <SATELLITE CHAR>"
+		exit $EC		
+	;;
+	esac;
+	return $EC
+}
+is_valid_output_format () {
+	local EC=$S3_TB_OK
+	local formattocheck
+	case $# in 
+	1 )
+		formattocheck=${1}
+		case $formattocheck in 
+		"PLAINTEXT" | "WITHCOLORS" | "XML" | "EMBEDXML" )
+			return $EC
+		;;
+		* )
+			LogError "Invalid output format; allowed values: (PLAINTEXT,WITHCOLORS,XML,EMBEDXML)"
+			EC=$S3_TB_ERROR
+			exit $EC
+		;;
+		esac;
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: is_valid_output_format <OUTPUT FORMAT>"
+		exit $EC		
+	;;
+	esac;
+	return $EC
+}
+is_valid_testbench_item_type () {
+	local EC=$S3_TB_OK
+	local itemtype
+	case $# in 
+	1 )
+		itemtype=${1}
+		case $itemtype in 
+		"TESTBENCH" | "TB_SCRIPTS" | "TB_CONF" | "TB_ENV" | "TB_BIN" )
+			return $EC
+		;;
+		* )
+			LogError "Invalid test bench item type; allowed values: (TESTBENCH,TB_SCRIPTS,TB_CONF,TB_ENV,TB_BIN)"
+			EC=$S3_TB_ERROR
+			exit $EC
+		;;
+		esac;
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: is_valid_testbench_item_type <ITEM TYPE>"
+		exit $EC		
+	;;
+	esac;
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## This function automates remote copy between servers via scp
+##
+###########################################################################################
+scpCmd () {
+	local EC=$S3_TB_OK
+	local source_path=""
+	local dest_host=""
+	local dest_user=""
+	local dest_path=""
+	case $# in
+	4 )
+		source_path="$1"; is_valid_dir $source_path
+		dest_host="$2"; is_host_defined $dest_host
+		dest_user="$3"
+		dest_path="$4"
+		TraceCall2File "scp -rp $source_path $dest_user@$dest_host:$dest_path" 
+		scp -rp $source_path $dest_user@$dest_host:$dest_path
+		EC=$?
+	;;
+	* )
+		LogError "Usage: scpCmd  <SOURCEPATH> <DESTHOST> <DESTUSER> <DESTPATH>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+	return $EC
+}
+scpPutCmd () {
+	local EC=$S3_TB_OK
+	local source_path=""
+	local dest_host=""
+	local dest_user=""
+	local dest_path=""
+	case $# in
+	4 )
+		source_path="$1"; is_valid_dir $source_path
+		dest_host="$2"; is_host_defined $dest_host
+		dest_user="$3"
+		dest_path="$4"
+		scpCmd $source_path $dest_host $dest_user $dest_path
+		EC=$?
+	;;
+	* )
+		LogError "Usage: scpPutCmd  <SOURCEPATH> <DESTHOST> <DESTUSER> <DESTPATH>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+	return $EC
+}
+scpGetCmd () {
+	local EC=$S3_TB_OK
+	local source_path=""
+	local dest_host=""
+	local dest_user=""
+	local dest_path=""
+	case $# in
+	4 )
+		source_path="$1"
+		dest_host="$2"; is_host_defined $dest_host
+		dest_user="$3"
+		dest_path="$4"
+		TraceCall2File "scp -rp $dest_user@$dest_host:$dest_path $source_path"
+		scp -rp $dest_user@$dest_host:$dest_path $source_path
+		EC=$?
+	;;
+	* )
+		LogError "Usage: scpGetCmd  <SOURCEPATH> <DESTHOST> <DESTUSER> <DESTPATH>"
+		EC=$S3_TB_ERROR
+	;;
+	esac;
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## This function could be used to automate remote command execution via ssh connection 
+##
+###########################################################################################
+sshCmd () {
+	local EC=$S3_TB_OK
+	local dest_host=""
+	local dest_user=""
+	local cmd=""
+	if [ $# -lt 3 ]
+	then
+		LogError "Usage: sshCmd  <HOST> <USER> <COMMAND>"
+		EC=$S3_TB_ERROR
+		return $EC
+	fi
+	dest_host="$1"; shift; 
+	dest_user="$1"; shift
+	cmd="$1"; shift
+	args=$*
+	is_host_defined $dest_host
+	TraceCall2File "ssh -Y -q -l $dest_user $dest_host \"$cmd $args\""
+	ssh -Y -q -l $dest_user $dest_host "$cmd $args"
+	EC=$?
+	return $EC
+}
+spawnCmd () {
+	local EC=$S3_TB_OK
+	local dest_host=""
+	local dest_user=""
+	local cmd=""
+	if [ $# -lt 3 ]
+	then
+		LogError "Usage: spawnCmd  <HOST> <USER> <COMMAND>"
+		EC=$S3_TB_ERROR
+		return $EC
+	fi
+	dest_host="$1"; shift
+	dest_user="$1"; shift
+	cmd="$1"; shift
+	args=$*
+	is_host_defined $dest_host
+	TraceCall2File "ssh -Y -n -f -l $dest_user $dest_host \"$cmd $args\""
+	ssh -Y -n -f -l $dest_user $dest_host "$cmd $args"
+	EC=$?
+	return $EC
+}
+spawnLocalCmd () {
+	local EC=$S3_TB_OK
+	local cmd=$1
+	shift 
+	args=$*
+	TraceCall2File "nohup $cmd $args &"
+	nohup $cmd $args &
+	EC=$?
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## This function could be used to automate remote command execution via SQL connection 
+##
+###########################################################################################
+psqlBatch () {
+	local EC=$S3_TB_OK
+	local DB_HOST=""
+	local DB_USER=""
+	local DB_NAME=""
+	local PSQLFILE=""
+	local DB_PORT=""
+	case $# in
+	4 )
+		DB_HOST="$1"
+		DB_USER="$2"
+		DB_NAME="$3"
+		PSQLFILE="$4"
+		DB_PORT=5432
+	;;
+	5 )
+		DB_HOST="$1"; 
+		DB_USER="$2"
+		DB_NAME="$3"
+		PSQLFILE="$4"
+		DB_PORT="$5"
+	;;
+	* )
+		LogError "Usage: psqlBatch  <DB HOSTNAME> <DB USER> <DB NAME> <PSQL FILE> [<DB PORT>]"
+		return $S3_TB_ERROR
+	;;
+	esac;
+	is_host_defined $DB_HOST
+	is_valid_file "$PSQLFILE"
+	TraceCall2File "psql -U $DB_USER -h $DB_HOST -p $DB_PORT -d $DB_NAME -f \"$PSQLFILE\""
+	psql -U $DB_USER -h $DB_HOST -p $DB_PORT -d $DB_NAME -f "$PSQLFILE" 
+	EC=$?
+	return $EC
+}
+psqlCmd () {
+	local EC=$S3_TB_OK
+	local DB_HOST=""
+	local DB_USER=""
+	local DB_NAME=""
+	local COMMAND=""
+	local DB_PORT=""
+	local OPTIONS=""
+	local DB_PORT=5432
+	case $# in
+	4 )
+		DB_HOST="$1"
+		DB_USER="$2"
+		DB_NAME="$3"
+		COMMAND="$4"
+	;;
+	5 )
+		DB_HOST="$1"
+		DB_USER="$2"
+		DB_NAME="$3"
+		COMMAND="$4"
+		OPTIONS="$5"
+	;;
+	* )
+		LogError "Usage: psqlCmd  <DB HOSTNAME> <DB USER> <DB NAME> <COMMAND> [<OPTIONS>]"
+		return $S3_TB_ERROR
+	;;
+	esac;
+	is_host_defined $DB_HOST
+	TraceCall2File "psql -U $DB_USER -h $DB_HOST -p $DB_PORT -d $DB_NAME -c \"$COMMAND\""
+	psql "$OPTIONS" -U $DB_USER -h $DB_HOST -p $DB_PORT -d $DB_NAME -c "$COMMAND" 
+	EC=$?
+	return $EC
+}
+psqlCmdNoHeader () {
+	local EC=$S3_TB_OK
+	local DB_HOST=""
+	local DB_USER=""
+	local DB_NAME=""
+	local COMMAND=""
+	local DB_PORT=""
+	local DB_PORT=5432
+	case $# in
+	4 )
+		DB_HOST="$1"
+		DB_USER="$2"
+		DB_NAME="$3"
+		COMMAND="$4"
+	;;
+	* )
+		LogError "Usage: psqlCmdNoHeader  <DB HOSTNAME> <DB USER> <DB NAME> <COMMAND>"
+		return $S3_TB_ERROR
+	;;
+	esac;
+	is_host_defined $DB_HOST
+	TraceCall2File "psql -A -t -U $DB_USER -h $DB_HOST -p $DB_PORT -d $DB_NAME -c \"$COMMAND\""
+	psql -A -t -U $DB_USER -h $DB_HOST -p $DB_PORT -d $DB_NAME -c "$COMMAND" 
+	EC=$?
+	return $EC
+}
+mysqlCmd () {
+	local EC=$S3_TB_OK
+	local DB_HOST=""
+	local DB_USER=""
+	local DB_PWD=""
+	local DB_NAME=""
+	local COMMAND=""
+	local OPTIONS=""
+	case $# in
+	5 )
+		DB_HOST="$1"
+		DB_USER="$2"
+		DB_PWD="$3"
+		DB_NAME="$4"
+		COMMAND="$5"
+	;;
+	6 )
+		DB_HOST="$1"
+		DB_USER="$2"
+		DB_PWD="$3"
+		DB_NAME="$4"
+		COMMAND="$5"
+		OPTIONS="$6"
+	;;
+	* )
+		LogError "Usage: mysqlCmd  <DB HOSTNAME> <DB USER> <DB PASSWORD> <DB NAME> <COMMAND>"
+		return $S3_TB_ERROR
+	;;
+	esac;
+	is_host_defined $DB_HOST
+	TraceCall2File "mysql -h $DB_HOST -u $DB_USER -p$DB_PWD $DB_NAME -e \"$COMMAND\""
+	mysql $OPTIONS -h $DB_HOST -u $DB_USER -p$DB_PWD $DB_NAME -e "$COMMAND" 
+	EC=$?
+	return $EC
+}
+mysqlBatch () {
+	local EC=$S3_TB_OK
+	local DB_HOST=""
+	local DB_USER=""
+	local DB_PWD=""
+	local DB_NAME=""
+	local MYSQLFILE=""
+	case $# in
+	5 )
+		DB_HOST="$1"
+		DB_USER="$2"
+		DB_PWD="$3"
+		DB_NAME="$4"
+		MYSQLFILE="$5"
+	;;
+	* )
+		LogError "Usage: mysqlBatch  <DB HOSTNAME> <DB USER> <DB PASSWORD> <DB NAME> <MYSQL FILE>"
+		return $S3_TB_ERROR
+	;;
+	esac;
+	is_host_defined $DB_HOST
+	is_valid_file "$MYSQLFILE"
+	TraceCall2File "mysql -h $DB_HOST -u $DB_USER -p$DB_PWD $DB_NAME < $MYSQLFILE"
+	mysql $OPTIONS -h $DB_HOST -u $DB_USER -p$DB_PWD $DB_NAME < $MYSQLFILE 
+	EC=$?
+	return $EC
+}
+# this function can be used to escape "_" in the collection strings before using them
+# in the SQL query, otherwise 
+ESCAPE_STATEMENT="ESCAPE '@'"
+escape_underscore () {
+	local EC=$S3_TB_OK
+	local INPUTSTRING
+	case $# in
+	1 )
+		INPUTSTRING="$1"
+		echo $INPUTSTRING | sed "s/_/@_/g"
+	;;
+	* )
+		LogError "Usage: escape_underscore  <INPUTSTRING>"
+		return $S3_TB_ERROR
+	;;
+	esac;
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## This function could be used to cleanup a given folder
+##
+###########################################################################################
+clean_folder () {
+	local EC=$S3_TB_OK
+	local dest_host=""
+	local dest_user=""
+	local dest_path=""
+	local pattern=""
+	case $# in
+	4 )
+		dest_host="$1"; is_host_defined $dest_host
+		dest_user="$2"
+		dest_path=$(echo "$3" | tr -d ' ')
+		pattern=$(echo "$4" | tr -d ' ')
+		sshCmd $dest_host $dest_user \
+			"bash -c 'if [ -d "$dest_path" ]; then cd $dest_path; hostname; pwd; echo CLEANING ${pattern} ...; cd $dest_path && rm -rf *${pattern}*; cd $dest_path && rm -rf .*${pattern}*; echo ... DONE ; fi'"
+		EC=$?
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: clean_folder  <DEST HOSTNAME> <DEST USER> <DEST PATH> <PATTERN>"
+	;;
+	esac;
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## This function could be used to erase completely a given folder
+##
+###########################################################################################
+erase_folder () {
+	local EC=$S3_TB_OK
+	local dest_host=""
+	local dest_user=""
+	local dest_path=""
+	case $# in
+	3 )
+		dest_host="$1"; is_host_defined $dest_host
+		dest_user="$2"
+		dest_path=$(echo "$3" | tr -d ' ')
+		sshCmd $dest_host $dest_user "bash -c 'if [ -d "$dest_path" ]; then cd $dest_path; hostname; pwd; echo ERASING ...; cd $dest_path && rm -rf *; echo ... DONE ; fi'"
+		EC=$?
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: erase_folder  <DEST HOSTNAME> <DEST USER> <DEST PATH>"
+	;;
+	esac;
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## This function could be used to remove S3 products/auxiliary from a given folder
+##
+###########################################################################################
+clean_folder_from_S3_items () {
+	local EC=$S3_TB_OK
+	local dest_host=""
+	local dest_user=""
+	local dest_path=""
+	case $# in
+	3 )
+		dest_host="$1"; is_host_defined $dest_host
+		dest_user="$2"
+		dest_path="$3"
+		LogMsg "Removing S3 L0PP granules"
+		clean_folder $dest_host $dest_user $dest_path ".${S3_ISIP_EXT}"
+		LogMsg "Removing S3 products"
+		clean_folder $dest_host $dest_user $dest_path ".${S3_PROD_EXT}"
+		LogMsg "Removing S3 reports"
+		clean_folder $dest_host $dest_user $dest_path ".${S3_REPORT_EXT}"
+		LogMsg "Removing S3 tar files"
+		clean_folder $dest_host $dest_user $dest_path ".tar"
+		LogMsg "Removing S3 tar TEMP files"
+		clean_folder $dest_host $dest_user $dest_path ".tmp"
+		LogMsg "Removing S3 .SEN3.zip files"
+		clean_folder $dest_host $dest_user $dest_path ".zip"
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: clean_folder_from_S3_items  <DEST HOSTNAME> <DEST USER> <DEST PATH>"
+	;;
+	esac;
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## This function could be used to remove logfiles from a given folder
+##
+###########################################################################################
+clean_logfiles () {
+	local EC=$S3_TB_OK
+	local dest_host=""
+	local dest_user=""
+	local dest_path=""
+	case $# in
+	3 )
+		dest_host="$1"; is_host_defined $dest_host
+		dest_user="$2"
+		dest_path="$3"
+		LogMsg "Removing logfiles"
+		clean_folder $dest_host $dest_user $dest_path "*.log"
+		clean_folder $dest_host $dest_user $dest_path "*.log.*"
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: clean_logfiles  <HOSTNAME> <PATH> <USER>"
+	;;
+	esac;
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## This function could be used to copy S3 products or aux data 
+##
+###########################################################################################
+copy_S3_item () {
+	local EC=$S3_TB_OK
+	local source_path=""
+	local dest_host=""
+	local dest_user=""
+	local dest_path=""
+	local PREFIX="."
+	case $# in
+	4 )
+		source_path="$1"; is_valid_dir $source_path
+		dest_host="$2"; is_host_defined $dest_host
+		dest_user="$3"
+		dest_path="$4"
+		S3_ITEM=`basename $source_path`
+		TEMP_S3_ITEM=$PREFIX$S3_ITEM
+		scpCmd $source_path $dest_host $dest_user $dest_path/$TEMP_S3_ITEM
+		sshCmd $dest_host $dest_user "cd $dest_path; echo $dest_path;mv $TEMP_S3_ITEM $S3_ITEM"
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: copy_S3_item  <SOURCE PATH> <DEST HOSTNAME> <DEST USER> <DEST PATH>"
+	;;
+	esac;
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## This function could be used to copy aux data with delay
+##
+###########################################################################################
+copy_S3_item_delay () {
+	local EC=$S3_TB_OK
+	local source_path=""
+	local dest_host=""
+	local dest_user=""
+	local dest_path=""
+	local PREFIX="."
+	case $# in
+	4 )
+		source_path="$1"; is_valid_dir $source_path
+		dest_host="$2"; is_host_defined $dest_host
+		dest_user="$3"
+		dest_path="$4"
+		S3_ITEM=`basename $source_path`
+		TEMP_S3_ITEM=$PREFIX$S3_ITEM
+		scpCmd $source_path $dest_host $dest_user $dest_path/$TEMP_S3_ITEM
+		sshCmd $dest_host $dest_user "cd $dest_path; echo $dest_path;mv $TEMP_S3_ITEM $S3_ITEM"
+		sleep 15
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: copy_S3_item_delay  <SOURCE PATH> <DEST HOSTNAME> <DEST USER> <DEST PATH>"
+	;;
+	esac;
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## This function checks if an environment variable is set. If not, it exits with error
+##
+###########################################################################################
+check_env_var () {
+	local EC=$S3_TB_OK
+	local varname=$1
+	envvar=$(eval 'echo "$'${varname}'"')
+	if [ -z "$envvar" ]
+	then
+		LogError "Required environment variable $varname is not defined"
+		EC=$S3_TB_ERROR
+		exit $EC
+	fi
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## This function checks if the current CENTRE_TYPE is equal to the allowed value (OPE,TST)
+##
+###########################################################################################
+allowed_centre_type () {
+	local EC=$S3_TB_OK
+	local value=""
+	check_env_var CENTRE_TYPE
+	case $# in 
+	1 )
+		value="$1"
+		if [[ "$CENTRE_TYPE" != "$value" ]]
+		then 
+			EC=$S3_TB_ERROR
+			LogError "CENTRE_TYPE=$CENTRE_TYPE not allowed"
+			exit $EC
+		fi
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: allowed_centre_type <CENTRE_TYPE value>"
+		exit $EC		
+	;;
+	esac;
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## This function checks if the current CENTRE_ID is among those listed as allowed
+##
+###########################################################################################
+allowed_centre_id () {
+	local EC=$S3_TB_OK
+	local nvalues=0
+	local idx=0
+	local value=""
+	check_env_var CENTRE_ID
+	case $# in 
+	0 )
+		EC=$S3_TB_ERROR
+		LogError "No allowed value for CENTRE_ID was specified"
+		exit $EC		
+	;;
+	* )
+		nvalues=$#
+		idx=1
+		while [ $idx -le $nvalues ]
+		do
+			value="$1"
+			if [[ "$CENTRE_ID" = "$value" ]]
+			then 
+				return $EC
+			fi
+			let "idx += 1"
+			shift
+		done
+		EC=$S3_TB_ERROR
+		LogError "CENTRE_ID=$CENTRE_ID not allowed"
+		exit $EC
+	;;
+	esac;
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## This functions handle temporary directory
+##
+###########################################################################################
+create_tmpfile () {
+	local EC=$S3_TB_OK
+	local dirname=""
+	local pattern=""
+	local filename=""
+	case $# in 
+	2 )
+		dirname=$1; is_valid_dir $dirname
+		pattern=$2
+		filename="${dirname}/${pattern}"
+		if [ -e "$filename" ]
+		then
+			LogError "File $filename already exists"
+			ls -l $filename
+			EC=$S3_TB_ERROR
+			exit $EC
+		fi
+		touch ${filename}
+		chmod 777 ${filename}
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: create_tmpfile <dirname> <pattern>"
+		exit $EC		
+	;;
+	esac;
+	echo ${filename}
+	return $EC
+}
+destroy_tmpfile () {
+	local EC=$S3_TB_OK
+	local filename=""
+	case $# in 
+	1 )
+		filename=$1; is_valid_file $filename
+		rm -rf $filename
+		;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: destroy_tmpfile <filename>"
+		exit $EC		
+	;;
+	esac;
+	return $EC
+}
+create_tmpdir () {
+	local EC=$S3_TB_OK
+	local subdir=""
+	local pathname=""
+	local currdatetime=""
+	case $# in 
+	1 )
+		subdir=$1
+		currdatetime=$(date -u "+%Y%m%d%H%M%S")
+		pathname="${S3_TMPDIR}/${subdir}.$$.$currdatetime"
+		mkdir -p ${pathname}
+		chmod 777 ${pathname}
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: create_tmpdir <subdir>"
+		exit $EC		
+	;;
+	esac;
+	echo ${pathname}
+	return $EC
+}
+destroy_tmpdir () {
+	local EC=$S3_TB_OK
+	local pathname=""
+	case $# in 
+	1 )
+		pathname=$1; is_valid_dir $pathname
+		rm -rf $pathname
+		;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: destroy_tmpdir <pathname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## This functions extract info from S3 filenames
+## e.g. S3A_SR_1_SRA____20170814T210025_20170814T210027_20170816T155256_0001_021_100______LN3_O_ST_002.SEN3
+##      12345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345
+##		0        10        20        30        40        50        60        70        80        90   
+##
+###########################################################################################
+# the functions below can be used in pipe, e.g. echo $PRODUCT | pf_cut_sat
+pf_cut_sat () {
+	pname=$(cat)
+	echo $pname | cut -c1-3
+}
+pf_cut_sat_char () {
+	pname=$(cat)
+	echo $pname | cut -c3-3
+}
+pf_cut_type () {
+	pname=$(cat)
+	echo $pname | cut -c5-15
+}
+pf_cut_instr () {
+	pname=$(cat)
+	echo $pname | cut -c5-6
+}
+pf_cut_level () {
+	pname=$(cat)
+	echo $pname | cut -c8-8
+}
+pf_cut_duration () {
+	pname=$(cat)
+# remove leading zeros
+	echo $pname | cut -c65-68 | sed 's/^0*//'
+}
+pf_cut_cyclenum () {
+	pname=$(cat)
+# remove leading zeros
+	echo $pname | cut -c70-72 | sed 's/^0*//'
+}
+pf_cut_timeliness () {
+	pname=$(cat)
+	echo $pname | cut -c89-90
+}
+pf_cut_valstart () {
+	pname=$(cat)
+	echo $pname | cut -c17-31
+}
+pf_cut_sensstart () {
+	pname=$(cat)
+	echo $pname | cut -c17-31
+}
+pf_cut_valstop () {
+	pname=$(cat)
+	echo $pname | cut -c33-47
+}
+pf_cut_sensstop () {
+	pname=$(cat)
+	echo $pname | cut -c33-47
+}
+pf_cut_centre () {
+	pname=$(cat)
+	echo $pname | cut -c83-85
+}
+pf_cut_processing_time () {
+	pname=$(cat)
+	echo $pname | cut -c49-63
+}
+pf_cut_product_class () {
+	pname=$(cat)
+	echo $pname | cut -c87-94
+}
+
+# these are functions with 1 single argument
+get_sat_from_name () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		productname=$1
+		echo $productname | pf_cut_sat
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_sat_from_name <productname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+get_sat_char_from_name () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		productname=$1
+		echo $productname | pf_cut_sat_char
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_sat_char_from_name <productname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+get_type_from_name () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		productname=$1
+		echo $productname | pf_cut_type
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_type_from_name <productname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+get_instr_from_name () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		productname=$1
+		echo $productname | pf_cut_instr
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_instr_from_name <productname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+get_level_from_name () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		productname=$1
+		echo $productname | pf_cut_level
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_level_from_name <productname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+get_duration_from_name () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		productname=$1
+		echo $productname | pf_cut_duration
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_duration_from_name <productname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+get_cyclenum_from_name () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		productname=$1
+		echo $productname | pf_cut_cyclenum
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_cyclenum_from_name <productname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+get_timeliness_from_name () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		productname=$1
+		echo $productname | pf_cut_timeliness
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_timeliness_from_name <productname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+get_valstart_from_name () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		productname=$1
+		echo $productname | pf_cut_valstart
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_valstart_from_name <productname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+get_sensstart_from_name () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		productname=$1
+		echo $productname | pf_cut_sensstart
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_sensstart_from_name <productname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+get_valstop_from_name () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		productname=$1
+		echo $productname | pf_cut_valstop
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_valstop_from_name <productname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+get_sensstop_from_name () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		productname=$1
+		echo $productname | pf_cut_sensstop
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_sensstop_from_name <productname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+get_centre_from_name () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		productname=$1
+		echo $productname | pf_cut_centre
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_centre_from_name <productname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+get_processing_time_from_name () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		productname=$1
+		echo $productname | pf_cut_processing_time
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_processing_time_from_name <productname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+get_productclass_from_name () {
+	local EC=$S3_TB_OK
+	case $# in 
+	1 )
+		productname=$1
+		echo $productname | pf_cut_product_class
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: get_productclass_from_name <productname>"
+		exit $EC		
+	;;
+	esac;
+	return $EC	
+}
+###########################################################################################
+## Description:
+##
+## This function handles the discard of comments inside generic text files 
+##
+###########################################################################################
+cat_valid_rows () {
+	local EC=$S3_TB_OK
+	local INPUTFILE=""
+	case $# in 
+	1 )
+		INPUTFILE=$1; is_valid_file $INPUTFILE
+		cat $INPUTFILE | grep -v "\#"
+	;;
+	* )
+		EC=$S3_TB_ERROR
+		LogError "Usage: cat_valid_rows <INPUTFILE>"
+		exit $EC		
+	;;
+	esac;
+	return $EC
+}
+###########################################################################################
+## Description:
+##
+## This function handles the parallel command execution for distributed components
+##
+###########################################################################################
+parallel_command () {
+	local EC=$S3_TB_OK
+	local ENVVARNAME="$1"; check_env_var $ENVVARNAME
+	local COMMAND="$2"
+	local HOSTFAMILY="$3"
+	local SSHUSER="$4"
+	
+	local loopspec="$HOSTFAMILY hosts"
+	local hostset_envvar=$(eval 'echo "$'${ENVVARNAME}'"')
+	local howmany=0
+	local counter=0
+	local currenthost=""
+	local MY_ARRAY=($(echo $hostset_envvar))
+	howmany=${#MY_ARRAY[@]}; counter=1
+	LoopBegin "$loopspec" $howmany
+	for currenthost in "${MY_ARRAY[@]}"
+	do
+		LoopMsg "$loopspec" $howmany $counter "host=$currenthost"; let "counter += 1"
+		sshCmd $currenthost $SSHUSER "$COMMAND"
+		EC=$?
+		if [ $EC != $S3_TB_OK ]
+   		then
+			LogError "Failure executing command \"$COMMAND\" on $currenthost" 
+		fi
+	done
+	LoopEnd "$loopspec"
+	return $EC
+}
+parallel_copy () {
+	local EC=$S3_TB_OK
+	local ENVVARNAME="$1"; check_env_var $ENVVARNAME
+	local SOURCE="$2"
+	local TARGET="$3"
+	local HOSTFAMILY="$4"
+	local SSHUSER="$5"
+
+	local SRC_DIR=$(dirname $SOURCE)
+	if [[ "$SRC_DIR" = "." || "$SRC_DIR" = "./" ]]
+	then 
+		SOURCE=$PWD/`basename $SOURCE`; is_valid_file $SOURCE
+	fi
+	
+	local loopspec="$HOSTFAMILY hosts"
+	local hostset_envvar=$(eval 'echo "$'${ENVVARNAME}'"')
+	local howmany=0
+	local counter=0
+	local currenthost=""
+	local MY_ARRAY=($(echo $hostset_envvar))
+	howmany=${#MY_ARRAY[@]}; counter=1
+	LoopBegin "$loopspec" $howmany
+	for currenthost in "${MY_ARRAY[@]}"
+	do
+		LoopMsg "$loopspec" $howmany $counter "host=$currenthost"; let "counter += 1"
+		scpCmd $SOURCE $currenthost $SSHUSER $TARGET
+		EC=$?
+	done
+	LoopEnd "$loopspec"
+	return $EC
+}
+

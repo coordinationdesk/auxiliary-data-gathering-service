@@ -1,0 +1,69 @@
+7.1.0
+LP: Minor release due to jira LTA-381.
+SOAP_ISM_DATA_NOT_REMOVED_FOR_MEDIUM_MIGRATION error code added (690).
+------------------------------
+7.0.0
+LP: Major release due to jira LTA-402.
+downloadFile_2 IF now gets as input Ism__DownloadFileRequest_2 new class. Ism__deleteFileRequest IF name (not used so far) turned into Ism__giveupFileRequest and input class name changed accordingly.
+------------------------------
+6.0.0
+LP: Major release due to jira LTA-396.
+IFs for ISM Server version < 3.0 ripristinated (libIsm tag <= 3.0.0). IFs names for Server version >= 3.0 changed.
+getServerVersion method added.
+Ism__getCacheConfigurationAdditionalParms IF added to manage Ism__cacheConfigurationAdditionalParms class (downloadPoolSize, downloadBufferSize, uploadPoolSize, uploadBufferSize)
+IF ISM SERVER VERSION >= 3.0 YOU MUST UPGRADE TO VERSION >= 4.0 TO USE THIS RELEASE.
+------------------------------
+5.1.0
+LP: Minor version release due to jira LTA-392.
+deleteFileRequest IF defined.
+------------------------------
+5.0.2
+gsoap compilation warnings suppressed (headers too)
+------------------------------
+5.0.1
+gsoap compilation warnings suppressed
+------------------------------
+5.0.0
+Major version release issued due to jira CPS-14.
+downloadPoolSize, downloadBufferSize, uploadPoolSize, uploadBufferSize fields added to Ism__cacheConfiguration class.
+------------------------------
+4.0.1
+test compilation warning fixed
+------------------------------
+4.0.0
+Major version release issued due to jira LTA-66.
+both notifyDownloading and notifyDownloadCompleted IFs changed.
+------------------------------
+3.0.0
+Major version release issued due to jira S3MARINE-100.
+Fields added to structures to manage compression algorithms.
+------------------------------
+2.2.0
+Minor version release issued due to jira S2PDGS-286.
+Ism__getCacheConfiguration(char *in, Ism__cacheConfiguration *out) server method added and Ism__cacheConfiguration struct defined 
+and added to both Ism__uploadSingleFileRequest and Ism__uploadResponse if EXPRIVIA_ISM_USE_AWS_S3 compilation variable is set. 
+------------------------------
+2.1.0
+Minor version release issued due to jira CI-59.
+extendDirPermissions flag (default true) added to Ism__uploadDirectoryRequest class. setFileAttributes method added
+------------------------------
+2.0.3
+Makefile fixed to force gsopa code generation before performing the depend target
+------------------------------
+2.0.2
+Version file now included using angle brackets. Makefile CUSTOM_INCLUDEPATH = replaced with CUSTOM_INCLUDEPATH +=..
+------------------------------
+2.0.1
+Patch release issued due to jira J6PDAP-84: useless include removed in IsmService.C.
+------------------------------
+2.0.0
+Major version release issued due to jira ISM-124: header files in interfaceFile dir now installed in include path so that external interfaces changed.
+IsmService.C file added to implement fake methods of base class just throwing exception. 
+Makefiles of both lib and test fixed according to Marco Favoino's mail of 2018 Nov the 28th.
+------------------------------
+1.23.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.23.0
+
+Automatically generate from revision "version "1.23""

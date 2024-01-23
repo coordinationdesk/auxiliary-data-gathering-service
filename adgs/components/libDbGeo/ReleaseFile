@@ -1,0 +1,12 @@
+5.22.1
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+5.22.0
+operator<< for dbGeoObject implemented (it uses Postgres syntax)
+------------------------------
+5.21.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.21.0
+
+Automatically generate from revision "version "5.21""

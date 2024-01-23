@@ -1,0 +1,32 @@
+<?xml version="1.0" standalone="yes"?>
+<ReformatterConfiguration>
+	<Resource>
+		<name>Sentinel-1 IPF Auxiliary Product Specification S1-RS-MDA-52-7443</name>
+		<role>Applicable Document</role>
+	</Resource>
+	<Platform>
+		<nssdcID>2014-016A</nssdcID>
+		<familyName>SENTINEL-1</familyName>
+		<number>1</number>
+		<instrumentFamName>Synthetic Aperture Radar</instrumentFamName>
+		<instrumentAbbr>SAR</instrumentAbbr>
+	</Platform>
+	<InstrumentConfigId>1</InstrumentConfigId>
+	<MissionId>S1_</MissionId>
+	<ProcessingFacility>
+		<!-- ${ProcessorName} ==> use processor name. Otherwise you can set a constanst string. S1PDGS-30085 requests the processor name as facility name. -->
+		<Name>${ProcessorName}</Name>
+		<Organization>ESA</Organization>
+		<Site>PDMC</Site>
+		<Country>Italy</Country>
+	</ProcessingFacility>
+	<GeneralProductInformation>
+		<AuxType>
+			<AUX_ICE>AUX_ICE</AUX_ICE>
+			<AUX_WND>AUX_WND</AUX_WND>
+			<AUX_WAV>AUX_WAV</AUX_WAV>
+			<AUX_TRO>AUX_TRO</AUX_TRO>
+			<AUX_TEC>AUX_TEC</AUX_TEC>
+		</AuxType>
+	</GeneralProductInformation>
+</ReformatterConfiguration>

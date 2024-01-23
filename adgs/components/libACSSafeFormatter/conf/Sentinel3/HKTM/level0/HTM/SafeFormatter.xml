@@ -1,0 +1,153 @@
+<?xml version="1.0" standalone="yes"?>
+<SafeFormatter>
+	<SafeProduct>
+		<productType>TM_0_HTM___</productType>
+		<safeNamespace>http://www.esa.int/safe/sentinel/1.1</safeNamespace>
+		<xfduNamespace>urn:ccsds:schema:xfdu:1</xfduNamespace>
+		<rootTagOtherAttributes>xmlns:gml="http://www.opengis.net/gml" xmlns:sentinel3="http://www.esa.int/safe/sentinel/sentinel-3/1.0" xmlns:s3-level0="http://www.esa.int/safe/sentinel/sentinel-3/level-0/1.0"</rootTagOtherAttributes>
+		<schemaLocation>./xfdu.xsd</schemaLocation>
+		<manifestName>xfdumanifest.xml</manifestName>
+		<dispositionMode>Operational</dispositionMode> <!-- Allowed: Demonstration, Pre-Operational, Operational -->
+		<productUnitType>STRIPE</productUnitType>  <!-- Allowed: STRIPE FRAME TILE -->
+		<InformationPackageMap>
+			<unitType>SAFE Archive Information Package</unitType>
+			<textInfo>SENTINEL-3 HKTM Level 0</textInfo>
+			<pdiId>processing</pdiId>
+			<dmdId>acquisitionPeriod measurementFrameSet platform generalProductInformation measurementOrbitReference measurementQualityInformation</dmdId>
+			<Id>packageUnit</Id>
+		</InformationPackageMap> 
+		<ListOfObjects count="4">
+			<Object type="Data">
+				<Common>
+					<unitType>Measurement Data Unit</unitType>
+					<checksumName>MD5</checksumName>
+					<locType>URL</locType>
+				</Common>
+				<ListOfObjectConfigs count="2">
+					<ObjectConfig>
+						<Id>ISPData</Id>
+						<dataObjectId>ISPData</dataObjectId>
+						<textInfo>ISP Data set</textInfo>
+						<mimeType>application/octetstream</mimeType>
+						<dmdId>ISPAnnotationData</dmdId>
+						<repId>ISPDataSchema</repId>
+					</ObjectConfig>	
+					<ObjectConfig>
+						<Id>OLQCReport</Id>
+						<dataObjectId>OLQCReport</dataObjectId>
+						<textInfo>Online Quality Control Report</textInfo>
+						<mimeType>text/xml</mimeType>
+						<dmdId></dmdId>
+						<repId/>
+					</ObjectConfig>	
+				</ListOfObjectConfigs>
+			</Object>
+			<Object type="Metadata">
+				<Common>
+					<metadataClass>MetadataWrap</metadataClass>
+					<mimeType>text/xml</mimeType>
+					<vocabularyName>Sentinel-SAFE</vocabularyName>
+				</Common>
+				<ListOfObjectConfigs count="7">
+					<ObjectConfig>
+						<Id>acquisitionPeriod</Id>
+						<metadataObjectId>acquisitionPeriod</metadataObjectId>
+						<textInfo>Acquisition Period</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>platform</Id>
+						<metadataObjectId>platform</metadataObjectId>
+						<textInfo>Platform Description</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>generalProductInformation</Id>
+						<metadataObjectId>generalProductInformation</metadataObjectId>
+						<textInfo>General Product Information</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+						<namespace>http://www.esa.int/safe/sentinel/1.1/sentinel-3</namespace>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>orbitReference</Id>
+						<metadataObjectId>measurementOrbitReference</metadataObjectId>
+						<textInfo>Orbit Reference</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>frameSet</Id>
+						<metadataObjectId>measurementFrameSet</metadataObjectId>
+						<textInfo>Frame Set</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+						<srsName>http://www.opengis.net/def/crs/EPGS/0/4326</srsName>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>qualityInformation</Id>
+						<metadataObjectId>measurementQualityInformation</metadataObjectId>
+						<textInfo>Quality Information</textInfo>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>processing</Id>
+						<metadataObjectId>processing</metadataObjectId>
+						<classification>PROVENANCE</classification>
+						<category>PDI</category>
+						<textInfo>Processing</textInfo>
+					</ObjectConfig>
+				</ListOfObjectConfigs>
+			</Object>
+			<Object type="Metadata">
+				<Common>
+					<metadataClass>dataObjectPointer</metadataClass>
+					<unitType>Metadata Unit</unitType>
+					<checksumName>MD5</checksumName>
+					<locType>URL</locType>
+					<mimeType>application/octetstream</mimeType>
+				</Common>
+				<ListOfObjectConfigs count="1">
+					<ObjectConfig>
+						<Id>ISPAnnotation</Id>
+						<dataObjectId>ISPAnnotationData</dataObjectId>
+						<textInfo>Level 0 Product Annotation</textInfo>
+						<dmdId/>
+						<repId>ISPAnnotationSchema</repId>
+						<!-- metadataObject info -->
+						<metadataObjectId>ISPAnnotation</metadataObjectId>
+						<classification>DESCRIPTION</classification>
+						<category>DMD</category>
+					</ObjectConfig>
+				</ListOfObjectConfigs>
+			</Object>
+			<Object type="Schema">
+				<Common>
+					<metadataClass>MetadataReference</metadataClass>
+					<mimeType>text/xml</mimeType>
+					<locatorType>URL</locatorType>
+					<vocabularyName>SDF</vocabularyName>
+				</Common>
+				<ListOfObjectConfigs count="2">
+					<ObjectConfig>
+						<Id>ISPDataSchema</Id>
+						<metadataObjectId>ISPDataSchema</metadataObjectId>
+						<filename>ISPData.xsd</filename>
+						<classification>SYNTAX</classification>
+						<category>REP</category>
+					</ObjectConfig>
+					<ObjectConfig>
+						<Id>ISPAnnotationSchema</Id>
+						<metadataObjectId>ISPAnnotationSchema</metadataObjectId>
+						<filename>ISPAnnotation.xsd</filename>
+						<classification>SYNTAX</classification>
+						<category>REP</category>
+					</ObjectConfig>
+				</ListOfObjectConfigs>
+			</Object>
+		</ListOfObjects>
+	</SafeProduct>
+</SafeFormatter>

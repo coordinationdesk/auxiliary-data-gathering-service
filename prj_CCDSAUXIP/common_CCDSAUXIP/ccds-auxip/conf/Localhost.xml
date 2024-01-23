@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<root>
+        <GarbageCleaner count="3">
+                <Section Remark="Clean  log files in /workspace/prip/log older than">
+                        <LogAct>false</LogAct>
+                        <Dir>/workspace/prip/log</Dir>
+                        <Time>-30 days</Time>
+                </Section>
+        </GarbageCleaner>
+        <DaemonLogRotationPolicy>
+               <Mode>FIRST_APPLY</Mode>
+                <AgingThreshold>86400</AgingThreshold>
+                <!-- 1024*1024*200 200 Mbytes -->
+                <SizeThreshold>209715200</SizeThreshold>
+                <OldLogsToKeep>10</OldLogsToKeep>
+                <CompressOldLogs>TRUE</CompressOldLogs>
+    </DaemonLogRotationPolicy>
+    <!--SoftwareVersion>1.0.0</SoftwareVersion-->
+</root>

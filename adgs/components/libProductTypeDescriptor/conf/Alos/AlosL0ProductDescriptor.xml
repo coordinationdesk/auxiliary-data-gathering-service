@@ -1,0 +1,747 @@
+<?xml version="1.0" standalone="yes"?>
+<AlosL0ProductDescription>
+	<L0ProductDescriptor>
+    		<NumberOfProducts>39</NumberOfProducts>  
+			<!-- ++++++++++++++++++++++++++++++++++++++++++++++++ -->
+			<!-- 			   HIGH RATE PRODUCTS 		      	  -->
+			<!-- ++++++++++++++++++++++++++++++++++++++++++++++++ -->
+			
+			<!-- ##################	PRISM ####################### -->
+			
+			<Product1>
+				<Id>PRISMVIEW1</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>0</Channel>
+				<VCID>33</VCID>
+				<SensorName>PSM</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PRISM nadir view1</Description>        
+    		</Product1>
+			<Product2>
+				<Id>PRISMVIEW2</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>0</Channel>
+				<VCID>34</VCID>
+				<SensorName>PSM</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PRISM nadir view2</Description>        
+    		</Product2>
+			<Product3>
+				<Id>PRISMVIEW3</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>0</Channel>
+				<VCID>35</VCID>
+				<SensorName>PSM</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PRISM nadir view3</Description>        
+    		</Product3>
+			<Product4>
+				<Id>PRISMFWVI1</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>36</VCID>
+				<SensorName>PSM</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PRISM foward view1</Description>        
+    		</Product4>
+			<Product5>
+				<Id>PRISMFWVI2</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>37</VCID>
+				<SensorName>PSM</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PRISM foward view2</Description>        
+    		</Product5>
+			<Product6>
+				<Id>PRISMFWVI3</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>38</VCID>
+				<SensorName>PSM</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PRISM foward view3</Description>        
+    		</Product6>
+			
+			<Product7>
+				<Id>PRISMBACK1</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>0</Channel>
+				<VCID>39</VCID>
+				<SensorName>PSM</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PRISM backward 1</Description>        
+    		</Product7>
+			<Product8>
+				<Id>PRISMBACK2</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>40</VCID>
+				<SensorName>PSM</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PRISM backward 2</Description>        
+    		</Product8>
+			<Product9>
+				<Id>PRISMBACK3</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>0</Channel>
+				<VCID>41</VCID>
+				<SensorName>PSM</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PRISM backward 3</Description>        
+    		</Product9>
+
+			<Product10>
+				<Id>PRISM70KM1</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>42</VCID>
+				<SensorName>PSM</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PRISM forward 70Km 1</Description>        
+    		</Product10>
+			<Product11>
+				<Id>PRISM70KM2</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>43</VCID>
+				<SensorName>PSM</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PRISM forward 70Km 2</Description>        
+    		</Product11>
+			<Product12>
+				<Id>PRISM70KM3</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>44</VCID>
+				<SensorName>PSM</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PRISM forward 70Km 3</Description>        
+    		</Product12>
+
+			<!-- ##################	AVNIR-2 ####################### -->
+
+			<Product13>
+				<Id>AV2_BND_1_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>0</Channel>
+				<VCID>45</VCID>
+				<SensorName>AV2</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>AVNIR-2 Band 1</Description>        
+    		</Product13>
+			<Product14>
+				<Id>AV2_BND_2_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>46</VCID>
+				<SensorName>AV2</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>AVNIR-2 Band 2</Description>        
+    		</Product14>
+			<Product15>
+				<Id>AV2_BND_3_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>0</Channel>
+				<VCID>47</VCID>
+				<SensorName>AV2</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>AVNIR-2 Band 3</Description>        
+    		</Product15>
+			<Product16>
+				<Id>AV2_BND_4_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>48</VCID>
+				<SensorName>AV2</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>AVNIR-2 Band 4</Description>        
+    		</Product16>
+
+			<!-- ##################	DM ####################### -->
+
+			<Product17>
+				<Id>AL_DMM__1_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>0</Channel>
+				<VCID>49</VCID>
+				<SensorName>DMM</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>DM 1</Description>        
+    		</Product17>
+			<Product18>
+				<Id>AL_DMM__2_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>50</VCID>
+				<SensorName>DMM</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>DM 2</Description>        
+    		</Product18>
+			<Product19>
+				<Id>AL_DMM__3_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>51</VCID>
+				<SensorName>DMM</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>DM 3</Description>        
+    		</Product19>
+			
+			<!-- ##################	PALSAR ####################### -->
+
+			<Product20>
+				<Id>AL_PSR__1_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>0</Channel>
+				<VCID>52</VCID>
+				<SensorName>PSR</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PALSAR Mission Data 1</Description>        
+    		</Product20>
+			<Product21>
+				<Id>AL_PSR__2_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>53</VCID>
+				<SensorName>PSR</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PALSAR Mission Data 2</Description>        
+    		</Product21>
+			<Product22>
+				<Id>AL_PSR__3_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>0</Channel>
+				<VCID>54</VCID>
+				<SensorName>PSR</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PALSAR Mission Data 3</Description>        
+    		</Product22>
+			<Product23>
+				<Id>AL_PSR__4_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>55</VCID>
+				<SensorName>PSR</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PALSAR Mission Data 4</Description>        
+    		</Product23>
+			<Product24>
+				<Id>AL_PSR__5_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>0</Channel>
+				<VCID>56</VCID>
+				<SensorName>PSR</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PALSAR Mission Data 5</Description>        
+    		</Product24>
+			<Product25>
+				<Id>AL_PSR__6_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>57</VCID>
+				<SensorName>PSR</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PALSAR Mission Data 6</Description>        
+    		</Product25>
+			<Product26>
+				<Id>AL_PSR__7_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>0</Channel>
+				<VCID>58</VCID>
+				<SensorName>PSR</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PALSAR Mission Data 7</Description>        
+    		</Product26>
+			<Product27>
+				<Id>AL_PSR__8_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>59</VCID>
+				<SensorName>PSR</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PALSAR Mission Data 8</Description>        
+    		</Product27>
+			
+			<!-- ##################	 STT  ####################### -->
+			<Product28>
+				<Id>AL_STT__1_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>60</VCID>
+				<SensorName>STT</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>STT Mission Data 1</Description>        
+    		</Product28>
+			<Product29>
+				<Id>AL_STT__2_</Id>
+				<CCSDSVersion>1</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>0</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>61</VCID>
+				<SensorName>STT</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>STT Mission Data 2</Description>        
+    		</Product29>
+
+			<!-- ++++++++++++++++++++++++++++++++++++++++++++++++ -->
+			<!-- 			   LOW RATE PRODUCTS 		      	  -->
+			<!-- ++++++++++++++++++++++++++++++++++++++++++++++++ -->
+			<Product30>
+				<Id>AL_LR_TL4_</Id>
+				<CCSDSVersion>0</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>44</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>253</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>32</VCID>
+				<SensorName>TL4</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>TTC-PCD data</Description>        
+    		</Product30>
+			<Product31>
+				<Id>AL_LR_TL1_</Id>
+				<CCSDSVersion>0</CCSDSVersion>
+				<DataFieldHeaderLength>6</DataFieldHeaderLength>
+				<ApplicationDataLength>500</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>1281</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>32</VCID>
+				<SensorName>TL1</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>TTC-system Telemetry data</Description>        
+    		</Product31>
+			<Product32>
+				<Id>AL_LR_TL5_</Id>
+				<CCSDSVersion>0</CCSDSVersion>
+				<DataFieldHeaderLength>6</DataFieldHeaderLength>
+				<ApplicationDataLength>354</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>1548</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>32</VCID>
+				<SensorName>TL5</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>Determined Attitude 3</Description>        
+    		</Product32>
+			<Product33>
+				<Id>AL_LR_TL6_</Id>
+				<CCSDSVersion>0</CCSDSVersion>
+				<DataFieldHeaderLength>6</DataFieldHeaderLength>
+				<ApplicationDataLength>154</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>1549</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>32</VCID>
+				<SensorName>TL6</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>AOCS sensor 1</Description>        
+    		</Product33>
+			<Product34>
+				<Id>AL_LR_TL7_</Id>
+				<CCSDSVersion>0</CCSDSVersion>
+				<DataFieldHeaderLength>6</DataFieldHeaderLength>
+				<!-- ApplicationDataLength VARIABLE (500 or 68): set to 0 -->
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>1550</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>32</VCID>
+				<SensorName>TL7</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>STT Raw Data</Description>        
+    		</Product34>
+			<Product35>
+				<Id>AL_LR_TL8_</Id>
+				<CCSDSVersion>0</CCSDSVersion>
+				<DataFieldHeaderLength>6</DataFieldHeaderLength>
+				<!-- ApplicationDataLength VARIABLE (500 or 36): set to 0 -->
+				<ApplicationDataLength>0</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>1551</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>32</VCID>
+				<SensorName>TL8</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>GPSR Raw Data</Description>        
+    		</Product35>
+			<Product36>
+				<Id>AL_LR_TL2_</Id>
+				<CCSDSVersion>0</CCSDSVersion>
+				<DataFieldHeaderLength>0</DataFieldHeaderLength>
+				<ApplicationDataLength>102</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>1581</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>32</VCID>
+				<SensorName>TL2</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PRISM-Mission Telemetry</Description>        
+    		</Product36>
+			<Product37>
+				<Id>AL_LR_TL3_</Id>
+				<CCSDSVersion>0</CCSDSVersion>
+				<DataFieldHeaderLength>6</DataFieldHeaderLength>
+				<ApplicationDataLength>102</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>1589</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>32</VCID>
+				<SensorName>TL3</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>PALSAR-Mission Telemetry</Description>        
+    		</Product37>
+			<Product38>
+				<Id>AL_LR_TED_</Id>
+				<CCSDSVersion>0</CCSDSVersion>
+				<DataFieldHeaderLength>6</DataFieldHeaderLength>
+				<ApplicationDataLength>452</ApplicationDataLength>
+				<PacketErrorControlLength>0</PacketErrorControlLength>
+				<List_of_APID count="1">
+    				<APID>1685</APID>
+				</List_of_APID>
+				<Channel>1</Channel>
+				<VCID>32</VCID>
+				<SensorName>TED</SensorName>
+				<SensorMode></SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+				<DeltaNominalTime unit="ms">0.0</DeltaNominalTime>
+				<GapThresold unit="ms">0</GapThresold>        
+				<Description>TEDA-LPT/HIT Data</Description>        
+    		</Product38>
+		
+			<!-- ++++++++++++++++++++++++++++++++++++++++++++++++ -->
+			<!-- 			   IDLE PRODUCT		      	  		  -->
+			<!-- ++++++++++++++++++++++++++++++++++++++++++++++++ -->
+			<Product39>
+        		<Id>IDLE_PACK_</Id>
+        		<CCSDSVersion>0</CCSDSVersion>
+        		<DataFieldHeaderLength>0</DataFieldHeaderLength>
+        		<ApplicationDataLength>0</ApplicationDataLength>
+        		<PacketErrorControlLength>0</PacketErrorControlLength>
+        		<List_of_APID count="1">
+					<APID>0</APID>
+				</List_of_APID>
+        		<VCID>63</VCID>
+        		<Channel>0</Channel>
+				<SensorName>IDLE</SensorName>
+        		<SensorMode>IDLE</SensorMode>
+				<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        		<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+        		<GapThresold unit="ms">0</GapThresold>        
+				<Description></Description>        
+    		</Product39>
+
+			<!-- ++++++++++++++++++++++++++++++++++++++++++++++++ -->
+			<!-- 			     GENERAL SECTION 		          -->
+			<!-- ++++++++++++++++++++++++++++++++++++++++++++++++ -->
+    		<SatelliteName>ALOS</SatelliteName>
+    		<SourcePacketHeaderSize>6</SourcePacketHeaderSize>
+    		<AnnotationSize>0</AnnotationSize>
+			<RefDocName>ALOS-LZFT-E01</RefDocName>
+			<AcquisitionReportFileType>ACQREPORT_</AcquisitionReportFileType>
+			<AnnotationIsInUTC>true</AnnotationIsInUTC>
+	</L0ProductDescriptor>
+</AlosL0ProductDescription>

@@ -1,0 +1,341 @@
+12.10.0
+using default Singleton trait from libException 12.x
+--------------------------------------------------------------------------------------
+12.9.3
+S2PDGS-576: CirculationCurl file transfer function updated: curl code for target is checked only in case of FtpCurlRecoverableErrorException.
+--------------------------------------------------------------------------------------
+12.9.2
+[CPS-27]
+StreamCurl::streamputRename was not using CURLOPT_FTP_CREATE_MISSING_DIRS if available
+--------------------------------------------------------------------------------------
+12.9.1
+The change ownenr and change mode configuration is now correctly handled and reported in the logfile.
+The specification is in the wiki page:
+http://wiki.acs/index.php/PDS_Conf_Space:_libFtpCurl.so#ChangeLocalPermissions
+-----------------------------------------------------------------------------------
+12.9.0
+[S2PDGS-549]
+DT:: Introduced new function FtpCurl::existDestinationFile that checks the existence of the resource specified in
+in the RemoteSite associated to the FtpCurl instance independently by the fact that the specified url
+is remote or local.
+The function FtpCurl::existRemoteFile internally invokes FtpCurl::existDestinationFile.
+---------------------------------------------------------------------------------------------------------
+12.8.0
+[LTA-351]
+DT:: The following modifications have been introduced:
+1)	A new set API for http methods: differently from the already existing API, the new 
+	functions can be used to retrieve the response payload from the server even if the http response code is >= 400.
+	It is very important to know that the new functions do not throw any exception when the http response 
+	code is >= 400. The management of such codes is left to the user.
+2)	Introduced a new private function FtpCurl::httpRequest that encapsulate all the code in common to all http API. 
+---------------------------------------------------------------------------------------------------------
+12.7.0
+[CPS-27]
+Added CURLFTP_CREATE_DIR_RETRY option to CURLOPT_FTP_CREATE_MISSING_DIRS if available (libcurl >= 7.20.0)
+---------------------------------------------------------------------------------------------------------
+12.6.1
+ccompilation warnings partial cleanup
+----------------------------
+12.6.0
+[LTA-349] Now the configured value of the connection timeout can be overwrited using CurlHttpOpt for HTTP curl requests
+----------------------------
+12.5.2
+S2PDGS-503 (EC::) Verbosity slightly decreased (messages moved in debug-level)
+----------------------------
+12.5.1
+S2PDGS-503 (EC::) Patched by moving setupVerifyHostCertificate also in: passiveActiveDiscover
+----------------------------
+12.5.0
+S2PDGS-503 (EC::) Modifications in order to handle a more complex Certificate Verification Parameters Configuration
+----------------------------
+12.4.0
+S3MARINE-449 (EC::) Optional parameters added in FtpCurl conf file in order to handle tar block size. Requires: libProc >= 3.0.3
+----------------------------
+12.3.1
+S2PDGS-503 (EC::) Verbosity slightly decreased (messages moved in debug-level)
+----------------------------
+12.3.0
+S2PDGS-503 (EC::) Integrated on master
+----------------------------
+12.2.2
+S2PDGS-503 (EC::) Development version for internal use
+----------------------------
+12.2.1
+Added message to mkdirtree error  in ::get
+----------------------------
+12.2.0
+S6JCS-253
+Added the possibility to statically define the host based active/passive FTP transfer mode by
+means of configuration in the libFtpCurl.so configuration space
+----------------------------
+12.1.3
+DT:: Fixed heroic attempt of auto-exploit using admin:admin approach
+All http functions erroneously make use of the CurlHttpOpt::getUser to retrieve
+the passwords. Bug fixed.
+----------------------------
+12.1.2
+[LTA-304]
+EC:: Added method RemoveTargetBeforeTransfer (set/get) to handle flag EarlyFinalRemoval more comfortably.
+----------------------------
+12.1.1
+[LTA-304]
+EC:: Flag: EarlyFinalRemoval (which was already existing) is now handled by most of transfer methods of CirculationCurl. In order to overwrite the destination target it should be set to FALSE [ default = TRUE: do not overwrite, i.e. raise error in case of existing destination ]
+----------------------------
+12.1.0
+[LTA-290]
+Fixed issues related to exception received before the actual transfer via libcurl has started.
+Typical case is when a password cannot be decrypted.
+----------------------------
+12.0.0
+[LTA-272] OAuth2ClientCredentialsTokenProvider moved to new libOAuth2Utils.
+----------------------------
+11.0.0
+[LTA-272] Added OAuth2 support.
+----------------------------
+10.2.2
+Patch due to issue LTA-276
+reset custom header method invoked in Curl::httpPropFind before exiting (custom header with Depth key was created).
+----------------------------
+10.2.1
+[LTA-251] EC:: source_http_response_code also set on local transfers (i.e. one end local, one end http)
+----------------------------
+10.2.0
+[LTA-243]
+http redirect with authentication
+[LTA-205]
+RemoteSite offer now supportsActivePassive(), supportsDirectory(), supportsRemove(), supportsSource()
+and supportsDestination() boolean members along with their static counterparts.
+Those predicates should avoid useless connection and checks when the protocols does not need to.
+e.g. it is completely useless to check for active/passive using http/https protocols and, for the same protocols
+verify for existence of a resource before accessing it (probing).
+----------------------------
+10.1.6
+MP: test compilation warnings cleanup
+----------------------------
+10.1.5
+[S2PDGS-395] Introduced the configurability of the CURLE_LOGIN_DENIED error.
+In order to maintain backward compatibility, the specific exceptions are 
+thrown only if the behaviour for each curl error (RECOVERABLE/UNRECOVERABLE) 
+is the same as the type of the specific exception itself. UNDEFINED behaviours
+are always treated as UNRECOVERABLE errors.
+----------------------------
+10.1.4
+Resolved regression error in function CurlHeaderMaker::makeURL which caused
+sistematic failures in FTP QUOT commands RNFR used in the temporary naming strategies. 
+Now the functions transforms '//' in '/' only in case of http/https protocols.
+----------------------------
+10.1.3
+[S2PDGS-424] Managing UNDEFINED curl errors behaviours as UNRECOVERABLE errors.
+----------------------------
+10.1.2
+[LTA-134] EC:: RemoteSiteUtility::isDir: HTTP code returned also in case of getFastProbeModeEnabled
+----------------------------
+10.1.1
+[LTA-134] EC:: RemoteSiteUtility::isDir: compatibility to the original I/F has been reintroduced.
+----------------------------
+10.1.0
+[LTA-134] EC:: Development branch merged to master. Added three functionalities to Circulations when source is HTTP: 1. Handling of Basic Auth. 2. Handling of HTTP 30x redirect [also 1+2]. 3. Added API getSourceHttpResponseCode to obtain HTTP error codes.
+----------------------------
+10.0.3
+[LTA-153] 
+Added missing test TestCurlHttp
+----------------------------
+10.0.2
+If dc statistics are disabled by configuration, the existence of the statistics' table on the 
+schema is no longer checked, thus avoiding to emit a useless warning about missing, useless, table.
+----------------------------
+10.0.1
+[LTA-153] 
+Using default http protocol in http operations if it is not provided in the input URL.
+It has been introduced only for backward compatibility, an url should always have a protocol specified.
+----------------------------
+10.0.0
+[LTA-153] 
+Modified CurlPostOpt into CurlHttpOpt.
+Introduced new HTTP GET interface using CurlHttpOpt. 
+Implemented HTTP methods PUT/PATCH/DELETE.
+----------------------------
+9.6.1
+EC:: Modification as per 9.4.0 should be applied only on libcurl >= 7.62 (not: 7.61.1). Fixed.
+----------------------------
+9.6.0
+Implemented FtpCurl::getHttpResponseCode() to return the last http code from Curl
+----------------------------
+9.5.2
+Patch due to issue S3MARINE-100
+getUnTar: optional decompress parameters added
+----------------------------
+9.5.1
+Patch due to issue S3MARINE-100
+getUnTar: destination directory might be already existing if temporary strategy is disabled.
+----------------------------
+9.5.0
+Minor issue due to jira S2PDGS-317.
+FtpCurl::propFind: throw new FtpCurlHttpNotFoundException if error code from finalizeCurl is 404
+----------------------------
+9.4.0
+If compiled with libcurl >= 7.61.1 supports a configurable upload buffer size (16K-2M default 64K).
+
+<root><FtpCurl><uploadBufferSize>65536</uploadBufferSize></FtpCurl></root>
+see https://curl.haxx.se/libcurl/c/CURLOPT_UPLOAD_BUFFERSIZE.html
+
+----------------------------
+9.3.0
+Protected Curl::delay method removed and getting rid also of the conf parameters that were used by it.
+----------------------------
+9.2.1
+[S1OME-129]
+CirculationCurl now calls getDir using the new IF having the FtpCurlPermissions as parameter
+Fixed if statement bugs in FtpCurl::getDir and FtpCurl::get
+----------------------------
+9.2.0
+[S1OME-129]
+CirculationCurl::changePermissions function splitted into 3 separate functions: getUser, gerGroup and changePermissions
+in order to increase code reusability.
+Call to CirculationCurl::changePermissions moved inside localTransfer. 
+Defined new function CirculationCurl::getGID().
+Removed useless preprocessing instruction #if inside Curl that enables settings of ssh keys only for specific curl versions
+Implemented new function Curl::lchown().
+Curl::performTransferRenameChmod now modifies permissions before renaming the file.
+Defined new struct FtpCurl::FtpCurlPermissions.
+Defined new functions FtpCurl::get, FtpCurl::getDir and FtpCurl::getUntar that takes FtpCurlPermissions
+as input parameters. The previous versions of those functions now have been remapped to the new one.
+Added function RemoteSite::isNetworkLocalhost()
+-----------------------------
+9.0.1
+In case of transfers involving local source, remote target and src_tar streamer
+the following operations are carried out
+- the local path is normalized before starting the transfer (to avoid to search a file called "dot")
+- the local path is analyzed to detect if it terminates with a slashdot "/." fragment
+- in case of slashdot fragment, if the source is a directory, the putAsTar is called avoiding the inclusion
+  of the root directory in the tar package, in order to create a flat tar of the content of the src directory
+-----------------------------
+9.0.0
+[S3MARINE-285]
+RemoteSite::isLocalhost function does not relies anymore on the hostname specified as 'localhost' to perform its check.
+This is to avoid that for urls like ftp://localhost/path the function RemoteSiteFactory::toURL erroneously
+updates it into fs://localhost/path.
+The check for localhost is now performed only relying on protocols and empty hostname.
+Fixed bug on band shaping.
+-----------------------------
+8.1.0
+[S3MARINE-101]
+Implemented support for pre-quote ftp command. Added temporary target delete in performTransferRenameChmod using pre-commands.
+Introduced management of streamerId in circulationCurl for local->remote transfers.
+Fixed tests and implemented new ones.
+-----------------------------
+8.0.0
+Protools ftp, ftps and ftpes now use the port in a different way:
+After everything has been setup, if the protocol was ftp or ftpes, the url is built with "ftp://..." 
+and if the protocol was ftps the rl is built with "ftps://..." 
+This allow the curl to choose the port to be 21 for the former case and 990 for the latter (ftps implicit).
+If a previous project was configuring ftps protocol to work on port 21 (explicit ftps behaviour) now
+have to change the protocol to be ftpes (the 'e' stands for explicit).
+All other options for crypto setup and handshaking are unchanged (the wouldn't affect neither are affected
+from the port choosing algo implemented by curl).
+------------------------------
+7.2.1
+S2PDGS-233: Fixed bug causing progress function call to be systematically disabled for http operations. Http curl timeout moved into the openConnection function.
+------------------------------
+7.2.0
+ECS-10: RemoteSiteFactory::makeSite allows username empty.
+------------------------------
+7.1.1
+Default ftps and ftpes CURLOPT_USE_SSL is CURLUSESSL_TRY (there was a bug - fixed).
+removed code conditioned to old curl version (CURL_NO_OLDIES)
+------------------------------
+7.1.0
+Username and Password are set in any cas during the open connection
+In case of secure site or secure http site the SSH certificates are also set
+------------------------------
+7.0.0
+Major version due to jira S3PDGS-101
+Bug fixed in FtpCurl::get method with https protocol due to problem in CurlHeaderMaker class. 
+Curl::httpPropFind and Ftp::propFind methods IF changed: insecure parameter needed no more since secure parameters set in Curl::OpenConnection only.
+------------------------------
+6.2.0
+S2PDGS-233: Implemented support for http connection timeout. Added http progress callback to stop ongoing curl operations with halt immediate.
+------------------------------
+6.1.0
+ECS-6: http post parameters wrapped into CurlPostOpt object. FtpCurl aligned to the new Curl api.
+------------------------------
+6.0.3
+MP: nullptr reverted to 0 - gcc 4.4.x cannot handle it
+------------------------------
+6.0.2
+ECS-10: static methods for encoding and decoding URL strings added.
+------------------------------
+6.0.1
+S3MARINE-98 EC:: A oftarunstream specific function (flush) was called also if a FILE* pointer was used as handler ! Fixed by modifying CurlFile.
+------------------------------
+6.0.0
+S3MARINE-98 EC:: FtpCurl and Curl modified in order to handle on-the-fly tar/untar. Created a pair of specific FtpCurl methods: putAsTar, getUnTar.
+------------------------------
+5.134.2
+S2PDGS-188: FtpCurl::propFind: flag added to IF to discriminate directories from files to add slash to directories path. Just filename now returned (before the whole paths).
+------------------------------
+5.134.1
+S2PDGS-188: in FtpCurl::get method, File::mkdir replaced by File::mkdirtree otherwise an error occur if outer directory does not exist.
+------------------------------
+5.134.0
+S2PDGS-188: ls skipped with http(s) protocol: HTTP_LIST_OLD_CODE compilation variable added to preserve odl behaviour. http(s) propfind method of WebDAV protocol managed.
+------------------------------
+5.133.0
+S6JCS-92: Handling of salt added. I/F simplified (methods encryptRSAPassword and decryptRSAPassword removed) in order to call ACS_SSL common methods: ACS_RSA_encode_password and ACS_RSA_decode_password
+------------------------------
+
+5.132.0
+CurrErrorBehaviourSingleton default constructor made protected. 
+------------------------------
+5.131.1
+qac++ analysis
+------------------------------
+5.131.0
+Minor release due to jira issue S2PDGS-79. Introduced configurability of CURL error codes behaviours (RECOVERABLE, UNRECOVERABLE).
+------------------------------
+5.130.1
+Patch release due to jira issue S2PDGS-92. BUG fixed in streamPutCallback method: if error encountered from streamGetCallback, CURL_READFUNC_ABORT returned (instead of 0!).
+------------------------------
+5.130.0
+Minor release due to jira issue S2PDGS-68. Optional parameter added to FtpListReader::createLocalFtpListItems static method to be filled with paths of items to skip when creating the output list.
+------------------------------
+5.129.1
+Patch release due to jira issue J6PDAP-93. RemoteSite operator = bug fixed since TemporaryFileService outer object not assigned. Test added.
+------------------------------
+5.129.0
+Fixing J6PDAP-81
+Reverting code, using transaction and gettin back results from discovered active/passive 
+Debug slightly improved
+------------------------------
+5.128.1
+Fixing J6PDAP-81
+StreamCurl streamputRename fixed
+------------------------------
+5.128.0
+Fixing J6PDAP-81
+StreamCurl debug activated
+------------------------------
+5.127.0
+Fixing J6PDAP-81
+StreamCurl class did not honor active / passive mode
+------------------------------
+5.126.0
+Fixing J6PDAP-81
+CirculationCurl class shall perform active/passive discovery transferring files
+it has implemented into doTransfer() method.
+FtpCurl::passiveActiveDiscover method is now public.
+Once the discovery has been done for a specific site, this info is cached for the whole process life.
+------------------------------
+5.125.1
+Makefiles prepared to run in both smurfer.py and legacy mode
+------------------------------
+5.125.0
+
+J6PDAP-81: Any operation involving transferts on DATA channel (put, get, list) 
+will now ask the discovery of the active/passive status of the FTP channel
+------------------------------
+5.124.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.124.0
+Automatically generate from revision "version "5.124""

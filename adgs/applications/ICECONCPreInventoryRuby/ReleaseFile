@@ -1,0 +1,12 @@
+1.2.0
+Allowed processing of 'icdrft' files in addition to 'cdr' and 'icdr'.
+Test updated
+----------------------------------------------------------------
+1.1.1
+Added test of mtd creation with minimal configuration.
+----------------------------------------------------------------
+1.1.0
+Allowed processing of 'v2p0' files in addition to 'v3p0'.
+----------------------------------------------------------------
+1.0.0
+[CCDS-79]: First release.

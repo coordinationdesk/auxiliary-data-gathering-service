@@ -1,0 +1,33 @@
+#Caricamento t_tasktables
+,,,,,,,,,,
+,,,,,,,,,,
+,,,,,,,,,,
+name,tasktable,type_id,description
+'decompressReception',            '%/usr/local/conf/ADGS/DbConfiguration/tasktables/decompressReception.xml',            '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'Decompress TGZ and archive'
+'defaultReception',               '%/usr/local/conf/ADGS/DbConfiguration/tasktables/defaultReception.xml',               '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory and Inventory'
+'safeDefaultReceptionZip',        '%/usr/local/conf/ADGS/DbConfiguration/tasktables/safeDefaultReceptionZip.xml',        '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory Zip and Inventory'
+'ZipEofReception',                '%/usr/local/conf/ADGS/DbConfiguration/tasktables/ZipEofReception.xml',                '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory and Inventory'
+'eofFmtReception',                '%/usr/local/conf/ADGS/DbConfiguration/tasktables/eofFmtReception.xml',                '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'Ingestion of S2 IERS Task Table'
+'auxtecReception',                '%/usr/local/conf/ADGS/DbConfiguration/tasktables/auxtecReception.xml',                '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory and Inventory of AUX_TEC'
+'auxwndReception',                '%/usr/local/conf/ADGS/DbConfiguration/tasktables/auxwndReception.xml',                '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'Ingestion of S1 AUXWND_OR Task Table'
+'auxtroReception',                '%/usr/local/conf/ADGS/DbConfiguration/tasktables/auxtroReception.xml',                '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory and Inventory of AUX_TRO'
+'TGZ2HDRDBLReception',            '%/usr/local/conf/ADGS/DbConfiguration/tasktables/TGZ2HDRDBLReception.xml',            '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory and Inventory TGZ HDRDBL files'
+'decompressSafeDefaultReception', '%/usr/local/conf/ADGS/DbConfiguration/tasktables/decompressSafeDefaultReception.xml', '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'Decompress TGZ SAFE'
+'gippReception',                  '%/usr/local/conf/ADGS/DbConfiguration/tasktables/gippReception.xml',                  '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory of GIPP files'
+'obmemcReception',                '%/usr/local/conf/ADGS/DbConfiguration/tasktables/obmemcReception.xml',                '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory of OBMEMC files'
+'camsReception00',                '%/usr/local/conf/ADGS/DbConfiguration/tasktables/camsReception00.xml',                '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory of CAMS files'
+'camsReception12',                '%/usr/local/conf/ADGS/DbConfiguration/tasktables/camsReception12.xml',                '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory of CAMS files'
+'CAMSTGZReception',               '%/usr/local/conf/ADGS/DbConfiguration/tasktables/CAMSTGZReception.xml',               '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory and Inventory of CAMS TGZ files'
+'ecmwfReception',                 '%/usr/local/conf/ADGS/DbConfiguration/tasktables/ecmwfReception.xml',                 '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'Ingestion of S2 ECMWF Task Table'
+'ECMWFDTGZReception',             '%/usr/local/conf/ADGS/DbConfiguration/tasktables/ECMWFDTGZReception.xml',             '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'Ingestion of S2 ECMWF Task Table'
+'osiiceReception',                '%/usr/local/conf/ADGS/DbConfiguration/tasktables/osiiceReception.xml',                '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory and Inventory of OSI ICE files'
+'MissPlanReception',              '%/usr/local/conf/ADGS/DbConfiguration/tasktables/MissPlanReception.xml',              '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory and Inventory of Mission Planning files'
+
+'defaultDelivery',                '%/usr/local/conf/ADGS/DbConfiguration/tasktables/defaultDelivery.xml',                '(SELECT id_operationtype FROM t_operationtypes where type = 'EXPORT')', 'default delivery proc chain'
+'nopDeliveryCheck',               '%/usr/local/conf/ADGS/DbConfiguration/tasktables/nopDeliveryCheck.xml',               '(SELECT id_operationtype FROM t_operationtypes where type = 'EXPORT')', 'NOP Task Table'
+'defaultDistribFormat',           '%/usr/local/conf/ADGS/DbConfiguration/tasktables/defaultDistribFormat.xml',           '(SELECT id_operationtype FROM t_operationtypes where type = 'EXPORT')', 'NOP Task Table'
+'eofzipDistribFormat',            '%/usr/local/conf/ADGS/DbConfiguration/tasktables/eofzipDistribFormat.xml',            '(SELECT id_operationtype FROM t_operationtypes where type = 'EXPORT')', 'EOFZIP Distribute Format'
+'xmlzipDistribFormat',            '%/usr/local/conf/ADGS/DbConfiguration/tasktables/xmlzipDistribFormat.xml',            '(SELECT id_operationtype FROM t_operationtypes where type = 'EXPORT')', 'XMLZIP Distribute Format'
+'dblzipDistribFormat',            '%/usr/local/conf/ADGS/DbConfiguration/tasktables/dblzipDistribFormat.xml',            '(SELECT id_operationtype FROM t_operationtypes where type = 'EXPORT')', 'DBLZIP Distribute Format'
+'csvzipDistribFormat',            '%/usr/local/conf/ADGS/DbConfiguration/tasktables/csvzipDistribFormat.xml',            '(SELECT id_operationtype FROM t_operationtypes where type = 'EXPORT')', 'CSVZIP Distribute Format'
+'kmlzipDistribFormat',            '%/usr/local/conf/ADGS/DbConfiguration/tasktables/kmlzipDistribFormat.xml',            '(SELECT id_operationtype FROM t_operationtypes where type = 'EXPORT')', 'KMLZIP Distribute Format'

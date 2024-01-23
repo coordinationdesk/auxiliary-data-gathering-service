@@ -1,0 +1,14 @@
+#ifndef _ProjectPropagatorIncludes_
+#define _ProjectPropagatorIncludes_
+
+#include <ExplOrbWrapSingleton.h>
+#include <AuxDownloaderDefaultFactory.h>
+#include <AuxFileParserFactory.h>
+
+namespace { // unnamed
+    acs::ExplOrbWrapSingleton orbWrap;
+    acs::AuxDownloaderDefaultFactory auxFactory;
+    acs::AuxFileParserFactory auxParserFactory;
+}
+
+#endif // _ProjectPropagatorIncludes_

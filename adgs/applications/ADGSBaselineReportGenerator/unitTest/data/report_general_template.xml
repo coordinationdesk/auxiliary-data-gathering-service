@@ -1,0 +1,9 @@
+<ADGSBaseline>
+    <Satellite>__SAT__</Satellite>
+    <ValidityStart>__REPORT_V_START__</ValidityStart>
+    <ValidityEnd>__REPORT_V_STOP__</ValidityEnd>
+    <CreationDate>__REPORT_CREATION__</CreationDate>
+    <LastPublishedFiles count='__ENTRY_COUNT__'>
+__ENTRIES__
+    </LastPublishedFiles>
+</ADGSBaseline>

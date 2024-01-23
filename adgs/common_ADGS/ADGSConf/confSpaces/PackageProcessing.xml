@@ -1,0 +1,28 @@
+<Root>
+<PackageProcessing>
+	
+	<!-- The processing manager is woken up by event (Processor ends, request for a new package...).
+	But, anyway wake up after this time interval to prevent hanging. -->
+	<PollingTimer unit="[msec]">180000</PollingTimer> 
+	
+	<!-- Available slots for package processing -->
+	<AvailableStots>10</AvailableStots>
+	
+	<!-- The package processor runs sequentially a task table for each step specified below. 
+	     The step is one of the key to identify the task table to execute.
+	     The steps id are the same of t_tasktable column names -->
+	<List_of_ProcessingSteps count="">
+		<ProcessingStep>format_tt_id</ProcessingStep>
+		<ProcessingStep>delivery_tt_id</ProcessingStep>
+	</List_of_ProcessingSteps>
+	<!-- These steps are used to check asynch distribution -->
+	<List_of_CheckingSteps count="">
+		<ProcessingStep>delcheck_tt_id</ProcessingStep>
+	</List_of_CheckingSteps>
+	
+        <TempStrategyName>PREFIX</TempStrategyName>
+        <TempStrategyParam>.</TempStrategyParam>
+
+</PackageProcessing>
+</Root>
+

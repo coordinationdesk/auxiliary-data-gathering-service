@@ -1,0 +1,27 @@
+1.0.8
+PDGSANOM-12541: Added Platform to Safe File manifest
+-------------------------------------------
+1.0.7
+CCDS-95: TaskTable fixed
+-------------------------------------------
+1.0.6
+CCDS-95: configuration updated to include the new naming convention for AUX_TEC files. 
+-------------------------------------------
+1.0.5
+Changed script for GetOriginDate
+-------------------------------------------
+1.0.4
+Updated to aligne TEC and TRO to the new spec
+-------------------------------------------
+1.0.3
+Task tables for AUX_TRO and AUX_TEC added.
+ProjectStandaloneAppIncludes fixed.
+-------------------------------------------
+1.0.2
+Configuration for new AUX_TRO and AUX_TEC added.
+-------------------------------------------
+1.0.1
+Configuration fixed after integration test
+-------------------------------------------
+1.0.0
+Code porting from S1L2AuxReformatting

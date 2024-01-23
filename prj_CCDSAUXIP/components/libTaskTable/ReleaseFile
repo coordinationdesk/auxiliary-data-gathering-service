@@ -1,0 +1,23 @@
+5.13.2
+using __attribute__((deprecated)) and not macros to deprecate default ctor
+-------------------------------------------------------------------------------------------------------------------------
+5.13.1
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+-------------------------------------------------------------------------------------------------------------------------
+5.13.0
+JIRA CI-92: Added management of AlternativeActivationTime not mandatory parameter.
+Updated management of InputAlternative ref attribute according to GenICD 1.8 (the input section is expected to be empty).
+Added management of tag name Type as alternative to File_Type in OutputDescriptor.
+-------------------------------------------------------------------------------------------------------------------------
+5.12.0
+Added management of Dynamic Parametes read/write (if any)
+----------------------------------------------------------
+5.11.2
+MP: compilation warnings cleanup
+------------------------------
+5.11.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.11.0
+
+Automatically generate from revision "version "5.11""

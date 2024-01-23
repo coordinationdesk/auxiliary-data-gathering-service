@@ -1,0 +1,1552 @@
+<?xml version ="1.0" encoding="UTF-8"?>
+<SitesConf xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance">
+	<List_of_Stations count="119">
+		<Station>
+			<Name>Fucino</Name>
+			<Id>1</Id>
+			<Country>Italy</Country>
+			<CentreID>FUI</CentreID>
+			<ShortName>FS</ShortName>
+			<Latitude unit="deg">41.9782</Latitude>
+			<Longitude unit="deg">13.6036</Longitude>
+			<Altitude unit="m">650.8</Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Fucino</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Kiruna</Name>
+			<Id>2</Id>
+			<Country>Sweden</Country>
+			<CentreID>KSE</CentreID>
+			<ShortName>KS</ShortName>
+			<Latitude unit="deg">67.878</Latitude>
+			<Longitude unit="deg">21.0634</Longitude>
+			<Altitude unit="m">496.217</Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Kiruna</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Maspalomas</Name>
+			<Id>3</Id>
+			<Country>Spain</Country>
+			<CentreID>MPS</CentreID>
+			<ShortName>MS</ShortName>
+			<Latitude unit="deg">27.75</Latitude>
+			<Longitude unit="deg">-15.56</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Maspalomas</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Tromsoe</Name>
+			<Id>4</Id>
+			<Country>Norway</Country>
+			<CentreID>TRS</CentreID>
+			<ShortName>TS</ShortName>
+			<Latitude unit="deg">69.96</Latitude>
+			<Longitude unit="deg">18.967</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Tromsoe</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>TelAviv</Name>
+			<Id>5</Id>
+			<Country>Israel</Country>
+			<CentreID>ISR</CentreID>
+			<ShortName>IR</ShortName>
+			<Latitude unit="deg">32.06</Latitude>
+			<Longitude unit="deg">34.767</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>TelAviv</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Bangkok</Name>
+			<Id>6</Id>
+			<Country>Thailand</Country>
+			<CentreID>BKT</CentreID>
+			<ShortName>TH</ShortName>
+			<Latitude unit="deg">13.75</Latitude>
+			<Longitude unit="deg">100.517</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Bangkok</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Fairbanks</Name>
+			<Id>7</Id>
+			<Country>USA</Country>
+			<CentreID>ASF</CentreID>
+			<ShortName>AF</ShortName>
+			<Latitude unit="deg">64.83</Latitude>
+			<Longitude unit="deg">-147.716</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Fairbanks</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Cotopaxi</Name>
+			<Id>8</Id>
+			<Country>Ecuador</Country>
+			<CentreID>CPE</CentreID>
+			<ShortName>CO</ShortName>
+			<Latitude unit="deg">-0.217</Latitude>
+			<Longitude unit="deg">-78.5</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Cotopaxi</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Gatineau</Name>
+			<Id>9</Id>
+			<Country>Canada</Country>
+			<CentreID>GAT</CentreID>
+			<ShortName>GH</ShortName>
+			<Latitude unit="deg">45.483</Latitude>
+			<Longitude unit="deg">-75.65</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Gatineau</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>AliceSprings</Name>
+			<Id>10</Id>
+			<Country>Australia</Country>
+			<CentreID>ASA</CentreID>
+			<ShortName>AS</ShortName>
+			<Latitude unit="deg">-23.7</Latitude>
+			<Longitude unit="deg">133.88</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>AliceSprings</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Hyderabad</Name>
+			<Id>11</Id>
+			<Country>India</Country>
+			<CentreID>HYD</CentreID>
+			<ShortName>SE</ShortName>
+			<Latitude unit="deg">17.383</Latitude>
+			<Longitude unit="deg">78.467</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Hyderabad</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Kumamoto</Name>
+			<Id>12</Id>
+			<Country>Japan</Country>
+			<CentreID>KUJ</CentreID>
+			<ShortName>KU</ShortName>
+			<Latitude unit="deg">32.8</Latitude>
+			<Longitude unit="deg">130.717</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Kumamoto</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>PrinceAlbert</Name>
+			<Id>13</Id>
+			<Country>Canada</Country>
+			<CentreID>PAS</CentreID>
+			<ShortName>PH</ShortName>
+			<Latitude unit="deg">52.967</Latitude>
+			<Longitude unit="deg">-108.383</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>PrinceAlbert</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>WestFreugh</Name>
+			<Id>14</Id>
+			<Country>United Kingdom</Country>
+			<CentreID>WFR</CentreID>
+			<ShortName>WF</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>WestFreugh</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>OHiggins</Name>
+			<Id>15</Id>
+			<Country>Antarctica</Country>
+			<CentreID>OHG</CentreID>
+			<ShortName>TF</ShortName>
+			<Latitude unit="deg">-63.316</Latitude>
+			<Longitude unit="deg">-57.9</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>OHiggins</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Hatoyama</Name>
+			<Id>16</Id>
+			<Country>Japan</Country>
+			<CentreID>HAJ</CentreID>
+			<ShortName>HA</ShortName>
+			<Latitude unit="deg">43.083</Latitude>
+			<Longitude unit="deg">141.817</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Hatoyama</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Syowa</Name>
+			<Id>17</Id>
+			<Country>Antarctica</Country>
+			<CentreID>SYW</CentreID>
+			<ShortName>SY</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Syowa</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>ParePare</Name>
+			<Id>18</Id>
+			<Country>Indonesia</Country>
+			<CentreID>DKI</CentreID>
+			<ShortName>IN</ShortName>
+			<Latitude unit="deg">-4.017</Latitude>
+			<Longitude unit="deg">119.633</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>ParePare</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Hartebeeshoek</Name>
+			<Id>19</Id>
+			<Country>SouthAfrica</Country>
+			<CentreID>HBK</CentreID>
+			<ShortName>JO</ShortName>
+			<Latitude unit="deg">-25.914</Latitude>
+			<Longitude unit="deg">27.145</Longitude>
+			<Altitude unit="m">1554.8</Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Hartebeeshoek</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Aussaguel</Name>
+			<Id>20</Id>
+			<Country>France</Country>
+			<CentreID>TOU</CentreID>
+			<ShortName>TO</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Aussaguel</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Islamabad</Name>
+			<Id>21</Id>
+			<Country>Pakistan</Country>
+			<CentreID>ISp</CentreID>
+			<ShortName>IS</ShortName>
+			<Latitude unit="deg">32.271</Latitude>
+			<Longitude unit="deg">71.92</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Islamabad</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Hobart</Name>
+			<Id>22</Id>
+			<Country>Australia</Country>
+			<CentreID>HOA</CentreID>
+			<ShortName>HO</ShortName>
+			<Latitude unit="deg">-42.917</Latitude>
+			<Longitude unit="deg">147.333</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Hobart</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Cuiaba</Name>
+			<Id>23</Id>
+			<Country>Brazil</Country>
+			<CentreID>CUB</CentreID>
+			<ShortName>CU</ShortName>
+			<Latitude unit="deg">-15.583</Latitude>
+			<Longitude unit="deg">-56.083</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Cuiaba</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Farnborough</Name>
+			<Id>24</Id>
+			<Country>United Kingdom</Country>
+			<CentreID>FRB</CentreID>
+			<ShortName>UP</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Farnborough</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Pretoria</Name>
+			<Id>25</Id>
+			<Country>South Africa</Country>
+			<CentreID>PTO</CentreID>
+			<ShortName>PS</ShortName>
+			<Latitude unit="deg">-25.914</Latitude>
+			<Longitude unit="deg">27.145</Longitude>
+			<Altitude unit="m">1554.8</Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Pretoria</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Scanzano</Name>
+			<Id>26</Id>
+			<Country>Italy</Country>
+			<CentreID>SCZ</CentreID>
+			<ShortName>SS</ShortName>
+			<Latitude unit="deg">40.25</Latitude>
+			<Longitude unit="deg">16.7</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Scanzano</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Oberpfaff.</Name>
+			<Id>27</Id>
+			<Country>Germany</Country>
+			<CentreID>OPF</CentreID>
+			<ShortName>DP</ShortName>
+			<Latitude unit="deg">48.067</Latitude>
+			<Longitude unit="deg">11.267</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Oberpfaff.</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Budapest</Name>
+			<Id>28</Id>
+			<Country>Hungary</Country>
+			<CentreID>BUD</CentreID>
+			<ShortName>BS</ShortName>
+			<Latitude unit="deg">47.5</Latitude>
+			<Longitude unit="deg">19.083</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Budapest</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Bremenhaven</Name>
+			<Id>29</Id>
+			<Country>Germany</Country>
+			<CentreID>BRH</CentreID>
+			<ShortName>BS</ShortName>
+			<Latitude unit="deg">48.033</Latitude>
+			<Longitude unit="deg">9.367</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Bremenhaven</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Berlin</Name>
+			<Id>30</Id>
+			<Country>Germany</Country>
+			<CentreID>BRL</CentreID>
+			<ShortName>BS</ShortName>
+			<Latitude unit="deg">52.517</Latitude>
+			<Longitude unit="deg">13.4</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Berlin</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Berne</Name>
+			<Id>31</Id>
+			<Country>Switzerland</Country>
+			<CentreID>BRN</CentreID>
+			<ShortName>BS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Berne</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Copenhagen</Name>
+			<Id>32</Id>
+			<Country>Denmark</Country>
+			<CentreID>CPH</CentreID>
+			<ShortName>CS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Copenhagen</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>DeBilt</Name>
+			<Id>33</Id>
+			<Country>Holland</Country>
+			<CentreID>DBH</CentreID>
+			<ShortName>DS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>DeBilt</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Dundee</Name>
+			<Id>34</Id>
+			<Country>Scotland</Country>
+			<CentreID>DDE</CentreID>
+			<ShortName>DS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Dundee</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Frascati</Name>
+			<Id>35</Id>
+			<Country>Italy</Country>
+			<CentreID>ESR</CentreID>
+			<ShortName>CP</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Frascati</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Hamburg</Name>
+			<Id>36</Id>
+			<Country>Germany</Country>
+			<CentreID>HAM</CentreID>
+			<ShortName>HS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Hamburg</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Helsinki</Name>
+			<Id>37</Id>
+			<Country>Finland</Country>
+			<CentreID>HLS</CentreID>
+			<ShortName>HS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Helsinki</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Krakow</Name>
+			<Id>38</Id>
+			<Country>Poland</Country>
+			<CentreID>KRK</CentreID>
+			<ShortName>KS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Krakow</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Lannion</Name>
+			<Id>39</Id>
+			<Country></Country>
+			<CentreID>LNN</CentreID>
+			<ShortName>LS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Lannion</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Lasham</Name>
+			<Id>40</Id>
+			<Country>United Kingdom</Country>
+			<CentreID>LHM</CentreID>
+			<ShortName>LS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Lasham</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Madrid</Name>
+			<Id>41</Id>
+			<Country>Spain</Country>
+			<CentreID>MAD</CentreID>
+			<ShortName>MS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Madrid</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Norrkoping</Name>
+			<Id>42</Id>
+			<Country>Sweden</Country>
+			<CentreID>NRK</CentreID>
+			<ShortName>NS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Norrkoping</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Offenbach</Name>
+			<Id>43</Id>
+			<Country>Germany</Country>
+			<CentreID>OFB</CentreID>
+			<ShortName>OS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Offenbach</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Oslo</Name>
+			<Id>44</Id>
+			<Country>Norway</Country>
+			<CentreID>OSL</CentreID>
+			<ShortName>OS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Oslo</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Prague</Name>
+			<Id>45</Id>
+			<Country>Czech Republic</Country>
+			<CentreID>PRG</CentreID>
+			<ShortName>PS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Prague</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Rome</Name>
+			<Id>46</Id>
+			<Country>Italy</Country>
+			<CentreID>ROM</CentreID>
+			<ShortName>RS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Rome</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Spitzenbergen</Name>
+			<Id>47</Id>
+			<Country>Norway</Country>
+			<CentreID>SPB</CentreID>
+			<ShortName>SS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Spitzenbergen</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Traben-Trar.</Name>
+			<Id>48</Id>
+			<Country>Germany</Country>
+			<CentreID>TTC</CentreID>
+			<ShortName>TS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Traben-Trar.</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Bedford</Name>
+			<Id>49</Id>
+			<Country></Country>
+			<CentreID>BDF</CentreID>
+			<ShortName>BS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Bedford</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Downsview</Name>
+			<Id>50</Id>
+			<Country></Country>
+			<CentreID>DWV</CentreID>
+			<ShortName>DS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Downsview</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Edmonton</Name>
+			<Id>51</Id>
+			<Country>Canada</Country>
+			<CentreID>EDM</CentreID>
+			<ShortName>ED</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Edmonton</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>BantonRouge</Name>
+			<Id>52</Id>
+			<Country>USA</Country>
+			<CentreID>LSU</CentreID>
+			<ShortName>BS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>BantonRouge</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Miami</Name>
+			<Id>53</Id>
+			<Country>USA</Country>
+			<CentreID>MIM</CentreID>
+			<ShortName>MS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Miami</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>GilmoreCreek</Name>
+			<Id>54</Id>
+			<Country>USA</Country>
+			<CentreID>NGC</CentreID>
+			<ShortName>GS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>GilmoreCreek</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>NESDIS</Name>
+			<Id>55</Id>
+			<Country>USA</Country>
+			<CentreID>NOA</CentreID>
+			<ShortName>NS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>NESDIS</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>WallopsIsl.</Name>
+			<Id>56</Id>
+			<Country></Country>
+			<CentreID>NWI</CentreID>
+			<ShortName>WS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>WallopsIsl.</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>RedwoodCity</Name>
+			<Id>57</Id>
+			<Country></Country>
+			<CentreID>RWC</CentreID>
+			<ShortName>RS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>RedwoodCity</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>ScippsInstitute</Name>
+			<Id>58</Id>
+			<Country></Country>
+			<CentreID>SCR</CentreID>
+			<ShortName>SS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>ScippsInstitute</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>SiouxFalls</Name>
+			<Id>59</Id>
+			<Country>USA</Country>
+			<CentreID>SFL</CentreID>
+			<ShortName>SS</ShortName>
+			<Latitude unit="deg">41.7067</Latitude>
+			<Longitude unit="deg">-98.4313</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>SiouxFalls</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>StennisSpace</Name>
+			<Id>60</Id>
+			<Country></Country>
+			<CentreID>SSC</CentreID>
+			<ShortName>SS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>StennisSpace</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>UnivOfAlaska</Name>
+			<Id>61</Id>
+			<Country>USA</Country>
+			<CentreID>FAU</CentreID>
+			<ShortName>AF</ShortName>
+			<Latitude unit="deg">64.838</Latitude>
+			<Longitude unit="deg">-147.716</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>UnivOfAlaska</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>UnivOfTexas</Name>
+			<Id>62</Id>
+			<Country>USA</Country>
+			<CentreID>UTA</CentreID>
+			<ShortName>TU</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>UnivOfTexas</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>UnivOfRhodeIsl</Name>
+			<Id>63</Id>
+			<Country>USA</Country>
+			<CentreID>URI</CentreID>
+			<ShortName>RU</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>UnivOfRhodeIsl</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>                                                                                                                      
+        	<Name>Cachoeira</Name>                                                                                               
+        	<Id>64</Id>                                                                                                            
+        	<Country>Brazil</Country>                                                                                                 
+        	<CentreID>CPA</CentreID>                                                                                               
+        	<ShortName>CS</ShortName>                                                                                               
+        	<Latitude unit='"deg"'>-22.68275</Latitude>                                                                           
+        	<Longitude unit='"deg"'>-45.002094</Longitude>                                                                           
+        	<Altitude unit='"m"'>100.0</Altitude>                                                                                  
+        	<HorizonElevation unit='"deg"'>5.0</HorizonElevation>
+        	<AgencySiteIdentifier>Cashoiera</AgencySiteIdentifier>                                                               
+        	<AgencyOrganizationId>INPE</AgencyOrganizationId>                                                          
+       	</Station> 
+		<Station>
+			<Name>Funceme</Name>
+			<Id>65</Id>
+			<Country>Brazil</Country>
+			<CentreID>FTB</CentreID>
+			<ShortName>FS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Funceme</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Santiago</Name>
+			<Id>66</Id>
+			<Country>Chile</Country>
+			<CentreID>STG</CentreID>
+			<ShortName>SS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Santiago</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Adelaide</Name>
+			<Id>67</Id>
+			<Country>Australia</Country>
+			<CentreID>ADL</CentreID>
+			<ShortName>AS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Adelaide</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Aspendale</Name>
+			<Id>68</Id>
+			<Country></Country>
+			<CentreID>APD</CentreID>
+			<ShortName>AS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Aspendale</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Honolulu</Name>
+			<Id>69</Id>
+			<Country>USA</Country>
+			<CentreID>HWH</CentreID>
+			<ShortName>HW</ShortName>
+			<Latitude unit="deg">21.307</Latitude>
+			<Longitude unit="deg">-157.858</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Honolulu</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Perth</Name>
+			<Id>70</Id>
+			<Country>Australia</Country>
+			<CentreID>PTH</CentreID>
+			<ShortName>PS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Perth</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Sydney</Name>
+			<Id>71</Id>
+			<Country>Australia</Country>
+			<CentreID>SYD</CentreID>
+			<ShortName>SS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Sydney</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Townsville</Name>
+			<Id>72</Id>
+			<Country></Country>
+			<CentreID>TSV</CentreID>
+			<ShortName>TS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Townsville</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Wellington</Name>
+			<Id>73</Id>
+			<Country>NewZealand</Country>
+			<CentreID>WLT</CentreID>
+			<ShortName>WS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Wellington</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Beijing</Name>
+			<Id>74</Id>
+			<Country>China</Country>
+			<CentreID>BJG</CentreID>
+			<ShortName>BE</ShortName>
+			<Latitude unit="deg">39.9</Latitude>
+			<Longitude unit="deg">116.413</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Beijing</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Dhaka</Name>
+			<Id>75</Id>
+			<Country>Bangladesh</Country>
+			<CentreID>DHK</CentreID>
+			<ShortName>DS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Dhaka</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Da-Xing</Name>
+			<Id>76</Id>
+			<Country>China</Country>
+			<CentreID>DAX</CentreID>
+			<ShortName>DS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Da-Xing</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Keelung</Name>
+			<Id>77</Id>
+			<Country>Taiwan</Country>
+			<CentreID>KLG</CentreID>
+			<ShortName>KS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Keelung</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Kiyose</Name>
+			<Id>78</Id>
+			<Country>Japan</Country>
+			<CentreID>KYS</CentreID>
+			<ShortName>KS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Kiyose</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Lapan</Name>
+			<Id>79</Id>
+			<Country>Indonesia</Country>
+			<CentreID>JKL</CentreID>
+			<ShortName>LS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Lapan</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Manila</Name>
+			<Id>80</Id>
+			<Country>Philippines</Country>
+			<CentreID>MNL</CentreID>
+			<ShortName>MS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Manila</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>NewDelhi</Name>
+			<Id>81</Id>
+			<Country>India</Country>
+			<CentreID>NWD</CentreID>
+			<ShortName>NS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>NewDelhi</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Rhyad</Name>
+			<Id>82</Id>
+			<Country>Arabia</Country>
+			<CentreID>RSA</CentreID>
+			<ShortName>SA</ShortName>
+			<Latitude unit="deg">24.672</Latitude>
+			<Longitude unit="deg">46.713</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Rhyad</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Singapore</Name>
+			<Id>83</Id>
+			<Country>Singapore</Country>
+			<CentreID>SGP</CentreID>
+			<ShortName>SG</ShortName>
+			<Latitude unit="deg">1.293</Latitude>
+			<Longitude unit="deg">103.856</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Singapore</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Selangor</Name>
+			<Id>84</Id>
+			<Country>Malaysia</Country>
+			<CentreID>SLG</CentreID>
+			<ShortName>SS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Selangor</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Seoul</Name>
+			<Id>85</Id>
+			<Country>Korea</Country>
+			<CentreID>KMS</CentreID>
+			<ShortName>SS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Seoul</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>SeoulUniversity</Name>
+			<Id>86</Id>
+			<Country>Korea</Country>
+			<CentreID>SNU</CentreID>
+			<ShortName>SS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>SeoulUniversity</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Sendai</Name>
+			<Id>87</Id>
+			<Country>Japan</Country>
+			<CentreID>SND</CentreID>
+			<ShortName>SS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Sendai</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>TokaiUniversity</Name>
+			<Id>88</Id>
+			<Country>Japan</Country>
+			<CentreID>TK1</CentreID>
+			<ShortName>TU</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>TokaiUniversity</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>TokyoUniversity</Name>
+			<Id>89</Id>
+			<Country>Japan</Country>
+			<CentreID>TK1</CentreID>
+			<ShortName>TU</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>TokyoUniversity</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Taipei</Name>
+			<Id>90</Id>
+			<Country>Taiwan</Country>
+			<CentreID>TPE</CentreID>
+			<ShortName>TW</ShortName>
+			<Latitude unit="deg">25.017</Latitude>
+			<Longitude unit="deg">121.45</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Taipei</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>KualaLumpur</Name>
+			<Id>91</Id>
+			<Country>Malaysia</Country>
+			<CentreID>KLM</CentreID>
+			<ShortName>KS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>KualaLumpur</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Casey</Name>
+			<Id>92</Id>
+			<Country>Australia</Country>
+			<CentreID>CSY</CentreID>
+			<ShortName>CS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Casey</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>McMurdo</Name>
+			<Id>93</Id>
+			<Country>Antarctica</Country>
+			<CentreID>MMR</CentreID>
+			<ShortName>MM</ShortName>
+			<Latitude unit="deg">-77.85</Latitude>
+			<Longitude unit="deg">166.65</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>McMurdo</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Palmer</Name>
+			<Id>94</Id>
+			<Country>USA</Country>
+			<CentreID>PLM</CentreID>
+			<ShortName>PS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Palmer</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>TerranovaBay</Name>
+			<Id>95</Id>
+			<Country>Canada</Country>
+			<CentreID>TNB</CentreID>
+			<ShortName>TS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>TerranovaBay</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Cairo</Name>
+			<Id>96</Id>
+			<Country>Egypt</Country>
+			<CentreID>CRO</CentreID>
+			<ShortName>CS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Cairo</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Agrhymet</Name>
+			<Id>97</Id>
+			<Country>Nigeria</Country>
+			<CentreID>NMY</CentreID>
+			<ShortName>AS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Agrhymet</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Nairobi</Name>
+			<Id>98</Id>
+			<Country>Kenia</Country>
+			<CentreID>NRB</CentreID>
+			<ShortName>NS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Nairobi</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>LaReunion</Name>
+			<Id>99</Id>
+			<Country>France</Country>
+			<CentreID></CentreID>
+			<ShortName>LS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>LaReunion</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Tunis</Name>
+			<Id>100</Id>
+			<Country>Tunisia</Country>
+			<CentreID>TNS</CentreID>
+			<ShortName>TS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Tunis</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>RRSC_Nairobi</Name>
+			<Id>101</Id>
+			<Country>Kenia</Country>
+			<CentreID>NRB</CentreID>
+			<ShortName>NS</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>RRSC_Nairobi</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Norman</Name>
+			<Id>102</Id>
+			<Country>USA</Country>
+			<CentreID>NOM</CentreID>
+			<ShortName>NO</ShortName>
+			<Latitude unit="deg">35.223</Latitude>
+			<Longitude unit="deg">-97.439</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Norman</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Cordoba</Name>
+			<Id>103</Id>
+			<Country>Argentina</Country>
+			<CentreID>COA</CentreID>
+			<ShortName>CA</ShortName>
+			<Latitude unit="deg">-31.52</Latitude>
+			<Longitude unit="deg">-64.46</Longitude>
+			<Altitude unit="m">752</Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Cordoba</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Matera</Name>
+			<Id>104</Id>
+			<Country>Italy</Country>
+			<CentreID>MTI</CentreID>
+			<ShortName>MA</ShortName>
+			<Latitude unit="deg">40.667</Latitude>
+			<Longitude unit="deg">16.6</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Matera</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Atlanta</Name>
+			<Id>105</Id>
+			<Country>USA</Country>
+			<CentreID>ATL</CentreID>
+			<ShortName>AT</ShortName>
+			<Latitude unit="deg">45.005</Latitude>
+			<Longitude unit="deg">-84.144</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Atlanta</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Libreville</Name>
+			<Id>106</Id>
+			<Country>Congo</Country>
+			<CentreID>LBG</CentreID>
+			<ShortName>LI</ShortName>
+			<Latitude unit="deg">0.3</Latitude>
+			<Longitude unit="deg">9.2501</Longitude>
+			<Altitude unit="m">171.7</Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Libreville</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name> </Name>
+			<Id>107</Id>
+			<Country></Country>
+			<CentreID>ACS</CentreID>
+			<ShortName>  </ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier> </AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Neustrelitz</Name>
+			<Id>108</Id>
+			<Country>Germany</Country>
+			<CentreID>NSG</CentreID>
+			<ShortName>NZ</ShortName>
+			<Latitude unit="deg">53.3297</Latitude>
+			<Longitude unit="deg">13.0725</Longitude>
+			<Altitude unit="m">117</Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Neustrelitz</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Malindi</Name>
+			<Id>109</Id>
+			<Country>Kenia</Country>
+			<CentreID>MLD</CentreID>
+			<ShortName>ML</ShortName>
+			<Latitude unit="deg">-2.995</Latitude>
+			<Longitude unit="deg">40.194</Longitude>
+			<Altitude unit="m">12.3</Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Malindi</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Moscow</Name>
+			<Id>110</Id>
+			<Country>Russia</Country>
+			<CentreID>MSW</CentreID>
+			<ShortName>MW</ShortName>
+			<Latitude unit="deg">55.8623</Latitude>
+			<Longitude unit="deg">37.9555</Longitude>
+			<Altitude unit="m">171.7</Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Moscow</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Kourou</Name>
+			<Id>111</Id>
+			<Country>Guayana</Country>
+			<CentreID>KOU</CentreID>
+			<ShortName>KR</ShortName>
+			<Latitude unit="deg">52.5144</Latitude>
+			<Longitude unit="deg">-52.8046</Longitude>
+			<Altitude unit="m">14.561</Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Kourou</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Biskek</Name>
+			<Id>112</Id>
+			<Country>Kyrgysistan </Country>
+			<CentreID>BSH</CentreID>
+			<ShortName>BK</ShortName>
+			<Latitude unit="deg">33.7</Latitude>
+			<Longitude unit="deg">74.6</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Biskek</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Kitab</Name>
+			<Id>113</Id>
+			<Country>Uzbekistan</Country>
+			<CentreID>KTB</CentreID>
+			<ShortName>KB</ShortName>
+			<Latitude unit="deg">39.124</Latitude>
+			<Longitude unit="deg">66.877</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Kitab</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>UlanBator</Name>
+			<Id>114</Id>
+			<Country>Mongolia</Country>
+			<CentreID>ULB</CentreID>
+			<ShortName>UB</ShortName>
+			<Latitude unit="deg">47.917</Latitude>
+			<Longitude unit="deg">106.917</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>UlanBator</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Itu</Name>
+			<Id>115</Id>
+			<Country>Turkey</Country>
+			<CentreID></CentreID>
+			<ShortName>IT</ShortName>
+			<Latitude unit="deg"> </Latitude>
+			<Longitude unit="deg"> </Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Itu</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>KhantyMansiysk</Name>
+			<Id>116</Id>
+			<Country>Russia</Country>
+			<CentreID></CentreID>
+			<ShortName>KM</ShortName>
+			<Latitude unit="deg">61.0042</Latitude>
+			<Longitude unit="deg">69.0019</Longitude>
+			<Altitude unit="m">300</Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>KhantyMansiysk</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Tripoli</Name>
+			<Id>117</Id>
+			<Country>Libya</Country>
+			<CentreID>TRI</CentreID>
+			<ShortName>TR</ShortName>
+			<Latitude unit="deg">32.9666</Latitude>
+			<Longitude unit="deg">13.2</Longitude>
+			<Altitude unit="m"> </Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Tripoli</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Morzuk</Name>
+			<Id>118</Id>
+			<Country></Country>
+			<CentreID>MZK</CentreID>
+			<ShortName>MZ</ShortName>
+			<Latitude unit="deg">25.9283</Latitude>
+			<Longitude unit="deg">13.9425</Longitude>
+			<Altitude unit="m">453</Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>Morzuk</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+		<Station>
+			<Name>Bolzano</Name>
+			<Id>119</Id>
+			<Country>Italy</Country>
+			<CentreID>BLZ</CentreID>
+			<ShortName>BZ</ShortName>
+			<Latitude unit="deg">25.9283</Latitude>
+			<Longitude unit="deg">13.9425</Longitude>
+			<Altitude unit="m">453</Altitude>
+			<HorizonElevation unit="deg"> </HorizonElevation>
+			<AgencySiteIdentifier>EURAC</AgencySiteIdentifier>
+			<AgencyOrganizationId></AgencyOrganizationId>
+		</Station>
+	</List_of_Stations>
+</SitesConf>

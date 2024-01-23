@@ -1,0 +1,53 @@
+5.36.2
+Changed PLATINO satellite names
+------------------------------------------------------------------
+5.36.1
+CCDS Added Sentinel-1 and Sentinel-2 satellites
+------------------------------------------------------------------
+5.36.0
+CPS-84 NOMERGESTICKY algorithm implemented
+------------------------------------------------------------------
+5.35.4
+Added support for S6 (extending S3)
+------------------------------------------------------------------
+5.35.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------------------------------------------
+5.35.2
+[CI-99] EC:: Handled method: overrideCreationTime to optionally force a specific creationTime
+------------------------------------------------------------------
+5.35.1
+MP: NRT was ignored by a big "if", fixed
+------------------------------------------------------------------
+5.35.0
+MP: Sentinel 3 (A trough D) for NRT support added.
+Sentinel 1A & 1B NRT support added 
+Extending to S3C and S3D also those previously enabled for S3A and S3B only.
+------------------------------------------------------------------
+5.34.1
+[CI-95] EC:: Added virtual method to handle the generation of parameter files
+------------------------------------------------------------------
+5.34.0
+EC:: Debug improved.
+------------------------------
+5.33.0
+DC: Added support to PLATINO-1 and PLATINO-2 Offline order generations
+for algo NOMERGE
+------------------------------
+5.32.2
+MP: no more deprecated db related methods/classes
+------------------------------
+5.32.1
+MP: compilation warnings cleanup
+------------------------------
+5.32.0
+Added support to MUSTER and MUSTER2 Offline order generations
+for algos NOMERGE, NOMERGENODUP and REG-X-
+Projectit issue MUSTER-90
+------------------------------
+5.31.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.31.0
+
+Automatically generate from revision "version "5.31""

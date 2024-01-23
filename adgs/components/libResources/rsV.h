@@ -1,0 +1,71 @@
+// PRQA S 1050 EOF
+/*
+
+	Copyright 1995-2013, Advanced Computer Systems , Inc.
+	Via Della Bufalotta, 378 - 00139 Roma - Italy
+	http://www.acsys.it
+
+	All Rights Reserved.
+
+	This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems;
+	the contents of this file may not be disclosed to third parties, copied or
+	duplicated in any form, in whole or in part, without the prior written
+	permission of Advanced Computer Systems, Inc.
+
+	$Prod: A.C.S. Resources Library $
+
+	$Id$
+
+	$Author$
+
+	$Log$
+	Revision 5.0  2013/06/11 09:29:11  marpas
+	adopting libException 5.x standards
+	
+	Revision 2.2  2013/02/22 13:56:41  marpas
+	rsResourceSet does not longer inherit virtually from ThreadSafe, it has an internal mutex instead
+	Interface rationalization
+	coding best practices
+	
+	Revision 2.1  2012/11/20 22:39:55  marpas
+	total quality: code, coverage etc.
+	
+	Revision 2.0  2006/02/28 08:34:37  marpas
+	Exception 2.1 I/F adopted
+	
+	Revision 1.2  2005/01/12 13:33:58  marpas
+	headers fixed
+	
+	Revision 1.1.1.1  2002/10/03 20:54:59  marpas
+	libResources import
+		
+
+*/
+
+#ifndef _rsV_H_
+#define _rsV_H_
+
+namespace acs {
+
+// support class for versioning
+
+class rsV { // PRQA S 2109
+public:
+	rsV() throw() ;
+	~rsV() throw() ;
+	static const char*  tag() throw() ;
+	static const char*  name() throw() ;
+private:
+    rsV(const rsV &) ;
+    rsV& operator= (const rsV &) ;
+private:
+	static const char* 	_tag ;
+	static const char* 	_name ;
+} ;
+
+} // Close namespace
+
+#endif // _rsV_H_
+
+
+

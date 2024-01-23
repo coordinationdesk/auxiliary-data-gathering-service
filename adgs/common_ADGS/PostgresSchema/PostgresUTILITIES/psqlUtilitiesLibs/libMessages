@@ -1,0 +1,177 @@
+#!/bin/bash
+#
+# Copyright 2010-2020, Advanced Computer Systems , Inc.
+# Via Della Bufalotta, 378 - 00139 Roma - Italy
+# http://www.acsys.itA.C.S. - Advanced Computer Systems S.p.A.
+# 
+# This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer 
+# Systems, S.p.A.; the contents of this file may not be disclosed 
+# to third parties, copied or duplicated in any form, in whole or 
+# in part, without the prior written permission of Advanced Computer 
+# Systems, S.p.A.
+
+
+
+
+
+
+
+checkMessagesInput() {
+	if test -z "$1"
+	then
+		echo "*** ERROR!!! - libMessages:$2 - No input value ***"
+		echo ""
+		exit 1
+	fi
+}
+
+
+usage() {
+	checkMessagesInput "$1" usage
+	
+	echo "usage: $1 <project> [dbname]"
+	echo "-------------------------------------------------------------------"
+	echo "project names:"
+	echo "   adc         (ADC PDS database)"
+	echo "   admapf      (ADM Aeolus APF PDS database)"
+	echo "   alsat       (ALSAT PDS database)"
+	echo "   circulator  (Mini circulator project)"
+	echo "   clirsen     (CLIRSEN PDS-CATALOG database)"
+	echo "   cryosat2    (Cryosat2 PDS and WRS database)"
+	echo "   cryosatipf  (Cryosat2 IPF database)"
+	echo "   dgs         (Jason Data Gate Scheduler)"
+	echo "   ecicmf      (EC ICMF PDS database)"
+	echo "   ecmc        (EC MCDB database)"
+	echo "   emsa        (EMSA PDS database)"
+	echo "   geocal      (S3 GEOCAL PDS database)"
+	echo "   ges         (GES database)"
+	echo "   jersodc     (JERSODC database)"
+	echo "   keo         (KEO database)"
+	echo "   kipp        (KIPP database)"
+	echo "   lta         (LTA Qualification database)"
+	echo "   mdaps       (MDAPS PDS database)"
+	echo "   muster      (MUSTER PDS database)"
+	echo "   nrtiv       (Near Real Time Image Viewing database)"
+	echo "   ozone       (OZONE database)"
+	echo "   prisma      (PRISMA database)"
+	echo "   rpu         (RPU database)"
+	echo "   sectronic   (SECTRONIC PDS database)"
+	echo "   s3mpm       (S3 Mission Performance Monitoring PDS database)"
+	echo "   sentinel1   (S1 PDGS PDS database)"
+	echo "   sentinel2   (S2 PDGS PDS database)"
+	echo "   sentinel3   (S3 PDGS PDS database)"
+	echo "   sigris      (SIGRIS PDS database)"
+	echo "   spacenav    (SPACENAV database)"
+	echo "   venus       (VENUS PDS database)"
+	echo "   venus_ism   (VENUS ISM database)"
+	echo "   vcat_brim   (VENUS CAT BRIM database)"
+	echo "   vcat_users  (VENUS CAT USERS database)"
+	echo "   wwa         (WhereWeAre database)"
+	echo "   test        (test database)"
+	echo "-------------------------------------------------------------------"
+	echo ""
+	exit 1
+}
+
+
+result_message() {
+	checkMessagesInput "$1" result_message
+	
+	case "$1" in
+		'0') echo_success ;;
+		'1') echo_failure ;;
+		'2') echo_warning ;;
+		* ) ;;
+	esac
+	
+	echo ""
+}
+
+
+errMessage() {
+	checkMessagesInput "$1" errMessage
+	
+	echo "-------------------------------------------------------------------"
+	echo "*** $1 Procedure Aborted ***" | tee -a $LOG_FILE
+	echo "See log $LOG_FILE"
+	echo ""
+	exit 1
+}
+
+
+initLog() {
+	checkMessagesInput "$1" initLog
+	
+	if ! test -e $LOG_FILE
+	then
+		touch $LOG_FILE
+		chmod 666 $LOG_FILE
+	fi
+	
+	echo "" >> $LOG_FILE
+	echo "" >> $LOG_FILE
+	echo "" >> $LOG_FILE
+	echo "################################################################################" >> $LOG_FILE
+	echo "###   $1 PROCEDURE OF $DBNAME " >> $LOG_FILE
+	echo "###   `date`" >> $LOG_FILE
+	echo "################################################################################" >> $LOG_FILE
+	echo "" >> $LOG_FILE
+}
+
+
+createDb_msg_error() {
+	checkMessagesInput "$1" createDb_msg_error
+	checkMessagesInput "$2" createDb_msg_error
+	
+	name=$1
+	object=$2
+	
+	case $3 in
+	'1')
+		action="creation" ;;
+	'2')
+		action="initialization" ;;
+	'3')
+		action="registration" ;;
+	'4')
+		action="drop" ;;
+	'5')
+		action="installation" ;;
+	'6')
+		action="change" ;;
+	'7')
+		action="assignment" ;;
+	* ) ;;
+	esac
+	
+	echo ""
+	echo "*** ERROR during $name $object $action ***"
+	echo "You can check error in $LOG_FILE"
+	echo ""
+}
+
+
+about() {
+	checkMessagesInput "$1" about
+	
+	echo ""
+	echo "#########################################################################################"
+	echo "#                                                                                       #"
+	echo "#                     A.C.S. - Advanced Computer Systems S.p.A.                         #"
+	echo "#                                                                                       #"
+	echo "#   This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems, S.p.A.;   #"
+	echo "#   the contents of this file may not be disclosed to third parties, copied or          #"
+	echo "#   duplicated in any form, in whole or in part, without the prior written permission   #"
+	echo "#   of Advanced Computer Systems, S.p.A.                                                #"
+	echo "#                                                                                       #"
+	echo "#   Author(s): Achille Natale                                                           #"
+	echo "#   Version:   1.0                                                                      #"
+	echo "#   Created:   24-Sep-2008                                                              #"
+	echo "#   Revisited: 03-Sep-2019                                                              #"
+	echo "#                                                                                       #"
+	echo "$1"
+	echo "#                                                                                       #"
+	echo "#########################################################################################"
+	echo ""
+	exit 0
+}

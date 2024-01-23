@@ -1,0 +1,10 @@
+[Unit]
+Description=Run PDS2 Import ADGS-INT every 1 minute
+
+[Timer]
+OnCalendar=minutely
+Persistent=true
+Unit=pds2_import_adgs-imp1.service
+
+[Install]
+WantedBy=timers.target

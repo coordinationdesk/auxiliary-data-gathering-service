@@ -1,0 +1,21 @@
+<?xml version="1.0" standalone="yes"?>
+<RootTag>
+	<SRVNotificationDispatcher>
+		<RestServer>
+			<ListeningHost>0.0.0.0</ListeningHost>
+			<Port>9080</Port>
+			<Url>/insertNotification</Url>
+			<Protocol>http</Protocol>
+			<MaxRequestSize>20000</MaxRequestSize>
+			<MaxNumThreads>4</MaxNumThreads>
+		</RestServer>
+		<SRVNotifier>
+			<MaxRetry>3</MaxRetry>
+			<QueryLimit>50</QueryLimit>
+			<RetryTime unit="sec">3600</RetryTime>
+			<RetentionTime unit="sec">259200</RetentionTime><!--3 days-->
+			<StrictAuthentication>true</StrictAuthentication>
+			<DisableNotificationInfo>false</DisableNotificationInfo>
+		</SRVNotifier>
+	</SRVNotificationDispatcher>
+</RootTag>

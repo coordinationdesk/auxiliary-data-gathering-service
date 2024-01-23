@@ -1,0 +1,13 @@
+1.9.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+1.9.2
+MP: compatible with libPreInventoryBase 2.0.0 and backward.
+test fixed
+------------------------------
+1.9.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.9.0
+
+Automatically generate from revision "version "1.9""

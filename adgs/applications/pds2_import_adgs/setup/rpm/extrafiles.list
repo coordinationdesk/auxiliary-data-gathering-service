@@ -1,0 +1,13 @@
+# this is now done by systemd
+# %dir %attr(755, opadgs, ccds) /var/run/pds2_import
+/etc/php.d/pds2_import_php.ini
+%{APPLICATION_PATH}/config/pds2_import.ini
+/usr/lib/systemd/system/pds2_import_group_none.service
+/usr/lib/systemd/system/pds2_import_group_1.service
+/usr/lib/systemd/system/pds2_import_group_2.service
+/usr/lib/systemd/system/pds2_import_group_none.timer
+/usr/lib/systemd/system/pds2_import_group_1.timer
+/usr/lib/systemd/system/pds2_import_group_2.timer
+
+# embedded version of pds2_import
+%{PROJECT_PATH}/pds2_import

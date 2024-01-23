@@ -1,0 +1,4 @@
+'symbolicname','transferprotocol_id','host_id','username','password','remotepath', 'tempname_id', 'tempname_value'
+
+'S1APRIP DLR Rep',           7, '(select id from t_knownhosts where host_name = 'prip.s1b.dlr.copernicus.eu')',         'S1A\S1A_AuxDataGathering', '##S1ADLRPRIP_CRYPTPWD##',  '/proseo/prip/odata/v1/Products',                        1, '.'
+'S1BPRIP DLR Rep',           7, '(select id from t_knownhosts where host_name = 'prip.s1b.dlr.copernicus.eu')',         'S1B\S1B_AuxDataGathering', '##S1BDLRPRIP_CRYPTPWD##',  '/proseo/prip/odata/v1/Products',                        1, '.'

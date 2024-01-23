@@ -1,0 +1,38 @@
+<?xml version="1.0" standalone="yes" ?> 
+<libGenFileActionRoot>
+	<!--  All storage with storecost greater than MinimumAsyncUploadCost will be managed as asynchronous storage --> 
+	<MinimumAsyncUploadCost>20</MinimumAsyncUploadCost> 
+
+	<DownloadInventoryObject>
+		<!-- Invalidate the files that are unknown to all the available storage managers -->
+		<CanInvalidateFile>true</CanInvalidateFile>
+		
+		<!-- Register on DB the clients requesting an inventory download -->
+		<RegisterClient enabled="true">
+			<!-- Name used for Unknown Clients -->
+			<UnknownClientName>UnknownClient</UnknownClientName>
+		</RegisterClient>
+	</DownloadInventoryObject>
+
+	<UploadPredicate>
+		<ByMission>
+			<List_Of_Elements>
+				<Element>
+					<Satellite>S3</Satellite>
+					<Mission>1</Mission>
+					<List_Of_SMs>
+						<SM>ACS_ISM</SM>
+					</List_Of_SMs>
+				</Element>
+				<Element>
+					<Satellite>S3</Satellite>
+					<Mission>2</Mission>
+					<List_Of_SMs>
+						<SM>ACS_ISM2</SM>
+					</List_Of_SMs>
+				</Element>
+			</List_Of_Elements>
+		</ByMission>
+	</UploadPredicate>
+	
+</libGenFileActionRoot>

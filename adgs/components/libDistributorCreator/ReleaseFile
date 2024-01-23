@@ -1,0 +1,18 @@
+2.33.2
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+2.33.1
+MP: no more db related deprecated methods/classes
+------------------------------
+2.33.0
+CRYO2PDS-96: messages for Splunk added on the dissemination success/failure events.
+------------------------------
+2.32.3
+Using ACS_SMARTPTR instead of auto_ptr
+------------------------------
+2.32.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.32.0
+
+Automatically generate from revision "version "2.32""

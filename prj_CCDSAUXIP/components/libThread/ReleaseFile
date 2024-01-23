@@ -1,0 +1,60 @@
+7.0.1
+[CPS-101] EC:: Added unit test TestStopControllerCondition, in order to test the functionalities by: StopController::create_condition, StopController::unregister_condition
+---------------------------------------------------
+7.0.0
+CPS-106: new Thread::runException implementation in order to remove not managed pointers.
+Old Thread::runException is now deprecated.
+Added Thread::hasException method that return true if the runException is not nullptr.
+Added exception cleanup check in Thread::start method.
+Deprecated Thread::SvcStatus enum. Use the new enum class Thread::SvcStatuses.
+Changed InitCallbackManagerSingleton internal data:
+    - Now FuncPtr is a std::function in place of function pointer
+    - Removed PvtMessa that was std::pair<std::sting, bool>
+    - Now use a custom structure CallbackData in place of std::pair<FuncPtr, PvtMessa>
+Removed some warning from SonarQube quality tool.
+Code reformatted.
+Removed old PRQA comments.
+Tests updated.
+---------------------------------------------------
+6.0.5
+2022-03-01
+Fixing a race condition occurring between thread start
+and thread running functions as per issues
+http://projectit.exprivia.it/browse/CPS-69
+http://projectit.exprivia.it/browse/CPS-102
+---------------------------------------------------
+6.0.4
+Fixing test Makefile
+------------------------------
+6.0.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+6.0.2
+Warning message in case of wrong usage of waitExitOrTimeout
+is issued once per procees
+------------------------------
+6.0.1
+Thread::waitExitOrTimeout now protects itself from being called 
+from the insied of the run operation. 
+run will never exit if blocked in the run waiting for itself to exit
+------------------------------
+6.0.0
+StopController class and tests removed from this library and
+relocated to libException 9.0.0
+------------------------------
+5.29.1
+using macro instead of throw() exception specifications
+------------------------------
+5.29.0
+Introduced the interface startFICT to Thread class.
+FICT is a simple italian acronym that, actually, avoids the Thread library
+to initialize ThreadSafe third party library initialization.
+The initialization can be executed only once in the life of a process so 
+this interface is used to not clash the mechanism with an early thread
+than needs to be started.
+------------------------------
+5.28.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.28.0
+Automatically generate from revision "version "5.28""

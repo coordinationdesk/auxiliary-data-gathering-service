@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Library>
+	<!-- InventoryEmailNotification configuration-->
+	<InventoryEmailNotification>
+		<!-- The root key in the conf space to access mail server, port, ... -->
+		<MailRootKeyConf>EmailUserNotification</MailRootKeyConf>
+		<!-- Enable Inventory Email notifications -->
+		<enabled>true</enabled>
+		
+		<!-- Subject template. Can use ${filename}, ${filetype}, ${groupId}, ${groupName}, ${groupDescription} -->
+		<SubjectTemplate><![CDATA[Inventory notification: group=${groupName}; filetype=${filetype}; product name=${filename}]]></SubjectTemplate>
+		
+		<!-- Mail style: key value to MailFormatXSL -->
+		<!-- attachBody: the body is also attached to the mail -->
+		<MailFormat attachBody="true">Coord-HTML</MailFormat> 
+		<!-- XSL to get required format -->
+		<MailFormatXSL>
+			<!-- Absolute path of xsl file -->
+			<!-- contentType attribute override the default one in the mail header -->
+			<XML contentType="text/xml; charset=US-ASCII"></XML> <!-- If empty no xsl transformation is performed -->
+			<HTML contentType="text/html; charset=US-ASCII">/opt/facilities/MCC/conf/xsl/InventoryHtmlMail.xsl</HTML> <!-- Html format -->
+			<Coord-HTML contentType="text/html; charset=US-ASCII">/opt/facilities/MCC/conf/xsl/InventoryCoordReleaseHtmlMail.xsl</Coord-HTML> <!-- Coordinated Release. Html -->
+			<PLAIN>/opt/facilities/MCC/conf/xsl/InventoryPlainMail.xsl</PLAIN> <!-- Plain text format -->
+		</MailFormatXSL> 
+	</InventoryEmailNotification>
+</Library>
+

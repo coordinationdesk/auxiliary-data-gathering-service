@@ -1,0 +1,4 @@
+name,tasktable,type_id,description
+
+'MissPlanReception', '%/usr/local/conf/ADGS/DbConfiguration/tasktables/MissPlanReception.xml', '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory and Inventory of Mission Planning files'
+'csvzipDistribFormat',            '%/usr/local/conf/ADGS/DbConfiguration/tasktables/csvzipDistribFormat.xml',            '(SELECT id_operationtype FROM t_operationtypes where type = 'EXPORT')', 'CSVZIP Distribute Format'

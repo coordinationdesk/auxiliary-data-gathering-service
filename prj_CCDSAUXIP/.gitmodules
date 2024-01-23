@@ -1,0 +1,267 @@
+[submodule "common_CCDSAUXIP"]
+	path = common_CCDSAUXIP
+	url = http://gitserver.acs/ACS//common_CCDSAUXIP.git
+[submodule "projectMake"]
+	path = projectMake
+	url = http://gitserver.acs/ACS//projectMake.git
+[submodule "GITPortingTools"]
+	path = GITPortingTools
+	url = http://gitserver.acs/ACS//GITPortingTools.git
+[submodule "tools"]
+	path = tools
+	url = http://gitserver.acs/ACS//cryosattools.git
+[submodule "components/Default_RemoteConnections_PrivateKeys"]
+	path = components/Default_RemoteConnections_PrivateKeys
+	url = http://gitserver.acs/ACS//Default_RemoteConnections_PrivateKeys.git
+[submodule "components/Default_RemoteConnections_PublicKeys"]
+	path = components/Default_RemoteConnections_PublicKeys
+	url = http://gitserver.acs/ACS//Default_RemoteConnections_PublicKeys.git
+[submodule "components/libException"]
+	path = components/libException
+	url = http://gitserver.acs/ACS//libException.git
+[submodule "components/libRegExp"]
+	path = components/libRegExp
+	url = http://gitserver.acs/ACS//libRegExp.git
+[submodule "components/libStringUtils"]
+	path = components/libStringUtils
+	url = http://gitserver.acs/ACS//libStringUtils.git
+[submodule "components/libTimer"]
+	path = components/libTimer
+	url = http://gitserver.acs/ACS//libTimer.git
+[submodule "components/libAbstractFactoryChain"]
+	path = components/libAbstractFactoryChain
+	url = http://gitserver.acs/ACS//libAbstractFactoryChain.git
+[submodule "components/libCRC"]
+	path = components/libCRC
+	url = http://gitserver.acs/ACS//libCRC.git
+[submodule "components/libThread"]
+	path = components/libThread
+	url = http://gitserver.acs/ACS//libThread.git
+[submodule "components/libResources"]
+	path = components/libResources
+	url = http://gitserver.acs/ACS//libResources.git
+[submodule "components/libSignal"]
+	path = components/libSignal
+	url = http://gitserver.acs/ACS//libSignal.git
+[submodule "components/libACS_SSL"]
+	path = components/libACS_SSL
+	url = http://gitserver.acs/ACS//libACS_SSL.git
+[submodule "components/libFile"]
+	path = components/libFile
+	url = http://gitserver.acs/ACS//libFile.git
+[submodule "components/libProc"]
+	path = components/libProc
+	url = http://gitserver.acs/ACS//libProc.git
+[submodule "components/libPlugin"]
+	path = components/libPlugin
+	url = http://gitserver.acs/ACS//libPlugin.git
+[submodule "components/libConfiguration"]
+	path = components/libConfiguration
+	url = http://gitserver.acs/ACS//libConfiguration.git
+[submodule "components/libXMLResources"]
+	path = components/libXMLResources
+	url = http://gitserver.acs/ACS//libXMLResources.git
+[submodule "components/libSerialization"]
+	path = components/libSerialization
+	url = http://gitserver.acs/ACS//libSerialization.git
+[submodule "components/libMQTT"]
+	path = components/libMQTT
+	url = http://gitserver.acs/ACS//libMQTT.git
+[submodule "components/libApp"]
+	path = components/libApp
+	url = http://gitserver.acs/ACS//libApp.git
+[submodule "components/libDateTime"]
+	path = components/libDateTime
+	url = http://gitserver.acs/ACS//libDateTime.git
+[submodule "components/libDbGeo"]
+	path = components/libDbGeo
+	url = http://gitserver.acs/ACS//libDbGeo.git
+[submodule "components/libDbExpress"]
+	path = components/libDbExpress
+	url = http://gitserver.acs/ACS//libDbExpress.git
+[submodule "components/libacdbexppgl"]
+	path = components/libacdbexppgl
+	url = http://gitserver.acs/ACS//libacdbexppgl.git
+[submodule "components/libDbClient"]
+	path = components/libDbClient
+	url = http://gitserver.acs/ACS//libDbClient.git
+[submodule "components/libDbData"]
+	path = components/libDbData
+	url = http://gitserver.acs/ACS//libDbData.git
+[submodule "components/libSendMail"]
+	path = components/libSendMail
+	url = http://gitserver.acs/ACS//libSendMail.git
+[submodule "components/libUserNotification"]
+	path = components/libUserNotification
+	url = http://gitserver.acs/ACS//libUserNotification.git
+[submodule "components/libStorageManager"]
+	path = components/libStorageManager
+	url = http://gitserver.acs/ACS//libStorageManager.git
+[submodule "components/libPdsDb"]
+	path = components/libPdsDb
+	url = http://gitserver.acs/ACS//libPdsDb.git
+[submodule "components/libLTAFileAction"]
+	path = components/libLTAFileAction
+	url = http://gitserver.acs/ACS//libLTAFileAction.git
+[submodule "components/libLTAFileInventory"]
+	path = components/libLTAFileInventory
+	url = http://gitserver.acs/ACS//libLTAFileInventory.git
+[submodule "components/libStandaloneApp"]
+	path = components/libStandaloneApp
+	url = http://gitserver.acs/ACS//libStandaloneApp.git
+[submodule "components/libMQTTStatistics"]
+	path = components/libMQTTStatistics
+	url = http://gitserver.acs/ACS//libMQTTStatistics.git
+[submodule "components/libSRVStandaloneApp"]
+	path = components/libSRVStandaloneApp
+	url = http://gitserver.acs/ACS//libSRVStandaloneApp.git
+[submodule "components/libSRVApp"]
+	path = components/libSRVApp
+	url = http://gitserver.acs/ACS//libSRVApp.git
+[submodule "components/libStringFactoryChain"]
+	path = components/libStringFactoryChain
+	url = http://gitserver.acs/ACS//libStringFactoryChain.git
+[submodule "components/libScOrder"]
+	path = components/libScOrder
+	url = http://gitserver.acs/ACS//libScOrder.git
+[submodule "components/libTlOrder"]
+	path = components/libTlOrder
+	url = http://gitserver.acs/ACS//libTlOrder.git
+[submodule "components/libStringKeyFactory"]
+	path = components/libStringKeyFactory
+	url = http://gitserver.acs/ACS//libStringKeyFactory.git
+[submodule "components/libTask"]
+	path = components/libTask
+	url = http://gitserver.acs/ACS//libTask.git
+[submodule "components/libTaskTable"]
+	path = components/libTaskTable
+	url = http://gitserver.acs/ACS//libTaskTable.git
+[submodule "components/libJobOrder"]
+	path = components/libJobOrder
+	url = http://gitserver.acs/ACS//libJobOrder.git
+[submodule "components/libDefaultJobOrder"]
+	path = components/libDefaultJobOrder
+	url = http://gitserver.acs/ACS//libDefaultJobOrder.git
+[submodule "components/libLTAJobOrder"]
+	path = components/libLTAJobOrder
+	url = http://gitserver.acs/ACS//libLTAJobOrder.git
+[submodule "components/libIpcBase"]
+	path = components/libIpcBase
+	url = http://gitserver.acs/ACS//libIpcBase.git
+[submodule "components/libScLogManager"]
+	path = components/libScLogManager
+	url = http://gitserver.acs/ACS//libScLogManager.git
+[submodule "components/libSchedCommands"]
+	path = components/libSchedCommands
+	url = http://gitserver.acs/ACS//libSchedCommands.git
+[submodule "components/libTaskExecution"]
+	path = components/libTaskExecution
+	url = http://gitserver.acs/ACS//libTaskExecution.git
+[submodule "components/libTlIpc"]
+	path = components/libTlIpc
+	url = http://gitserver.acs/ACS//libTlIpc.git
+[submodule "components/libScheduler"]
+	path = components/libScheduler
+	url = http://gitserver.acs/ACS//libScheduler.git
+[submodule "components/libTaskTableProcess"]
+	path = components/libTaskTableProcess
+	url = http://gitserver.acs/ACS//libTaskTableProcess.git
+[submodule "components/libImporterBase"]
+	path = components/libImporterBase
+	url = http://gitserver.acs/ACS//libImporterBase.git
+[submodule "components/libPostgres8Dialect"]
+	path = components/libPostgres8Dialect
+	url = http://gitserver.acs/ACS//libPostgres8Dialect.git
+[submodule "components/libSignatureAlgo"]
+	path = components/libSignatureAlgo
+	url = http://gitserver.acs/ACS//libSignatureAlgo.git
+[submodule "components/libFtpCurl"]
+	path = components/libFtpCurl
+	url = http://gitserver.acs/ACS//libFtpCurl.git
+[submodule "components/libBaseSoap"]
+	path = components/libBaseSoap
+	url = http://gitserver.acs/ACS//libBaseSoap.git
+[submodule "components/libIsmSoap"]
+	path = components/libIsmSoap
+	url = http://gitserver.acs/ACS//libIsmSoap.git
+[submodule "components/libAwsS3Wrapper"]
+	path = components/libAwsS3Wrapper
+	url = http://gitserver.acs/ACS//libAwsS3Wrapper.git
+[submodule "components/libIsmSoapClient"]
+	path = components/libIsmSoapClient
+	url = http://gitserver.acs/ACS//libIsmSoapClient.git
+[submodule "components/libIsmSMClient"]
+	path = components/libIsmSMClient
+	url = http://gitserver.acs/ACS//libIsmSMClient.git
+[submodule "components/libSchedMessages"]
+	path = components/libSchedMessages
+	url = http://gitserver.acs/ACS//libSchedMessages.git
+[submodule "components/libScDefaultCommands"]
+	path = components/libScDefaultCommands
+	url = http://gitserver.acs/ACS//libScDefaultCommands.git
+[submodule "components/libScDefaultLogGroup"]
+	path = components/libScDefaultLogGroup
+	url = http://gitserver.acs/ACS//libScDefaultLogGroup.git
+[submodule "components/libLTAJsonProductAttributes"]
+	path = components/libLTAJsonProductAttributes
+	url = http://gitserver.acs/ACS//libLTAJsonProductAttributes.git
+[submodule "components/libPRIPRolling"]
+	path = components/libPRIPRolling
+	url = http://gitserver.acs/ACS//libPRIPRolling.git
+[submodule "components/libObjSMClient"]
+	path = components/libObjSMClient
+	url = http://gitserver.acs/ACS//libObjSMClient.git
+[submodule "components/libRestBase"]
+	path = components/libRestBase
+	url = http://gitserver.acs/ACS//libRestBase.git
+[submodule "components/libLTACommon"]
+	path = components/libLTACommon
+	url = http://gitserver.acs/ACS//libLTACommon.git
+[submodule "components/libOAuth2Utils"]
+	path = components/libOAuth2Utils
+	url = http://gitserver.acs/ACS//libOAuth2Utils.git
+[submodule "components/libLTARest"]
+	path = components/libLTARest
+	url = http://gitserver.acs/ACS//libLTARest.git
+[submodule "components/libSrvMetrics"]
+	path = components/libSrvMetrics
+	url = http://gitserver.acs/ACS//libSrvMetrics.git
+[submodule "applications/Scheduler"]
+	path = applications/Scheduler
+	url = http://gitserver.acs/ACS//Scheduler.git
+[submodule "applications/SRVInventory"]
+	path = applications/SRVInventory
+	url = http://gitserver.acs/ACS//SRVInventory.git
+[submodule "applications/SRVImporter"]
+	path = applications/SRVImporter
+	url = http://gitserver.acs/ACS//SRVImporter.git
+[submodule "applications/SRVAttributeExtractor"]
+	path = applications/SRVAttributeExtractor
+	url = http://gitserver.acs/ACS//SRVAttributeExtractor.git
+[submodule "applications/PRIPRolling"]
+	path = applications/PRIPRolling
+	url = http://gitserver.acs/ACS//PRIPRolling.git
+[submodule "applications/SRVNotificationDispatcher"]
+	path = applications/SRVNotificationDispatcher
+	url = http://gitserver.acs/ACS//SRVNotificationDispatcher.git
+[submodule "applications/SRVRemoveInventory"]
+	path = applications/SRVRemoveInventory
+	url = http://gitserver.acs/ACS//SRVRemoveInventory.git
+[submodule "applications/SRVDownloadInventory"]
+	path = applications/SRVDownloadInventory
+	url = http://gitserver.acs/ACS//SRVDownloadInventory.git
+[submodule "applications/Encrypter"]
+	path = applications/Encrypter
+	url = http://gitserver.acs/ACS//Encrypter.git
+[submodule "applications/Decrypter"]
+	path = applications/Decrypter
+	url = http://gitserver.acs/ACS//Decrypter.git
+[submodule "applications/LTAQuotaService"]
+	path = applications/LTAQuotaService
+	url = http://gitserver.acs/ACS//LTAQuotaService.git
+[submodule "applications/GarbageCleaner"]
+	path = applications/GarbageCleaner
+	url = http://gitserver.acs/ACS//GarbageCleaner.git
+[submodule "applications/LTAInventoryMetricsTracker"]
+	path = applications/LTAInventoryMetricsTracker
+	url = http://gitserver.acs/ACS//LTAInventoryMetricsTracker.git

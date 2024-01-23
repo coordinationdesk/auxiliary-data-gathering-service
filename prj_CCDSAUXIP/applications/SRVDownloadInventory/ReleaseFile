@@ -1,0 +1,27 @@
+2.0.2
+Amazon libs removed by Makefile.
+--------------------------------------------
+2.0.1
+Minor version due to jira S2PDGS-286
+Amazon lib added if EXPRIVIA_ISM_USE_AWS_S3 compile time flag set.
+--------------------------------------------
+2.0.0
+Name changed from LTADownloadInventory to SRVDownloadInventory
+--------------------------------------------
+1.0.4
+Speed computation added
+--------------------------------------------
+1.0.3
+usage typo
+--------------------------------------------
+1.0.2
+usage typo
+--------------------------------------------
+1.0.1
+Usaeg fixed
+--------------------------------------------
+1.0.0
+First release
+--------------------------------------------
+0.0.1
+First issue

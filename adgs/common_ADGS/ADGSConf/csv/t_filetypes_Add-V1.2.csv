@@ -1,0 +1,11 @@
+# The File can contains any number of empty lines and
+# or starting with hash negliged by script
+# The First meaningful line must contain the colum names
+# Fallowing rows are traited as record.
+# Fields must be quoted by single quote if strings or plain in case of Numeric values 
+
+'filetype','description','nameregularexpression','headerseparation','"group"','invperiod','mngsngext','sngext','hdrext','dblext',
+
+'FOS_MAIL_TGZ', 'FOS ADF via Mail', 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'FOS_MAIL_EOF', 'FOS ADF via Mail', 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'FOS_MAIL_DBL', 'FOS ADF via Mail', 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'

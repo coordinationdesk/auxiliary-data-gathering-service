@@ -1,0 +1,11 @@
+\c adgsdb
+
+COPY t_operationtypes FROM stdin;
+1	UNKNOWN
+2	IMPORT
+3	EXPORT
+4	UPLOAD
+5	DOWNLOAD
+6	EREASE
+7	POSTPROC
+\.

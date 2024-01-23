@@ -1,0 +1,19 @@
+6.0.2
+Include of deprecated file Signal.h removed.
+------------------------------
+6.0.1
+Deprecated DefaultSignalHandler removed.
+------------------------------
+6.0.0
+Deprecated SignalHandler and doRestart() removed.
+------------------------------
+5.15.0
+Minor release due to jira S2PDGS-236.
+--nobackup option added on command line not to move product to backup dir in case of error even if backup dir properly configured.
+------------------------------
+5.14.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.14.0
+
+Automatically generate from revision "version "5.14""

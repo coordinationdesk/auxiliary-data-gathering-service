@@ -1,0 +1,18 @@
+[Unit]
+Description=ADGS Jira attachment dowloader
+Documentation=https://www.exprivia.com
+Requires=network.target
+Wants=adgs-jiraDownloader.timer
+After=network.target
+
+[Service]
+Type=oneshot
+
+User=opadgs
+Group=ccds
+
+ExecStart=/usr/bin/python3 /usr/local/components/ADGS/bin/ADGS_JiraIssueDownloader.py -c /data/ADGS/conf/JiraDownloaderSettings.yaml
+
+[Install]
+WantedBy=multi-user.target
+

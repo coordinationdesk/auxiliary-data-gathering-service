@@ -1,0 +1,35 @@
+1.63.0
+LP: Minor version due to jira ECICMF-35
+extractMetadataFromHdr method added to decide if data must be extracted from either HDR or not.
+------------------------------
+1.62.0
+MP: using new libJobOrder 4.0.0 I/F
+------------------------------
+1.61.3
+MP: uses new libPreInventoryBase 2.0.0 I/F (backward compatible)
+------------------------------
+1.61.2
+MP: no more db related deprecated methods/classes
+------------------------------
+1.61.1
+MP: compilation warning cleanup
+------------------------------
+1.61.0
+Minor version issue due to jira MUSTER-36.
+EOFPreInventory: SatelliteMissionAssociator::exKeyNotFoundException caught to search satellite acronym and mission in configuration if not returned by satelliteMissionAssociator::getSatelliteAcronym method.
+------------------------------
+1.60.0
+Minor version issue due to jira MUSTER-36.
+EOFMusterPreInventory class moved to libMusterPreInventory module. _pluginConfSpaceId and _factoryConfSpaceId of the base class set in CTOR. ConfigEOFPreInventory and EOFPreInventoryFactory tags names replaced throughout the code.
+getFilepathToValidate method added returning _currentFileName. It can be re-implemented in specialized classes.
+------------------------------
+1.59.0
+Minor version issue due to jira MUSTER-36. PreInventory of TAR packages containing EOF files (HDR) in the framework of MUSTER project developed.
+All requirements accomplished.
+------------------------------
+1.58.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.58.0
+
+Automatically generate from revision "version "1.58""

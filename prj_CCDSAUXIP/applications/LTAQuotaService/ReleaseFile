@@ -1,0 +1,79 @@
+5.3.0
+[LTA-591] checkParallelOrderQuota service does not consider BOOKING order in quota calculation.
+Other minor changes.
+Test updated.
+------------------------------------------
+5.2.1
+BaseService not enable POST interface by default.
+Tests updated.
+------------------------------------------
+5.2.0
+[CCDS-72] Log improvements.
+Removed unused _mainThread property of LTAQuotaService app.
+Changed Configuration load retry policy.
+Use new RestServerBase::RestService::dumpRequest method instead of custom one.
+Tests updated.
+Other minor improvements.
+------------------------------------------
+5.1.0
+[CCDS-71] Fixed dbConnection from temporary dbConnectionWrapper object.
+------------------------------------------
+5.0.1
+Move constructor and move assignment operator removed from CheckOrderQuotaService. (missed in previous commit)
+------------------------------------------
+5.0.0
+Move constructor and move assignment operator removed from services due to pool reference.
+------------------------------------------
+4.0.1
+[CCDS-67] Minor improvements.
+------------------------------------------
+4.0.0
+[CCDS-67] Changed main loop exit condition and stop condition management.
+Fixed exit code value in non error cases.
+Changed service initialization in order to be compliant with libRestBase 1.3.0.
+Removed OracleDB support.
+Introduced BaseService in order to remove some code duplications and enforce uniformity between services.
+Issues from SonarQube analysis removed.
+Removed PRQA comments.
+Copyright updated.
+Test updated.
+------------------------------------------
+3.1.0
+Now t_srv_users.service_alias is used in place of t_srv_users.name for metrics, if available.
+------------------------------------------
+3.0.0
+Deprecated doRestart() removed.
+------------------------------------------
+2.5.0
+[LTA-336] Improved log messages.
+Improved the use of connections with the DB.
+Other minor improvements.
+------------------------------------------
+2.4.1
+Fixed rotateLog and delay in main.
+Fixed exception notification on NotifyDownloadStatusService.
+------------------------------------------
+2.4.0
+[LTA-204] Added NotifyDownloadStatus service.
+------------------------------------------
+2.3.1
+MP: no more db related deprecated methods/classes
+------------------------------------------
+2.3.0
+Phoenix restart added to conf space
+------------------------------------------
+2.2.1
+Using Application::loadConfiguration instead of ConfigurationSingleton::loadConfiguration
+------------------------------------------
+2.2.0
+Updated tests using LTAStatus instead of LTASrvStatuses
+------------------------------------------
+2.1.0
+Using LTAStatus instead of LTASrvStatuses that were the same class but
+the last one has been removed from the common libraries
+-----------------------------------------
+2.0.0
+[LTA-74]: Now the cost value is used for the calculation of order/batch quota. Member functions declared as const. Added debug messages. All tests completed. Minor bug fixes.
+------------------------------------------
+1.0.0
+[LTA-74]: First release

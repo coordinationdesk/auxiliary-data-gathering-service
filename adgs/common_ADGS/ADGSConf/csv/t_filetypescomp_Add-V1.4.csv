@@ -1,0 +1,17 @@
+'pfiletype', 'cfiletype'
+
+'(SELECT id_filetype FROM t_filetypes where filetype = 'ECMWF_TRO_OR')',    '(SELECT id_filetype FROM t_filetypes where filetype = 'AUXTRO129_OR')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'ECMWF_TRO_OR')',    '(SELECT id_filetype FROM t_filetypes where filetype = 'AUXTRO130_OR')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'ECMWF_TRO_OR')',    '(SELECT id_filetype FROM t_filetypes where filetype = 'AUXTRO133_OR')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'ECMWF_TRO_OR')',    '(SELECT id_filetype FROM t_filetypes where filetype = 'AUXTRO134_OR')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'ECMWF_TRO_OR')',    '(SELECT id_filetype FROM t_filetypes where filetype = 'AUXTRO151_OR')'
+
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S3OSIRPRO_AUX')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'OSIICE_RPRO_20N')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S3OSIRPRO_AUX')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'OSIICE_RPRO_21N')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S3OSIRPRO_AUX')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'OSIICE_RPRO_20S')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S3OSIRPRO_AUX')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'OSIICE_RPRO_21S')'
+
+'(SELECT id_filetype FROM t_filetypes where filetype = 'AUX_TO_OBJSTORE')', '(SELECT id_filetype FROM t_filetypes where filetype = 'SR_2_SICNAX')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'AUX_TO_OBJSTORE')', '(SELECT id_filetype FROM t_filetypes where filetype = 'SR_2_SICSAX')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'AUX_TO_OBJSTORE')', '(SELECT id_filetype FROM t_filetypes where filetype = 'SR_2_SIFNAX')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'AUX_TO_OBJSTORE')', '(SELECT id_filetype FROM t_filetypes where filetype = 'SR_2_SIFSAX')'

@@ -1,0 +1,4 @@
+#Caricamento t_storagemanager
+
+'type','name','description','invrelationtable','parameters'
+'OBJSM','OBJ_SM','AWS S3 OBJ Storage Manager','t_objsminvrelation','%#INSTALL_PATH#/csv/cblob/ObjStorageManager.xml'

@@ -1,0 +1,17 @@
+[Unit]
+Description=ADGS Purge EUM Files
+Documentation=https://www.exprivia.com
+Requires=network.target
+Wants=adgs-purgeeumfiles.timer
+After=network.target
+
+[Service]
+Type=oneshot
+
+User=opadgs
+Group=ccds
+
+ExecStart=/usr/local/components/ADGS/scripts/purgeEumFiles.sh
+
+[Install]
+WantedBy=multi-user.target

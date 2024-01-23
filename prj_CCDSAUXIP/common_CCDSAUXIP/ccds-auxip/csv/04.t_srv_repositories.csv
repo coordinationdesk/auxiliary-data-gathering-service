@@ -1,0 +1,10 @@
+# The File can contains any number of empty lines and
+# or starting with hash negliged by script
+# The First meaningful line must contain the colum names
+# Fallowing rows are traited as record.
+# Fields must be quoted by single quote if strings or plain in case of Numeric values 
+
+
+'symbolicname','transferprotocol_id','host_id','username','password','remotepath',tempname_id,tempname_value
+'PRIP_IN_BASKET','(SELECT id FROM t_transferprotocols where protocol = 'FILE')', '(SELECT id FROM t_knownhosts where host_name = 'localhost')', 'dummyuser','dummypasswd','dummypath','(SELECT id_tmpnamestrategy FROM t_tmpnamestrategy where tempname = 'PREFIX')','.'
+

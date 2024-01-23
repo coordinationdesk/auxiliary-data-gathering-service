@@ -1,0 +1,8 @@
+<Root>
+	<LTAFileAction>
+		<!-- If true, the successfully uploaded product is removed from the source path. Default is false -->
+		<!-- <DeleteUploadedFilepathOnSuccess>false</DeleteUploadedFilepathOnSuccess> -->
+		<!-- Directory where file with transaction for update inventory val flag and sp execution will be put in case of error. Default is /tmp -->
+		<!-- <TransactionFileDir>/tmp</TransactionFileDir> -->
+	</LTAFileAction>
+</Root>

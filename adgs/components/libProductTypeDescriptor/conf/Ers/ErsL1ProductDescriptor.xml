@@ -1,0 +1,46 @@
+<?xml version="1.0" standalone="yes"?>
+<ErsL1ProductDescription>
+    <L1ProductDescriptor>
+    	<NumberOfProducts>4</NumberOfProducts>
+	<Product1>
+        	<Id>SAR_IMP_1P</Id>
+        	<SensorName>SAR</SensorName>
+        	<SensorMode>ImageP</SensorMode>
+    	</Product1>
+	<Product2>
+        	<Id>SAR_IMG_1P</Id>
+        	<SensorName>SAR</SensorName>
+        	<SensorMode>ImageG</SensorMode>
+    	</Product2>
+	<Product3>
+        	<Id>SAR_IMS_1P</Id>
+        	<SensorName>SAR</SensorName>
+        	<SensorMode>ImageS</SensorMode>
+    	</Product3>
+	<Product4>
+        	<Id>SAR_IMT_1P</Id>
+        	<SensorName>SAR</SensorName>
+        	<SensorMode>ImageT</SensorMode>
+    	</Product4>
+	<NumberOfClasses>10</NumberOfClasses>
+			 <Class1>T</Class1>
+			 <Class2>S</Class2>
+			 <Class3>N</Class3>
+			 <Class4>O</Class4>
+			 <Class5>P</Class5>
+			 <Class6>Q</Class6>
+			 <Class7>R</Class7>
+			 <Class8>U</Class8>
+			 <Class9>V</Class9>
+			 <Class10>X</Class10>
+   	<FileExtensionNumber>0</FileExtensionNumber>
+	<FileHeaderExtension></FileHeaderExtension>
+    	<SatelliteName>ERS</SatelliteName>
+    	<MissionID>N1</MissionID>
+    	<FileNameVersion>0001</FileNameVersion>
+	<FileNameSize>62</FileNameSize>
+	<!--OriginatorId>TRI</OriginatorId-->
+	<RefDocName>PO-RS-MDA-GS-2009_3/P</RefDocName>
+	<FileRootSize>14</FileRootSize>
+    </L1ProductDescriptor>
+</ErsL1ProductDescription>

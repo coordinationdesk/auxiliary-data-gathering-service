@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Library>
+    <ImplicitCirculator>
+        <!--Default priority -->
+        <priority>10</priority>
+        <!--Remove sources after transferring -->
+        <removeSources>false</removeSources>
+        <!--Number of parallel threads -->
+        <numberOfThreads>5</numberOfThreads>
+        <!--Seconds elapsed to reprocess policies -->
+        <secondsToReprocessPolicies>10</secondsToReprocessPolicies>
+        <!--Polling period to find files to circulate -->
+        <pollingPeriodInSeconds>30</pollingPeriodInSeconds>
+        <!--Signer for media: MD5 is the only supported up to now. -->
+        <mediaSignerType>MD5</mediaSignerType>
+        <!--Report file name for media: use ${DIR_NAME} (i.e. folder/file directory path) and/or ${FILE_NAME}
+        (i.e. file/folder name) in order to decide the absolute name of the file.
+        If the directory does not exist, it will be created. -->
+        <mediaReport>${DIR_NAME}/${FILE_NAME}_MANIFEST.MF</mediaReport>
+        <!--Media stand by status: it is the status used to specify when the media has been
+        transferred completely with success. After this, the receiver circulator must verify
+        the data and put its status to COMPLETED. -->
+        <mediaStandByStatus>STANDBY</mediaStandByStatus>
+		<!--Default true -->
+		<useInotify>true</useInotify>
+		<!--Link speed in Mbit/s -->
+		<!-- <linkSpeed>100</linkSpeed> -->
+		<!-- priorityPlainOrder true/false means the higher/lower value the higher priority  -->
+        <!-- <priorityPlainOrder>true</priorityPlainOrder> -->
+		<!-- <localTransferMode>COPY</localTransferMode> -->
+		<!-- Delta time in s to subtract to the previous loop scan time to inspect local source repositories -->
+		<!-- <localSourceFilesRetrieveDTime>5</localSourceFilesRetrieveDTime> -->
+		<!-- Maximum number of items processed in local source repositories to be stored in memory to skip items in the next run -->
+		<!-- <localItemsToSkipMaxNum>1000</localItemsToSkipMaxNum> -->
+    </ImplicitCirculator>
+</Library>
+

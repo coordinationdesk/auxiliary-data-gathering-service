@@ -1,0 +1,231 @@
+<?xml version="1.0" standalone="yes"?>
+<OrdersGenerationRoot>
+	<OrderGeneration>
+		<PluginsPath>/usr/acs/plugins/OrderGeneratorPlugins</PluginsPath>
+		<!-- the polling interval on the database [s]  -->
+		<DatabasePollingTime>30</DatabasePollingTime>
+		<NRT>
+			<Envisat>
+				<External>
+					<!-- the temporary path to download NRT XML files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<DistributionFormat>envisat</DistributionFormat>
+				</External>
+			</Envisat>	
+		</NRT>
+		<RPRO>
+			<Cryosat>
+				<External>
+					<!-- the temporary path to download External RPRO e.g. GTSLTA files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+				</External>
+			</Cryosat>
+		</RPRO>
+		<Offline>
+			<Dummysat>
+				<ExtCart>
+					<!-- the temporary path to download ext cart files -->
+					<TemporaryDownloadPath>/tmp</TemporaryDownloadPath>
+					<DueDateInterval>0.01</DueDateInterval>
+				</ExtCart>
+			</Dummysat>
+			<Envisat>
+				<Merge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>120.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL0MergeDistance>0.300</MaxL0MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+				</Merge>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>1.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+				<TimeCut>
+					<!-- the time to wait before emitting an orders since the first temporary order [s]  -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+					<!-- the length of each order [s]  -->
+					<OrderLength>60.0</OrderLength>
+					<!-- groups can be used to distinguish between different groups of file types, having  -->
+					<!-- potentially different cuts in length  -->
+					<!-- A file type can be into a single group only, but no check is done to enforce this  -->
+					<!-- If the triggering filetype is into no group it is belonging to the group "global".  -->
+					<!-- Each group can have its own  DefaultOrderLength and TemporaryOrdersMaxWaitingTime, if they are not specified, -->
+					<!-- global ones are used -->
+					<groups count="3">
+						<group>
+							<filetypes count="8">
+								<filetype>ASA_IM__0P</filetype>
+								<filetype>ASA_IM__0C</filetype>
+								<filetype>ASA_APC_0P</filetype>
+								<filetype>ASA_APH_0P</filetype>
+								<filetype>ASA_APV_0P</filetype>
+								<filetype>ASA_APC_0C</filetype>
+                                                                <filetype>ASA_APH_0C</filetype>
+                                                                <filetype>ASA_APV_0C</filetype>
+
+							</filetypes>
+							<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+							<OrderLength>16.0</OrderLength>
+						</group>
+						<group>
+							<filetypes count="2">
+								<filetype>ASA_WS__0P</filetype> 
+								<filetype>ASA_WS__0C</filetype>
+
+							</filetypes>
+							<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+							<OrderLength>60.0</OrderLength>
+						</group>	
+						<group>
+							<filetypes count="1">
+								<filetype>MER_FR__0P</filetype> 
+							</filetypes>
+							<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+							<OrderLength>200.0</OrderLength>
+						</group>	
+					</groups>
+				</TimeCut>
+			</Envisat>
+			<Eosam>
+				<Merge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>120.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL0MergeDistance>0.300</MaxL0MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+				</Merge>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>1.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+			</Eosam>
+			<Eospm>
+				<Merge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>120.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL0MergeDistance>0.300</MaxL0MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+				</Merge>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>1.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+			</Eospm>
+			<Alos>
+				<Merge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>120.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL0MergeDistance>0.300</MaxL0MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+				</Merge>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>1.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+			</Alos>
+			<Radarsat>
+				<Merge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>120.0</TemporaryOrdersMaxWaitingTime>
+					<!-- Level 0 are merged if, under all the merging conditions, their distance -->
+					<!-- is less than the following parameter [s] (floating point) -->
+					<!-- <MaxL0MergeDistance>0.300</MaxL0MergeDistance> -->
+					<MaxMergeDistance>0.300</MaxMergeDistance>
+				</Merge>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>1.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+				<TimeCut>
+					<!-- the time to wait before emitting an orders since the first temporary order [s]  -->
+					<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+					<!-- the length of each order [s]  -->
+					<OrderLength>60.0</OrderLength>
+					<!-- groups can be used to distinguish between different groups of file types, having  -->
+					<!-- potentially different cuts in length  -->
+					<!-- A file type can be into a single group only, but no check is done to enforce this  -->
+					<!-- If the triggering filetype is into no group it is belonging to the group "global".  -->
+					<!-- Each group can have its own  DefaultOrderLength and TemporaryOrdersMaxWaitingTime, if they are not specified, -->
+					<!-- global ones are used -->
+					<groups count="7">
+						<group>
+							<filetypes count="1">
+								<filetype>RS1_STD_0P</filetype>
+	
+							</filetypes>
+							<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+							<OrderLength>16.0</OrderLength>
+						</group>
+						<group>
+							<filetypes count="1">
+								<filetype>RS1_FIN_0P</filetype>
+							</filetypes>
+							<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+							<OrderLength>8.0</OrderLength>
+						</group>	
+						<group>
+							<filetypes count="1">
+								<filetype>RS1_WID_0P</filetype>
+							</filetypes>
+							<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+							<OrderLength>12.0</OrderLength>
+						</group>
+						<group>
+							<filetypes count="1">
+								<filetype>RS1_EXH_0P</filetype>
+							</filetypes>
+							<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+							<OrderLength>12.0</OrderLength>
+						</group>
+						<group>
+							<filetypes count="1">
+								<filetype>RS1_EXL_0P</filetype>
+							</filetypes>
+							<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+							<OrderLength>26.0</OrderLength>
+						</group>
+						<group>
+							<filetypes count="1">
+								<filetype>RS1_SCN_0P</filetype>
+							</filetypes>
+							<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+							<OrderLength>16.0</OrderLength>
+						</group>
+						<group>
+							<filetypes count="1">
+								<filetype>RS1_SCW_0P</filetype>>
+							</filetypes>
+							<TemporaryOrdersMaxWaitingTime>60.0</TemporaryOrdersMaxWaitingTime>
+							<OrderLength>16.0</OrderLength>
+						</group>
+					</groups>
+				</TimeCut>
+
+			</Radarsat>
+			<Oceansat>
+				<NoMerge>
+					<!-- the maximum amount of time a temporary order waits for  -->
+					<!-- an object that potentially can be attached [s] (floating point) -->
+					<TemporaryOrdersMaxWaitingTime>1.0</TemporaryOrdersMaxWaitingTime>
+				</NoMerge>
+			</Oceansat>
+		</Offline>
+	</OrderGeneration>
+</OrdersGenerationRoot>

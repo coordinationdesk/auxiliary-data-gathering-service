@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 (http://www.xmlspy.com) by  () -->
+<StationConf xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xsi:noNamespaceSchemaLocation="C:\\Documenti\\ESA\\CRYOSAT\\PDS\\Project\\XML_Ref\\PDS_Example\\StationConf.xsd">
+		<Station>
+			<Name>Matera</Name>
+			<Id>104</Id>
+			<Country>Italy</Country>
+			<CentreID>ADC</CentreID>
+			<Latitude unit='"deg"'>40.6330</Latitude>
+			<Longitude unit='"deg"'>16.7000</Longitude>
+			<Altitude unit='"m"'>541.0</Altitude>
+			<HorizonElevation unit='"deg"'>5.0</HorizonElevation>
+			<AgencySiteIdentifier>Matera</AgencySiteIdentifier>
+			<AgencyOrganizationId>ASI</AgencyOrganizationId>
+			<Platform>EUM</Platform>
+		</Station>
+</StationConf>

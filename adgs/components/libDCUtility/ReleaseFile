@@ -1,0 +1,15 @@
+5.50.0
+using Singleton default trait from libException 12.x
+------------------------------
+5.49.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+5.49.2
+test compilation fixed
+------------------------------
+5.49.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.49.0
+
+Automatically generate from revision "version "5.49""

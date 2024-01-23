@@ -1,0 +1,20 @@
+1.35.1
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------------------------------------------------
+1.35.0
+EC:: ECS-15  Postgres dbExpress driver extended in order to handle native types JSON and JSONB. Since these types are _NOT_ available in SQL Dialect, they are simply downcasted to STRING (JSON) and STRING/TEXT (JSONB), accordingly to the syntax of the query.
+------------------------------------------------------------------------
+1.34.3
+Makefiles can work in both smurfer and legacy mode
+------------------------------
+1.34.2
+Makefiles aligned to GITPortingTools 7 family and smurfer.py
+------------------------------
+1.34.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.34.0
+>>>>>>> fdd8dc56c7409f5b1931ea66629efb8160f33a6c
+
+1.34.0
+Automatically generate from revision "version "1.34""

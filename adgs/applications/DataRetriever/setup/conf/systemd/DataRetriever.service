@@ -1,0 +1,12 @@
+[Unit]
+Description=DataRetriever
+
+[Service]
+Type=simple
+ExecStart={installpath}/{installname}/bin/data-retriever.php
+Environment="PHP_IMPORT_CONFIGURATION={config}"
+Restart=always
+User={daemonuser}
+
+[Install]
+WantedBy=default.target

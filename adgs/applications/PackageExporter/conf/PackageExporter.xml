@@ -1,0 +1,141 @@
+<Root>
+<PackageExporter>
+
+	<!-- BEHAVIOUR SECTION -->
+
+	<!-- 	Plugins to load.
+		Tag missing: Plugin loading is skipped. -->
+	<Plugins regExp="\.so$">
+		<!-- Paths are loaded in the same order as they are listed -->
+		<PluginsPathList count="">
+			<!-- Note: Scheduler plugins (task table, log handler) not needed because linked specific classes in the main process. -->
+			<!--PluginsPath>/usr/local/components/ADC/plugins/AFunctionPlugins</PluginsPath-->
+		</PluginsPathList>
+	</Plugins>
+
+	<!-- MCF support -->
+	<errorLog>error.log</errorLog>
+	
+	<!-- Polling Timer to query for new eligible entries -->
+	<PollingTimer unit="[s]">30</PollingTimer>
+
+	<!-- Delay time before retry the operations after a critical failure.
+		Tag missing: used default (cf. log/code) -->
+	<CriticalErrorDelaySec unit="s">60</CriticalErrorDelaySec>
+
+	<!-- 	Check for my distribution queue's intermediate status and force them to initial status 
+		Intermediate status can be found if daemon aborted during last run. 
+		Allowed values:
+			- NOP: Leave the status as is
+			- TOERROR: Move the interim status to ERROR
+			- TOELIGIBLE: Move the interim status to ELIGIBLE
+		Tag missing: used default (cf. log/code) -->
+	<InterimStatusReset>
+		<RecoveryAction>NOP</RecoveryAction>
+	</InterimStatusReset>
+
+	<!-- Media types to handle. Empty list means "all the mediatypes" -->
+	<List_of_MediaTypes count="">
+		<MediaType>FTP</MediaType>
+	</List_of_MediaTypes>
+
+	<!-- LTA support. 
+		true: Inventory items migrated to LTA can be exported (t_distributionWaitingItems required);
+		false: Only Inventory items available on synch Storage Manager can be exported. -->
+	<LTASupport>false</LTASupport>
+
+
+	<!-- 	false: write the messages coming from Scheduler in the export processor's working dir (that is removed when export processing is ok).
+		true: keep the messages coming from Scheduler in the default application's log path. Used for Processor's log inspection or if 
+			GarbageCleaner is configured on the application's log path.
+		Tag missing: used default (cf. log/code) -->
+	<KeepSchedulerLog>false</KeepSchedulerLog>
+
+	<!-- 	true: Delete working dir when export processing is ok. 
+			Set to false for Processor's log inspection or if GarbageCleaner is configured on the exporter's processing environment. 
+		Tag missing: used default (cf. log/code) -->
+	<CleanupWorkingDirOnSuccess>true</CleanupWorkingDirOnSuccess>
+
+
+	<!-- RESOURCES SECTION -->
+
+	<!--	Mininum disk space required to operate.
+		Tag missing: used default (cf. log/code) -->
+	<MinSpaceRequiredMb unit="Mb">1024</MinSpaceRequiredMb>
+
+	<!-- If disk reserved space for cache =1Gb and perc=0.20, every time that a cache rolling is needed, 200MB plus the requested size would be freed. -->
+	<CacheEraseQuotaPcg>0.20</CacheEraseQuotaPcg>
+
+	<!--	DB Connection settings 
+		Tag missing: used default (cf. log/code) -->
+	<Connections>
+		<MaxConnections>20</MaxConnections>
+	</Connections>
+
+	<!-- 	Max allowed number of Packages that wait for processing (queue lenght of { format+distribute, waiting ack check}).
+		Tag missing: used default (cf. log/code) -->
+	<PendingRequestsLimit>15</PendingRequestsLimit>
+	
+	<!--	Max allowed number of Packages in Waiting Acknlowledge.
+		Packages in Waiting Acknlowledge take disk space in distribution processing working area.
+		This setting affects the space occupation in distribution processing working area.
+		Tag missing: used default (cf. log/code) -->
+	<WaitingAcknowledgeLimit>500</WaitingAcknowledgeLimit>
+
+</PackageExporter>
+
+<!-- DataDownloader settings. This section is not mandatory. If missing default values are used (cf. log/code) -->
+<DataDownloader>
+	<!-- Database connection retry to dowload data -->
+	<MaxDbConnRetry>3</MaxDbConnRetry>
+	<!-- Configured max time [sec] I can wait before the actual inventory item's download starts -->
+	<MaxTimeWaitingDownloadStart>120.0</MaxTimeWaitingDownloadStart>
+	<!-- Configured worst estimated download data rate [Mb/sec].
+	 * Used internally to estimate max time I can wait that other processes/threads downloads the inventory item for me.
+	 * Set to lower than actual rate: Lower values are safer: In contingency scenario the process will just wait more than needed.
+	 * Contingency scenario is: another thread/process declares it is downloading for me, but it's not for some reason.
+	 * High values could cause a systematic download failure. -->
+	<DownloadDataRate>0.1</DownloadDataRate>
+	<!-- Computed Max allowed elapsed time [sec] for actual downloading (or for waiting concurrent downloading)
+	 *  cannot be less than this threshold [sec]. -->
+	<MinThresholdTimeWaitingDownload>120.0</MinThresholdTimeWaitingDownload>
+</DataDownloader>
+
+<!-- Restart Application timer -->
+<ReloadConfigurationTime unit="s">86400</ReloadConfigurationTime>
+
+<!-- Operational time windows -->
+<List_of_TimeWindows  count="1">
+        <TimeWindow>
+                <timestart> 00:00.00 </timestart>
+                <timestop> 24:00.00 </timestop>
+        </TimeWindow>
+</List_of_TimeWindows>
+
+<!-- DataProvider max db retry-->
+<maxDbRetries>3</maxDbRetries>
+
+<DataProvider>
+	<!-- Concurrent downloaders from Synch Storage Manager for each Main Loop -->
+	<maxDownloadThreads>3</maxDownloadThreads>
+
+	<!-- Working dirs for Export processing. For better performace use the same filesystem of cache (cf. DownloadPath).
+		Note: Inventory Items written here (temporarly, for processing the distribution) are not cache locked. -->
+	<ProductPath>/usr/acs/test/exp/ProductsDistribution</ProductPath>
+
+	<Download>
+		<!-- Cache path on local filesystem. Inventory Items downloaded from the synch storage manager are cached here. -->
+		<DownloadPath>/usr/acs/test/exp/downloadspace/</DownloadPath>
+		<!-- Cache size in megabytes.		
+			Beware: an high value may lead to an eavy processing at cache rolling time.
+			        Set a value to let rolling max ~10000 inventory items. -->
+		<SpaceSize unit="Mb">268435</SpaceSize>
+	</Download>
+
+	<!-- Priority ordering. True: lower values are served first. False: higher values are served first. -->
+	<LowerPriorityFirst>false</LowerPriorityFirst><!-- false: in line with the Circulator criteria -->
+	
+</DataProvider>
+
+</Root>
+

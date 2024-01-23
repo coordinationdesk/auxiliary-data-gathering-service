@@ -1,0 +1,6 @@
+<UnitTestDescriptor>
+	<CommandLineList>
+		<CommandLine name="testLTACommon">./testLTACommon</CommandLine>
+		<CommandLine name="testAipParameters">./testAipParameters</CommandLine>
+	</CommandLineList>
+</UnitTestDescriptor>

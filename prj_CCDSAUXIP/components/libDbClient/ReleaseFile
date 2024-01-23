@@ -1,0 +1,242 @@
+16.0.0
+[S3MARINE-656]: NameIdAssociator changes:
+ - Added automatic reload logic;
+ - Added percent encode option that allow saveMap and loadMap to handle strings with new line;
+ - SonarQube issue fixed;
+ - Deprecated orderBy method;
+ - Unit test using docker created;
+ - Test updated.
+--------------------------------------------------------------------------------------
+15.1.0
+[CPS-133] EC:: Added support for ON CONFLICT in INSERT queries. Unit test added.
+--------------------------------------------------------------------------------------
+15.0.0
+CCDS-76
+dbConnection::hasAggregateTransactionState method added
+dbConnection::close() now release the _aggregateTransactionState pointer
+When a connection is releade to the pool, if its transaction internal state is not coherent, the connection is closed.
+--------------------------------------------------------------------------------------
+14.1.0
+[LTA-492]: added convenient static version of dbQuery::execForSet in order to reduce code duplication.
+--------------------------------------------------------------------------------------
+14.0.0
+- supporting assumeNoPostGIS in dbconf file as in
+
+Postgres.host[0].dbConnectionArbiterCParam.assumeNoPostGIS: true 
+
+this deactivates any PostGIS operation, include asking the postgis version that leaves
+a message in the postgres log when PostGIS is not installed
+- security enforced
+- some code rationalization 
+- bug fixed in dbSchemaMetadataProvider::getDependantTables
+- requires libDbExpress 3.27
+--------------------------------------------------------------------------------------
+13.0.3
+move assignments and move ctors of some classes were ripristinated or not declared in 
+order to use their copy counterpart
+--------------------------------------------------------------------------------------
+13.0.2
+move assignment and ctor operators have been implemented or deleted when the class has old style pointers.
+--------------------------------------------------------------------------------------
+13.0.1
+deprecate ifndef removed
+--------------------------------------------------------------------------------------
+13.0.0
+new functions acs::toMQTTSubId(...) defined in dbConnectionParameters.h to build a acs::MQTTSubIdHelper
+from libMQTT to be used for broadcast subscription from db
+The library has been heavily recoded to get rid of deprecated code and also for rationalization
+--------------------------------------------------------------------------------------
+12.1.1
+testing concurrency on dialects - requires libPostgres8Dialect which il loaded from the
+development directory and not from the lib repository.
+NB, the test tDialectConcurrency crashes with the libPostgres8Dialect 8.0.0 and 
+has been fixed in 8.0.1 - to crash requires real concurrent threads (many cores and 
+probably not virtual)
+--------------------------------------------------------------------------------------
+12.1.0
+adopting Singleton default trait from libException 12.x 
+--------------------------------------------------------------------------------------
+12.0.1
+Support for PostGIS 3 added - requires libPostgres8Dialect 8.0.0 to use the feature
+The only change is the implementantion of dbParam INSIDE or CONTAINS operator using
+PostGIS ST_Covers instead ST_Contains that required to repoject every geography into geometry 
+to work with PostGis 2
+dbSchemaMetadataProvider class I/F improved.
+--------------------------------------------------------------------------------------
+12.0.0
+Support for PostGIS 3 added - requires libPostgres8Dialect 8.0.0 to use the feature
+--------------------------------------------------------------------------------------
+11.0.2
+Forcing the RTMINSIG+6 signal to use SIG_IGN handler instead of the default that causes an abort
+We had an occurence of a signal delivered after the sigaction restore that caused a crash
+In this way any pending signal that will be received afterwards will be simply ignored
+--------------------------------------------------------------------------------------
+11.0.1
+#merge due a conflict with 10.0.2
+dbConnectionPool and related class I/F improved (C++11, mutex by containment etc )
+A potential bug was fixed: if the number of connection managed by the poll is less than 
+the maximum, those that had been released before their "aging" would have been kept open 
+until next use and release. This does not happen any more.
+----------------------------------------------------------------------------
+11.0.0
+dbConnectionPool and related class I/F improved (C++11, mutex by containment etc )
+A potential bug was fixed: if the number of connection managed by the poll is less than 
+the maximum, those that had been released before their "aging" would have been kept open 
+until next use and release. This does not happen any more.
+----------------------------------------------------------------------------
+10.0.2
+doxygen.conf tag list fixed
+----------------------------------------------------------------------------
+10.0.1
+InSet sql generation caused a repetition of the very first element - fixed
+----------------------------------------------------------------------------
+10.0.0
+
+dbTemporaryTable::createTable is now a template and accept an stl container, not only a vector
+
+db::Inset template can be constructed also with list and set containers other than vector.
+a define has been provided to correctly declare an InSet like in
+    vector<int> v 
+#ifdef INSET_OVER_CONTAINER
+	db::InSet< vector<int> > inset (... // new way
+#else
+	db::InSet<int> inset (... // old way
+#endif
+
+doc generation updated and some documentation improved
+----------------------------------------------------------------------------
+9.0.3
+possible abort due to signal Real-time 6 received when the default sigaction is installed
+StaleConnectionGuard dtor now unregister the query BEFORE resetting the handler 
+----------------------------------------------------------------------------
+9.0.2
+All the signlals are emitted from one single thread instead of one thread per query
+----------------------------------------------------------------------------
+9.0.1
+The default connection timeout is re-set by the dbConnectionWrapper when the connection
+is released to the pool.
+----------------------------------------------------------------------------
+9.0.0
+Each connection can declare a threshold to notify in the log longer queries.
+It has a default value of 10 seconds.
+Each query installs a signal handler to interrupt every second any potentially stale poll/select in db client libraries.
+When the timeout threshold for query execution declared in the connection is exceeded a warning message is emitted (once)
+a counter of the "live" long queries is reported along with the actual duration of the long queries when they complete.
+The granularity of query duration measurement is in seconds.
+----------------------------------------------------------------------------
+8.0.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+-------------------------------------------------
+8.0.2
+useless warnings removed
+-------------------------------------------------
+8.0.1
+dbRow ctor invoked with dbkey
+-------------------------------------------------
+8.0.0
+dbQuery deprecated ctor has been removed
+-------------------------------------------------
+7.3.5
+dbQuery deprecated ctor has statistics forced
+-------------------------------------------------
+7.3.4
+dbConnectionPool useless statistics commented out
+-------------------------------------------------
+7.3.3
+Transaction is able to avoid statistics passing the right boolean during ctor
+NameidAssociator statistics are reduced: no longer id and name count - useless
+dbQuery: ctor accept a bool (defaulted to true) to remove statistics emissions
+-------------------------------------------------
+7.3.2
+dbQuery: deprecate Unnamed queries
+NameIdAssociator::load() using a tmp map and final swap to minimize interval where the map is not complete.
+-------------------------------------------------
+7.3.1
+a couple o variable's name fixed in dbSchemaMetadataProvider.C
+-------------------------------------------------
+7.3.0
+[LTA-110]: Implemented getJoinParameters and copyJoinParameters functions.
+-------------------------------------------------
+7.2.1
+firx to remove unsuported pow10 function
+-------------------------------------------------
+7.2.0
+dbSchemaMetadataProvider considers blobs as "updatable" because they can be set to null.
+-------------------------------------------------
+7.1.0
+Implemented move constructor and move operator in dbStateWrapper class.
+-------------------------------------------------
+7.0.0
+SQLDialect upload anz sero blob/clob functions now return number of affected rows
+dbQuery upload blob/clob sets affected rows
+-------------------------------------------------
+6.3.0
+dbSchemaMetadataProvider::isUnique added - tested only on Postgres (libPostgres8Dialect 6.2.0)
+-------------------------------------------------
+6.2.0
+ECS-15 ECS-16 EC:: Added method to check if a column is a JSONB based on the proprietary Type.
+-------------------------------------------------
+6.1.4
+EC:: ECS-15 Test simplified.
+-------------------------------------------------
+6.1.3
+EC:: ECS-15 Test for null added. Also, all queries converted to SQLString instead of string.
+-------------------------------------------------
+6.1.2
+EC:: ECS-15 Test for bool added
+-------------------------------------------------
+6.1.1
+EC:: ECS-15 Test added
+-------------------------------------------------
+6.1.0
+EC:: Added handling of Database Listener/Broadcast
+-------------------------------------------------
+6.0.0
+If the project defines the flag -DUSE_DBCONNECTION_EXTERNAL_SECRET the key_in[] definition
+shall be implemented by the macro DB_CONNECTION_KEY_IN_DEFINITION defined in the include file
+DbConnectionSecret.h that shoulb be exposed by the RSAPrivateKey library, possibly in encrypted way
+-------------------------------------------------
+5.89.1
+Updated to handle the latest I/F of libACS_SSL
+-------------------------------------------------
+5.89.0
+Minor version issue due to jira S6JCS-93.
+Both salt string and salt size occurring in dbconf file managed by dbConnectionParameters class. ACS_SSL methods used to decrypt password with either salt or salt size.
+-------------------------------------------------
+5.88.0
+Added missing status.
+-------------------------------------------------
+5.87.1
+No exception from NameIdAssociator dtor
+-------------------------------------------------
+5.87.0
+Changing previous tag from patch to minor.
+-------------------------------------------------
+5.86.1
+Missing status added.
+-------------------------------------------------
+5.86.0
+NameIdAssociators use a configuration to enable/disable filesystem
+dump and persistency of map files retrieved from the database.
+In case persistency is disabled and no database is available the 
+map load will fail.
+Configuration is performed by a new singletong named NameIdAssociatorConfiguration.
+-------------------------------------------------
+5.85.0
+Coordinated release of the following libraries due to [J6PDAP-88]
+libInformix9Dialect 1.79.0
+libOracle11Dialect 1.31.0
+libPostgres8Dialect 5.21.0
+libDbClient 5.85.0
+It is now possible to query the schema to detect all the indexes
+of a given table and verify if a given index exists or not
+-------------------------------------------------
+5.84.2
+[S1PDGS-32131] Added new status BOOKED to object Status
+------------------------------
+5.84.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.84.0
+
+Automatically generate from revision "version "5.84""

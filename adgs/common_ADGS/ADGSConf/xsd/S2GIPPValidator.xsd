@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://eop-cfi.esa.int/S2/S2_SCHEMAS" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+        <xs:element name="Earth_Explorer_Header">
+                <xs:complexType>
+                        <xs:sequence>
+                                <xs:element name="Fixed_Header">
+                                        <xs:complexType>
+                                                <xs:sequence>
+                                                        <xs:element name="File_Name" type="xs:string" />
+                                                        <xs:element name="File_Description" type="xs:string" />
+                                                        <xs:element name="Notes" type="xs:string" />
+                                                        <xs:element name="Mission" type="xs:string" />
+                                                        <xs:element name="File_Class" type="xs:string" />
+                                                        <xs:element name="File_Type" type="xs:string" />
+                                                        <xs:element name="File_Version" type="xs:unsignedByte" />
+                                                        <xs:element name="Validity_Period">
+                                                                <xs:complexType>
+                                                                        <xs:sequence>
+                                                                                <xs:element name="Validity_Start" type="xs:string" />
+                                                                                <xs:element name="Validity_Stop" type="xs:string" />
+                                                                        </xs:sequence>
+                                                                </xs:complexType>
+                                                        </xs:element>
+                                                        <xs:element name="Source">
+                                                                <xs:complexType>
+                                                                        <xs:sequence>
+                                                                                <xs:element name="System" type="xs:string" />
+                                                                                <xs:element name="Creator" type="xs:string" />
+                                                                                <xs:element name="Creator_Version" type="xs:decimal" />
+                                                                                <xs:element name="Creation_Date" type="xs:string" />
+                                                                        </xs:sequence>
+                                                                </xs:complexType>
+                                                        </xs:element>
+                                                </xs:sequence>
+                                        </xs:complexType>
+                                </xs:element>
+                                <xs:element name="Variable_Header" />
+                        </xs:sequence>
+                </xs:complexType>
+        </xs:element>
+</xs:schema>
+~

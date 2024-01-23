@@ -1,0 +1,483 @@
+#!/bin/sh
+#
+# Copyright 2010-2020, Advanced Computer Systems , Inc.
+# Via Della Bufalotta, 378 - 00139 Roma - Italy
+# http://www.acsys.itA.C.S. - Advanced Computer Systems S.p.A.
+# 
+# This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems, S.p.A.;
+# the contents of this file may not be disclosed to third parties, copied or
+# duplicated in any form, in whole or in part, without the prior written
+# permission of Advanced Computer Systems, S.p.A.
+#	
+#
+#   $Prod: A.C.S. Postgres File to Text loader $
+#
+#	$Id$
+#
+#	$Author$
+#
+#	$Log$
+#	Revision 1.2  2015/09/15 15:14:05  achnat
+#	Completed and tested
+#	
+#	Revision 1.1.1.1  2015/09/09 15:42:44  achnat
+#	Import psqlLoadText
+#	
+
+
+
+
+
+usage() {
+	echo "usage: $(basename $0) <action> [[parameters]...]"
+	echo $dashLine
+	echo "actions:"
+	echo "   -I            Insert a new record into the table" 
+	echo "   -U            Update an existing record into the table"
+	echo "parameters:"
+	echo "   -f <file>     File (path and name) to upload into text field"
+	echo "   -p <project>  Use connection parameters of a specific project"
+	echo "   -t <table>    The name of the table to where insert or update"
+	echo "   -z            No project. Insert connection parameters manually"
+	echo "                 when requested"
+	echo "tables handled:"
+	echo "   t_configurationschemas"
+	echo "   t_configurationspaces"
+	echo "   t_configurationstylesheets"
+	echo "   t_storagemanager"
+	echo $dashLine
+	echo ""
+	exit 1
+}
+
+
+res_msg() {
+	case "$1" in
+		'0')
+			echo_success
+			echo ""
+			;;
+		'1')
+			echo_failure
+			echo ""
+			;;
+		'2')
+			echo_warning
+			echo ""
+			;;
+		+ )
+			;;
+	esac
+}
+
+
+clean() {
+	if test -e $SQL_FILE; then rm -f $SQL_FILE; fi
+	if test -e $RES_FILE; then rm -f $RES_FILE; fi
+}
+
+
+exit_error() {
+	echo "" >> $LOG_FILE
+	echo $dashLine | tee -a $LOG_FILE
+	echo "*** $ACTION ABORTED ***" | tee -a $LOG_FILE
+	echo "See log file $LOG_FILE"
+	echo "" | tee -a $LOG_FILE
+	clean
+	exit 1
+}
+
+
+init_file() {
+	if ! test -e $2
+	then
+		touch $2
+		if [ "$?" != 0 ]
+		then
+			echo "*** ERROR!!! init_file() - Cannot create $1 file ***"
+			echo "trying to write: $2"
+			echo ""
+			exit 1
+		fi
+		chmod a+w $2
+	fi
+	
+	case $1 in
+		'log')
+			echo "" >> $2
+			echo "" >> $2
+			echo "###################################################################" >> $2
+			echo "# $(date)" >> $2
+			echo "###################################################################" >> $2
+			;;
+		* )
+			echo "" > $2
+			;;
+	esac
+}
+
+
+set_conf() {
+	if test -r "$CONF_FILE"
+	then
+		. $CONF_FILE
+
+		export DBHOSTNAME
+		export DBNAME
+		export PDSUSER
+	else
+		echo "*** Cannot find CONF file or it is not readable ***" | tee -a $LOG_FILE
+		echo "expected file: $CONF_FILE"
+		exit_error
+	fi
+}
+
+
+check_conn() {
+	echo -n "Checking connection on $DBNAME ..." | tee -a $LOG_FILE
+	psql -h $DBHOSTNAME -U $PDSUSER $DBNAME -v "ON_ERROR_STOP=1" -c "\l" 2>> $LOG_FILE 1> /dev/null
+	if [ "$?" != 0 ]
+	then
+		res_msg 1
+		echo "*** ERROR!!! check_conn(): Cannot connect to $DBNAME ***" | tee -a $LOG_FILE
+		exit_error
+	fi
+	
+	res_msg 0
+	echo "  OK" >> $LOG_FILE
+}
+
+
+insert_param() {
+	read val
+	while test -z "$val"
+	do
+		read val
+	done
+	
+	echo "$val"		
+}
+
+
+insert_all_values() {
+	case $tbl in
+		't_storagemanager' )
+			echo -n "Insert new $spc_field: "
+			export VAL_NAME=$(insert_param)
+			echo -n "Insert new storagemanager type (eg. ACSISM): "
+			export VAL_TYPE=$(insert_param)
+			echo -n "Insert new storagemanager description: "
+			export VAL_DSCR="$(insert_param)"
+			echo -n "Insert new inrelation table (eg. t_acsisminvrelation): "
+			export VAL_INVR=$(insert_param)
+			;;
+		* )
+			;;
+	esac
+}
+
+
+exe_qry() {
+	echo -e "\nrunning query ..." >> $LOG_FILE
+	#echo -e "\nquery is:" >> $LOG_FILE
+	#cat $SQL_FILE >> $LOG_FILE
+	
+	if [ "$1" = "con" ]
+	then
+		psql -h $DBHOSTNAME -U $PDSUSER $DBNAME -v "ON_ERROR_STOP=1" -c "\l" 2>> $LOG_FILE 1> /dev/null
+		res="$?"
+		res_cmd="res_msg 0"
+	elif [ "$1" = "res" ]
+	then
+		psql -h $DBHOSTNAME -U $PDSUSER $DBNAME -v "ON_ERROR_STOP=1" -tqA -c "\i $SQL_FILE" 2>> $LOG_FILE 1> $RES_FILE
+		res="$?"
+		res_cmd="res_msg 0"
+	else
+		psql -h $DBHOSTNAME -U $PDSUSER $DBNAME -v "ON_ERROR_STOP=1" -c "\i $SQL_FILE" >> $LOG_FILE 2>&1
+		res="$?"
+		res_cmd="res_msg 0"
+	fi
+	
+	if [ "$res" != 0 ]
+	then
+		res_msg 1
+		echo "*** ERROR: Error during query execution ***" | tee -a $LOG_FILE
+		exit_error
+	fi
+	
+	$res_cmd
+	echo ">> query executed successfully." >> $LOG_FILE
+}
+
+
+search_records() {
+	echo -n "Searching existing records on db ..." | tee -a $LOG_FILE
+	echo "SELECT count(*) FROM $tbl WHERE $spc_field = '$VAL_NAME'" > $SQL_FILE
+	exe_qry res
+	export rc_num=$(cat $RES_FILE)
+	echo "records found: $rc_num" >> $LOG_FILE
+}
+
+
+choose_to_do() {
+	echo -n "$1"
+	export rsp="b"
+	
+	read rsp
+	while [ "$rsp" != "y" ] && [ "$rsp" != "n" ]
+	do
+		read rsp
+	done
+	
+	export "$rsp"
+}
+
+
+calculate_version() {
+	echo -n "Searching existing records on db ..." | tee -a $LOG_FILE
+	echo "SELECT MAX(version) FROM $tbl WHERE $spc_field = '$VAL_NAME'" > $SQL_FILE
+	exe_qry res
+	export vrs_num=$(cat $RES_FILE)
+	echo "max version found for $VAL_NAME: $vrs_num" >> $LOG_FILE
+	export VAL_VERS=$(echo "$vrs_num + 0.1" | bc)
+	echo "new version for $VAL_NAME: $VAL_VERS" >> $LOG_FILE
+}
+
+
+update() {
+	echo -n "Updating text field ..."
+	echo -n "Updating $txt_field field on table $tbl where $spc_field is $VAL_NAME ..." >> $LOG_FILE
+	echo "UPDATE $tbl SET $txt_field = '$IN_TXT' WHERE $spc_field = '$VAL_NAME'" > $SQL_FILE
+	exe_qry
+}
+
+
+insert() {
+	echo -n "Inserting new record ..." | tee -a $LOG_FILE
+	if [ $tbl = "t_storagemanager" ]
+	then
+		echo "INSERT INTO $tbl (type, name, description, invrelationtable, parameters)" > $SQL_FILE
+		echo "VALUES ('$VAL_TYPE', '$VAL_NAME', '$VAL_DSCR', '$VAL_INVR', '$IN_TXT')" >> $SQL_FILE
+	else
+		echo "INSERT INTO $tbl ($spc_field, version, $txt_field)" > $SQL_FILE
+		echo "VALUES ('$VAL_NAME','$VAL_VERS' ,'$IN_TXT')" >> $SQL_FILE
+	fi
+	exe_qry
+}
+
+
+
+
+
+################################   MAIN   ################################
+##########################################################################
+
+# Source function library
+. /etc/rc.d/init.d/functions
+
+export dashLine="-------------------------------------------------------------------"
+echo ""
+echo "POSTGRES FILE TO TEXT LOADER"
+echo $dashLine
+
+export EXE_DIR=`dirname $0`
+cd $EXE_DIR
+export EXE_DIR=`pwd`
+
+cd ..
+export BASE_DIR=`pwd`
+cd $EXE_DIR
+
+export CONF_DIR=$BASE_DIR/psqlUtilitiesConf
+
+export LOG_FILE=/tmp/$(basename $0).log
+export SQL_FILE=/tmp/$(basename $0)_tempCmd.sql
+export RES_FILE=/tmp/$(basename $0)_tempResult.res
+
+export f_flag="F"
+export i_flag="F"
+export p_flag="F"
+export t_flag="F"
+export u_flag="F"
+export z_flag="F"
+
+while getopts ":f:p:t:IUz" opt 
+do 
+	case "${opt}" in 
+		f) 
+			export f_flag="T"
+			export fln=${OPTARG}
+			;;
+		I) 
+			export i_flag="T"
+			export ACTION="INSERT"
+			;;
+		p) 
+			export p_flag="T"
+			export prj=${OPTARG}
+			;;
+		t) 
+			export t_flag="T"
+			export tbl=${OPTARG}
+			;;
+		U) 
+			export u_flag="T"
+			export ACTION="UPDATE"
+			;;
+		z) 
+			export z_flag="T"
+			;;
+		*) 
+			usage 
+			;;
+	esac 
+done
+
+if [ "$p_flag" = "F" ] && [ "$z_flag" = "F" ]; then usage; fi
+if [ "$p_flag" = "T" ] && [ "$z_flag" = "T" ]; then usage; fi
+if [ "$i_flag" = "F" ] && [ "$u_flag" = "F" ]; then usage; fi
+if [ "$i_flag" = "T" ] && [ "$u_flag" = "T" ]; then usage; fi
+if [ "$f_flag" = "F" ] || [ "$t_flag" = "F" ]; then usage; fi
+
+case $tbl in
+	't_configurationschemas' ) 
+		export txt_field=schema
+		export spc_field=namespace
+		;;
+	't_configurationspaces' ) 
+		export txt_field=space
+		export spc_field=namespace
+		;;
+	't_configurationstylesheets' ) 
+		export txt_field=stylesheet
+		export spc_field=name
+		;;
+	't_storagemanager' ) 
+		export txt_field=parameters
+		export spc_field=name
+		;;
+	* ) usage 
+		;;
+esac
+
+clean
+
+init_file log $LOG_FILE
+init_file sql $SQL_FILE
+init_file res $RES_FILE
+
+if [ "$p_flag" = "T" ]
+then
+	export CONF_FILE=$CONF_DIR/$prj.conf
+	set_conf
+else
+	echo -n "Insert postgres host name: "
+	DBHOSTNAME=$(insert_param)
+	echo -n "Insert database name: "
+	DBNAME=$(insert_param)
+	echo -n "Insert PDS user name: "
+	PDSUSER=$(insert_param)
+fi
+
+if test -z "$PGPASSWORD"
+then
+	echo -n "Insert $PDSUSER password: "
+	read -s answer
+	export PGPASSWORD=$answer
+	echo ""
+fi
+
+echo "Connection parameters:" >> $LOG_FILE
+echo "  host: $DBHOSTNAME" >> $LOG_FILE
+echo "  user: $PDSUSER" >> $LOG_FILE
+echo "  db:   $DBNAME" >> $LOG_FILE
+
+echo -n "Checking connection to database ..." | tee -a $LOG_FILE
+exe_qry con
+
+echo -n "Reading input file ..." | tee -a $LOG_FILE
+if ! test -r $fln
+then
+	res_msg 1
+	echo "*** ERROR!!! Cannot find INPUT file or it is not readable ***" | tee -a $LOG_FILE
+	echo "searching for file: $fln" | tee -a $LOG_FILE
+	exit_error
+fi
+export IN_TXT=$(cat $fln)
+res_msg 0
+echo "  OK" >> $LOG_FILE
+echo "file is: $fln" >> $LOG_FILE
+
+export VAL_VERS="1.0"
+
+if [ $ACTION = "INSERT" ]
+then
+	if [ $tbl = "t_storagemanager" ]
+	then
+		insert_all_values
+		search_records
+		echo -n "Checking existing records ..." | tee -a $LOG_FILE
+		if [ $rc_num -gt 0 ]
+		then
+			res_msg 1
+			echo ">> Cannot insert a new storagemanager having the same name" | tee -a $LOG_FILE
+			exit_error
+		else
+			res_msg 0
+			echo "  OK" >> $LOG_FILE
+			insert
+		fi
+	else
+		echo -n "Insert new $spc_field: "
+		VAL_NAME=$(insert_param)
+		search_records
+		echo -n "Checking existing records ..." | tee -a $LOG_FILE
+		if [ $rc_num -gt 0 ]
+		then
+			res_msg 2
+			echo ">> There are other records having the same name" | tee -a $LOG_FILE
+			choose_to_do "Do you want to insert a new record with increased version? (y/n): "
+			if [ $rsp = "y" ]; then calculate_version; insert; else exit_error; fi
+		else
+			res_msg 0
+			echo "  OK" >> $LOG_FILE
+			insert
+		fi
+	fi
+else
+	echo -n "Insert $spc_field to update: "
+	VAL_NAME=$(insert_param)
+	search_records
+	echo -n "Checking existing records ..." | tee -a $LOG_FILE
+	if [ $rc_num -gt 1 ]
+	then
+		res_msg 2
+		echo ">> There are more than one record to update" | tee -a $LOG_FILE
+		choose_to_do "Do you want to insert a new record? (y/n): "
+		if [ $rsp = "y" ]; then calculate_version; insert; else exit_error; fi
+	elif [ $rc_num -eq 0 ]
+	then
+		res_msg 2
+		echo ">> No records to update" | tee -a $LOG_FILE
+		choose_to_do "Do you want to insert a new record? (y/n): "
+		if [ $rsp = "y" ]
+		then
+			if [ $tbl = "t_storagemanager" ]; then insert_all_values; fi
+			insert
+		else 
+			exit_error
+		fi
+	else
+		res_msg 0
+		echo "  OK" >> $LOG_FILE
+		update
+	fi
+fi
+
+echo $dashLine | tee -a $LOG_FILE
+echo ">> LOAD COMPLETED" | tee -a $LOG_FILE
+echo "" | tee -a $LOG_FILE
+clean
+exit 0
+
+

@@ -1,0 +1,18 @@
+1.38.5
+Unused variable warning from included headers cleanup
+------------------------------
+1.38.4
+Compilation warning cleanup
+------------------------------
+1.38.3
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+1.38.2
+SM:: MES product filetypes SYC/ORT -> GES/GEC
+------------------------------
+1.38.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.38.0
+
+Automatically generate from revision "version "1.38""

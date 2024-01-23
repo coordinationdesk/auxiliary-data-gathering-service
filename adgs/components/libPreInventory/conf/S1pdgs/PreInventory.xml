@@ -1,0 +1,17 @@
+<Root>
+	<PreInventory>
+		<Plugins>
+			<List_of_Plugins_Path count="1">
+				<!-- Path to search for PreInventory plugins -->
+				<Plugins_Path>/usr/local/components/NRTAP/plugins/PreInventoryPlugins/</Plugins_Path>
+			</List_of_Plugins_Path>
+			<!-- Selected Plugins by filename -->
+			<SelectRE>.*so$</SelectRE>
+		</Plugins>
+	<!-- Option for Scanning dir Mode -->
+	<ScanMode>
+		<!-- Subdir search -->
+		<maxDepth>1</maxDepth> <!-- 0 = Current Dir only -->
+	</ScanMode>
+	</PreInventory>
+</Root>

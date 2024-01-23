@@ -1,0 +1,61 @@
+1.28.0
+CCDS-41: Manifest filename can be overwritten by filetype-depending specific configuration (optional tag ManifestFilename to be added to the libSafePreInventory.so.xml file under the path 
+PreInventory.PluginsRegistrationSettings.SafePreInventoryFactory.List_Of_Registrations.Registration)
+------------------------------
+1.27.4
+MA: added class fro S1AUX
+------------------------------
+1.27.3
+MP: empty test/Makefile added to avoid compilation env warnings
+------------------------------
+1.27.2
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+1.27.1
+MP: compatible with libPreInventoryBase 2.0.0 and backward
+------------------------------
+1.27.0
+Minor version release due to jira S3MARINE-392.
+ManifestDataExtractorFactory: S3C/S3D PROD and AUX keys added to factory. S3AuxManifestDataExtractor: Sentinel-3C/3D added to satellites map.
+Configuration of both ADC and MPM changed for testing.
+------------------------------
+1.26.6
+MP: compilation warnings cleanup
+------------------------------
+1.26.5
+Patch due to jira CI-71. Generation time extracted from product. If exception caught, current time set and Qality_Info metadata field set properly.
+------------------------------
+1.26.4
+Patch due to jira CI-71. RAW products have not 'safe' namespace in manifest file. xpath properly used to extract stuff independently on namespace occurrence.
+------------------------------
+1.26.3
+Patch due to jira CI-71. Temporary root directory where zip archive is unzipped now is "." (it was /tmp)
+------------------------------
+1.26.2
+Patch due to jira CI-71. More that one value matching footprint xpath in some cases (more frames). Taking the first one, so far. Unzipped temporary file saved in case of error.
+------------------------------
+1.26.1
+Minor version issue due to jira CI-71. Unique_Id never set in metadata, even if occurring in ParametersFile.xml. UniqueIdMustOccurInParameterFile conf flag properly set.
+------------------------------
+1.26.0
+Minor version issue due to jira CI-71. LTAS1SafePreInventory class added. manageFootPrintPosList method added to the base class to be possibly implemented by derived class to arrange geographic coordinates properly.
+------------------------------
+1.25.0
+Minor version issue due to jira MUSTER-36.
+SafePreInventory::setFurther method added to be re-implemented by derivated class to set further metadata fields. 
+------------------------------
+1.24.0
+Minor version issue due to jira MUSTER-36.
+_pluginConfSpaceId and _factoryConfSpaceId of the base class set in CTOR. ConfigSafePreInventory and SafePreInventoryFactory tag names replaced throughout the code.
+------------------------------
+1.23.0
+Minor version issue due to jira S3EVOL-174
+If properly configured, management of PRODUCT manifest file version to possibly either change parameters xpath or to add new parameters to be extracted.
+Dependency on libSafeProductBase module introduced.
+------------------------------
+1.22.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.22.0
+
+Automatically generate from revision "version "1.22""

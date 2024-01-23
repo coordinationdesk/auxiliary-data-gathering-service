@@ -1,0 +1,26 @@
+<Root>
+	<MQTTStatistics>
+		<!-- Default QOS level is QOS_0.  -->
+		<MaxBacklogSize>100000</MaxBacklogSize>
+		<!-- Specifies the minimum number of events in the backlog that triggers the forwarding procedure. Default is 1 ==> the event is immediately forwarded -->
+		<MinimumEventsStock>1</MinimumEventsStock>
+		<!-- Specifies the maximum number of messages that can be published, 0 or negative values means unlimited. Default is unlimited -->
+		<MaxBacklogBurstSize>-1</MaxBacklogBurstSize>
+		<!-- Timeout for waiting on the publish condition (msec) -->
+		<WaitOnPublishConditionTimeout>1000</WaitOnPublishConditionTimeout>
+		<BrokerConnection>
+		<!-- Timeout for the connection (msec) -->
+			<ConnectionTimeout>5000</ConnectionTimeout>
+			<!-- Connection retries -->
+			<ConnectionRetries>5</ConnectionRetries>
+			<!-- Set to true to instruct the broker to clean all messages and subscriptions on disconnect, false to instruct it to keep them. Default -->
+			<CleanSessionFlag></CleanSessionFlag>
+			<!-- The broker address/hostname -->
+			<Hostname>localhost</Hostname>
+			<!-- The broker listening port number -->
+			<Port>1883</Port>
+			<!-- The number of seconds after which the broker should send a PING message to the client if no other messages have been exchanged in that time -->
+			<KeepAliveInterval>60</KeepAliveInterval>
+		</BrokerConnection>
+	</MQTTStatistics>
+</Root>

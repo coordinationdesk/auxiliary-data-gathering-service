@@ -1,0 +1,19 @@
+2.0.3
+StackTrace notification enabled in case of exception logging
+------------------------------------------------------------
+2.0.2
+Removed unnecessary inclusion of Signal.h
+------------------------------
+2.0.1
+MP: compilation warnings cleanup
+------------------------------
+2.0.0
+The Scheduler application does not use the SignalHandler class anymore
+and now uses the application signal management framework
+------------------------------
+1.59.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.59.0
+
+Automatically generate from revision "version "1.59""

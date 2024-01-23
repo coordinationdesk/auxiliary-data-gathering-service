@@ -1,0 +1,68 @@
+6.1.0
+Added the "forced" configuration in the conf space key TLD_Clean_Working_Dir
+When set it will remove the working directories even in case of failure in processing
+The troubleshooting working directories will be preserved in any case
+-------------------------------------------------------------------------------------------------
+6.0.1
+Useless include removed.
+-------------------------------------------------------------------------------------------------
+6.0.0
+CPS-25: Db broadcast listener modified in order to use messages sent via MQTT.
+-------------------------------------------------------------------------------------------------
+5.0.4
+CPS-66: order queue manager initialization done before thread start.
+-------------------------------------------------------------------------------------------------
+5.0.3
+Bug fixing: alternative activation time has to be reset to 0 when the input alternative is active and has to be used for building the job order 
+(in order to be compared with the analogous in the symbolic table)
+-------------------------------------------------------------------------------------------------
+5.0.2
+Where possible, timeToRestart() is substitute with currentStopMode check.
+-------------------------------------------------------------------------------------------------
+5.0.1
+Deprecated included file Signal.h removed.
+-------------------------------------------------------------------------------------------------
+5.0.0
+Deprecated doRestart() removed.
+Compilation warnings cleanup.
+-------------------------------------------------------------------------------------------------
+4.3.0
+CPS-26: ExecutingOrder::downloadConfigurationSpaces code is executed only if ENABLE_TL_CONFSPACE_DOWNLOAD is defined (default disabled).
+For Cryosat project, the preprocessor definition is mandatory and its absence causes compilation error.
+-------------------------------------------------------------------------------------------------
+4.2.0
+MP: using new libJobOrder 4.0.0 I/F
+-------------------------------------------------------------------------------------------------
+4.1.0
+CPS-28: Private configuration file copy in the working dir is enabled/disabled by TL configuration (TLD_Copy_PConf)
+-------------------------------------------------------------------------------------------------
+4.0.0
+Changed management of start and stop time when inserting records in the waiting orders queue
+If available the information provided by the special query itself and stored in the SymbolTable
+will be used 
+-------------------------------------------------------------------------------------------------
+3.24.3
+MP: no more db related deprecated methods/classes
+------------------------------
+3.24.2
+MP: compilation warnings cleanup
+------------------------------
+3.24.1
+RUNNING metric notification at downloading time. Needed to link order id to Processor name in HMI.
+This way, even in case of downloading error, HMI is able to report the related Processor name and version.
+------------------------------
+3.24.0
+Removed the usage of SignalHandler base class in favour of Application signal framework
+Avoiding the update of the order queue status when exiting due to SIGTERM
+Forcing to ERROR any interrupted order (using jobresponsible) 
+------------------------------
+3.23.2
+Sleep time in OrderQueueManager was in microseconds instead of nanosecond
+value has been fixed
+------------------------------
+3.23.1
+Patch release automatically generated to instrument version files
+------------------------------
+3.23.0
+
+Automatically generate from revision "version "3.23""

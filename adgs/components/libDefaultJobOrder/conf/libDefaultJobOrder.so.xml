@@ -1,0 +1,48 @@
+<Root>
+	<DefaultJobOrder>
+		<PluginsRegistrationSettings>
+			<DefaultJobOrderFactory>
+				<List_Of_Registrations count="6">
+					<Registration>
+						<Satellite>Eosam</Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+					</Registration>
+					<Registration>
+						<Satellite>Eospm</Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+					</Registration>
+					<Registration>
+						<Satellite>Alos</Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+					</Registration>
+					<Registration>
+						<Satellite>Oceansat</Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+					</Registration>
+					<Registration>
+						<Satellite>Sentinel-2A</Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+					</Registration>
+					<Registration>
+						<Satellite>Sentinel-2B</Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+					</Registration>
+				</List_Of_Registrations>
+			</DefaultJobOrderFactory>
+		</PluginsRegistrationSettings>
+	</DefaultJobOrder>
+</Root>
+
+

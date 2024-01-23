@@ -1,0 +1,68 @@
+1.0.18
+Bug-fix
+-------------------------------------------------------
+1.0.17
+Added "sync_timestamp" configuration option in ini section "[import]" with On/Off values (default is On)
+to enable and disable files timestamps synchronization between remote server and downloaded files
+-------------------------------------------------------
+1.0.16
+Added handling of %{gpsWeek} time placeholder in rule paths and filenames, supporting range/offset modifiers
+-------------------------------------------------------
+1.0.15
+Updated service files to allow creation of pid file
+-------------------------------------------------------
+1.0.14
+Significantly improved preimp_ftp_curl_new driver to avoid reconnect to download subsequent files
+Added caching of remote directories to avoid rescan when needed
+Removed unused plugins/drivers
+Added (s)ftp(s) port configurability
+Added ls_timeout configuration in addition to normal download timeout
+Added possibility to launch different instances of pds2_import to handle multiple groups of repositories
+-------------------------------------------------------
+1.0.13
+Upgraded php version to Remi php 56
+-------------------------------------------------------
+1.0.12
+Added remote_timezone specification in repositoty "attributes" column to interpret remote ftp timestamps
+-------------------------------------------------------
+1.0.11
+Small fixes in json attributes decoding and reporting
+-------------------------------------------------------
+1.0.10
+Added passing CURL_OPTIONS from "attributes" repository column
+-------------------------------------------------------
+1.0.9
+Added constructor fix to correctly identify the process id
+-------------------------------------------------------
+1.0.8
+The repository path time reference can be affected using time context specifiers :offset and :range
+for example, to grab files from a folder referencing year/month/day of 10 days before now:
+/path/with/%Y/%m/%d:offset(now,-10)
+to grab files from 11 folders starting from 20 days ago to 10 days ago: 
+/path/with/%Y/%m/%d:range(now,-20,-10)
+:offset and :range time modifiers acts on simple date formatters used by gmstrftime,
+not to computed values like %{doy}, %{doyYesterday}, etc.
+-------------------------------------------------------
+1.0.7
+Directory products can be correctly removed from remote sites
+-------------------------------------------------------
+1.0.6
+Added support for tree downloads and files delete to preimp_ftp_curl_new
+-------------------------------------------------------
+1.0.5
+Added "/" between host and path in preimp_ftp_curl_new::getUrl
+-------------------------------------------------------
+1.0.4
+used libcurl to access all protocols (ftp, ftps, sftp)
+-------------------------------------------------------
+1.0.3
+Insert in t_circolationqueue can be disabled by config
+-------------------------------------------------------
+1.0.2
+added CAMS support
+-------------------------------------------------------
+1.0.1
+ftp_imp_pl_adgs_date plugin updates local file timestamp, tested ser7.dat files
+-------------------------------------------------------
+1.0.0
+First import

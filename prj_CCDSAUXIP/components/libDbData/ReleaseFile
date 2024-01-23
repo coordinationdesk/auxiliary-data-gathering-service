@@ -1,0 +1,137 @@
+12.2.0
+[CPS-148] EC:: Added class member: castClobAsString in order to handle a clob-field as a string.
+---------------------------------------------------------------------------------------------------------
+12.1.0
+[LTA-568]
+Implemented new update and updateByUniqueKey functionalities that allows to specify a custom dbQueryParameters 
+that will be concatenated to the basic WHERE clause using the AND logical operator.
+--------------------------------------------------------------------------------------------------------------
+12.0.1
+move assignments and move ctors of some classes were ripristinated or not declared in order to use 
+their copy counterpart
+--------------------------------------------------------------------------------------------------------------
+12.0.0
+LTA-432 implementation.
+New classes dbReleaseCacheFile, dbIsOnCacheFile and dbPutOnCacheFile added and managed from the 
+dbFileActionFactory class.
+the dbFileAction abstract class has new enum and method to allow the new classes to work correctly.
+Moreover the manifest header of almost every file has been updated.
+--------------------------------------------------------------------------------------------------------------
+11.1.0
+dbPersistent header file now provides also a new guard class named dbPersistentAutoRemover that can be used to 
+remove a dbPersistent from the database when the instance is destroyed
+The automatic deletion can be de-activated with the "release" operation
+--------------------------------------------------------------------------------------------------------------
+11.0.1
+dbUploafFile & dbDownloadFile threads have now a name
+new test added 
+------------------------------
+11.0.0
+New action dbGiveUpFile returned from the dbFileActionFactoryChain (and from the dbFileActionFactory) of course
+The dbGiveUpFile is intended to cancel a download request from a synchronous SM.
+The latter could use this info to remove pending request for offline or nearline media.
+The dbGiveUpFile is a non threaded abstract class that should issue the "giveup" to every syncronous SM 
+allowing a download
+------------------------------
+10.0.1
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+10.0.0
+dbSmartQuery instantiated templates now refers to new P::staticQueryClassName() where P is the class derived from 
+dbSmartPersistent. This in order to be used inside factories as per dbCryosatFactory.
+Hence the class derived from dbSmartPersistent should implement a method:
+static std::string staticQueryClassName() { return ... } 
+------------------------------
+9.7.4
+MP: Compilation test fixed
+------------------------------
+9.7.3
+Warnings removed
+Using dbKey in every class/method that requires it even if it can be defaulted
+e.g. dbRow constructor
+------------------------------
+9.7.2
+rsTable dbSmartQuery execution improved.
+------------------------------
+9.7.1
+
+dbSmartPersistent::save and dbSmartpersistent::update will not create a db::Transaction 
+variable if there is no need to. This will not show a lot of nop transaction in statistics
+
+catch(...) removed
+
+------------------------------
+9.7.0
+LTA-110: implemented copyJoinParameters. Updated dbSmartQuery::doQuery function to get
+the join parameters list from the base class dbGeneralQuery
+------------------------------
+9.6.0
+LTA-77: defined exceptions when file is offline or near-online
+------------------------------
+9.5.0
+[ECS-46] Introduced reset function for remainingSyncSM
+------------------------------
+9.4.0
+[ECS-46] Introduced remainingSyncSM counter and associated set/get functions.
+------------------------------
+9.3.1
+Call to std::exchange (C++14) changed with normal assignment to allow C++11 compilation
+------------------------------
+9.3.0
+dbSmartpersistent::unset supports null on every type except for primary key
+requires libDbClient 7.2.0 (blob/clob are now updatable)
+------------------------------
+9.2.0
+dbSmartpersistent::unset supports null on every type except for primary key
+requires libDbClient
+------------------------------
+9.1.1
+dbSmartpersistent::update fixed (missing where parameters)
+------------------------------
+9.1.0
+
+Implemented move constructor and move operator in dbPersistent and dbSmartPersistent
+------------------------------
+9.0.0
+
+needs libDbClient 7.0.0
+
+dbSmartPersistent::removeByUniqueKey and 
+dbSmartPersistent::updateByUniqueKey implemented
+
+the dbSmartPersistent::uploadFile overloaded methods return a 
+boolean to notify the correct upload on the designated record
+------------------------------
+8.0.0
+dbSmartPersistent::loadByUniqueKey implemented 
+------------------------------
+7.1.0
+
+dbUploadFile expose as public the waitExitOrTimeout from Thread 
+
+dbSmartPersistent now builds the wury list using the SQLDialect::convertColumnToString in order to 
+deal with 'special types' requiring function to be invoked as per dbGeoObject
+So, the SQL statement "SELECT footprint from .." became "SELECT ST_AsText(footprint)... " and the 
+underlying code can fill the related dbGeoObject
+
+------------------------------
+7.0.0
+upload action (simplified without tree)
+------------------------------
+6.1.1
+ECS-15 ECS-16 EC:: Bug fixed: JSONB objects might be unset as standard objects
+------------------------------
+6.1.0
+ECS-15 ECS-16 EC:: Added support for JSONB -- implemented more or less like a CLOB (both printable _and_ uploadable)
+------------------------------
+6.0.0
+Major version due to issue ECS-17.
+getInvSmTableName pure virtual method added to dbFileActionFactory class to return specific inventorysm table name.
+getInvSmTableName method added to dbFileActionFactoryChain class to return table name given the specific factory object.
+------------------------------
+5.47.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.47.0
+
+Automatically generate from revision "version "5.47""

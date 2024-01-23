@@ -1,0 +1,84 @@
+# The File can contains any number of empty lines and
+# or starting with hash negliged by script
+# The First meaningful line must contain the colum names
+# Fallowing rows are traited as record.
+# Fields must be quoted by single quote if strings or plain in case of Numeric values 
+
+'symbolicname','transferprotocol_id','host_id','username','password','remotepath', 'tempname_id', 'tempname_value'
+
+# Common Repository
+'S1MCP Repository',          7, '(select id from t_knownhosts where host_name = 'sar-mpc.eu')',                         'adguser',                  '##S1MCPIP_ADGSUSER_PWD##', '/mpcip/Products',                                       1, '.'
+'S1PRIP Repository',         7, '(select id from t_knownhosts where host_name = 'c1.ops.s1pdgs.eu')',                   'tpz_prip',                 '##S1PRIP_TPZUSR_PWD##',    '/odata/v1/Products',                                    1, '.'
+'ECMWF EXT Repository',      1, '(select id from t_knownhosts where host_name = 'diss.ecmwf.int')',                     'esa_cdc',                  '##ECMWF_ESACDC_PWD##',     '/%Y%m%d/',                                              1, '.'
+'POD Repository',            7, '(select id from t_knownhosts where host_name = 'cpodopsftp.gmv.com')',                 'adgs_exprivia',            '##POD_ADGSUSER_PWD##',     '/odata/v1/Products',                                    1, '.'
+'ADGSDMZ Repository',        1, '(select id from t_knownhosts where host_name = 'adgs-dns.adgs.int')',                  'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromNASA/',                                       1, '.'
+'ExtRepo Internal',          1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromExt/',                                        1, '.'
+'MP-IP Repository',          7, '(select id from t_knownhosts where host_name = 'api.s12mpip.com')',                    'adgs-user',                '##MPIP_ADGSUSER_PWD##',    '/mpip',                                                 1, '.'
+'MissionPlanning Repo',      1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromMP',                                          1, '.'
+'MissionPlanning Repo_2',    1, '(select id from t_knownhosts where host_name = 'adgs-imp2.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromMP',                                          1, '.'
+
+# S3 Repository
+'EUM Repository',            1, '(select id from t_knownhosts where host_name = 'adgs-dns.adgs.int')',                  'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromEUM/',                                        1, '.'
+'EUM Repo Internal',         1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromEUM/',                                        1, '.'
+'NOAA Public Datasets',      1, '(select id from t_knownhosts where host_name = 'sidads.colorado.edu')',                '',                         '',                         '/pub/DATASETS/NOAA/G02156/GIS/1km/%Y/',                 1, '.'
+'S3 POD Internal_1',         1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromS3POD',                                       1, '.'
+'S3 POD Internal_2',         1, '(select id from t_knownhosts where host_name = 'adgs-imp2.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromS3POD',                                       1, '.'
+'PDMC-ADC Repository',       1, '(select id from t_knownhosts where host_name = '145.239.221.17')',                     'ops3pdgs',                 '##OPS3PDGS_PWD##',         '/data/fromMRN',                                         1, '.'
+'S3 OSI Internal',           1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromS3OSI',                                       1, '.'
+'S3 OSI Repository',         1, '(select id from t_knownhosts where host_name = 'osisaf.met.no')',                      'anonymous',                '',                         '',                                                      1, '.'
+'S3 OSI ReproRep',           1, '(select id from t_knownhosts where host_name = 'osisaf.met.no')',                      'anonymous',                '',                         '/dummy',                                                1, '.'
+
+# S1 Repository
+'IFREMER Repository',        1, '(select id from t_knownhosts where host_name = 'ftp.ifremer.fr')',                     'anonymous',                '',                         'ifremer/cersat/projects/sentinel1/stokes_drift/',       1, '.'
+'OSI SAF Repository',        1, '(select id from t_knownhosts where host_name = 'osisaf.met.no')',                      'anonymous',                '',                         '/prod/ice/edge/',                                       1, '.'
+'AGS TEC Repository',        2, '(select id from t_knownhosts where host_name = 'gdc.cddis.eosdis.nasa.gov')',          'anonymous',                '',                         '',                                                      1, '.'
+'AGS TEC Rep Backup',        2, '(select id from t_knownhosts where host_name = 'gdc.cddis.eosdis.nasa.gov')',          'anonymous',                '',                         '',                                                      1, '.'
+'S1 FOS Repository',         1, '(select id from t_knownhosts where host_name = 'adgs-dns.adgs.int')',                  'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromS1FOS',                                       1, '.'
+'S1 POD Internal_1',         1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromS1POD',                                       1, '.'
+'S1 POD Internal_2',         1, '(select id from t_knownhosts where host_name = 'adgs-imp2.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromS1POD',                                       1, '.'
+'ECMWF TRO Repository',      1, '(select id from t_knownhosts where host_name = 'diss.ecmwf.int')',                     'esa_cdc',                  '##ECMWF_ESACDC_PWD##',     '/%Y/',                                                  1, '.'
+'S1 CALVAL Internal_1',      1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromCalVal',                                      1, '.'
+'S1 PRIP Internal_1',        1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromPRIP',                                        1, '.'
+'S1 CALVAL Internal_2',      1, '(select id from t_knownhosts where host_name = 'adgs-imp2.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromCalVal',                                      1, '.'
+'S1 PRIP Internal_2',        1, '(select id from t_knownhosts where host_name = 'adgs-imp2.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromPRIP',                                        1, '.'
+'S1APRIP DLR Rep',           7, '(select id from t_knownhosts where host_name = 'prip.s1b.dlr.copernicus.eu')',         'S1A\S1A_AuxDataGathering', '##S1ADLRPRIP_CRYPTPWD##',  '/proseo/prip/odata/v1/Products',                        1, '.'
+'S1BPRIP DLR Rep',           7, '(select id from t_knownhosts where host_name = 'prip.s1b.dlr.copernicus.eu')',         'S1B\S1B_AuxDataGathering', '##S1BDLRPRIP_CRYPTPWD##',  '/proseo/prip/odata/v1/Products',                        1, '.'
+'ECMWF TRO Internal',        1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/S2TRO',                                           1, '.'
+'S1APRIP Serco',             7, '(select id from t_knownhosts where host_name = 's1a.prip.copernicus.eu')',             'adgs',                     '##S1PRIP_SERCO_PWD##',     '/odata/v1/Products',                                    1, '.'
+
+# S2 Repository
+'S2GIPP Repository',         2, '(select id from t_knownhosts where host_name = 'ftp4s2mpc.acrist-services.com')',      's2adg',                    '##S2MPC_CRYPT_PWD##',      '/INTERNAL/TO_ADG/GIPP/',                                1, '.'
+'ECMWF CAMSFO Rep00',        1, '(select id from t_knownhosts where host_name = 'aux.ecmwf.int')',                      'matteo.airoldi',           '##ECMWF_CAMS_PWD##',       '/DATA/CAMS_GLOBAL/%Y%m%d00',                            1, '.'
+'ECMWF CAMSFO Int00',        1, '(select id from t_knownhosts where host_name = 'adgs-imp2.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/ADGS/CAMSFC-00',                                  1, '.'
+'IERS Repository',           2, '(select id from t_knownhosts where host_name = 'gdc.cddis.eosdis.nasa.gov')',          'anonymous',                '',                         '/products/iers/',                                       1, '.'
+'S2 FOS Repository',         1, '(select id from t_knownhosts where host_name = 'adgs-dns.adgs.int')',                  'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromS2FOS',                                       1, '.'
+'S2 POD Internal_1',         1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromS2POD',                                       1, '.'
+'S2 POD Internal_2',         1, '(select id from t_knownhosts where host_name = 'adgs-imp2.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromS2POD',                                       1, '.'
+'S2PRIP Repository',         7, '(select id from t_knownhosts where host_name = 'prip1.s2pdgs.com')',                   'adg_user',                 '##S2PRIP_ADGUSR_PWD##',    '/odata/v1/Products',                                    1, '.'
+'S2 CAMS Internal_1',        1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/S2CAMS',                                          1, '.'
+'S2 CAMS Internal_2',        1, '(select id from t_knownhosts where host_name = 'adgs-imp2.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/S2CAMS',                                          1, '.'
+'S2 GIPP Internal_1',        1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/S2GIPP',                                          1, '.'
+'S2 GIPP Internal_2',        1, '(select id from t_knownhosts where host_name = 'adgs-imp2.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/S2GIPP',                                          1, '.'
+'S2 UTC Internal_1',         1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/S2UTC',                                           1, '.'
+'S2 UTC Internal_2',         1, '(select id from t_knownhosts where host_name = 'adgs-imp2.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/S2UTC',                                           1, '.'
+'S2 ECMWF Internal_1',       1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/S2ECMWF',                                         1, '.'
+'S2 ECMWF Internal_2',       1, '(select id from t_knownhosts where host_name = 'adgs-imp2.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/S2ECMWF',                                         1, '.'
+'S2MCP Repository',          7, '(select id from t_knownhosts where host_name = 'opt-mpc.acri-st.fr')',                 'mairoldi',                 '##S2MCPIP_ADGSUSER_PWD##', '/odata/v1/Products',                                    1, '.'
+'ECMWF CAMSFO Rep12',        1, '(select id from t_knownhosts where host_name = 'aux.ecmwf.int')',                      'matteo.airoldi',           '##ECMWF_CAMS_PWD##',       '/DATA/CAMS_GLOBAL/%Y%m%d12',                            1, '.'
+'ECMWF CAMSFO Int12',        1, '(select id from t_knownhosts where host_name = 'adgs-imp2.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/ADGS/CAMSFC-12',                                  1, '.'
+'S2GIPP ADGSDMZ',            1, '(select id from t_knownhosts where host_name = 'adgs-dns.adgs.int')',                  'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromS2MCP',                                       1, '.'
+'ECMWF EXT IntRepo',         1, '(select id from t_knownhosts where host_name = 'adgs-imp1.adgs.int')',                 'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/ADGS/ECMWFD',                                     1, '.'
+
+#FOS Repository
+'S1A FOS EXTRepo',           3, '(select id from t_knownhosts where host_name = 'senxser.esoc.ops.esa.int')',           's1apdgs',                  '',                         '/home/s1apdgs/fromFOS',                                 1, '.'
+'S1B FOS EXTRepo',           3, '(select id from t_knownhosts where host_name = 'senxser.esoc.ops.esa.int')',           's1bpdgs',                  '',                         '/home/s1bpdgs/fromFOS',                                 1, '.'
+'S2A FOS EXTRepo',           3, '(select id from t_knownhosts where host_name = 'senxser.esoc.ops.esa.int')',           's2apdgs',                  '',                         '/home/s2apdgs/fromFOS',                                 1, '.'
+'S2B FOS EXTRepo',           3, '(select id from t_knownhosts where host_name = 'senxser.esoc.ops.esa.int')',           's2bpdgs',                  '',                         '/home/s2bpdgs/fromFOS',                                 1, '.'
+'FOSMail Repository',        1, '(select id from t_knownhosts where host_name = 'adgs-dns.adgs.int')',                  'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/fromFOSMail',                                     1, '.'  
+'S2A FOS NewEXTRepo',        3, '(select id from t_knownhosts where host_name = 'mmaasweb03.esoc.ops.esa.int')',        's2apdgs',                  '',                         '/fromFOS',                                              1, '.' 
+'S2A FOS NewEXTRepo-2',      3, '(select id from t_knownhosts where host_name = 'mmaasweb04.esoc.ops.esa.int')',        's2apdgs',                  '',                         '/fromFOS',                                              1, '.' 
+'S2B FOS NewEXTRepo',        3, '(select id from t_knownhosts where host_name = 'mmaasweb03.esoc.ops.esa.int')',        's2bpdgs',                  '',                         '/fromFOS',                                              1, '.' 
+'S2B FOS NewEXTRepo-2',      3, '(select id from t_knownhosts where host_name = 'mmaasweb04.esoc.ops.esa.int')',        's2bpdgs',                  '',                         '/fromFOS',                                              1, '.' 
+
+# Output Repository
+'ADGS OutBasket repository', 1, '(select id from t_knownhosts where host_name = 'adgs-imp1')',                          'opadgs',                   '##OPADGS_CRYPT_PWD##',     '/data/auxipin/AUX_IN_BASKET',                           1, '.'

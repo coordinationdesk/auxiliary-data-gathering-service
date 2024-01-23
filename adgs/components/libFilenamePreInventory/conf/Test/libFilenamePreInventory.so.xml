@@ -1,0 +1,129 @@
+<Root>
+	<PreInventory>
+		<ConfigFilenamePreInventory>
+			<SatMissionsAssociatorKeys>
+				<Pair satelliteCode="S3A" key="PLAIN"/>
+				<Pair satelliteCode="S3B" key="PLAIN"/>
+				<Pair satelliteCode="S3_" key="PLAIN"/>
+				<Pair satelliteCode="S6A" key="PLAIN"/>
+				<Pair satelliteCode="S6B" key="PLAIN"/>
+				<Pair satelliteCode="S6_" key="PLAIN"/>
+           	</SatMissionsAssociatorKeys>
+			<FileClassLUT>
+				<LUTElement>
+					<FileType>P4_2__MOGP_AX</FileType>
+					<Conversion>
+						<OriginalFileClass>OPE</OriginalFileClass>
+						<DBFileClass>OPER</DBFileClass>
+					</Conversion>
+				</LUTElement>
+			</FileClassLUT>
+		</ConfigFilenamePreInventory>
+		<PluginsRegistrationSettings>
+			<GHRSSTL4PreInventoryFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>MO_OSTIA</Object>
+						<FiletypeFromPlugin>SSTAAX_AUX</FiletypeFromPlugin>
+						<FileClass>OPER</FileClass>
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+				</List_Of_Registrations>
+			</GHRSSTL4PreInventoryFactory>
+			<S3PDGSPreInventoryFactory>
+				<List_Of_Registrations count="2">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>AX___DSICAX</Object>
+						<AssociateSatellite>true</AssociateSatellite>
+						<FiletypeFromPlugin>MSSL_SIC</FiletypeFromPlugin>
+						<FileClass>OPER</FileClass>
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>REP_COVER_</Object>
+						<AssociateSatellite>true</AssociateSatellite>
+						<FileClass>OPER</FileClass>
+						<DoVersioning>true</DoVersioning>
+						<ADCReport>true</ADCReport>
+					</Registration>
+				</List_Of_Registrations>
+			</S3PDGSPreInventoryFactory>
+			<SpaceNavPreInventoryFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>TEST</Object>
+						<FileTypePos>5</FileTypePos>
+						<FileTypeLen>10</FileTypeLen>
+						<StartDatePos>12</StartDatePos>
+						<StartDateLen>14</StartDateLen>
+						<StopDatePos>27</StopDatePos>
+						<StopDateLen>14</StopDateLen>
+						<FileClass>OPER</FileClass>
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+				</List_Of_Registrations>
+			</SpaceNavPreInventoryFactory>
+			<S3DimsaxFilenamePreInventoryFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>SL_2_DIMSAX</Object>
+						<FileClass>OPER</FileClass>
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+				</List_Of_Registrations>
+			</S3DimsaxFilenamePreInventoryFactory>
+			<S3GPDFilenamePreInventoryFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>GPD</Object>
+						<FileClass>OPER</FileClass>
+						<!-- VersionPosition>61</VersionPosition-->
+						<!--VersionLength>3</VersionLength-->
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+				</List_Of_Registrations>
+			</S3GPDFilenamePreInventoryFactory>
+			<S6MOG2DFilenamePreInventoryFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>P4_2__MOGP_AX</Object>
+						<!--FileTypeLength>13</FileTypeLength-->
+						<!--GeneratingCentrePosition>83</GeneratingCentrePosition-->
+						<!--GeneratingCentreLength>4</GeneratingCentreLength-->
+						<!--FileClassPosition>88</FileClassPosition-->
+						<!--FileClassLength>3</FileClassLength-->
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+				</List_Of_Registrations>
+			</S6MOG2DFilenamePreInventoryFactory>
+		</PluginsRegistrationSettings>
+	</PreInventory>
+</Root>

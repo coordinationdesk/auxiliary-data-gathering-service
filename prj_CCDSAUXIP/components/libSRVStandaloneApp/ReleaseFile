@@ -1,0 +1,13 @@
+2.1.1
+LTA-320: all messages different from M&C filtered on syslog. Application name set in log messages. 
+Attribute name changed in _srvLogFormatter.
+--------------------------------------------------
+2.1.0
+Added MQTTStatistics plugin as a dependency in the makefile
+--------------------------------------------------
+2.0.0
+Name changed from libLTAStandaloneApp to libSRVStandaloneApp
+--------------------------------------------------
+1.0.0
+First release
+

@@ -1,0 +1,12 @@
+ADGS:
+  baseUrl: https://omcs.atlassian.net
+  apiVer: latest
+  username: ccds.adgs.service@exprivia.com
+  token: jc00ExKen7kjAYnuvVl21130
+  assignee: ADGS
+  status: "To+Do"
+  type: "Emailed request"
+  transId: 81
+  OutDirectory: ./InBasket
+  LogDirectory: ./logs
+  LogLevel: INFO

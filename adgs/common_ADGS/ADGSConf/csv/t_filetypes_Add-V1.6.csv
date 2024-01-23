@@ -1,0 +1,8 @@
+'filetype','description','nameregularexpression','headerseparation','"group"','invperiod','mngsngext','sngext','hdrext','dblext'
+
+'CSVTOOBJST_TBZ',  'Aux Files to be zipped and distributed to SrvImport', 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'MP_AUX_ALL', 'MissionPlanning Auxiliaryfiles', 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'MP_AUX',     'MissionPlanning Auxiliaryfiles', 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'MPL_TIMELINE', 'S1/S2 MPL Timeline', '^S[12][ABC_]_(TEST|OPER|REP[1-9]|TD[0-9]{2})_MPL_TIMELINE_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}\.[Tt][Gg][Zz]$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'MP_ALL',  'S1 MPL All Tml',  '^S1[ABC_]_MP_ALL__MTL_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}\.[Cc][Ss][Vv]$',                                  'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'MP_FULL',      'S1 MPL Full',     '^S1[ABC_]_MP_FULL_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}\.[Kk][Mm][Ll]$',                                      'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'

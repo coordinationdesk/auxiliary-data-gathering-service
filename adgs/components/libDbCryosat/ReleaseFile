@@ -1,0 +1,61 @@
+7.20.0
+using default Singleton trait from libException 12.x
+test's Makefils fixed for cppunit
+--------------------------------------------------------------------------
+7.19.0
+dbInventoryComment now internally relies on the id_inventorycomment column
+for managing load, update and remove operations.
+The date field is not mandatory anymore and if not set will use the 
+default (now) set by the database.
+The interfaces did not change but some regression are possible in case of
+old applications making assumptions on the other fields to manage records
+--------------------------------------------------------------------------
+7.18.0
+[CPS-39] EC:: Added handling of parameter: Next_Equator_X_Time in MTD file.
+--------------------------------------------------------------------------
+7.17.2
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+--------------------------------------------------------------------------
+7.17.1
+[CI-91] EC:: Added new method: staticQueryClassName
+--------------------------------------------------------------------------
+7.17.0
+[CI-91] EC:: dbInventoryAddParamsQuery is now a dbSmartQuery
+--------------------------------------------------------------------------
+7.16.3
+[CI-91] EC:: Added missing parameter in loadRow
+--------------------------------------------------------------------------
+7.16.2
+MP: test compilation fixed
+--------------------------------------------------------------------------
+7.16.1
+[CI-91] EC:: loadAddParams: check added
+--------------------------------------------------------------------------
+7.16.0
+[CI-91] EC:: Integration of DataTake Id
+--------------------------------------------------------------------------
+7.15.0
+EC:: Integration of change: CI-91. Requires: libFileInventory >= 6.2.0
+--------------------------------------------------------------------------
+7.14.3
+dbInventoryObjectSpecialQuery startTime and endTime operations are now 
+public instead of protected, to allow ThinLayer Precondition Check to work
+--------------------------------------------------------------------------
+7.14.2
+MP: no more db related deprecated methods/classes
+------------------------------
+7.14.1
+MP: compilation warnings cleanup
+------------------------------
+7.14.0
+Minor version issue dure to jira CI-71. t_inventory md5 new column managed properly in compatible way with previous versions
+------------------------------
+7.13.2
+Test makefile fiexed. Was removing the Inventory.xml file when doing clean target.
+------------------------------
+7.13.1
+Patch release automatically generated to instrument version files
+------------------------------
+7.13.0
+
+Automatically generate from revision "version "7.13""

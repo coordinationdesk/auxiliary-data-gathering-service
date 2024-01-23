@@ -1,0 +1,17 @@
+3.0.1
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+3.0.0
+Major version due to jira S3MARINE-371.
+LP: _manageDirectories boolean attribute added to base class along with get and set methods. Md5Sum::computeSignature() method changed to compute signature on directory GIT style if _manageDirectories is set.
+SignatureAlgoScopeGuard class now simplified: just an ACS Smart Ptr typedef.
+------------------------------
+2.13.2
+Test compilation fixed
+------------------------------
+2.13.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.13.0
+
+Automatically generate from revision "version "2.13""

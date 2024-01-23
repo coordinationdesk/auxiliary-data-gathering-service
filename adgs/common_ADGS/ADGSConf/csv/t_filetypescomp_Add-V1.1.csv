@@ -1,0 +1,33 @@
+# The File can contains any number of empty lines and
+# or starting with hash negliged by script
+# The First meaningful line must contain the colum names
+# Fallowing rows are traited as record.
+# Fields must be quoted by single quote if strings or plain in case of Numeric values 
+
+'pfiletype', 'cfiletype'
+
+##### S1 INPUT
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S1REP_SUP')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S1MPL_ORBPRE')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S1MPL_ORBRES')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S1MPL_TLEPRE')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S1OPER_TLM')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S1REP__MACP_')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S1MPL_MANPRE')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S1MPL__RGTEF')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S1FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'AUX_OBMEMC')'
+
+##### S2 INPUT
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S2FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S2REP_SUP')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S2FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S2MPL_ORBPRE')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S2FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S2MPL_ORBRES')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S2FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'L_PREORB_X')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S2FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S2OPER_TLM')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S2FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'L_PREORB_O')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S2FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'REP__CHF__')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S2FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'REP__FCHF__')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S2FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'REP__MCSF_')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S2FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S2REP__MACP_')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S2FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'REP__SMPR_')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S2FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S2MPL__GTDEV')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'S2FOS_ALL')',   '(SELECT id_filetype FROM t_filetypes where filetype = 'S2MPL_MANPRE')'

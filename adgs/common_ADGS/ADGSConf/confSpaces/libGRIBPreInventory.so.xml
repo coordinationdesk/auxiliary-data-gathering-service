@@ -1,0 +1,96 @@
+<Root>
+	<PreInventory>
+		<ConfigGRIBPreInventory>
+			<!-- DeltaValidity in hours-->
+			<DeltaValidity>12</DeltaValidity>
+			<SatMissionsAssociatorKeys>
+				<Pair satelliteCode="S3A" key="PLAIN"/>
+				<Pair satelliteCode="S3B" key="PLAIN"/>
+				<Pair satelliteCode="S3C" key="PLAIN"/>
+				<Pair satelliteCode="S3D" key="PLAIN"/>
+				<Pair satelliteCode="S3_" key="PLAIN"/>
+			</SatMissionsAssociatorKeys>
+			<ValidityStartOffset>3</ValidityStartOffset>
+			<GeneratingCentre>ECMWF</GeneratingCentre> 
+		</ConfigGRIBPreInventory>
+<!--
+ECMWF Wind Speed and Direction 	ECMWF_AM__      
+-->
+		<PluginsRegistrationSettings>
+			<GRIBPreInventoryFactory>
+				<List_Of_Registrations count="8">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>AUX_WND_OR</Object>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<FiletypeFromFramework>false</FiletypeFromFramework>
+						<DoVersioning>true</DoVersioning>
+						<Object>AUX_TEC_OR</Object>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<FiletypeFromFramework>false</FiletypeFromFramework>
+						<DoVersioning>true</DoVersioning>
+						<Object>AUX_TRO_129</Object>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<FiletypeFromFramework>false</FiletypeFromFramework>
+						<DoVersioning>true</DoVersioning>
+						<Object>AUX_TRO_130</Object>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<FiletypeFromFramework>false</FiletypeFromFramework>
+						<DoVersioning>true</DoVersioning>
+						<Object>AUX_TRO_133</Object>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<FiletypeFromFramework>false</FiletypeFromFramework>
+						<DoVersioning>true</DoVersioning>
+						<Object>AUX_TRO_134</Object>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<FiletypeFromFramework>false</FiletypeFromFramework>
+						<DoVersioning>true</DoVersioning>
+						<Object>AUX_TRO_151</Object>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<FiletypeFromFramework>false</FiletypeFromFramework>
+						<DoVersioning>true</DoVersioning>
+						<Object>AUX_ECMWFD_OR</Object>
+					</Registration>
+				</List_Of_Registrations>
+			</GRIBPreInventoryFactory>
+		</PluginsRegistrationSettings>
+	</PreInventory>
+</Root>

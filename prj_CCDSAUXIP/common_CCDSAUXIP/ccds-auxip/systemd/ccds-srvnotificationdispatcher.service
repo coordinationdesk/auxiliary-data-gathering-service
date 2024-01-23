@@ -1,0 +1,23 @@
+[Unit]
+Description=SRV Notification Dispatcher Service
+Documentation=https://www.exprivia.com
+Requires=network.target
+After=network.target
+PartOf=ccds-auxipfrontend.service
+
+[Service]
+Type=simple
+
+User=#LTAUSER#
+Group=#LTAGROUP#
+
+ExecStart=#VINSTALL_PATH#/bin/SRVNotificationDispatcher
+StandardOutput=null
+StandardError=null
+KillMode=process
+KillSignal=SIGINT
+TimeoutStopSec=1800
+
+
+[Install]
+WantedBy=multi-user.target

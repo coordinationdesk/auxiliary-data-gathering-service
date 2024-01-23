@@ -1,0 +1,23 @@
+2.0.1
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+-------------------------------------------------------------------
+2.0.0
+CI-92: handling of alternative input having an activation time introduced: the preConditionCheck takes into account only active alternatives as long as activation time expires.
+Added new fields to PCC_Base::SymTableParams and changed interfaces to the methods that handle SymbTable end tempSymbTable (isAlternativeInSymTable, getAlternativeValFromSymTable...).
+Unit tests added.
+-------------------------------------------------------------------
+1.28.0
+[CRYO2PDS-130]
+Added SymbolTablePamaters attributes to keep track of the
+actual start and stop times used by the special queries during
+the precondition check phase
+-------------------------------------------------------------------
+1.27.2
+MP: compilation warnings cleanup
+------------------------------
+1.27.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.27.0
+
+Automatically generate from revision "version "1.27""

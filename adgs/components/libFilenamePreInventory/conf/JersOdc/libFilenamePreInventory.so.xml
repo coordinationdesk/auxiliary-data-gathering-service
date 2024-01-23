@@ -1,0 +1,43 @@
+<Root>
+	<PreInventory>
+		<ConfigFilenamePreInventory>
+		</ConfigFilenamePreInventory>
+		<PluginsRegistrationSettings>
+			<JersSAROPSPreInventoryFactory>
+				<List_Of_Registrations count="2">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>OPS_VNI_0P</Object>
+						<FileClass>TEST</FileClass>
+						<DoVersioning>false</DoVersioning>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>JSA_IM__0P</Object>
+						<FileClass>TEST</FileClass>
+						<DoVersioning>false</DoVersioning>
+					</Registration>
+				</List_Of_Registrations>
+			</JersSAROPSPreInventoryFactory>
+			<ESAStandardPreInventoryFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>AUX_SV_RES</Object>
+						<FileClass>TEST</FileClass>
+						<DoVersioning>false</DoVersioning>
+					</Registration>
+				</List_Of_Registrations>
+			</ESAStandardPreInventoryFactory>
+		</PluginsRegistrationSettings>
+	</PreInventory>
+</Root>

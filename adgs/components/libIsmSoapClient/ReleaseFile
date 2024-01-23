@@ -1,0 +1,135 @@
+11.1.0
+LP: Minor Release due to jira LTA-381
+IsmSoapClient::remove: if SOAP_ISM_DATA_NOT_REMOVED_FOR_MEDIUM_MIGRATION detail error code returned from both deleteFile
+and deleteFileFsLike server methods, FileToDeleteOnMigratingMediumExc thrown.
+IsmServerVersionManagerSingleton: ReleaseAtExitTraits removed to align to libException 12.0.1
+------------------------------
+11.0.4
+LP: Minor Release due to jira LTA-407
+If Timeout detected in Server response, TimeOutException replaced by ConnectionException to reiterare request to Server in loop.
+------------------------------
+11.0.3
+EC:: LTA-405 Script for LTA disaster recovery: Added handling of PID in executeCartridgeDownloader.sh, allowing to run the script in parallel.
+------------------------------
+11.0.2
+EC:: LTA-405 Script for LTA disaster recovery: usage added.
+------------------------------
+11.0.1
+LP:: EC:: Patch release due to jira LTA-406 and LTA-405
+Scripts for LTA disaster recovery added.
+------------------------------
+11.0.0
+LP: Major release due to jira LTA-401.
+_clientReference attribute added to IF along with set and get methods. _clientReference used in downloading to fill the proper field of Ism__DownloadFileRequest_2 class (convert method added) to be passed to downloadFile_2 SOAP IF.
+deleteFileRequest IF name (not used so far) turned into giveupFileRequest describing better its job.
+------------------------------
+10.0.0
+LP: Major release due to jira LTA-396.
+internalFileDownload: Soap IFs for downloading and notify downloading ripristinated for ISM Server version < 3.0 (libIsmSoapClient tag <= 7.4.0). IFs names for Server version >= 3.0 changed.
+setServerVersion method implemented to ask server its version to be managed by new IsmServerVersionManagerSingleton class.
+getCacheConfigurationAddParamsInternal method implemented to use getCacheConfigurationAdditionalParms Server method returning Ism__cacheConfigurationAdditionalParms struct.
+AwsS3Wrapper::AwsS3WrapperConfiguration class used to collect the whole cache configuration (even additional parameters).
+FOR ISM SERVER VERSION >= 3.0 YOU MUST UPGRADE TO VERSION >= 4.0 TO USE THIS RELEASE.
+------------------------------
+9.2.0
+LP: minor version due to jira LTA-392.
+deleteFileRequest method added to invoke deleteFileRequest SOAP IF.
+------------------------------
+9.1.0
+LP: minor version due to jira LTA-374
+Both send_timeout and recv_timeout IsmProxy attributes now set to avoid client application from blocking on a socket connection with an unresponsive server. send_timeout set to 5 s and recv_timeout set to 30 s as default.
+This last value can be configured by the proper field in t_storagemanager blob.
+------------------------------
+9.0.3
+Patch version due to jira LTA-341
+IsmSoapClient::fileDownload: 500 ms waiting time introduced if internalFileDownload returns false.
+------------------------------
+9.0.2
+compilation warnings cleanup
+------------------------------
+9.0.1
+gsoap compilation warnings suppressed
+------------------------------
+9.0.0
+Major version due to jira CPS-14
+IsmSoapClient: aws cache configuration parameters for parallelism added to IF along with get methods. Both used properly in upload/download methods.
+AwsS3Wrapper CTOR IF changed by adding a StopController obj.
+------------------------------
+8.1.0
+Minor version due to jira S3MARINE-448
+Tar blocking factor now configurable in case of local transfer. Threshold factor added to configuration to apply custom blocking factor if threshold is overwhelmed only.
+------------------------------
+8.0.4
+Patch version due to jira S2PDGS-430
+IsmSoapClient _awsS3TotalTimeout_s and _awsS3RetryingInterval_s attributes values now configurable. 
+aws_s3: catch on AwsS3WrapperConnectionException replaced by AwsS3WrapperException (base class) to perform a retry cycle.
+------------------------------
+8.0.3
+test/removeFilesList.sh improved.
+------------------------------
+8.0.2
+MP: test compilation warning fixed
+------------------------------
+8.0.1
+MP: use of Timer fixed
+useless code commented out or submitted to the same define which calls it
+------------------------------
+8.0.0
+Major version due to jira LTA-66
+Both notifyDownloading and notifyDownloadCompleted IFs changed. dbDownloadFile class FileToDownloadIsNearlineExc and FileToDownloadIsOfflineEx
+thrown if file to download is either nearline or offline respectively. Use with ISM Server Version >= 3.0
+------------------------------
+7.4.0
+Minor version due to jira S3MARINE-100
+Tar on the fly managed for both tar and tar gz. Depending on a given node in configuration, both files and directory when uploaded in cache are processed with compression algorithm.
+In downloadin, decompression is performed on the base of a key returned by Server methods.
+------------------------------
+7.3.3
+Stop Controller handled by both upload and download methods of AwsS3Wrapper class.
+------------------------------
+7.3.2
+Patch release due to ECS-41
+AwsS3Wrapper COTR changed accordingly to new libAwsS3Wrapper implementation.
+------------------------------
+7.3.1
+Removed Amazon libs by test Makefile.
+------------------------------
+7.3.0
+Minor release due to S2PDGS-286
+Interfaces to upload/download/remove single files modified in order to manage AWS S3 URL. AWS_S3 transfer mode added.
+------------------------------
+7.2.0
+Minor release due to CI-70
+Warnings in case of noChangingHardlinkedFilesMode are now logged only once.
+------------------------------
+7.1.2
+Patch release issued due to jira CI-64.
+Wait time in downloading decreased.
+------------------------------
+7.1.1
+Patch release issued due to jira CI-63.
+Unused function removed by class defined in empty namespace
+------------------------------
+7.1.0
+Minor release issued due to jira CI-59.
+extendDirPermissions boolean parameter added to IFs of both upload (default true) and internalDirectoryUpload methods. setAttributes method added.
+------------------------------
+7.0.3
+Patch release issued due to jira MUSTER-88: test Makefile lib dependencies fixed.
+------------------------------
+7.0.2
+Minor Patch release issued to fix application Makefile to compile test executables after target files with make -j4
+------------------------------
+7.0.1
+Minor Patch release issued due to jira ISM-124: test Makefile fixed.
+------------------------------
+7.0.0
+Major version release issued due to jira ISM-124. library Makefile modified in order to create interfaceFiles dir no more and to use standard include paths.
+Makefiles of both lib and test fixed according to Marco Favoino's mail of 2018 Nov the 28th. Tests added.
+------------------------------
+6.10.1
+Patch release automatically generated to instrument version files
+------------------------------
+6.10.0
+
+Automatically generate from revision "version "6.10""

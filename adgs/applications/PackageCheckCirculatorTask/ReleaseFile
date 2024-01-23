@@ -1,0 +1,13 @@
+2.0.1
+Custom signal handler restored to modify base class attribute _stop
+-------------------------------------------------------------------
+2.0.0
+Removed SignalHandler dependency
+List of conf spaces is now static
+-----------------------------------------------------------------
+1.22.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.22.0
+
+Automatically generate from revision "version "1.22""

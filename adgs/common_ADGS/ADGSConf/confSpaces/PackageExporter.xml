@@ -1,0 +1,98 @@
+<Root>
+<PackageExporter>
+	<!-- List of Configuration Space to load -->
+	<ConfigurationSpaceList count="">
+		<!-- PackageExporter Configuration -->
+		<ConfigurationSpace>dbBroadcast</ConfigurationSpace>
+		<ConfigurationSpace>StationConf</ConfigurationSpace>
+		<ConfigurationSpace>PackageProcessing</ConfigurationSpace>
+		<ConfigurationSpace>PackageEmailNotifier</ConfigurationSpace>
+		<ConfigurationSpace>libScDefaultLogGroup.so</ConfigurationSpace>
+	</ConfigurationSpaceList>
+
+	<errorLog>error.log</errorLog>
+	
+	<PollingTimer unit="[s]">30</PollingTimer>
+	<CriticalErrorDelaySec unit="[s]">30</CriticalErrorDelaySec>
+	<PendingRequestsLimit>15</PendingRequestsLimit>
+	<WaitingAcknowledgeLimit>1000</WaitingAcknowledgeLimit>
+	<MinSpaceRequiredMb>512</MinSpaceRequiredMb>
+
+	<Connections>
+		<MaxConnections>18</MaxConnections>
+	</Connections>
+
+	<!-- Media types to handle. Empty list means "all the mediatypes" -->
+	<List_of_MediaTypes count="">
+		<MediaType>FTP</MediaType>
+	</List_of_MediaTypes>
+
+</PackageExporter>
+
+<ADGSPackageExporter>
+	<DaemonLogRotationPolicy>
+		<Mode>SIZE</Mode>
+		<AgingThreshold>86400</AgingThreshold>
+		<SizeThreshold>10485760</SizeThreshold>
+		<OldLogsToKeep>10</OldLogsToKeep>
+		<CompressOldLogs>TRUE</CompressOldLogs>
+	</DaemonLogRotationPolicy>
+</ADGSPackageExporter>
+
+<!-- Below configuration is the same of Exporter app -->
+<ReloadConfigurationTime unit="s">86400</ReloadConfigurationTime><!-- Restart Application timer -->
+<List_of_TimeWindows  count="1">
+        <TimeWindow>
+                <timestart> 00:00.00 </timestart>
+                <timestop> 24:00.00 </timestop>
+        </TimeWindow>
+</List_of_TimeWindows>
+<maxDbRetries>3</maxDbRetries>
+
+<DataProvider>
+	<maxDownloadThreads>3</maxDownloadThreads>
+	<ProductPath>/data/ADGS/ProductsPath</ProductPath>
+
+	<Download>	
+		<DownloadPath>/data/ADGS/downloadspace</DownloadPath>
+		<!-- Space in megabytes, 10 Giga-->
+		<SpaceSize>102400</SpaceSize>
+	</Download>
+
+	<CacheEraseQuotaPcg>0.20</CacheEraseQuotaPcg>	
+
+	<!-- Ingore this: This Package script is not used anymore! The packaging is done by task table. Set t_users.packagerequired=false in DB -->
+	<CompressScriptName>CompressExporter.sh</CompressScriptName> <!-- Called if specified in t_users -->
+
+	<!-- @@@ Ignorare questa sezione: delivery slip a carico di un task in task table.
+	     @@@ Da rimuovere dopo refactoring della configurazione di DataProvider -->
+	<DeliverySlip> 
+		<Skip>true</Skip> <!-- skip="true" aggiunto rispetto a Exporter. -->
+		<Source>PDS</Source>
+		<Instrument>SIRAL</Instrument>
+		<PrintingDelivery>no</PrintingDelivery>
+		<DeliverySlipFixedFilename>README</DeliverySlipFixedFilename>
+		<DeliverySlipLtaFixedFilename>EXPORT-TD</DeliverySlipLtaFixedFilename>
+		<!-- Delivery slip style sheet  -->
+		<DeliveryStyleSheet>/usr/local/conf/ADGS/deliverySlip.xsl</DeliveryStyleSheet>
+		<ByMailExtension>.xml.slip</ByMailExtension>
+	</DeliverySlip>
+	
+	<!-- @@@ Ignorare questa sezione: a carico di un task in task table.
+	     @@@ Da rimuovere dopo refactoring della configurazione di DataProvider -->
+	<List_of_ReportFormats count="1">
+		<ReportFormat>
+			<Format>rep_ftp</Format>
+	        	<List_of_Filetypes count="1">
+	    			<Filetype>
+	        			<Type>AUX_REP_QC</Type>
+	    			</Filetype>
+			</List_of_Filetypes>
+		</ReportFormat>
+	</List_of_ReportFormats>
+	
+</DataProvider>
+<!-- Above configuration is the same of Exporter app -->
+
+</Root>
+

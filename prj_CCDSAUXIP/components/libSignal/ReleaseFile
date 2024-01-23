@@ -1,0 +1,62 @@
+6.2.1 
+SIGPIPE is now managed by SignalDispatcher and handled by SIG_IGN system handler
+---------------------------------------------------------------------------------------------------------
+6.2.0
+The SIGRTMIN+7 signal can be used to ask for a phoenix at any time
+---------------------------------------------------------------------------------------------------------
+6.1.0
+Added interface for callback functions with void* parameters
+Using the stopElapsed function of the Timer object instead of isOlder (deprecated)
+---------------------------------------------------------------------------------------------------------
+6.0.0
+Deprecated SignalHandler and Signal removed.
+libApp >= 12.3.1 shall be used after this update.
+Most of the applications have been refactored to manage this change.
+In case some application can not build anymore it has to be reported and ask for support.
+----------------------------------------------------------------------------------------------------------
+5.11.5
+testRecvTimeoutPipeTrick compilation fixed
+----------------------------------------------------------------------------------------------------------
+5.11.4
+using DSOSPECIFICDEPS
+----------------------------------------------------------------------------------------------------------
+5.11.3
+Some suppression were reverted because gcc 4.4.7 did not compile
+----------------------------------------------------------------------------------------------------------
+5.11.2
+QA warning suppressions
+----------------------------------------------------------------------------------------------------------
+5.11.1
+Actual merge from dev branch has been performed now.
+the version 5.11.0 is not a good release
+----------------------------------------------------------------------------------------------------------
+5.11.0
+Added interfaces to enable, disable or query the core dump emission
+when a bad signal is caught.
+----------------------------------------------------------------------------------------------------------
+5.10.2
+Applying some QA suggestion
+----------------------------------------------------------------------------------------------------------
+5.10.1
+macro CALLSTACK_SIG changed into SIG_CALLSTACK and moved entirely here.
+All wrong invocations of logging macros have been fixed according with fixed libException macros
+----------------------------------------------------------------------------------------------------------
+5.10.0
+Minor release introducing a new pattern in the process signal management
+The SignalHandler object is deprecated and will be removed in the next major release
+The Signal Class will be replaced by the SignalDispatcher class, that handles all the signlas and
+at the moment still supports the registration of user defined signal handlers. The support will
+also be removed in the next major release.
+No one will be allowed to "derive" from a signal handler, but the first interaction wiht the 
+SignalDispatcher singleton will automatically install all the handlers for the signals useful at application level:
+- SIGINT
+- SIGTERM
+- SIGUSR1
+- SIGPHOENIX (emulted signal)
+- Bad signals (emitting stack trace and core)
+----------------------------------------------------------------------------------------------------------
+5.9.1
+Patch release automatically generated to instrument version files
+----------------------------------------------------------------------------------------------------------
+5.9.0
+Automatically generate from revision "version "5.9""

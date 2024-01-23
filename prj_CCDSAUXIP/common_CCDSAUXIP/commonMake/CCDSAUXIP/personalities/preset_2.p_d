@@ -1,0 +1,5 @@
+* Timeout and Inline Settings
+-EnableDataflow+
+-po df::query_timeout=100
+-po df::function_timeout=15000
+-po df::inter=2

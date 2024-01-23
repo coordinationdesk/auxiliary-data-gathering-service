@@ -1,0 +1,39 @@
+<Root>
+	<PreInventory>
+		<ConfigGRIBPreInventory>
+			<!-- DeltaValidity in hours-->
+			<DeltaValidity>12</DeltaValidity>
+			<SatMissionsAssociatorKeys>
+				<Pair satelliteCode="S3A" key="PLAIN"/>
+				<Pair satelliteCode="S3B" key="PLAIN"/>
+				<Pair satelliteCode="S3_" key="PLAIN"/>
+           </SatMissionsAssociatorKeys>
+		</ConfigGRIBPreInventory>
+<!--
+ECMWF Wind Speed and Direction 	ECMWF_AM__      
+-->
+		<PluginsRegistrationSettings>
+			<GRIBPreInventoryFactory>
+				<List_Of_Registrations count="2">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>ECMWF_AM__</Object>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<FiletypeFromFramework>false</FiletypeFromFramework>
+						<DoVersioning>true</DoVersioning>
+						<Object>ECMWF_TEST</Object>
+					</Registration>
+					
+				</List_Of_Registrations>
+			</GRIBPreInventoryFactory>
+		</PluginsRegistrationSettings>
+	</PreInventory>
+</Root>

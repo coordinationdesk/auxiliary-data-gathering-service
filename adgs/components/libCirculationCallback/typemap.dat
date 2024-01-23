@@ -1,0 +1,2 @@
+pds = "http://www.acsys.it/pds/ordering"
+ns2 = "http://schemas.xmlsoap.org/wsdl/"

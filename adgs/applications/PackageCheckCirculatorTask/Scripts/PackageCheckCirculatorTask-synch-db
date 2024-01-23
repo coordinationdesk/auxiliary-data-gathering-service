@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# This script transform a call like
+# /abs/binname-p1-p2 param
+# into a call
+# /abs/binname param --p1 --p2 
+
+absPath="$(dirname $0)"
+aliasName="$(basename $0)"
+
+binName=${aliasName//-[a-zA-Z0-9]*/}
+
+params=${aliasName#${binName}}
+params=(${params//-/ --})
+
+#Call the real executable with parameters
+"${absPath}/${binName}" $* ${params[@]}
+
+

@@ -1,0 +1,871 @@
+#!/bin/bash
+#
+# Copyright 2015-2020, Advanced Computer Systems , Inc.
+# Via Della Bufalotta, 378 - 00139 Roma - Italy
+# http://www.acsys.itA.C.S. - Advanced Computer Systems S.p.A.
+# 
+# This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems, S.p.A.;
+# the contents of this file may not be disclosed to third parties, copied or
+# duplicated in any form, in whole or in part, without the prior written
+# permission of Advanced Computer Systems, S.p.A.
+
+
+
+
+
+
+
+
+############################## FUNCTIONS #############################
+######################################################################
+
+set_conf() {
+	if test -r "$CONF_FILE"
+	then
+		. $CONF_FILE
+
+		export DBHOSTNAME
+		export DBNAME
+		export PSQL_VRS
+		export PGDATA
+		export OS_BIT
+		
+		export PDSUSER
+		export PDSPASSWORD
+		export DBAUSER
+		export TBS_NAME
+		export TBS_PATH
+		
+		export SCH_PDS
+		export SCH_PDS2
+		export SCH_COMMON
+		export SCH_SPEC
+		export SCH_TRANS
+		
+		export SCH_ADMBSL
+		export SCH_BSL
+		export SCH_BRDCST
+		export SCH_CTLG
+		export SCH_CRCLTN
+		export SCH_CRCLTN2
+		export SCH_CRDRLS
+		export SCH_CRS
+		export SCH_COVER
+		export SCH_DTMNG
+		export SCH_EC
+		export SCH_FSSM
+		export SCH_INVBSL
+		export SCH_LTADL
+		export SCH_MPM
+		export SCH_POSTEXETT
+		export SCH_REPORTS
+		export SCH_SNAV
+		export SCH_SRV
+		export SCH_USDFWA
+		export SCH_USDFWA2		
+		
+		export EVNDBL_CHOOSE
+		export EVNDBL_PATH
+		export EVNTS_PATH
+		
+		export PGSDBL_CHOOSE
+		export PGSDBL_VRS
+		
+		export PG_CRON
+		export CRNTB_UTILS
+		
+		if test -n "$1"
+		then
+			export DBNAME="$1"
+		fi
+		
+		if [ "$OS_BIT" != "32" ] && [ "$OS_BIT" != "64" ]
+		then
+			echo "*** ERROR!!! Invalid OS_BIT value ***" | tee -a $LOG_FILE
+			echo ""
+			exit 1
+		fi
+		
+		if [ "$SCH_PDS" ] && [ "$SCH_PDS2" ]
+		then
+			echo "*** ERROR!!! Two version of PDS schema found ***" | tee -a $LOG_FILE
+			echo ""
+			exit 1
+		fi
+	else
+		echo "*** Cannot find $CONF_FILE or it is not readable ***" | tee -a $LOG_FILE
+		echo ""
+		exit 1
+	fi
+}
+
+set_pwd() {
+	if test -z "$PGPASSWORD"
+	then
+		echo -n "Insert $DBAUSER password: "
+		read -s answer
+		export PGPASSWORD=$answer
+		echo ""
+		echo ""
+	fi
+}
+
+remove_db() {
+	echo -n "   Running drop of database $DBNAME ..."
+	$BIN_DIR/dropDb.sh $DBHOSTNAME $DBAUSER $DBNAME >> $LOG_FILE 2>&1
+	
+	if [ "$?" != 0 ]
+	then
+		result_message 1
+		((err_count++))
+		createDb_msg_error $DBNAME database 4
+		exit 1
+	else
+		result_message 0
+		echo "Database $DBNAME dropped."
+	fi
+}
+
+create_user() {
+	echo -n "   Creating user $1 ..."
+	$BIN_DIR/createUser.sh $DBHOSTNAME $DBAUSER $1 $PDSPASSWORD $PSQL_VRS >> $LOG_FILE 2>&1
+	if [ "$?" != 0 ]
+	then
+		result_message 1
+		((err_count++))
+		createDb_msg_error $1 user 1
+		exit 1
+	else
+		result_message 0
+	fi
+}
+
+create_tablespace() {
+	if test -n "$TBS_NAME"
+	then
+		echo "CREATE TABLESPACE:" | tee -a $LOG_FILE
+		echo -n "   Creating tablespace $TBS_NAME ..."
+		
+		if [ -z "$TBS_PATH" ]
+		then
+			result_message 1
+			((err_count++))
+			createDb_msg_error $TBS_NAME tablespace 1
+			echo "TBS_PATH variable is needed if TBS_NAME is setted" >> $LOG_FILE
+			echo -e "Check and configure specific project configuration file\n" >> $LOG_FILE
+			exit 1
+		else
+			echo "Creating $TBS_NAME tablespace path" >> $LOG_FILE
+			mkdir -p $TBS_PATH >> $LOG_FILE 2>&1
+			if [ "$?" != 0 ]
+			then
+				result_message 1
+				((err_count++))
+				createDb_msg_error $TBS_NAME tablespace 1
+				exit 1
+			fi
+			chown postgres.postgres $TBS_PATH
+		fi
+		
+		$BIN_DIR/createTablespace.sh $DBHOSTNAME $DBAUSER $TBS_NAME $TBS_PATH >> $LOG_FILE 2>&1
+		if [ "$?" != 0 ]
+		then
+			result_message 1
+			((err_count++))
+			createDb_msg_error $TBS_NAME tablespace 1
+			exit 1
+		else
+			result_message 0
+		fi
+	fi
+}
+
+create_database() {
+	echo ""
+	echo "CREATE DATABASE:"
+	
+	echo -n "   Running creation of database $DBNAME ..."
+	$BIN_DIR/createDb.sh $DBHOSTNAME $DBAUSER $DBNAME $PDSUSER $TBS_NAME >> $LOG_FILE 2>&1
+	
+	if [ "$?" != 0 ]
+	then
+		result_message 1
+		((err_count++))
+		createDb_msg_error $DBNAME database 1
+		exit 1
+	else
+		result_message 0
+	fi
+}
+
+load_language() {
+	echo -n "   Loading language $1 ..."
+	$BIN_DIR/loadLang.sh $DBHOSTNAME $DBAUSER $DBNAME $1 >> $LOG_FILE 2>&1
+	if [ "$?" != 0 ]
+	then
+		result_message 1
+		((err_count++))
+		createDb_msg_error $1 language 1
+		exit 1
+	else
+		result_message 0
+	fi
+}
+
+load_contrib() {
+	echo -n "   Loading \"$1\" contrib module ..."
+	$BIN_DIR/loadContr.sh $DBHOSTNAME $DBAUSER $DBNAME $1 $2 >> $LOG_FILE 2>&1
+	if [ "$?" != 0 ]
+	then
+		result_message 1
+		((err_count++))
+		createDb_msg_error $1 language 1
+		exit 1
+	else
+		result_message 0
+	fi
+}
+
+load_postGis() {	
+	if [ "$PGSDBL_CHOOSE" != 'y' ]; then return; fi
+	
+	echo -n "   Loading PostGIS $1 ..."
+	$BIN_DIR/registerPostGis.sh $DBHOSTNAME $DBAUSER $DBNAME $1 $2 >> $LOG_FILE 2>&1
+	if [ "$?" != 0 ]
+	then
+		result_message 1
+		((err_count++))
+		createDb_msg_error PostGIS datablade 3
+		exit 1
+	else
+		result_message 0
+	fi
+}
+
+install_eventDbl() {
+	echo "Installing Events Datablade in $EVNDBL_PATH ..." >> $LOG_FILE
+	echo -n "   Installing Events Datablade ..."
+	
+	cd $BLADE_DIR
+	tar xvf $EVNT_DBL -C /tmp >> $LOG_FILE 2>&1
+	evnt_inst_result="$?"
+	
+	/tmp/EventsDBlade/install.sh $EVNDBL_PATH >> $LOG_FILE 2>&1
+	evnt_inst_result="$?"
+	
+	if [ "$evnt_inst_result" != 0 ]
+	then
+		result_message 1
+		((err_count++))
+		createDb_msg_error EventsDBlade datablade 5
+		exit 1
+	else
+		result_message 0
+	fi
+}
+
+load_eventDbl() {	
+	if [ "$EVNDBL_CHOOSE" != 'y' ]; then return; fi
+	
+	echo ""
+	echo "EVENTS DATABLADE INSTALLATION:"
+	
+	if test -z "$EVNDBL_PATH"
+	then
+		export EVNDBL_PATH=/usr/acs/datablades/postgres
+	fi	
+	if test -z "$EVNTS_PATH"
+	then
+		export EVNTS_PATH=/usr/acs/tmp
+	fi
+	
+	export EVNT_DBL=EventsDBlade_psql"$PSQL_VRS"_x"$OS_BIT".tar
+	
+	if ! test -d "$EVNDBL_PATH/EventsDBlade"; then install_eventDbl; fi
+	
+	if ! test -d $EVNTS_PATH
+	then 
+		mkdir -p $EVNTS_PATH
+		chmod 777 $EVNTS_PATH
+	fi
+	
+	echo -n "   Running Events Datablade registration ..."
+	$BIN_DIR/registerEventDbl $DBHOSTNAME $DBAUSER $DBNAME $SCH_PDS $EVNDBL_PATH $EVNTS_PATH >> $LOG_FILE 2>&1
+	if [ "$?" != 0 ]
+	then
+		result_message 1
+		((err_count++))
+		createDb_msg_error EventsDBlade datablade 3
+		exit 1
+	else
+		result_message 0
+	fi
+}
+
+load_table() {
+	echo -n "   Loading table $1 ..."
+	$BIN_DIR/loadTable.sh $DBHOSTNAME $DBAUSER $DBNAME $1 >> $LOG_FILE 2>&1
+	if [ "$?" != 0 ]
+	then
+		result_message 1
+		((err_count++))
+		createDb_msg_error $1 table 2
+		exit 1
+	else
+		result_message 0
+	fi
+}
+
+create_schema() {
+	echo -n "   Running $1 creation ..."
+	$BIN_DIR/createSchema.sh $DBHOSTNAME $DBAUSER $DBNAME $1 >> $LOG_FILE 2>&1
+	if [ "$?" != 0 ]
+	then
+		result_message 1
+		((err_count++))
+		createDb_msg_error $1 schema 1
+		exit 1
+	else
+		result_message 0
+	fi
+}
+
+init_tables() {
+	cd $DATABASE_DIR/init
+	
+	if test -n "`ls -1 | grep sql`"
+	then
+		for i in `ls -1 *.sql`
+		do
+			load_table $i
+		done
+	else
+		echo "   << No sql file found for this type of schema. >>" | tee -a $LOG_FILE
+		echo ""
+	fi
+}
+
+make() {
+	case $1 in
+	
+	# Basic schemas
+	'common' )
+		echo ""
+		echo "MAKE COMMON SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$SQL_DIR/psqlSchemaCOMMON
+		;;
+	'extended' )
+		echo ""
+		echo "MAKE CATALOG SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$SQL_DIR/psqlSchemaEXTENDED
+		;;
+	'pds' )
+		echo ""
+		echo "MAKE PDS SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$SQL_DIR/psqlSchemaPDS
+		;;
+	'pds2' )
+		echo ""
+		echo "MAKE PDS-2 SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$SQL_DIR/psqlSchemaPDS2
+		;;
+	'specific' )
+		echo ""
+		echo "MAKE SPECIFIC SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$SQL_DIR/psqlSchema$2
+		;;
+	'trans' )
+		echo ""
+		echo "MAKE TRANSITION SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$SQL_DIR/psqlSchemaTRANS
+		;;
+	'version' )
+		echo ""
+		echo "MAKE VERSION SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$SQL_DIR/psqlSchemaVERSION
+		;;
+	'version2' )
+		echo ""
+		echo "MAKE VERSION-2 SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$SQL_DIR/psqlSchemaVERSION2
+		;;
+	
+	# Plugin schemas
+	'admbsl' )
+		echo ""
+		echo "MAKE ADM BASELINE SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaADMBASELINE
+		;;
+	'baseline' )
+		echo ""
+		echo "MAKE BASELINE SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaBASELINE
+		;;
+	'broadcast' )
+		echo ""
+		echo "MAKE BROADCAST SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaBROADCAST
+		;;
+	'catalog' )
+		echo ""
+		echo "MAKE CATALOG SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaCATALOG
+		;;
+	'circulation' )
+		echo ""
+		echo "MAKE CIRCULATION SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaCIRCULATION
+		;;
+	'circulation2' )
+		echo ""
+		echo "MAKE CIRCULATION2 SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaCIRCULATION2
+		;;
+	'cr' )
+		echo ""
+		echo "MAKE COORDINATED RELEASE SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaCR
+		;;
+	'crs' )
+		echo ""
+		echo "MAKE CLEAN REMOTE SOURCES SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaCRS
+		;;
+	'cover' )
+		echo ""
+		echo "MAKE COVERAGE SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaCOVERAGE
+		;;
+	'dm' )
+		echo ""
+		echo "MAKE DATAMINING SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaDM
+		;;
+	'ec' )
+		echo ""
+		echo "MAKE EARTH CARE SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaEC
+		;;
+	'fssm' )
+		echo ""
+		echo "MAKE FILE SYSTEM SM SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaFSSM
+		;;
+	'invbaseline' )
+		echo ""
+		echo "MAKE INVBASELINE SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaINVBASELINE
+		;;
+	'ltadl' )
+		echo ""
+		echo "MAKE LTA-DL SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaLTADL
+		;;
+	'mpm' )
+		echo ""
+		echo "MAKE MPM SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaMPM
+		;;
+	'pgcron' )
+		echo ""
+		echo "MAKE PG_CRON SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaPGCRON
+		;;
+	'postexett' )
+		echo ""
+		echo "MAKE POSTEXETT SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaPOSTEXETT
+		;;
+	'reports' )
+		echo ""
+		echo "MAKE REPORTS SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaREPORTS
+		;;
+	'snav' )
+		echo ""
+		echo "MAKE SNAV SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaSNAV
+		;;
+	'srv' )
+		echo ""
+		echo "MAKE SRV SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaSRV
+		;;
+	'usdfwa' )
+		echo ""
+		echo "MAKE USDFWA SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaUSDFWA
+		;;
+	'usdfwa2' )
+		echo ""
+		echo "MAKE USDFWA2 SCHEMA:" | tee -a $LOG_FILE
+		export DATABASE_DIR=$PLG_DIR/psqlSchemaUSDFWA2
+		;;
+	* )
+		echo "*** Invalid option for function create ***"
+		;;
+	esac
+	
+	if test -d $DATABASE_DIR
+	then
+		echo "   OBJECTS CREATION -------------------------------"
+		if test -r $DATABASE_DIR/schema/extensions.sql; then create_schema extensions; fi
+		create_schema functions
+		create_schema tables
+		create_schema constraints
+		create_schema foreignkeys
+		create_schema indexes
+		#create_schema primaryKeys 
+		create_schema procedures		
+		create_schema triggersFunctions
+		create_schema triggers
+		create_schema viewes 
+		create_schema alterations
+		if test -r $DATABASE_DIR/schema/comments.sql; then create_schema comments; fi
+		if test -r $DATABASE_DIR/schema/partitions.sql; then create_schema partitions; fi
+		
+		echo "   TABLES POPULATION ------------------------------"
+		init_tables
+	else
+		echo "*** ERROR!!! - DATABASE NOT FOUND IN sql DIR ***" | tee -a $LOG_FILE
+		result_message 1
+		((err_count++))
+		echo ""
+		echo "CREATION ABORTED."
+		echo "Database created will be removed."
+		sleep 2
+		echo ""
+		remove_db
+		echo ""
+		exit 1
+	fi
+}
+
+install_schemas() {
+	if test -z "$SCH_PDS" && test -z "$SCH_PDS2"; then make version; fi
+	if [[ ${SCH_PDS//[![:digit:]]} -ge 970 ]]; then make version; fi
+	if test -n "$SCH_PDS2"; then make version; fi
+	
+	if test -n "$SCH_BRDCST"; then make broadcast; fi
+	if test -n "$SCH_COMMON"; then make common; fi
+	if test -n "$SCH_PDS"; then make pds; fi
+	if test -n "$SCH_PDS2"; then make pds2; fi
+	if test -n "$SCH_TRANS"; then make trans; fi
+	if test -n "$SCH_SPEC" && [ "$SPEC_TAG" = "CIRCULATOR" ]; then  make specific $SPEC_TAG; fi
+	
+	if test -n "$SCH_ADMBSL"; then make admbsl; fi
+	if test -n "$SCH_BSL"; then make baseline; fi
+	if test -n "$SCH_CTLG"; then make catalog; fi
+	if test -n "$SCH_CRCLTN"; then make circulation; fi
+	if test -n "$SCH_CRCLTN2"; then make circulation2; fi
+	if test -n "$SCH_CRDRLS"; then make cr; fi
+	if test -n "$SCH_CRS"; then make crs; fi
+	if test -n "$SCH_COVER"; then make cover; fi
+	if test -n "$SCH_DTMNG"; then make dm; fi
+	if test -n "$SCH_EC"; then make ec; fi
+	if test -n "$SCH_FSSM"; then make fssm; fi
+	if test -n "$SCH_INVBSL"; then make invbaseline; fi
+	if test -n "$SCH_MPM"; then make mpm; fi
+	if test -n "$SCH_POSTEXETT"; then make postexett; fi
+	if test -n "$SCH_REPORTS"; then make reports; fi
+	if test -n "$SCH_SNAV"; then make snav; fi
+	if test -n "$SCH_SRV"; then make srv; fi
+	if test -n "$SCH_LTADL"; then make ltadl; fi
+	if test -n "$SCH_USDFWA"; then make usdfwa; fi
+	if test -n "$SCH_USDFWA2"; then make usdfwa2; fi
+	
+	if test -n "$SCH_SPEC" && [ "$SPEC_TAG" != "CIRCULATOR" ]; then  make specific $SPEC_TAG; fi
+	if [ "$PG_CRON" = "y" ]; then make pgcron; fi
+}
+
+change_owner() {
+	echo ""
+	echo "CHANGE OWNER:"
+	
+	for i in t s v f
+	do
+		case $i in
+			'f') export object="functions" ;;
+			's') export object="sequences" ;;
+			't') export object="tables" ;;
+			'v') export object="views" ;;
+			* ) ;;
+		esac
+		
+		echo -n "   Changing on $object owner to $PDSUSER ..."
+		$BIN_DIR/changeOwner.sh $DBHOSTNAME $DBAUSER $DBNAME $PDSUSER $i >> $LOG_FILE 2>&1
+		if [ "$?" != 0 ]
+		then
+			result_message 1
+			((err_count++))
+			createDb_msg_error $object owner 6
+			exit 1
+		else
+			result_message 0
+		fi
+	done
+}
+
+assign_grants() {
+	echo ""
+	echo "GRANTS ASSIGNMENT:"
+	
+	for i in t s v
+	do
+		case $i in
+			's') export object="sequences" ;;
+			't') export object="tables" ;;
+			'v') export object="views" ;;
+			* ) ;;
+		esac
+		
+		echo -n "   Assigning grants on $object to $PDSUSER ..."
+		$BIN_DIR/assignGrants.sh $DBHOSTNAME $DBAUSER $DBNAME $PDSUSER $i >> $LOG_FILE 2>&1
+		if [ "$?" != 0 ]
+		then
+			result_message 1
+			((err_count++))
+			createDb_msg_error $object grant 7
+			exit 1
+		else
+			result_message 0
+		fi
+	done
+}
+
+config_cron() {
+	echo ""
+	echo "CRONTAB CONFIGURATION:"
+	
+	for i in analyzeTables vacuumTables #reindexTables
+	do
+		echo -n "   Registering $i in crontab ..."
+		$BIN_DIR/configureCrontab.sh $DBHOSTNAME $DBNAME $TOOL_DIR/$i >> $LOG_FILE 2>&1
+		if [ "$?" != 0 ]
+		then
+			result_message 2
+			((warning_count++))
+		else
+			result_message 0
+		fi
+	done
+}
+
+
+
+
+
+################################ MAIN ################################
+######################################################################
+
+echo ""
+echo ""
+echo "-------------------------------------------------------------------"
+echo "POSTGRES DATABASES GENERATOR"
+echo "-------------------------------------------------------------------"
+
+if [ "$(whoami)" != "root" ]
+then
+	echo "*** You must be root to run this script ***"
+	echo ""
+	exit 1
+fi
+
+export EXE_DIR=`dirname $0`
+cd $EXE_DIR
+export EXE_DIR=`pwd`
+
+cd ..
+export BASE_DIR=`pwd`
+cd $EXE_DIR
+
+export BIN_DIR=$EXE_DIR/scripts
+export SQL_DIR=$BASE_DIR/psqlSchemas
+export PLG_DIR=$BASE_DIR/psqlSchemasPlugins
+export BLADE_DIR=$BASE_DIR/psqlDataBlades
+export TOOL_DIR=$BASE_DIR/psqlTools
+export CONF_DIR=$BASE_DIR/psqlUtilitiesConf
+export COMM_LIBS=$BASE_DIR/psqlUtilitiesLibs
+
+export LOG_FILE=/tmp/psqlCreateDatabase.log
+
+typeset -i warning_count
+warning_count=0
+
+ # Source function library.
+. $COMM_LIBS/libMessages
+. /etc/rc.d/init.d/functions 
+
+initLog "CREATE"
+	
+export PRJ_NAME="$1"
+export OPT_DBNAME="$2"
+export CONF_FILE=$CONF_DIR/"$PRJ_NAME".conf
+
+case "$PRJ_NAME" in
+	'-a' | '--about')
+		about "#   Description:   Databases Schema Generation and Initialization Script                  #"
+		;;
+	'adc')
+		#export SPEC_TAG=ADC
+		export SPEC_TAG=SENTINEL3
+		;;
+	'alsat')
+		export SPEC_TAG=ALSAT
+		export create_hmi_usr="T"
+		export hmi_usr=hmi_joomla_admin
+		;;
+	'circulator')
+		export SPEC_TAG=CIRCULATOR
+		;;
+	'clirsen')
+		export SPEC_TAG=MULTISAT
+		;;
+	'cmp')
+		export SPEC_TAG=CMP
+		;;
+	'cryosat2')
+		export SPEC_TAG=CRYOSAT2
+		;;
+	'cryosatipf')
+		export SPEC_TAG=IPF
+		;;
+	'csc')
+		export SPEC_TAG=CSC
+		;;
+	'dgs')
+		export SPEC_TAG=DGS
+		;;
+	'ecicmf')
+		export SPEC_TAG=ECICMF
+		;;
+	'ecmc')
+		export SPEC_TAG=ECMC
+		;;
+	'emsa')
+		export SPEC_TAG=EMSA
+		;;
+	'ges')
+		export SPEC_TAG=GES
+		;;
+	'jersodc')
+		export SPEC_TAG=JERSODC
+		set_conf $OPT_DBNAME
+		;;
+	'keo')
+		export SPEC_TAG=KEO
+		;;
+	'kipp')
+		export SPEC_TAG=KIPP
+		;;
+	'lta')
+		export SPEC_TAG=LTA
+		;;
+	'mdaps')
+		export SPEC_TAG=MDAPS
+		;;
+	'muster')
+		export SPEC_TAG=MUSTER
+		;;
+	'nrtiv')
+		export SPEC_TAG=NRTIV
+		;;
+	'ozone')
+		export SPEC_TAG=OZONE
+		;;
+	'prisma')
+		export SPEC_TAG=PRISMA
+		;;
+	'pserv')
+		export SPEC_TAG=PSERV
+		;;
+	'rpu')
+		export SPEC_TAG=RPU
+		;;
+	's3mpm')
+		export SPEC_TAG=S3MPM
+		;;
+	'sectronic')
+		export SPEC_TAG=SECTRONIC
+		;;
+	'sentinel1' )
+		export SPEC_TAG=SENTINEL1
+		;;
+	'sentinel2' )
+		export SPEC_TAG=SENTINEL2
+		;;
+	'sentinel3' | 'admapf' | 'geocal')
+		export SPEC_TAG=SENTINEL3
+		;;
+	'sigris')
+		export SPEC_TAG=SIGRIS
+		;;
+	'spacenav')
+		export SPEC_TAG=SPACENAV
+		;;
+	'venus')
+		export SPEC_TAG=VENUS
+		;;
+	'wwa')
+		export SPEC_TAG=WWA
+		;;
+	'test')
+		export SPEC_TAG=TEST
+		export create_hmi_usr="T"
+		export hmi_usr=hmi_joomla_admin
+		;;
+	* )
+		usage "createDatabase"
+    	;;
+esac
+
+set_conf $OPT_DBNAME
+
+set_pwd
+
+echo "CREATE USER:"
+create_user $PDSUSER
+if [ "$create_hmi_usr" = "T" ] ; then create_user $hmi_usr ; fi
+
+create_tablespace
+create_database
+
+#load_language plpgsql
+#load_language plpythonu
+load_contrib "lo" "$PSQL_VRS"
+load_contrib "uuid-ossp" "$PSQL_VRS"
+load_postGis "$PGSDBL_VRS" "$PSQL_VRS"
+
+install_schemas
+load_eventDbl
+#change_owner
+assign_grants
+if [ "$CRNTB_UTILS" = "y" ]; then config_cron; fi
+
+
+if (( $warning_count != 0 ))
+then
+	echo "-------------------------------------------------------------------"
+	if (( $warning_count == 1 ))
+	then
+		echo "*** $warning_count WARNING is occurred ***"
+		echo "see $LOG_FILE"
+		echo ""
+	else
+		echo "*** $warning_count WARNINGS are occurred ***"
+		echo "see $LOG_FILE"
+		echo ""
+	fi
+	echo "CREATION COMPLETED WITH WARNING" | tee -a $LOG_FILE
+	echo ""
+	echo ""
+	exit 2
+fi
+
+echo "-------------------------------------------------------------------"
+echo "CREATION SUCCESSFULLY COMPLETED" | tee -a $LOG_FILE
+echo ""
+echo ""
+exit 0
+
+

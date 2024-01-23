@@ -1,0 +1,4 @@
+filetype_id, deltatime
+
+'(SELECT id_filetype FROM t_filetypes where filetype = 'SR_2_SICNAX')', 315360000
+'(SELECT id_filetype FROM t_filetypes where filetype = 'SR_2_SICSAX')', 315360000

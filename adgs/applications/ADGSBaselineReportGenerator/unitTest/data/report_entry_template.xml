@@ -1,0 +1,9 @@
+        <AuxiliaryDataFile>
+            <Filename>__FILE_NAME__</Filename>
+            <Filetype>__FILE_TYPE__</Filetype>
+            <ValidityWindow>
+                <ValidityStart>__FILE_V_START__</ValidityStart>
+                <ValidityEnd>__FILE_V_STOP__</ValidityEnd>
+            </ValidityWindow>
+            <PublicationDate>__FILE_CREATION__</PublicationDate>
+        </AuxiliaryDataFile>

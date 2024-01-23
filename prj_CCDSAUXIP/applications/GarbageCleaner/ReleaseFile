@@ -1,0 +1,25 @@
+1.33.1
+[S3MARINE-522]: Log level of remove messages changed to INFO.
+Log level of skipped directories changed to WARNING.
+------------------------------
+1.33.0
+[S3MARINE-522]: added configuration parameters:
+       - LogDir switch for logging directory status before remove them (default false);
+       - DeleteNonEmptyDir switch for permit non-empty directory to be removed (default true). Must be used with LogDir=true.
+    Tests updated.
+------------------------------
+1.32.4
+MP: test/Makefile fixed to avoid useless diagnostic
+------------------------------
+1.32.3
+MP: make warnings cleanup
+------------------------------
+1.32.2
+Update to have Remark optional
+------------------------------
+1.32.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.32.0
+
+Automatically generate from revision "version "1.32""

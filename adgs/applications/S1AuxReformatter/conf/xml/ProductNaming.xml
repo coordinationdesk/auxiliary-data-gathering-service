@@ -1,0 +1,101 @@
+<Root>
+    <!--************************************************************************************************************************** 
+        Naming Rules are provided in the form of a regular expression and a list of fields that can be extracted from the filename 
+         using the matches with the sub-regexp enclosed in the parentesis. 
+         For each field, the name (which is used as a key) and the index of the sub-regexp the field is related to must be provided.
+         **************************************************************************************************************************
+         IMPORTANT: 
+         Allowed Field.Name values: 
+         - PlatformName
+         - MissionNumber
+         - FileType
+         - FileClass
+         - StartTime
+         - StopTime
+         - OriginFacility
+         - AbsoluteOrbit
+         - Crc
+         - Extension
+	 - Duration
+	 - Cycle
+	 - RelativeOrbit
+	 - InstanceId
+	 - Version
+        ************************************************************************************************************************** -->
+	<ProductNaming>
+		<List_Of_NamingRules count="7">
+			<NamingRule>
+				<!-- S1D07231200072400001 / s1d07231200072400001.grb -->
+				<FilenameRegExp>^[D-dS-s]1[A-Za-z][[:digit:]]{8}([[:digit:]]{8})[1-2](.grb)?</FilenameRegExp> 
+				<List_Of_Fields count="1">
+					<Field>
+						<Name>StartTime</Name>
+						<Index>1</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule>
+				<!-- ice_conc_NH_201107031200.nc / ice-edge-nh-201107031200.nc
+				     ice_conc_SH_201107031200.nc / ice-edge-sh-201107031200.nc -->
+				<!--FilenameRegExp>ice-edge-[n-s]h-([[:digit:]]{8}[[:digit:]]{4}).nc$</FilenameRegExp-->
+				<FilenameRegExp>(ice.conc.|ice.edge.)[NnSs][Hh].*([[:digit:]]{8}[[:digit:]]{4}).nc$</FilenameRegExp>
+				<List_Of_Fields count="1">
+					<Field>
+						<Name>StartTime</Name>
+						<Index>2</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule>
+				<!-- IFR_WW3-GLOBAL-30MIN_20040724T03Z.nc / IFR_WW3-GLOBAL-30MIN_20170517T00Z_G2017-05-02T14.nc / ifremer-ww3-glob-30min-20040724t03z-uss.nc -->
+				<!--FilenameRegExp>IFR_WW3-GLOBAL-30MIN_([[:digit:]]{8}T[[:digit:]]{2})Z.nc$</FilenameRegExp--> 
+				<FilenameRegExp>(ifremer-ww3-glob|IFR_WW3-GLOBAL)-30[Mm][Ii][Nn][_-]([[:digit:]]{8}[Tt][[:digit:]]{2})[Zz]?(_G....-..-..T..)?(-[[:alnum:]]{3})?.nc$</FilenameRegExp>
+				<List_Of_Fields count="1">
+					<Field>
+						<Name>StartTime</Name>
+						<Index>2</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule>
+				<!-- ECMWF_OPER_ML00_06H_129_GP_N640_20190810T000000 -->
+				<FilenameRegExp>[A-Z0-9_]{5}_[A-Z0-9_]{4}_ML00_[0-9]{2}H_[0-9]{3}_GP_[A-Z0-9_]{4}_([[:digit:]]{8}T[[:digit:]]{6})</FilenameRegExp>
+				<List_Of_Fields count="1">
+					<Field>
+						<Name>StartTime</Name>
+						<Index>1</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>			
+			<NamingRule>
+				<!--codg2220.19i.Z  -->
+				<FilenameRegExp>[A-Za-z0-9_]{4}([0-9]{3}[0-9].[0-9]{2})i.Z</FilenameRegExp>
+				<List_Of_Fields count="1">
+					<Field>
+						<Name>StartTime</Name>
+						<Index>1</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>			
+			<NamingRule>
+				<!--COD0OPSFIN_20223310000_01D_01H_GIM.INX.gz-->
+				<FilenameRegExp>[A-Za-z0-9_]{10}_([0-9]{4}[0-9]{3})[0-9]{4}_[A-Za-z0-9_]{11}\.[A-Za-z0-9_]{3}.gz$</FilenameRegExp>
+				<List_Of_Fields count="1">
+					<Field>
+						<Name>StartTime</Name>
+						<Index>1</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+			<NamingRule>
+				<FilenameRegExp>^[A-Z0-9_]{3}_([A-Z0-9_]{7})_V([[:digit:]]{8}T[[:digit:]]{6})_G([[:digit:]]{8}T[[:digit:]]{6}).SAFE$</FilenameRegExp> 
+				<List_Of_Fields count="1">
+					<Field>
+						<Name>FileType</Name>
+						<Index>1</Index>
+					</Field>
+				</List_Of_Fields>
+			</NamingRule>
+		</List_Of_NamingRules>
+	</ProductNaming>
+</Root>

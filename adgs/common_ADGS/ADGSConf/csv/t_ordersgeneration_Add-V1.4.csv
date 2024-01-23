@@ -1,0 +1,13 @@
+# The File can contains any number of empty lines and
+# or starting with hash negliged by script
+# The First meaningful line must contain the colum names
+# Fallowing rows are traited as record.
+# Fields must be quoted by single quote if strings or plain in case of Numeric values
+
+'processorname','processorversion', 'processorconfiguration', 'ordertype', 'priority', 'troubleshooting', 'processingtimewindow', 'algorithm', 'filetype', 'active', 'fileclass'
+'S3_AUX_REFORMATTER', '01.00', '01.00', 'OFFL', 1, 'f', 1, 'NOMERGENODUP', 'OSIICE_RPRO_20N',  't', 'NULL'
+'S3_AUX_REFORMATTER', '01.00', '01.00', 'OFFL', 1, 'f', 1, 'NOMERGENODUP', 'OSIICE_RPRO_21N',  't', 'NULL'
+'S3_AUX_REFORMATTER', '01.00', '01.00', 'OFFL', 1, 'f', 1, 'NOMERGENODUP', 'OSIICE_SYSTEM_N',  't', 'NULL'
+'S3_AUX_REFORMATTER', '01.00', '01.00', 'OFFL', 1, 'f', 1, 'NOMERGENODUP', 'OSIICE_RPRO_20S',  't', 'NULL'
+'S3_AUX_REFORMATTER', '01.00', '01.00', 'OFFL', 1, 'f', 1, 'NOMERGENODUP', 'OSIICE_RPRO_21S',  't', 'NULL'
+'S3_AUX_REFORMATTER', '01.00', '01.00', 'OFFL', 1, 'f', 1, 'NOMERGENODUP', 'OSIICE_SYSTEM_S',  't', 'NULL'

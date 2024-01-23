@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<CirculationService>
+	<CirculationService>
+		<!-- The time between configuration reload -->
+		<sleepTime>600</sleepTime>
+		<DbRetries>4</DbRetries>
+		<SoapRetries>4</SoapRetries>
+		<MaxDbConnectionNum>10</MaxDbConnectionNum>
+		<!-- The port used by the server -->
+		<HostName>#CIRCULATIONHOST#</HostName> 
+		<Port>11111</Port>
+		<!-- the interface where the server accepts the connection. By default it si localhost  -->
+		<User>ops2pdgs</User>
+		<Password>AX4gtKRAcpItpIHRe6oUJl7PTsnDEPTvZZXIvhgOo3sYnrjAY9ePQbylin5JBkiuqgi23o4+MM3fe8Eb8QKsWe12AQYPO/isxesqkE6XBIFADHUbfJ8sEuHf5iXVFG0n9jxUACNkQMdy2VqQC9imMzriZafvM+ELL86ZFy9lPVk=</Password>
+		<Protocol>ftp</Protocol>
+		<RemoveSource>f</RemoveSource>
+		<Priority>1</Priority>
+	</CirculationService>
+</CirculationService>

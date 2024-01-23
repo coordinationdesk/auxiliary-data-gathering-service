@@ -1,0 +1,35 @@
+2.1.3
+Sentinel-5P added to both PlainSatelliteMissionAssociator and StdSatelliteMissionAssociator classes.
+------------------------------
+2.1.2
+LP: Patch release due to jira S3MARINE-486.
+Sentinel-6 added to both PlainSatelliteMissionAssociator and StdSatelliteMissionAssociator classes.
+------------------------------
+2.1.1
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+2.1.0
+Use new I/F from libJobOrder 4.0.0
+------------------------------
+2.0.0
+No longer protected data members
+------------------------------
+1.54.0
+Minor version release due to jira S3MARINE-392.
+S3C/S3D elements added to maps of PlainSatelliteMissionAssociator and StdSatelliteMissionAssociator classes.
+------------------------------
+1.53.0
+Minor version release due to jira MUSTER-36. exKeyNotFoundException as derived by exIllegalValueException defined in SatelliteMissionAssociator class to be launched when a given key is not found in either satellites or missions maps.
+------------------------------
+1.52.0
+Minor version release due to jira MUSTER-36. _factoryConfSpaceId and _pluginConfSpaceId private attribuites along with get and set methods added.
+------------------------------
+1.51.2
+Patch release due to jira MUSTER-36. MUSTER satellite managed in StdSatelliteMissionAssociator class.
+------------------------------
+1.51.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.51.0
+
+Automatically generate from revision "version "1.51""

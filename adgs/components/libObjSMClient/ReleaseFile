@@ -1,0 +1,29 @@
+3.0.0
+Major release due to jira CPS-14.
+LP:: invrelation table path column renamed as http_path and s3_path column added to be properly filled in uploading.
+s3_path effectively used as sm key for both downloading and erasing files since path disassemble is easier than http_path.
+ Download_Pool_Size, Download_Buffer_Size, Upload_Pool_Size, Upload_Buffer_Size optional tags occurring in CLOB parameters of t_storagemanager managed.
+------------------------------
+2.0.0
+Major release due to jira CPS-10.
+LP:: SM configuration now taken from parameters field of the proper t_storagemanager record instead of configuration space.
+------------------------------
+1.0.4
+DD:: dbRow ctor need a dbKey.
+------------------------------
+1.0.3
+EC:: LP:: modified in order to handle the latest version of libAwsS3Wrapper.
+------------------------------
+1.0.2
+Bug fixed in spawn calling for hash algo. Exception not always thrown in case of error.
+------------------------------
+1.0.1
+Patch release due to jira ECS-41.
+Timeout in hash computation now configurable.
+------------------------------
+1.0.0
+Major release due to jira ECS-41.
+Library development and unit tests are over.
+------------------------------
+0.1.0
+Jira ECS-41: The first version

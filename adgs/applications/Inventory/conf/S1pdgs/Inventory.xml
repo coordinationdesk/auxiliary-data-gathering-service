@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<FileInventory>  
+	<Inventory>   
+    		<WorkingDir>/workspace/workingDirs/SDF/Inventory/working</WorkingDir>
+    		<BackupDir>/workspace/workingDirs/SDF/Inventory/backup</BackupDir>
+			<ListFileExtension>LIST</ListFileExtension>
+			<MetadataFileExtension>MTD</MetadataFileExtension>
+			<ObjectFileExtension>OBJ</ObjectFileExtension>
+			<CatalogueFileExtension>CATALOG</CatalogueFileExtension>
+			<FilteringTestFiles>true</FilteringTestFiles>
+			<List_Of_Extensions count="5">
+				<Extension>EEF</Extension>
+				<Extension>HDR</Extension>
+				<Extension>DBL</Extension>
+				<Extension>OBJ</Extension>
+				<Extension>CATALOG</Extension>
+			</List_Of_Extensions>
+	</Inventory>
+</FileInventory>

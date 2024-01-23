@@ -1,0 +1,12 @@
+<Root>
+	<PRIPRolling>
+		<!-- The time after which the daemon will restart -->
+		<RestartTime>86400</RestartTime>
+		<!-- The database polling time used as query delay -->
+		<DatabasePollingTime>30</DatabasePollingTime>
+		<!-- The maximum number of items that can be loaded at each query -->
+		<MaxItems>10</MaxItems>
+		<!-- If true, remove also the record from t_inventory. Default is false -->
+		<RemoveRecord>true</RemoveRecord>
+	</PRIPRolling>
+</Root>

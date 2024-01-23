@@ -1,0 +1,10 @@
+[Unit]
+Description=Run PDS2 Import ADGS-DNS every 1 minute
+
+[Timer]
+OnCalendar=minutely
+Persistent=true
+Unit=pds2_import_adgs-dns.service
+
+[Install]
+WantedBy=timers.target

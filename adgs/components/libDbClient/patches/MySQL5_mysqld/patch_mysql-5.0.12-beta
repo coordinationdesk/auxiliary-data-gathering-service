@@ -1,0 +1,12 @@
+--- ./mysql-5.0.12-beta/sql/sql_load.cc	Sat Aug 27 22:33:20 2005
++++ /tmp/mysql-5.0.12-beta/sql/sql_load.cc	Fri Sep  9 14:12:09 2005
+@@ -915,6 +915,9 @@
+ {
+   int chr=0;					// Keep gcc happy
+   uint i;
++
++  if (!memcmp(ptr, "UNTERMINATED", length)) return 0 ;   /* ACS PATCH: If this value appears into binary file, will be ignored */
++
+   for (i=1 ; i < length ; i++)
+   {
+     if ((chr=GET) != *++ptr)

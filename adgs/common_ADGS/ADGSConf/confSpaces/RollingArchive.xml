@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="yes"?>
+<RollingArchiveRoot>
+	<RollingArchive>
+		<!-- the polling interval on the database [s]  -->
+		<IdlePeriod>600</IdlePeriod>
+		<RestartTime>86400</RestartTime>
+		<ReloadConfPeriod>60</ReloadConfPeriod>
+		<PoliciesRunMax>10</PoliciesRunMax>
+		<SpecialPoliciesTimerSec>60</SpecialPoliciesTimerSec>
+	</RollingArchive>
+</RollingArchiveRoot>

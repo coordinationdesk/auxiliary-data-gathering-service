@@ -1,0 +1,49 @@
+New processor configuration:
+
+
+1) Follow MMFI-GSEG-EOPG-TN-07-0003 document (ESA) guideline for developing JobOrder library and writing TaskTable
+
+2) Fill the following tables:
+
+
+t_processors:
+--------------------
+Processorname : <processor name>    ( Es: RA2IFF_QUALITY )
+processorversion <version number>   (Es:1.0) 
+description : <processor description> (Es: “Quality Check on RA2_IFF_AX files”)
+
+t_ordersgenerator:
+--------------------
+Processorname : <processor name> (Es: RA2IFF_QUALITY )
+processorversion <version numbe>   (Es:1.0) 
+ordertype OFFL   ( for  systematic order; see t_ordertypes)
+priority 1 
+troubleshooting f 
+processingtimewindow 1 
+algorithm NOMERGE (see t_algorithm for all types)
+filetype <filetype> (Es: RA2_IFF_AX )
+active t 
+fileclass NULL
+
+NB: processor name and version should be exactly the same as reported  in TaskTable.
+
+3) Copy the compiled dynamic library of the processor job order (xxx.so) in the plugins path
+( read path from t_configurationspaces table in the field <TLD_Plugins_Path> of namespace TlDaemon)
+
+4) If a new satellite has been added, update in t_configurationspaces table the namespace OrdersGeneration with new satellite name and corresponding algorithm parameters (<TemporaryOrdersMaxWaitingTime> and  <MaxMergeDistance> ).
+
+5) Fill file /usr/acs/conf/local/WSConfig.xml  (see ESA Standard Document on IPS WS Configuration file ) where for each processor its task table is referenced.
+
+6) Copy the processor executable in path referenced in TaskTable (es.  /usr/acs/processors/<procname>/bin )
+
+7) Copy the processor TaskTable in path referenced in IPS WS Configuration file (es: /usr/acs/processors/<procname>/config)
+
+8) Copy the configuration file (if needed) in path referenced in TaskTable (es. /usr/acs/processors/<procname>/config )
+
+9) add libTlDefaultPCC.so namespace ( mandatory ?)
+
+10) if needed, add plugin namespace ( es. libOcadaJobOrder.so )
+
+
+
+

@@ -1,0 +1,72 @@
+<Root>
+	<TlScheduler>
+		<FactoryConfigurationSettings>
+			<DefaultSuspendCmdFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>SUSPEND</Object>
+					</Registration>
+				</List_Of_Registrations>
+			</DefaultSuspendCmdFactory>
+			<DefaultResumeCmdFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>RESUME</Object>
+					</Registration>
+				</List_Of_Registrations>
+			</DefaultResumeCmdFactory>
+			<DefaultAbortCmdFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>ABORT</Object>
+					</Registration>
+				</List_Of_Registrations>
+			</DefaultAbortCmdFactory>
+			<DefaultStopCmdFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>STOP</Object>
+					</Registration>
+				</List_Of_Registrations>
+			</DefaultStopCmdFactory>
+			<DefaultUserCmdFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>USER</Object>
+					</Registration>
+				</List_Of_Registrations>
+			</DefaultUserCmdFactory>
+			<DefaultKillCmdFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>KILL</Object>
+					</Registration>
+				</List_Of_Registrations>
+			</DefaultKillCmdFactory>
+		</FactoryConfigurationSettings>
+	</TlScheduler>
+</Root>

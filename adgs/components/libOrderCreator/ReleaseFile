@@ -1,0 +1,72 @@
+5.28.8
+[CI-106] [CI-107] EC:: Added algorithms: CDPMERGESLICESGEO CDPMERGESLICESOCEAN CDPMERGESLICESCUSTOM
+----------------------------------------------------------------------------------------------------------------
+5.28.7
+MP: diagnostic error messages improved when some conf parameter is not found
+----------------------------------------------------------------------------------------------------------------
+5.28.6
+GC:: CRYO2PDS-147: OrderCreator call to propagator initPropagFromFile modified to use PropagFormat::OP_SEL_FILE.
+This prevent to get sometimes short validity when calculating time of ANX at Orbit+1.
+----------------------------------------------------------------------------------------------------------------
+5.28.5
+[CPS-42] EC:: Added algorithm: CDPPugPartialOrbit 
+-----------------------------------------------------------------------------------------
+5.28.4
+[CPS-37] EC:: Added algorithm: CDPPugAnx2Anx
+-----------------------------------------------------------------------------------------
+5.28.3
+[CPS-43] EC:: Added algorithm: CDPPugFrames
+-----------------------------------------------------------------------------------------
+5.28.2
+[CPS-46] EC:: Added algorithm: CDPS1MergeSlices
+-----------------------------------------------------------------------------------------
+5.28.1
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+-----------------------------------------------------------------------------------------
+5.28.0
+MP:: XMLOrderParameters class writes the filetype in the list of triggering file.
+-----------------------------------------------------------------------------------------
+5.27.3
+[CI-95] EC:: Added method: overrideCreationTime
+-----------------------------------------------------------------------------------------
+5.27.2
+[CI-99] EC:: Added method: overrideCreationTime
+-----------------------------------------------------------------------------------------
+5.27.1
+[CI-99] EC:: Added getter for: satelliteName()
+-----------------------------------------------------------------------------------------
+5.27.0
+[CI-99] [CI-103] EC:: loadRow returns the last index, to allow a chain of loadRow commands. New algos added.
+-----------------------------------------------------------------------------------------
+5.26.1
+temporary disabled XMLOrderParameters with filetyeps for triggering files
+-----------------------------------------------------------------------------------------
+5.26.0
+MP: XMLOrderParameters class now writes also the filetype
+-----------------------------------------------------------------------------------------
+5.25.1
+[CI-95] EC:: Added algorithm: MergeByTimeRange
+-----------------------------------------------------------------------------------------
+5.25.0
+[CI-95] EC:: Inventory column equatorxtime is exctracted. It will be "unfilled" if NULL on DB
+------------------------------
+5.24.2
+MP: no more deprecated db related methods/classes
+------------------------------
+5.24.1
+MP: compilation warnings cleanup
+------------------------------
+5.24.0
+CRYO2PDS-96: messages for Splunk added on the order dissemination success/failure events.
+Test added. 
+Compilation problems on existing unit tests fixed.
+------------------------------
+5.23.2
+g++ 8.3.1 compilation problem fixed 
+------------------------------
+5.23.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.23.0
+
+Automatically generate from revision "version "5.23""

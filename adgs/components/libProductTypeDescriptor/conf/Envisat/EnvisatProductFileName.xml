@@ -1,0 +1,55 @@
+<?xml version="1.0" standalone="yes"?>
+<ProductFileNameConf>
+	<ProductFileName>
+		<MissionID>N1</MissionID>
+		<FileNameVersion>0001</FileNameVersion>
+		<FileRootSize>14</FileRootSize>
+		<FileNameSize>62</FileNameSize>
+		<!-- Permitted Product file extensions -->
+		<List_of_File_Ext count="0"/>
+		<!-- Permitted Product file classes -->
+		<List_of_File_Classes count="10">
+			<File_Class>T</File_Class>
+			<File_Class>S</File_Class>
+			<File_Class>N</File_Class>
+			<File_Class>O</File_Class>
+			<File_Class>P</File_Class>
+			<File_Class>Q</File_Class>
+			<File_Class>R</File_Class>
+			<File_Class>U</File_Class>
+			<File_Class>V</File_Class>
+			<File_Class>X</File_Class>
+		</List_of_File_Classes>
+		<List_of_Level0_Product_Id count="8">
+        	<Id>ASA_IM__0P</Id>
+        	<Id>ASA_WS__0P</Id>
+        	<Id>ASA_APH_0P</Id>
+        	<Id>ASA_APV_0P</Id>
+        	<Id>ASA_APC_0P</Id>
+        	<Id>ASA_EC__0P</Id> 
+        	<Id>MER_FR__0P</Id> 
+        	<Id>ACQREPORT_</Id>
+		</List_of_Level0_Product_Id>
+		<List_of_Level1_Product_Id count="11">
+        	<Id>ASA_IMP_1P</Id> 
+        	<Id>ASA_IMM_1P</Id> 
+        	<Id>ASA_IMS_1P</Id>
+        	<Id>ASA_IMG_1P</Id> 
+        	<Id>ASA_IMT_1P</Id>  
+        	<Id>ASA_APP_1P</Id> 
+        	<Id>ASA_APM_1P</Id> 
+        	<Id>ASA_APG_1P</Id> 
+        	<Id>ASA_APS_1P</Id> 
+        	<Id>ASA_WSM_1P</Id> 
+        	<Id>MER_FRS_1P</Id>
+		</List_of_Level1_Product_Id>
+		<List_of_Browse_Product_Id count="6">
+        	<Id>ASA_IM__BI</Id> 
+        	<Id>ASA_IM__BJ</Id> 
+        	<Id>ASA_AP__BI</Id> 
+        	<Id>ASA_AP__BJ</Id> 
+        	<Id>ASA_WS__BI</Id> 
+        	<Id>ASA_WS__BJ</Id> 
+		</List_of_Browse_Product_Id>
+	</ProductFileName>
+</ProductFileNameConf>

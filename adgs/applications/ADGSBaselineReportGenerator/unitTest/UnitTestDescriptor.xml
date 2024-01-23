@@ -1,0 +1,8 @@
+<UnitTestDescriptor>
+  <CommandLineList>
+        <CommandLine name="configuration_handler_tests">./configuration_handler_tests.rb</CommandLine>
+        <CommandLine name="db_handler_tests">./db_handler_tests.rb</CommandLine>
+        <CommandLine name="report_handler_tests">./report_handler_tests.rb</CommandLine>
+        <CommandLine name="report_generator_tests">./report_generator_tests.rb</CommandLine>
+  </CommandLineList>
+</UnitTestDescriptor>

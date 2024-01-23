@@ -1,0 +1,45 @@
+4.1.0
+CPS-91: temporary order items corresponding to inventory items to invalidate can be removed according to configuration (valid only for INVALIDATE rolling action). Configuration parameter used for the handling of the feature is RollingArchive.PurgeTempOrdersOnInvalidate (optional, default set to false). Unitary test added.
+------------------------------
+4.0.1
+no deprecated class/methods (db related)
+------------------------------
+4.0.0
+Major version release of RollingArchive:
+- Each rolling policy has its trigger time, and it is executed independently from the others.
+- New rolling policy options: fetch limit, idle limit, idle time.
+- Configurable Items preservation.
+- Queued actions executed as a FIFO for each policy. Round Robin among all the policies.
+- Blacklist action handling for each policy.
+- New rolling policy for cleaning storage
+- Rolling Algorithms and Actions refactoring.
+- Special/Manual policy expiration date handling
+- KEEP actions re-engineering.
+- Last libApp framework
+- Required updated DB schema.
+For detailed features refer to jira S3MARINE-93.
+
+------------------------------
+3.0.0
+Major version: in AutoParentRemoveChildrenPerformer class moved static methods getReportFromPkg, getClobFromPkg, getPackageFromInv, deleteClobFromPkg from libStorageManager::SMInterface (in the framework of ECS-17).
+
+------------------------------
+2.33.0
+Minor version release due to re-opeing of jira S2PDGS-82.
+New method RollingReportGenerator::waitNextSecond added to IF to compute UPD report name ot beginning of a given second not to clash with
+other processes. Private method RollingReportGenerator::generateReportUniqueFilename IF changed and rationalized.
+
+------------------------------
+2.32.0
+Minor version release due to jira S2PDGS-82.
+Report name generation performed by using name lock on /tmp directory for concurrency of other applications. Define directive to build report name replaced by private method. 
+lockReportName added as static method to be used by other applications.
+
+------------------------------
+2.31.1
+Patch release automatically generated to instrument version files
+
+------------------------------
+2.31.0
+
+Automatically generate from revision "version "2.31""

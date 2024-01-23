@@ -1,0 +1,42 @@
+7.2.1
+fixing Makefile to avoid useless diagnostic
+------------------------------------------------------------------------
+7.2.0
+Implements a new virtual method to provide the list of configuration spaces and the configuration main root tag. 
+------------------------------------------------------------------------
+7.1.0
+ECS-25
+Configuration of Additional extensions to import additional files along with the main file. 
+The feature can be disabled by configuration.
+------------------------------------------------------------------------
+7.0.0
+S2PDGS-234 SPR
+The backlock scan can be configured to be re-executed on a regular basis.
+The frequency of the re-scan is a multiple of the polling frequency on the remote repository.
+Two new optional keys in the configuration space have been added:
+* PathScanPollingMultiplier (defaulted to 0, means no rescan)
+* MinimumScanPeriod (defaulted to double of  the phoenix time, means never)
+Additional details in wiki: http://wiki.acs/index.php/PDS_Conf_Space:_Importer
+------------------------------------------------------------------------
+6.9.0
+http://projectit.acsys.it/browse/CSGENG-11
+The DiskEventNotifier now is configured to detect also the linked files in addition
+to the previous detection behaviour. 
+The inotify will be registered also to the CREATE events in the watched directories.
+------------------------------------------------------------------------
+6.8.1
+Typo in log message fixed (restatart instead of restart)
+------------------------------------------------------------------------
+6.8.0
+APF-438 SPR
+A try-catch block has been added to detect errors during the database
+interaction while evaluating filetypes (Importer::file2DataStruct function).
+The DataStruct info are now saved in a cache to minimize database queries.
+The cache is filled when new files are detected and cleared when the file
+has been managed.
+------------------------------------------------------------------------
+6.7.1
+Patch release automatically generated to instrument version files
+------------------------------------------------------------------------
+6.7.0
+Automatically generate from revision "version "6.7""

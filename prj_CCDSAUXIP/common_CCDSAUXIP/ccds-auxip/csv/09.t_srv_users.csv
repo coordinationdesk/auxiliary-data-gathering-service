@@ -1,0 +1,13 @@
+# The File can contains any number of empty lines and
+# or starting with hash negliged by script
+# The First meaningful line must contain the colum names
+# Fallowing rows are traited as record.
+# Fields must be quoted by single quote if strings or plain in case of Numeric values
+
+'"name"','default_priority','highest_priority'
+'pripuser1',20,50
+'pripuser2',30,70
+'pripuser3',40,50
+'pripuser4',50,50
+
+

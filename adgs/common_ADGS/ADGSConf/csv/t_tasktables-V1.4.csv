@@ -1,0 +1,5 @@
+name,tasktable,type_id,description
+
+'auxtroReception',                '%/usr/local/conf/ADGS/DbConfiguration/tasktables/auxtroReception.xml',                '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory and Inventory of AUX_TRO'
+'osiiceReception',                '%/usr/local/conf/ADGS/DbConfiguration/tasktables/osiiceReception.xml',                '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'PreInventory and Inventory of OSI ICE files'
+'auxwndReception',                '%/usr/local/conf/ADGS/DbConfiguration/tasktables/auxwndReception.xml',                '(SELECT id_operationtype FROM t_operationtypes where type = 'IMPORT')', 'Ingestion of S1 AUXWND_OR Task Table'

@@ -1,0 +1,6 @@
+1.0.1
+Removed useless dependency to pistache in Makefile.
+Fixed bug in test without password after libFtpCurl 12.1.3 update.
+----------------------------
+1.0.0
+[LTA-136]: First release

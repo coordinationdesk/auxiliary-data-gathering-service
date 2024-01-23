@@ -1,0 +1,15 @@
+2.24.4
+TimeFormat enums updated.
+-----------------------------------------------------------------
+2.24.3
+Test compilation flag updated
+-----------------------------------------------------------------
+2.24.2
+Makefile update for new environment
+-----------------------------------------------------------------
+2.24.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.24.0
+
+Automatically generate from revision "version "2.24""

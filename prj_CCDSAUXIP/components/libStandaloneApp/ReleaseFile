@@ -1,0 +1,31 @@
+5.16.1
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+
+5.16.0
+MP: getting rid of fileOperation01Factory 
+------------------------------
+
+5.15.5
+RF:: osfiIPFStandaloneApp: runByOpenSF corrected. 
+------------------------------
+
+5.15.4
+RF:: osfiIPFStandaloneApp: runByOpenSF flag handling added. 
+------------------------------
+
+5.15.3
+RF:: osfiIPFStandaloneApp: progress status implemented and unit test added. test/Makefile updated. 
+------------------------------
+
+5.15.2
+RF:: Added osfiIPFStandaloneApp and osfiIPFLogFmtFactory fulfilling openSF Integration Libraries (OSFI) format. 
+------------------------------
+
+5.15.1
+Patch release automatically generated to instrument version files
+------------------------------
+
+5.15.0
+
+Automatically generate from revision "version "5.15""

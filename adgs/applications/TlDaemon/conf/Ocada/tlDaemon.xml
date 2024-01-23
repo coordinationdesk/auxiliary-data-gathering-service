@@ -1,0 +1,82 @@
+<TlDaemonRoot>
+	<TlDaemon>
+		<TLD_Max_Parallel_Orders>2</TLD_Max_Parallel_Orders>
+		<TLD_WS_Config_Path>/usr/acs/conf/local/WSConfig.xml</TLD_WS_Config_Path>
+		<TLD_Scheduler_Path>/usr/acs/bin/Scheduler</TLD_Scheduler_Path>
+		<TLD_Plugins_Path>/usr/acs/plugins/TlDaemonPlugins</TLD_Plugins_Path>
+		<TLD_Orders_Root_Path>/raid0/productions</TLD_Orders_Root_Path>
+		<TLD_Queue_Polling_Frequency>17</TLD_Queue_Polling_Frequency>
+		<TLD_QueueMgrType>DB</TLD_QueueMgrType>
+		<TLD_Time_Window_Delta_T>0</TLD_Time_Window_Delta_T>
+		<TLD_Clean_Working_Dir>false</TLD_Clean_Working_Dir>
+                <TLD_Wipe_Existing_WD>true</TLD_Wipe_Existing_WD>
+		<!-- TLD_Full_Cycle_Period - hours  -->
+		<TLD_Full_Cycle_Period>12</TLD_Full_Cycle_Period>
+		<!-- TLD_Cfg_Reload_Period - minutes -->
+		<TLD_Cfg_Reload_Period>3</TLD_Cfg_Reload_Period>
+		<!-- Order queue sort by priority criterium -->
+		<TLD_Priority_Sort_Order>Ascending</TLD_Priority_Sort_Order>
+		<TLD_LeftTag>RUNNING</TLD_LeftTag>
+		<TLD_RightTag>MODE</TLD_RightTag>
+		<!-- Max log size in Megabytes -->
+		<TLD_Log_Rotation_Size>2</TLD_Log_Rotation_Size>
+		<!-- Log Aging policy in hours -->
+		<TLD_Log_Rotation_Age>12</TLD_Log_Rotation_Age>
+		<TLD_Ipc_Port>8096</TLD_Ipc_Port>
+		<TLD_File_Extensions>
+			<!-- WARNING!!!: specify extensions WITHOUT the leading dot (.) -->
+	       	 	<header>HDR</header>
+	       	 	<binary>DBL</binary>
+	       	 	<unsplit>EEF</unsplit>
+		</TLD_File_Extensions>
+                <List_Of_Cacheable_Filetypes count="46">
+                        <Cacheable_Filetype>AUX_ALTGRD</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_CARTWR</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_DEMMSL</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_DIPMAP</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_GEOID_</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_LS_MAP</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_MICOEF</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_MSSURF</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_OCTIDE</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_OD_LE_</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_PRSS00</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_PRSS06</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_PRSS12</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_PRSS18</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_S1AMPL</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_S2AMPL</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_S1PHAS</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_S2PHAS</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SDC_01</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SDC_02</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SDC_03</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SDC_04</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SDC_05</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SDC_06</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SDC_07</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SDC_08</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SDC_09</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SDC_10</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SDC_11</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SDC_12</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SEA_IC</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SICC01</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SICC02</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SICC03</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SICC04</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SICC05</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SICC06</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SICC07</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SICC08</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SICC09</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SICC10</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SICC11</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SICC12</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SIRDBF</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_SLPMSL</Cacheable_Filetype>
+                        <Cacheable_Filetype>AUX_TDLOAD</Cacheable_Filetype>
+                </List_Of_Cacheable_Filetypes>
+	</TlDaemon>
+</TlDaemonRoot>
+

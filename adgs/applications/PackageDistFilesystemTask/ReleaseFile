@@ -1,0 +1,11 @@
+2.0.0
+SignalHandler dependency removed
+List of configuration spaces to load is now static
+Command line read using parsedArgs
+--------------------------------------------------
+1.10.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.10.0
+
+Automatically generate from revision "version "1.10""

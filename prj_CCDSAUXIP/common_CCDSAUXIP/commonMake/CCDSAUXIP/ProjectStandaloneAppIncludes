@@ -1,0 +1,8 @@
+#ifndef PROJECT_STANDALONE_APP_H
+#define PROJECT_STANDALONE_APP_H
+
+#include <StandaloneApp.h>
+
+#define PROJECT_STANDALONE_APP StandaloneApp
+
+#endif //PROJECT_STANDALONE_APP_H

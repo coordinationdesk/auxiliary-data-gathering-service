@@ -1,0 +1,8 @@
+# The File can contains any number of empty lines and
+# or starting with hash negliged by script
+# The First meaningful line must contain the colum names
+# Fallowing rows are traited as record.
+# Fields must be quoted by single quote if strings or plain in case of Numeric values 
+
+ aip_name , url , username , passwd , disk_space , base_redirect_url 
+'LTAQ_AIP','ftp://127.0.0.1/workspace/aipbasket','oplta','X5JNswn+tLIlNiDESoq6gjrCobiC9bF4AY+tLwMl/tdf/npQ8bsB04jKsG0rkqsGCB84+Iu5fO/ia3VQ1ZPzxrnpqfbFWBqEFOMWqQEqy/iU09arFvMYz7/YEhOw1UqpOgPBJTQ2UpZSbDiHTYeEchWq+1ybd3066lb+MUlM13U=',1000000000,'https://172.30.29.220/aipbasket'

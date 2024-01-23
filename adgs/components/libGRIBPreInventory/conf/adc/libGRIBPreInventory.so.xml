@@ -1,0 +1,28 @@
+<Root>
+	<PreInventory>
+		<ConfigGRIBPreInventory>
+			<!-- DeltaValidity in hours-->
+			<DeltaValidity>12</DeltaValidity>
+			<!-- hours -->
+			<ValidityStartOffset>3</ValidityStartOffset>
+			<GeneratingCentre>ECMWF</GeneratingCentre> 
+		</ConfigGRIBPreInventory>
+<!--
+ECMWF Wind Speed and Direction 	ECMWF_AM__      
+-->
+		<PluginsRegistrationSettings>
+			<GRIBPreInventoryFactory>
+				<List_Of_Registrations count="1">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>ECMWF_AM__</Object>
+					</Registration>
+					
+				</List_Of_Registrations>
+			</GRIBPreInventoryFactory>
+		</PluginsRegistrationSettings>
+	</PreInventory>
+</Root>

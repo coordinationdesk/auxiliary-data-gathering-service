@@ -1,0 +1,78 @@
+<?xml version="1.0" standalone="yes"?>
+<!-- Processor Definition for INGESTION -->
+<DisPreInventoryProcDefConf>
+	<DisPreInventoryProcDef>
+		<ProcessorList  count="">
+			<!-- <Processor satelliteRE="Eos[ap]m" missionRE="[1-5]">
+				<ProcessorName>L0_PROCESSOR</ProcessorName>
+				<ProcessorVersion>01.00</ProcessorVersion>
+				<FileTypes count="">
+					<FileType>MOD_MOD_0P</FileType>
+					<FileType>MOD_MOD_JP</FileType>
+				</FileTypes>
+			</Processor> -->
+                        <Processor satelliteRE="Eospm" missionRE="[1-5]">
+                                <ProcessorName>L0_PROCESSOR</ProcessorName>
+                                <ProcessorVersion>01.00</ProcessorVersion>
+                                <FileTypes count="">
+                                        <FileType>EP__MOD_0P</FileType>
+                                        <FileType>EP__MOD_JP</FileType>
+                                </FileTypes>
+                        </Processor>
+			<Processor satelliteRE="Eosam" missionRE="[1-5]">
+				<ProcessorName>L0_PROCESSOR</ProcessorName>
+				<ProcessorVersion>01.00</ProcessorVersion>
+				<FileTypes count="">
+					<FileType>EA__MOD_0P</FileType>
+					<FileType>EA__MOD_JP</FileType>
+				</FileTypes>
+			</Processor> 
+			<Processor satelliteRE="Envisat" missionRE="[1-5]">
+				<ProcessorName>L0_PROCESSOR</ProcessorName>
+				<ProcessorVersion>01.00</ProcessorVersion>
+				<FileTypes count="">
+					<FileType>MER_FR__JP</FileType>
+				</FileTypes>
+			</Processor>
+			<Processor satelliteRE="Venus" missionRE="[1-5]">
+				<ProcessorName>L0_PROCESSOR</ProcessorName>
+				<ProcessorVersion>01.00</ProcessorVersion>
+				<FileTypes count="">
+					<FileType>VSC_PDTINV</FileType>
+				</FileTypes>
+			</Processor>
+			<Processor satelliteRE="Radarsat" missionRE="[1-5]">
+				<ProcessorName>L0_PROCESSOR</ProcessorName>
+				<ProcessorVersion>01.00</ProcessorVersion>
+				<FileTypes count="">
+					<FileType>RS1_L0_INT</FileType>
+				</FileTypes>
+			</Processor>
+			<Processor satelliteRE="Alos" missionRE="[1-5]">
+				<ProcessorName>L0_PROCESSOR</ProcessorName>
+				<ProcessorVersion>01.00</ProcessorVersion>
+				<FileTypes count="">
+					<FileType>ALO_PSR_RPT</FileType>
+					<FileType>ALO_PSM_RPT</FileType>
+					<FileType>ALO_AV2_RPT</FileType>
+					<FileType>ALO_LWR_RPT</FileType>
+				</FileTypes>
+			</Processor>
+			<Processor satelliteRE="Oceansat" missionRE="[1-5]">
+				<ProcessorName>L0_PROCESSOR</ProcessorName>
+				<ProcessorVersion>01.00</ProcessorVersion>
+				<FileTypes count="">
+					<FileType>OS2_RDIRAW</FileType>
+					<FileType>OS2_RDQRAW</FileType>
+				</FileTypes>
+			</Processor>
+			<Processor satelliteRE="Sacd" missionRE="[1-5]">
+				<ProcessorName>L0_PROCESSOR</ProcessorName>
+				<ProcessorVersion>01.00</ProcessorVersion>
+				<FileTypes count="">
+					<FileType>SCD_RAWDATA</FileType>
+				</FileTypes>
+			</Processor>
+		</ProcessorList>
+	</DisPreInventoryProcDef>
+</DisPreInventoryProcDefConf>

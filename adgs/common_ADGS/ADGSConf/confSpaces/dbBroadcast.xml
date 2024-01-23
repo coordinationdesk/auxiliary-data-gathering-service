@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="yes"?>
+<dbBroadcastRoot>
+	<dbBroadcast>
+        <ListeningBCastAddress>127.30.255.255</ListeningBCastAddress>
+        <BCastAddress>127.30.255.255</BCastAddress>
+		<!-- the base number for the port to send messages -->
+		<MessagePort>15000</MessagePort>
+		<!-- the port range on which span to send messages -->
+		<MessagePortRange>16</MessagePortRange>
+		<!-- the polling interval on the events table [s]  -->
+		<!-- <MessageTimeInterval>2</MessageTimeInterval>  -->
+		<MessageTimeInterval>2</MessageTimeInterval>
+		<!-- time elapsed before configuration retriving [s]  -->
+		<ReloadConfigurationInterval>180</ReloadConfigurationInterval>
+		<!-- restart time for message broadcaster [s]  -->
+		<MessageBroadcasterPhoenixInterval>86400</MessageBroadcasterPhoenixInterval>
+	</dbBroadcast>
+</dbBroadcastRoot>

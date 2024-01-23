@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 NT (http://www.xmlspy.com) by  () -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2000/10/XMLSchema" elementFormDefault="qualified">
+	<xsd:complexType name="Float_Constant">
+		<xsd:sequence>
+			<xsd:element name="Description" type="xsd:string"/>
+			<xsd:element name="Value">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:float">
+							<xsd:attribute name="unit" type="xsd:string" use="required"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="String_Constant">
+		<xsd:sequence>
+			<xsd:element name="Description" type="xsd:string"/>
+			<xsd:element name="Value" default="unitless">
+				<xsd:complexType>
+					<xsd:simpleContent>
+						<xsd:extension base="xsd:string">
+							<xsd:attribute name="unit" type="xsd:string" use="required"/>
+						</xsd:extension>
+					</xsd:simpleContent>
+				</xsd:complexType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="Ipf_Const">
+		<xsd:annotation>
+			<xsd:documentation>Geophisical constants for PDS environment</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="PI" type="Float_Constant"/>
+				<xsd:element name="Deg_2_Rad" type="Float_Constant"/>
+				<xsd:element name="C" type="Float_Constant"/>
+				<xsd:element name="K" type="Float_Constant"/>
+				<xsd:element name="W" type="Float_Constant"/>
+				<xsd:element name="Grav_Accl_Mu" type="Float_Constant"/>
+				<xsd:element name="J2" type="Float_Constant"/>
+				<xsd:element name="J3" type="Float_Constant"/>
+				<xsd:element name="J4" type="Float_Constant"/>
+				<xsd:element name="Ellipsoid" type="String_Constant"/>
+				<xsd:element name="R_Equator" type="Float_Constant"/>
+				<xsd:element name="R_Pole" type="Float_Constant"/>
+				<xsd:element name="Flattening" type="Float_Constant"/>
+				<xsd:element name="R_Mean" type="Float_Constant"/>
+				<xsd:element name="H_Mean" type="Float_Constant"/>
+				<xsd:element name="Sec_In_Day" type="Float_Constant"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

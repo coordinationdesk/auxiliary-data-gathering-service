@@ -1,0 +1,26 @@
+6.0.0
+- c++11 standards adopted
+- code rationalization
+- BOOST_DATE_TIME_HAS_NANOSECONDS support added
+- fixed a bug that could have been caused a crash in case of specific malformed DateTime string
+- VariableDateTime class is not longer supported
+---------------------------------------------------------------------------------------------
+5.37.2
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+5.37.1
+Test compilation fixed
+------------------------------
+5.37.0
+Minor release after the introduction of zuluUTCString2DateTime in 
+rsResourceSet::getValue to support ZULU time converion.
+------------------------------
+5.36.2
+Patch release to fix test Makefile.
+------------------------------
+5.36.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.36.0
+
+Automatically generate from revision "version "5.36""

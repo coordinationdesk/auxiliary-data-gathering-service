@@ -1,0 +1,84 @@
+<?xml version="1.0" standalone="yes"?>
+<OceansatL0ProductDescription>
+	<L0ProductDescriptor>
+    	<NumberOfProducts>4</NumberOfProducts>
+		<Product1>
+        	<Id>RS1_VC0_0P</Id>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+			<List_of_APID count="0">
+        		<APID></APID>
+			</List_of_APID>			
+        	<VCID>0</VCID>
+        	<Channel>0</Channel>
+        	<SensorName>RADARSAT</SensorName>
+        	<SensorMode>SAR</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">34.75</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Radarsat Level 0 Product</Description>        
+    	</Product1>
+		<Product2>
+        	<Id>RS1_RAW_0P</Id>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+			<List_of_APID count="1">
+        		<APID>0</APID>
+			</List_of_APID>			
+        	<VCID>1</VCID>
+			<Channel>0</Channel>
+        	<SensorName>RADARSAT</SensorName>
+        	<SensorMode>SAR</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">34.75</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Radarsat Level 0 Product</Description>        
+    	</Product2>
+		<Product3>
+        	<Id>RS1_VC4_0P</Id>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+			<List_of_APID count="0">
+        		<APID></APID>
+			</List_of_APID>			
+        	<VCID>4</VCID>
+        	<Channel>0</Channel>
+        	<SensorName>RADARSAT</SensorName>
+        	<SensorMode>SAR</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">34.75</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Radarsat Level 0 Product</Description>        
+    	</Product3>
+		<Product4>
+        	<Id>RS1_REC_0P</Id>
+        	<CCSDSVersion>0</CCSDSVersion>
+        	<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+			<List_of_APID count="1">
+        		<APID>0</APID>
+			</List_of_APID>			
+        	<VCID>5</VCID>
+			<Channel>0</Channel>
+        	<SensorName>RADARSAT</SensorName>
+        	<SensorMode>SAR</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+        	<DeltaNominalTime unit="ms">34.75</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Radarsat Level 0 Product</Description>        
+    	</Product4>
+    	<SatelliteName>RADARSAT</SatelliteName>
+    	<SourcePacketHeaderSize>0</SourcePacketHeaderSize>
+    	<AnnotationSize>0</AnnotationSize>
+		<RefDocName>RSI-GS-026 3/0</RefDocName>
+		<AcquisitionReportFileType>ACQREPORT_</AcquisitionReportFileType>
+		<AnnotationIsInUTC>true</AnnotationIsInUTC>
+	</L0ProductDescriptor>
+</OceansatL0ProductDescription>

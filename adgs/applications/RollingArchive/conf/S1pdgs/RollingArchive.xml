@@ -1,0 +1,26 @@
+<?xml version="1.0" standalone="yes"?>
+<RollingArchiveRoot>
+	<RollingArchive>
+		<!-- the polling interval on the database [s]  -->
+		<IdlePeriod>900</IdlePeriod>
+		<Storage1>
+			<id>1</id>
+			<DiskThreshold>-1</DiskThreshold>
+		</Storage1>
+
+		<!-- Can choose to update "manual rolling" entries: 1. always;  2. only if the related field consumable=true -->
+		<SpecialRollingPolicies>
+		   <useConsumableField>false</useConsumableField>
+		</SpecialRollingPolicies>
+		
+		<!-- Configuration for the S1ParametersBasedSelector RollingAlgo -->
+		<S1ParametersBasedSelector>
+			<!-- Parameter used to identify that a product is not produced by the live flow coming out of the satellite but has been either republished or is the result of reprocessing. Default value is 45 days -->
+			<MaxDeltaOldProducts_days>45</MaxDeltaOldProducts_days>
+			<!-- Parameter used to roll products which are not used in the PAC. Default value is 30 days -->
+			<RollingPolicyNotUsedProducts_days>30</RollingPolicyNotUsedProducts_days>
+		</S1ParametersBasedSelector>
+		
+	</RollingArchive>
+</RollingArchiveRoot>
+

@@ -1,0 +1,142 @@
+#!/bin/sh
+#
+# Copyright 2013, Advanced Computer Systems , Inc.
+# Via Della Bufalotta, 378 - 00139 Roma - Italy
+# http://www.acsys.it
+#
+# All Rights Reserved.
+#
+# This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems;
+# the contents of this file may not be disclosed to third parties, copied or
+# duplicated in any form, in whole or in part, without the prior written
+# permission of Advanced Computer Systems, Inc.
+#
+# $Prod: A.C.S. srv bash-script $
+#
+# $Id$
+# 
+# $Author$
+#
+
+#
+# Name of the daemon to be launched/stoppped/aborted
+#
+
+#!/bin/bash
+
+EXITSTATUS=0
+
+daemonStartList="adgs-package-exporter.service adgs-importer.service adgs-thinlayer.service"
+
+daemonStopList="adgs-thinlayer.service adgs-importer.service adgs-package-exporter.service"
+
+if [ -f "/usr/local/components/ADGS/pds2_import_adgs/setup/conf/ListPdsImportServices.txt" ]
+then
+	while read line; do
+		daemonStartList="${daemonStartList} ${line}"
+		daemonStopList="${line} ${daemonStopList}"
+	done < /usr/local/components/ADGS/pds2_import_adgs/setup/conf/ListPdsImportServices.txt
+fi
+
+case "$1" in
+'start')
+	for daemonName in $daemonStartList
+	do
+		echo
+        	set +e
+        	systemctl start $daemonName
+		systemctl is-active -q $daemonName
+        	RETVALSTATUS=$?
+        	if [ $RETVALSTATUS -ne 0 ]; then
+                	EXITSTATUS=$RETVALSTATUS
+			echo -ne "----- "systemctl start" "${daemonName}" ----- "; printf "%1s\033[33;31;1m [NOTOK] \033[0m\n"
+        	else
+			echo -ne "----- "systemctl start" "${daemonName}" ----- "; printf "%1s\033[33;32;1m [OK] \033[0m\n"
+		fi
+        	set -e
+	done
+	echo
+	exit $EXITSTATUS
+	;;
+
+'status')
+	for daemonName in $daemonStartList
+	do
+                echo
+                set +e
+		systemctl is-active -q $daemonName
+        	RETVALSTATUS=$?
+        	if [ $RETVALSTATUS -ne 0 ]; then
+                	EXITSTATUS=$RETVALSTATUS
+			echo -ne "----- "systemctl status" "${daemonName}" ----- "; printf "%1s\033[33;31;1m [STOPPED] \033[0m\n"
+        	else
+			echo -ne "----- "systemctl status" "${daemonName}" ----- "; printf "%1s\033[33;32;1m [RUNNING] \033[0m\n"
+		fi
+                set -e
+	done
+	echo
+	;;
+
+'stop')
+        for daemonName in $daemonStartList
+        do
+                echo
+                set +e
+                systemctl stop $daemonName
+		systemctl is-active -q $daemonName
+                RETVALSTATUS=$?
+                if [ $RETVALSTATUS -eq 0 ]; then
+                        EXITSTATUS=$RETVALSTATUS
+                        echo -ne "----- "systemctl stop" "${daemonName}" ----- "; printf "%1s\033[33;31;1m [NOTOK] \033[0m\n"
+                else
+                        echo -ne "----- "systemctl stop" "${daemonName}" ----- "; printf "%1s\033[33;32;1m [OK] \033[0m\n"
+                fi
+                set -e
+        done
+	echo
+	exit $EXITSTATUS
+
+	;;
+
+'restart')
+
+        for daemonName in $daemonStartList
+        do
+                echo
+                set +e
+                systemctl stop $daemonName
+		systemctl is-active -q $daemonName
+                RETVALSTATUS=$?
+                if [ $RETVALSTATUS -eq 0 ]; then
+                        EXITSTATUS=$RETVALSTATUS
+                        echo -ne "----- "systemctl stop" "${daemonName}" ----- "; printf "%1s\033[33;31;1m [NOTOK] \033[0m\n"
+                else
+                        echo -ne "----- "systemctl stop" "${daemonName}" ----- "; printf "%1s\033[33;32;1m [OK] \033[0m\n"
+                fi
+                set -e
+        done
+	echo
+        for daemonName in $daemonStartList
+        do
+                echo
+                set +e
+                systemctl start $daemonName
+		systemctl is-active -q $daemonName
+                RETVALSTATUS=$?
+                if [ $RETVALSTATUS -ne 0 ]; then
+                        EXITSTATUS=$RETVALSTATUS
+                        echo -ne "----- "systemctl start" "${daemonName}" ----- "; printf "%1s\033[33;31;1m [NOTOK] \033[0m\n"
+                else
+                        echo -ne "----- "systemctl start" "${daemonName}" ----- "; printf "%1s\033[33;32;1m [OK] \033[0m\n"
+                fi
+                set -e
+        done
+	echo
+	exit $EXITSTATUS
+
+	;;
+
+*)
+	echo "Usage: $daemonName {start|stop|restart|status}"
+	;;
+esac

@@ -1,0 +1,17 @@
+2.1.2
+LTA-320: all messages different from M&C filtered on syslog. Application name set in log messages.
+---------------------------------------
+2.1.1
+SysLog attached even if the process does not daemonize
+---------------------------------------
+2.1.0
+Syslog added with no private info allowed into.
+---------------------------------------
+2.0.1
+No more dependencies from libDbCryosat
+---------------------------------------
+2.0.0
+Moved from libLTAApp to libSRVApp
+---------------------------------------
+1.0.0
+First release of the modoule

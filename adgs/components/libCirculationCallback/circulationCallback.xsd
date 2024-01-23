@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns="http://www.acsys.it/pds/ordering"
+	targetNamespace="http://www.acsys.it/pds/ordering"
+	elementFormDefault="qualified"
+	attributeFormDefault="unqualified">
+	<xs:element name="CallbackRequest" type="CallbackRequestType"/>
+	<xs:element name="CallbackResponse" type="CallbackResponseType"/>
+
+	<xs:complexType name="CallbackRequestType">
+		<xs:sequence>
+ 			<xs:element name="ExternalID" type="xs:integer"/>
+ 			<xs:element name="ModificationDate" type="xs::string"/>
+ 			<xs:element name="Status" type="xs::string"/>
+ 			<xs:element name="Hostname" type="xs::string" minOccurs="0"/>
+ 			<xs:element name="CirculationId" type="xs::integer" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="CallbackResponseType">
+		<xs:sequence>
+ 			<xs:element name="ErrorCode" type="ErrorCodeEnum"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:simpleType name="ErrorCodeEnum">
+		<xs:restriction base="xs:integer">
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+			<xs:enumeration value="99"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

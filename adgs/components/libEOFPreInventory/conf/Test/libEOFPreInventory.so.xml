@@ -1,0 +1,145 @@
+<Root>
+	<PreInventory>
+		<ConfigEOFPreInventory>
+			<SatMissionsAssociatorKeys>
+				<Pair satelliteCode="S3A" key="PLAIN"/>
+				<Pair satelliteCode="S3B" key="PLAIN"/>
+				<Pair satelliteCode="S3_" key="PLAIN"/>
+			</SatMissionsAssociatorKeys>
+            <ExternalSchemaValidation>true</ExternalSchemaValidation>
+			<NoSchemaAvailableFlag>NO_SCHEMA_AVAILABLE</NoSchemaAvailableFlag>
+			<FileClassLUT>
+				<LUTElement>
+					<FileType>MPL_ORBSCT</FileType>
+					<FileType>FileType1</FileType>
+					<FileType>FileType2</FileType>
+					<Conversion>
+						<OriginalFileClass>Routine Operations</OriginalFileClass>
+						<DBFileClass>OPER</DBFileClass>
+					</Conversion>
+					<Conversion>
+						<OriginalFileClass>Testing</OriginalFileClass>
+						<DBFileClass>TEST</DBFileClass>
+					</Conversion>
+				</LUTElement>
+				<LUTElement>
+					<FileType>FileType3</FileType>
+					<FileType>FileType4</FileType>
+					<Conversion>
+						<OriginalFileClass>OriginalFileClass</OriginalFileClass>
+						<DBFileClass>DBFileClass</DBFileClass>
+					</Conversion>
+				</LUTElement>
+			</FileClassLUT>
+			<TimeLUT>
+				<LUTElement>
+					<OriginalDate>UTC=9999-99-99T99:99:99</OriginalDate>
+					<ConvertedDate>UTC=9999-12-31T23:59:59</ConvertedDate>
+				</LUTElement>
+			</TimeLUT>
+			<!-- If the following tag is valorized with true (default value), Unique_Id tag must occur in parameter file, otherwise exception is thrown -->
+			<!-- <UniqueIdMustOccurInParameterFile>true</UniqueIdMustOccurInParameterFile> -->
+			<!-- <HdrSchemaAsTopLevel>false</HdrSchemaAsTopLevel> -->
+			<SatelliteMissions>
+             	<Pair satellite="MU2" mission="1"/>
+            </SatelliteMissions>
+		</ConfigEOFPreInventory>
+		<PluginsRegistrationSettings>
+			<EOFPreInventoryFactory>
+				<List_Of_Registrations count="3">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>MPL_ORBSCT</Object>
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>MPL_ORBPRE</Object>
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>MPL_TLEPRE</Object>
+						<DoVersioning>false</DoVersioning>
+					</Registration>
+ 				</List_Of_Registrations>
+			</EOFPreInventoryFactory>
+			<EOFADMPreInventoryFactory>
+				<List_Of_Registrations count="3">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>AUX_MRC_1B</Object>
+						<DsName>Aeolus_Level_1A_Product</DsName>
+						<HasQuality>true</HasQuality>
+						<RemoveInputFile>false</RemoveInputFile>
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>AUX_CHAR__</Object>
+						<!-- This tag is to be valorized only in case of Parent-Relation required.-->
+						<!-- Parent's FileName will be inserted into the .MTD file as a NameValue field named RelationFileName -->
+						<DsName>Aeolus_Level_1A_Product</DsName>	
+						<!-- TRUE if has quality report available, FALSE otherwhise-->
+						<HasQuality>true</HasQuality>
+						<!-- true if original file is to be removed (TL case only), False otherwhise-->
+						<RemoveInputFile>false</RemoveInputFile>
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>TLMX__VC1_</Object>
+						<DsName></DsName>                                                
+						<HasQuality>false</HasQuality>
+						<RemoveInputFile>false</RemoveInputFile>
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+				</List_Of_Registrations>
+			</EOFADMPreInventoryFactory>
+			<EOFMPMPreInventoryFactory>
+				<List_Of_Registrations count="2">
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>TEST_DDIP</Object>
+						<DsName></DsName>                                                
+						<HasQuality>false</HasQuality>
+						<RemoveInputFile>false</RemoveInputFile>
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+					<Registration>
+						<Satellite></Satellite>
+						<Mission></Mission>
+						<Processor></Processor>
+						<Version></Version>
+						<Object>TEST_DIP</Object>
+						<DsName></DsName>                                                
+						<HasQuality>false</HasQuality>
+						<RemoveInputFile>false</RemoveInputFile>
+						<DoVersioning>true</DoVersioning>
+					</Registration>
+				</List_Of_Registrations>
+            </EOFMPMPreInventoryFactory>
+		</PluginsRegistrationSettings>
+	</PreInventory>
+</Root>

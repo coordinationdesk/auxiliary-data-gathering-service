@@ -1,0 +1,3810 @@
+<?xml version="1.0" standalone="yes"?>
+<Sentinel2L0ProductDescription>
+	<L0ProductDescriptor>
+    	<SatelliteName>SENTINEL2</SatelliteName>
+    	<SourcePacketHeaderSize>6</SourcePacketHeaderSize>
+    	<AnnotationSize>0</AnnotationSize>
+		<RefDocName>GS2-ICD-ASF-MSI-0008</RefDocName>
+		<AcquisitionReportFileType>ACQREPORT_</AcquisitionReportFileType>
+		<AnnotationIsInUTC>true</AnnotationIsInUTC>
+    	<NumberOfProducts>192</NumberOfProducts>
+		<Product1>
+			<Id>MSI_D1B1_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>336</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band1 Detector1 Data</Description>
+		</Product1>
+		<Product2>
+			<Id>MSI_D1B2_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>337</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band2 Detector1 Data</Description>
+		</Product2>
+		<Product3>
+			<Id>MSI_D1B3_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>338</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band3 Detector1 Data</Description>
+		</Product3>
+		<Product4>
+			<Id>MSI_D1B4_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>339</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band4 Detector1 Data</Description>
+		</Product4>
+		<Product5>
+			<Id>MSI_D1B5_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>340</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band5 Detector1 Data</Description>
+		</Product5>
+		<Product6>
+			<Id>MSI_D1B6_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>341</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band6 Detector1 Data</Description>
+		</Product6>
+		<Product7>
+			<Id>MSI_D1B7_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>342</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band7 Detector1 Data</Description>
+		</Product7>
+		<Product8>
+			<Id>MSI_D1B8_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>343</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8 Detector1 Data</Description>
+		</Product8>
+		<Product9>
+			<Id>MSI_D1B8A_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>344</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8A Detector1 Data</Description>
+		</Product9>
+		<Product10>
+			<Id>MSI_D1B9_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>345</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band9 Detector1 Data</Description>
+		</Product10>
+		<Product11>
+			<Id>MSI_D1B10_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>346</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band10 Detector1 Data</Description>
+		</Product11>
+		<Product12>
+			<Id>MSI_D1B11_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>347</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band11 Detector1 Data</Description>
+		</Product12>
+		<Product13>
+			<Id>MSI_D1B12_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>348</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band12 Detector1 Data</Description>
+		</Product13>
+
+		<Product14>
+			<Id>MSI_D2B1_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>320</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band1 Detector2 Data</Description>
+		</Product14>
+		<Product15>
+			<Id>MSI_D2B2_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>321</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band2 Detector2 Data</Description>
+		</Product15>
+		<Product16>
+			<Id>MSI_D2B3_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>322</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band3 Detector2 Data</Description>
+		</Product16>
+		<Product17>
+			<Id>MSI_D2B4_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>323</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band4 Detector2 Data</Description>
+		</Product17>
+		<Product18>
+			<Id>MSI_D2B5_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>324</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band5 Detector2 Data</Description>
+		</Product18>
+		<Product19>
+			<Id>MSI_D2B6_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>325</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band6 Detector2 Data</Description>
+		</Product19>
+		<Product20>
+			<Id>MSI_D2B7_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>326</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band7 Detector2 Data</Description>
+		</Product20>
+		<Product21>
+			<Id>MSI_D2B8_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>327</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8 Detector2 Data</Description>
+		</Product21>
+		<Product22>
+			<Id>MSI_D2B8A_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>328</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8A Detector2 Data</Description>
+		</Product22>
+		<Product23>
+			<Id>MSI_D2B9_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>329</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band9 Detector2 Data</Description>
+		</Product23>
+		<Product24>
+			<Id>MSI_D2B10_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>330</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band10 Detector2 Data</Description>
+		</Product24>
+		<Product25>
+			<Id>MSI_D2B11_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>331</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band11 Detector2 Data</Description>
+		</Product25>
+		<Product26>
+			<Id>MSI_D2B12_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>332</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band12 Detector2 Data</Description>
+		</Product26>
+
+
+		<Product27>
+			<Id>MSI_D3B1_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>304</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band1 Detector3 Data</Description>
+		</Product27>
+		<Product28>
+			<Id>MSI_D3B2_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>305</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band2 Detector3 Data</Description>
+		</Product28>
+		<Product29>
+			<Id>MSI_D3B3_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>306</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band3 Detector3 Data</Description>
+		</Product29>
+		<Product30>
+			<Id>MSI_D3B4_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>307</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band4 Detector3 Data</Description>
+		</Product30>
+		<Product31>
+			<Id>MSI_D3B5_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>308</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band5 Detector3 Data</Description>
+		</Product31>
+		<Product32>
+			<Id>MSI_D3B6_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>309</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band6 Detector3 Data</Description>
+		</Product32>
+		<Product33>
+			<Id>MSI_D3B7_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>310</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band7 Detector3 Data</Description>
+		</Product33>
+		<Product34>
+			<Id>MSI_D3B8_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>311</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8 Detector3 Data</Description>
+		</Product34>
+		<Product35>
+			<Id>MSI_D3B8A_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>312</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8A Detector3 Data</Description>
+		</Product35>
+		<Product36>
+			<Id>MSI_D3B9_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>313</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band9 Detector3 Data</Description>
+		</Product36>
+		<Product37>
+			<Id>MSI_D3B10_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>314</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band10 Detector3 Data</Description>
+		</Product37>
+		<Product38>
+			<Id>MSI_D3B11_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>315</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band11 Detector3 Data</Description>
+		</Product38>
+		<Product39>
+			<Id>MSI_D3B12_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>316</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band12 Detector3 Data</Description>
+		</Product39>
+		
+		
+		<Product40>
+			<Id>MSI_D4B1_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>288</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band1 Detector4 Data</Description>
+		</Product40>
+		<Product41>
+			<Id>MSI_D4B2_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>289</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band2 Detector4 Data</Description>
+		</Product41>
+		<Product42>
+			<Id>MSI_D4B3_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>290</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band3 Detector4 Data</Description>
+		</Product42>
+		<Product43>
+			<Id>MSI_D4B4_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>291</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band4 Detector4 Data</Description>
+		</Product43>
+		<Product44>
+			<Id>MSI_D4B5_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>292</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band5 Detector4 Data</Description>
+		</Product44>
+		<Product45>
+			<Id>MSI_D4B6_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>293</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band6 Detector4 Data</Description>
+		</Product45>
+		<Product46>
+			<Id>MSI_D4B7_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>294</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band7 Detector4 Data</Description>
+		</Product46>
+		<Product47>
+			<Id>MSI_D4B8_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>295</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8 Detector4 Data</Description>
+		</Product47>
+		<Product48>
+			<Id>MSI_D4B8A_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>296</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8A Detector4 Data</Description>
+		</Product48>
+		<Product49>
+			<Id>MSI_D4B9_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>297</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band9 Detector4 Data</Description>
+		</Product49>
+		<Product50>
+			<Id>MSI_D4B10_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>298</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band10 Detector4 Data</Description>
+		</Product50>
+		<Product51>
+			<Id>MSI_D4B11_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>299</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band11 Detector4 Data</Description>
+		</Product51>
+		<Product52>
+			<Id>MSI_D4B12_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>300</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band12 Detector4 Data</Description>
+		</Product52>
+
+
+		<Product53>
+			<Id>MSI_D5B1_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>272</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band1 Detector5 Data</Description>
+		</Product53>
+		<Product54>
+			<Id>MSI_D5B2_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>273</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band2 Detector5 Data</Description>
+		</Product54>
+		<Product55>
+			<Id>MSI_D5B3_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>274</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band3 Detector5 Data</Description>
+		</Product55>
+		<Product56>
+			<Id>MSI_D5B4_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>275</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band4 Detector5 Data</Description>
+		</Product56>
+		<Product57>
+			<Id>MSI_D5B5_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>276</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band5 Detector5 Data</Description>
+		</Product57>
+		<Product58>
+			<Id>MSI_D5B6_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>277</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band6 Detector5 Data</Description>
+		</Product58>
+		<Product59>
+			<Id>MSI_D5B7_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>278</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band7 Detector5 Data</Description>
+		</Product59>
+		<Product60>
+			<Id>MSI_D5B8_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>279</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8 Detector5 Data</Description>
+		</Product60>
+		<Product61>
+			<Id>MSI_D5B8A_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>280</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8A Detector5 Data</Description>
+		</Product61>
+		<Product62>
+			<Id>MSI_D5B9_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>281</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band9 Detector5 Data</Description>
+		</Product62>
+		<Product63>
+			<Id>MSI_D5B10_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>282</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band10 Detector5 Data</Description>
+		</Product63>
+		<Product64>
+			<Id>MSI_D5B11_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>283</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band11 Detector5 Data</Description>
+		</Product64>
+		<Product65>
+			<Id>MSI_D5B12_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>284</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band12 Detector5 Data</Description>
+		</Product65>
+		
+		
+		<Product66>
+			<Id>MSI_D6B1_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>256</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band1 Detector6 Data</Description>
+		</Product66>
+		<Product67>
+			<Id>MSI_D6B2_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>257</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band2 Detector6 Data</Description>
+		</Product67>
+		<Product68>
+			<Id>MSI_D6B3_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>258</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band3 Detector6 Data</Description>
+		</Product68>
+		<Product69>
+			<Id>MSI_D6B4_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>259</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band4 Detector6 Data</Description>
+		</Product69>
+		<Product70>
+			<Id>MSI_D6B5_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>260</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band5 Detector6 Data</Description>
+		</Product70>
+		<Product71>
+			<Id>MSI_D6B6_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>261</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band6 Detector6 Data</Description>
+		</Product71>
+		<Product72>
+			<Id>MSI_D6B7_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>262</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band7 Detector6 Data</Description>
+		</Product72>
+		<Product73>
+			<Id>MSI_D6B8_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>263</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8 Detector6 Data</Description>
+		</Product73>
+		<Product74>
+			<Id>MSI_D6B8A_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>264</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8A Detector6 Data</Description>
+		</Product74>
+		<Product75>
+			<Id>MSI_D6B9_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>265</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band9 Detector6 Data</Description>
+		</Product75>
+		<Product76>
+			<Id>MSI_D6B10_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>266</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band10 Detector6 Data</Description>
+		</Product76>
+		<Product77>
+			<Id>MSI_D6B11_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>267</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band11 Detector6 Data</Description>
+		</Product77>
+		<Product78>
+			<Id>MSI_D6B12_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>268</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band12 Detector6 Data</Description>
+		</Product78>
+
+		<Product79>
+			<Id>MSI_D7B1_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>80</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band1 Detector7 Data</Description>
+		</Product79>
+		<Product80>
+			<Id>MSI_D7B2_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>81</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band2 Detector7 Data</Description>
+		</Product80>
+		<Product81>
+			<Id>MSI_D7B3_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>82</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band3 Detector7 Data</Description>
+		</Product81>
+		<Product82>
+			<Id>MSI_D7B4_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>83</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band4 Detector7 Data</Description>
+		</Product82>
+		<Product83>
+			<Id>MSI_D7B5_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>84</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band5 Detector7 Data</Description>
+		</Product83>
+		<Product84>
+			<Id>MSI_D7B6_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>85</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band6 Detector7 Data</Description>
+		</Product84>
+		<Product85>
+			<Id>MSI_D7B7_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>86</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band7 Detector7 Data</Description>
+		</Product85>
+		<Product86>
+			<Id>MSI_D7B8_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>87</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8 Detector7 Data</Description>
+		</Product86>
+		<Product87>
+			<Id>MSI_D7B8A_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>88</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8A Detector7 Data</Description>
+		</Product87>
+		<Product88>
+			<Id>MSI_D7B9_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>89</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band9 Detector7 Data</Description>
+		</Product88>
+		<Product89>
+			<Id>MSI_D7B10_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>90</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band10 Detector7 Data</Description>
+		</Product89>
+		<Product90>
+			<Id>MSI_D7B11_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>91</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band11 Detector7 Data</Description>
+		</Product90>
+		<Product91>
+			<Id>MSI_D7B12_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>92</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band12 Detector7 Data</Description>
+		</Product91>
+				
+		<Product92>
+			<Id>MSI_D8B1_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>64</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band1 Detector8 Data</Description>
+		</Product92>
+		<Product93>
+			<Id>MSI_D8B2_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>65</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band2 Detector8 Data</Description>
+		</Product93>
+		<Product94>
+			<Id>MSI_D8B3_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>66</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band3 Detector8 Data</Description>
+		</Product94>
+		<Product95>
+			<Id>MSI_D8B4_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>67</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band4 Detector8 Data</Description>
+		</Product95>
+		<Product96>
+			<Id>MSI_D8B5_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>68</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band5 Detector8 Data</Description>
+		</Product96>
+		<Product97>
+			<Id>MSI_D8B6_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>69</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band6 Detector8 Data</Description>
+		</Product97>
+		<Product98>
+			<Id>MSI_D8B7_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>70</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band7 Detector8 Data</Description>
+		</Product98>
+		<Product99>
+			<Id>MSI_D8B8_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>71</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8 Detector8 Data</Description>
+		</Product99>
+		<Product100>
+			<Id>MSI_D8B8A_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>72</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8A Detector8 Data</Description>
+		</Product100>
+		<Product101>
+			<Id>MSI_D8B9_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>73</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band9 Detector8 Data</Description>
+		</Product101>
+		<Product102>
+			<Id>MSI_D8B10_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>74</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band10 Detector8 Data</Description>
+		</Product102>
+		<Product103>
+			<Id>MSI_D8B11_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>75</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band11 Detector8 Data</Description>
+		</Product103>
+		<Product104>
+			<Id>MSI_D8B12_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>76</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band12 Detector8 Data</Description>
+		</Product104>
+		
+		
+		<Product105>
+			<Id>MSI_D9B1_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>48</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band1 Detector9 Data</Description>
+		</Product105>
+		<Product106>
+			<Id>MSI_D9B2_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>49</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band2 Detector9 Data</Description>
+		</Product106>
+		<Product107>
+			<Id>MSI_D9B3_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>50</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band3 Detector9 Data</Description>
+		</Product107>
+		<Product108>
+			<Id>MSI_D9B4_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>51</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band4 Detector9 Data</Description>
+		</Product108>
+		<Product109>
+			<Id>MSI_D9B5_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>52</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band5 Detector9 Data</Description>
+		</Product109>
+		<Product110>
+			<Id>MSI_D9B6_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>53</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band6 Detector9 Data</Description>
+		</Product110>
+		<Product111>
+			<Id>MSI_D9B7_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>54</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band7 Detector9 Data</Description>
+		</Product111>
+		<Product112>
+			<Id>MSI_D9B8_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>55</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8 Detector9 Data</Description>
+		</Product112>
+		<Product113>
+			<Id>MSI_D9B8A_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>56</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8A Detector9 Data</Description>
+		</Product113>
+		<Product114>
+			<Id>MSI_D9B9_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>57</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band9 Detector9 Data</Description>
+		</Product114>
+		<Product115>
+			<Id>MSI_D9B10_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>58</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band10 Detector9 Data</Description>
+		</Product115>
+		<Product116>
+			<Id>MSI_D9B11_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>59</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band11 Detector9 Data</Description>
+		</Product116>
+		<Product117>
+			<Id>MSI_D9B12_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>60</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band12 Detector9 Data</Description>
+		</Product117>
+		
+		
+		<Product118>
+			<Id>MSI_D10B1_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>32</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band1 Detector10 Data</Description>
+		</Product118>
+		<Product119>
+			<Id>MSI_D10B2_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>33</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band2 Detector10 Data</Description>
+		</Product119>
+		<Product120>
+			<Id>MSI_D10B3_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>34</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band3 Detector10 Data</Description>
+		</Product120>
+		<Product121>
+			<Id>MSI_D10B4_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>35</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band4 Detector10 Data</Description>
+		</Product121>
+		<Product122>
+			<Id>MSI_D10B5_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>36</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band5 Detector10 Data</Description>
+		</Product122>
+		<Product123>
+			<Id>MSI_D10B6_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>37</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band6 Detector10 Data</Description>
+		</Product123>
+		<Product124>
+			<Id>MSI_D10B7_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>38</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band7 Detector10 Data</Description>
+		</Product124>
+		<Product125>
+			<Id>MSI_D10B8_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>39</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8 Detector10 Data</Description>
+		</Product125>
+		<Product126>
+			<Id>MSI_D10B8A_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>40</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8A Detector10 Data</Description>
+		</Product126>
+		<Product127>
+			<Id>MSI_D10B9_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>41</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band9 Detector10 Data</Description>
+		</Product127>
+		<Product128>
+			<Id>MSI_D10B10_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>42</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band10 Detector10 Data</Description>
+		</Product128>
+		<Product129>
+			<Id>MSI_D10B11_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>43</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band11 Detector10 Data</Description>
+		</Product129>
+		<Product130>
+			<Id>MSI_D10B12_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>44</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band12 Detector10 Data</Description>
+		</Product130>
+				
+		<Product131>
+			<Id>MSI_D11B1_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>16</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band1 Detector11 Data</Description>
+		</Product131>
+		<Product132>
+			<Id>MSI_D11B2_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>17</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band2 Detector11 Data</Description>
+		</Product132>
+		<Product133>
+			<Id>MSI_D11B3_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>18</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band3 Detector11 Data</Description>
+		</Product133>
+		<Product134>
+			<Id>MSI_D11B4_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>19</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band4 Detector11 Data</Description>
+		</Product134>
+		<Product135>
+			<Id>MSI_D11B5_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>20</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band5 Detector11 Data</Description>
+		</Product135>
+		<Product136>
+			<Id>MSI_D11B6_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>21</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band6 Detector11 Data</Description>
+		</Product136>
+		<Product137>
+			<Id>MSI_D11B7_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>22</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band7 Detector11 Data</Description>
+		</Product137>
+		<Product138>
+			<Id>MSI_D11B8_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>23</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8 Detector11 Data</Description>
+		</Product138>
+		<Product139>
+			<Id>MSI_D11B8A_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>24</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8A Detector11 Data</Description>
+		</Product139>
+		<Product140>
+			<Id>MSI_D11B9_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>25</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band9 Detector11 Data</Description>
+		</Product140>
+		<Product141>
+			<Id>MSI_D11B10_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>26</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band10 Detector11 Data</Description>
+		</Product141>
+		<Product142>
+			<Id>MSI_D11B11_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>27</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band11 Detector11 Data</Description>
+		</Product142>
+		<Product143>
+			<Id>MSI_D11B12_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>28</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band12 Detector11 Data</Description>
+		</Product143>
+		
+		<Product144>
+			<Id>MSI_D12B1_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>0</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band1 Detector12 Data</Description>
+		</Product144>
+		<Product145>
+			<Id>MSI_D12B2_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>1</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band2 Detector12 Data</Description>
+		</Product145>
+		<Product146>
+			<Id>MSI_D12B3_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>2</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band3 Detector12 Data</Description>
+		</Product146>
+		<Product147>
+			<Id>MSI_D12B4_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>3</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band4 Detector12 Data</Description>
+		</Product147>
+		<Product148>
+			<Id>MSI_D12B5_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>4</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band5 Detector12 Data</Description>
+		</Product148>
+		<Product149>
+			<Id>MSI_D12B6_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>5</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band6 Detector12 Data</Description>
+		</Product149>
+		<Product150>
+			<Id>MSI_D12B7_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>6</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band7 Detector12 Data</Description>
+		</Product150>
+		<Product151>
+			<Id>MSI_D12B8_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>7</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8 Detector12 Data</Description>
+		</Product151>
+		<Product152>
+			<Id>MSI_D12B8A_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>8</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band8A Detector12 Data</Description>
+		</Product152>
+		<Product153>
+			<Id>MSI_D12B9_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>9</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band9 Detector12 Data</Description>
+		</Product153>
+		<Product154>
+			<Id>MSI_D12B10_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>10</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band10 Detector12 Data</Description>
+		</Product154>
+		<Product155>
+			<Id>MSI_D12B11_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>11</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band11 Detector12 Data</Description>
+		</Product155>
+		<Product156>
+			<Id>MSI_D12B12_0</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+				<APID>12</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID></VCID>
+			<SensorName>MSI</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">0</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>
+			<Description>MSI Band12 Detector12 Data</Description>
+		</Product156>
+		
+		<Product157>
+			<Id>IDLE_PACK_</Id>
+			<CCSDSVersion>4</CCSDSVersion>
+			<DataFieldHeaderLength>0</DataFieldHeaderLength>
+			<ApplicationDataLength>1902</ApplicationDataLength>
+			<PacketErrorControlLength>0</PacketErrorControlLength>
+        		<List_of_APID count="1">
+				<APID>2047</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>0</Channel>
+			<VCID>63</VCID>
+			<SensorName>IDLE</SensorName>
+			<SensorMode>IDLE</SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">.12022843402</DeltaNominalTime>
+			<GapThresold unit="ms">0</GapThresold>        
+			<Description>Idle Frame</Description>        
+    	</Product157>
+		<Product158>
+			<Id>GN_0_G0774</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>774</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>GNSS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>GNSS</Description>        
+    	</Product158>
+		<Product159>
+			<Id>PF_HKTM</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>236</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>772</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>1</Channel>
+			<VCID>3</VCID>
+			<SensorName>PF_HKTM</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">102.4</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>Platform Housekeeping Telemetry</Description>        
+    	</Product159>
+		<Product160>
+			<Id>STR_TMADB1</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>598</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>STR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">100.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>Star Tracker Telemetry</Description>        
+    	</Product160>
+		<Product161>
+			<Id>AOCS_TM1_ATT</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>121</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">500.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product161>
+		<Product162>
+			<Id>MSI_SAD</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>150</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">10000.0</DeltaNominalTime>
+			<GapThresold unit="ms">30000</GapThresold>        
+			<Description>Thermal Ancillary Telemetry</Description>        
+    	</Product162>
+		<Product163>
+			<Id>STR_TMADB2</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>614</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>STR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">100.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>Star Tracker Telemetry</Description>        
+    	</Product163>
+		<Product164>
+			<Id>STR_TMADB3</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>630</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>STR</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">100.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>Star Tracker Telemetry</Description>        
+    	</Product164>
+		<Product165>
+			<Id>AOCS_TM2_PROP</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>122</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product165>
+		<Product166>
+			<Id>AOCS_STR_SDB1</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>124</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product166>
+		<Product167>
+			<Id>AOCS_STR_SDB2</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>125</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product167>
+		<Product168>
+			<Id>AOCS_STR_SDB3</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>126</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product168>
+		<Product169>
+			<Id>AOCS_GPSR_TC</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>106</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product169>
+		<Product170>
+			<Id>AOCS_GPSR_NS</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>105</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product170>
+		<Product171>
+			<Id>AOCS_IMU_TECH</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>110</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product171>
+		<Product172>
+			<Id>AOCS_IMU_ACQ01</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>111</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product172>
+		<Product173>
+			<Id>AOCS_IMU_ACQ02</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>112</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product173>
+		<Product174>
+			<Id>AOCS_IMU_ACQ03</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>113</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product174>
+		<Product175>
+			<Id>AOCS_IMU_ACQ04</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>114</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product175>
+		<Product176>
+			<Id>AOCS_IMU_ACQ05</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>115</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product176>
+		<Product177>
+			<Id>AOCS_IMU_ACQ06</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>116</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product177>
+		<Product178>
+			<Id>AOCS_IMU_ACQ07</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>117</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product178>
+		<Product179>
+			<Id>AOCS_IMU_ACQ08</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>118</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product179>
+		<Product180>
+			<Id>AOCS_IMU_ACQ09</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>119</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product180>
+		<Product181>
+			<Id>AOCS_IMU_ACQ10</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>120</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product181>
+		<Product182>
+			<Id>GN_0_G0780</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>780</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>GNSS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>GNSS diagnostic</Description>        
+    	</Product182>
+		<Product183>
+			<Id>GN_0_G0781</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>781</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>GNSS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>GNSS Event driven</Description>        
+    	</Product183>
+		<Product184>
+			<Id>GN_0_G0772</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>772</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>GNSS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>GNSS Houskeeping</Description>        
+    	</Product184>
+		<Product185>
+			<Id>SAD_DATA__</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>0</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>SAD</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>Fake Product Type for SAD</Description>        
+    	</Product185>
+		<Product186>
+			<Id>MSI_DATA_1</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>0</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>2</Channel>
+			<VCID>4</VCID>
+			<SensorName>SAD</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>Fake Product Type for MSI C1</Description>        
+    	</Product186>
+		<Product187>
+			<Id>MSI_DATA_2</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>0</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>2</Channel>
+			<VCID>4</VCID>
+			<SensorName>SAD</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>Fake Product Type for MSI C2</Description>        
+    	</Product187>
+		<Product188>
+			<Id>AOCS_GPSR_HK</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>107</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS GPSR HK Parameter Report</Description>        
+    	</Product188>
+		<Product189>
+			<Id>PF_HKTM___</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>236</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>772</APID>
+			</List_of_APID>
+			<List_of_Fields count="0"/>
+			<Channel>1</Channel>
+			<VCID>3</VCID>
+			<SensorName>PF_HKTM</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">102.4</DeltaNominalTime>
+			<GapThresold unit="ms">15000</GapThresold>        
+			<Description>Platform Housekeeping Telemetry</Description>        
+    	</Product189>
+		<Product190>
+			<Id>AOCS_GPSR_HKB</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>123</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS GPSR HK Parameter Report Redundant</Description>        
+    	</Product190>
+		<Product191>
+			<Id>AOCS_GPSR_TCB</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>109</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product191>
+		<Product192>
+			<Id>AOCS_GPSR_NSB</Id>
+			<CCSDSVersion>0</CCSDSVersion>
+			<DataFieldHeaderLength>12</DataFieldHeaderLength>
+			<ApplicationDataLength>0</ApplicationDataLength>
+			<PacketErrorControlLength>2</PacketErrorControlLength>
+			<List_of_APID count="1">
+    				<APID>182</APID>
+			</List_of_APID>
+			<List_of_Fields count="1">
+				<Field><!-- SID -->				
+					<Offset units="bits">96</Offset>
+					<Size units="bits">8</Size>					
+					<Value>108</Value>
+				</Field>
+			</List_of_Fields>
+			<Channel>2</Channel>
+			<VCID>2</VCID>
+			<SensorName>AOCS</SensorName>
+			<SensorMode></SensorMode>
+			<SegmentedPacketsFlag>false</SegmentedPacketsFlag>
+			<DeltaNominalTime unit="ms">1000.0</DeltaNominalTime>
+			<GapThresold unit="ms">3000</GapThresold>        
+			<Description>AOCS</Description>        
+    	</Product192>
+	</L0ProductDescriptor>
+</Sentinel2L0ProductDescription>

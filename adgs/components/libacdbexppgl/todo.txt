@@ -1,0 +1,13 @@
+1) controllare numero connessioni attive.
+
+2) Test BLOB/CLOB
+
+4) autoincrement ??
+
+5) timestamp
+
+6) Autocommit ON-> OFF
+
+7) Profilo utente
+
+8) BOOL -> CHAR(1) costraint 't' - 'f' ???

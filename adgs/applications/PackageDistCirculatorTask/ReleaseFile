@@ -1,0 +1,17 @@
+2.0.1
+Command line read using parsedArgs
+----------------------------------
+2.0.0
+Removed SignalHandler dependency
+List of conf spaces is now static
+---------------------------------
+1.26.2
+Minor changes on messages
+
+------------------------------
+1.26.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.26.0
+
+Automatically generate from revision "version "1.26""

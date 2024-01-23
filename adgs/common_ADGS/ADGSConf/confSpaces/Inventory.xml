@@ -1,0 +1,24 @@
+<?xml version="1.0" standalone="yes"?>
+<FileInventory>  
+	<Metadata>
+		<MandatoryFlag>false</MandatoryFlag>
+	</Metadata>
+	<Inventory>   
+    		<WorkingDir>/data/ADGS/Inventory/working</WorkingDir>
+    		<BackupDir>/data/ADGS/Inventory/backup</BackupDir>
+		<ListFileExtension>LIST</ListFileExtension>
+		<MetadataFileExtension>MTD</MetadataFileExtension>
+		<ObjectFileExtension>OBJ</ObjectFileExtension>
+		<CatalogueFileExtension>CATALOG</CatalogueFileExtension>
+		<FilteringTestFiles>true</FilteringTestFiles>
+		<CheckFTypePeriodicity>true</CheckFTypePeriodicity>
+		<List_Of_Extensions count="5">
+			<Extension>EEF</Extension>
+			<Extension>HDR</Extension>
+			<Extension>DBL</Extension>
+			<Extension>OBJ</Extension>
+			<Extension>CATALOG</Extension>
+		</List_Of_Extensions>
+		<PopulateInvAnomalies>true</PopulateInvAnomalies>
+	</Inventory>
+</FileInventory>

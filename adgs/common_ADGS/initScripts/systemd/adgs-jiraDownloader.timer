@@ -1,0 +1,12 @@
+[Unit]
+Description=Run ADGS Jira attachment dowloader every 5 minutes
+Requires=adgs-adfHandler.service
+
+[Timer]
+OnBootSec=15min
+OnUnitActiveSec=5min
+Unit=adgs-jiraDownloader.service
+
+[Install]
+WantedBy=timers.target
+

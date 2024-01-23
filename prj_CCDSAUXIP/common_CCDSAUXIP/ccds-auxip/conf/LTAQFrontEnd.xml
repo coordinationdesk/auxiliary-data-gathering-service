@@ -1,0 +1,21 @@
+<Root>
+	<LTAQFrontEndConf>
+		<RestServer>
+			<Port>9080</Port>
+			<ThreadNum>10</ThreadNum>
+			<AIPName>LTAQ_AIP</AIPName>
+			<RestartTime>86400</RestartTime>
+			<QueryResultLimit>10000</QueryResultLimit>
+		</RestServer>
+		<TimeEstimationEuristic>
+			<!-- Take into account orders completed between now and now - timewindow [seconds] , def 86400 -->
+			<TimeWindow>604800</TimeWindow>
+			<!-- Max number of orders to use in computation (sorted by completion date desc), def 10 -->
+			<MaxOrderInEstimation>10</MaxOrderInEstimation>
+			<!-- Min number of orders needed to use the queue as a good estimation source, def 3 -->
+			<MinOrderInEstimation>3</MinOrderInEstimation>
+			<!-- Speed returned if not enough completed items have been found in queue [bytes/sec] def 1.000.000-->
+			<DefaultTransferSpeed>8000000</DefaultTransferSpeed>
+		</TimeEstimationEuristic>
+	</LTAQFrontEndConf>
+</Root>

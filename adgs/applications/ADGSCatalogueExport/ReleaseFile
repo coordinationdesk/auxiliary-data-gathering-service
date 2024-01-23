@@ -1,0 +1,22 @@
+2.0.1
+Log level of warning message fixed.
+---------------------------------------
+2.0.0
+[LTA-557]: New tar creation strategy and curl command.
+
+    The new tar creation strategy consist on create the new tar with the
+    '_TMP' suffix and then move it on the final destination.
+    In this way no 'already exists error' will occur.
+
+    The new curl command use classes inside the 'net/http' gem in place of
+    'open3' gem with curl command call in a shell.
+
+    The obsolete 'CurlParameters' configuration parameter is removed.
+
+    Tests updated.
+---------------------------------------
+1.0.1
+[LTA-413]: Headers on script files fixed.
+---------------------------------------
+1.0.0
+[CCDS-27]: First release

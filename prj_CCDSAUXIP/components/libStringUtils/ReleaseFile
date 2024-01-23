@@ -1,0 +1,22 @@
+1.49.0
+Code rationalization.
+C++14 standards adopted
+Performance slightly improved
+Bug fixed in pathJoin (did not used the given separator, but a built-in one)
+Bug fixed in ipBelongsToSubnet (buffer overflow) 
+----------------------------------------------------------------------------
+1.48.1
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+1.48.0
+Added new split function that allows empty tokens to be included in the output vector.
+------------------------------
+1.47.2
+Makefiles aligned to GITPortingTools V7
+------------------------------
+1.47.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.47.0
+
+Automatically generate from revision "version "1.47""

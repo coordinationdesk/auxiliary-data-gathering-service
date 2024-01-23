@@ -1,0 +1,11 @@
+5.4.0
+Using the macro ACS_NOEXCEPT instead of throw() in all classes
+PloginLoaderNotifier CTOR and DTOR moved from .h (inlined) to .C
+This avoids wrong dependencies detection in Smurfer
+------------------------------
+5.3.1
+Patch release automatically generated to instrument version files
+------------------------------
+5.3.0
+
+Automatically generate from revision "version "5.3""

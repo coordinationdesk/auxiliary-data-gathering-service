@@ -1,0 +1,18 @@
+2.0.0
+[CPS-32]: 'disWorkOrder::operator<<' method become 'disWorkOrder::generateXML'
+------------------------------------------------------------------
+1.33.0
+Using ACS_THROW instead of standard throw
+------------------------------------------------------------------
+1.32.3
+Makefile updated for new environment.
+------------------------------------------------------------------
+1.32.2
+Patch release automatically generated to instrument version files
+------------------------------
+1.32.1
+Tagging head. Was unstable on CVS due to unit test changes.
+------------------------
+1.32.0
+
+Automatically generate from revision "version "1.32""

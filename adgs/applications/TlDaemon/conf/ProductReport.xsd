@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XML Spy v3.5 NT (http://www.xmlspy.com) by  () -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2000/10/XMLSchema" elementFormDefault="qualified">
+	<xsd:element name="Product_Report">
+		<xsd:annotation>
+			<xsd:documentation>Comment describing your root element</xsd:documentation>
+		</xsd:annotation>
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="File_Name"/>
+				<xsd:element name="List_of_Messages">
+					<xsd:complexType>
+						<xsd:sequence minOccurs="0" maxOccurs="unbounded">
+							<xsd:element name="Message">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="Date_Time"/>
+										<xsd:element name="Node_Name"/>
+										<xsd:element name="Processor_Name"/>
+										<xsd:element name="Processor_Version"/>
+										<xsd:element name="PID"/>
+										<xsd:element name="Type"/>
+										<xsd:element name="Text" type="xsd:CDATA"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+						<xsd:attribute name="count" type="xsd:nonNegativeInteger" use="required"/>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

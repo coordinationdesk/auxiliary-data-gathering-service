@@ -1,0 +1,175 @@
+<Task_Table xmlns:a="http://www.acsys.it/schemas/IPF" xmlns:xsi="http://www.w3.org/2000/10/XMLSchema-instance" xsi:schemaLocation="http://www.acsys.it/schemas/IPF TaskTable.xsd">
+	<Processor_Name>S1_AUX_TRO_RFMT</Processor_Name>
+	<Version>01.00</Version>
+	<Test>No</Test>
+	<Min_Disk_Space units="MB">1024</Min_Disk_Space>
+	<Max_Time units="sec">0<!--no time limit for execution-->
+	</Max_Time>
+	<Private_Config>
+		<List_of_Cfg_Files count="1">
+			<Cfg_File>
+				<Version>01.00</Version>
+				<File_Name>{homeconf}/conf/S1_AUX_RFMT_CONF_01.xml</File_Name>
+			</Cfg_File>
+		</List_of_Cfg_Files>
+		<Default>0</Default>
+	</Private_Config>
+	<List_of_Config_Spaces count="0">
+	</List_of_Config_Spaces>
+	<List_of_Pools count="4">
+		<Pool>
+			<Detached>false</Detached>
+			<Killing_Signal>15</Killing_Signal>
+			<List_of_Tasks count="1">
+				<Task>
+					<Name>S1_AUX_RFMT</Name>
+					<Version>01.00</Version>
+					<Critical>true</Critical>
+					<Criticality_Level>1</Criticality_Level>
+					<File_Name>{home}/bin/S1AuxReformatter</File_Name>
+					<List_of_Inputs count="5">
+						<Input>
+							<Mode>ALWAYS</Mode>
+							<Mandatory>Yes</Mandatory>
+							<List_of_Alternatives count="1">
+								<Alternative>
+									<Order>0</Order>
+									<Origin>DB</Origin>
+									<Retrieval_Mode>LatestValCover</Retrieval_Mode>
+									<T0 units="sec">0</T0>
+									<T1 units="sec">0</T1>
+									<File_Type>AUX_TRO_129</File_Type>
+									<File_Name_Type>Physical</File_Name_Type>
+								</Alternative>
+							</List_of_Alternatives>
+						</Input>
+						<Input>
+							<Mode>ALWAYS</Mode>
+							<Mandatory>Yes</Mandatory>
+							<List_of_Alternatives count="1">
+								<Alternative>
+									<Order>0</Order>
+									<Origin>DB</Origin>
+									<Retrieval_Mode>LatestValCover</Retrieval_Mode>
+									<T0 units="sec">0</T0>
+									<T1 units="sec">0</T1>
+									<File_Type>AUX_TRO_130</File_Type>
+									<File_Name_Type>Physical</File_Name_Type>
+								</Alternative>
+							</List_of_Alternatives>
+						</Input>
+						<Input>
+							<Mode>ALWAYS</Mode>
+							<Mandatory>Yes</Mandatory>
+							<List_of_Alternatives count="1">
+								<Alternative>
+									<Order>0</Order>
+									<Origin>DB</Origin>
+									<Retrieval_Mode>LatestValCover</Retrieval_Mode>
+									<T0 units="sec">0</T0>
+									<T1 units="sec">0</T1>
+									<File_Type>AUX_TRO_133</File_Type>
+									<File_Name_Type>Physical</File_Name_Type>
+								</Alternative>
+							</List_of_Alternatives>
+						</Input>
+						<Input>
+							<Mode>ALWAYS</Mode>
+							<Mandatory>Yes</Mandatory>
+							<List_of_Alternatives count="1">
+								<Alternative>
+									<Order>0</Order>
+									<Origin>DB</Origin>
+									<Retrieval_Mode>LatestValCover</Retrieval_Mode>
+									<T0 units="sec">0</T0>
+									<T1 units="sec">0</T1>
+									<File_Type>AUX_TRO_134</File_Type>
+									<File_Name_Type>Physical</File_Name_Type>
+								</Alternative>
+							</List_of_Alternatives>
+						</Input>
+						<Input>
+							<Mode>ALWAYS</Mode>
+							<Mandatory>Yes</Mandatory>
+							<List_of_Alternatives count="1">
+								<Alternative>
+									<Order>0</Order>
+									<Origin>DB</Origin>
+									<Retrieval_Mode>LatestValCover</Retrieval_Mode>
+									<T0 units="sec">0</T0>
+									<T1 units="sec">0</T1>
+									<File_Type>AUX_TRO_151</File_Type>
+									<File_Name_Type>Physical</File_Name_Type>
+								</Alternative>
+							</List_of_Alternatives>
+						</Input>
+					</List_of_Inputs>
+					<List_of_Outputs count="1">
+						<Output>
+							<Destination>DB</Destination>
+							<Mandatory>Yes</Mandatory>
+							<File_Type>AUX_TRO</File_Type>
+							<File_Name_Type>Stem</File_Name_Type>
+						</Output>
+					</List_of_Outputs>
+					<List_of_Breakpoints count="0"/>
+				</Task>
+			</List_of_Tasks>
+		</Pool>
+		<Pool>
+			<Detached>false</Detached>
+			<Killing_Signal>15</Killing_Signal>
+			<List_of_Tasks count="1">
+				<Task>
+					<Name>GETORIGINDATE</Name>
+					<Version>01.00</Version>
+					<Critical>true</Critical>
+					<Criticality_Level>1</Criticality_Level>
+					<File_Name>{home}/bin/GetTROReformattedOriginDate.sh</File_Name>
+					<List_of_Inputs count="0">
+					</List_of_Inputs>
+					<List_of_Outputs count="0"/>
+					<List_of_Breakpoints count="0"/>
+				</Task>
+			</List_of_Tasks>
+		</Pool>
+		<Pool>
+			<Detached>false</Detached>
+			<Killing_Signal>15</Killing_Signal>
+			<List_of_Tasks count="1">
+				<Task>
+					<Name>ZIPSAFEFILE</Name>
+					<Version>01.00</Version>
+					<Critical>true</Critical>
+					<Criticality_Level>1</Criticality_Level>
+					<File_Name>{home}/bin/ZipS1ReformattedSafeFile.sh</File_Name>
+					<List_of_Inputs count="0">
+					</List_of_Inputs>
+					<List_of_Outputs count="0"/>
+					<List_of_Breakpoints count="0"/>
+				</Task>
+			</List_of_Tasks>
+		</Pool>
+		<Pool>
+			<Detached>false</Detached>
+			<Killing_Signal>15</Killing_Signal>
+			<List_of_Tasks count="1">
+				<Task>
+					<Name>INVENTORY</Name>
+					<Version>02.00</Version>
+					<Critical>true</Critical>
+					<Criticality_Level>1</Criticality_Level>
+					<File_Name>{home}/bin/Inventory</File_Name>
+					<List_of_Parameters count="1">
+						<Parameter mandatory="true">
+							<Value>-relaxfncheck</Value>
+						</Parameter>
+					</List_of_Parameters>
+					<List_of_Inputs count="0"/>
+					<List_of_Outputs count="0"/>
+					<List_of_Breakpoints count="0"/>
+				</Task>
+			</List_of_Tasks>
+		</Pool>		
+	</List_of_Pools>
+</Task_Table>

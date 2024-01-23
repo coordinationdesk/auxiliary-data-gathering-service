@@ -1,0 +1,150 @@
+#
+#	Copyright 1995-2002, Advanced Computer Systems , Inc.
+#	Via Della Bufalotta, 378 - 00139 Roma - Italy
+#	http://www.acsys.it
+#
+#	All Rights Reserved.
+#
+#	This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems;
+#	the contents of this file may not be disclosed to third parties, copied or
+#	duplicated in any form, in whole or in part, without the prior written
+#	permission of Advanced Computer Systems, Inc.
+#
+#	$Prod: A.C.S. Makefile for WS Config Merger $
+#
+#	$Id$
+#
+#	$Author$
+#
+
+include ../../common/commondefs.mk
+
+# User Flags
+# ENVISAT -> enable envisat environment
+
+USERFLAG = -DENVISAT
+	
+
+
+  VERSIONFILE =	wscmV.C
+
+     CSOURCES =	
+
+     CINCLUDE =	
+
+  LIBRARYNAME = WSConfigMerger
+
+   C++SOURCES = \
+		WSConfigMerger.C \
+		wscmV.C\
+
+
+		
+   UIC_SOURCES= 
+	
+   MOC_SOURCES = 
+
+   C++INCLUDE = \
+		WSConfigMerger.h \
+
+  INCLUDEPATH = -I. \
+				-I$(LIB_INTEGRATION_PATH)/include\
+			      $(INFORMIXINCLUDES) \
+				-I$(ACEPATH) \
+				-I$(HSMPATH)/include \
+			     -I$(XERCESINCPATH)
+
+
+LIBRARYPATH = -L.\
+	      -L$(LIB_INTEGRATION_PATH)/lib  \
+	      -L$(XERCESLIBPATH)\
+	      -L$(HSMPATH)/lib\
+	      -L$(ACEPATH)/ace
+
+LDOPTS=-Wl,-rpath,/usr/local/lib \
+	-Wl,-rpath,/usr/lib \
+	$(INFORMIXDYNPATHS) \
+	   -Wl,-rpath,$(XERCESLIBPATH) \
+	   -Wl,-rpath,$(ACEPATH)/ace \
+	   -Wl,-rpath,$(HSMPATH)/lib\
+
+
+
+INFLIB =\
+		-lJobOrder\
+		-lTaskTable\
+		-lSchedMessages\
+		-lTlOrder\
+		-lWSConfig\
+		-lTask\
+		-lScheduler\
+		-lStatusMgr \
+		-lStationApp\
+		-lDbSpace \
+		-lDbConfiguration\
+		-lDbCryosat\
+		-lResultManager \
+		-lQueryPref \
+		-lDbData\
+		-lGraphicAttributes\
+		-lConfiguration\
+		-lDbBroadcast \
+		-lBroadcast\
+		-lDateTime \
+		-lXMLResources\
+		-lFile \
+		-lPlugin \
+		-lProc \
+		-lDbClient \
+		-lDbGeo \
+		-lDateTime \
+		-lDbBasic \
+		-lApp\
+		-lMessage \
+		-lResources \
+		-lThread \
+		-lRegExp \
+		-lTimer \
+		-lHtml \
+		-lException \
+		-lARFClient \
+		-lHSM_FileClient \
+		-lHSM_Common\
+		-lxml2 \
+		-lRpcClient \
+		-lXmlRpc \
+		-lSimpleXml \
+		-lBase \
+		-lxerces-c \
+		-lACE\
+		$(INFORMIXLIBS) \
+		-lm \
+		-ldl \
+		-lcrypt \
+		-lpthread \
+
+
+#prevent remotion of objects, target and versioning
+      VERSIONRULE =
+      TARGETFILES = \
+		  WSConfigMerger \
+		  
+$(TARGETFILES): $(OBJECTS) $(LIB_INTEGRATION_PATH)/lib/*.a
+
+all : $(TARGETFILES)
+
+
+WSConfigMerger : $(OBJECTS) 
+	$(CXX) $(LDOPTS) $(CXXFLAGS) $(LIBRARYPATH) -o $@  $(OBJECTS)  $(INFLIB)
+
+
+#empty rule, do not remove, you can add specific remotion commands
+cleanspecific:
+
+
+
+include ../../common/commonrules.mk
+
+
+# DO NOT DELETE
+

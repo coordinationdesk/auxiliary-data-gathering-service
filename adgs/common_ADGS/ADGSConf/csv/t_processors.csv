@@ -1,0 +1,13 @@
+# The File can contains any number of empty lines and
+# or starting with hash negliged by script
+# The First meaningful line must contain the colum names
+# Fallowing rows are traited as record.
+# Fields must be quoted by single quote if strings or plain in case of Numeric values
+
+'ProcessorName', 'ProcessorVersion', 'Description'
+'S3_AUX_REFORMATTER', '01.00', 'S3 Auxiliary data reformatter'
+'S1_AUX_ICE_RFMT',    '01.00', 'Sentinel AUX ICE Reformatter'
+'S1_AUX_WAV_RFMT',    '01.00', 'Sentinel AUX WAV Reformatter'
+'S1_AUX_WND_RFMT',    '01.00', 'Sentinel AUX WND Reformatter'
+'S1_AUX_TEC_RFMT',    '01.00', 'Sentinel AUX TEC Reformatter'
+'S1_AUX_TRO_RFMT',    '01.00', 'Sentinel AUX TRO Reformatter'

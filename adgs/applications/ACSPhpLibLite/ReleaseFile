@@ -1,0 +1,14 @@
+1.0.0.2.1.1
+Fixed relative path copy for pear
+Added fake makefile
+-------------------------------------------------------
+1.0.0.1.1.0
+Added threadi and SqlTokenizer extra libs
+Addons for project S3MPM-PDP-SPT
+-------------------------------------------------------
+1.0.0
+Added gdalinfo metadata parsing
+Fixed warnings
+Installation refinements
+Added first sources
+Initial commit

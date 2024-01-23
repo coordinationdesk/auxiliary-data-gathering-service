@@ -1,0 +1,19 @@
+# The File can contains any number of empty lines and
+# or starting with hash negliged by script
+# The First meaningful line must contain the colum names
+# Fallowing rows are traited as record.
+# Fields must be quoted by single quote if strings or plain in case of Numeric values
+
+'processorname','processorversion', 'processorconfiguration', 'ordertype', 'priority', 'troubleshooting', 'processingtimewindow', 'algorithm', 'filetype', 'active', 'fileclass'
+'S3_AUX_REFORMATTER', '01.00', '01.00', 'OFFL', 1, 'f', 1, 'NOMERGENODUP', 'NOAA_1KM_IMSDLY',  't', 'NULL'
+'S3_AUX_REFORMATTER', '01.00', '01.00', 'OFFL', 1, 'f', 1, 'NOMERGENODUP', 'OSIICE_RPRO_20N',  't', 'NULL'
+'S3_AUX_REFORMATTER', '01.00', '01.00', 'OFFL', 1, 'f', 1, 'NOMERGENODUP', 'OSIICE_RPRO_21N',  't', 'NULL'
+'S3_AUX_REFORMATTER', '01.00', '01.00', 'OFFL', 1, 'f', 1, 'NOMERGENODUP', 'OSIICE_SYSTEM_N',  't', 'NULL'
+'S3_AUX_REFORMATTER', '01.00', '01.00', 'OFFL', 1, 'f', 1, 'NOMERGENODUP', 'OSIICE_RPRO_20S',  't', 'NULL'
+'S3_AUX_REFORMATTER', '01.00', '01.00', 'OFFL', 1, 'f', 1, 'NOMERGENODUP', 'OSIICE_RPRO_21S',  't', 'NULL'
+'S3_AUX_REFORMATTER', '01.00', '01.00', 'OFFL', 1, 'f', 1, 'NOMERGENODUP', 'OSIICE_SYSTEM_S',  't', 'NULL'
+'S1_AUX_ICE_RFMT',    '01.00', '',      'OFFL', 1, 'f', 1, 'NOMERGE',      'ICE_EDGENH',       't', 'NULL'
+'S1_AUX_WAV_RFMT',    '01.00', '',      'OFFL', 1, 'f', 1, 'NOMERGE',      'AUX_WAV_OR',       't', 'NULL'
+'S1_AUX_WND_RFMT',    '01.00', '',      'OFFL', 1, 'f', 1, 'NOMERGE',      'AUX_WND_OR',       't', 'NULL'
+'S1_AUX_TEC_RFMT',    '01.00', '',      'OFFL', 1, 'f', 1, 'NOMERGE',      'AUX_TEC_OR2',      't', 'NULL'
+'S1_AUX_TRO_RFMT',    '01.00', '',      'OFFL', 1, 'f', 1, 'NOMERGE',      'AUX_TRO_151',      't', 'NULL'

@@ -1,0 +1,19 @@
+2.0.2
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+------------------------------
+2.0.1
+Introduced non-mandatory addSpace in ProductNaming
+------------------------------
+2.0.0
+Removed allowed fields functionality
+------------------------------
+1.18.0
+Added new constructor that takes as input a resourceSet and a root tag. 
+Updated signature of private function ProductNaming::init.
+------------------------------
+1.17.1
+Patch release automatically generated to instrument version files
+------------------------------
+1.17.0
+
+Automatically generate from revision "version "1.17""

@@ -1,0 +1,331 @@
+# The File can contains any number of empty lines and
+# or starting with hash negliged by script
+# The First meaningful line must contain the colum names
+# Fallowing rows are traited as record.
+# Fields must be quoted by single quote if strings or plain in case of Numeric values 
+
+
+'filetype','description','nameregularexpression','headerseparation','"group"','invperiod','mngsngext','sngext','hdrext','dblext'
+#
+# Virtual File Type for Distribution
+'AUX_TO_OBJSTORE', 'Aux Files to be distributed to SrvImport',            'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUXTOOBJST_TBZ',  'Aux Files to be zipped and distributed to SrvImport', 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'XMLTOOBJST_TBZ',  'Xml Files to be zipped and distributed to SrvImport', 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'DBLTOOBJST_TBZ',  'Aux Files to be zipped and distributed to SrvImport', 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'CSVTOOBJST_TBZ',  'Aux Files to be zipped and distributed to SrvImport', 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'KMLTOOBJST_TBZ',  'Aux Files to be zipped and distributed to SrvImport', 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+# Virtual File Type for Ingestion (S3)
+'EUM_AUX',       'Aux Files coming from EUMETSAT',    'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'NPPF_AUX',      'NPPF Files coming from EUMETSAT',   'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S3POD_AUX',     'POD Auxiliaryfiles',                'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S3OSIRPRO_AUX', 'S3 OSIICE Repro Auxiliaryfiles',    'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+# Virtual File Type for Ingestion (S1)
+'ECMWF_TRO',     'AUX_TRO files from ECMWF',          'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'ECMWF_TRO_OR',  'AUX_TRO files from ECMWF',          'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'OSISAF_ICE',    'OSI SAF ICE files',                 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1FOS_AUX_TGZ', 'FOS Auxiliaryfiles',                'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1FOS_AUX_EOF', 'FOS Auxiliaryfiles',                'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1FOS_AUX_DBL', 'FOS Auxiliaryfiles',                'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1POD_AUX',     'POD Auxiliaryfiles',                'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1MCP_AUX',     'Aux Files coming from CalVal(MPC)', 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1PRIP_AUX',    'Aux Files coming from PRIP',        'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1FOS_ALL',     'FOS Auxiliaryfiles',                'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1FOS_ALL2',    'FOS Auxiliaryfiles',                'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'FOS_MAIL_TGZ',  'FOS ADF via Mail',                  'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'FOS_MAIL_EOF',  'FOS ADF via Mail',                  'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'FOS_MAIL_DBL',  'FOS ADF via Mail',                  'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1APRIP_AUX',   'Aux Files coming from PRIP',        'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1BPRIP_AUX',   'Aux Files coming from PRIP',        'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+# Virtual File Type for Ingestion (S2)
+'S2FOS_AUX_TGZ', 'FOS Auxiliaryfiles',       'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S2FOS_AUX_EOF', 'FOS Auxiliaryfiles',       'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S2FOS_AUX_DBL', 'FOS Auxiliaryfiles',       'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'CAMSFC_VIR',    'CAMS Forecast AUX',        'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S2POD_AUX',     'POD Auxiliaryfiles',       'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S2GIPP_FILE',   'GIPP Auxiliaryfiles',      'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S2GIPP_FILEFTP','GIPP Auxiliaryfiles',      'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S2FOS_ALL',     'FOS Auxiliaryfiles',       'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S2FOS_ALL2',    'FOS Auxiliaryfiles',       'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+# Virtual File Type for Common Ingestion (S1,S2)
+'MP_AUX_ALL', 'MissionPlanning Auxiliaryfiles', 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'MP_AUX',     'MissionPlanning Auxiliaryfiles', 'NULL', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+################################################################################################################
+#                                               SENTINEL-3                                                     #
+################################################################################################################
+
+######################## NOAA Files in orgin e SAFE format
+'NOAA_1KM_IMSDLY', 'NOAA IMS 1KM DAILY FILES',   '^ims[0-9]{7}_1km_GIS_v[0-9.]+\.tif\.gz$',                                         'false', 'group0', 0, 'false', 'gz',   'NULL', 'NULL'
+'SL_2_DIMSAX',     'SL_2_DIMSAX auxiliary file', '^S3[ABC_]_SL_2_DIMSAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+########################  SAFE Format From EUMETSAT
+
+# ECMWF filetype definition
+'AX___MA1_AX', 'ECMWF grib1 Analysis data',    '^S3[ABC_]_AX___MA1_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AX___MA2_AX', 'ECMWF grib2 Analysis data',    '^S3[ABC_]_AX___MA2_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AX___MF1_AX', 'ECMWF grib1 Forecast data',    '^S3[ABC_]_AX___MF1_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AX___MF2_AX', 'ECMWF grib1 Forecast data',    '^S3[ABC_]_AX___MF2_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AX___MFA_AX', 'ECMWF Forecast+Analysis data', '^S3[ABC_]_AX___MFA_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+# IERS filetype definition
+'AX___BA__AX', 'Iers Bulletin auxiliary file', '^S3[ABC_]_AX___BA__AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AX___BB2_AX', 'Iers Bulletin auxiliary file', '^S3[ABC_]_AX___BB2_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+# SALP filetype definition
+'SR___MDO_AX', 'SR___MDO_AX auxiliary file',   '^S3[ABC_]_SR___MDO_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR___POESAX', 'SR___POESAX auxiliary file',   '^S3[ABC_]_SR___POESAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_2_PMPSAX', 'SR_2_PMPSAX auxiliary file',   '^S3[ABC_]_SR_2_PMPSAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_2_RMO_AX', 'SR_2_RMO_AX auxiliary file',   '^S3[ABC_]_SR_2_RMO_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_2_PMO_AX', 'SR_2_PMO_AX auxiliary file',   '^S3[ABC_]_SR_2_PMO_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_2_POL_AX', 'SR_2_POL_AX auxiliary file',   '^S3[ABC_]_SR_2_POL_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_2_PGI_AX', 'SR_2_PGI_AX auxiliary file',   '^S3[ABC_]_SR_2_PGI_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_2_RGI_AX', 'SR_2_RGI_AX auxiliary file',   '^S3[ABC_]_SR_2_RGI_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_1_USO_AX', 'SR_1_USO_AX auxiliary file',   '^S3[ABC_]_SR_1_USO_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR___MGNSAX', 'SR___MGNSAX auxiliary file',   '^S3[ABC_]_SR___MGNSAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+# MSSL filetype definition
+'SR_2_SIC_AX', 'SR_2_SIC_AX auxiliary file',   '^S3[ABC_]_SR_2_SIC_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+# METOffice filetype definition
+'SL_2_SSTAAX', 'METOffice auxiliary file',     '^S3[ABC_]_SL_2_SSTAAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+# FOS filetype definition
+'AX___FPO_AX', 'FOS Predicted Orbit File',     '^S3[ABC_]_AX___FPO_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AX___FRO_AX', 'FOS Reconstituted Orbit File', '^S3[ABC_]_AX___FRO_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'GN_1_MANHAX', 'FOS Manoeuvre Acceleration',   '^S3[ABC_]_GN_1_MANHAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'GN_1_MASSAX', 'FOS Sat Mass Properties Rep',  '^S3[ABC_]_GN_1_MASSAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+# OFFL POD filetype definition
+'SR___MGNPAX', 'POD auxiliary file',           '^S3[ABC_]_SR___MGNPAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR___POEPAX', 'POD auxiliary file',           '^S3[ABC_]_SR___POEPAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_2_PCPPAX', 'POD auxiliary file',           '^S3[ABC_]_SR_2_PCPPAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_2_PMPPAX', 'POD auxiliary file',           '^S3[ABC_]_SR_2_PMPPAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+# Misson Planning filetype definition
+'AX___OSF_AX', 'Ref Orbit Scenario File',      '^S3[ABC_]_AX___OSF_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'MPL_DNPPF',   'MPL DNPPF Aux File',           '^S3[ABC_]_OPER_MPL_DNPPF__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_.*\.[Ee][Oo][Ff]$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'MPL__NPPF',   'MPL NPPF Aux File',            '^S3[ABC_]_OPER_MPL__NPPF__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_.*\.[Ee][Oo][Ff]$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+########################  Files From POD
+'S3_AUX_POEORB',    'Precise Ephemieris Orbit',   '^S3[ABC_]_(TEST|OPER|REP[1-9]|TD[0-9]{2})_AUX_POEORB_.{4}_[0-9]{8}T[0-9]{6}_V[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}.*\.EOF$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S3_AUX_GNSSRD',    'GNSSRD Pod files',           '^S3[ABC_]_(TEST|OPER|REP[1-9]|TD[0-9]{2})_AUX_GNSSRD_.{4}_[0-9]{8}T[0-9]{6}_V[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}.*\.TGZ$', 'false', 'group0', 0, 'false', 'TGZ',  'NULL', 'NULL'
+'S3_AUX_GNSSRDTMP', 'GNSSRD Pod files',           '^S3[ABC_]_(TEST|OPER|REP[1-9]|TD[0-9]{2})_AUX_GNSSRD_.{4}_[0-9]{8}T[0-9]{6}_V[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}.*\.HDR',  'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+
+########################  ToADC
+'MW_1_DNB_AX', 'auxiliary file for ADC',       '^S3[ABC_]_MW_1_DNB_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'MW_1_NIR_AX', 'auxiliary file for ADC',       '^S3[ABC_]_MW_1_NIR_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_2_NRPPAX', 'auxiliary file for ADC',       '^S3[ABC_]_SR_2_NRPPAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR___ROE_AX', 'auxiliary file for ADC',       '^S3[ABC_]_SR___ROE_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SL_1_VSC_AX', 'auxiliary file for ADC',       '^S3[ABC_]_SL_1_VSC_AX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_1_CA2CAX', 'auxiliary file for ADC',       '^S3[ABC_]_SR_1_CA2CAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_1_CA2KAX', 'auxiliary file for ADC',       '^S3[ABC_]_SR_1_CA2KAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_1_CA1SAX', 'auxiliary file for ADC',       '^S3[ABC_]_SR_1_CA1SAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_1_CA1LAX', 'auxiliary file for ADC',       '^S3[ABC_]_SR_1_CA1LAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+######################## NOAA Files in orgin e SAFE format
+'OSIICE_RPRO_20N', 'OSI ICE North Repro before 2020',  '^ice_conc_nh_ease2-250_cdr-v3p0_[0-9]{8}1200\.nc$',  'false', 'group0', 0, 'false', 'nc', 'NULL', 'NULL'
+'OSIICE_RPRO_21N', 'OSI ICE North Repro 2021 onwards', '^ice_conc_nh_ease2-250_icdr-v3p0_[0-9]{8}1200\.nc$', 'false', 'group0', 0, 'false', 'nc', 'NULL', 'NULL'
+'OSIICE_SYSTEM_N', 'OSI ICE North Systematic prod',    '^ice_conc_nh_ease2-250_icdrft-v3p0_[0-9]{8}1200\.nc$', 'false', 'group0', 0, 'false', 'nc', 'NULL', 'NULL'
+'OSIICE_RPRO_20S', 'OSI ICE South Repro before 2020',  '^ice_conc_sh_ease2-250_cdr-v3p0_[0-9]{8}1200\.nc$',  'false', 'group0', 0, 'false', 'nc', 'NULL', 'NULL'
+'OSIICE_RPRO_21S', 'OSI ICE South Repro 2021 onwards', '^ice_conc_sh_ease2-250_icdr-v3p0_[0-9]{8}1200\.nc$', 'false', 'group0', 0, 'false', 'nc', 'NULL', 'NULL'
+'OSIICE_SYSTEM_S', 'OSI ICE South Systematic prod',    '^ice_conc_sh_ease2-250_icdrft-v3p0_[0-9]{8}1200\.nc$', 'false', 'group0', 0, 'false', 'nc', 'NULL', 'NULL'
+'SR_2_SICNAX',    'SR_2_SICNAX auxiliary file', '^S3[ABC_]_SR_2_SICNAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_2_SICSAX',    'SR_2_SICSAX auxiliary file', '^S3[ABC_]_SR_2_SICSAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_2_SIFNAX',    'SR_2_SIFNAX auxiliary file', '^S3[ABC_]_SR_2_SIFNAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'SR_2_SIFSAX',    'SR_2_SIFSAX auxiliary file', '^S3[ABC_]_SR_2_SIFSAX_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}__.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+######################## Unavailability Report
+'S3REP_SUP',       'Unavailability Reports',  '^S3[ABC_]_.*_REP__SUP___[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\..*',          'false', 'group0', 0, 'false', 'NULL',  'NULL', 'NULL'
+################################################################################################################
+#                                               SENTINEL-1                                                     #
+################################################################################################################
+
+########################  SAFE Format From Cal/Cal (MPC)
+'AUX_PP1', 'L1 Processor Parameters',         '^S1[ABC_].*AUX_PP1_.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_CAL', 'Calibration Parameters',          '^S1[ABC_].*AUX_CAL_.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_INS', 'Instrument Aux Data',             '^S1[ABC_].*AUX_INS_.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_PP2', 'L2 Processor Parameters',         '^S1[ABC_].*AUX_PP2_.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_SCS', 'Simulated Cross Spectra',         '^S1[ABC_].*AUX_SCS_.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_SCF', 'Aux SETAP Configuration File',    '^S1[ABC_].*AUX_SCF_.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_ITC', 'SETAP aux instr timing cal prod', '^S1[ABC_].*AUX_ITC_.*', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+########################  GRIB Format From ECMWF
+'AUX_TRO_129',  'Tropospheric model Aux Data 129', '^ECMWF_OPER_ML00_06H_129_GP_N640_[0-9]{8}T[0-9]{6}$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_TRO_130',  'Tropospheric model Aux Data 130', '^ECMWF_OPER_ML00_06H_130_GP_N640_[0-9]{8}T[0-9]{6}$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_TRO_133',  'Tropospheric model Aux Data 133', '^ECMWF_OPER_ML00_06H_133_GP_N640_[0-9]{8}T[0-9]{6}$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_TRO_134',  'Tropospheric model Aux Data 134', '^ECMWF_OPER_ML00_06H_134_GP_N640_[0-9]{8}T[0-9]{6}$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_TRO_151',  'Tropospheric model Aux Data 151', '^ECMWF_OPER_ML00_06H_151_GP_N640_[0-9]{8}T[0-9]{6}$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUXTRO129_OR', 'Tropospheric model Aux Data 129', '^[tT]1[dDsS][0-9]{16}1$',                             'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUXTRO130_OR', 'Tropospheric model Aux Data 130', '^[tT]2[dDsS][0-9]{16}1$',                             'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUXTRO133_OR', 'Tropospheric model Aux Data 133', '^[tT]3[dDsS][0-9]{16}1$',                             'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUXTRO134_OR', 'Tropospheric model Aux Data 134', '^[tT]4[dDsS][0-9]{16}1$',                             'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUXTRO151_OR', 'Tropospheric model Aux Data 151', '^[tT]5[dDsS][0-9]{16}1$',                             'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_WND_OR',   'ECMWF Atmospheric Model',         '^[aA]1[dD][0-9]{16}1$',                               'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+########################  NetCDF Format From Ifremer
+'AUX_WAV_OR',  'Wavewatch III Model',             '^IFR_WW3-GLOBAL-30MIN.*nc$',                          'false', 'group0', 0, 'false', 'nc',   'NULL', 'NULL'
+
+########################  NetCDF Format From OSI SAF
+'ICE_EDGENH',  'Sea ice aux data North',          '^ice_edge_[nN][hH].*_[0-9]{12}.*nc$',                 'false', 'group0', 0, 'false', 'nc',   'NULL', 'NULL'
+'ICE_EDGESH',  'Sea ice aux data South',          '^ice_edge_[sS][hH].*_[0-9]{12}.*nc$',                 'false', 'group0', 0, 'false', 'nc',   'NULL', 'NULL'
+
+########################  GRIB Format From GDC NASA
+'AUX_TEC_OR',  'Ionospheric model Aux Data',      '^[cC][oO][dD][gG][0-9]{3}0\.[0-9]{2}[iI]\.Z$',        'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_TEC_OR2', 'Ionospheric model Aux Data',      '^COD0OPSFIN_[0-9]{11}_01D_01H_GIM.INX',               'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+########################  EOF Format From Production
+'AMH_ERRMAT', 'Excitation Coeff Error Matrix', '^S1[ABC_]_(TEST|OPER|REP[1-9]|TD[0-9]{2})_AMH_ERRMAT_MPC__[0-9]{8}T[0-9]{6}_V[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}.*$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AMV_ERRMAT', 'Excitation Coeff Error Matrix', '^S1[ABC_]_(TEST|OPER|REP[1-9]|TD[0-9]{2})_AMV_ERRMAT_MPC__[0-9]{8}T[0-9]{6}_V[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}.*$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+########################  Files From FOS
+'S1REP_SUP',       'Unavailability Reports',  '^S1[ABC_]_.*_REP__SUP___[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.EOF$',                    'false', 'group0', 0, 'false', 'EOF',  'NULL', 'NULL'
+'S1MPL_ORBPRE',    'FOS Predicted Orbit',     '^S1[ABC_]_.*_MPL_ORBPRE_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.EOF$',                    'false', 'group0', 0, 'false', 'EOF',  'NULL', 'NULL'
+'S1MPL_ORBRES',    'FOS Restitued Orbit',     '^S1[ABC_]_.*_MPL_ORBRES_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.EOF$',                    'false', 'group0', 0, 'false', 'EOF',  'NULL', 'NULL'
+'S1MPL_TLEPRE',    'FOS TLE Predicted Orbit', '^S1[ABC_]_.*_MPL_TLEPRE_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$',           'false', 'group0', 0, 'false', 'TGZ',  'NULL', 'NULL'
+'S1MPL_TLEPRETMP', 'FOS TLE Predicted Orbit', '^S1[ABC_]_.*_MPL_TLEPRE_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',                    'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+'S1OPER_TLM',      'Telemetry Parameters',    '^S1[ABC_]_.*_TLM__REQ_[B|C|D|E|F]_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$', 'false', 'group0', 0, 'false', 'TGZ',  'NULL', 'NULL'
+'S1OPER_TLMTMP',   'Telemetry Parameters',    '^S1[ABC_]_.*_TLM__REQ_[B|C|D|E|F]_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',          'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+'S1REP__MACP_',    'Manoeuvre Acc Profile',   '^S1[ABC_]_.*_REP__MACP__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$',           'false', 'group0', 0, 'false', 'TGZ',  'NULL', 'NULL'
+'S1REP__MACP_TMP', 'Manoeuvre Acc Profile',   '^S1[ABC_]_.*_REP__MACP__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',                    'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+'S1REP__MCSF_',    'Manoeuvre Scale Factor',  '^S1[ABC_]_.*_REP__MCSF__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$',           'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1REP__MCSF_TMP', 'Manoeuvre Scale Factor',  '^S1[ABC_]_.*_REP__MCSF__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',                    'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+'S1REP__SMPR_',    'Summary SatMassProp',     '^S1[ABC_]_.*_REP__SMPR__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$',           'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1REP__SMPR_TMP', 'Summary SatMassProp',     '^S1[ABC_]_.*_REP__SMPR__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',                    'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+
+'S1MPL_MANPRE',    'Manoeuvre Prediction',    '^S1[ABC_]_.*_MPL_MANPRE_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.DBL$',                    'false', 'group0', 0, 'false', 'DBL', 'NULL', 'NULL'
+'S1MPL__RGTEF',    'GroundTrack DEviation',   '^S1[ABC_]_.*_MPL__GTDEV_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.DBL$',                    'false', 'group0', 0, 'false', 'DBL', 'NULL', 'NULL'
+'AUX_OBMEMC',      'OBMEMC Aux Data',         '^S1[ABC_]_.*_AUX_OBMEMC_.*_[0-9]{8}T[0-9]{6}\.xml',                                             'false', 'group0', 0, 'false', 'xml', 'NULL', 'NULL'
+
+'S1MPL_PRIP',      'FOS Predicted Orbit',     '^S1[ABC_]_.*_MPL_.*_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.EOF\.zip$',                   'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+'S1L_PREORB_X',    'LongTerm Orb Prediction', '^S1[ABC_]_.*_L_PREORB_X_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.EOF$',                    'false', 'group0', 0, 'false', 'EOF', 'NULL', 'NULL'
+'S1L_PREORB_O',    'LongTerm Orb Prediction', '^S1[ABC_]_.*_L_PREORB_O_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$',           'false', 'group0', 0, 'false', 'TGZ',  'NULL', 'NULL'
+'S1L_PREORB_OTMP', 'LongTerm Orb Prediction', '^S1[ABC_]_.*_L_PREORB_O_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',                    'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+
+########################  Files From MissionPlanning
+'MPL_ORBSCT',      'Ref Orbit Scenario File', '^S1[ABC_]_.*_MPL_ORBSCT_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.EOF$',             'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'REP_MP_MP',       'REP MP MP',               '^S1[ABC_]_.*_REP_MP_MP__.*_[0-9]{8}T[0-9]{6}_V[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}\.xml', 'false', 'group0', 0, 'false', 'xml',  'NULL', 'NULL'
+'MPL_TIMELINE', 'S1/S2 MPL Timeline',         '^S[12][ABC_]_.*_MPL_TIMELINE_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}\.[Tt][Gg][Zz]$',        'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'MPL_ALL',      'S1 MPL All Tml',             '^S1[ABC_]_MP_ALL__MTL_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}\.[Cc][Ss][Vv]$',               'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'MP_FULL',      'S1 MPL Full',                '^S1[ABC_]_MP_FULL_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}\.[Kk][Mm][Ll]$',                   'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+########################  Files From POD
+'S1_AUX_PREORB', 'POD Predicted Orbit',      '^S1[ABC_]_(TEST|OPER|REP[1-9]|TD[0-9]{2})_AUX_PREORB_.{4}_[0-9]{8}T[0-9]{6}_V[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}\.EOF$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1_AUX_POEORB', 'Precise Ephemieris Orbit', '^S1[ABC_]_(TEST|OPER|REP[1-9]|TD[0-9]{2})_AUX_POEORB_.{4}_[0-9]{8}T[0-9]{6}_V[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}\.EOF$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1_AUX_RESORB', 'POD Restituted Orbit',     '^S1[ABC_]_(TEST|OPER|REP[1-9]|TD[0-9]{2})_AUX_RESORB_.{4}_[0-9]{8}T[0-9]{6}_V[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}\.EOF$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S1_AUX_RESATT', 'Restituted Attitude',      '^S1[ABC_]_(TEST|OPER|REP[1-9]|TD[0-9]{2})_AUX_RESATT_.{4}_[0-9]{8}T[0-9]{6}_V[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}\.EOF$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+########################  Files From POD
+'AUX_TRO', 'Tropospheric model Aux Data', '^S1[ABC_].*AUX_TRO_.*$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_WND', 'ECMWF Atmospheric Model',     '^S1[ABC_].*AUX_WND_.*$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_WAV', 'Wavewatch III Model',         '^S1[ABC_].*AUX_WAV_.*$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_ICE', 'Sea ice aux data North',      '^S1[ABC_].*AUX_ICE_.*$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_TEC', 'Ionospheric model Aux Data',  '^S1[ABC_].*AUX_TEC_.*$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+################################################################################################################
+#                                               SENTINEL-2                                                     #
+################################################################################################################
+#
+########################  GIPP file form CalVal
+
+'GIP_ATMIMA', 'GIP_ATMIMA Filetype', '^S2.*GIP_ATMIMA.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_ATMSAD', 'GIP_ATMSAD Filetype', '^S2.*GIP_ATMSAD.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_DATATI', 'GIP_DATATI Filetype', '^S2.*GIP_DATATI.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_LREXTR', 'GIP_LREXTR Filetype', '^S2.*GIP_LREXTR.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_INVLOC', 'GIP_INVLOC Filetype', '^S2.*GIP_INVLOC.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_VIEDIR', 'GIP_VIEDIR Filetype', '^S2.*GIP_VIEDIR.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_SPAMOD', 'GIP_SPAMOD Filetype', '^S2.*GIP_SPAMOD.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_BLINDP', 'GIP_BLINDP Filetype', '^S2.*GIP_BLINDP.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_CLOINV', 'GIP_CLOINV Filetype', '^S2.*GIP_CLOINV.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_PRDLOC', 'GIP_PRDLOC Filetype', '^S2.*GIP_PRDLOC.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2PARA', 'GIP_R2PARA Filetype', '^S2.*GIP_R2PARA.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2SWIR', 'GIP_R2SWIR Filetype', '^S2.*GIP_R2SWIR.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2EQOG', 'GIP_R2EQOG Filetype', '^S2.*GIP_R2EQOG.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2DEPI', 'GIP_R2DEPI Filetype', '^S2.*GIP_R2DEPI.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2DEFI', 'GIP_R2DEFI Filetype', '^S2.*GIP_R2DEFI.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2WAFI', 'GIP_R2WAFI Filetype', '^S2.*GIP_R2WAFI.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2DEBA', 'GIP_R2DEBA Filetype', '^S2.*GIP_R2DEBA.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2L2NC', 'GIP_R2L2NC Filetype', '^S2.*GIP_R2L2NC.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2DENT', 'GIP_R2DENT Filetype', '^S2.*GIP_R2DENT.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2DECT', 'GIP_R2DECT Filetype', '^S2.*GIP_R2DECT.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2MACO', 'GIP_R2MACO Filetype', '^S2.*GIP_R2MACO.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2NOMO', 'GIP_R2NOMO Filetype', '^S2.*GIP_R2NOMO.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2ABCA', 'GIP_R2ABCA Filetype', '^S2.*GIP_R2ABCA.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2BINN', 'GIP_R2BINN Filetype', '^S2.*GIP_R2BINN.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2CRCO', 'GIP_R2CRCO Filetype', '^S2.*GIP_R2CRCO.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_G2PARA', 'GIP_G2PARA Filetype', '^S2.*GIP_G2PARA.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_G2PARE', 'GIP_G2PARE Filetype', '^S2.*GIP_G2PARE.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_EARMOD', 'GIP_EARMOD Filetype', '^S2.*GIP_EARMOD.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_GEOPAR', 'GIP_GEOPAR Filetype', '^S2.*GIP_GEOPAR.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_INTDET', 'GIP_INTDET Filetype', '^S2.*GIP_INTDET.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_TILPAR', 'GIP_TILPAR Filetype', '^S2.*GIP_TILPAR.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_RESPAR', 'GIP_RESPAR Filetype', '^S2.*GIP_RESPAR.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_MASPAR', 'GIP_MASPAR Filetype', '^S2.*GIP_MASPAR.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_JP2KPA', 'GIP_JP2KPA Filetype', '^S2.*GIP_JP2KPA.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_ECMWFP', 'GIP_ECMWFP Filetype', '^S2.*GIP_ECMWFP.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_DECOMP', 'GIP_DECOMP Filetype', '^S2.*GIP_DECOMP.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_OLQCPA', 'GIP_OLQCPA Filetype', '^S2.*GIP_OLQCPA.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_PROBAS', 'GIP_PROBAS Filetype', '^S2.*GIP_PROBAS.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_CONVER', 'GIP_CONVER Filetype', '^S2.*GIP_CONVER.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_R2EOB2', 'GIP_R2EOB2 Filetype', '^S2.*GIP_R2EOB2.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_CLOPAR', 'GIP_CLOPAR Filetype', '^S2.*GIP_CLOPAR.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_L2ACAC', 'GIP_L2ACAC Filetype', '^S2.*GIP_L2ACAC.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_L2ACSC', 'GIP_L2ACSC Filetype', '^S2.*GIP_L2ACSC.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_PROBA2', 'GIP_PROBA2 Filetype', '^S2.*GIP_PROBA2.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+'GIP_HRTPAR', 'GIP_HRTPAR Filetype', '^S2.*GIP_HRTPAR.*$', 'false', 'group0', 0, 'false', 'TGZ', 'NULL', 'NULL'
+
+########################  GRIB Format From ECMWF
+'AUX_ECMWFD_OR', 'ECMWF weather forecast', '^[sSdD]2[dD][0-9]{16}[0-9]{1}$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'CAMS_FRCST',    'CAMS Forecast',          '^z_cams_c_ecmf_[0-9]{14}_prod_fc_sfc_0([0-3][0-9]|4[0-8])_(aod.*|bcaod550|duaod550|omaod550|ssaod550|suaod550)\.grib$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'CAMS_AN_Z_',    'CAMS Forecast AN Z',     '^z_cams_c_ecmf_[0-9]{14}_prod_an_sfc_000_z\.grib$',                                                                     'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'CAMS_MFST_',    'CAMS Forecast Manifest', '^z_cams_c_ecmf_[0-9]{14}_prod\.manifest$',                                                                              'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+########################  ASCII Format From IERS
+'IERS_BULL_A', 'Iers Bulletin A auxiliary file', 'ser7\.dat',                  'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+########################  Files From FOS
+'S2REP_SUP',       'Unavailability Reports',  '^S2[ABC_]_.*_REP__SUP___[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.EOF$',                    'false', 'group0', 0, 'false', 'EOF', 'NULL', 'NULL'
+'S2MPL_ORBPRE',    'FOS Predicted Orbit',     '^S2[ABC_]_.*_MPL_ORBPRE_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.EOF$',                    'false', 'group0', 0, 'false', 'EOF', 'NULL', 'NULL'
+'L_PREORB_X',      'LongTerm Orb Prediction', '^S2[ABC_]_.*_L_PREORB_X_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.EOF$',                    'false', 'group0', 0, 'false', 'EOF', 'NULL', 'NULL'
+'S2MPL_ORBRES',    'FOS Restitued Orbit',     '^S2[ABC_]_.*_MPL_ORBRES_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.EOF$',                    'false', 'group0', 0, 'false', 'EOF', 'NULL', 'NULL'
+
+'S2OPER_TLM',      'Telemetry Parameters',    '^S2[ABC_]_.*_TLM__REQ_[A|B|C|D|E|F]_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$', 'false', 'group0', 0, 'false', 'TGZ',  'NULL', 'NULL'
+'S2OPER_TLMTMP',   'Telemetry Parameters',    '^S2[ABC_]_.*_TLM__REQ_[A|B|C|D|E|F]_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',        'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+'L_PREORB_O',      'LongTerm Orb Prediction', '^S2[ABC_]_.*_L_PREORB_O_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$',           'false', 'group0', 0, 'false', 'TGZ',  'NULL', 'NULL'
+'L_PREORB_OTMP',   'LongTerm Orb Prediction', '^S2[ABC_]_.*_L_PREORB_O_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',                    'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+'REP__CHF__',      'MCS TC History',          '^S2[ABC_]_.*_REP__CHF___[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$',           'false', 'group0', 0, 'false', 'TGZ',  'NULL', 'NULL'
+'REP__CHF__TMP',   'MCS TC History',          '^S2[ABC_]_.*_REP__CHF___[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',                    'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+'REP__FCHF__',     'Full TC History',         '^S2[ABC_]_.*_REP__FCHF__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$',           'false', 'group0', 0, 'false', 'TGZ',  'NULL', 'NULL'
+'REP__FCHF__TMP',  'Full TC History',         '^S2[ABC_]_.*_REP__FCHF__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',                    'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+'REP__MCSF_',      'Manoeuvre Scale Factor',  '^S2[ABC_]_.*_REP__MCSF__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$',           'false', 'group0', 0, 'false', 'TGZ',  'NULL', 'NULL'
+'REP__MCSF_TMP',   'Manoeuvre Scale Factor',  '^S2[ABC_]_.*_REP__MCSF__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',                    'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+'S2REP__MACP_',    'Manoeuvre Acc Profile',   '^S2[ABC_]_.*_REP__MACP__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$',           'false', 'group0', 0, 'false', 'TGZ',  'NULL', 'NULL'
+'S2REP__MACP_TMP', 'Manoeuvre Acc Profile',   '^S2[ABC_]_.*_REP__MACP__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',                    'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+'REP__SMPR_',      'Summary SatMassProp',     '^S2[ABC_]_.*_REP__SMPR__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.[tT][gG][zZ]$',           'false', 'group0', 0, 'false', 'TGZ',  'NULL', 'NULL'
+'REP__SMPR_TMP',   'Summary SatMassProp',     '^S2[ABC_]_.*_REP__SMPR__[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.HDR$',                    'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+
+'S2MPL_MANPRE',    'Manoeuvre Prediction',    '^S2[ABC_]_.*_MPL_MANPRE_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.DBL$',                    'false', 'group0', 0, 'false', 'DBL',  'NULL', 'NULL'
+'S2MPL__GTDEV',    'GroundTrack DEviation',   '^S2[ABC_]_.*_MPL__GTDEV_[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\.DBL$',                    'false', 'group0', 0, 'false', 'DBL',  'NULL', 'NULL'
+
+########################  Files From POD
+'S2_AUX_PREORB', 'POD Predicted Orbit',      '^S2[ABC_]_(TEST|OPER|REP[1-9]|TD[0-9]{2})_AUX_PREORB_.{4}_[0-9]{8}T[0-9]{6}_V[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}\.EOF$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'S2_AUX_RESORB', 'POD Restituted Orbit',     '^S2[ABC_]_(TEST|OPER|REP[1-9]|TD[0-9]{2})_AUX_RESORB_.{4}_[0-9]{8}T[0-9]{6}_V[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}\.EOF$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+
+########################  Reformatted Filetype
+'AUX_ECMWFD',    'ECMWF weather forecast', '^S2_.*_AUX_ECMWFD_.*\.TGZ$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_CAMSFO',    'CAMS forecast',          '^S2_.*_AUX_CAMSFO_.*\.TGZ$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_UT1UTC',    'IERS Bulletin A',        '^S2_.*_AUX_UT1UTC_.*\.TGZ$', 'false', 'group0', 0, 'false', 'NULL', 'NULL', 'NULL'
+'AUX_CAMSFOTMP', 'CAMS forecast',          '^S2_.*_AUX_CAMSFO_.*\.HDR$', 'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+'AUX_UT1UTCTMP', 'IERS Bulletin A',        '^S2_.*_AUX_UT1UTC_.*\.HDR$', 'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+'AUX_ECMWFDTMP', 'ECMWF weather forecast', '^S2_.*_AUX_ECMWFD_.*\.HDR$', 'true',  'group0', 0, 'false', 'NULL', 'HDR',  'DBL'
+
+################################################################################################################
+#                                               SENTINEL-5                                                     #
+################################################################################################################
+#
+######################## Unavailability Report
+'S5REP_SUP',       'Unavailability Reports',  '^S5P_.*_REP__SUP___[0-9]{8}T[0-9]{6}_[0-9]{8}T[0-9]{6}_[0-9]{4}\..*',          'false', 'group0', 0, 'false', 'NULL',  'NULL', 'NULL'

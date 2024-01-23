@@ -1,0 +1,46 @@
+3.0.8
+MP: gsoap related compilation warning removed
+------------------------------
+3.0.7
+MP: no more db related deprecated methods/classes
+pragmas fixed
+------------------------------
+3.0.6
+MP: warning cleanup
+added pragma warning ignore as guard to inclusion of auto generated soap headers
+------------------------------
+3.0.5
+[S3MARINE-101]
+Introduced new optional parameter <StreamType> to Dynamic and Explicit circulations requests.
+------------------------------
+3.0.4
+Patch due to issue S2PDGS-118.
+Bug fixed in checkIpAddress method: host IP address got for either NULL value in corresponding t_knownhosts record OR empty string (it caused an error).
+Debug and warning messages added.
+------------------------------
+3.0.3
+Makefile fixed to force gsopa code generation before performing the depend target
+------------------------------
+3.0.2
+Patch release due to jira issue J6PDAP-90. Bugs fixed in CirculationOrderingService resetCirculationStatus and resetMultipleCirculationStatus methods in relay management. Both tests of Soap IF and private methods added/modified.
+------------------------------
+3.0.1
+Makefile INCLUDEPATH replaced with CUSTOM_INCLUDEPATH.
+------------------------------
+3.0.0
+Major version due to issue J6PDAP-84 to manage gsoap version >= 2.8.0. -i option added to soapcpp2 command: server and proxy class names changed along with methods names.
+CirculationOrderingService class derived by PDS_USCOREOrderingBindingService implemented to separate management of request service and of listening thread. 
+CirculationSoap no more singleton since now useless.
+resetCirculationStatus and resetMultipleCirculationStatus methods: relay case fixed. reInsertCirculation: file system protocol fixed (user and password taken from configuration).
+increaseCirculationPriority: PriorityPlainOrder flag set fixed when relay occurs.
+Generated includes file installed in common include path. Test added. -z2 option added to wsdl2h executable line.
+------------------------------
+2.6.2
+Makefile improved to manage gsoap version >= 2.8.0 in compatbility mode
+------------------------------
+2.6.1
+Patch release automatically generated to instrument version files
+------------------------------
+2.6.0
+
+Automatically generate from revision "version "2.6""

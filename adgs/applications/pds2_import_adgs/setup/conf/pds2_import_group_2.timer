@@ -1,0 +1,10 @@
+[Unit]
+Description=Run PDS2 Import group 2 every 1 minute
+
+[Timer]
+OnCalendar=minutely
+Persistent=true
+Unit=pds2_import_group_2.service
+
+[Install]
+WantedBy=timers.target

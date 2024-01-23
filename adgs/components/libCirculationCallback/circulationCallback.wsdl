@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+    xmlns:tns="http://www.acsys.it/pds/ordering"
+    xmlns:ns1="http://www.w3.org/2001/XMLSchema" 
+    targetNamespace="http://www.acsys.it/pds/ordering">
+    <types>
+        <schema attributeFormDefault="qualified" elementFormDefault="qualified"
+            targetNamespace="http://schemas.xmlsoap.org/wsdl/"
+            xmlns="http://www.w3.org/2001/XMLSchema">
+            <import namespace="http://schemas.xmlsoap.org/soap/encoding/"/> 
+            <import namespace="http://www.acsys.it/pds/ordering" schemaLocation="./circulationCallback.xsd"/>
+        </schema>
+    </types>
+
+    <!-- message definitions -->
+    <message name="StatusUpdateCallbackRequest">
+        <part name="StatusUpdateCallbackRequestParameter" element="tns:CallbackRequest"/>
+    </message>
+    <message name="StatusUpdateCallbackResponse">
+        <part name="StatusUpdateCallbackResponseParameter" element="tns:CallbackResponse"/>
+    </message>
+
+
+
+   
+    <!-- portTypes (operations) definitions -->
+    <portType name="SOAPport">
+        <operation name="StatusUpdateCallback">
+            <input message="tns:StatusUpdateCallbackRequest"/>
+            <output message="tns:StatusUpdateCallbackResponse"/>
+        </operation>
+    </portType>
+
+
+    <!-- Placeholder for binding. Define operation style(RCP, Document) and bind port to messages. -->
+
+    <binding name="PDS_DCBinding" type="tns:SOAPport">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+        <operation name="StatusUpdateCallback">
+            <soap:operation soapAction="StatusUpdateCallback"/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+        </operation>
+
+    </binding>
+
+    <!-- Placeholder for service definition-->
+    <service name="PDSService">
+        <port binding="tns:PDS_DCBinding" name="PDS_DCCallbackService">
+            <soap:address location="http://localhost:11111/serviceName"/>
+        </port>
+    </service>
+
+</definitions>

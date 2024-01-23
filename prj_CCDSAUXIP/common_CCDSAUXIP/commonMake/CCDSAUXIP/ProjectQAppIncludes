@@ -1,0 +1,9 @@
+#ifndef _ProjectQAppIncludes_
+#define _ProjectQAppIncludes_
+
+#include <CryosatQtApp.h>
+
+#define PROJECT_APP CryosatQtApp
+
+
+#endif // _ProjectQAppIncludes_

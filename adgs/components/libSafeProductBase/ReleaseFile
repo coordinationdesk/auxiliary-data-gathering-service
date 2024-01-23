@@ -1,0 +1,24 @@
+1.22.2
+Deprecated DSODEPENDLIBS changed to DSOSPECIFICDEPS
+----------------------------------------------------
+1.22.1
+MP: compilation warnings cleanup
+----------------------------------------------------
+1.22.0
+S3EVOL-174
+ManifestParametersListBuilder getBeginDataIterator and getEndDataIterator public methods added to allow for cycle on parameters list using overloaded getParameter method to get both given parameter name and value.
+----------------------------------------------------
+1.21.2
+Makefiles error fixed
+----------------------------------------------------
+1.21.1
+Test makefile added
+----------------------------------------------------
+1.21.0
+S3EVOL-172 S3EVOL-174
+ManifestParametersListBuilder class added
+to extract parameters from xfdumanifest.xml in yet unknown format (schema) according to xfdu:XFDU version attribute value.
+----------------------------------------------------
+1.20.0
+
+Automatically generate from revision "version "1.20""

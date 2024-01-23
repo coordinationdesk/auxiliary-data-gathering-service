@@ -1,0 +1,12 @@
+'pfiletype', 'cfiletype'
+
+'(SELECT id_filetype FROM t_filetypes where filetype = 'MP_AUX_ALL')',      '(SELECT id_filetype FROM t_filetypes where filetype = 'REP_MP_MP')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'MP_AUX_ALL')',      '(SELECT id_filetype FROM t_filetypes where filetype = 'MPL_TIMELINE')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'MP_AUX_ALL')',      '(SELECT id_filetype FROM t_filetypes where filetype = 'MP_ALL__MTL')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'MP_AUX_ALL')',      '(SELECT id_filetype FROM t_filetypes where filetype = 'MP_FULL')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'MP_AUX')',          '(SELECT id_filetype FROM t_filetypes where filetype = 'MPL_TIMELINE')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'MP_AUX')',          '(SELECT id_filetype FROM t_filetypes where filetype = 'MP_ALL__MTL')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'MP_AUX')',          '(SELECT id_filetype FROM t_filetypes where filetype = 'MP_FULL')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'AUX_TO_OBJSTORE')', '(SELECT id_filetype FROM t_filetypes where filetype = 'MPL_TIMELINE')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'CSVTOOBJST_TBZ')',  '(SELECT id_filetype FROM t_filetypes where filetype = 'MP_ALL__MTL')'
+'(SELECT id_filetype FROM t_filetypes where filetype = 'KMLTOOBJST_TBZ')',  '(SELECT id_filetype FROM t_filetypes where filetype = 'MP_FULL')'

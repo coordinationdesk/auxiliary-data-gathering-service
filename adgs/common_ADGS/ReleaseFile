@@ -1,0 +1,93 @@
+1.6.2
+Bug on date fixed
+---------------------------------
+1.6.1
+Fixed MP-IP interface after new change
+---------------------------------
+1.6.0
+Added interface with MP-IP
+---------------------------------
+1.5.10
+Added S1 L_PREORB filetypes. Aligned to version 1.5.5
+---------------------------------
+1.5.9
+Rpm ad hoc for Baseline report generation
+---------------------------------
+1.5.8
+Generation of Adgs BAseline Report added
+---------------------------------
+1.5.7
+Db configuration aligned with OPE platform
+Integrated new version of php_importer to configure the modificationdate setting
+Reformatting of the New AUX-TEC files
+---------------------------------
+1.5.6
+Update for new php_import
+---------------------------------
+1.5.5
+Aligned with operational platform
+---------------------------------
+1.5.4
+Update after installation of V1.4
+---------------------------------
+1.5.3
+ADGS Delivery Version 1.4.0
+ADGS Calatalogue export problem fixed
+---------------------------------
+1.5.2
+ADGS Version 1.4.1
+ADGS Calatalogue export added
+---------------------------------
+1.5.1
+ADGS Version 1.4.0
+AUX_TRO files managed
+---------------------------------
+1.5.0
+ADGS Version 1.3.0
+---------------------------------
+1.4.10
+Aligned with operational platform V1.2
+---------------------------------
+1.4.9
+Aligned with operational platform
+---------------------------------
+1.4.8
+ADGS version 1.2
+Added Jira download management for FOS Mail
+Fixed distribution to zip DBL file
+----------------------------------
+1.4.7
+Fixed problems of rpm update
+----------------------------------
+1.4.6
+Fixed Anomaly PDGSANOM-9824
+----------------------------------
+1.4.5
+Fixd Anomly PDGSANOM-9824
+----------------------------------
+1.4.4
+Modification for version 1.1 with FOS interface
+----------------------------------
+1.4.3
+Varsion aligned with OPE with DMZ importer added
+----------------------------------
+1.4.2
+Version before TTO - fixed configuration
+----------------------------------
+1.4.1
+Version before TTO
+----------------------------------
+1.4.0
+Version before TTO
+----------------------------------
+1.3.0
+Version before test with PSs and LTAs
+----------------------------------
+1.2.0
+Update after S1 integration
+----------------------------------
+1.1.0
+First Version after integration
+----------------------------------
+1.0.0
+First version of ReleaseFile

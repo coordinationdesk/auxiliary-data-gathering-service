@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<FileInventory>  
+	<Inventory>   
+    		<WorkingDir>/raid0/inventory/working</WorkingDir>
+    		<BackupDir>/raid0/inventory/backup</BackupDir>
+			<ListFileExtension>LIST</ListFileExtension>
+			<MetadataFileExtension>MTD</MetadataFileExtension>
+			<ObjectFileExtension>OBJ</ObjectFileExtension>
+			<CatalogueFileExtension>CATALOG</CatalogueFileExtension>
+			<FilteringTestFiles>true</FilteringTestFiles>
+			<List_Of_Extensions count="5">
+				<Extension>EEF</Extension>
+				<Extension>HDR</Extension>
+				<Extension>DBL</Extension>
+				<Extension>OBJ</Extension>
+				<Extension>CATALOG</Extension>
+			</List_Of_Extensions>
+	</Inventory>
+</FileInventory>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Library>
+        <!-- PackageEmailNotifier configuration-->
+        <EmailUserNotification>
+                <!-- Mail server-->
+                <server>mail.exprivia.com</server>
+                <!-- Mail port-->
+                <port></port>
+                <!-- Mail login-->
+                <login></login>
+                <!-- Mail password-->
+                <password></password>
+                <!-- Mail sender mail-->
+                <mailSender>noreply@exprivia.com</mailSender>
+                <!-- Force the target mail address-->
+                <ForceMailDestinationAddress>name@exprivia.com</ForceMailDestinationAddress>
+                <!-- Set the target mail address-->
+                <SetForceMailAddress>0</SetForceMailAddress>
+                <!-- Number of retries.-->
+                <maxNumberOfRetries>3</maxNumberOfRetries>
+                <!-- Elapsed time to retry an errored send mail.-->
+                <elapsedTimeToRetry unit = "sec">5</elapsedTimeToRetry>
+        </EmailUserNotification>
+</Library>
+
