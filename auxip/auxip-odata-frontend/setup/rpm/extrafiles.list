@@ -1,0 +1,2 @@
+%{TARGET_JAR}
+%attr(0755, root, root) %{TARGET_SERVICE}

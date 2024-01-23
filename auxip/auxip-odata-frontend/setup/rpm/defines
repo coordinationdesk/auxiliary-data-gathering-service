@@ -1,0 +1,13 @@
+%define		APP_NAME			auxip-odata-frontend
+%define		JAR_FILENAME		%{APP_NAME}.jar
+
+%define		INST_DIR			/usr/share/auxip
+
+%define		SERVICE_FILENAME	%{APP_NAME}.service
+	
+%define		SERVICE_DIR			/usr/lib/systemd/system
+
+%define		TARGET_JAR			%{INST_DIR}/%{JAR_FILENAME}
+%define		TARGET_SERVICE		%{SERVICE_DIR}/%{SERVICE_FILENAME}
+
+%define __jar_repack %{nil}

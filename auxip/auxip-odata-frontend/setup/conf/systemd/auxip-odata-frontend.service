@@ -1,0 +1,49 @@
+; vim: set et ts=4 sw=4 fdm=marker:
+; +---------------------------------------------------------------------------+
+; | PHP versions 4 and 5                                                      |
+; +---------------------------------------------------------------------------+
+; | Copyright (c) 1995-2006 - Advanced Computer Systems S.p.A.                |
+; | Copyright 1995-2007, Advanced Computer Systems ,Inc.                      |
+; | Via Della Bufalotta, 378 - 00139 Roma - Italy                             |
+; | http://www.acsys.it                                                       |
+; | All rights reserved.                                                      |
+; +---------------------------------------------------------------------------+
+; | This is UNPUBLISHED PROPRIETARY SOURCE CODE of Advanced Computer Systems; |
+; | the contents of this file may not be disclosed to third parties, copied or|
+; | duplicated in any form, in whole or in part, without the prior written    |
+; | permission of Advanced Computer Systems, Inc.                             | 
+; +---------------------------------------------------------------------------+
+;
+; $$Author$$
+; $$Id$$
+; $$Revision$$
+
+[Unit]
+Description=AUXIP OData Frontend daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/java $JAVA_OPTS -jar /usr/share/auxip/auxip-odata-frontend.jar
+Environment="JAVA_OPTS="
+Restart=always
+User=nobody
+
+[Install]
+WantedBy=default.target
+
+;----------------
+; BEST PRACTICE:
+;----------------
+;
+; environment variables can be overridden by command
+; "systemctl edit auxip-odata-frontend"
+;
+;
+; and putting in the override file a section like the following:
+; [Service]
+; Environment="JAVA_OPTS=-Dspring.datasource.url=jdbc:postgresql://<newhost>:5432/auxipdb -D<property>=<newvalue>"
+;
+;
+; issue the following command to update systemd configuration
+; "systemctl daemon-reload"

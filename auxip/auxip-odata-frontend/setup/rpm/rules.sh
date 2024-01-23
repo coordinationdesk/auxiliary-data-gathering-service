@@ -1,0 +1,4 @@
+requires="java"
+
+skipdirregex=.*
+skipfileregex=.*

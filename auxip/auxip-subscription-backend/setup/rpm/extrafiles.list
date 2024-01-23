@@ -1,0 +1,3 @@
+%{INST_DIR}/%{JAR_FILENAME}
+
+/usr/lib/systemd/system/%{SERVICE_FILENAME}
