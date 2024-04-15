@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PGPASSWORD=estestest
+export PGPASSWORD=<dbpwd>
 
 # $1 -> database hostname
 # $2 -> sql file
